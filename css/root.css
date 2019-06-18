@@ -1,0 +1,161 @@
+:root {
+    --color-text: #d4d4d4;
+    --color-bg: #282C33;
+    --color-code-bg: #20262f;
+    --color-code-text: #D4DDFD;
+    --color-fade: #888;
+    --color-link: #7289DA;
+    --color-link-hover: #cce3ff;
+}
+
+body {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: stretch;
+    justify-content: flex-end;
+    margin: auto;
+    width: 55%;
+    min-width: 900px;
+    max-width: 1200px;
+
+    padding: 6em 2em;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    color: var(--color-text);
+
+    background-image: linear-gradient(135deg, #282c33 25%, #20262f 25%, #20262f 50%, #282c33 50%, #282c33 75%, #20262f 75%, #20262f 100%);
+    background-size: 16.97px 16.97px;
+
+    line-height: 1.5;
+}
+
+blockquote {
+    border-left: 1px solid;
+    margin-left: 0;
+    padding-left: 1rem;
+}
+
+code {
+    background-color: var(--color-code-bg);
+    color: var(--color-code-text);
+    padding: 1px 4px;
+    border-radius: 8px;
+}
+
+pre code {
+    background: transparent;
+    color: inherit;
+    padding: 0;
+    border-radius: 0;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Quicksand', 'Open Sans', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+h1 {
+    font-size: 1.5em;
+}
+h2 {
+    font-size: 1.4em;
+    margin-bottom: 0;
+    margin-top: 3em;
+}
+h3 {
+    font-size: 1.15em;
+    margin-bottom: 0;
+}
+h4 {
+    font-size: 1em;
+}
+
+h3 + p {
+    margin-top: 0;
+}
+
+/*code blocks*/
+pre {
+    background: var(--color-code-bg);
+    padding: 1rem;
+}
+
+
+a, a:hover {
+    transition: color 0.3s;
+}
+a {
+    text-decoration: none;
+    color: var(--color-link);
+}
+a:hover {
+    color: var(--color-link-hover);
+}
+
+ul.posts {
+    list-style: none;
+    padding-left: 0;
+    line-height: 1.75;
+}
+.posts time {
+    color: var(--color-fade);
+    margin-right: 1em;
+}
+.posts a {
+    color: var(--color-text);
+}
+.posts a:hover {
+    color: var(--color-link-hover);
+}
+
+
+
+header {
+    margin: 4rem 0;
+}
+header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+header p {
+    margin: 0;
+}
+
+#navigation {
+    background-color: var(--color-code-bg);
+    padding: 2em;
+}
+#navigation ul {
+    padding: 0;
+    margin-left: 0;
+    list-style: none;
+}
+#navigation li {
+    padding: 0.2em 0.5em;
+    border-radius: 8px;
+}
+
+#logo {
+    height: 118px;
+    background-image: url(/images/sluggy.png);
+    background-size: contain;
+}
+
+#content {
+    width: 70%;
+    min-width: 600px;
+    padding: 1em 2em;
+    background-color: var(--color-bg);
+    box-shadow: 5px 7px 10px 0px #00000026;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+footer {
+    margin-bottom: 5em; 
+}
+
+hr {
+    opacity: 0.2;
+}

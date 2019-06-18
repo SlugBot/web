@@ -1,0 +1,12 @@
+- name: Home
+  link: /
+- name: Discord Setup
+  link: /discord-setup
+- name: Discord Commands
+  link: /discord-commands
+- name: Twitch Setup
+  link: /twitch-setup
+- name: Twitch Commands
+  link: /twitch-commands
+- name: Roadmap
+  link: /roadmap
