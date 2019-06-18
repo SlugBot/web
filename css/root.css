@@ -138,7 +138,7 @@ header p {
 
 #logo {
     height: 118px;
-    background-image: url(/images/sluggy.png);
+    background-image: url(../images/sluggy.png);
     background-size: contain;
 }
 

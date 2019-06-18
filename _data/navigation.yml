@@ -1,12 +1,17 @@
 - name: Home
-  link: /
+  link: index.html
+  
 - name: Discord Setup
-  link: /discord-setup
+  link: discord-setup.html
+
 - name: Discord Commands
-  link: /discord-commands
+  link: discord-commands.html
+
 - name: Twitch Setup
-  link: /twitch-setup
+  link: twitch-setup.html
+
 - name: Twitch Commands
-  link: /twitch-commands
+  link: twitch-commands.html
+
 - name: Roadmap
-  link: /roadmap
+  link: roadmap.html
