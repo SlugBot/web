@@ -1,0 +1,26 @@
+- name: '!activate'
+  link: '#activate'
+  
+- name: '!deactivate'
+  link: '#deactivate'
+
+- name: '!addbuild'
+  link: '#addbuild'
+
+- name: '!removebuild'
+  link: '#removebuild'
+
+- name: '!setbuild'
+  link: '#setbuild'
+
+- name: '!build'
+  link: '#build'
+
+- name: '!sl'
+  link: '#sl'
+
+- name: '!addcommand'
+  link: '#addcommand'
+
+- name: '!removecommand'
+  link: '#removecommand'

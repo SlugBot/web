@@ -6,9 +6,9 @@ Title: SlugBot in Discord
 Once you've invited Slugbot to your discord server, there is some initial setup that should be done to get everything up and running. This section will explain the setup process.
 
 ## Setting Channels For SlugBot to Use:
-SlugBot needs to know what channels to use for __Welcome Messages__, __Member Events__, __Stream Notifications__, __Leaderboard__, and __Logging__. Use the !`setchannel` command to see what channels you need to set and what channels have been set already.
+SlugBot needs to know what channels to use for _Welcome Messages_, _Member Events_, _Stream Notifications_, _Leaderboard_, and _Logging_. Use the !`setchannel` command to see what channels you need to set and what channels have been set already.
 
-Use `!setchannel default` _in the channel you want SlugBot to use_ to set that channel as the default channel (`#general` is a good choice).
+__Use `!setchannel default` in the channel you want SlugBot to use__ to set that channel as the default channel (`#general` is a good choice).
 
 Do the same for `!setchannel leaderboard`, `!setchannel streams`, `!setchannel memberevents`, and `!setchannel log`. Make sure the channel permissions are as you want them; The logging channel should be private and only visible to moderators, for example.
 

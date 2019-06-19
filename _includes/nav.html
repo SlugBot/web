@@ -6,5 +6,25 @@
 			<a href="{{ item.link }}" {% if page.url == item.link %}class="current-page"{% endif %}>{{ item.name }}</a>
 		</li>
 		{% endfor %}
+
+		{% if page.type == 'discord_commands' %}
+		<hr>
+		Available commands:
+		{% for shortcut in site.data.discord_commands %}
+		<li>
+			<a href="{{ shortcut.link }}">{{ shortcut.name }}</a>
+		</li>
+		{% endfor %}
+		{% endif %}
+
+		{% if page.type == 'twitch_commands' %}
+		<hr>
+		Available commands:
+		{% for shortcut in site.data.twitch_commands %}
+		<li>
+			<a href="{{ shortcut.link }}">{{ shortcut.name }}</a>
+		</li>
+		{% endfor %}
+		{% endif %}
 	</ul>
 </div>

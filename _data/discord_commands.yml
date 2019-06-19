@@ -1,0 +1,17 @@
+- name: '!setchannel'
+  link: '#setchannel'
+  
+- name: '!setrole'
+  link: '#setrole'
+
+- name: '!setwelcomemessage'
+  link: '#setwelcomemessage'
+
+- name: '!streamer'
+  link: '#streamer'
+
+- name: '!mute'
+  link: '#mute'
+
+- name: '!unmute'
+  link: '#unmute'
