@@ -8,13 +8,16 @@ Once you've invited SlugBot to your discord server, some functionality will requ
 ## Streamers and Stream Notifications
 SlugBot intergrates with Twitch.tv allowing it to notify when your selected streamers go live. After specifying your `streams` channel and adding some streamers to look out for, SlugBot will send a notification message to the `streams` channel when those streamers go live. SlugBot will also delete the notification when the stream goes offline.
 
-1. Set a channel for SlugBot to use as the `streams` channel.
-Use the `!setchannel streams` command __in the channel you want SlugBot to use__.
-2. Add streamers to the streamer list. This can be done in a couple ways, using the `!streamer` command or using a `streamer` role.
-	* Adding a streamer to the steamer list is as easy as using the command `!streamer add <twitch username>`. Streamers can be removed from the list with `!steamer remove <twitch username>`, and the full streamer list can be viewed using `!streamer list`.
-	* Using a `streamer` role requires a little more setup but streamlines the process for streamers that are also members of your server. Use the `!setrole streamer <streamer role name>` command to specify a role for SlugBot to use. Now any member given this role will be added to the streamer list __provided they have linked their discord account with their twitch account through SlugBot__. 
-	The linking process is done by using the command `!twitch <your twitch name>`. This link need only be made once per discord account.
-	The benefit of using the streamer role method is that it works synergisticly with the `!giveme` command - allowing the streamer role to be self-assigned by members of your server. Make the `streamer` role self-assignable using the command `!giveme add <streamer role name>`. Members can then use the command `!giveme <streamer role>` to assign the role to themselves and have their streams appear in the streams channel.
+### Set a Channel for SlugBot to Use
+First you'll want to set a channel in your server for SlugBot to send stream notifications in. Use the `!setchannel streams` command __in the channel you want SlugBot to use__.
+### Add Streamers to the Streamer List. 
+This can be done in a couple ways, using the `!streamer` command or using a `streamer` role.
+* Adding a streamer to the steamer list is as easy as using the command `!streamer add <twitch username>`. Streamers can be removed from the list with `!steamer remove <twitch username>`, and the full streamer list can be viewed using `!streamer list`.
+* Using a `streamer` role requires a little more setup but streamlines the process for streamers that are also members of your server. Use the `!setrole streamer <streamer role name>` command to specify a role for SlugBot to use. Now any member given this role will be added to the streamer list __provided they have linked their discord account with their twitch account through SlugBot__. 
+
+The linking process is done using the command `!twitch <your twitch name>`. This link need only be made once per discord account.
+
+The benefit of using the streamer role method is that it works synergisticly with the `!giveme` command - allowing the streamer role to be self-assigned by members of your server. Make the `streamer` role self-assignable using the command `!giveme add <streamer role name>`. Members can then use the command `!giveme <streamer role>` to assign the role to themselves and have their streams appear in the streams channel.
 
 
 
