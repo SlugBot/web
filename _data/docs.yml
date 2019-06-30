@@ -43,7 +43,8 @@
 - name: '!removecommand'
   link: '#removecommand'
 
-
+# TODO below is a duplicate data to test really long table of contents.
+# It can be deleted safely
 
 - name: '!setchannel'
   link: '#setchannel'

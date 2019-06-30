@@ -11,6 +11,10 @@ The following page will provide an easy-to-follow overview on how to install and
 ## Streamers and Stream Notifications
 SlugBot intergrates with Twitch.tv allowing it to notify when your selected streamers go live. After specifying your `streams` channel and adding some streamers to look out for, SlugBot will send a notification message to the `streams` channel when those streamers go live. SlugBot will also delete the notification when the stream goes offline.
 
+<div class="note">
+	I am a test note. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris convallis nibh id ex venenatis, a euismod lorem vulputate. Aenean nisl sem, accumsan sed massa non, elementum vehicula quam. Praesent nulla augue, pharetra quis ornare nec, varius pulvinar augue.
+</div>
+
 ### Set a Channel for SlugBot to Use
 First you'll want to set a channel in your server for SlugBot to send stream notifications in. Use the `!setchannel streams` command __in the channel you want SlugBot to use__.
 ### Add Streamers to the Streamer List. 
@@ -47,7 +51,15 @@ Use the `!setrole` command to see what roles can be set for SlugBot's use. You w
 * The `botAdmin` role can be set to allow with this role access to SlugBot admin commands without needing to give them the server administrator permission.
 * the `streamer` role works in conjunction with SlugBots twitch stream notifications. Any member with this role will have their streams linked in a set 
 
-​
+<div class="note">
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris convallis nibh id ex venenatis, a euismod lorem vulputate. 
+</div>
+
+<div class="note">
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris convallis nibh id ex venenatis, a euismod lorem vulputate. 
+</div>
+
+
 ## Setting Roles to be Given when a Member Reaches a Certain Level:
 SlugBot can be used to give members roles to members who have been active in the server and reached a specific level. This can be done using the `!roleatlevel` command. To add a role to be given at level use the format `!roleatlevel add <role> <level> [sendNotification?]`. The optional argument `sendnotification` requires either true or false to state whether a notification should be sent telling the member they have gained the role upon reaching the required level.
 

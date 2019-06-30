@@ -192,3 +192,18 @@ footer {
 hr {
     opacity: 0.2;
 }
+
+.note {
+    background: var(--color-code-bg);
+    color: var(--color-code-text);
+    border-radius: 8px;
+    padding: 1em;
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+.note::before {
+    content: "NOTE";
+    font-weight: 600;
+    display: flex;
+}
