@@ -1,30 +1,41 @@
 <div id="navigation">
-	<div id="logo" title="this should really be a svg"></div>
-	<ul>
-		{% for item in site.data.navigation %}
-		<li>
-			<a href="{{ item.link }}" {% if page.url == item.link %}class="current-page"{% endif %}>{{ item.name }}</a>
-		</li>
-		{% endfor %}
+	<div id="navigation-wrapper">
+		<div id="logo" title="this should really be a svg"></div>
+		<span id="links">
+			<a href="https://discord.gg/Tpm2X2b"><i class="fab fa-discord"></i></a>
+			<a href="https://github.com/SlugBot/SlugBot"><i class="fab fa-github"></i></a>
+			<a href="https://ko-fi.com/G2G0NP0R"><i class="fas fa-mug-hot"></i></a>
+		</span>
+		<ul>
+			{% for item in site.data.navigation %}
+				<li>
+					<a href="{{ item.link }}" {% if page.url == item.link %}class="current-page"{% endif %}>{{ item.name }}</a>
+				</li>
+			{% endfor %}
 
-		{% if page.type == 'discord_commands' %}
-		<hr>
-		Available commands:
-		{% for shortcut in site.data.discord_commands %}
-		<li>
-			<a href="{{ shortcut.link }}">{{ shortcut.name }}</a>
-		</li>
-		{% endfor %}
-		{% endif %}
+			{% if page.type == 'guide' %}
+				<hr>
+				Available commands:
+				<div id="toc-wrapper">
+					{% for shortcut in site.data.guide %}
+					<li>
+						<a href="{{ shortcut.link }}">{{ shortcut.name }}</a>
+					</li>
+					{% endfor %}
+				</div>
+			{% endif %}
 
-		{% if page.type == 'twitch_commands' %}
-		<hr>
-		Available commands:
-		{% for shortcut in site.data.twitch_commands %}
-		<li>
-			<a href="{{ shortcut.link }}">{{ shortcut.name }}</a>
-		</li>
-		{% endfor %}
-		{% endif %}
-	</ul>
+			{% if page.type == 'docs' %}
+				<hr>
+				Available commands:
+				<div id="toc-wrapper">
+					{% for shortcut in site.data.docs %}
+					<li>
+						<a href="{{ shortcut.link }}">{{ shortcut.name }}</a>
+					</li>
+					{% endfor %}
+				</div>
+			{% endif %}
+		</ul>
+	</div>
 </div>

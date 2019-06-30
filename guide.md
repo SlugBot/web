@@ -1,9 +1,12 @@
 ---
 layout: info
-Title: SlugBot in Discord
+Title: SlugBot User Guide
+type: 'guide'
 ---
 # SlugBot User Guide
-Once you've invited SlugBot to your discord server, some functionality will require a little setup before they can be used. This section will guide you through the process.
+The following page will provide an easy-to-follow overview on how to install and run SlugBot in your Discord server or Twtich chat, and how to get the most out of it.
+
+# Discord setup
 
 ## Streamers and Stream Notifications
 SlugBot intergrates with Twitch.tv allowing it to notify when your selected streamers go live. After specifying your `streams` channel and adding some streamers to look out for, SlugBot will send a notification message to the `streams` channel when those streamers go live. SlugBot will also delete the notification when the stream goes offline.
@@ -59,3 +62,42 @@ The welcome message sent by SlugBot when a new member joins can be customised us
 You may have role pings enabled but also want to give members the option to opt out of receiving said pings. Use the `!optoutpings` command to toggle whether to allow members to opt out of role pings.
 
 SlugBots command prefix can be set using `!setprefix <new prefix>`.
+
+---
+
+# Setting Up SmugSlugBot for Twitch.tv for the First Time
+First you will need SlugBot to join your twitch chat; This can be done by pinging `@Narcolept`, I guess? SlugBot will lurk in your twitch chat until activated.
+​
+​
+## Activating Modules
+SlugBot's twitch.tv modules can be activated independently; This allows you to prevent conflicts with other bots you may have in your chat.
+
+To activate a module, enter the command `!activate <module>` in your twitch chat. There are 8 modules: `uptime`, `build`, `igot`, `roll`, `customCommands`, `slugballs`, `so` and `follows`. They can be activated/deactivated one at a time or multiple can be activated/deactivated by listing the modules as follows: `!activate uptime build`. This will activate both `uptime` and `build`.
+
+Alternatively, you can activate/deactivate all modules using the command `!activate slugbot` or `!deactivate slugbot`.
+​
+​
+## Modules Overview
+### `uptime`
+Activating this module allows viewers to use the `!uptime` command (More info in #twitch-commnands).
+
+### `build`
+Activating this module lets the streamer/mods add builds to the streamer's build list (`!addbuild <build name> [soul level] [upgrade level] [build planner link]`), remove builds from the streamer's build list (`!removebuild <build name>`). Also allows viewers to use `!build` and `!sl` commands (More info in #twitch-commnands).
+
+### `igot`
+Activating this module allows viewers to use the !igot `<souls received>` command (More info in #twitch-commnands).
+
+### `roll`
+Activating this module allows viewers to use the `!roll <dice count>D<dice type>` command (More info in #twitch-commnands).
+
+### `customCommands`
+Activating this module allows the streamer/mods to add/remove custom commands using `!addcommand <command> <response>` and `!removecommand <command>` respectively (More info in #twitch-commnands).
+
+### `slugballs`
+Activating this module allows viewers to use the `!slugballs <question>` command (More info in #twitch-commnands).
+
+### `so`
+Activating this module allows the streamer/mods to use the `!so <streamer>` command to shout out another streamer (More info in #twitch-commnands).
+
+### `follows`
+Activating this module sets slugbot to send a message in chat announcing new follows.
