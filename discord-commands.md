@@ -18,7 +18,7 @@ This page provides an easy reference for all of the available SlugBot commands f
 Used to add a build to your build list. Stating `soul level`, `upgrade level` and `build planner link` are optional but recommended. If a soulsplanner link is suplied, any missing data will be taken from the build directly - often, all thats needed.
 
 Requirements to use command:
-- none
+- None
 
 Examples:
 * `!addbuild Vilhelm's Squire SL60 +7 https://soulsplanner.com/darksouls3/1381` This will add a build by the name of 'Vilhelm's Squire' to the build list. If a build by the same name already exists in the list, its information will be updated with the new information stated.
@@ -39,7 +39,7 @@ Parameter `<build name | build number>` allows the following values:
 - Number of existing build (can be found using the `!build` command)
 
 Requirements to use command:
-- none
+- None
 
 Examples: 
 * `!removebuild Vilhelm's Squire` This will remove the build 'Vilhelm's Squire' from the build list. Build name is case insensitive.
@@ -49,10 +49,11 @@ Examples:
 ## `!build`
 ```
 !build [member]
+OR
+!builds [member]
 ```
 
 Used to view your own build list or the build list of another member.
-*`!builds` can also be used.*
 
 optional parameter `[member]` allows the following values:
 - Discord username of member
@@ -60,7 +61,7 @@ optional parameter `[member]` allows the following values:
 - member mention
 
 Requirements to use command:
-- none
+- None
 
 Examples:
 * `!build @Tikaro` This will show Tikaro's build list.
@@ -74,7 +75,7 @@ Examples:
 
 Used to add/edit a custom command that will respond with a specified string. alternatively regex can be used in place of a command to make SlugBot send a response message whenever the regex matches a members message.
 
-The response can contain certain flags that will be replaced when sent by slugbot.
+The response can contain certain replacer flags that will be replaced will specific values when sent by slugbot.
 
 Parameter `<command>` allows the following values:
 - New command string
@@ -82,19 +83,22 @@ Parameter `<command>` allows the following values:
 - Regex keyword, indicated by a string starting and ending with `/`
 
 Parameter `<response>` allows the following values:
-- Response string containing flag `${count}`. Flag will be replaced with the number of times the command has been used
-- Response string containing flag `${name}`. Flag will be replaced with the displayname of the member who used the command
-- Response string containing flag `${id}`. Flag will be replaced with the discord ID of the member who used the command
-- Response string containing flag `${value}`. Flag will be replaced with a number value that can be modified by moderators
+- Any string that will be displayed when the custom command is used or the regex is matched.
+
+The response allows for the following replacer flags:
+- `${count}`. Will be replaced with the number of times the command has been used
+- `${name}`. Will be replaced with the displayname of the member who used the command
+- `${id}`. Will be replaced with the discord ID of the member who used the command
+- `${value}`. Will be replaced with a number value that can be modified by moderators. Moderators can modify the value by appending `++`, `--`, or a Number to the end of the command when used.
+- `${rand:{weight}option 1|{weight}option 2|...}`. Will randomly chose one of the options to replace the flag with. `{weight}` is optional and should be a integer value. (e.g `{2}`). Options can be any valid string and there can be any number of options separated by the `|` character. 
 
 Requirements to use command:
 - `botAdmin` role
 - `ADMINISTRATOR` discord permission
-- server owner
+- Server owner
 
 Examples:
-* `!addcommand ping pong ${value}` This will create a custom command `!ping` that will respond with `pong 0` initially. Moderators can modify the value by appending `++`, `--`, or a Number to the end of the command when used.
-* `!ping ++` The will increment the command's value by 1.
+* `!addcommand flip You flipped a coin and got ${rand:heads|tails}!` This will add a command that will respond with `You flipped a coin and got heads!` OR `You flipped a coin and got tails!` when the command `!flip` is used.
 * `!addcommand /don't\s@\sme/ <@${id}>` This will create a regex keyword match that will respond with a discord mention whenever a message contains the string `don't @ me`.
 
 ---
@@ -113,7 +117,7 @@ Parameter `<command>` allows the following values:
 Requirements to use command:
 - `botAdmin` role
 - `ADMINISTRATOR` discord permission
-- server owner
+- Server owner
 
 Example:
 `!removecommand ping` This will remove the custom command `!ping`.
@@ -128,20 +132,32 @@ Example:
 Used to get a list of all custom commands in the server DMed to you.
 
 Requirements to use command:
-- none
+- None
 
 Requirements to get regex keywords included in list:
 - `botAdmin` role
 - `ADMINISTRATOR` discord permission
-- server owner
+- Server owner
 
 ---
 
 ## `!constraint`
 ```
-!constraint <command> <whitelist|blacklist|remove|list> <channel|role|member>
+!constraint <command> [<whitelist|blacklist|remove> <channel|role|member>]
 ```
 
+Use this command to add channels, roles, and members to a command's whitelist or blacklist. __WHITELISTS AND BLACKLISTS TAKE PRIORITY OVER DEFAULT COMMAND PERMISSIONS.__
+* A command can only be used in whitelisted channels. If There are no whitelisted channels, the command can be used in every channel.
+* A command can only be used by members with whitelisted roles. If There are no whitelisted roles, all roles can use the command.
+* A command can only be used by whitelisted members. If there are no whitelisted members, all members can use the command
+* A command can not be used in blacklisted channels.
+* A command can not be used by members with blacklisted roles.
+* A command can not be used by blacklisted members.
+
+Requirements to use command:
+- `botAdmin` role
+- `ADMINISTRATOR` discord permission
+- Server owner
 
 ---
 
@@ -167,7 +183,7 @@ Optional parameter `[reset]` allows the following value:
 Requirements to use command:
 - `botAdmin` role
 - `ADMINISTRATOR` discord permission
-- server owner
+- Server owner
 
 Examples:
 * `!setchannel default` This will set the current channel to be used as the default channel by slugbot. This will produce the following message:
@@ -226,6 +242,11 @@ Use this command to customise the welcome message sent when a new member joins t
 
 Parameter `welcome message` allows the following value:
 - String welcome message
+
+The `welcome message` string allows for the following replacer flags:
+- `${member}`. Will be replaced with a discord mention of the member who joined.
+- `${name}`. Will be replaced with the displayname of the member who used the command.
+- `${rand:{weight}option 1|{weight}option 2|...}`. Will randomly chose one of the options to replace the flag with. `{weight}` is optional and should be a integer value. (e.g `{2}`). Options can be any valid string and there can be any number of options separated by the `|` character. 
 
 Requirements to use command:
 - `botAdmin` role
@@ -308,3 +329,291 @@ Requirements to use command:
 
 Example: 
 * `!unmute Alex_` This will unmute member 'Alex_' if they are muted.
+
+---
+
+## `!roleatlevel`
+```
+!roleatlevel [<add|remove> <role name> <level> [send notification?]]
+```
+
+Use this command to set roles to be given to members once they reach a certain level. Using the command with no arguments will list all the roles and their levels at which they will be given.
+
+Parameter `<add|remove>` allows the following values:
+- `add`
+- `remove`
+
+Parameter `<role name>` allows the following values:
+- Name of the role that will be given once a level requirement is met.
+- role mention of the role that will be given once a level requirement is met
+
+Parameter `<level>` allows the following value:
+- An integer value corresponding to the level requirement of the role.
+
+Optional parameter `[send notification?]` allows the following value:
+- `true`. A message in chat will be sent when the member reaches the required level.
+- `false`. A message will not be sent when the member reaches the required level.
+- defaults to `true`.
+
+Requirements to add and remove roles at levels:
+- `botAdmin` role
+- `ADMINISTRATOR` discord permission
+- Server owner
+
+Example: 
+* `!roleatlevel Slug 10` This will set the `slug` role to be given to any member with a level greater than or equal to 10.
+
+---
+
+## `!giveme`
+```
+!giveme [<add|remove> <role name>]|[role name]
+```
+
+Use this command to set roles to be self-assignable or toggle self-assignable roles. Using the command with no arguments will list all self-assignable roles.
+
+Parameter `<add|remove>` allows the following values:
+- `add`
+- `remove`
+
+Parameter `<role name>` allows the following values:
+- Name of the role that will be given once a level requirement is met.
+- role mention of the role that will be given once a level requirement is met
+
+Parameter `<level>` allows the following value:
+- An integer value corresponding to the level requirement of the role.
+
+Optional parameter `[send notification?]` allows the following value:
+- `true`. A message in chat will be sent when the member reaches the required level.
+- `false`. A message will not be sent when the member reaches the required level.
+- defaults to `true`.
+
+Requirements to use command to toggle self-assignable role:
+- None
+
+Requirements to use command to list all self-assignable roles:
+- None
+
+Requirements to use command:
+- `botAdmin` role
+- `ADMINISTRATOR` discord permission
+- Server owner
+
+Example: 
+* `!roleatlevel Slug 10` This will set the `slug` role to be given to any member with a level greater than or equal to 10.
+
+---
+
+## `!avatar`
+```
+!avatar [member]
+```
+
+Use this command to view a fullsized image of a members avatar. Use the command with no arguments to view a fullsized image of your own avatar.
+
+Parameter `[member]` allows the following values:
+- Member mention
+- Member username
+- Member display name
+- member ID
+
+Requirements to use command:
+- None
+
+Example: 
+* `!avatar Tikaro` This will display Tikaro's avatar.
+
+---
+
+## `!help`
+```
+!help [command]
+```
+
+Use this command to get info on how to use a specific command. Use the command with no arguments to get a link to this documentation.
+
+Parameter `[command]` allows the following value:
+- slugbot command
+
+Requirements to use command with no arguments:
+- None
+
+Requirements to use command with specified command:
+- Inherits permission requirements of specified command
+
+Example: 
+* `!help giveme` This will display documentation on the `giveme` command.
+
+---
+
+## `!math`
+```
+!math <mathematical expression>
+OR
+!maths <mathematical expression>
+```
+
+Use this command to calculate the value of a mathematical expression
+
+Parameter `<mathematical expression>` allows the following values:
+- A resolvable mathematical expression
+
+Requirements to use command with no arguments:
+- None
+
+Example: 
+* `!math 84^2 / pi` This will respond with the value of the expression.
+
+---
+
+## `!igot`
+```
+!igot [ds1|ds3] <souls received>
+```
+
+Use this command to get a readout containing the estimated level of another player killed in Dark Souls 1 or Dark Souls 3.
+
+Parameter `<mathematical expression>` allows the following values:
+- A resolvable mathematical expression
+
+Requirements to use command with no arguments:
+- None
+
+Example: 
+* `!igot 1919` This show the possible soul level of a player depending on their phantom type.
+![igot-screenshot](images/igot_demo.png)
+
+---
+
+## `!names`
+```
+!names [member]
+```
+
+Use this command to get a list of past usernames and display names of a member. Use this command with no arguments to get a list of yourown past usernames and display names.
+
+Parameter `[member]` allows the following values:
+- Member mention
+- Member username
+- Member display name
+- member ID
+
+Requirements to use command:
+- None
+
+Example: 
+* `!avatar Tikaro` This will display Tikaro's avatar.
+
+---
+
+## `!filter`
+```
+!filter <add|remove|list> <filter string>
+```
+
+Use this command to add or remove word filters in the current server. The filter string can either be a normal string or RegEx.
+
+When a member sends a message in the server containing the filter string, their message will be deleted, score will be deducted and there will be a random chance they will be muted. the mute chance increases each time the same member triggers the filter.
+
+If a normal string is given, common letter substitutions will be taken into account.
+
+if RegEx is given, the matched message will be deleted but the member will not have score deducted or have a chance to be muted.
+
+Parameter `<add|remove|list>` allows the following values:
+- `add` to add the following filter.
+- `remove` to remove the following filter if it exists.
+- `list` to list all current filters.
+
+Parameter `<filter string>` allows the following values:
+- normal string containing word(s) to be filtered
+- RegEx
+
+Requirements to use command:
+- `botAdmin` role
+- `ADMINISTRATOR` discord permission
+- Server owner
+
+Example: 
+* `!filter add snail` This will make SlugBot delete any messages containing the word 'snail', deduct score from the offending member and have a chance to mute them.
+
+---
+
+## `!filter`
+```
+!filter <add|remove|list> <filter string>
+```
+
+Use this command to add or remove word filters in the current server. The filter string can either be a normal string or RegEx.
+
+When a member sends a message in the server containing the filter string, their message will be deleted, score will be deducted and there will be a random chance they will be muted. the mute chance increases each time the same member triggers the filter.
+
+If a normal string is given, common letter substitutions will be taken into account.
+
+if RegEx is given, the matched message will be deleted but the member will not have score deducted or have a chance to be muted.
+
+Parameter `<add|remove|list>` allows the following values:
+- `add` to add the following filter.
+- `remove` to remove the following filter if it exists.
+- `list` to list all current filters.
+
+Parameter `<filter string>` allows the following values:
+- normal string containing word(s) to be filtered
+- RegEx
+
+Requirements to use command:
+- `botAdmin` role
+- `ADMINISTRATOR` discord permission
+- Server owner
+
+Example: 
+* `!filter add snail` This will make SlugBot delete any messages containing the word 'snail', deduct score from the offending member and have a chance to mute them.
+
+
+- !activity
+- !banme
+- !cooldown
+- !deletemessages
+- !gallery
+- !guildinfo
+- !hole
+- !iam
+- !item
+- !maldron
+- !mute
+- !namecheck
+- !names
+- !optoutpings
+- !pc
+- !ping
+- !pings
+- !poise
+- !profile
+- !prune
+- !ps4
+- !raffle
+- !range
+- !rank
+- !reload
+- !reminder
+- !remindme
+- !rep
+- !roleatlevel
+- !roll
+- !setnick
+- !setprefix
+- !setrole
+- !setscore
+- !slug
+- !slugballs
+- !slugboard
+- !slugbot
+- !slugmessage
+- !so
+- !streamer
+- !twitch
+- !unmute
+- !uptime
+- !userinfo
+- !weapon
+- !whowas
+- !xbox
