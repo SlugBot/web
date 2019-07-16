@@ -92,7 +92,7 @@ The response allows for the following replacer flags:
 - `${value}`. Will be replaced with a number value that can be modified by moderators. Moderators can modify the value by appending `++`, `--`, or a Number to the end of the command when used.
 - `${rand:{weight}option 1|{weight}option 2|...}`. Will randomly chose one of the options to replace the flag with. `{weight}` is optional and should be a integer value. (e.g `{2}`). Options can be any valid string and there can be any number of options separated by the `|` character. 
 
-Requirements to use command:
+Requirements to use command (at least one of the following):
 - `botAdmin` role
 - `ADMINISTRATOR` discord permission
 - Server owner
@@ -114,7 +114,7 @@ Parameter `<command>` allows the following values:
 - Existing command to remove
 - Existing regex keyword to remove
 
-Requirements to use command:
+Requirements to use command (at least one of the following):
 - `botAdmin` role
 - `ADMINISTRATOR` discord permission
 - Server owner
@@ -134,7 +134,7 @@ Used to get a list of all custom commands in the server DMed to you.
 Requirements to use command:
 - None
 
-Requirements to get regex keywords included in list:
+Requirements to get regex keywords included in list (at least one of the following):
 - `botAdmin` role
 - `ADMINISTRATOR` discord permission
 - Server owner
@@ -154,7 +154,7 @@ Use this command to add channels, roles, and members to a command's whitelist or
 * A command can not be used by members with blacklisted roles.
 * A command can not be used by blacklisted members.
 
-Requirements to use command:
+Requirements to use command (at least one of the following):
 - `botAdmin` role
 - `ADMINISTRATOR` discord permission
 - Server owner
@@ -180,7 +180,7 @@ Parameter `<channel to set>` allows the following values:
 Optional parameter `[reset]` allows the following value:
 - `reset` to unset the stated channel
 
-Requirements to use command:
+Requirements to use command (at least one of the following):
 - `botAdmin` role
 - `ADMINISTRATOR` discord permission
 - Server owner
@@ -220,7 +220,7 @@ Parameter `reset` allows the following value:
 Parameter `role name` allows the following value:
 - The name of an existing role in the server
 
-Requirements to use command:
+Requirements to use command (at least one of the following):
 - `botAdmin` role
 - `ADMINISTRATOR` discord permission
 - Server owner
@@ -248,7 +248,7 @@ The `welcome message` string allows for the following replacer flags:
 - `${name}`. Will be replaced with the displayname of the member who used the command.
 - `${rand:{weight}option 1|{weight}option 2|...}`. Will randomly chose one of the options to replace the flag with. `{weight}` is optional and should be a integer value. (e.g `{2}`). Options can be any valid string and there can be any number of options separated by the `|` character. 
 
-Requirements to use command:
+Requirements to use command (at least one of the following):
 - `botAdmin` role
 - `ADMINISTRATOR` discord permission
 - Server owner
@@ -273,7 +273,7 @@ Parameter `<add | remove | list>` allows the following values:
 Parameter `<streamer name>` allows the following value:
 - twitch username of streamer
 
-Requirements to use command:
+Requirements to use command (at least one of the following):
 - `botAdmin` role
 - `ADMINISTRATOR` discord permission
 - Server owner
@@ -301,7 +301,7 @@ Optional parameter `[duration]` allows the following value:
 Optional parameter `[reason]` allows the following value:
 - String reason for why the member was muted. Will be DMed to the member
 
-Requirements to use command:
+Requirements to use command (at least one of the following):
 - `botAdmin` role
 - `ADMINISTRATOR` discord permission
 - Server owner
@@ -322,7 +322,7 @@ Use this command to unmute a muted member.
 Parameter `<member>` allows the following value:
 - discord username/ID/mention of member to unmute
 
-Requirements to use command:
+Requirements to use command (at least one of the following):
 - `botAdmin` role
 - `ADMINISTRATOR` discord permission
 - Server owner
@@ -355,13 +355,13 @@ Optional parameter `[send notification?]` allows the following value:
 - `false`. A message will not be sent when the member reaches the required level.
 - defaults to `true`.
 
-Requirements to add and remove roles at levels:
+Requirements to add and remove roles at levels (at least one of the following):
 - `botAdmin` role
 - `ADMINISTRATOR` discord permission
 - Server owner
 
 Example: 
-* `!roleatlevel Slug 10` This will set the `slug` role to be given to any member with a level greater than or equal to 10.
+* `!roleatlevel add Slug 10` This will set the `slug` role to be given to any member with a level greater than or equal to 10.
 
 ---
 
@@ -394,7 +394,7 @@ Requirements to use command to toggle self-assignable role:
 Requirements to use command to list all self-assignable roles:
 - None
 
-Requirements to use command:
+Requirements to use command (at least one of the following):
 - `botAdmin` role
 - `ADMINISTRATOR` discord permission
 - Server owner
@@ -458,7 +458,7 @@ Use this command to calculate the value of a mathematical expression
 Parameter `<mathematical expression>` allows the following values:
 - A resolvable mathematical expression
 
-Requirements to use command with no arguments:
+Requirements to use command:
 - None
 
 Example: 
@@ -476,7 +476,7 @@ Use this command to get a readout containing the estimated level of another play
 Parameter `<mathematical expression>` allows the following values:
 - A resolvable mathematical expression
 
-Requirements to use command with no arguments:
+Requirements to use command:
 - None
 
 Example: 
@@ -528,7 +528,7 @@ Parameter `<filter string>` allows the following values:
 - normal string containing word(s) to be filtered
 - RegEx
 
-Requirements to use command:
+Requirements to use command (at least one of the following):
 - `botAdmin` role
 - `ADMINISTRATOR` discord permission
 - Server owner
@@ -538,35 +538,151 @@ Example:
 
 ---
 
-## `!filter`
+## `!namecheck`
 ```
-!filter <add|remove|list> <filter string>
+!namecheck <name>
 ```
 
-Use this command to add or remove word filters in the current server. The filter string can either be a normal string or RegEx.
+Use this command to check if a name will be censored by the Dark Souls 3 name filters.
 
-When a member sends a message in the server containing the filter string, their message will be deleted, score will be deducted and there will be a random chance they will be muted. the mute chance increases each time the same member triggers the filter.
-
-If a normal string is given, common letter substitutions will be taken into account.
-
-if RegEx is given, the matched message will be deleted but the member will not have score deducted or have a chance to be muted.
-
-Parameter `<add|remove|list>` allows the following values:
-- `add` to add the following filter.
-- `remove` to remove the following filter if it exists.
-- `list` to list all current filters.
-
-Parameter `<filter string>` allows the following values:
-- normal string containing word(s) to be filtered
-- RegEx
+Parameter `<name>` allows the following value:
+- A name string
 
 Requirements to use command:
+- None
+
+Example: 
+* `!namecheck Knight Plumfinger` This will test the name "Knight Plumfinger" against the Dark Souls 3 name filter - showing how the censored name will appear in game.
+
+---
+
+## `!pc`
+```
+!pc
+```
+
+Use this command to toggle your PC platform role.
+
+Requirements to use command:
+- None
+
+---
+
+## `!ps4`
+```
+!ps4
+```
+
+Use this command to toggle your PS4 platform role.
+
+Requirements to use command:
+- None
+
+---
+
+## `!xbox`
+```
+!xbox
+```
+
+Use this command to toggle your XBox One platform role.
+
+Requirements to use command:
+- None
+
+---
+
+## `!mute`
+```
+!mute <member> [duration] [reason]
+```
+
+This command is used to mute members. Giving a duration and reason are optional. Not giving a duration will mute the user until they are manually unmuted.
+
+Parameter `<member>` allows the following value:
+- Member mention
+- Member username
+- Member display name
+- member ID
+
+Optional parameter `[duration]` allows the following value:
+- Number of minutes to mute the member for.
+
+Optional parameter `[reason]` allows the following value:
+- Reason string that will be DMed to the muted member.
+
+Requirements to use command (at least one of the following):
 - `botAdmin` role
 - `ADMINISTRATOR` discord permission
 - Server owner
 
 Example: 
-* `!filter add snail` This will make SlugBot delete any messages containing the word 'snail', deduct score from the offending member and have a chance to mute them.
+* `!mute 2340287340287 10 For reasons and stuff.` This will mute the member with ID 2340287340287 for 10 minutes and DM them the reason 'For reasons and stuff'.
+
+---
+
+## `!unmute`
+```
+!unmute <member>
+```
+
+Use this command to unmute a muted member.
+
+Parameter `<member>` allows the following value:
+- Member mention
+- Member username
+- Member display name
+- member ID
+
+Requirements to use command (at least one of the following):
+- `botAdmin` role
+- `ADMINISTRATOR` discord permission
+- Server owner
+
+Example: 
+* `!unmute Alex_` This will unmute member 'Alex_' if they are muted.
+
+---
+
+## `!twitch`
+```
+!twitch <twitch username>
+```
+
+Used to link a Discord account with a Twitch account. SlugBot will whisper a message to you on Twitch asking for confirmation of the link.
+
+This link is a global link between the discord account and twitch account - meaning it will only need to be done once regardless of the number of servers you are in.
+
+Linking your Discord and Twitch accounts allows your build list to be synced across Discord and Twitch along with serveral other features.
+
+Parameter `<twitch username>` allows the following value:
+- Twitch.tv channel username
+
+Requirements to use command:
+- None
+
+---
+
+## `!rep`
+```
+!rep <member> [amount of rep]
+```
+
+Use this command to view a members profile or give other member rep points.
+
+Parameter `<member>` allows the following value:
+- Member mention
+- Member username
+- Member display name
+- member ID
+
+Optional parameter `[amount of rep]` allows the following value:
+- Number of rep points to give. Each member has a limited amount that is refreshed each day.
+
+Requirements to use command:
+- None
+
+---
 
 
 - !activity
@@ -579,24 +695,18 @@ Example:
 - !iam
 - !item
 - !maldron
-- !mute
-- !namecheck
-- !names
 - !optoutpings
-- !pc
 - !ping
 - !pings
 - !poise
 - !profile
 - !prune
-- !ps4
 - !raffle
 - !range
 - !rank
 - !reload
 - !reminder
 - !remindme
-- !rep
 - !roleatlevel
 - !roll
 - !setnick
@@ -610,10 +720,7 @@ Example:
 - !slugmessage
 - !so
 - !streamer
-- !twitch
-- !unmute
 - !uptime
 - !userinfo
 - !weapon
 - !whowas
-- !xbox
