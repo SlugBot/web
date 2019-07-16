@@ -684,6 +684,108 @@ Requirements to use command:
 
 ---
 
+## `!profile`
+```
+!profile [member [flag|unflag]]|[wallpaper <img link>]|[color <hex color>]
+```
+
+Use this command to view members profiles or edit yourown. Use the command with no arguments to view yourown profile or specify a member to view their profile.
+
+Use `!profile wallpaper <img link>` to set an image as your profile wallpaper. The `<img link>` must be a direct link to an image.
+
+Use `!profile color <hex color>` to set the general text color for your profile. `<hex color>` must be a hex color code in the format of `#000` or `#000000`.
+
+Moderators can also flag profile images as inappropriate using the format `!profile <@member> flag|unflag`. A flagged profile will no longer display its wallpaper in the server the command was used in. Using the command with the keyword unflag will allow the profile to display its wallpaper again.
+
+Optional parameter `[member]` allows the following value:
+- Member mention
+- Member username
+- Member display name
+- member ID
+
+Optional parameter `[amount of rep]` allows the following value:
+- Number of rep points to give. Each member has a limited amount that is refreshed each day.
+
+Requirements to use command to view profiles/modify your own profile:
+- None
+
+Requirements to flag profiles as inappropriate (at least one of the following):
+- `botAdmin` role
+- `ADMINISTRATOR` discord permission
+- Server owner
+
+---
+
+## `!rep`
+```
+!rank [member]
+```
+
+Use this command with no arguments to view your own profile - displaying score and rank. Specify a member to view their profile.
+
+Optional parameter `[member]` allows the following value:
+- Member mention
+- Member username
+- Member display name
+- member ID
+
+Requirements to use command:
+- None
+
+---
+
+## `!roll`
+```
+!roll [avg] <dice count>D<dice type> [modifier]
+```
+
+Use this command to get SlugBot to roll dice. Including the `avg` flag will return a readout displaying statistical information on the roll instead.
+
+Optional parameter `[avg]` allows the following value:
+- `avg`
+
+Parameter `<dice count>` allows the following value:
+- Integer value corresponding to the number of dice to roll
+
+Parameter `<dice type>` allows the following value:
+- Integer value corresponding to the type of dice to roll
+
+Optional parameter `[modifier]` allows the following values:
+- A fixed amount to add or subtract from the roll. e.g. `!roll 1d20 + 6`
+
+Requirements to use command:
+- None
+
+Example: 
+* `!roll 4d6 - 2` This will roll four D6s, subtract 2, then display the outcome.
+
+Example: 
+* `!roll avg 4d6` This will display the statistics of rolling four D6s.
+
+---
+
+## `!remindme`
+```
+!remindme to <reminder message> in <time until reminder>
+```
+
+Use this command to create a reminder. SlugBot will DM you after a specified amount of time with the `<reminder message>`
+
+Parameter `<reminder message>` allows the following value:
+- A string containing a reminder message
+
+Parameter `<time until reminder>` allows the following value:
+- A string containing an amount of time. e.g. `5 days, 3 hours and 10 minutes`
+
+Requirements to use command:
+- None
+
+Example: 
+* `!remindme to Update the SlugBot music module in 1y 2d 15m` This will send a DM with the message "Update the SlugBot music module" in one year, two days, and 15 minutes.
+
+---
+
+
 
 - !activity
 - !banme
@@ -699,16 +801,10 @@ Requirements to use command:
 - !ping
 - !pings
 - !poise
-- !profile
 - !prune
 - !raffle
 - !range
-- !rank
-- !reload
 - !reminder
-- !remindme
-- !roleatlevel
-- !roll
 - !setnick
 - !setprefix
 - !setrole
