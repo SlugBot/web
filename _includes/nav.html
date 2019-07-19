@@ -39,3 +39,53 @@
 		</ul>
 	</div>
 </div>
+
+<div id="navigation-mobile-button" onclick="switchMobileMenu()">
+	<div><i class="fas fa-bars" id="mobile-button-icon"></i></div>
+</div>
+<div id="navigation-mobile">
+	<h1>SlugBot</h1>
+	<ul>
+		<li>
+			<a href="https://discord.gg/Tpm2X2b">Discord server</a>
+		</li>
+		<li>
+			<a href="https://github.com/SlugBot/SlugBot">Github page</a>
+		</li>
+		<li>
+			<a href="https://ko-fi.com/G2G0NP0R">Ko-fi</a>
+		</li>
+
+		<hr>
+
+		{% for item in site.data.navigation %}
+			<li>
+				<a href="{{ item.link }}" {% if page.url == item.link %}class="current-page"{% endif %}>{{ item.name }}</a>
+			</li>
+		{% endfor %}
+
+		{% if page.type == 'guide' %}
+			<hr>
+			Available commands:
+			<div id="toc-wrapper">
+				{% for shortcut in site.data.guide %}
+				<li>
+					<a href="{{ shortcut.link }}">{{ shortcut.name }}</a>
+				</li>
+				{% endfor %}
+			</div>
+		{% endif %}
+
+		{% if page.type == 'docs' %}
+			<hr>
+			Available commands:
+			<div id="toc-wrapper">
+				{% for shortcut in site.data.docs %}
+				<li>
+					<a href="{{ shortcut.link }}">{{ shortcut.name }}</a>
+				</li>
+				{% endfor %}
+			</div>
+		{% endif %}
+	</ul>
+</div>
