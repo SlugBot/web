@@ -185,7 +185,7 @@ header p {
     left: 0;
     width: 100%;
     height: 100%;
-    padding: 4em;
+    padding: 2em 3em;
     box-sizing: border-box;
 
     z-index: 10;
@@ -248,7 +248,7 @@ header p {
 }
 
 #navigation-mobile li {
-    padding: 0.5em 0;
+    padding: 0.3em 0;
     font-size: 1.25em;
 }
 
