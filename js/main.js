@@ -87,7 +87,7 @@ function modalInjectExamples(command) {
 		$exampleCommandWrapper.appendChild($exampleCommand);
 		
 		let $desc = document.createElement('p');
-		$desc.innerText = example.desc; //todo does not support markdown;
+		$desc.innerHTML = marked(example.desc);
 
 		$wrapper.appendChild($exampleCommandWrapper);
 		$wrapper.appendChild($desc);
@@ -99,7 +99,8 @@ function modalInjectExamples(command) {
 function openModal(commandName) {
 	let command = commandData[commandName];
 	document.getElementById('modal-title').innerText = commandName;
-	document.getElementById('modal-desc').innerText = command.desc; //todo this doesn't support markdown
+	document.getElementById('modal-command').innerText = command.format.replace("${PREFIX}", "!");
+	document.getElementById('modal-desc').innerHTML = marked(command.desc);
 
 	modalGenerateQualities(command);
 	modalInjectParameters(command);

@@ -46,16 +46,16 @@
             }
         ]
     },
-    "other_test_cmd": {
-        format: "${PREFIX}other_test_cmd [average] <dice count>D<dice type> [modifier]",
-        desc: "description of command",
+    "weapon": {
+        format: "${PREFIX}weapon [weapon name and infusion [vs ...]] [upgrade level] [str [dex [int [faith [luck]]]]]",
+        desc: "Use this command to calculate the AR of any DS3 weapon, along with the expected damage on R1s/L1s, backstabs and ripostes.",
 
         perms: ['USER', 'MANAGER', 'ADMIN'],
-        module: "a module ID so a set of commands can be activated/deactivated (like all the !addbuild, !removebuild, etc commands)",
+        module: "DS3",
 
-        canDM: false,
-        canEdit: false,
-        debug: false,
+        canDM: true,
+        canEdit: true,
+        debug: true,
 
         parameters: [
             {
@@ -85,21 +85,24 @@
                 ]
             }
         ],
-        
         examples: [
             {
-                command: "`roll average 10D4 bla bla`",
-                desc: "how the command would function #1"
+                command: "!weapon sharp claymore +7 16 35 10 10 10",
+                desc: "The 1-hand/2-hand and weapon self-buff states can be toggled via appropriate reactions on the printout. The normal upgrade path input is used for special weapons; `!weapon black knight sword +10 20 18 10 10 10` will print out the data for a black knight sword at an upgrade level of +5.\n\nIn the case of an incomplete input, like `!weapon caestus`, the missing upgrade and stat data will be collected from the build you currently have set through the `!setbuild` command.\n\nThis command can also be used to compare up to four different weapons of a given upgrade level and stat combination. This is done by listing multiple weapons as the `[weapon name and infusion]` argument, separated by \"vs\"."
             },
             {
-                command: "`roll average 600D600 bla bla`",
-                desc: "how the command would function #1"
+                command: "!weapon fire dagger vs chaos dagger +3 10 10 10 10 10",
+                desc: "Note that the upgrade and stats need to be specified only once, and at the end.\n\nTyping out the command without a `[weapon name and infusion]` argument will make SlugBot calculate the overall ten best weapons based on expected R1 damage for the upgrade level and stats provided. The printout for this kind of input will include reactions to toggle between various weapon classes, along with the usual 1-hand/2-hand and self-buff options. SlugBot will also note if any of the weapons are usable only when 2-handed."
+            },
+            {
+                command: "!weapon +4 14 25 9 9 7",
+                desc: "..."
             }
         ]
     },
-    "roll": {
-        format: "${PREFIX}roll [average] <dice count>D<dice type> [modifier]",
-        desc: "description of command",
+    "mute": {
+        format: "${PREFIX}mute <member> [duration] [reason]",
+        desc: "This command is used to mute members. Giving a duration and reason are optional. Not giving a duration will mute the user until they are manually unmuted. The member can be specified by ping, user ID or name.",
 
         perms: ['USER', 'MANAGER', 'ADMIN'],
         module: "a module ID so a set of commands can be activated/deactivated (like all the !addbuild, !removebuild, etc commands)",
@@ -110,28 +113,29 @@
 
         parameters: [
             {
-                param: "Parameter #1",
+                param: "<member>",
                 values: [
                     {
-                        value: "Y",
-                        desc: "Y can allow for blah blah"
-                    },
-                    {
-                        value: "Z",
-                        desc: "Z can also allow for blah blah but moreover blah"
+                        value: "Username, ID",
+                        desc: "Username or ID of the user to be muted"
                     }
                 ]
             },
             {
-                param: "Parameter #2",
+                param: "[duration]",
                 values: [
                     {
                         value: "A",
-                        desc: "A can allow for blah blah"
-                    },
+                        desc: "Duration of the mute"
+                    }
+                ]
+            },
+            {
+                param: "[reason]",
+                values: [
                     {
                         value: "A",
-                        desc: "A can also allow for blah blah but moreover blah"
+                        desc: "Reason for the mute"
                     }
                 ]
             }
@@ -139,13 +143,10 @@
         
         examples: [
             {
-                command: "`roll average 10D4 bla bla`",
-                desc: "how the command would function #1"
-            },
-            {
-                command: "`roll average 600D600 bla bla`",
-                desc: "how the command would function #1"
+                command: "!mute 2340287340287 10 For reasons and stuff.",
+                desc: "This will mute the member with ID 2340287340287 for 10 minutes and DM them the reason 'For reasons and stuff'."
             }
         ]
     }
 }
+
