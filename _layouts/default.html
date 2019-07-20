@@ -6,9 +6,12 @@
 	{% include head.html %}
 </head>
 <body>
+	<div id="master-wrapper">
 	{% include nav.html %}
-	<div id="content">
-	{{ content }}
+		<div id="content">
+		{{ content }}
+		</div>	
 	</div>
+	{% include modal.html %}
 </body>
 </html>

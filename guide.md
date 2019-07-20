@@ -11,7 +11,7 @@ HOOOOOLD UP
 
 *****************************
 
-So this is a test of linking commands and adding a modal alongside them. Here's a link to a test command, existing in `commands.json`: <span class="command-link" data-command="setchannel" title="See command info">`test_command`</span>. Pretty nifty, huh?
+So this is a test of linking commands and adding a modal alongside them. Here's a link to a test command, existing in `commands.json`: <span class="command-link" data-command="test_command"/>. Pretty nifty, huh? Here's another: <span class="command-link" data-command="other_test_cmd"/>, and <span class="command-link" data-command="roll"/> to boot with it.
 
 
 *****************************
