@@ -1,0 +1,56 @@
+---
+layout: info
+Title: SlugBot Docs
+type: 'docs'
+---
+<h1>Documentation</h1>
+<p>This page contains documentation for each command that SlugBot currently has.</p>
+<hr>
+{% for command in site.data.commands %}
+	{% assign commandData = command.last %}
+	<h2 id="{{command.first}}"><code>{{command.first}}</code></h2>
+	<pre class="highlight"><code>!{{commandData.format | escape | slice: 9, 999}}</code></pre>
+		<!-- this is a fairly crude workaround. A better alternative would be to use "repalce: ${PREFIX}, "!" ", but that doesn't work because of the curly braces, which Liquid syntax uses for its own markup.-->
+	<p>{{commandData.desc | markdownify}}<p>
+
+
+	<ul>
+		{% if commandData.canDM %}
+		<li>Can be DM'ed.</li>
+		{% endif %}	
+
+		{% if commandData.canEdit %}
+		<li>Can be edited after creating.</li>
+		{% endif %}
+		<li>Has following permissions:
+			<ul>
+			{% for permission in commandData.perms%}
+				<li>
+					{{permission}}
+				</li>
+			{% endfor %}
+			</ul>
+		</li>
+	</ul>
+
+	<h4>Parameters</h4>
+	{% for parameter in commandData.parameters%}
+	<code>{{parameter.param | escape}}</code> can have the following values:
+		<ul>
+		{% for paramValue in parameter.values%}
+		<li>
+			<code>{{paramValue.value}}</code> - {{paramValue.desc}}
+		</li>
+		{% endfor %}
+		</ul>
+	{% endfor %}
+
+	<h4>Examples</h4>
+	<div>
+	{% for example in commandData.examples%}
+		<pre class="highlight"><code>{{example.command | escape}}</code></pre>
+		<p>{{example.desc}}</p>
+	{% endfor %}
+	</div>
+	<hr>
+{% endfor %}

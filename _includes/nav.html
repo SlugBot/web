@@ -9,13 +9,12 @@
 		<ul>
 			{% for item in site.data.navigation %}
 				<li>
-					<a href="{{ item.link }}" {% if page.url == item.link %}class="current-page"{% endif %}>{{ item.name }}</a>
+					<a href="{{ item.link }}">{{ item.name }}</a>
 				</li>
 			{% endfor %}
 
 			{% if page.type == 'guide' %}
 				<hr>
-				<li>Available commands:</li>
 				<div id="toc-wrapper">
 					{% for shortcut in site.data.guide %}
 					<li>
@@ -27,11 +26,10 @@
 
 			{% if page.type == 'docs' %}
 				<hr>
-				<li>Available commands:</li>
 				<div id="toc-wrapper">
-					{% for shortcut in site.data.docs %}
+					{% for command in site.data.commands %}
 					<li>
-						<a href="{{ shortcut.link }}">{{ shortcut.name }}</a>
+						<a href="#{{command.first}}">{{command.first}}</a>
 					</li>
 					{% endfor %}
 				</div>

@@ -1,0 +1,151 @@
+{
+    "test_command": {
+        format: "${PREFIX}test_command [average] <dice count>D<dice type> [modifier]",
+        desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla elementum, nibh ~~id pretium eleifend~~, ipsum quam volutpat diam, *id tincidunt nisl nisi vel* turpis. Integer pellentesque faucibus elit sed tempor.\n\n Here's a test link within markdown within JSON: [example.com](https://example.com). Works as expected, buddy.",
+
+        perms: ['USER', 'MANAGER', 'ADMIN'],
+        module: "MODULE_ID",
+
+        canDM: true,
+        canEdit: true,
+        debug: false,
+
+        parameters: [
+            {
+                param: "[average]",
+                values: [
+                    {
+                        value: "Y",
+                        desc: "Y can allow for blah blah"
+                    },
+                    {
+                        value: "Z",
+                        desc: "Z can also allow for blah blah but moreover blah"
+                    }
+                ]
+            },
+            {
+                param: "<dice count>",
+                values: [
+                    {
+                        value: "A number",
+                        desc: "The amount of dice to be thrown"
+                    }
+                ]
+            }
+        ],
+        
+        examples: [
+            {
+                command: "roll average 10D4 bla bla",
+                desc: "how the command would function #1"
+            },
+            {
+                command: "roll average 600D600 bla bla",
+                desc: "how the command would function #1"
+            }
+        ]
+    },
+    "other_test_cmd": {
+        format: "${PREFIX}other_test_cmd [average] <dice count>D<dice type> [modifier]",
+        desc: "description of command",
+
+        perms: ['USER', 'MANAGER', 'ADMIN'],
+        module: "a module ID so a set of commands can be activated/deactivated (like all the !addbuild, !removebuild, etc commands)",
+
+        canDM: false,
+        canEdit: false,
+        debug: false,
+
+        parameters: [
+            {
+                param: "Parameter #1",
+                values: [
+                    {
+                        value: "Y",
+                        desc: "Y can allow for blah blah"
+                    },
+                    {
+                        value: "Z",
+                        desc: "Z can also allow for blah blah but moreover blah"
+                    }
+                ]
+            },
+            {
+                param: "Parameter #2",
+                values: [
+                    {
+                        value: "A",
+                        desc: "A can allow for blah blah"
+                    },
+                    {
+                        value: "A",
+                        desc: "A can also allow for blah blah but moreover blah"
+                    }
+                ]
+            }
+        ],
+        
+        examples: [
+            {
+                command: "`roll average 10D4 bla bla`",
+                desc: "how the command would function #1"
+            },
+            {
+                command: "`roll average 600D600 bla bla`",
+                desc: "how the command would function #1"
+            }
+        ]
+    },
+    "roll": {
+        format: "${PREFIX}roll [average] <dice count>D<dice type> [modifier]",
+        desc: "description of command",
+
+        perms: ['USER', 'MANAGER', 'ADMIN'],
+        module: "a module ID so a set of commands can be activated/deactivated (like all the !addbuild, !removebuild, etc commands)",
+
+        canDM: false,
+        canEdit: false,
+        debug: false,
+
+        parameters: [
+            {
+                param: "Parameter #1",
+                values: [
+                    {
+                        value: "Y",
+                        desc: "Y can allow for blah blah"
+                    },
+                    {
+                        value: "Z",
+                        desc: "Z can also allow for blah blah but moreover blah"
+                    }
+                ]
+            },
+            {
+                param: "Parameter #2",
+                values: [
+                    {
+                        value: "A",
+                        desc: "A can allow for blah blah"
+                    },
+                    {
+                        value: "A",
+                        desc: "A can also allow for blah blah but moreover blah"
+                    }
+                ]
+            }
+        ],
+        
+        examples: [
+            {
+                command: "`roll average 10D4 bla bla`",
+                desc: "how the command would function #1"
+            },
+            {
+                command: "`roll average 600D600 bla bla`",
+                desc: "how the command would function #1"
+            }
+        ]
+    }
+}

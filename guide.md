@@ -6,6 +6,16 @@ type: 'guide'
 # SlugBot User Guide
 The following page will provide an easy-to-follow overview on how to install and run SlugBot in your Discord server or Twtich chat, and how to get the most out of it.
 
+
+HOOOOOLD UP
+
+*****************************
+
+So this is a test of linking commands and adding a modal alongside them. Here's a link to a test command, existing in `commands.json`: <span class="command-link" data-command="setchannel" title="See command info">`test_command`</span>. Pretty nifty, huh?
+
+
+*****************************
+
 # Discord setup
 
 ## Streamers and Stream Notifications
