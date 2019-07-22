@@ -402,13 +402,19 @@
     parameters: [
       {
         param: "<welcome message>", 
-        values: [{value:"String welcome message"}]
+        values: [
+          {
+            value:"String welcome message"
+          }
+        ]
       }
     ],
-    examples: [{
-      command: "!setwelcomemessage welcome ${member} to the server!",
-      desc: "`${member}` will be replaced with the new member's display name."
-    }]
+    examples: [
+      {
+        command: "!setwelcomemessage welcome ${member} to the server!",
+        desc: "`${member}` will be replaced with the new member's display name."
+      }
+    ]
   },
   streamer: {
     format: "${PREFIX}streamer <add | remove | list> <streamer name>",
