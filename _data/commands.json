@@ -441,7 +441,7 @@
         ]
       },
       {
-        param:"<streamer name>",
+        param: "<streamer name>",
         values: [
           {
             value: "Twitch username"
