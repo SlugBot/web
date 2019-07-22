@@ -404,7 +404,7 @@
         param: "<welcome message>", 
         values: [
           {
-            value:"String welcome message"
+            value: "String welcome message"
           }
         ]
       }
