@@ -1,152 +1,519 @@
 {
-    "test_command": {
-        format: "${PREFIX}test_command [average] <dice count>D<dice type> [modifier]",
-        desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla elementum, nibh ~~id pretium eleifend~~, ipsum quam volutpat diam, *id tincidunt nisl nisi vel* turpis. Integer pellentesque faucibus elit sed tempor.\n\n Here's a test link within markdown within JSON: [example.com](https://example.com). Works as expected, buddy.",
+	"test_command": {
+		format: "${PREFIX}test_command [average] <dice count>D<dice type> [modifier]",
+		desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla elementum, nibh ~~id pretium eleifend~~, ipsum quam volutpat diam, *id tincidunt nisl nisi vel* turpis. Integer pellentesque faucibus elit sed tempor.\n\n Here's a test link within markdown within JSON: [example.com](https://example.com). Works as expected, buddy.",
 
-        perms: ['USER', 'MANAGER', 'ADMIN'],
-        module: "MODULE_ID",
+		perms: ['USER', 'MANAGER', 'ADMIN'],
+		module: "MODULE_ID",
 
-        canDM: true,
-        canEdit: true,
-        debug: false,
+		canDM: true,
+		canEdit: true,
+		debug: false,
 
-        parameters: [
-            {
-                param: "[average]",
-                values: [
-                    {
-                        value: "Y",
-                        desc: "Y can allow for blah blah"
-                    },
-                    {
-                        value: "Z",
-                        desc: "Z can also allow for blah blah but moreover blah"
-                    }
-                ]
-            },
-            {
-                param: "<dice count>",
-                values: [
-                    {
-                        value: "A number",
-                        desc: "The amount of dice to be thrown"
-                    }
-                ]
-            }
-        ],
-        
-        examples: [
-            {
-                command: "roll average 10D4 bla bla",
-                desc: "how the command would function #1"
-            },
-            {
-                command: "roll average 600D600 bla bla",
-                desc: "how the command would function #1"
-            }
-        ]
-    },
-    "weapon": {
-        format: "${PREFIX}weapon [weapon name and infusion [vs ...]] [upgrade level] [str [dex [int [faith [luck]]]]]",
-        desc: "Use this command to calculate the AR of any DS3 weapon, along with the expected damage on R1s/L1s, backstabs and ripostes.",
+		parameters: [
+			{
+				param: "[average]",
+				values: [
+					{
+						value: "Y",
+						desc: "Y can allow for blah blah"
+					},
+					{
+						value: "Z",
+						desc: "Z can also allow for blah blah but moreover blah"
+					}
+				]
+			},
+			{
+				param: "<dice count>",
+				values: [
+					{
+						value: "A number",
+						desc: "The amount of dice to be thrown"
+					}
+				]
+			}
+		],
+		
+		examples: [
+			{
+				command: "roll average 10D4 bla bla",
+				desc: "how the command would function #1"
+			},
+			{
+				command: "roll average 600D600 bla bla",
+				desc: "how the command would function #1"
+			}
+		]
+	},
+	"weapon": {
+		format: "${PREFIX}weapon [weapon name and infusion [vs ...]] [upgrade level] [str [dex [int [faith [luck]]]]]",
+		desc: "Use this command to calculate the AR of any DS3 weapon, along with the expected damage on R1s/L1s, backstabs and ripostes.",
 
-        perms: ['USER', 'MANAGER', 'ADMIN'],
-        module: "DS3",
+		perms: ['USER', 'MANAGER', 'ADMIN'],
+		module: "DS3",
 
-        canDM: true,
-        canEdit: true,
-        debug: true,
+		canDM: true,
+		canEdit: true,
+		debug: true,
 
-        parameters: [
-            {
-                param: "Parameter #1",
-                values: [
-                    {
-                        value: "Y",
-                        desc: "Y can allow for blah blah"
-                    },
-                    {
-                        value: "Z",
-                        desc: "Z can also allow for blah blah but moreover blah"
-                    }
-                ]
-            },
-            {
-                param: "Parameter #2",
-                values: [
-                    {
-                        value: "A",
-                        desc: "A can allow for blah blah"
-                    },
-                    {
-                        value: "A",
-                        desc: "A can also allow for blah blah but moreover blah"
-                    }
-                ]
-            }
-        ],
-        examples: [
-            {
-                command: "!weapon sharp claymore +7 16 35 10 10 10",
-                desc: "The 1-hand/2-hand and weapon self-buff states can be toggled via appropriate reactions on the printout. The normal upgrade path input is used for special weapons; `!weapon black knight sword +10 20 18 10 10 10` will print out the data for a black knight sword at an upgrade level of +5.\n\nIn the case of an incomplete input, like `!weapon caestus`, the missing upgrade and stat data will be collected from the build you currently have set through the `!setbuild` command.\n\nThis command can also be used to compare up to four different weapons of a given upgrade level and stat combination. This is done by listing multiple weapons as the `[weapon name and infusion]` argument, separated by \"vs\"."
-            },
-            {
-                command: "!weapon fire dagger vs chaos dagger +3 10 10 10 10 10",
-                desc: "Note that the upgrade and stats need to be specified only once, and at the end.\n\nTyping out the command without a `[weapon name and infusion]` argument will make SlugBot calculate the overall ten best weapons based on expected R1 damage for the upgrade level and stats provided. The printout for this kind of input will include reactions to toggle between various weapon classes, along with the usual 1-hand/2-hand and self-buff options. SlugBot will also note if any of the weapons are usable only when 2-handed."
-            },
-            {
-                command: "!weapon +4 14 25 9 9 7",
-                desc: "..."
-            }
-        ]
-    },
-    "mute": {
-        format: "${PREFIX}mute <member> [duration] [reason]",
-        desc: "This command is used to mute members. Giving a duration and reason are optional. Not giving a duration will mute the user until they are manually unmuted. The member can be specified by ping, user ID or name.",
+		parameters: [
+			{
+				param: "Parameter #1",
+				values: [
+					{
+						value: "Y",
+						desc: "Y can allow for blah blah"
+					},
+					{
+						value: "Z",
+						desc: "Z can also allow for blah blah but moreover blah"
+					}
+				]
+			},
+			{
+				param: "Parameter #2",
+				values: [
+					{
+						value: "A",
+						desc: "A can allow for blah blah"
+					},
+					{
+						value: "A",
+						desc: "A can also allow for blah blah but moreover blah"
+					}
+				]
+			}
+		],
+		examples: [
+			{
+				command: "!weapon sharp claymore +7 16 35 10 10 10",
+				desc: "The 1-hand/2-hand and weapon self-buff states can be toggled via appropriate reactions on the printout. The normal upgrade path input is used for special weapons; `!weapon black knight sword +10 20 18 10 10 10` will print out the data for a black knight sword at an upgrade level of +5.\n\nIn the case of an incomplete input, like `!weapon caestus`, the missing upgrade and stat data will be collected from the build you currently have set through the `!setbuild` command.\n\nThis command can also be used to compare up to four different weapons of a given upgrade level and stat combination. This is done by listing multiple weapons as the `[weapon name and infusion]` argument, separated by \"vs\"."
+			},
+			{
+				command: "!weapon fire dagger vs chaos dagger +3 10 10 10 10 10",
+				desc: "Note that the upgrade and stats need to be specified only once, and at the end.\n\nTyping out the command without a `[weapon name and infusion]` argument will make SlugBot calculate the overall ten best weapons based on expected R1 damage for the upgrade level and stats provided. The printout for this kind of input will include reactions to toggle between various weapon classes, along with the usual 1-hand/2-hand and self-buff options. SlugBot will also note if any of the weapons are usable only when 2-handed."
+			},
+			{
+				command: "!weapon +4 14 25 9 9 7",
+				desc: "..."
+			}
+		]
+	},
+	"addbuild": {
+		format: "${PREFIX}addbuild [build name] [soul level] [upgrade level] <link>",
+		desc: "Used to add a build to your build list. Stating `soul level`, `upgrade level` and `build planner link` are optional but recommended. If a soulsplanner link is suplied, any missing data will be taken from the build directly - often, all thats needed.",
+		perms: ["USER"],
+		canDM: true,
+		canEdit: false,
+		parameters: [
+			{
+				param: "[build name]",
+				values: [
+					{
+						value: "Name of build",
+						desc: "Unique identifier for build."
+					}
+				]
+			},
+			{
+				param: "[soul level]",
+				values: [
+					{
+						value: "Soul level",
+						desc: "Soul level of a Dark Souls build."
+					},
+					{
+						value: "Blood level",
+						desc: "Blood level of a Bloodborne build."
+					}
+				]
+			},
+			{
+				param: "[Upgrade level]",
+				values: [
+					{
+						value: "Upgrade level",
+						desc: "Weapon upgrade level of build."
+					}
+				]
+			},
+			{
+				param: "<link>",
+				values: [
+					{
+						value: "DS1 SoulsPlanner link"
+					},
+					{
+						value: "DS2 SoulsPlanner link"
+					},
+					{
+						value: "DS3 SoulsPlanner link",
+						desc: "All optional parameters will be filled in with the data from build planner link."
+					}
+				]
+			},
+		],
+		examples: [
+			{
+				command: "!addbuild Vilhelm's Squire SL60 +7 https://soulsplanner.com/darksouls3/1381",
+				desc: "This will add a build by the name of 'Vilhelm's Squire' to the build list. If a build by the same name already exists in the list, its information will be updated with the new information stated."
+			}, 
+			{
+				command: "!addbuild https://soulsplanner.com/darksouls3/1139",
+				desc: "This will take the name, soul level, and upgrade level directly from the build linked."
+			}
+		]
+	},
+	"removebuild": {
+		format: "${PREFIX}removebuild <build id>",
+		desc: "Used to remove a build from a your build list.",
+		perms: ["USER"],
+		canDM: true,
+		canEdit: false,
+		parameters: [
+			{
+				param: "<build id>",
+				values: [
+					{
+						value: "build name"
+					},
+					{
+						value: "build ID",
+						desc: "Number of a build in the build list"
+					}
+				]
+			},
+		],
+		examples: [
+			{
+				command: "!removebuild Vilhelm's Squire",
+				desc: "This will remove the build 'Vilhelm's Squire' from the build list. Build name is case insensitive."
+			}
+		]
+	},
+	build: {
+		format: "${PREFIX}build [member]",
+		desc: "Used to view your own build list or the build list of another member.",
+		perms: ["USER"],
+		canDM: false,
+		canEdit: false,
+		parameters: [
+			{
+				param: "[member]",
+				values: [
+					{
+						value: "Discord username of member"
+					},
+					{
+						value: "Discord ID of member"
+					},
+					{
+						value: "member mention"
+					}
+				]
+			},
+		],
+		examples: [
+			{
+				command: "!build @Tikaro",
+				desc: "This will show Tikaro's build list."
+			}
+		]
+	},
 
-        perms: ['USER', 'MANAGER', 'ADMIN'],
-        module: "a module ID so a set of commands can be activated/deactivated (like all the !addbuild, !removebuild, etc commands)",
+	addcommand: {
+		format: "${PREFIX}addcommand <command> <response>",
+		desc: "Used to add/edit a custom command that will respond with a specified string. alternatively regex can be used in place of a command to make SlugBot send a response message whenever the regex matches a members message.\n\nThe response can contain certain replacer flags that will be replaced will specific values when sent by slugbot.",
+		perms: ["ADMIN"],
+		canDM: false,
+		canEdit: false,
+		parameters: [
+			{
+				param: "<command>",
+				values: [
+					{
+						value: "New command string"
+					},
+					{
+						value: "Existing command string",
+						desc: "Will overwrite its response"
+					},
+					{
+						value: "Regex keyword",
+						desc: "indicated by a string starting and ending with `/`"
+					}
+				]
+			},
+			{
+				param: "<response>",
+				values: [
+					{
+						value: "Any string that will be displayed when the custom command is used or the regex is matched",
+						desc: ""
+					}
+				]
+			}
+		],
+		examples: [
+			{
+				command: "!addcommand flip You flipped a coin and got ${rand:heads|tails}!",
+				desc: "This will add a command that will respond with `You flipped a coin and got heads!` OR `You flipped a coin and got tails!` when the command `!flip` is used."
+			},
+			{
+				command: "!addcommand /don't\s@\sme/ <@${id}>",
+				desc: "This will create a regex keyword match that will respond with a discord mention whenever a message contains the string `don't @ me`."
+			}
+		]
+	},
+	removecommand: {
+		format: "${PREFIX}removecommand <command>",
+		desc: "Used to remove an existing custom command.",
+		perms: ["ADMIN"],
+		canDM: false,
+		canEdit: false,
+		parameters: [
+			{
+				param: "<command>",
+				values: [
+					{
+						param: "Existing command to remove"
+					},
+					{
+						param: "Existing regex keyword to remove"
+					}
+				]
+			}
+		],
+		examples: [ 
+			{
+				command: "!removecommand ping",
+				desc: "This will remove the custom command `!ping`."
+			}
+		]
+	},
+	commands: {
+		format: "!commands",
+		desc: "Used to get a list of all custom commands in the server DMed to you.",
+		perms: ["USER"],
+		canDM: false,
+		canEdit: false,
+		parameters: [],
+		examples: []
+	},
+	constraint: {
+		format: "${PREFIX}constraint <command> [<whitelist|blacklist|remove> <channel|role|member>]",
+		desc:"Use this command to add channels, roles, and members to a command's whitelist or blacklist. __WHITELISTS AND BLACKLISTS TAKE PRIORITY OVER DEFAULT COMMAND PERMISSIONS.__\n* A command can only be used in whitelisted channels. If There are no whitelisted channels, the command can be used in every channel.\n* A command can only be used by members with whitelisted roles. If There are no whitelisted roles, all roles can use the command.\n* A command can only be used by whitelisted members. If there are no whitelisted members, all members can use the command\n* A command can not be used in blacklisted channels.\n* A command can not be used by members with blacklisted roles.\n* A command can not be used by blacklisted members.",
+		perms: ["ADMIN"],
+		canDM: false,
+		canEdit: false,
+		parameters: [
+			{
+				param: "<command>",
+				values: [
+					{
+						value: "slugbot command",
+						desc: "The command you wish to set permission constraints for."
+					}
+				],
+			}
+		],
+		examples: []
+	},
+	setrole: {
+		format: "${PREFIX}setrole [<role to set> <reset | role name>]",
+		desc: "Set roles for SlugBot to use. `!setrole` with no arguments will show information on which roles have been set.\n\nThe `mute` role will be created and set automatically on the first use of a mute command if a role was not already set beforehand.",
+		perms: ["ADMIN"],
+		canDM: false,
+		canEdit: false,
+		parameters: [
+			{
+				param: "<role to set>",
+				values: [
+					{
+						value: "mute",
+						desc: "Mute role (auto-generated)"
+					},
+					{
+						value: "botAdmin",
+						desc: "Bot admin role"
+					},
+					{
+						value: "global",
+						desc: "Role assigned to all members"
+					},
+					{
+						value: "weeklytoprank",
+						desc: "Role given to weekly top ranking member"
+					},
+					{
+						value: "totaltoprank",
+						desc: "Role given to top ranking member"
+					},
+					{
+						value: "streamer",
+						desc: "Role that adds members to the streamer list"
+					},
+					{
+						value: "pc",
+						desc: "PC platform role"
+					},
+					{
+						value: "ps4",
+						desc: "PS4 platform role"
+					},
+					{
+						value: "xbox",
+						desc: "XBox platform role"
+					}
+				]
+			},
+			{
+				param: "<reset | role name>",
+				values: [
+					{
+						value: "reset",
+						desc: "to reset the role for SlugBot"
+					},
+					{
+						value: "role name",
+						desc: "An existing role for slugbot to use"
+					}
+				]
+			}
+		],
+		examples: [
+			{
+				command: "!setrole totalTopRank Top Sleg",
+				desc: "This will set totalTopRank to use a server role called 'Top Sleg'."
+			},
+			{
+				command: "!setrole weeklyTopRank reset",
+				desc: "This will unset the weeklyTopRank role, disabling any slugbot functionality that uses the weeklyTopRank role."
+			}
+		]
+	},
+	setwelcomemessage: {
+		format: "${PREFIX}setwelcomemessage <welcome message>",
+		desc: "Use this command to customise the welcome message sent when a new member joins the server.",
+		perms: ["ADMIN"],
+		canDM: false,
+		canEdit: false,
+		parameters: [
+			{
+				param: "<welcome message>", 
+				values: [{value:"String welcome message"}]
+			}
+		],
+		examples: [{
+			command: "!setwelcomemessage welcome ${member} to the server!",
+			desc: "`${member}` will be replaced with the new member's display name."
+		}]
+	},
+	streamer: {
+		format: "${PREFIX}streamer <add | remove | list> <streamer name>",
+		desc: "Use this command to add a streamer to the streams notification list or remove a streamer from the list. A notification message will be sent to the '#streams' channel (if set) when a streamer in the list goes live on twitch.tv. The notification gets deleted when the streamer goes offline again.",
+		perms: ["ADMIN"],
+		canDM: false,
+		canEdit: false,
+		parameters: [
+			{
+				param: "<add | remove | list>", 
+				values: [
+					{
+						value:"add",
+						desc: "specify to add streamer to list"
+					},
+					{
+						value:"remove",
+						desc: "specify to remove streamer to list"
+					},
+					{
+						value:"list",
+						desc: "specify to list all streamers"
+					}
+				]
+			},
+			{
+				param:"<streamer name>",
+				values: [
+					{
+						value: "Twitch username"
+					}
+				]
+			}
+		],
+		examples: [
+			{
+				command: "!streamer add Florador",
+				desc: "This will add twitch streamer 'Florador' to the notification list."
+			},
+			{
+				command: "!streamer remove Florador",
+				desc: "This will remove twitch streamer 'Florador' from the notification list."
+			},
+			{
+				command: "!streamer list",
+				desc: "This will list all streamers currently set to display when they go live."
+			}
+		]
+	},
+	"mute": {
+		format: "${PREFIX}mute <member> [duration] [reason]",
+		desc: "This command is used to mute members. Giving a duration and reason are optional. Not giving a duration will mute the user until they are manually unmuted. The member can be specified by ping, user ID or name.",
 
-        canDM: false,
-        canEdit: false,
-        debug: false,
+		perms: ['ADMIN'],
 
-        parameters: [
-            {
-                param: "<member>",
-                values: [
-                    {
-                        value: "Username, ID",
-                        desc: "Username or ID of the user to be muted"
-                    }
-                ]
-            },
-            {
-                param: "[duration]",
-                values: [
-                    {
-                        value: "A",
-                        desc: "Duration of the mute"
-                    }
-                ]
-            },
-            {
-                param: "[reason]",
-                values: [
-                    {
-                        value: "A",
-                        desc: "Reason for the mute"
-                    }
-                ]
-            }
-        ],
-        
-        examples: [
-            {
-                command: "!mute 2340287340287 10 For reasons and stuff.",
-                desc: "This will mute the member with ID 2340287340287 for 10 minutes and DM them the reason 'For reasons and stuff'."
-            }
-        ]
-    }
+		canDM: false,
+		canEdit: false,
+		debug: false,
+
+		parameters: [
+			{
+				param: "<member>",
+				values: [
+					{
+						value: "Username",
+						desc: "Discord username of the user to be muted"
+					},
+					{
+						value: "discord ID",
+						desc: "discord ID of the user to be muted"
+					},
+					,
+					{
+						value: "discord member mention",
+						desc: "Mention member to be muted"
+					}
+				]
+			},
+			{
+				param: "[duration]",
+				values: [
+					{
+						value: "Number",
+						desc: "Number of minutes the mute should last for"
+					}
+				]
+			},
+			{
+				param: "[reason]",
+				values: [
+					{
+						value: "String",
+						desc: "reason for why the member was muted. Will be DMed to the member"
+					}
+				]
+			}
+		],
+		
+		examples: [
+			{
+				command: "!mute 2340287340287 10 For reasons and stuff.",
+				desc: "This will mute the member with ID 2340287340287 for 10 minutes and DM them the reason 'For reasons and stuff'."
+			}
+		]
+	}
+
 }
 
