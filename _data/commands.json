@@ -427,7 +427,7 @@
         param: "<add | remove | list>", 
         values: [
           {
-            value:"add",
+            value: "add",
             desc: "specify to add streamer to list"
           },
           {
@@ -520,6 +520,5 @@
       }
     ]
   }
-
 }
 
