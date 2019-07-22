@@ -261,7 +261,7 @@
 				desc: "This will add a command that will respond with `You flipped a coin and got heads!` OR `You flipped a coin and got tails!` when the command `!flip` is used."
 			},
 			{
-				command: "!addcommand /don't\s@\sme/ <@${id}>",
+				command: "!addcommand /don't\\s@\\sme/ <@${id}>",
 				desc: "This will create a regex keyword match that will respond with a discord mention whenever a message contains the string `don't @ me`."
 			}
 		]
