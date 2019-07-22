@@ -486,7 +486,6 @@
             value: "discord ID",
             desc: "discord ID of the user to be muted"
           },
-          ,
           {
             value: "discord member mention",
             desc: "Mention member to be muted"
@@ -511,8 +510,7 @@
           }
         ]
       }
-    ],
-    
+    ],    
     examples: [
       {
         command: "!mute 2340287340287 10 For reasons and stuff.",
