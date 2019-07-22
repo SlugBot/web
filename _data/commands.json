@@ -435,7 +435,7 @@
             desc: "specify to remove streamer to list"
           },
           {
-            value:"list",
+            value: "list",
             desc: "specify to list all streamers"
           }
         ]
