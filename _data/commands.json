@@ -517,6 +517,148 @@
         desc: "This will mute the member with ID 2340287340287 for 10 minutes and DM them the reason 'For reasons and stuff'."
       }
     ]
+  },
+  unmute: {
+    format: "${PREFIX}unmute <member>",
+    desc: "Use this command to unmute a muted member.",
+
+    perms: ['ADMIN'],
+
+    canDM: false,
+    canEdit: false,
+    debug: false,
+
+    parameters: [
+      {
+        param: "<member>",
+        values: [
+          {
+            value: "Username",
+            desc: "Discord username of the user to be muted"
+          },
+          {
+            value: "discord ID",
+            desc: "discord ID of the user to be muted"
+          },
+          {
+            value: "discord member mention",
+            desc: "Mention member to be muted"
+          }
+        ]
+      }
+    ],
+    examples: [
+      {
+        command: "!unmute Alex_",
+        desc: "This will unmute member 'Alex_' if they are muted."
+      }
+    ]
+  },
+  roleatlevel: {
+    format: "${PREFIX}roleatlevel [<add|remove> <role name> <level> [send notification?]]",
+    desc: "Use this command to set roles to be given to members once they reach a certain level. Using the command with no arguments will list all the roles and their levels at which they will be given.",
+
+    perms: ['ADMIN'],
+
+    canDM: false,
+    canEdit: false,
+    debug: false,
+
+    parameters: [
+      {
+        param: "<add|remove>",
+        values: [
+          {
+            value: "add",
+            desc: "specify to add new role-at-level"
+          },
+          {
+            value: "remove",
+            desc: "specify to remove existing role-at-level"
+          }
+        ]
+      },
+      {
+        param: "<role name>",
+        values: [
+          {
+            value: "role name",
+            desc: "Case insensitive string containing a role name. can include spaces"
+          },
+          {
+            value: "role mention",
+            desc: "Discord role mention"
+          }
+        ]
+      },
+      {
+        param: "<level>",
+        values: [
+          {
+            value: Integer number,
+            desc: "Corresponding to the level requirement of the role"
+          }
+        ]
+      },
+      {
+        param: "[send notification?]",
+        values: [
+          {
+            value: "true",
+            desc: "Boolean value stating that a message should be sent in chat when the member reaches the required level"
+          },
+          {
+            value: "false",
+            desc: "Boolean value stating that a message should not be sent in chat when the member reaches the required level"
+          }
+        ]
+      }
+    ],
+    examples: [
+      {
+        command: "!roleatlevel add Slug 10",
+        desc: "This will set the `slug` role to be given to any member with a level greater than or equal to 10."
+      }
+    ]
+  },
+  giveme: {
+    format: "${PREFIX}giveme [add|remove] <role name>",
+    desc: "Use this command to set roles to be self-assignable or toggle self-assignable roles. Using the command with no arguments will list all self-assignable roles.",
+
+    perms: ['USER'],
+
+    canDM: false,
+    canEdit: false,
+    debug: false,
+
+    parameters: [
+      {
+        param: "[add|remove]",
+        values: [
+          {
+            value: "add",
+            desc: "specify to add new self-assignable role"
+          },
+          {
+            value: "remove",
+            desc: "specify to remove existing self-assignable role"
+          }
+        ]
+      },
+      {
+        param: "<role name>",
+        values: [
+          {
+            value: "role name",
+            desc: "Case insensitive string containing a role name. can include spaces"
+          },
+          {
+            value: "role mention",
+            desc: "Discord role mention"
+          }
+        ]
+      }
+    ]
   }
 }
 
