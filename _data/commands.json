@@ -1124,7 +1124,7 @@
     ]
   },
 
-  placeholder: {
+  roll: {
     format: "${PREFIX}roll [avg] <dice count>D<dice type> [modifier]",
     desc: "Use this command to get SlugBot to roll dice. Including the `avg` flag will return a readout displaying statistical information on the roll instead.",
 
@@ -1248,8 +1248,8 @@
 
     examples: [
       {
-        command: "",
-        desc: ""
+        command: "!whowas Amil of the Deep",
+        desc: "This will show 5 builds from SlugBots build database that most closely match the name `Amil of the Deep`."
       }
     ]
   },
