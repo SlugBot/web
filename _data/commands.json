@@ -1,52 +1,5 @@
 {
-  "test_command": {
-    format: "${PREFIX}test_command [average] <dice count>D<dice type> [modifier]",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla elementum, nibh ~~id pretium eleifend~~, ipsum quam volutpat diam, *id tincidunt nisl nisi vel* turpis. Integer pellentesque faucibus elit sed tempor.\n\n Here's a test link within markdown within JSON: [example.com](https://example.com). Works as expected, buddy.",
-
-    perms: ['USER', 'MANAGER', 'ADMIN'],
-    module: "MODULE_ID",
-
-    canDM: true,
-    canEdit: true,
-    debug: false,
-
-    parameters: [
-      {
-        param: "[average]",
-        values: [
-          {
-            value: "Y",
-            desc: "Y can allow for blah blah"
-          },
-          {
-            value: "Z",
-            desc: "Z can also allow for blah blah but moreover blah"
-          }
-        ]
-      },
-      {
-        param: "<dice count>",
-        values: [
-          {
-            value: "A number",
-            desc: "The amount of dice to be thrown"
-          }
-        ]
-      }
-    ],
-    
-    examples: [
-      {
-        command: "roll average 10D4 bla bla",
-        desc: "how the command would function #1"
-      },
-      {
-        command: "roll average 600D600 bla bla",
-        desc: "how the command would function #1"
-      }
-    ]
-  },
-  "weapon": {
+  weapon: {
     format: "${PREFIX}weapon [weapon name and infusion [vs ...]] [upgrade level] [str [dex [int [faith [luck]]]]]",
     desc: "Use this command to calculate the AR of any DS3 weapon, along with the expected damage on R1s/L1s, backstabs and ripostes.",
 
@@ -150,6 +103,9 @@
           {
             value: "DS3 SoulsPlanner link",
             desc: "All optional parameters will be filled in with the data from build planner link."
+          },
+          {
+            value: "Bloodborne SoulsPlanner link"
           }
         ]
       },
@@ -249,8 +205,8 @@
         param: "<response>",
         values: [
           {
-            value: "Any string that will be displayed when the custom command is used or the regex is matched",
-            desc: ""
+            value: "String",
+            desc: "will be displayed when the custom command is used or the regex is matched"
           }
         ]
       }
@@ -277,10 +233,12 @@
         param: "<command>",
         values: [
           {
-            param: "Existing command to remove"
+            value: "Existing command",
+            desc: "Must match existing command exactly"
           },
           {
-            param: "Existing regex keyword to remove"
+            value: "Existing regex keyword to remove",
+            desc: "Must match existing command exactly"
           }
         ]
       }
@@ -293,7 +251,7 @@
     ]
   },
   commands: {
-    format: "!commands",
+    format: "${PREFIX}commands",
     desc: "Used to get a list of all custom commands in the server DMed to you.",
     perms: ["USER"],
     canDM: false,
@@ -404,7 +362,8 @@
         param: "<welcome message>", 
         values: [
           {
-            value: "String welcome message"
+            value: "String welcome message",
+            desc: "Can include replacer flags (e.g. ${member})"
           }
         ]
       }
@@ -444,7 +403,8 @@
         param: "<streamer name>",
         values: [
           {
-            value: "Twitch username"
+            value: "username",
+            desc: "twitch.tv username. case insensitive"
           }
         ]
       }
@@ -554,6 +514,7 @@
       }
     ]
   },
+
   roleatlevel: {
     format: "${PREFIX}roleatlevel [<add|remove> <role name> <level> [send notification?]]",
     desc: "Use this command to set roles to be given to members once they reach a certain level. Using the command with no arguments will list all the roles and their levels at which they will be given.",
@@ -621,6 +582,7 @@
       }
     ]
   },
+
   giveme: {
     format: "${PREFIX}giveme [add|remove] <role name>",
     desc: "Use this command to set roles to be self-assignable or toggle self-assignable roles. Using the command with no arguments will list all self-assignable roles.",
@@ -657,6 +619,667 @@
             desc: "Discord role mention"
           }
         ]
+      }
+    ],
+    examples: [
+      {
+        command: "!giveme add slug",
+        desc: "This will set the role `slug` as self-assignable as long as the role exists in the server."
+      },
+      {
+        command: "!giveme slug",
+        desc: "This will give the member the `slug` role if they don't already have it - or remove it if they do."
+      }
+    ]
+  },
+
+  avatar: {
+    format: "${PREFIX}avatar [member]",
+    desc: "Use this command to view a fullsized image of a members avatar. Use the command with no arguments to view a fullsized image of your own avatar.",
+
+    perms: ['USER'],
+
+    canDM: false,
+    canEdit: false,
+    debug: false,
+
+    parameters: [
+      {
+        param: "[member]",
+        values: [
+          {
+            value: "Username",
+            desc: "Discord username of the user to be muted"
+          },
+          {
+            value: "discord ID",
+            desc: "discord ID of the user to be muted"
+          },
+          {
+            value: "discord member mention",
+            desc: "Mention member to be muted"
+          }
+        ]
+      }
+    ],
+
+    examples: [
+      {
+        command: "!avatar Tikaro",
+        desc: "This will display Tikaro's avatar."
+      }
+    ]
+  },
+
+  help: {
+    format: "${PREFIX}help [command]",
+    desc: "Use this command to get info on how to use a specific command. Use the command with no arguments to get a link to this documentation.",
+    perms: ['USER'],
+
+    canDM: true,
+    canEdit: false,
+    debug: false,
+
+    parameters: [
+      {
+        param: "[command]",
+        values: [
+          {
+            value: "command",
+            desc: "name of command to display information on"
+          }
+        ]
+      }
+    ],
+    examples: [
+      {
+        command: "!help giveme",
+        desc: "This will display documentation on the `giveme` command."
+      }
+    ]
+  },
+
+  math: {
+    format: "${PREFIX}math <expression>",
+    desc: "Use this command to calculate the value of a mathematical expression",
+
+    perms: ['USER'],
+
+    parameters: [
+      {
+        param: "<expression>",
+        values: [
+          {
+            value: "mathematical expression",
+            desc: "A resolvable mathematical expression"
+          }
+        ]
+      }
+    ],
+
+    examples: [
+      {
+        command: "!math 84^2 / pi",
+        desc: "This will get a response with the value of the expression."
+      }
+    ]
+  },
+
+  igot: {
+    format: "${PREFIX}igot [ds1|ds3] <souls received>",
+    desc: "Use this command to get a readout containing the estimated level of another player killed in Dark Souls 1 or Dark Souls 3.",
+
+    perms: ['USER'],
+
+    canDM: true,
+    canEdit: true,
+    debug: false,
+
+    parameters: [
+      {
+        param: "[ds1|ds3]",
+        values: [
+          {
+            value: "ds1",
+            desc: "specify to calculate the soul level of a Dark Souls 1 player."
+          },
+          {
+            value: "ds3",
+            desc: "specify to calculate the soul level of a Dark Souls 3 player."
+          }
+        ]
+      },
+      {
+        param: "<souls received>",
+        values: [
+          {
+            value: "Integer number",
+            desc: "Corresponding to the number of souls you received when killing another player."
+          }
+        ]
+      }
+    ],
+
+    examples: [
+      {
+        command: "!igot 1919",
+        desc: "This show the possible soul level of a player depending on their phantom type.\n![igot-screenshot](images/igot_demo.png)"
+      }
+    ]
+  },
+
+  names: {
+    format: "${PREFIX}nammes [member]",
+    desc: "Use this command to get a list of past usernames and display names of a member. Use this command with no arguments to get a list of yourown past usernames and display names.",
+
+    perms: ['USER'],
+
+    canDM: false,
+    canEdit: false,
+    debug: false,
+
+    parameters: [
+      {
+        param: "[member]",
+        values: [
+          {
+            value: "Username",
+            desc: "Discord username of the user"
+          },
+          {
+            value: "discord ID",
+            desc: "discord ID of the user"
+          },
+          {
+            value: "Mention member",
+            desc: "discord member mention"            
+          }
+        ]
+      }
+    ],
+
+    examples: [
+      {
+        command: "!avatar Tikaro",
+        desc: "This will display Tikaro's avatar."
+      }
+    ]
+  },
+
+  filter: {
+    format: "${PREFIX}filter <add|remove|list> <filter string>",
+    desc: "Use this command to add or remove word filters in the current server. The filter string can either be a normal string or RegEx.\n\nWhen a member sends a message in the server containing the filter string, their message will be deleted, score will be deducted and there will be a random chance they will be muted. the mute chance increases each time the same member triggers the filter.\n\nIf a normal string is given, common letter substitutions will be taken into account.\n\nif RegEx is given, the matched message will be deleted but the member will not have score deducted or have a chance to be muted.",
+
+    perms: ['ADMIN'],
+
+    canDM: false,
+    canEdit: false,
+    debug: false,
+
+    parameters: [
+      {
+        param: "<add|remove|list>", 
+        values: [
+          {
+            value: "add",
+            desc: "specify to add new filter"
+          },
+          {
+            value: "remove",
+            desc: "specify to remove existing filter"
+          },
+          {
+            value: "list",
+            desc: "specify to list all filters"
+          }
+        ]
+      },
+      {
+        param: "<filter string>",
+        values: [
+          {
+            value: "String",
+            desc: "normal string containing word(s) to be filtered"
+          },
+          {
+            value: "RegEx",
+            desc: "Regular expression to have messages deleted when matched"
+          }
+        ]
+      }
+    ],
+
+    examples: [
+      {
+        command: "!filter add snail",
+        desc: "This will make SlugBot delete any messages containing the word 'snail', deduct score from the offending member and have a chance to mute them."
+      },
+      {
+        command: "!filter add /\\d/",
+        desc: "This will make SlugBot delete any messages containing any digit. (check [regex101](https://regex101.com/) for RegEx syntax and RegEx testing)"
+      }
+    ]
+  },
+
+  namecheck: {
+    format: "${PREFIX}namecheck <name>",
+    desc: "Use this command to check if a name will be censored by the Dark Souls 3 name filters. Will also show if the name is too long.",
+
+    perms: ['USER'],
+
+    canDM: false,
+    canEdit: false,
+    debug: false,
+
+    parameters: [
+      {
+        param: "<name>",
+        values: [
+          {
+            value: "String",
+            desc: "containing a name to check against the Dark Souls 3 name filter"
+          }
+        ]
+      }
+    ],
+
+    examples: [
+      {
+        command: "!namecheck Knight Plumfinger",
+        desc: "This will test the name "Knight Plumfinger" against the Dark Souls 3 name filter - showing how the censored name will appear in game.",
+      }
+    ]
+  },
+
+  pc: {
+    format: "${PREFIX}pc",
+    desc: "Use this command to toggle your PC platform role.",
+
+    perms: ['USER'],
+
+    canDM: false,
+    canEdit: false,
+    debug: false,
+  },
+  ps4: {
+    format: "${PREFIX}ps4",
+    desc: "Use this command to toggle your PS4 platform role.",
+
+    perms: ['USER'],
+
+    canDM: false,
+    canEdit: false,
+    debug: false,
+  },
+  xbox: {
+    format: "${PREFIX}xbox",
+    desc: "Use this command to toggle your XBox One platform role.",
+
+    perms: ['USER'],
+
+    canDM: false,
+    canEdit: false,
+    debug: false,
+  },
+
+  twitch: {
+    format: "${PREFIX}twitch <twitch username>",
+    desc: "Used to link a Discord account with a Twitch account. SlugBot will whisper a message to you on Twitch asking for confirmation of the link.\n\nThis link is a global link between the discord account and twitch account - meaning it will only need to be done once regardless of the number of servers you are in.\n\nLinking your Discord and Twitch accounts allows your build list to be synced across Discord and Twitch along with serveral other features.",
+
+    perms: ['USER'],
+
+    canDM: true,
+    canEdit: false,
+    debug: false,
+
+    parameters: [
+      {
+        param: "<twitch username>",
+        values: [
+          {
+            value: "Username",
+            desc: "twitch.tv username. case insensitive"
+          }
+        ]
+      }
+    ],
+
+    examples: [
+      {
+        command: "!twitch smugslugbot",
+        desc: "This will start the linking process between the Discord user of the command and the twitch account with specified username."
+      }
+    ]
+  },
+
+  rep: {
+    format: "${PREFIX}rep <member> [amount of rep]",
+    desc: "Use this command to view a members profile or give another member rep points.",
+
+    perms: ['USER'],
+
+    canDM: false,
+    canEdit: false,
+    debug: false,
+
+    parameters: [
+      {
+        param: "<member>",
+        values: [
+          {
+            value: "Username",
+            desc: "Discord username of the user"
+          },
+          {
+            value: "discord ID",
+            desc: "discord ID of the user"
+          },
+          {
+            value: "Mention member",
+            desc: "discord member mention"            
+          }
+        ]
+      },
+      {
+        param: "[amount of rep]",
+        values: [
+          {
+            value: "Integer number",
+            desc: "Amount of rep to give to specified member"
+          }
+        ]
+      }
+    ],
+
+    examples: [
+      {
+        command: "!rep Tikaro 2",
+        desc: "This will attempt to give member Tikaro 2 rep points."
+      }
+    ]
+  },
+
+  profile: {
+    format: "${PREFIX}profile [member [flag|unflag]]|[wallpaper <img link>]|[color <hex color>]",
+    desc: "Use this command to view members profiles or edit yourown. Use the command with no arguments to view yourown profile or specify a member to view their profile.\n\nUse `!profile wallpaper <img link>` to set an image as your profile wallpaper. The `<img link>` must be a direct link to an image.\n\nUse `!profile color <hex color>` to set the general text color for your profile. `<hex color>` must be a hex color code in the format of `#000` or `#000000`.\n\nModerators can also flag profile images as inappropriate using the format `!profile <@member> flag|unflag`. A flagged profile will no longer display its wallpaper in the server the command was used in. Using the command with the keyword unflag will allow the profile to display its wallpaper again.",
+
+    perms: ['USER'],
+
+    canDM: false,
+    canEdit: false,
+    debug: false,
+
+    parameters: [
+      {
+        param: "[member]",
+        values: [
+          {
+            value: "Username",
+            desc: "Discord username of the user"
+          },
+          {
+            value: "discord ID",
+            desc: "discord ID of the user"
+          },
+          {
+            value: "Mention member",
+            desc: "discord member mention"            
+          }
+        ]
+      },
+      {
+        param: "[flag|unflag]",
+        values: [
+          {
+            value: "flag",
+            desc: "specify to flag a profile as inappropriate"
+          },
+          {
+            value: "unflag",
+            desc: "specify to unflag a profile as inappropriate"
+          }
+        ]
+      },
+      {
+        param: "[wallpaper]",
+        values: [
+          {
+            value: "wallpaper",
+            desc: "specify that you would like to change your profile wallpaper"
+          }
+        ]
+      },
+      {
+        param: "<img link>",
+        values: [
+          {
+            value: "URL",
+            desc: "A direct link to an image."
+          }
+        ]
+      },
+      {
+        param: "[color]",
+        values: [
+          {
+            value: "color",
+            desc: "specify that you would like to change your profile's general text color"
+          }
+        ]
+      },
+      {
+        param: "<hex color>",
+        values: [
+          {
+            value: "color code",
+            desc: "In hexadecimal"
+          }
+        ]
+      }
+    ],
+
+    examples: [
+      {
+        command: "",
+        desc: ""
+      }
+    ]
+  },
+
+  rank: {
+    format: "${PREFIX}rank [member]",
+    desc: "Use this command with no arguments to view your own profile - displaying score and rank. Specify a member to view their profile.",
+
+    perms: ['USER'],
+
+    canDM: false,
+    canEdit: false,
+    debug: false,
+
+    parameters: [
+      {
+        param: "[member]",
+        values: [
+          {
+            value: "Username",
+            desc: "Discord username of the user"
+          },
+          {
+            value: "discord ID",
+            desc: "discord ID of the user"
+          },
+          {
+            value: "Mention member",
+            desc: "discord member mention"            
+          }
+        ]
+      }
+    ],
+
+    examples: [
+      {
+        command: "!rank Tikaro",
+        desc: "This will display Tikaro's profile with server rank and weekly rank if applicable."
+      }
+    ]
+  },
+
+  placeholder: {
+    format: "${PREFIX}roll [avg] <dice count>D<dice type> [modifier]",
+    desc: "Use this command to get SlugBot to roll dice. Including the `avg` flag will return a readout displaying statistical information on the roll instead.",
+
+    perms: ['USER'],
+
+    canDM: false,
+    canEdit: false,
+    debug: false,
+
+    parameters: [
+      {
+        param: "[avg]",
+        values: [
+          {
+            value: "avg",
+            desc: "Specify that statistical information should be displayed instead"
+          }
+        ]
+      },
+      {
+        param: "<dice count>",
+        values: [
+          {
+            value: "Integer number",
+            desc: "Corresponding to the number of dice to roll"
+          }
+        ]
+      },
+      {
+        param: "<dice type>",
+        values: [
+          {
+            value: "Integer number",
+            desc: "Corresponding to the type of dice to roll"
+          }
+        ]
+      },
+      {
+        param: "[modifier]",
+        values: [
+          {
+            value: "Integer number",
+            desc: "Corresponding to a value to add or subtract from the total roll"
+          }
+        ]
+      }
+    ],
+
+    examples: [
+      {
+        command: "!roll 4d6 - 2",
+        desc: "This will roll four D6s, subtract 2, then display the outcome."
+      },
+      {
+        command: "!roll avg 4d6",
+        desc: "This will display the statistics of rolling four D6s."
+      }
+    ]
+  },
+
+  remindme: {
+    format: "${PREFIX}remindme to <reminder message> in <time until reminder>",
+    desc: "Use this command to create a reminder. SlugBot will DM you after a specified amount of time with the `<reminder message>`",
+
+    perms: ['USER'],
+
+    canDM: true,
+    canEdit: false,
+    debug: false,
+
+    parameters: [
+      {
+        param: "<reminder message>",
+        values: [
+          {
+            value: "String",
+            desc: "Containing a reminder message"
+          }
+        ]
+      },
+      {
+        param: "<time until reminder>",
+        values: [
+          {
+            value: "String",
+            desc: "A string containing an amount of time. e.g. `5 days, 3 hours and 10 minutes`"
+          }
+        ]
+      }
+    ],
+
+    examples: [
+      {
+        command: "!remindme to Update the SlugBot music module in 1y 2d 15m",
+        desc: "This will send a DM with the message \"Update the SlugBot music module\" in one year, two days, and 15 minutes."
+      }
+    ]
+  },
+
+  whowas: {
+    format: "${PREFIX}whowas <character name>",
+    desc: "Use this command to find the owner of a character you met in-game, along with more info on their build.\n\nNumbered reactions 1-5 will be displayed, allowing you to select a build to preview from the list of builds with similar names to the one specified.\n\nSlugBot will attempt to find five builds in its database with the most similar names.",
+
+    perms: ['USER'],
+
+    canDM: false,
+    canEdit: false,
+    debug: false,
+
+    parameters: [
+      {
+        param: "<character name>",
+        values: [
+          {
+            value: "String",
+            desc: "Approximate name of a character"
+          }
+        ]
+      }
+    ],
+
+    examples: [
+      {
+        command: "",
+        desc: ""
+      }
+    ]
+  },
+
+  placeholder: {
+    format: "",
+    desc: "",
+
+    perms: ['USER', 'ADMIN'],
+
+    canDM: false,
+    canEdit: false,
+    debug: false,
+
+    parameters: [
+      {
+        param: "",
+        values: [
+          {
+            value: "",
+            desc: ""
+          }
+        ]
+      }
+    ],
+
+    examples: [
+      {
+        command: "",
+        desc: ""
       }
     ]
   }
