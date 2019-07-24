@@ -886,7 +886,7 @@
     examples: [
       {
         command: "!namecheck Knight Plumfinger",
-        desc: "This will test the name "Knight Plumfinger" against the Dark Souls 3 name filter - showing how the censored name will appear in game.",
+        desc: "This will test the name \"Knight Plumfinger\" against the Dark Souls 3 name filter - showing how the censored name will appear in game.",
       }
     ]
   },
