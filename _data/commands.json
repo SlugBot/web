@@ -53,7 +53,7 @@
       }
     ]
   },
-  "addbuild": {
+  addbuild: {
     format: "${PREFIX}addbuild [build name] [soul level] [upgrade level] <link>",
     desc: "Used to add a build to your build list. Stating `soul level`, `upgrade level` and `build planner link` are optional but recommended. If a soulsplanner link is suplied, any missing data will be taken from the build directly - often, all thats needed.",
     perms: ["USER"],
@@ -180,7 +180,7 @@
 
   addcommand: {
     format: "${PREFIX}addcommand <command> <response>",
-    desc: "Used to add/edit a custom command that will respond with a specified string. alternatively regex can be used in place of a command to make SlugBot send a response message whenever the regex matches a members message.\n\nThe response can contain certain replacer flags that will be replaced will specific values when sent by slugbot.",
+    desc: "Used to add/edit a custom command that will respond with a specified string. alternatively regex can be used in place of a command to make SlugBot send a response message whenever the regex matches a members message.\n\nThe response can contain certain replacer flags that will be replaced will specific values when sent by slugbot.\n\nLINK TO REPLACER FLAGS SECTION",
     perms: ["ADMIN"],
     canDM: false,
     canEdit: false,
@@ -260,14 +260,27 @@
     examples: []
   },
   constraint: {
-    format: "${PREFIX}constraint <command> [<whitelist|blacklist|remove> <channel|role|member>]",
-    desc: "Use this command to add channels, roles, and members to a command's whitelist or blacklist. __WHITELISTS AND BLACKLISTS TAKE PRIORITY OVER DEFAULT COMMAND PERMISSIONS.__\n* A command can only be used in whitelisted channels. If There are no whitelisted channels, the command can be used in every channel.\n* A command can only be used by members with whitelisted roles. If There are no whitelisted roles, all roles can use the command.\n* A command can only be used by whitelisted members. If there are no whitelisted members, all members can use the command\n* A command can not be used in blacklisted channels.\n* A command can not be used by members with blacklisted roles.\n* A command can not be used by blacklisted members.",
+    format: "${PREFIX}constraint <command|score> [<whitelist|blacklist|remove> <channel|role|member>]",
+    desc: "Use this command to add channels, roles, and members to a command's whitelist or blacklist. __WHITELISTS AND BLACKLISTS TAKE PRIORITY OVER DEFAULT COMMAND PERMISSIONS.__\n* A command can only be used in whitelisted channels. If There are no whitelisted channels, the command can be used in every channel.\n* A command can only be used by members with whitelisted roles. If There are no whitelisted roles, all roles can use the command.\n* A command can only be used by whitelisted members. If there are no whitelisted members, all members can use the command\n* A command can not be used in blacklisted channels.\n* A command can not be used by members with blacklisted roles.\n* A command can not be used by blacklisted members.\n\nIf `score` is stated instead of a command, constraints on who can receive score and where it will be given can be set.",
     perms: ["ADMIN"],
     canDM: false,
     canEdit: false,
     parameters: [
       {
-        param: "<command>",
+        param: "<command|score>",
+        values: [
+          {
+            value: "slugbot command name",
+            desc: "The name of the command you wish to set permission constraints for."
+          },
+          {
+            value: "score",
+            desc: "The string `score` stating that constraints on when XP is given are to be set instead."
+          }
+        ]
+      },
+      {
+      param: "<whitelist|blacklist|remove>",
         values: [
           {
             value: "slugbot command",
@@ -276,8 +289,18 @@
         ],
       }
     ],
-    examples: []
+    examples: [
+      {
+        command: "!constraint weapon whitelist #bot-stuff",
+        desc: "This will whitelist the channel `#bot-stuff` for the command `!weapon` - meaning the `!weapon` command can only be used in that channel."
+      },
+      {
+        command: "!constraint score blacklist #bot-stuff",
+        desc: "This will stop SlugBot from giving users XP for activity in the `#bot-stuff` channel."
+      }
+    ]
   },
+
   setrole: {
     format: "${PREFIX}setrole [<role to set> <reset | role name>]",
     desc: "Set roles for SlugBot to use. `!setrole` with no arguments will show information on which roles have been set.\n\nThe `mute` role will be created and set automatically on the first use of a mute command if a role was not already set beforehand.",
@@ -351,15 +374,16 @@
       }
     ]
   },
+
   setwelcomemessage: {
-    format: "${PREFIX}setwelcomemessage <welcome message>",
-    desc: "Use this command to customise the welcome message sent when a new member joins the server.",
+    format: "${PREFIX}setwelcomemessage [welcome message]",
+    desc: "Use this command to customise the welcome message sent when a new member joins the server.\n\nUsing the command with no arguments will display the current welcome message along with a demo of how it will appear when a member joins.\n\nLINK TO REPLACER FLAGS SECTION",
     perms: ["ADMIN"],
     canDM: false,
     canEdit: false,
     parameters: [
       {
-        param: "<welcome message>", 
+        param: "[welcome message]", 
         values: [
           {
             value: "String welcome message",
@@ -375,6 +399,7 @@
       }
     ]
   },
+
   streamer: {
     format: "${PREFIX}streamer <add | remove | list> <streamer name>",
     desc: "Use this command to add a streamer to the streams notification list or remove a streamer from the list. A notification message will be sent to the '#streams' channel (if set) when a streamer in the list goes live on twitch.tv. The notification gets deleted when the streamer goes offline again.",
@@ -424,7 +449,8 @@
       }
     ]
   },
-  "mute": {
+
+  mute: {
     format: "${PREFIX}mute <member> [duration] [reason]",
     desc: "This command is used to mute members. Giving a duration and reason are optional. Not giving a duration will mute the user until they are manually unmuted. The member can be specified by ping, user ID or name.",
 
@@ -1250,6 +1276,156 @@
       {
         command: "!whowas Amil of the Deep",
         desc: "This will show 5 builds from SlugBots build database that most closely match the name `Amil of the Deep`."
+      }
+    ]
+  },
+
+  deletemessages: {
+    format: "${PREFIX}deletemessages <member> <number of messages>",
+    desc: "Used to delete messages sent by a specific member.",
+
+    perms: ['ADMIN'],
+
+    canDM: false,
+    canEdit: true,
+    debug: false,
+
+    parameters: [
+      {
+        param: "<member>",
+        values: [
+          {
+            value: "Username",
+            desc: "Discord username of the user"
+          },
+          {
+            value: "discord ID",
+            desc: "discord ID of the user"
+          },
+          {
+            value: "Mention member",
+            desc: "discord member mention"            
+          }
+        ]
+      },
+      {
+        param: "<number of messages>",
+        values: [
+          {
+            value: "Number",
+            desc: "Integer value stating the number of messages to delete"
+          }
+        ]
+      }
+    ],
+
+    examples: [
+      {
+        command: "!deletemessages alex_ 50",
+        desc: "This will delete the last 50 messages sent by Alex_."
+      }
+    ]
+  },
+
+  guildinfo: {
+    format: "${PREFIX}guildinfo",
+    desc: "Displays info about this guild - including server age, member count, and welcome message.",
+
+    perms: ['ADMIN'],
+
+    canDM: false,
+    canEdit: false,
+    debug: false,
+  },
+
+  slugballs: {
+    format: "",
+    desc: "",
+
+    perms: ['USER', 'ADMIN'],
+
+    canDM: false,
+    canEdit: false,
+    debug: false,
+
+    parameters: [
+      {
+        param: "",
+        values: [
+          {
+            value: "",
+            desc: ""
+          }
+        ]
+      }
+    ],
+
+    examples: [
+      {
+        command: "",
+        desc: ""
+      }
+    ]
+  },
+
+  iam: {
+    format: "${PREFIX}iam <member event info>",
+    desc: "Use this command to create a notification for a Member Event (such as a *dry finger run*).\n\nProvide at least a location and what you are doing there. **Passwords and character names must be in quotes.** If you have multiple platform roles, remember to state which one the event will be on. How you word it doesn't matter too much - type out your member event info as if you were telling a human.\n\nYou can update the information in the member event without having to re-enter everything again. Simply use the command again and specify your updates.\n\nYou can add extra event information by including `info: \"<extra info here>\"\` when using the command.\n\nIf you have a build set using [!setbuild](#setbuild), The relevant build information will be displayed in the member event automatically\n\nUse `${PREFIX}iam done` command to end the event.",
+
+    perms: ['USER'],
+
+    canDM: false,
+    canEdit: false,
+    debug: false,
+
+    parameters: [
+      {
+        param: "<member event info>",
+        values: [
+          {
+            value: "Game type",
+            desc: "Description of the type of the member event. e.g. `dry finger run` or `invading`"
+          },
+          {
+            value: "Location",
+            desc: "Approximate name of location in which the member event will be taking place."
+          },
+          {
+            value: "Soul level",
+            desc: "Description of soul level. e.g. `sl81` or `soul level 90`"
+          },
+          {
+            value: "Weapon upgrade level",
+            desc: "Description of upgrade level. e.g. `+10`"
+          },
+          {
+            value: "Password",
+            desc: "Description of password that should be used. e.g. `password is: slug.`"
+          },
+          {
+            value: "character name",
+            desc: "Description of your in-game name. e.g. `character is called The Balance.`"
+          },
+          {
+            value: "Extra info",
+            desc: "Description of your extra information about the event. e.g. `info: \"Will only be summoning mad phantoms.\".`"
+          }
+        ]
+      }
+    ],
+
+    examples: [
+      {
+        command: "!iam dry fingered in the archives. soul level 81 +10. character name \"The Balnace\", password: \"slug\"",
+        desc: "This will create a member Event notification in all member event channels, stating where you are, what you are doing, your soul level, upgrade level, character name, and password."
+      },
+      {
+        command: "!iam now SL90 at the ringed city streets.",
+        desc: "!his will update the soul level and location, leaving everything else unchanged."
+      },
+      {
+        command: "!iam done",
+        desc: "This will end the member event - deleting all notifications across all servers the event was displayed in."
       }
     ]
   },
