@@ -1340,7 +1340,7 @@
 
   slugballs: {
     format: "${PREFIX}slugballs <question>",
-    desc: "Use this command to ask SlugBot a question - like a magic eight ball.",
+    desc: "Use this command to ask SlugBot a question, like a magic eight ball - only more rude.",
 
     perms: ['USER'],
 
@@ -1426,6 +1426,40 @@
       {
         command: "!iam done",
         desc: "This will end the member event - deleting all notifications across all servers the event was displayed in."
+      }
+    ]
+  },
+
+  setbuild: {
+    format: "${PREFIX}setbuild <build name|build number>",
+    desc: "Use this command to set your current build from your list of added builds.",
+
+    perms: ['USER'],
+
+    canDM: true,
+    canEdit: true,
+    debug: false,
+
+    parameters: [
+      {
+        param: "<build name|build number>",
+        values: [
+          {
+            value: "build name",
+            desc: "Approximate name of an added build"
+          },
+          {
+            value: "build number",
+            desc: "Number of build in your build list"
+          }
+        ]
+      }
+    ],
+
+    examples: [
+      {
+        command: "!setbuild Knight Laran",
+        desc: "This will set your current build to Knight Laran as long as its in your build list."
       }
     ]
   },
