@@ -41,38 +41,81 @@ function modalInjectParameters(command) {
 	let $parameters = document.getElementById('modal-parameters');
 	$parameters.innerHTML = "";
 
+	if (command.parameters.length <= 0) {
+		return;
+	}
+
+	let $header = document.createElement('h4');
+	$header.innerHTML = "Parameters";
+	$parameters.appendChild($header);
+
+	let $table = document.createElement('table');
+
+	let $thead = document.createElement('thead');
+	let $thead_tr = document.createElement('tr');
+	
+	let $thead_th_param = document.createElement('th');
+	$thead_th_param.innerHTML = "Parameter"
+	$thead.appendChild($thead_th_param);
+	
+	let $thead_th_value = document.createElement('th');
+	$thead_th_value.innerHTML = "Value"
+	$thead.appendChild($thead_th_value);
+
+	let $thead_th_desc = document.createElement('th');
+	$thead_th_desc.innerHTML = "Description"
+	$thead.appendChild($thead_th_desc);
+
+	$table.appendChild($thead);
+
+
+	let $tbody = document.createElement('tbody');
 	for (let i = 0; i < command.parameters.length; i++) {
 		let parameter = command.parameters[i];
-
-		let $title = document.createElement('span');
-		let $paramName = document.createElement('code');
-		$paramName.innerText = parameter.param;
-		$title.appendChild($paramName);
-		$title.innerHTML += "can have the following values:";
-
-		let $list = document.createElement('ul');
 		for (let j = 0; j < parameter.values.length; j++) {
+			let $row = document.createElement('tr');
+			if (j == 0) {
+				$row.classList.add('param-start');
+			}
 			let value = parameter.values[j];
-			let $valueElement = document.createElement('li');
-			
+
+			let $param_cell = document.createElement('td');
+			if (j === 0) {
+				let $paramName = document.createElement('code');
+				$paramName.innerText = parameter.param;
+				$param_cell.appendChild($paramName);
+			}
+			$row.appendChild($param_cell);
+
+			let $value_cell = document.createElement('td');
 			let $valueName = document.createElement('code');
 			$valueName.innerText = value.value;
-			$valueElement.appendChild($valueName);
-			
-			$valueElement.innerHTML += " - " + value.desc;
+			$value_cell.appendChild($valueName);
+			$row.appendChild($value_cell);
 
-			$list.appendChild($valueElement);
+			let $desc_cell = document.createElement('td');
+			$desc_cell.innerText = value.desc;
+			$row.appendChild($desc_cell);
+
+			$tbody.appendChild($row);
 		}
-
-		$title.appendChild($list);
-
-		$parameters.appendChild($title);
 	}
+	$table.appendChild($tbody);
+	$parameters.appendChild($table);
 }
 
 function modalInjectExamples(command) {
 	let $examples = document.getElementById('modal-examples');
 	$examples.innerHTML = "";
+
+	if (command.examples.length <= 0) {
+		return;
+	}
+
+	let $header = document.createElement('h4');
+	$header.innerHTML = "Examples";
+	$examples.appendChild($header);
+
 
 	for (let i = 0; i < command.examples.length; i++) {
 		let example = command.examples[i];
