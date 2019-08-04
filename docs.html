@@ -26,31 +26,36 @@ type: 'docs'
 			<ul>
 			{% for permission in commandData.perms%}
 				<li>
-					{{permission}}
+					<code>{{permission}}</code>
 				</li>
 			{% endfor %}
 			</ul>
 		</li>
 	</ul>
 
-	<h4>Parameters</h4>
-	{% for parameter in commandData.parameters%}
-	<code>{{parameter.param | escape}}</code> can have the following values:
-		<ul>
-		{% for paramValue in parameter.values%}
-		<li>
-			<code>{{paramValue.value}}</code> - {{paramValue.desc}}
-		</li>
+	{% if commandData.parameters %}
+		<h4>Parameters</h4>
+		{% for parameter in commandData.parameters%}
+		<code>{{parameter.param | escape}}</code> can have the following values:
+			<ul>
+			{% for paramValue in parameter.values%}
+			<li>
+				<code>{{paramValue.value}}</code> - {{paramValue.desc}}
+			</li>
+			{% endfor %}
+			</ul>
 		{% endfor %}
-		</ul>
-	{% endfor %}
+	{% endif %}
 
-	<h4>Examples</h4>
-	<div>
-	{% for example in commandData.examples%}
-		<pre class="highlight"><code>{{example.command | escape}}</code></pre>
-		<p>{{example.desc}}</p>
-	{% endfor %}
-	</div>
+	{% if commandData.examples %}
+		<h4>Examples</h4>
+		<div>
+		{% for example in commandData.examples%}
+			<pre class="highlight"><code>{{example.command | escape}}</code></pre>
+			<p>{{example.desc}}</p>
+		{% endfor %}
+		</div>
+	{% endif %}
+
 	<hr>
 {% endfor %}
