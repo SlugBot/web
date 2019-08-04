@@ -1,12 +1,14 @@
 :root {
-    --color-text: #d4d4d4;
     --color-bg: #282C33;
     --color-code-bg: #20262f;
     --color-code-text: #D4DDFD;
-    --color-fade: #888;
-    --color-link: #7289DA;
-    --color-link-hover: #cce3ff;
     --color-emphasis: #e09595;
+    --color-fade: #888;
+    --color-link-hover: #cce3ff;
+    --color-link: #7289DA;
+    --color-scroll: #3f4550;
+    --color-scroll-active: #536380;
+    --color-text: #d4d4d4;
 }
 
 body {
@@ -357,14 +359,11 @@ img {
 .command-link {
     cursor: pointer;
     text-decoration: underline;
-    /*text-decoration-style: dotted;*/
     text-decoration-color: var(--color-link);
 }
 
 
-
 /* Modal */
-
 #modal-background {
     position: fixed;
     top: 0;
@@ -389,7 +388,7 @@ img {
     padding: 2em;
     margin: 0 auto;
 
-    border-radius: 32px;
+    border-radius: 8px;
     box-shadow: 5px 7px 10px 0px #00000026;
 
     background-color: var(--color-bg);
@@ -403,3 +402,59 @@ img {
 #modal-background.open {
     display: block;
 }
+
+/* Scrollbar */
+::-webkit-scrollbar,
+::-webkit-scrollbar-corner,
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar:vertical {
+    width: 14px;
+}
+
+::-webkit-scrollbar:horizontal {
+    height: 14px;
+}
+
+body::-webkit-scrollbar-track {
+    background: var(--color-code-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-scroll);
+    border-radius: 100px;
+    border: 5px solid var(--color-code-bg);
+    transition: 200ms all ease;
+}
+
+#modal::-webkit-scrollbar-thumb {
+    border-color: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb:hover,
+::-webkit-scrollbar-thumb:active {
+    transition: 200ms all ease;
+    background-color: var(--color-scroll-active);
+}
+
+/* Firefox doesn't support webkit, need some sort of a fallback instead */
+html,
+#modal,
+#toc-wrapper,
+pre {
+    scrollbar-width: thin;
+}
+
+html,
+#toc-wrapper,
+pre {
+    scrollbar-color: var(--color-scroll) var(--color-code-bg);
+}
+
+#modal {
+    scrollbar-color: var(--color-scroll) var(--color-bg);   
+}
+
+
