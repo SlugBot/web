@@ -1,0 +1,48 @@
+[
+    {
+        name: "Discord Setup",
+        link: "#discord-setup",
+        subsections: [
+            {
+                name: "Streamers And Stream Notifications",
+                link: "#streamers-and-stream-notifications"
+            }
+        ]
+    },
+    {
+        name: "First-time Discord Setup",
+        link: "#first-time-discord-setup",
+        subsections: [
+            {
+                name: "Setting Channels For Slugbot To Use",
+                link: "#setting-channels-for-slugbot-to-use"
+            },
+            {
+                name: "Setting Roles For Slugbot To Use",
+                link: "#setting-roles-for-slugbot-to-use"
+            },
+            {
+                name: "Setting Roles to be given when a Member Reaches a Certain Level",
+                link: "#setting-roles-to-be-given-when-a-member-reaches-a-certain-level"
+            },
+            {
+                name: "Miscellaneous Settings",
+                link: "#miscellaneous-settings"
+            }
+        ]
+    },
+    {
+        name: "First-time Twitch Setup",
+        link: "#setting-up-smugslugbot-for-twitchtv-for-the-first-time",
+        subsections: [
+            {
+                name: "Activating Modules",
+                link: "#activating-modules"
+            },
+            {
+                name: "Modules Overview",
+                link: "#modules-overview"
+            }
+        ]
+    },
+]

@@ -18,7 +18,14 @@
 				<div id="toc-wrapper">
 					{% for shortcut in site.data.guide %}
 					<li>
-						<a href="{{ shortcut.link }}">{{ shortcut.name }}</a>
+						<a href="{{ shortcut.link }}" title="{{ shortcut.name }}">{{ shortcut.name }}</a>
+						{% if shortcut.subsections %}
+						<ul>
+							{% for subShortcut in shortcut.subsections %}	
+							<li><a href="{{ subShortcut.link }}" title="{{ subShortcut.name }}">{{ subShortcut.name }}</a></li>
+							{% endfor %}
+						</ul>
+						{% endif %}
 					</li>
 					{% endfor %}
 				</div>
@@ -44,15 +51,9 @@
 <div id="navigation-mobile">
 	<h1>SlugBot</h1>
 	<ul>
-		<li>
-			<a href="https://discord.gg/Tpm2X2b">Discord server</a>
-		</li>
-		<li>
-			<a href="https://github.com/SlugBot/SlugBot">Github page</a>
-		</li>
-		<li>
-			<a href="https://ko-fi.com/G2G0NP0R">Ko-fi</a>
-		</li>
+		<li><a href="https://discord.gg/Tpm2X2b">Discord server</a></li>
+		<li><a href="https://github.com/SlugBot/SlugBot">Github page</a></li>
+		<li><a href="https://ko-fi.com/G2G0NP0R">Ko-fi</a></li>
 
 		<hr>
 
@@ -63,16 +64,22 @@
 		{% endfor %}
 
 		{% if page.type == 'guide' %}
-			<hr>
-			<li>Available commands:</li>
-			<div id="toc-wrapper">
-				{% for shortcut in site.data.guide %}
-				<li>
-					<a href="{{ shortcut.link }}">{{ shortcut.name }}</a>
-				</li>
-				{% endfor %}
-			</div>
-		{% endif %}
+				<hr>
+				<div id="toc-wrapper">
+					{% for shortcut in site.data.guide %}
+					<li>
+						<a href="{{ shortcut.link }}" title="{{ shortcut.name }}">{{ shortcut.name }}</a>
+						{% if shortcut.subsections %}
+						<ul>
+							{% for subShortcut in shortcut.subsections %}	
+							<li><a href="{{ subShortcut.link }}" title="{{ subShortcut.name }}">{{ subShortcut.name }}</a></li>
+							{% endfor %}
+						</ul>
+						{% endif %}
+					</li>
+					{% endfor %}
+				</div>
+			{% endif %}
 
 		{% if page.type == 'docs' %}
 			<hr>
