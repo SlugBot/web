@@ -85,6 +85,10 @@ You may have role pings enabled but also want to give members the option to opt 
 
 SlugBots command prefix can be set using `!setprefix <new prefix>`.
 
+# Slug Economy
+
+## Overview
+
 ---
 
 # Setting Up SmugSlugBot for Twitch.tv for the First Time
