@@ -3,7 +3,7 @@
     format: "${PREFIX}weapon [weapon name and infusion [vs ...]] [upgrade level] [str [dex [int [faith [luck]]]]]",
     desc: "Use this command to calculate the AR of any DS3 weapon, along with the expected damage on R1s/L1s, backstabs and ripostes.",
 
-    perms: ['USER', 'MANAGER', 'ADMIN'],
+    perms: ["USER", "MANAGER", "ADMIN"],
     module: "DS3",
 
     canDM: true,
