@@ -40,7 +40,7 @@
         link: "#overview"
       }
     ]
-  }
+  },
   {
     name: "First-time Twitch Setup",
     link: "#setting-up-smugslugbot-for-twitchtv-for-the-first-time",
