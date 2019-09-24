@@ -98,12 +98,14 @@ The easiest way to start earning is through Daily SlugCoin collection and passiv
 Once per day, you can use the `!daily` command to earn between 100SC and 300SC.
 You will also earn a small amount every few minutes while you are active in the server.
 
+If you are feeling generous, you can give SC to others using the `!giveslugs <target> <amount>` command. On the other hand, you can *take* SC from accounts you have **CRACK**ed using `!takeslugs <target> amount`.
+
 ## Processes and Malware
 The best way to make SC is to steal, either directly or through the effects of malware. First you'll want to **BYPASS** your target's **FIREWALL** using the `!bypass <target>` command. This will begin the **BYPASS** process.
 
 Most processes take time - be that **BYPASS**ing, **SCAN**ning for malware, or planting malware of your own on someones account. The time a process takes is usually determined by your offensive stat and your targets defensive stat.
 
-Once you've **BYPASS**ed a user's **FIREWALL** you'll have access to their account. use `!bypass <target>` command again to open their account menu and view their info. You wont be able to take anything from their bank balance just yet, however. Their SC are still protected by their bank **ENCRYPTION** which will need to be **CRACK**ed - a time consuming process. But access to their account now lets you plant various types of malware on them.
+Once you've **BYPASS**ed a user's **FIREWALL** you'll have access to their account. use `!bypass <target>` command again to open their account menu and view their info. You wont be able to take anything from their bank balance just yet, however. Their SC are still protected by their bank **ENCRYPTION** which will need to be **CRACK**ed - a time consuming process (`!crack <target>`). But access to their account now lets you plant various types of malware on them.
 
 ### SKIMMER
 ```!plant skimmer <target> <fraction to skim>```

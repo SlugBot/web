@@ -36,6 +36,10 @@
     link: "#slug-economy",
     subsections: [
       {
+        name: "The Basics",
+        link: "#the-basics"
+      },
+      {
         name: "Processes and Malware",
         link: "#processes-and-malware"
       },
