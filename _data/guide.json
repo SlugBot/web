@@ -36,8 +36,16 @@
     link: "#slug-economy",
     subsections: [
       {
-        name: "Overview",
-        link: "#overview"
+        name: "Processes and Malware",
+        link: "#processes-and-malware"
+      },
+      {
+        name: "Scanning and Cleaning",
+        link: "#scanning-and-cleaning"
+      },
+      {
+        name: "Stats",
+        link: "#stats"
       }
     ]
   },

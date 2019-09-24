@@ -86,8 +86,50 @@ You may have role pings enabled but also want to give members the option to opt 
 SlugBots command prefix can be set using `!setprefix <new prefix>`.
 
 # Slug Economy
+Like some other bots, SlugBot has an Economy module letting users earn and trade currency in the form of SlugCoin. However, SlugBot's economy allows users to 'hack' other members, steal from them or plant malware on their accounts. The aim of the game is to earn as much SlugCoin as you can while also protecting your account from other members.
 
-## Overview
+## The Basics
+Your account holds all of your Slug Economy data, including your bank balance, stats, info on your planted malware and marks, along with info on your detected security breaches. Use the `!slugs` command to view your account menu. All accounts are protected by a **FIREWALL** that will prevent any tampering with your account. but that can be **BYPASS**ed given enough time.
+
+Your bank holds SlugCoin in two ways; **Current** and **Vault**. **Current** has infinite capacity but is more vulnerable to malware and theft. your **Vault** is much more secure but has limited capacity determined by your **POWER Lvl**. Use the `!vault [amount]` to transfer SC from your current to your vault.
+
+The easiest way to start earning is through Daily SlugCoin collection and passive SlugCoin earning. 
+
+Once per day, you can use the `!daily` command to earn between 100SC and 300SC.
+You will also earn a small amount every few minutes while you are active in the server.
+
+## Processes and Malware
+The best way to make SC is to steal, either directly or through the effects of malware. First you'll want to **BYPASS** your target's **FIREWALL** using the `!bypass <target>` command. This will begin the **BYPASS** process.
+
+Most processes take time - be that **BYPASS**ing, **SCAN**ning for malware, or planting malware of your own on someones account. The time a process takes is usually determined by your offensive stat and your targets defensive stat.
+
+Once you've **BYPASS**ed a user's **FIREWALL** you'll have access to their account. use `!bypass <target>` command again to open their account menu and view their info. You wont be able to take anything from their bank balance just yet, however. Their SC are still protected by their bank **ENCRYPTION** which will need to be **CRACK**ed - a time consuming process. But access to their account now lets you plant various types of malware on them.
+
+### SKIMMER
+```!plant skimmer <target> <fraction to skim>```
+This malware, once planted on a user, will skim a fraction of all income the infected user receives and transfer them to the planter instead.
+
+### BYPASS_VIRUS
+```!plant bypass_virus <target>```
+When a user with this malware planted on them **BYPASS**es another, the planter of this malware will also gain access to that account.
+
+### LEECH
+```!plant skimmer <target> <amount/hour>```
+This malware will siphon an amount of SC out of a users current account and transfer it to the planter every hour. Requires that the users **ENCRYPTION** has been **CRACK**ed.
+
+*More coming soon...*
+
+## Scanning and Cleaning
+You are going to want to make sure your account is malware free - but malware isnt always easy to detect. Use the `!scan [attacker] [malware type]` command to start a **SCAN** process. Scans cost SC be careful about performing them too often. You can optionally state a suspected attacker or specify a malware type to limit your search to; Doing so will increase the likelihood of successfully identifying malware but will also limit which malware will be detected.
+
+Once you've **SCAN**ned, any detected malware will be displayed in your INBOUND MALWARE menu tab. You may see that some details of the malware are still unidentified. Some malware may require a few **SCAN**s to fully identify.
+
+You can also identify malware by accessing the attackers account and viewing their OUTBOUND MALWARE.
+
+You can then use `!clean` to begin removing the malware from your account. The more malware detected, the longer this process will take. The more properties of a malware identified, the more likely it will be successfully removed.
+
+## Stats
+Stats determine how long it takes for processes to complete, how effective malware is, or how secure your account is. For example, a higher **FIREWALL** stat will mean it will take longer for others to **BYPASS** it and access your account. You can level up using the command `!levelup <stat>` but it will cost SC. Every 5 stats leveled increases your POWER Lvl by 1.
 
 ---
 
