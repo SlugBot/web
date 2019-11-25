@@ -1,9 +1,9 @@
 {
   weapon: {
-    format: "${PREFIX}weapon [weapon name and infusion [vs ...]] [upgrade level] [str [dex [int [faith [luck]]]]]",
+    format: "${PREFIX}weapon [weapon name [vs ...]] [upgrade level] [str [dex [int [faith [luck]]]]]",
     desc: "Use this command to calculate the AR of any DS3 weapon, along with the expected damage on R1s/L1s, backstabs and ripostes.",
 
-    perms: ["USER", "MANAGER", "ADMIN"],
+    perms: ["USER"],
     module: "DS3",
 
     canDM: true,
@@ -12,28 +12,41 @@
 
     parameters: [
       {
-        param: "Parameter #1",
+        param: "[weapon name]",
         values: [
           {
-            value: "Y",
-            desc: "Y can allow for blah blah"
+            value: "Dark Souls 3 weapon name",
+            desc: "Should include infusion type if desired. Spelling is lenient."
           },
           {
-            value: "Z",
-            desc: "Z can also allow for blah blah but moreover blah"
+            value: "null",
+            desc: "If no weapon name is given, info on all weapons will be given."
           }
         ]
       },
       {
-        param: "Parameter #2",
+        param: "[upgrade level]",
         values: [
           {
-            value: "A",
-            desc: "A can allow for blah blah"
+            value: "Weapon upgrade level",
+            desc: "For special weapons, UPGRADE LEVELS SHOULD BE CONVERTED TO STANDARD UPGRADE LEVEL EQUIVALENTS so weapons can be compared. In the format of '+2'"
           },
           {
-            value: "A",
-            desc: "A can also allow for blah blah but moreover blah"
+            value: "null",
+            desc: "If no upgrade level is given, the upgrade level of your set build will be used."
+          }
+        ]
+      },
+      {
+        param: "[str [dex [int [faith [luck]]]]]",
+        values: [
+          {
+            value: "Stat levels",
+            desc: "List of stat levels given in order and separated by spaces or '/'s"
+          },
+          {
+            value: "null",
+            desc: "If no stat level is given, the corresponding stat level of your set build will be used."
           }
         ]
       }
@@ -46,10 +59,6 @@
       {
         command: "!weapon fire dagger vs chaos dagger +3 10 10 10 10 10",
         desc: "Note that the upgrade and stats need to be specified only once, and at the end.\n\nTyping out the command without a `[weapon name and infusion]` argument will make SlugBot calculate the overall ten best weapons based on expected R1 damage for the upgrade level and stats provided. The printout for this kind of input will include reactions to toggle between various weapon classes, along with the usual 1-hand/2-hand and self-buff options. SlugBot will also note if any of the weapons are usable only when 2-handed."
-      },
-      {
-        command: "!weapon +4 14 25 9 9 7",
-        desc: "..."
       }
     ]
   },
@@ -454,7 +463,7 @@
     format: "${PREFIX}mute <member> [duration] [reason]",
     desc: "This command is used to mute members. Giving a duration and reason are optional. Not giving a duration will mute the user until they are manually unmuted. The member can be specified by ping, user ID or name.",
 
-    perms: ['ADMIN'],
+    perms: ["ADMIN"],
 
     canDM: false,
     canEdit: false,
@@ -501,6 +510,10 @@
       {
         command: "!mute 2340287340287 10 For reasons and stuff.",
         desc: "This will mute the member with ID 2340287340287 for 10 minutes and DM them the reason 'For reasons and stuff'."
+      },
+      {
+      	command: "!mute",
+      	desc: "With no arguments given, a list showing all muted members and their remaining mute times will be shown."
       }
     ]
   },
@@ -508,7 +521,7 @@
     format: "${PREFIX}unmute <member>",
     desc: "Use this command to unmute a muted member.",
 
-    perms: ['ADMIN'],
+    perms: ["ADMIN"],
 
     canDM: false,
     canEdit: false,
@@ -545,7 +558,7 @@
     format: "${PREFIX}roleatlevel [<add|remove> <role name> <level> [send notification?]]",
     desc: "Use this command to set roles to be given to members once they reach a certain level. Using the command with no arguments will list all the roles and their levels at which they will be given.",
 
-    perms: ['ADMIN'],
+    perms: ["ADMIN"],
 
     canDM: false,
     canEdit: false,
@@ -582,7 +595,7 @@
         param: "<level>",
         values: [
           {
-            value: Integer number,
+            value: "Integer",
             desc: "Corresponding to the level requirement of the role"
           }
         ]
@@ -613,7 +626,7 @@
     format: "${PREFIX}giveme [add|remove] <role name>",
     desc: "Use this command to set roles to be self-assignable or toggle self-assignable roles. Using the command with no arguments will list all self-assignable roles.",
 
-    perms: ['USER'],
+    perms: ["USER"],
 
     canDM: false,
     canEdit: false,
@@ -663,7 +676,7 @@
     format: "${PREFIX}avatar [member]",
     desc: "Use this command to view a fullsized image of a members avatar. Use the command with no arguments to view a fullsized image of your own avatar.",
 
-    perms: ['USER'],
+    perms: ["USER"],
 
     canDM: false,
     canEdit: false,
@@ -700,7 +713,7 @@
   help: {
     format: "${PREFIX}help [command]",
     desc: "Use this command to get info on how to use a specific command. Use the command with no arguments to get a link to this documentation.",
-    perms: ['USER'],
+    perms: ["USER"],
 
     canDM: true,
     canEdit: false,
@@ -729,7 +742,7 @@
     format: "${PREFIX}math <expression>",
     desc: "Use this command to calculate the value of a mathematical expression",
 
-    perms: ['USER'],
+    perms: ["USER"],
 
     parameters: [
       {
@@ -755,7 +768,7 @@
     format: "${PREFIX}igot [ds1|ds3] <souls received>",
     desc: "Use this command to get a readout containing the estimated level of another player killed in Dark Souls 1 or Dark Souls 3.",
 
-    perms: ['USER'],
+    perms: ["USER"],
 
     canDM: true,
     canEdit: true,
@@ -798,7 +811,7 @@
     format: "${PREFIX}nammes [member]",
     desc: "Use this command to get a list of past usernames and display names of a member. Use this command with no arguments to get a list of yourown past usernames and display names.",
 
-    perms: ['USER'],
+    perms: ["USER"],
 
     canDM: false,
     canEdit: false,
@@ -836,7 +849,7 @@
     format: "${PREFIX}filter <add|remove|list> <filter string>",
     desc: "Use this command to add or remove word filters in the current server. The filter string can either be a normal string or RegEx.\n\nWhen a member sends a message in the server containing the filter string, their message will be deleted, score will be deducted and there will be a random chance they will be muted. the mute chance increases each time the same member triggers the filter.\n\nIf a normal string is given, common letter substitutions will be taken into account.\n\nif RegEx is given, the matched message will be deleted but the member will not have score deducted or have a chance to be muted.",
 
-    perms: ['ADMIN'],
+    perms: ["ADMIN"],
 
     canDM: false,
     canEdit: false,
@@ -891,7 +904,7 @@
     format: "${PREFIX}namecheck <name>",
     desc: "Use this command to check if a name will be censored by the Dark Souls 3 name filters. Will also show if the name is too long.",
 
-    perms: ['USER'],
+    perms: ["USER"],
 
     canDM: false,
     canEdit: false,
@@ -921,7 +934,7 @@
     format: "${PREFIX}pc",
     desc: "Use this command to toggle your PC platform role.",
 
-    perms: ['USER'],
+    perms: ["USER"],
 
     canDM: false,
     canEdit: false,
@@ -931,7 +944,7 @@
     format: "${PREFIX}ps4",
     desc: "Use this command to toggle your PS4 platform role.",
 
-    perms: ['USER'],
+    perms: ["USER"],
 
     canDM: false,
     canEdit: false,
@@ -941,7 +954,7 @@
     format: "${PREFIX}xbox",
     desc: "Use this command to toggle your XBox One platform role.",
 
-    perms: ['USER'],
+    perms: ["USER"],
 
     canDM: false,
     canEdit: false,
@@ -952,7 +965,7 @@
     format: "${PREFIX}twitch <twitch username>",
     desc: "Used to link a Discord account with a Twitch account. SlugBot will whisper a message to you on Twitch asking for confirmation of the link.\n\nThis link is a global link between the discord account and twitch account - meaning it will only need to be done once regardless of the number of servers you are in.\n\nLinking your Discord and Twitch accounts allows your build list to be synced across Discord and Twitch along with serveral other features.",
 
-    perms: ['USER'],
+    perms: ["USER"],
 
     canDM: true,
     canEdit: false,
@@ -982,7 +995,7 @@
     format: "${PREFIX}rep <member> [amount of rep]",
     desc: "Use this command to view a members profile or give another member rep points.",
 
-    perms: ['USER'],
+    perms: ["USER"],
 
     canDM: false,
     canEdit: false,
@@ -1029,7 +1042,7 @@
     format: "${PREFIX}profile [member [flag|unflag]]|[wallpaper <img link>]|[color <hex color>]",
     desc: "Use this command to view members profiles or edit yourown. Use the command with no arguments to view yourown profile or specify a member to view their profile.\n\nUse `!profile wallpaper <img link>` to set an image as your profile wallpaper. The `<img link>` must be a direct link to an image.\n\nUse `!profile color <hex color>` to set the general text color for your profile. `<hex color>` must be a hex color code in the format of `#000` or `#000000`.\n\nModerators can also flag profile images as inappropriate using the format `!profile <@member> flag|unflag`. A flagged profile will no longer display its wallpaper in the server the command was used in. Using the command with the keyword unflag will allow the profile to display its wallpaper again.",
 
-    perms: ['USER'],
+    perms: ["USER"],
 
     canDM: false,
     canEdit: false,
@@ -1116,7 +1129,7 @@
     format: "${PREFIX}rank [member]",
     desc: "Use this command with no arguments to view your own profile - displaying score and rank. Specify a member to view their profile.",
 
-    perms: ['USER'],
+    perms: ["USER"],
 
     canDM: false,
     canEdit: false,
@@ -1154,7 +1167,7 @@
     format: "${PREFIX}roll [avg] <dice count>D<dice type> [modifier]",
     desc: "Use this command to get SlugBot to roll dice. Including the `avg` flag will return a readout displaying statistical information on the roll instead.",
 
-    perms: ['USER'],
+    perms: ["USER"],
 
     canDM: false,
     canEdit: false,
@@ -1215,7 +1228,7 @@
     format: "${PREFIX}remindme to <reminder message> in <time until reminder>",
     desc: "Use this command to create a reminder. SlugBot will DM you after a specified amount of time with the `<reminder message>`",
 
-    perms: ['USER'],
+    perms: ["USER"],
 
     canDM: true,
     canEdit: false,
@@ -1254,7 +1267,7 @@
     format: "${PREFIX}whowas <character name>",
     desc: "Use this command to find the owner of a character you met in-game, along with more info on their build.\n\nNumbered reactions 1-5 will be displayed, allowing you to select a build to preview from the list of builds with similar names to the one specified.\n\nSlugBot will attempt to find five builds in its database with the most similar names.",
 
-    perms: ['USER'],
+    perms: ["USER"],
 
     canDM: false,
     canEdit: false,
@@ -1284,7 +1297,7 @@
     format: "${PREFIX}deletemessages <member> <number of messages>",
     desc: "Used to delete messages sent by a specific member.",
 
-    perms: ['ADMIN'],
+    perms: ["ADMIN"],
 
     canDM: false,
     canEdit: true,
@@ -1331,7 +1344,7 @@
     format: "${PREFIX}guildinfo",
     desc: "Displays info about this guild - including server age, member count, and welcome message.",
 
-    perms: ['ADMIN'],
+    perms: ["ADMIN"],
 
     canDM: false,
     canEdit: false,
@@ -1342,7 +1355,7 @@
     format: "${PREFIX}slugballs <question>",
     desc: "Use this command to ask SlugBot a question, like a magic eight ball - only more rude.",
 
-    perms: ['USER'],
+    perms: ["USER"],
 
     canDM: true,
     canEdit: true,
@@ -1372,7 +1385,7 @@
     format: "${PREFIX}iam <member event info>",
     desc: "Use this command to create a notification for a Member Event (such as a dry finger run).\n\nProvide at least a location and what you are doing there. *Passwords and character names must be in quotes*. If you have multiple platform roles, remember to state which one the event will be on. How you word it doesn't matter too much - type out your member event info as if you were telling a human.\n\nYou can update the information in the member event without having to re-enter everything again. Simply use the command again and specify your updates.\n\nYou can add extra event information by including `info: \"<extra info here>\"` when using the command.\n\nIf you have a build set using [!setbuild](#setbuild), The relevant build information will be displayed in the member event automatically\n\nUse `!iam done` command to end the event.",
 
-    perms: ['USER'],
+    perms: ["USER"],
 
     canDM: false,
     canEdit: false,
@@ -1434,7 +1447,7 @@
     format: "${PREFIX}setbuild <build name|build number>",
     desc: "Use this command to set your current build from your list of added builds.",
 
-    perms: ['USER'],
+    perms: ["USER"],
 
     canDM: true,
     canEdit: true,
@@ -1468,7 +1481,7 @@
     format: "",
     desc: "",
 
-    perms: ['USER', 'ADMIN'],
+    perms: ["USER", "ADMIN"],
 
     canDM: false,
     canEdit: false,

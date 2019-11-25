@@ -19,10 +19,10 @@ So this is a test of linking commands and adding a modal alongside them. Here's 
 # Discord setup
 
 ## Streamers and Stream Notifications
-SlugBot intergrates with Twitch.tv allowing it to notify when your selected streamers go live. After specifying your `streams` channel and adding some streamers to look out for, SlugBot will send a notification message to the `streams` channel when those streamers go live. SlugBot will also delete the notification when the stream goes offline.
+SlugBot intergrates with Twitch.tv allowing it to notify when your selected streamers go live. After specifying your `streams` channel using <span class="command-link" data-command="setchannel"/> and adding some streamers to look out for using <span class="command-link" data-command="streamer"/>, SlugBot will send a notification message to the `streams` channel when those streamers go live. SlugBot will also delete the notification when the stream goes offline.
 
 <div class="note">
-	I am a test note. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris convallis nibh id ex venenatis, a euismod lorem vulputate. Aenean nisl sem, accumsan sed massa non, elementum vehicula quam. Praesent nulla augue, pharetra quis ornare nec, varius pulvinar augue.
+	Setting a streamer role using <span class="command-link" data-command="setrole"/> allows a role to specify a member as a streamer for SlugBot to look out for and post notifications in the streams channel.
 </div>
 
 ### Set a Channel for SlugBot to Use
