@@ -379,11 +379,75 @@
       },
       {
         command: "!setrole weeklyTopRank reset",
-        desc: "This will unset the weeklyTopRank role, disabling any slugbot functionality that uses the weeklyTopRank role."
+        desc: "This will unset the weeklyTopRank role, disabling any SlugBot functionality that uses the weeklyTopRank role."
       }
     ]
   },
-
+  setchannel: {
+  	format: "${PREFIX}setchannel [<channel to set> [reset]]",
+    desc: "Set channels for SlugBot to use. Using this command with no arguments will show information on set channels.",
+    perms: ["ADMIN"],
+    canDM: false,
+    canEdit: false,
+    parameters: [
+    	{
+    		param: "<channel to set>",
+    		values: [
+    			{
+    				value: "welcome",
+    				desc: "Channel used for welcome messages."
+    			},
+  				{
+    				value: "default",
+    				desc: "Channel used for Member Event reminders and weekly score winners."
+    			},
+    			{
+    				value: "log",
+    				desc: "Channel used for logging."
+    			},
+    			{
+    				value: "leaderboard",
+    				desc: "Channel used for the score leaderboard."
+    			},
+    			{
+    				value: "stream",
+    				desc: "Channel used for stream notifications."
+    			},
+    			{
+    				value: "memberevents",
+    				desc: "Channel used for member events."
+    			},
+    			{
+    				value: "slugboard",
+    				desc: "Channel used for the slugboard."
+    			},
+    			{
+    				value: "micmuted",
+    				desc: "Channel used for text channel that can only be used when a member is in a voice channel."
+    			}
+    		]
+    	},
+    	{
+    		param: "[reset]",
+    		values: [
+    			{
+    				value: "reset",
+    				desc: "To reset a set channel."
+    			}
+    		]
+    	}
+    ],
+    examples: [
+      {
+        command: "!setchannel welcome",
+        desc: "This will set the channel the command was used in as the `welcome` channel for SlugBot."
+      },
+      {
+        command: "!setchannel welcome reset",
+        desc: "This will unset the welcome channel, disabling any SlugBot functionality that uses the welcome channel."
+      }
+    ]
+  }
   setwelcomemessage: {
     format: "${PREFIX}setwelcomemessage [welcome message]",
     desc: "Use this command to customise the welcome message sent when a new member joins the server.\n\nUsing the command with no arguments will display the current welcome message along with a demo of how it will appear when a member joins.\n\nLINK TO REPLACER FLAGS SECTION",
