@@ -447,7 +447,7 @@
         desc: "This will unset the welcome channel, disabling any SlugBot functionality that uses the welcome channel."
       }
     ]
-  }
+  },
   setwelcomemessage: {
     format: "${PREFIX}setwelcomemessage [welcome message]",
     desc: "Use this command to customise the welcome message sent when a new member joins the server.\n\nUsing the command with no arguments will display the current welcome message along with a demo of how it will appear when a member joins.\n\nLINK TO REPLACER FLAGS SECTION",
