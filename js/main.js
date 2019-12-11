@@ -29,7 +29,7 @@ function modalGenerateQualities(command) {
 		$qualities.appendChild(quality);
 	} else {
 		let quality = document.createElement('li');
-		quality.innerHTML = "requires following permissions:";
+		quality.innerHTML = "requires permissions:";
 		for (let i = 0; i < command.perms.length; i++) {
 			quality.innerHTML += " <code>" + command.perms[i] + "</code>";
 		}

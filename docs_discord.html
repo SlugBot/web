@@ -16,13 +16,13 @@ type: 'docs_discord'
 
 	<ul>
 		{% if commandData.canDM %}
-		<li>Can be DM'ed.</li>
+		<li>Will function in DMs.</li>
 		{% endif %}	
 
 		{% if commandData.canEdit %}
-		<li>Can be edited after creating.</li>
+		<li>Will function in edit.</li>
 		{% endif %}
-		<li>Has following permissions:
+		<li>Requires permissions:
 			{% for permission in commandData.perms%}
 			&nbsp;<code>{{permission}}</code>
 			{% endfor %}
