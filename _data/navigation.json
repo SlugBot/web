@@ -1,7 +1,7 @@
 [
 	{
 		name: "Home",
-  		link: "index.html"
+		link: "index.html"
 	},
 	{
 		name: "Guide",
@@ -10,6 +10,10 @@
 	{
 		name: "Docs",
 		link: "docs.html"
+	},
+	{
+		name: "Twich Docs",
+		link: "docs_twitch.html"
 	},
 	{
 		name: "Roadmap",

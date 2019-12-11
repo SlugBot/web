@@ -15,12 +15,12 @@ function modalGenerateQualities(command) {
 
 	if (command.canDM) {
 		let quality = document.createElement('li');
-		quality.innerText = "Can be DM'ed";
+		quality.innerText = "Functions in DMs";
 		$qualities.appendChild(quality);
 	}
 	if (command.canEdit) {
 		let quality = document.createElement('li');
-		quality.innerText = "Can be edited after creation";
+		quality.innerText = "Command can be edited";
 		$qualities.appendChild(quality);
 	}
 	if (command.perms.length === 0) {
@@ -29,7 +29,7 @@ function modalGenerateQualities(command) {
 		$qualities.appendChild(quality);
 	} else {
 		let quality = document.createElement('li');
-		quality.innerHTML = "Has following permissions:";
+		quality.innerHTML = "requires following permissions:";
 		for (let i = 0; i < command.perms.length; i++) {
 			quality.innerHTML += " <code>" + command.perms[i] + "</code>";
 		}
