@@ -1,0 +1,74 @@
+{
+	addcommand: {
+    format: "${PREFIX}addcommand <command> <response>",
+    desc: "Used to add/edit a custom command that will respond with a specified string. alternatively regex can be used in place of a command to make SlugBot send a response message whenever the regex matches a members message.\n\nThe response can contain certain replacer flags that will be replaced will specific values when sent by slugbot.\n\nLINK TO REPLACER FLAGS SECTION",
+    perms: ["ADMIN"],
+    canDM: false,
+    canEdit: false,
+    parameters: [
+      {
+        param: "<command>",
+        values: [
+          {
+            value: "New command string"
+          },
+          {
+            value: "Existing command string",
+            desc: "Will overwrite its response"
+          },
+          {
+            value: "Regex keyword",
+            desc: "indicated by a string starting and ending with `/`"
+          }
+        ]
+      },
+      {
+        param: "<response>",
+        values: [
+          {
+            value: "String",
+            desc: "will be displayed when the custom command is used or the regex is matched"
+          }
+        ]
+      }
+    ],
+    examples: [
+      {
+        command: "!addcommand flip You flipped a coin and got ${rand:heads|tails}!",
+        desc: "This will add a command that will respond with `You flipped a coin and got heads!` OR `You flipped a coin and got tails!` when the command `!flip` is used."
+      },
+      {
+        command: "!addcommand /don't\\s@\\sme/ <@${id}>",
+        desc: "This will create a regex keyword match that will respond with a discord mention whenever a message contains the string `don't @ me`."
+      }
+    ]
+  },
+  removecommand: {
+    format: "${PREFIX}removecommand <command>",
+    desc: "Used to remove an existing custom command.",
+    perms: ["ADMIN"],
+    canDM: false,
+    canEdit: false,
+    parameters: [
+      {
+        param: "<command>",
+        values: [
+          {
+            value: "Existing command",
+            desc: "Must match existing command exactly"
+          },
+          {
+            value: "Existing regex keyword to remove",
+            desc: "Must match existing command exactly"
+          }
+        ]
+      }
+    ],
+    examples: [ 
+      {
+        command: "!removecommand ping",
+        desc: "This will remove the custom command `!ping`."
+      }
+    ]
+  },
+}

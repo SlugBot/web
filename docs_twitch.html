@@ -3,10 +3,10 @@ layout: info
 Title: SlugBot Twitch Docs
 type: 'docs_twitch'
 ---
-<h1>Documentation</h1>
+<h1>Twitch Command Documentation</h1>
 <p>This page contains documentation for each of SlugBot's Twitch commands.</p>
 <hr>
-{% for command in site.data.commands %}
+{% for command in site.data.t_commands %}
 	{% assign commandData = command.last %}
 	<h2 id="{{command.first}}"><code>{{command.first}}</code></h2>
 	<pre class="highlight"><code>!{{commandData.format | escape | slice: 9, 999}}</code></pre>
