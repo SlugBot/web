@@ -190,7 +190,7 @@
   addcommand: {
     format: "${PREFIX}addcommand <command> <response>",
     desc: "Used to add/edit a custom command that will respond with a specified string. alternatively regex can be used in place of a command to make SlugBot send a response message whenever the regex matches a members message.\n\nThe response can contain certain replacer flags that will be replaced will specific values when sent by slugbot.\n\nLINK TO REPLACER FLAGS SECTION",
-    perms: ["ADMIN"],
+    perms: ["BOT_ADMIN"],
     canDM: false,
     canEdit: false,
     parameters: [
@@ -234,7 +234,7 @@
   removecommand: {
     format: "${PREFIX}removecommand <command>",
     desc: "Used to remove an existing custom command.",
-    perms: ["ADMIN"],
+    perms: ["BOT_ADMIN"],
     canDM: false,
     canEdit: false,
     parameters: [
@@ -271,7 +271,7 @@
   constraint: {
     format: "${PREFIX}constraint <command|score> [<whitelist|blacklist|remove> <channel|role|member>]",
     desc: "Use this command to add channels, roles, and members to a command's whitelist or blacklist. __WHITELISTS AND BLACKLISTS TAKE PRIORITY OVER DEFAULT COMMAND PERMISSIONS.__\n* A command can only be used in whitelisted channels. If There are no whitelisted channels, the command can be used in every channel.\n* A command can only be used by members with whitelisted roles. If There are no whitelisted roles, all roles can use the command.\n* A command can only be used by whitelisted members. If there are no whitelisted members, all members can use the command\n* A command can not be used in blacklisted channels.\n* A command can not be used by members with blacklisted roles.\n* A command can not be used by blacklisted members.\n\nIf `score` is stated instead of a command, constraints on who can receive score and where it will be given can be set.",
-    perms: ["ADMIN"],
+    perms: ["BOT_ADMIN"],
     canDM: false,
     canEdit: false,
     parameters: [
@@ -313,7 +313,7 @@
   setrole: {
     format: "${PREFIX}setrole [<role to set> <reset | role name>]",
     desc: "Set roles for SlugBot to use. `!setrole` with no arguments will show information on which roles have been set.\n\nThe `mute` role will be created and set automatically on the first use of a mute command if a role was not already set beforehand.",
-    perms: ["ADMIN"],
+    perms: ["BOT_ADMIN"],
     canDM: false,
     canEdit: false,
     parameters: [
@@ -386,7 +386,7 @@
   setchannel: {
   	format: "${PREFIX}setchannel [<channel to set> [reset]]",
     desc: "Set channels for SlugBot to use. Using this command with no arguments will show information on set channels.",
-    perms: ["ADMIN"],
+    perms: ["BOT_ADMIN"],
     canDM: false,
     canEdit: false,
     parameters: [
@@ -451,7 +451,7 @@
   setwelcomemessage: {
     format: "${PREFIX}setwelcomemessage [welcome message]",
     desc: "Use this command to customise the welcome message sent when a new member joins the server.\n\nUsing the command with no arguments will display the current welcome message along with a demo of how it will appear when a member joins.\n\nLINK TO REPLACER FLAGS SECTION",
-    perms: ["ADMIN"],
+    perms: ["BOT_ADMIN"],
     canDM: false,
     canEdit: false,
     parameters: [
@@ -476,7 +476,7 @@
   streamer: {
     format: "${PREFIX}streamer <add | remove | list> <streamer name>",
     desc: "Use this command to add a streamer to the streams notification list or remove a streamer from the list. A notification message will be sent to the '#streams' channel (if set) when a streamer in the list goes live on twitch.tv. The notification gets deleted when the streamer goes offline again.",
-    perms: ["ADMIN"],
+    perms: ["BOT_ADMIN"],
     canDM: false,
     canEdit: false,
     parameters: [
@@ -527,7 +527,7 @@
     format: "${PREFIX}mute <member> [duration] [reason]",
     desc: "This command is used to mute members. Giving a duration and reason are optional. Not giving a duration will mute the user until they are manually unmuted. The member can be specified by ping, user ID or name.",
 
-    perms: ["ADMIN"],
+    perms: ["BOT_ADMIN"],
 
     canDM: false,
     canEdit: false,
@@ -585,7 +585,7 @@
     format: "${PREFIX}unmute <member>",
     desc: "Use this command to unmute a muted member.",
 
-    perms: ["ADMIN"],
+    perms: ["BOT_ADMIN"],
 
     canDM: false,
     canEdit: false,
@@ -622,7 +622,7 @@
     format: "${PREFIX}roleatlevel [<add|remove> <role name> <level> [send notification?]]",
     desc: "Use this command to set roles to be given to members once they reach a certain level. Using the command with no arguments will list all the roles and their levels at which they will be given.",
 
-    perms: ["ADMIN"],
+    perms: ["BOT_ADMIN"],
 
     canDM: false,
     canEdit: false,
@@ -913,7 +913,7 @@
     format: "${PREFIX}filter <add|remove|list> <filter string>",
     desc: "Use this command to add or remove word filters in the current server. The filter string can either be a normal string or RegEx.\n\nWhen a member sends a message in the server containing the filter string, their message will be deleted, score will be deducted and there will be a random chance they will be muted. the mute chance increases each time the same member triggers the filter.\n\nIf a normal string is given, common letter substitutions will be taken into account.\n\nif RegEx is given, the matched message will be deleted but the member will not have score deducted or have a chance to be muted.",
 
-    perms: ["ADMIN"],
+    perms: ["BOT_ADMIN"],
 
     canDM: false,
     canEdit: false,
@@ -1361,7 +1361,7 @@
     format: "${PREFIX}deletemessages <member> <number of messages>",
     desc: "Used to delete messages sent by a specific member.",
 
-    perms: ["ADMIN"],
+    perms: ["BOT_ADMIN"],
 
     canDM: false,
     canEdit: true,
@@ -1408,7 +1408,7 @@
     format: "${PREFIX}guildinfo",
     desc: "Displays info about this guild - including server age, member count, and welcome message.",
 
-    perms: ["ADMIN"],
+    perms: ["BOT_ADMIN"],
 
     canDM: false,
     canEdit: false,
@@ -1545,7 +1545,7 @@
     format: "",
     desc: "",
 
-    perms: ["USER", "ADMIN"],
+    perms: ["USER", "BOT_ADMIN"],
 
     canDM: false,
     canEdit: false,

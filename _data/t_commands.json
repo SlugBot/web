@@ -71,4 +71,104 @@
       }
     ]
   },
+
+  reminder: {
+    format: "${PREFIX}reminder <add <interval time> <message> | remove <reminder number> | edit <reminder number> [new interval] [new message] | list>",
+    desc: "Use this command to add/remove/edit/list periodic reminders in your twitch chat.\n\nReminders will only be sent while you are live.",
+
+    perms: ["TWITCH_MOD"],
+
+    canDM: false,
+    canEdit: false,
+    debug: false,
+
+    parameters: [
+      {
+        param: "add | remove | edit | list",
+        values: [
+          {
+            value: "add",
+            desc: "Specifies that the command is being used to add a new reminder."
+          },
+          {
+            value: "remove",
+            desc: "Specifies that the command is being used to remove an existing reminder."
+          },      
+          {
+            value: "edit",
+            desc: "Specifies that the command is being used to edit an existing reminder."
+          },
+          {
+            value: "list",
+            desc: "Specifies that the command is being used to view a list of all reminders."
+          }
+        ]
+      },
+      {
+      	param: "<interval time>",
+      	values: [        
+          {
+            value: "Number",
+            desc: "The interval between sending the reminder in chat (in minutes)."
+          }
+        ]
+      },
+      {
+      	param: "<message>",
+      	values: [
+          {
+            value: "String",
+            desc: "The message that will be sent in chat every time interval."
+          }
+        ]
+      },
+      {
+      	param: "<reminder number>",
+      	values: [
+          {
+            value: "<reminder number>",
+            desc: "The number of the reminder. Can be viewed using [!reminder list](#reminder)."
+          }
+        ]
+      },
+      {
+      	param: "[new interval]",
+      	values: [
+          {
+            value: "Number",
+            desc: "Optional parameter specifying the new interval for an edited reminder."
+          }
+        ]
+      },
+      {
+      	param: "[new message]",
+      	values: [
+          {
+            value: "String",
+            desc: "Optional parameter specifying the new reminder message for an edited reminder."
+          }
+        ]
+      }
+    ],
+
+    examples: [
+      {
+        command: "!reminder add 20 Welcome to my twitch channel!",
+        desc: "This will add a new reminder with the message \"Welcome to my twitch channel!\" to be sent every 20 minutes."
+      },
+      {
+        command: "!reminder remove 1",
+        desc: "This will remove the reminder numbered '1'."
+      },
+      {
+        command: "!reminder edit 1 35 Welcome to my twitch channel! No backseating.",
+        desc: "This will edit the reminder numbered '1' with a new interval of 35 minutes and an updated message."
+      },
+      {
+        command: "!reminder list",
+        desc: "This will list all of the reminders for this channel along with their reminder IDs."
+      },
+    ]
+  }
 }
+
