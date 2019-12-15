@@ -126,8 +126,8 @@
       	param: "<reminder number>",
       	values: [
           {
-            value: "<reminder number>",
-            desc: "The number of the reminder. Can be viewed using [!reminder list](#reminder)."
+            value: "Number",
+            desc: "The number of the reminder. Can be viewed using `!reminder list`."
           }
         ]
       },
