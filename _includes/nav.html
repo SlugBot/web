@@ -31,10 +31,21 @@
 				</div>
 			{% endif %}
 
-			{% if page.type == 'docs' %}
+			{% if page.type == 'docs_discord' %}
 				<hr>
 				<div id="toc-wrapper">
-					{% for command in site.data.commands %}
+					{% for command in site.data.d_commands %}
+					<li>
+						<a href="#{{command.first}}">{{command.first}}</a>
+					</li>
+					{% endfor %}
+				</div>
+			{% endif %}
+
+			{% if page.type == 'docs_twitch' %}
+				<hr>
+				<div id="toc-wrapper">
+					{% for command in site.data.t_commands %}
 					<li>
 						<a href="#{{command.first}}">{{command.first}}</a>
 					</li>
