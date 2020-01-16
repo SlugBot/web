@@ -62,6 +62,7 @@
       }
     ]
   },
+  
   addbuild: {
     format: "${PREFIX}addbuild [build name] [soul level] [upgrade level] <link>",
     desc: "Used to add a build to your build list. Stating `soul level`, `upgrade level` and `build planner link` are optional but recommended. If a soulsplanner link is suplied, any missing data will be taken from the build directly - often, all thats needed.",
@@ -1431,7 +1432,7 @@
         values: [
           {
             value: "String",
-            desc: "The question you wish to ask SlugBot"
+            desc: "The question you wish to ask SlugBot."
           }
         ]
       }
@@ -1542,10 +1543,12 @@
   },
 
   placeholder: {
+  	cmd: "",
     format: "",
     desc: "",
 
     perms: ["USER", "BOT_ADMIN"],
+    moduleId: "",
 
     canDM: false,
     canEdit: false,
