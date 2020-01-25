@@ -169,6 +169,92 @@
         desc: "This will list all of the reminders for this channel along with their reminder IDs."
       },
     ]
+  },
+
+  quote: {
+    cmd: "quote",
+    format: "${PREFIX}quote [list]",
+    desc: "Use this command to pull a random quote from the streamer's list of quotes. add quotes to the list using [!addquote](#addquote).\n\nIncluding the 'list' parameter will display all quotes with their corresponding quote number. This can only be done by moderators.",
+
+    perms: ["USER"],
+    moduleId: "quotes",
+
+    canDM: false,
+    canEdit: false,
+    debug: false,
+
+    parameters: [
+      {
+        param: "[list]",
+        values: [
+          {
+            value: "list",
+            desc: "Optional parameter used by moderators to display a list of all quotes with their quote numbers."
+          }
+        ]
+      }
+    ]
+  },
+  addquote: {
+    cmd: "addquote",
+    format: "${PREFIX}addquote <quote>",
+    desc: "Adds quote to quote list to be randomly selected by [!quote](#quote).",
+
+    perms: ["BOT_ADMIN", "TWITCH_MOD"],
+    moduleId: "quotes",
+
+    canDM: false,
+    canEdit: false,
+    debug: false,
+
+    parameters: [
+      {
+        param: "<quote>",
+        values: [
+          {
+            value: "String"
+          }
+        ]
+      }
+    ],
+
+    examples: [
+      {
+        command: "!addquote Potion seller. Enough of these games.",
+        desc: "This will add the quote to the streamer's list of quotes."
+      }
+    ]
+  },
+  removequote: {
+    cmd: "removequote",
+    format: "${PREFIX}removequote <quote number>",
+    desc: "Use this command to remove a quote by referencing its quote number. Quote numbers can be viewed using [!quote list](#quote)",
+
+    perms: ["USER", "BOT_ADMIN"],
+    moduleId: "quotes",
+
+    canDM: false,
+    canEdit: false,
+    debug: false,
+
+    parameters: [
+      {
+        param: "<quote number>",
+        values: [
+          {
+            value: "Number",
+            desc: "The quote number - displayed in the quote list."
+          }
+        ]
+      }
+    ],
+
+    examples: [
+      {
+        command: "!removequote 1",
+        desc: "This will remove quote with quote number '1' from the list."
+      }
+    ]
   }
 }
 
