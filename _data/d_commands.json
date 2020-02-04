@@ -269,8 +269,8 @@
     parameters: [],
     examples: []
   },
-  constraint: {
-    format: "${PREFIX}constraint <command|score> [<whitelist|blacklist|remove> <channel|role|member>]",
+  permissions: {
+    format: "${PREFIX}permissions <command|score> [<whitelist|blacklist|remove> <channel|role|member>]",
     desc: "Use this command to add channels, roles, and members to a command's whitelist or blacklist. __WHITELISTS AND BLACKLISTS TAKE PRIORITY OVER DEFAULT COMMAND PERMISSIONS.__\n* A command can only be used in whitelisted channels. If There are no whitelisted channels, the command can be used in every channel.\n* A command can only be used by members with whitelisted roles. If There are no whitelisted roles, all roles can use the command.\n* A command can only be used by whitelisted members. If there are no whitelisted members, all members can use the command\n* A command can not be used in blacklisted channels.\n* A command can not be used by members with blacklisted roles.\n* A command can not be used by blacklisted members.\n\nIf `score` is stated instead of a command, constraints on who can receive score and where it will be given can be set.",
     perms: ["BOT_ADMIN"],
     canDM: false,
@@ -301,11 +301,11 @@
     ],
     examples: [
       {
-        command: "!constraint weapon whitelist #bot-stuff",
+        command: "!permissions weapon whitelist #bot-stuff",
         desc: "This will whitelist the channel `#bot-stuff` for the command `!weapon` - meaning the `!weapon` command can only be used in that channel."
       },
       {
-        command: "!constraint score blacklist #bot-stuff",
+        command: "!permissions score blacklist #bot-stuff",
         desc: "This will stop SlugBot from giving users XP for activity in the `#bot-stuff` channel."
       }
     ]
