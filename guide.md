@@ -15,7 +15,7 @@ The following page will provide an easy-to-follow overview on how to install and
 SlugBot intergrates with Twitch.tv allowing it to notify when your selected streamers go live. After specifying your `streams` channel using <span class="command-link" data-command="setchannel"/> and adding some streamers to look out for using <span class="command-link" data-command="streamer"/>, SlugBot will send a notification message to the `streams` channel when those streamers go live. SlugBot will also delete the notification when the stream goes offline.
 
 <div class="note">
-	Setting a streamer role using <span class="command-link" data-command="setrole"></span> allows a role to specify a member as a streamer for SlugBot to look out for and post notifications in the streams channel.
+	Setting a streamer role using <span class="command-link" data-command="setrole"> allows a role to specify a member as a streamer for SlugBot to look out for and post notifications in the streams channel.
 </div>
 
 ### Set a Channel for SlugBot to Use
