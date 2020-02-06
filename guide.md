@@ -15,7 +15,7 @@ The following page will provide an easy-to-follow overview on how to install and
 SlugBot intergrates with Twitch.tv allowing it to notify when your selected streamers go live. After specifying your `streams` channel using <span class="command-link" data-command="setchannel"/> and adding some streamers to look out for using <span class="command-link" data-command="streamer"/>, SlugBot will send a notification message to the `streams` channel when those streamers go live. SlugBot will also delete the notification when the stream goes offline.
 
 <div class="note">
-	Setting a streamer role using <span class="command-link" data-command="setrole"/> allows a role to specify a member as a streamer for SlugBot to look out for and post notifications in the streams channel.
+	Setting a streamer role using <span class="command-link" data-command="setrole"></span> allows a role to specify a member as a streamer for SlugBot to look out for and post notifications in the streams channel.
 </div>
 
 ### Set a Channel for SlugBot to Use
@@ -82,7 +82,7 @@ SlugBots command prefix can be set using `!setprefix <new prefix>`.
 Like some other bots, SlugBot has an Economy module, letting users earn and trade currency in the form of SlugCoin. However, SlugBot's economy allows users to 'hack' other members, steal from them or plant malware on their accounts. The aim of the game is to earn as much SlugCoin as you can while also protecting your account from other members.
 
 ## The Basics
-Your account holds all of your Slug Economy data, including your bank balance, stats, info on your planted malware and marks, along with info on your detected security breaches. Use the `!slugs` command to view your account menu. All accounts are protected by a **FIREWALL** that will prevent any tampering with your account. but that can be **BYPASS**ed given enough time.
+Your account holds all of your Slug Economy data, including your bank balance, stats, info on your processes and marks, along with info on your detected security breaches. Use the `!slugs` command to view your account menu. All accounts are protected by a **FIREWALL** that will prevent any tampering with your account. but that can be **BYPASS**ed given enough time.
 
 Your bank holds SlugCoin in two ways; **Current** and **Vault**. **Current** has infinite capacity but is more vulnerable to malware and theft. your **Vault** is much more secure but has limited capacity determined by your **POWER Lvl**. Use the `!vault [amount]` to transfer SC from your current to your vault.
 
