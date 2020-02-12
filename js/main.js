@@ -139,8 +139,14 @@ function modalInjectExamples(command) {
 	}
 }
 
-function openModal(commandName) {
-	let command = commandData[commandName];
+function openModal(commandName, isTwitch) {
+	let command;
+	if (isTwitch) {
+		command = commandData.twitch[commandName];
+	} 
+	else {
+		command = commandData.discord[commandName];
+	}
 	document.getElementById('modal-title').innerText = commandName;
 	document.getElementById('modal-command').innerText = command.format.replace("${PREFIX}", "!");
 	document.getElementById('modal-desc').innerHTML = marked(command.desc);
@@ -162,10 +168,16 @@ function prepareCommandLinks() {
 	var linkElements = document.getElementsByClassName('command-link');
 	for (let i = 0; i < linkElements.length; i++) {
 		let element = linkElements[i];
-		let commandName = element.getAttribute('data-command');
+		let dataCommand = element.getAttribute('data-command');
+		dataCommand = dataCommand.split(" ");
+		let commandName = dataCommand[0];
+		let commandType = "discord";
+		if (dataCommand[1]) {
+			commandType = dataCommand[1];
+		}
 		element.setAttribute('title', "Click to see information about " + commandName);
 		element.innerText = commandName;
-		element.onclick = function() {openModal(commandName)};
+		element.onclick = function() {openModal(commandName, commandType === "twitch");};
 	}
 }
 

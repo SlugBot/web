@@ -11,7 +11,9 @@
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 {% if page.type == 'guide' %}
 <script>
-	var commandData = JSON.parse(decodeURIComponent("{{ site.data.commands | jsonify | uri_escape  }}"));
+	var commandData = {};
+	commandData.discord = JSON.parse(decodeURIComponent("{{ site.data.d_commands | jsonify | uri_escape  }}"));
+	commandData.twitch = JSON.parse(decodeURIComponent("{{ site.data.t_commands | jsonify | uri_escape  }}"));
 </script>
 {% endif %}
 <script type="text/javascript" src="js/main.js" defer></script>
