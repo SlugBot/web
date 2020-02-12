@@ -25,9 +25,10 @@
       }
     ]
   },
+
   {
-    name: "Setting up SlugBot for twitch.tv",
-    link: "#setting-up-slugBot-for-twitch.tv",
+    name: "Setting up SlugBot for twitch",
+    link: "#setting-up-slugBot-for-twitch",
     subsections: [
       {
         name: "Activating Modules",
@@ -63,7 +64,7 @@
       {
         name: "Investing",
         link: "#investing"
-      }
+      },
       {
         name: "Stats",
         link: "#stats"
