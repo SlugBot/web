@@ -4,7 +4,7 @@ Title: SlugBot User Guide
 type: 'guide'
 ---
 # SlugBot User Guide
-The following page will provide an easy-to-follow overview on how to install and run SlugBot in your Discord server or Twtich chat, and how to get the most out of it.
+The following page will provide an easy-to-follow overview on how to install and run SlugBot in your Discord server or Twitch chat, and how to get the most out of it.
 
 
 *****************************
@@ -27,11 +27,7 @@ The linking process is done using the command `!twitch <your twitch name>`. This
 One benefit of using the streamer role method is that it works synergisticly with the <span class="command-link" data-command="giveme"> command - allowing the streamer role to be self-assigned by members of your server. Make the `streamer` role self-assignable using the command `!giveme add <streamer role name>`. Members can then use the command `!giveme <streamer role>` to assign the role to themselves and have their streams appear in the streams channel.
 
 
-
-# First-time discord setup
-Once you've invited Slugbot to your discord server, there is some initial setup that should be done to get everything up and running. This section will explain the setup process.
-
-## Setting Channels For SlugBot to Use:
+## Setting Channels For SlugBot to Use
 SlugBot needs to know what channels to use for _Welcome Messages_, _Member Events_, _Stream Notifications_, _Leaderboard_, and _Logging_. Use the !`setchannel` command to see what channels you need to set and what channels have been set already.
 
 __Use `!setchannel default` in the channel you want SlugBot to use__ to set that channel as the default channel (`#general` is a good choice).
@@ -40,7 +36,7 @@ Do the same for `!setchannel leaderboard`, `!setchannel streams`, `!setchannel m
 
 A set channel can be unset using `!setchannel <channel> reset`.
 ​
-## Setting Roles For SlugBot to Use:
+## Setting Roles For SlugBot to Use
 Use the `!setrole` command to see what roles can be set for SlugBot's use. You will want to create the roles you plan for SlugBot to use first, then set them using `!setrole <role to set> <role name>`. For example, create a role in Server Settings called 'Newcomer' and assign it as the global role with `!setrole global newcomer`.
 
 * The set `global` role is given to every member when they join the server. This will be applied to members retroactively - any existing member without the role will be given it when they next send a message.
@@ -49,15 +45,6 @@ Use the `!setrole` command to see what roles can be set for SlugBot's use. You w
 * `pc`, `ps4`, and `xbox` are used for self-settable platform roles. Setting the platform roles will create clones of the set roles that allow members to opt out of role pings. Member events will also use these roles to add information to the notifications.
 * The `botAdmin` role can be set to allow with this role access to SlugBot admin commands without needing to give them the server administrator permission.
 * the `streamer` role works in conjunction with SlugBots twitch stream notifications. Any member with this role will have their streams linked in a set 
-
-<div class="note">
-	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris convallis nibh id ex venenatis, a euismod lorem vulputate. 
-</div>
-
-<div class="note">
-	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris convallis nibh id ex venenatis, a euismod lorem vulputate. 
-</div>
-
 
 ## Setting Roles to be Given when a Member Reaches a Certain Level:
 SlugBot can be used to give members roles to members who have been active in the server and reached a specific level. This can be done using the `!roleatlevel` command. To add a role to be given at level use the format `!roleatlevel add <role> <level> [sendNotification?]`. The optional argument `sendnotification` requires either true or false to state whether a notification should be sent telling the member they have gained the role upon reaching the required level.
@@ -73,6 +60,15 @@ The welcome message sent by SlugBot when a new member joins can be customised us
 You may have role pings enabled but also want to give members the option to opt out of receiving said pings. Use the `!optoutpings` command to toggle whether to allow members to opt out of role pings.
 
 SlugBots command prefix can be set using `!setprefix <new prefix>`.
+
+---
+
+# Setting up SlugBot for twitch.tv
+To get SlugBot in your twitch chat, use the command `!twitch <your twitch name>` in any Discord server with SlugBot. SlugBot will DM you on twitch with confirmation so make sure you can receive DMs. SlugBot will then be lurking until activation - use the command `!activate slugbot` to get it listening to commands and enable all SlugBot functionality.
+
+To enable/disable individual commands, use the `!permissions <command> <enable|disable>`. For example, to disable the `!uptime command`, use the following command `!permissions uptime disable`.
+
+---
 
 # Slug Economy
 Like some other bots, SlugBot has an Economy module, letting users earn and trade currency in the form of SlugCoin. However, SlugBot's economy allows users to 'hack' other members, steal from them or plant malware on their accounts. The aim of the game is to earn as much SlugCoin as you can while also protecting your account from other members.
@@ -91,7 +87,7 @@ If you are feeling generous, you can give SC to others using the `!giveslugs <ta
 ## Processes and Malware
 One of the best ways to make SC is to steal, either directly or through the effects of malware processes. First you'll want to **BYPASS** your target's **FIREWALL** using the `!bypass <target>` command. This will begin the **BYPASS** process which will take a certain amount of time determined by your BYPASSER level and their FIREWALL level.
 <div class="note">
-Most processes take time - be that **BYPASS**ing, **SCAN**ning for processes, or planting processes of your own on someones account. The time a process takes is usually determined by your offensive stat and your target's defensive stat. Use the `!plant` command with no arguments to view a list of possible processes you can plant and their corresponding offensive stat and defensive stat.
+Most processes take time - be that BYPASSing, SCANning for processes, or planting processes of your own on someones account. The time a process takes is usually determined by your offensive stat and your target's defensive stat. Use the `!plant` command with no arguments to view a list of possible processes you can plant and their corresponding offensive stat and defensive stat.
 </div>
 Once you've **BYPASS**ed a user's **FIREWALL** you'll have access to their account. Use `!slugs <target>` command to open their account menu and view their info. You won't be able to take anything from their bank balance just yet - Their SC reserves are still protected by their bank **ENCRYPTION** which will need to be **CRACK**ed - a time consuming process (`!crack <target>`), but access to their account now lets you plant various processes on them.
 
@@ -156,4 +152,5 @@ Stats determine how long it takes for processes to complete, how effective proce
 
 ---
 
-#Setting up SlugBot for twitch.tv
+
+
