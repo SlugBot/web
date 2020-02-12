@@ -14,21 +14,17 @@ The following page will provide an easy-to-follow overview on how to install and
 ## Streamers and Stream Notifications
 SlugBot intergrates with Twitch.tv allowing it to notify when your selected streamers go live. After specifying your `streams` channel using <span class="command-link" data-command="setchannel"/> and adding some streamers to look out for using <span class="command-link" data-command="streamer"/>, SlugBot will send a notification message to the `streams` channel when those streamers go live. SlugBot will also delete the notification when the stream goes offline.
 
-<div class="note">
-	Setting a streamer role using <span class="command-link" data-command="setrole"> allows a role to specify a member as a streamer for SlugBot to look out for and post notifications in the streams channel.
-</div>
-
-### Set a Channel for SlugBot to Use
-First you'll want to set a channel in your server for SlugBot to send stream notifications in. Use the `!setchannel streams` command __in the channel you want SlugBot to use__.
-### Add Streamers to the Streamer List. 
-This can be done in a couple ways, using the `!streamer` command or using a `streamer` role.
+### Set a Stream Channel for SlugBot to Use
+First you'll want to set a channel in your server for SlugBot to send stream notifications in. Use the <span class="command-link" data-command="setchannel"> command with the `streams` argument __in the channel you want SlugBot to use__.
+### Add Streamers to the Streamer List
+This can be done in a couple ways, using the <span class="command-link" data-command="streamer"> command or using a `streamer` role.
 * Adding a streamer to the steamer list is as easy as using the command `!streamer add <twitch username>`. Streamers can be removed from the list with `!steamer remove <twitch username>`, and the full streamer list can be viewed using `!streamer list`.
 	
 * Using a `streamer` role requires a little more setup but streamlines the process for streamers that are also members of your server. Use the `!setrole streamer <streamer role name>` command to specify a role for SlugBot to use. Now any member given this role will be added to the streamer list __provided they have linked their discord account with their twitch account through SlugBot__. 
 
 The linking process is done using the command `!twitch <your twitch name>`. This link need only be made once per discord account.
 
-One benefit of using the streamer role method is that it works synergisticly with the `!giveme` command - allowing the streamer role to be self-assigned by members of your server. Make the `streamer` role self-assignable using the command `!giveme add <streamer role name>`. Members can then use the command `!giveme <streamer role>` to assign the role to themselves and have their streams appear in the streams channel.
+One benefit of using the streamer role method is that it works synergisticly with the <span class="command-link" data-command="giveme"> command - allowing the streamer role to be self-assigned by members of your server. Make the `streamer` role self-assignable using the command `!giveme add <streamer role name>`. Members can then use the command `!giveme <streamer role>` to assign the role to themselves and have their streams appear in the streams channel.
 
 
 
@@ -84,83 +80,80 @@ Like some other bots, SlugBot has an Economy module, letting users earn and trad
 ## The Basics
 Your account holds all of your Slug Economy data, including your bank balance, stats, info on your processes and marks, along with info on your detected security breaches. Use the `!slugs` command to view your account menu. All accounts are protected by a **FIREWALL** that will prevent any tampering with your account. but that can be **BYPASS**ed given enough time.
 
-Your bank holds SlugCoin in two ways; **Current** and **Vault**. **Current** has infinite capacity but is more vulnerable to malware and theft. your **Vault** is much more secure but has limited capacity determined by your **POWER Lvl**. Use the `!vault [amount]` to transfer SC from your current to your vault.
+Your bank holds SlugCoin in two ways; **Current** and **Vault**. **Current** has infinite capacity but is more vulnerable to malware and theft. your **Vault** is much more secure but has limited capacity determined by your **POWER Lvl**. Use the `!vault` to transfer SC from your current to your vault.
 
 The easiest way to start earning is through Daily SlugCoin collection and passive SlugCoin earning. 
-
-Once per day, you can use the `!daily` command to earn between 100SC and 300SC.
+Once per day, you can use the `!daily` command to earn between 5000sc and 10,000sc.
 You will also earn a small amount every few minutes while you are active in the server.
 
-If you are feeling generous, you can give SC to others using the `!giveslugs <target> <amount>` command. On the other hand, you can *take* SC from accounts you have **CRACK**ed using `!takeslugs <target> amount`.
+If you are feeling generous, you can give SC to others using the `!giveslugs <target> <amount>` command.
 
 ## Processes and Malware
-The best way to make SC is to steal, either directly or through the effects of malware. First you'll want to **BYPASS** your target's **FIREWALL** using the `!bypass <target>` command. This will begin the **BYPASS** process.
-
-Most processes take time - be that **BYPASS**ing, **SCAN**ning for malware, or planting malware of your own on someones account. The time a process takes is usually determined by your offensive stat and your target's defensive stat.
-
-Once you've **BYPASS**ed a user's **FIREWALL** you'll have access to their account. Use `!bypass <target>` command again to open their account menu and view their info. You won't be able to take anything from their bank balance just yet, however. Their SC are still protected by their bank **ENCRYPTION** which will need to be **CRACK**ed - a time consuming process (`!crack <target>`). But access to their account now lets you plant various types of malware on them.
+One of the best ways to make SC is to steal, either directly or through the effects of malware processes. First you'll want to **BYPASS** your target's **FIREWALL** using the `!bypass <target>` command. This will begin the **BYPASS** process which will take a certain amount of time determined by your BYPASSER level and their FIREWALL level.
+<div class="note">
+Most processes take time - be that **BYPASS**ing, **SCAN**ning for processes, or planting processes of your own on someones account. The time a process takes is usually determined by your offensive stat and your target's defensive stat. Use the `!plant` command with no arguments to view a list of possible processes you can plant and their corresponding offensive stat and defensive stat.
+</div>
+Once you've **BYPASS**ed a user's **FIREWALL** you'll have access to their account. Use `!slugs <target>` command to open their account menu and view their info. You won't be able to take anything from their bank balance just yet - Their SC reserves are still protected by their bank **ENCRYPTION** which will need to be **CRACK**ed - a time consuming process (`!crack <target>`), but access to their account now lets you plant various processes on them.
 
 ### SKIMMER
 ```!plant skimmer <target> <fraction to skim>```
-This malware, once planted on a user, will skim a fraction of all income the infected user receives and transfer them to the planter instead.
-
-### BYPASS_VIRUS
-```!plant bypass_virus <target>```
-When a user with this malware planted on them **BYPASS**es another, the planter of this malware will also gain access to that account.
+This process, once planted on a user, will skim a fraction of all income the user receives and transfers the skimmed SC to the planter instead. As the process isn't directly taking SC from an account, but instead intercepting a transaction, **CRACK**ing their encryption is not needed.
+* Offensive Stat: **SKIMMER**
+* Defensive Stat: **SCANNER**
 
 ### LEECH
 ```!plant leech <target> <amount/hour>```
-This malware will siphon an amount of SC out of a users current account and transfer it to the planter every hour. Requires that the users **ENCRYPTION** has been **CRACK**ed.
+This malware will siphon an amount of SC out of a users current account and transfer it to the planter every hour. Requires that the user's **ENCRYPTION** has been **CRACK**ed.
+* Offensive Stat: **LEECH**
+* Defensive Stat: **ENCRYPTION**
+
+### BYPASS_VIRUS
+```!plant bypass_virus <target>```
+When a user with this process planted on them **BYPASS**es another, the planter of this process will also gain access to that account - essentially cloning their **BYPASS** process.
+* Offensive Stat: **BYPASSER**
+* Defensive Stat: **SCANNER**
+
+### HIJACKER
+```!plant hijacker <target user> <potency>```
+A planted HIJACKER will attempt to hijack processes planted by the infected user. The potency of the HIJACKER process determines the success chance of the hijack attempts as well as the likelihood of its detection by a scan.
+* Offensive Stat: **INJECTOR**
+* Defensive Stat: **SCANNER**
+
+### HONEYPOT
+A honeypot, when planted on a user, bypass attackers attempting to bypass the user, or crack attackers attempting to crack the user. It's best to plant these on high value targets so you can gain access to the attacker's accounts.
+* Offensive Stat: **INJECTOR**
+* Defensive Stat: **SCANNER**
+
+### REDIRECT
+```!plant redirect <target user> to <redirect target user>```
+A redirect process will redirect a planted process on a user to the redirect target user before deleting itself. The redirected process will have its target user spoofed so its owner will assume the process has not been redirected.
+* Offensive Stat: **INJECTOR**
+* Defensive Stat: **SCANNER**
 
 *More coming soon...*
 
-## Scanning and Cleaning
-You are going to want to make sure your account is malware free - but malware isn't always easy to detect. Use the `!scan [attacker] [malware type]` command to start a **SCAN** process. Scans cost SC - so be careful about performing them too often. You can optionally state a suspected attacker or specify a malware type to limit your search to; doing so will increase the likelihood of successfully identifying malware but will also limit which malware will be detected.
+## Scanning
+You are going to want to make sure your account is malware free - but malware processes aren't always easy to detect. Use the `!scan` command to start a **SCAN** process. Scans cost SC - so be careful about performing them too often. You can optionally state a suspected attacker or specify a process type to limit your search to; As you can only scan at most a number of processes equal to your SCANNER lvl, narrowing your search will increase the chance of scanning the process you want.
 
-Once you've **SCAN**ned, any detected malware will be displayed in your INBOUND MALWARE menu tab. You may see that some details of the malware are still unidentified. Some malware may require a few **SCAN**s to fully identify.
+Once you've **SCAN**ned, any detected processes will be displayed in your IDENTIFIED PROCESSES menu tab. You may see that some details of the process are still unidentified. Most processes require a few **SCAN**s to fully identify.
 
-You can also identify malware by accessing the attacker's account and viewing their OUTBOUND MALWARE.
+You can also identify malware by accessing the attacker's account and viewing their OUTBOUND PROCESSES. You can only uncover the owner of the process, but its a good way of finding that a process exists.
 
-You can then use `!clean` to begin removing the malware from your account. The more malware detected, the longer this process will take. The more properties of a malware identified, the more likely it will be successfully removed.
+You are not limited to only scanning processes planted on yourself; You can also scan for processes planted on other people. This can be useful for finding good marks, defending other members, or hijacking profitable processes.
+
+## Cleaning and Hijacking
+
+Once you've identified a process, you may want to remove it or hijack it. Use the `!clean` or `!hijack` commands respectively to begin process. The more properties of the process you've identified, the more likely it will be successfully removed.
+
+## Investing
+
+Another method of making SC is to invest in text channels in discord servers. Channel investments let you invest SC in a channel to get return payments for messages sent in that channel for 7 days. The return rates are calculated from the last 7 days activity - meaning that if a channel is more active in the following 7 days, you will see bigger returns. Use the `!invest [channel] [amount]` command to see the expected return rate on the channel and how much you're expected to make by the end of the investment period. You can confirm or cancel the investment before SC is taken so feel free to use the command to view various channel's return rates.
+
+To terminate an investment early, use the command `!invest terminate <channel>`. You will NOT be reimbursed any SC.
 
 ## Stats
-Stats determine how long it takes for processes to complete, how effective malware is, or how secure your account is. For example, a higher **FIREWALL** stat will mean it will take longer for others to **BYPASS** it and access your account. You can level up using the command `!levelup <stat>` but it will cost SC. Every 5 stats leveled increases your POWER Lvl by 1.
+Stats determine how long it takes for processes to complete, how effective processes are, or how secure your account is. For example, a higher **FIREWALL** stat will mean it will take longer for others to **BYPASS** it and access your account. You can level up using the command `!levelup <stat>` but it will cost SC. Every stat leveled increases your POWER Lvl. Every fifth POWER Lvl increases your vault capacity. every tenth POWER Lvl increases the number of investments you can make.
 
 ---
 
-# Setting Up SmugSlugBot for Twitch.tv for the First Time
-First you will need SlugBot to join your twitch chat; This can be done by pinging `@Narcolept`, I guess? SlugBot will lurk in your twitch chat until activated.
-​
-​
-## Activating Modules
-SlugBot's twitch.tv modules can be activated independently; This allows you to prevent conflicts with other bots you may have in your chat.
-
-To activate a module, enter the command `!activate <module>` in your twitch chat. There are 8 modules: `uptime`, `build`, `igot`, `roll`, `customCommands`, `slugballs`, `so` and `follows`. They can be activated/deactivated one at a time or multiple can be activated/deactivated by listing the modules as follows: `!activate uptime build`. This will activate both `uptime` and `build`.
-
-Alternatively, you can activate/deactivate all modules using the command `!activate slugbot` or `!deactivate slugbot`.
-​
-​
-## Modules Overview
-### `uptime`
-Activating this module allows viewers to use the `!uptime` command (More info in #twitch-commnands).
-
-### `build`
-Activating this module lets the streamer/mods add builds to the streamer's build list (`!addbuild <build name> [soul level] [upgrade level] [build planner link]`), remove builds from the streamer's build list (`!removebuild <build name>`). Also allows viewers to use `!build` and `!sl` commands (More info in #twitch-commnands).
-
-### `igot`
-Activating this module allows viewers to use the !igot `<souls received>` command (More info in #twitch-commnands).
-
-### `roll`
-Activating this module allows viewers to use the `!roll <dice count>D<dice type>` command (More info in #twitch-commnands).
-
-### `customCommands`
-Activating this module allows the streamer/mods to add/remove custom commands using `!addcommand <command> <response>` and `!removecommand <command>` respectively (More info in #twitch-commnands).
-
-### `slugballs`
-Activating this module allows viewers to use the `!slugballs <question>` command (More info in #twitch-commnands).
-
-### `so`
-Activating this module allows the streamer/mods to use the `!so <streamer>` command to shout out another streamer (More info in #twitch-commnands).
-
-### `follows`
-Activating this module sets slugbot to send a message in chat announcing new follows.
+#Setting up SlugBot for twitch.tv
