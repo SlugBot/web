@@ -6,13 +6,7 @@
       {
         name: "Streamers And Stream Notifications",
         link: "#streamers-and-stream-notifications"
-      }
-    ]
-  },
-  {
-    name: "First-time Discord Setup",
-    link: "#first-time-discord-setup",
-    subsections: [
+      },
       {
         name: "Setting Channels For Slugbot To Use",
         link: "#setting-channels-for-slugbot-to-use"
@@ -32,6 +26,21 @@
     ]
   },
   {
+    name: "Setting up SlugBot for twitch.tv",
+    link: "#setting-up-slugBot-for-twitch.tv",
+    subsections: [
+      {
+        name: "Activating Modules",
+        link: "#activating-modules"
+      },
+      {
+        name: "Modules Overview",
+        link: "#modules-overview"
+      }
+    ]
+  },
+ 
+  {
     name: "Slug Economy",
     link: "#slug-economy",
     subsections: [
@@ -44,28 +53,22 @@
         link: "#processes-and-malware"
       },
       {
-        name: "Scanning and Cleaning",
-        link: "#scanning-and-cleaning"
+        name: "Scanning",
+        link: "#scanning"
       },
+      {
+        name: "Cleaning and Hijacking",
+        link: "#cleaning-and-hijacking"
+      },      
+      {
+        name: "Investing",
+        link: "#investing"
+      }
       {
         name: "Stats",
         link: "#stats"
       }
     ]
-  },
-  {
-    name: "First-time Twitch Setup",
-    link: "#setting-up-smugslugbot-for-twitchtv-for-the-first-time",
-    subsections: [
-      {
-        name: "Activating Modules",
-        link: "#activating-modules"
-      },
-      {
-        name: "Modules Overview",
-        link: "#modules-overview"
-      }
-    ]
-  },
+  }  
 ]
 

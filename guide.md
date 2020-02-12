@@ -35,6 +35,7 @@ __Use `!setchannel default` in the channel you want SlugBot to use__ to set that
 Do the same for `!setchannel leaderboard`, `!setchannel streams`, `!setchannel memberevents`, and `!setchannel log`. Make sure the channel permissions are as you want them; The logging channel should be private and only visible to moderators, for example.
 
 A set channel can be unset using `!setchannel <channel> reset`.
+
 ​
 ## Setting Roles For SlugBot to Use
 Use the `!setrole` command to see what roles can be set for SlugBot's use. You will want to create the roles you plan for SlugBot to use first, then set them using `!setrole <role to set> <role name>`. For example, create a role in Server Settings called 'Newcomer' and assign it as the global role with `!setrole global newcomer`.
@@ -46,7 +47,8 @@ Use the `!setrole` command to see what roles can be set for SlugBot's use. You w
 * The `botAdmin` role can be set to allow with this role access to SlugBot admin commands without needing to give them the server administrator permission.
 * the `streamer` role works in conjunction with SlugBots twitch stream notifications. Any member with this role will have their streams linked in a set 
 
-## Setting Roles to be Given when a Member Reaches a Certain Level:
+
+## Setting Roles to be Given when a Member Reaches a Certain Level
 SlugBot can be used to give members roles to members who have been active in the server and reached a specific level. This can be done using the `!roleatlevel` command. To add a role to be given at level use the format `!roleatlevel add <role> <level> [sendNotification?]`. The optional argument `sendnotification` requires either true or false to state whether a notification should be sent telling the member they have gained the role upon reaching the required level.
 
 Example: `!roleatlevel add Trusted 10 true`
@@ -63,7 +65,7 @@ SlugBots command prefix can be set using `!setprefix <new prefix>`.
 
 ---
 
-# Setting up SlugBot for twitch.tv
+# Setting up SlugBot for Twitch
 To get SlugBot in your twitch chat, use the command `!twitch <your twitch name>` in any Discord server with SlugBot. SlugBot will DM you on twitch with confirmation so make sure you can receive DMs. SlugBot will then be lurking until activation - use the command `!activate slugbot` to get it listening to commands and enable all SlugBot functionality.
 
 To enable/disable individual commands, use the `!permissions <command> <enable|disable>`. For example, to disable the `!uptime command`, use the following command `!permissions uptime disable`.
@@ -138,11 +140,9 @@ You can also identify malware by accessing the attacker's account and viewing th
 You are not limited to only scanning processes planted on yourself; You can also scan for processes planted on other people. This can be useful for finding good marks, defending other members, or hijacking profitable processes.
 
 ## Cleaning and Hijacking
-
 Once you've identified a process, you may want to remove it or hijack it. Use the `!clean` or `!hijack` commands respectively to begin process. The more properties of the process you've identified, the more likely it will be successfully removed.
 
 ## Investing
-
 Another method of making SC is to invest in text channels in discord servers. Channel investments let you invest SC in a channel to get return payments for messages sent in that channel for 7 days. The return rates are calculated from the last 7 days activity - meaning that if a channel is more active in the following 7 days, you will see bigger returns. Use the `!invest [channel] [amount]` command to see the expected return rate on the channel and how much you're expected to make by the end of the investment period. You can confirm or cancel the investment before SC is taken so feel free to use the command to view various channel's return rates.
 
 To terminate an investment early, use the command `!invest terminate <channel>`. You will NOT be reimbursed any SC.
