@@ -68,6 +68,7 @@ SlugBots command prefix can be set using `!setprefix <new prefix>`.
 # Setting up SlugBot for Twitch
 To get SlugBot in your twitch chat, use the command `!twitch <your twitch name>` in any Discord server with SlugBot. SlugBot will DM you on twitch with confirmation so make sure you can receive DMs. SlugBot will then be lurking until activation - use the command `!activate slugbot` to get it listening to commands and enable all SlugBot functionality.
 
+## Modules and Permissions
 To enable/disable individual commands, use the `!permissions <command> <enable|disable>`. For example, to disable the `!uptime command`, use the following command `!permissions uptime disable`.
 
 ---

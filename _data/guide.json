@@ -28,15 +28,11 @@
 
   {
     name: "Setting up SlugBot for twitch",
-    link: "#setting-up-slugBot-for-twitch",
+    link: "#setting-up-slugbot-for-twitch",
     subsections: [
       {
-        name: "Activating Modules",
-        link: "#activating-modules"
-      },
-      {
-        name: "Modules Overview",
-        link: "#modules-overview"
+        name: "Modules and Permissions",
+        link: "#modules-and-permissions"
       }
     ]
   },
