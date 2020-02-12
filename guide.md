@@ -77,22 +77,22 @@ To enable/disable individual commands, use the `!permissions <command> <enable|d
 Like some other bots, SlugBot has an Economy module, letting users earn and trade currency in the form of SlugCoin. However, SlugBot's economy allows users to 'hack' other members, steal from them or plant malware on their accounts. The aim of the game is to earn as much SlugCoin as you can while also protecting your account from other members.
 
 ## The Basics
-Your account holds all of your Slug Economy data, including your bank balance, stats, info on your processes and marks, along with info on your detected security breaches. Use the `!slugs` command to view your account menu. All accounts are protected by a **FIREWALL** that will prevent any tampering with your account. but that can be **BYPASS**ed given enough time.
+Your account holds all of your Slug Economy data, including your bank balance, stats, info on your processes and marks, along with info on your detected security breaches. Use the <span class="command-link" data-command="slugs"/> command to view your account menu. All accounts are protected by a **FIREWALL** that will prevent any tampering with your account. but that can be **BYPASS**ed given enough time.
 
-Your bank holds SlugCoin in two ways; **Current** and **Vault**. **Current** has infinite capacity but is more vulnerable to malware and theft. your **Vault** is much more secure but has limited capacity determined by your **POWER Lvl**. Use the `!vault` to transfer SC from your current to your vault.
+Your bank holds SlugCoin in two ways; **Current** and **Vault**. **Current** has infinite capacity but is more vulnerable to malware and theft. your **Vault** is much more secure but has limited capacity determined by your **POWER Lvl**. Use the <span class="command-link" data-command="vault"/> to transfer SC from your current to your vault.
 
 The easiest way to start earning is through Daily SlugCoin collection and passive SlugCoin earning. 
-Once per day, you can use the `!daily` command to earn between 5000sc and 10,000sc.
+Once per day, you can use the <span class="command-link" data-command="daily"/> command to earn between 5000sc and 10,000sc.
 You will also earn a small amount every few minutes while you are active in the server.
 
-If you are feeling generous, you can give SC to others using the `!giveslugs <target> <amount>` command.
+If you are feeling generous, you can give SC to others using the <span class="command-link" data-command="giveslugs"/> command.
 
 ## Processes and Malware
 One of the best ways to make SC is to steal, either directly or through the effects of malware processes. First you'll want to **BYPASS** your target's **FIREWALL** using the `!bypass <target>` command. This will begin the **BYPASS** process which will take a certain amount of time determined by your BYPASSER level and their FIREWALL level.
 <div class="note">
 Most processes take time - be that BYPASSing, SCANning for processes, or planting processes of your own on someones account. The time a process takes is usually determined by your offensive stat and your target's defensive stat. Use the `!plant` command with no arguments to view a list of possible processes you can plant and their corresponding offensive stat and defensive stat.
 </div>
-Once you've **BYPASS**ed a user's **FIREWALL** you'll have access to their account. Use `!slugs <target>` command to open their account menu and view their info. You won't be able to take anything from their bank balance just yet - Their SC reserves are still protected by their bank **ENCRYPTION** which will need to be **CRACK**ed - a time consuming process (`!crack <target>`), but access to their account now lets you plant various processes on them.
+Once you've **BYPASS**ed a user's **FIREWALL** you'll have access to their account. Use `!slugs <target>` command to open their account menu and view their info. You won't be able to take anything from their bank balance just yet - Their SC reserves are still protected by their bank **ENCRYPTION** which will need to be **CRACK**ed - a time consuming process (`!crack <target>`), but access to their account now lets you plant various processes on them using the <span class="command-link" data-command="plant"/> command.
 
 ### SKIMMER
 ```!plant skimmer <target> <fraction to skim>```
@@ -132,7 +132,7 @@ A redirect process will redirect a planted process on a user to the redirect tar
 *More coming soon...*
 
 ## Scanning
-You are going to want to make sure your account is malware free - but malware processes aren't always easy to detect. Use the `!scan` command to start a **SCAN** process. Scans cost SC - so be careful about performing them too often. You can optionally state a suspected attacker or specify a process type to limit your search to; As you can only scan at most a number of processes equal to your SCANNER lvl, narrowing your search will increase the chance of scanning the process you want.
+You are going to want to make sure your account is malware free - but malware processes aren't always easy to detect. Use the <span class="command-link" data-command="scan"/> command to start a **SCAN** process. Scans cost SC - so be careful about performing them too often. You can optionally state a suspected attacker or specify a process type to limit your search to; As you can only scan at most a number of processes equal to your SCANNER lvl, narrowing your search will increase the chance of scanning the process you want.
 
 Once you've **SCAN**ned, any detected processes will be displayed in your IDENTIFIED PROCESSES menu tab. You may see that some details of the process are still unidentified. Most processes require a few **SCAN**s to fully identify.
 
@@ -141,15 +141,15 @@ You can also identify malware by accessing the attacker's account and viewing th
 You are not limited to only scanning processes planted on yourself; You can also scan for processes planted on other people. This can be useful for finding good marks, defending other members, or hijacking profitable processes.
 
 ## Cleaning and Hijacking
-Once you've identified a process, you may want to remove it or hijack it. Use the `!clean` or `!hijack` commands respectively to begin process. The more properties of the process you've identified, the more likely it will be successfully removed.
+Once you've identified a process, you may want to remove it or hijack it. Use the <span class="command-link" data-command="clean"/> or <span class="command-link" data-command="hijack"/> commands respectively to begin process. The more properties of the process you've identified, the more likely it will be successfully removed.
 
 ## Investing
-Another method of making SC is to invest in text channels in discord servers. Channel investments let you invest SC in a channel to get return payments for messages sent in that channel for 7 days. The return rates are calculated from the last 7 days activity - meaning that if a channel is more active in the following 7 days, you will see bigger returns. Use the `!invest [channel] [amount]` command to see the expected return rate on the channel and how much you're expected to make by the end of the investment period. You can confirm or cancel the investment before SC is taken so feel free to use the command to view various channel's return rates.
+Another method of making SC is to invest in text channels in discord servers. Channel investments let you invest SC in a channel to get return payments for messages sent in that channel for 7 days. The return rates are calculated from the last 7 days activity - meaning that if a channel is more active in the following 7 days, you will see bigger returns. Use the <span class="command-link" data-command="invest"/> command to see the expected return rate on the channel and how much you're expected to make by the end of the investment period. You can confirm or cancel the investment before SC is taken so feel free to use the command to view various channel's return rates.
 
 To terminate an investment early, use the command `!invest terminate <channel>`. You will NOT be reimbursed any SC.
 
 ## Stats
-Stats determine how long it takes for processes to complete, how effective processes are, or how secure your account is. For example, a higher **FIREWALL** stat will mean it will take longer for others to **BYPASS** it and access your account. You can level up using the command `!levelup <stat>` but it will cost SC. Every stat leveled increases your POWER Lvl. Every fifth POWER Lvl increases your vault capacity. every tenth POWER Lvl increases the number of investments you can make.
+Stats determine how long it takes for processes to complete, how effective processes are, or how secure your account is. For example, a higher **FIREWALL** stat will mean it will take longer for others to **BYPASS** it and access your account. You can level up using the command <span class="command-link" data-command="levelup"/> but it will cost SC. Every stat leveled increases your POWER Lvl. Every fifth POWER Lvl increases your vault capacity. every tenth POWER Lvl increases the number of investments you can make.
 
 ---
 
