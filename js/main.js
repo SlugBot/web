@@ -147,7 +147,6 @@ function openModal(commandName, isTwitch) {
 	else {
 		command = commandData.discord[commandName];
 	}
-	console.log(commandData);
 	document.getElementById('modal-title').innerText = commandName;
 	document.getElementById('modal-command').innerText = command.format.replace("${PREFIX}", "!");
 	document.getElementById('modal-desc').innerHTML = marked(command.desc);
@@ -176,8 +175,8 @@ function prepareCommandLinks() {
 		if (dataCommand[1]) {
 			commandType = dataCommand[1];
 		}
-		element.setAttribute('title', "Click to see information about " + commandName);
-		element.innerText = commandName;
+		element.setAttribute('title', "Click to see information about !" + commandName);
+		element.innerText = "!" + commandName;
 		element.onclick = function() {openModal(commandName, commandType === "twitch");};
 	}
 }
