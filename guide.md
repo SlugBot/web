@@ -79,7 +79,7 @@ Like some other bots, SlugBot has an Economy module, letting users earn and trad
 ## The Basics
 Your account holds all of your Slug Economy data, including your bank balance, stats, info on your processes and marks, along with info on your detected security breaches. Use the <span class="command-link" data-command="slugs"/> command to view your account menu. All accounts are protected by a **FIREWALL** that will prevent any tampering with your account. but that can be **BYPASS**ed given enough time.
 
-Your bank holds SlugCoin in two ways; **Current** and **Vault**. **Current** has infinite capacity but is more vulnerable to malware and theft. your **Vault** is much more secure but has limited capacity determined by your **POWER Lvl**. Use the <span class="command-link" data-command="vault"/> to transfer SC from your current to your vault.
+Your bank holds SlugCoin in two ways; **Current** and **Vault**. **Current** has infinite capacity but is more vulnerable to malware and theft. your **Vault** is much more secure but has limited capacity determined by your **POWER Lvl**. Use the <span class="command-link" data-command="vault"/> command to transfer SC from your current to your vault.
 
 The easiest way to start earning is through Daily SlugCoin collection and passive SlugCoin earning. 
 Once per day, you can use the <span class="command-link" data-command="daily"/> command to earn between 5000sc and 10,000sc.
