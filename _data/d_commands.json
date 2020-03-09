@@ -290,11 +290,19 @@
         ]
       },
       {
-      param: "<whitelist|blacklist|remove>",
+        param: "<whitelist|blacklist|remove>",
         values: [
           {
-            value: "slugbot command",
-            desc: "The command you wish to set permission constraints for."
+            value: "whitelist",
+            desc: "specify that the command should be whitelisted"
+          },
+          {
+            value: "blacklist",
+            desc: "specify that the command should be blacklisted"
+          },
+          {
+            value: "remove",
+            desc: "specify that the permissions should be removed"
           }
         ],
       }

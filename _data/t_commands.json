@@ -1,260 +1,742 @@
 {
-	addcommand: {
-    format: "${PREFIX}addcommand <command> <response>",
-    desc: "Used to add/edit a custom command that will respond with a specified string. alternatively regex can be used in place of a command to make SlugBot send a response message whenever the regex matches a members message.\n\nThe response can contain certain replacer flags that will be replaced will specific values when sent by slugbot.\n\nLINK TO REPLACER FLAGS SECTION",
-    perms: ["ADMIN"],
-    canDM: false,
-    canEdit: false,
-    parameters: [
+  "commands": {
+    "cmd": "commands",
+    "format": "${PREFIX}commands",
+    "desc": "Used to get a list of all custom commands in the server DMed to you.",
+    "perms": [
+      "USER"
+    ],
+    "moduleId": "customcommands",
+    "canDM": false,
+    "canEdit": false,
+    "parameters": [],
+    "examples": []
+  },
+  "math": {
+    "cmd": "math",
+    "synonyms": [
+      "maths"
+    ],
+    "format": "${PREFIX}math <expression>",
+    "desc": "Use this command to calculate the value of a mathematical expression",
+    "perms": [
+      "USER"
+    ],
+    "parameters": [
       {
-        param: "<command>",
-        values: [
+        "param": "<expression>",
+        "values": [
           {
-            value: "New command string"
-          },
-          {
-            value: "Existing command string",
-            desc: "Will overwrite its response"
-          },
-          {
-            value: "Regex keyword",
-            desc: "indicated by a string starting and ending with `/`"
-          }
-        ]
-      },
-      {
-        param: "<response>",
-        values: [
-          {
-            value: "String",
-            desc: "will be displayed when the custom command is used or the regex is matched"
+            "value": "mathematical expression",
+            "desc": "A resolvable mathematical expression"
           }
         ]
       }
     ],
-    examples: [
+    "examples": [
       {
-        command: "!addcommand flip You flipped a coin and got ${rand:heads|tails}!",
-        desc: "This will add a command that will respond with `You flipped a coin and got heads!` OR `You flipped a coin and got tails!` when the command `!flip` is used."
-      },
-      {
-        command: "!addcommand /don't\\s@\\sme/ <@${id}>",
-        desc: "This will create a regex keyword match that will respond with a discord mention whenever a message contains the string `don't @ me`."
+        "command": "!math 84^2 / pi",
+        "desc": "This will get a response with the value of the expression."
       }
     ]
   },
-  removecommand: {
-    format: "${PREFIX}removecommand <command>",
-    desc: "Used to remove an existing custom command.",
-    perms: ["ADMIN"],
-    canDM: false,
-    canEdit: false,
-    parameters: [
+  "roll": {
+    "cmd": "roll",
+    "format": "${PREFIX}roll [avg] <dice count>D<dice type> [modifier]",
+    "desc": "Use this command to get SlugBot to roll dice. Including the `avg` flag will return a readout displaying statistical information on the roll instead.",
+    "perms": [
+      "USER"
+    ],
+    "moduleId": "roll",
+    "canDM": false,
+    "canEdit": false,
+    "debug": false,
+    "parameters": [
       {
-        param: "<command>",
-        values: [
+        "param": "[avg]",
+        "values": [
           {
-            value: "Existing command",
-            desc: "Must match existing command exactly"
+            "value": "avg",
+            "desc": "Specify that statistical information should be displayed instead"
+          }
+        ]
+      },
+      {
+        "param": "<dice count>",
+        "values": [
+          {
+            "value": "Integer number",
+            "desc": "Corresponding to the number of dice to roll"
+          }
+        ]
+      },
+      {
+        "param": "<dice type>",
+        "values": [
+          {
+            "value": "Integer number",
+            "desc": "Corresponding to the type of dice to roll"
+          }
+        ]
+      },
+      {
+        "param": "[modifier]",
+        "values": [
+          {
+            "value": "Integer number",
+            "desc": "Corresponding to a value to add or subtract from the total roll"
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "command": "!roll 4d6 - 2",
+        "desc": "This will roll four D6s, subtract 2, then display the outcome."
+      },
+      {
+        "command": "!roll avg 4d6",
+        "desc": "This will display the statistics of rolling four D6s."
+      }
+    ]
+  },
+  "slugballs": {
+    "cmd": "slugballs",
+    "format": "${PREFIX}slugballs <question>",
+    "desc": "Use this command to ask SlugBot a question, like a magic eight ball - only more rude.",
+    "perms": [
+      "USER"
+    ],
+    "moduleId": "slugballs",
+    "canDM": true,
+    "canEdit": true,
+    "debug": false,
+    "parameters": [
+      {
+        "param": "<question>",
+        "values": [
+          {
+            "value": "String",
+            "desc": "The question you wish to ask SlugBot"
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "command": "!slugballs Should I play dark souls?",
+        "desc": "This will make SlugBot respond with an answer to the question."
+      }
+    ]
+  },
+  "slugbot": {
+    "cmd": "slugbot",
+    "perms": [
+      "USER"
+    ],
+    "debug": true,
+    "canDM": true,
+    "format": "${PREFIX}slugbot",
+    "desc": "Use this command to get an invite link to the SlugBot discord, invite SlugBot to your discord server, and a link to the SlugBot kofi donation page."
+  },
+  "addbuild": {
+    "cmd": "addbuild",
+    "format": "${PREFIX}addbuild [build name] [soul level] [upgrade level] <link>",
+    "desc": "Used to add a build to your build list. Stating `soul level`, `upgrade level` and `build planner link` are optional but recommended. If a soulsplanner link is suplied, any missing data will be taken from the build directly - often, all thats needed.",
+    "perms": [
+      "TWITCH_MOD"
+    ],
+    "moduleId": "builds",
+    "canDM": true,
+    "canEdit": false,
+    "parameters": [
+      {
+        "param": "[build name]",
+        "values": [
+          {
+            "value": "Name of build",
+            "desc": "Unique identifier for build."
+          }
+        ]
+      },
+      {
+        "param": "[soul level]",
+        "values": [
+          {
+            "value": "Soul level",
+            "desc": "Soul level of a Dark Souls build."
           },
           {
-            value: "Existing regex keyword to remove",
-            desc: "Must match existing command exactly"
+            "value": "Blood level",
+            "desc": "Blood level of a Bloodborne build."
           }
         ]
-      }
-    ],
-    examples: [ 
+      },
       {
-        command: "!removecommand ping",
-        desc: "This will remove the custom command `!ping`."
-      }
-    ]
-  },
-
-  reminder: {
-    format: "${PREFIX}reminder <add <interval time> <message> | remove <reminder number> | edit <reminder number> [new interval] [new message] | list>",
-    desc: "Use this command to add/remove/edit/list periodic reminders in your twitch chat.\n\nReminders will only be sent while you are live.",
-
-    perms: ["TWITCH_MOD"],
-
-    canDM: false,
-    canEdit: false,
-    debug: false,
-
-    parameters: [
-      {
-        param: "add | remove | edit | list",
-        values: [
+        "param": "[Upgrade level]",
+        "values": [
           {
-            value: "add",
-            desc: "Specifies that the command is being used to add a new reminder."
+            "value": "Upgrade level",
+            "desc": "Weapon upgrade level of build."
+          }
+        ]
+      },
+      {
+        "param": "<link>",
+        "values": [
+          {
+            "value": "DS1 SoulsPlanner link"
           },
           {
-            value: "remove",
-            desc: "Specifies that the command is being used to remove an existing reminder."
-          },      
-          {
-            value: "edit",
-            desc: "Specifies that the command is being used to edit an existing reminder."
+            "value": "DS2 SoulsPlanner link"
           },
           {
-            value: "list",
-            desc: "Specifies that the command is being used to view a list of all reminders."
-          }
-        ]
-      },
-      {
-      	param: "<interval time>",
-      	values: [        
+            "value": "DS3 SoulsPlanner link",
+            "desc": "All optional parameters will be filled in with the data from build planner link."
+          },
           {
-            value: "Number",
-            desc: "The interval between sending the reminder in chat (in minutes)."
-          }
-        ]
-      },
-      {
-      	param: "<message>",
-      	values: [
-          {
-            value: "String",
-            desc: "The message that will be sent in chat every time interval."
-          }
-        ]
-      },
-      {
-      	param: "<reminder number>",
-      	values: [
-          {
-            value: "Number",
-            desc: "The number of the reminder. Can be viewed using `!reminder list`."
-          }
-        ]
-      },
-      {
-      	param: "[new interval]",
-      	values: [
-          {
-            value: "Number",
-            desc: "Optional parameter specifying the new interval for an edited reminder."
-          }
-        ]
-      },
-      {
-      	param: "[new message]",
-      	values: [
-          {
-            value: "String",
-            desc: "Optional parameter specifying the new reminder message for an edited reminder."
+            "value": "Bloodborne SoulsPlanner link"
           }
         ]
       }
     ],
-
-    examples: [
+    "examples": [
       {
-        command: "!reminder add 20 Welcome to my twitch channel!",
-        desc: "This will add a new reminder with the message \"Welcome to my twitch channel!\" to be sent every 20 minutes."
+        "command": "!addbuild Vilhelm's Squire SL60 +7 https://soulsplanner.com/darksouls3/1381",
+        "desc": "This will add a build by the name of 'Vilhelm's Squire' to the build list. If a build by the same name already exists in the list, its information will be updated with the new information stated."
       },
       {
-        command: "!reminder remove 1",
-        desc: "This will remove the reminder numbered '1'."
-      },
-      {
-        command: "!reminder edit 1 35 Welcome to my twitch channel! No backseating.",
-        desc: "This will edit the reminder numbered '1' with a new interval of 35 minutes and an updated message."
-      },
-      {
-        command: "!reminder list",
-        desc: "This will list all of the reminders for this channel along with their reminder IDs."
-      },
-    ]
-  },
-
-  quote: {
-    cmd: "quote",
-    format: "${PREFIX}quote [list]",
-    desc: "Use this command to pull a random quote from the streamer's list of quotes. add quotes to the list using [!addquote](#addquote).\n\nIncluding the 'list' parameter will display all quotes with their corresponding quote number. This can only be done by moderators.",
-
-    perms: ["USER"],
-    moduleId: "quotes",
-
-    canDM: false,
-    canEdit: false,
-    debug: false,
-
-    parameters: [
-      {
-        param: "[list]",
-        values: [
-          {
-            value: "list",
-            desc: "Optional parameter used by moderators to display a list of all quotes with their quote numbers."
-          }
-        ]
+        "command": "!addbuild https://soulsplanner.com/darksouls3/1139",
+        "desc": "This will take the name, soul level, and upgrade level directly from the build linked."
       }
     ]
   },
-  addquote: {
-    cmd: "addquote",
-    format: "${PREFIX}addquote <quote>",
-    desc: "Adds quote to quote list to be randomly selected by [!quote](#quote).",
-
-    perms: ["BOT_ADMIN", "TWITCH_MOD"],
-    moduleId: "quotes",
-
-    canDM: false,
-    canEdit: false,
-    debug: false,
-
-    parameters: [
+  "build": {
+    "cmd": "build",
+    "format": "${PREFIX}build [list]",
+    "desc": "",
+    "perms": [
+      "USER"
+    ],
+    "moduleId": "builds",
+    "canDM": false,
+    "canEdit": false,
+    "parameters": [
       {
-        param: "<quote>",
-        values: [
+        "param": "[member]",
+        "values": [
           {
-            value: "String"
+            "value": "Discord username of member"
+          },
+          {
+            "value": "Discord ID of member"
+          },
+          {
+            "value": "member mention"
+          }
+        ]
+      },
+      {
+        "param": "[build number]",
+        "values": [
+          {
+            "value": "Number",
+            "desc": "Build number shown in member's build list."
           }
         ]
       }
     ],
-
-    examples: [
+    "examples": [
       {
-        command: "!addquote Potion seller. Enough of these games.",
-        desc: "This will add the quote to the streamer's list of quotes."
+        "command": "!build @Tikaro",
+        "desc": "This will show Tikaro's build list."
+      },
+      {
+        "command": "!build @Tikaro 3",
+        "desc": "This will display the build info of Tikaro's build numbered '3'."
       }
     ]
   },
-  removequote: {
-    cmd: "removequote",
-    format: "${PREFIX}removequote <quote number>",
-    desc: "Use this command to remove a quote by referencing its quote number. Quote numbers can be viewed using [!quote list](#quote)",
-
-    perms: ["USER", "BOT_ADMIN"],
-    moduleId: "quotes",
-
-    canDM: false,
-    canEdit: false,
-    debug: false,
-
-    parameters: [
+  "igot": {
+    "format": "${PREFIX}igot [ds1|ds3] <souls received>",
+    "desc": "Use this command to get a readout containing the estimated level of another player killed in Dark Souls 1 or Dark Souls 3.",
+    "perms": [
+      "USER"
+    ],
+    "moduleId": "igot",
+    "canDM": true,
+    "canEdit": true,
+    "debug": false,
+    "parameters": [
       {
-        param: "<quote number>",
-        values: [
+        "param": "[ds1|ds3]",
+        "values": [
           {
-            value: "Number",
-            desc: "The quote number - displayed in the quote list."
+            "value": "ds1",
+            "desc": "specify to calculate the soul level of a Dark Souls 1 player."
+          },
+          {
+            "value": "ds3",
+            "desc": "specify to calculate the soul level of a Dark Souls 3 player."
+          }
+        ]
+      },
+      {
+        "param": "<souls received>",
+        "values": [
+          {
+            "value": "Integer number",
+            "desc": "Corresponding to the number of souls you received when killing another player."
           }
         ]
       }
     ],
-
-    examples: [
+    "examples": [
       {
-        command: "!removequote 1",
-        desc: "This will remove quote with quote number '1' from the list."
+        "command": "!igot 1919",
+        "desc": "This show the possible soul level of a player depending on their phantom type.\n![igot-screenshot](images/igot_demo.png)"
+      }
+    ]
+  },
+  "removebuild": {
+    "cmd": "removebuild",
+    "format": "${PREFIX}removebuild <build id>",
+    "desc": "Used to remove a build from a your build list.",
+    "perms": [
+      "TWITCH_MOD"
+    ],
+    "moduleId": "builds",
+    "canDM": true,
+    "canEdit": false,
+    "parameters": [
+      {
+        "param": "<build id>",
+        "values": [
+          {
+            "value": "build name"
+          },
+          {
+            "value": "build ID",
+            "desc": "Number of a build in the build list"
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "command": "!removebuild Vilhelm's Squire",
+        "desc": "This will remove the build 'Vilhelm's Squire' from the build list. Build name is case insensitive."
+      }
+    ]
+  },
+  "setbuild": {
+    "cmd": "setbuild",
+    "format": "${PREFIX}setbuild <build name|build number>",
+    "desc": "Use this command to set your current build from your list of added builds.",
+    "perms": [
+      "TWITCH_MOD"
+    ],
+    "moduleId": "builds",
+    "canDM": true,
+    "canEdit": true,
+    "debug": false,
+    "parameters": [
+      {
+        "param": "<build name|build number>",
+        "values": [
+          {
+            "value": "build name",
+            "desc": "Approximate name of an added build"
+          },
+          {
+            "value": "build number",
+            "desc": "Number of build in your build list"
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "command": "!setbuild Knight Laran",
+        "desc": "This will set your current build to Knight Laran as long as its in your build list."
+      }
+    ]
+  },
+  "weapon": {
+    "cmd": "weapon",
+    "format": "${PREFIX}weapon [weapon name [vs ...]] [upgrade level] [str [dex [int [faith [luck]]]]]",
+    "desc": "Use this command to calculate the AR of any DS3 weapon, along with the expected damage on R1s/L1s, backstabs and ripostes.",
+    "help": "[Documentation](https://slugbot.github.io/web/docs_discord.html#weapon)",
+    "perms": [
+      "USER"
+    ],
+    "moduleId": "darksouls",
+    "canDM": true,
+    "canEdit": true,
+    "debug": true,
+    "parameters": [
+      {
+        "param": "[weapon name]",
+        "values": [
+          {
+            "value": "Dark Souls 3 weapon name",
+            "desc": "Should include infusion type if desired. Spelling is lenient."
+          },
+          {
+            "value": "null",
+            "desc": "If no weapon name is given, info on all weapons will be given."
+          }
+        ]
+      },
+      {
+        "param": "[upgrade level]",
+        "values": [
+          {
+            "value": "Weapon upgrade level",
+            "desc": "For special weapons, UPGRADE LEVELS SHOULD BE CONVERTED TO STANDARD UPGRADE LEVEL EQUIVALENTS so weapons can be compared. In the format of '+2'"
+          },
+          {
+            "value": "null",
+            "desc": "If no upgrade level is given, the upgrade level of your set build will be used."
+          }
+        ]
+      },
+      {
+        "param": "[str [dex [int [faith [luck]]]]]",
+        "values": [
+          {
+            "value": "Stat levels",
+            "desc": "List of stat levels given in order and separated by spaces or '/'s"
+          },
+          {
+            "value": "null",
+            "desc": "If no stat level is given, the corresponding stat level of your set build will be used."
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "command": "!weapon sharp claymore +7 16 35 10 10 10",
+        "desc": "The 1-hand/2-hand and weapon self-buff states can be toggled via appropriate reactions on the printout. The normal upgrade path input is used for special weapons; `!weapon black knight sword +10 20 18 10 10 10` will print out the data for a black knight sword at an upgrade level of +5.\n\nIn the case of an incomplete input, like `!weapon caestus`, the missing upgrade and stat data will be collected from the build you currently have set through the `!setbuild` command.\n\nThis command can also be used to compare up to four different weapons of a given upgrade level and stat combination. This is done by listing multiple weapons as the `[weapon name and infusion]` argument, separated by \"vs\"."
+      },
+      {
+        "command": "!weapon fire dagger vs chaos dagger +3 10 10 10 10 10",
+        "desc": "Note that the upgrade and stats need to be specified only once, and at the end.\n\nTyping out the command without a `[weapon name and infusion]` argument will make SlugBot calculate the overall ten best weapons based on expected R1 damage for the upgrade level and stats provided. The printout for this kind of input will include reactions to toggle between various weapon classes, along with the usual 1-hand/2-hand and self-buff options. SlugBot will also note if any of the weapons are usable only when 2-handed."
+      }
+    ]
+  },
+  "debug": {
+    "perms": [
+      "BOTOWNER"
+    ],
+    "reqs": [],
+    "debug": true,
+    "format": "${PREFIX}debug <args>",
+    "help": ""
+  },
+  "iam": {
+    "perms": [
+      "TWITCH_MOD"
+    ],
+    "reqs": [],
+    "debug": true,
+    "format": "${PREFIX}iam <member event info>",
+    "help": "Use this command to create a notification for a Member Event (such as a *dry finger run*).\n\nProvide at least a location and what you are doing there. **Passwords and character names must be in quotes.** If you have multiple platform roles, remember to state which one the event will be on. How you word it doesn't matter too much.\n\n__**Example:**__ `${PREFIX}iam dry fingered in the archives. soul level 81 +10. character name \"The Balnace\", password: \"slug\"`\nThis will create a member Event notification in all member event channels, stating where you are, what you are doing, your soul level, upgrade level, character name, and password.\n\nYou can update the information in the member event without having to re-enter everything again. Simply use the command again and specify your updates.\n\n__**Example:**__ `${PREFIX}iam now SL90 at the ringed city streets.`\nThis will update the soul level and location, leaving everything else unchanged.\n\nYou can add extra event information by including `info: \"<extra info here>\"` when using the command.\n\nUse `${PREFIX}iam done` command to end the event."
+  },
+  "addquote": {
+    "cmd": "addquote",
+    "format": "${PREFIX}addquote <quote>",
+    "desc": "Adds quote to quote list to be randomly selected by [!quote](#quote).",
+    "perms": [
+      "TWITCH_MOD"
+    ],
+    "moduleId": "quotes",
+    "canDM": false,
+    "canEdit": false,
+    "debug": false,
+    "parameters": [
+      {
+        "param": "<quote>",
+        "values": [
+          {
+            "value": "String"
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "command": "!addquote Potion seller. Enough of these games.",
+        "desc": "This will add the quote to the streamer's list of quotes."
+      }
+    ]
+  },
+  "quote": {
+    "cmd": "quote",
+    "format": "${PREFIX}quote [list]",
+    "desc": "Use this command to pull a random quote from the streamer's list of quotes. add quotes to the list using [!addquote](#addquote).\n\nIncluding the 'list' parameter will display all quotes with their corresponding quote number. This can only be done by moderators.",
+    "perms": [
+      "USER"
+    ],
+    "moduleId": "quotes",
+    "canDM": false,
+    "canEdit": false,
+    "debug": false,
+    "parameters": [
+      {
+        "param": "[list]",
+        "values": [
+          {
+            "value": "list",
+            "desc": "Optional parameter used by moderators to display a list of all quotes with their quote numbers."
+          }
+        ]
+      }
+    ]
+  },
+  "removequote": {
+    "cmd": "removequote",
+    "format": "${PREFIX}removequote <quote number>",
+    "desc": "Use this command to remove a quote by referencing its quote number. Quote numbers can be viewed using [!quote list](#quote)",
+    "perms": [
+      "TWITCH_MOD"
+    ],
+    "moduleId": "quotes",
+    "canDM": false,
+    "canEdit": false,
+    "debug": false,
+    "parameters": [
+      {
+        "param": "<quote number>",
+        "values": [
+          {
+            "value": "Number",
+            "desc": "The quote number - displayed in the quote list."
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "command": "!removequote 1",
+        "desc": "This will remove quote with quote number '1' from the list."
+      }
+    ]
+  },
+  "reminder": {
+    "perms": [
+      "TWITCH_MOD"
+    ],
+    "moduleId": "reminders",
+    "debug": true,
+    "canEdit": false,
+    "canDM": false,
+    "format": "${PREFIX}reminder <add [interval period] <message> | remove <reminderId>| list>",
+    "help": "Use this command to add/remove/list periodic reminders in twitch chat\n__**Example:**__ `${PREFIX}reminder add 20 remember to follow to get notified when I go live!`\nThis will create a reminder that will be sent in chat every 20 minutes.\n\n__**Example:**__ `${PREFIX}reminder remove 1`\nThis will remove the reminder with ID `1`\n\n__**Example:**__ `${PREFIX}reminder list`\nThis will list all reminders along with their IDs."
+  },
+  "activate": {
+    "perms": [
+      "TWITCH_MOD"
+    ],
+    "moduleId": "",
+    "debug": false,
+    "format": "${PREFIX}activate <module>",
+    "help": "Used to activate twitch.tv SlugBot modules.\n__**Example:**__ ` ${PREFIX}activate builds `\nThis will activate the `builds` module.\n\nMultiple modules can be activated at once by listing them after the command.\n__**Example:**__ ` ${PREFIX}activate builds follows igot `\nThis will activate the `builds`, `follows`, and `igot` modules.\n\nAll modules can be activated using `${PREFIX}activate slugbot`.\n\n__**- This command requires moderator permissions.**__"
+  },
+  "addcommand": {
+    "cmd": "addcommand",
+    "format": "${PREFIX}addcommand <command> <response>",
+    "desc": "Used to add/edit a custom command that will respond with a specified string. alternatively regex can be used in place of a command to make SlugBot send a response message whenever the regex matches a members message.\n\nThe response can contain certain replacer flags that will be replaced will specific values when sent by slugbot.\n\nLINK TO REPLACER FLAGS SECTION",
+    "perms": [
+      "TWITCH_MOD"
+    ],
+    "moduleId": "customcommands",
+    "canDM": false,
+    "canEdit": false,
+    "parameters": [
+      {
+        "param": "<command>",
+        "values": [
+          {
+            "value": "New command string"
+          },
+          {
+            "value": "Existing command string",
+            "desc": "Will overwrite its response"
+          },
+          {
+            "value": "Regex keyword",
+            "desc": "indicated by a string starting and ending with `/`"
+          }
+        ]
+      },
+      {
+        "param": "<response>",
+        "values": [
+          {
+            "value": "String",
+            "desc": "will be displayed when the custom command is used or the regex is matched"
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "command": "!addcommand flip You flipped a coin and got ${rand:heads|tails}!",
+        "desc": "This will add a command that will respond with `You flipped a coin and got heads!` OR `You flipped a coin and got tails!` when the command `!flip` is used."
+      },
+      {
+        "command": "!addcommand /don't\\s@\\sme/ <@${id}>",
+        "desc": "This will create a regex keyword match that will respond with a discord mention whenever a message contains the string `don't @ me`."
+      }
+    ]
+  },
+  "cooldown": {
+    "perms": [
+      "TWITCH_MOD"
+    ],
+    "reqs": [],
+    "debug": true,
+    "canEdit": false,
+    "canDM": false,
+    "format": "${PREFIX}cooldown [set <seconds>]",
+    "help": "Use this command to set a cooldown period where slugbot will not respond to custom commands after one is used."
+  },
+  "deactivate": {
+    "perms": [
+      "TWITCH_MOD"
+    ],
+    "moduleId": "",
+    "debug": false,
+    "format": "${PREFIX}deactivate <module>",
+    "help": "Used to deactivate twitch.tv SlugBot modules.\n__**Example:**__ ` ${PREFIX}deactivate builds `\nThis will deactivate the `builds` module.\n\nMultiple modules can be deactivated at once by listing them after the command.\n__**Example:**__ ` ${PREFIX}deactivate builds follows igot `\nThis will deactivate the `builds`, `follows`, and `igot` modules.\n\nAll modules can be deactivated using `${PREFIX}deactivate slugbot`.\n\n__**- This command requires moderator permissions.**__"
+  },
+  "maldron": {
+    "perms": [
+      "TWITCH_MOD"
+    ],
+    "reqs": [
+      "roll"
+    ],
+    "debug": false,
+    "format": "${PREFIX}maldron <viewer> <number>",
+    "help": ""
+  },
+  "permissions": {
+    "perms": [
+      "TWITCH_MOD"
+    ],
+    "debug": true,
+    "format": "${PREFIX}permissions module|command <command name> [(user|subscriber|moderator|broadcaster) | (enable|disable)]",
+    "desc": "Use this command to add or remove constraints on command usage.\n\nAdding a channel constraint will mean the specified command can only be used in that channel.\n\nAdding a role constraint will mean the specified command can only be used by members with that role.\n**ADDING ROLE CONSTRAINTS WILL OVERRIDE DEFAULT PERMISSION REQUIREMENTS**."
+  },
+  "removecommand": {
+    "cmd": "removecommand",
+    "format": "${PREFIX}removecommand <command>",
+    "desc": "Used to remove an existing custom command.",
+    "perms": [
+      "TWITCH_MOD"
+    ],
+    "moduleId": "customcommands",
+    "canDM": false,
+    "canEdit": false,
+    "parameters": [
+      {
+        "param": "<command>",
+        "values": [
+          {
+            "value": "Existing command",
+            "desc": "Must match existing command exactly"
+          },
+          {
+            "value": "Existing regex keyword to remove",
+            "desc": "Must match existing command exactly"
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "command": "!removecommand ping",
+        "desc": "This will remove the custom command `!ping`."
+      }
+    ]
+  },
+  "so": {
+    "perms": [
+      "TWITCH_MOD"
+    ],
+    "moduleId": "so",
+    "debug": true,
+    "format": "${PREFIX}so <streamer>",
+    "desc": "Shoutouts a streamer and links to their channel.",
+    "param": "<streamer>",
+    "values": [
+      {
+        "value": "slugbot command",
+        "desc": "The command you wish to set permission constraints for."
+      }
+    ],
+    "examples": {
+      "command": "!so king_necrow",
+      "desc": "This will shoutout the streamer King_Necrow and link to their channel."
+    }
+  },
+  "uptime": {
+    "perms": [
+      "USER"
+    ],
+    "moduleId": "",
+    "debug": false,
+    "format": "${PREFIX}uptime",
+    "disc": "Use this command to get a response stating the amount of time the stream has been live for."
+  },
+  "bl": {
+    "perms": [
+      "USER"
+    ],
+    "moduleId": "builds",
+    "debug": false,
+    "format": "${PREFIX}bl",
+    "desc": "Use this command to get the name, blood level, and upgrade level of streamer's current Bloodborne build. A build must be in the streamer's build list and set as their current build using [!addbuild](#addbuild) and [!setbuild](#setbuild) for this command to work."
+  },
+  "sl": {
+    "perms": [
+      "USER"
+    ],
+    "moduleId": "builds",
+    "debug": false,
+    "format": "${PREFIX}sl",
+    "desc": "Use this command to get the name, soul level, and upgrade level of streamer's current Dark Souls build. A build must be in the streamer's build list and set as their current build using [!addbuild](#addbuild) and [!setbuild](#setbuild) for this command to work."
+  },
+  "whowas": {
+    "cmd": "whowas",
+    "format": "${PREFIX}whowas <character name>",
+    "desc": "Use this command to find the owner of a character you met in-game.\nSlugBot will attempt to find three builds in its database with the most similar names.",
+    "perms": [
+      "USER"
+    ],
+    "moduleId": "builds",
+    "canDM": false,
+    "canEdit": false,
+    "debug": false,
+    "parameters": [
+      {
+        "param": "<character name>",
+        "values": [
+          {
+            "value": "String",
+            "desc": "Approximate name of a character"
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "command": "!whowas Amil of the Deep",
+        "desc": "This will show three builds from SlugBots build database that most closely match the name `Amil of the Deep`."
       }
     ]
   }
 }
-
