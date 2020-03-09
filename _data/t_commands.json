@@ -214,7 +214,7 @@
   "build": {
     "cmd": "build",
     "format": "${PREFIX}build [list]",
-    "desc": "",
+    "desc": "Use this command to get info on the streamer's currently set build. Use the [!setbuild](#setbuild) command to change the current set build.",
     "perms": [
       "USER"
     ],
@@ -223,37 +223,23 @@
     "canEdit": false,
     "parameters": [
       {
-        "param": "[member]",
+        "param": "[list]",
         "values": [
           {
-            "value": "Discord username of member"
-          },
-          {
-            "value": "Discord ID of member"
-          },
-          {
-            "value": "member mention"
-          }
-        ]
-      },
-      {
-        "param": "[build number]",
-        "values": [
-          {
-            "value": "Number",
-            "desc": "Build number shown in member's build list."
+            "value": "list",
+            "desc": "Optional parameter to get SlugBot to DM you a full list of the streamer's builds."
           }
         ]
       }
     ],
     "examples": [
       {
-        "command": "!build @Tikaro",
-        "desc": "This will show Tikaro's build list."
+        "command": "!build",
+        "desc": "This will display info on the streamer's currently set build."
       },
       {
-        "command": "!build @Tikaro 3",
-        "desc": "This will display the build info of Tikaro's build numbered '3'."
+        "command": "!build list",
+        "desc": "This will make SlugBot DM you with a list of all of the streamer's builds."
       }
     ]
   },
@@ -435,21 +421,12 @@
     "format": "${PREFIX}debug <args>",
     "help": ""
   },
-  "iam": {
-    "perms": [
-      "TWITCH_MOD"
-    ],
-    "reqs": [],
-    "debug": true,
-    "format": "${PREFIX}iam <member event info>",
-    "help": "Use this command to create a notification for a Member Event (such as a *dry finger run*).\n\nProvide at least a location and what you are doing there. **Passwords and character names must be in quotes.** If you have multiple platform roles, remember to state which one the event will be on. How you word it doesn't matter too much.\n\n__**Example:**__ `${PREFIX}iam dry fingered in the archives. soul level 81 +10. character name \"The Balnace\", password: \"slug\"`\nThis will create a member Event notification in all member event channels, stating where you are, what you are doing, your soul level, upgrade level, character name, and password.\n\nYou can update the information in the member event without having to re-enter everything again. Simply use the command again and specify your updates.\n\n__**Example:**__ `${PREFIX}iam now SL90 at the ringed city streets.`\nThis will update the soul level and location, leaving everything else unchanged.\n\nYou can add extra event information by including `info: \"<extra info here>\"` when using the command.\n\nUse `${PREFIX}iam done` command to end the event."
-  },
   "addquote": {
     "cmd": "addquote",
     "format": "${PREFIX}addquote <quote>",
     "desc": "Adds quote to quote list to be randomly selected by [!quote](#quote).",
     "perms": [
-      "TWITCH_MOD"
+      "MODERATOR"
     ],
     "moduleId": "quotes",
     "canDM": false,
@@ -500,7 +477,7 @@
     "format": "${PREFIX}removequote <quote number>",
     "desc": "Use this command to remove a quote by referencing its quote number. Quote numbers can be viewed using [!quote list](#quote)",
     "perms": [
-      "TWITCH_MOD"
+      "MODERATOR"
     ],
     "moduleId": "quotes",
     "canDM": false,
@@ -526,6 +503,7 @@
   },
   "reminder": {
     "perms": [
+      "ADMINISTRATOR",
       "TWITCH_MOD"
     ],
     "moduleId": "reminders",
@@ -536,13 +514,14 @@
     "help": "Use this command to add/remove/list periodic reminders in twitch chat\n__**Example:**__ `${PREFIX}reminder add 20 remember to follow to get notified when I go live!`\nThis will create a reminder that will be sent in chat every 20 minutes.\n\n__**Example:**__ `${PREFIX}reminder remove 1`\nThis will remove the reminder with ID `1`\n\n__**Example:**__ `${PREFIX}reminder list`\nThis will list all reminders along with their IDs."
   },
   "activate": {
+    "cmd": "activate",
     "perms": [
       "TWITCH_MOD"
     ],
     "moduleId": "",
     "debug": false,
-    "format": "${PREFIX}activate <module>",
-    "help": "Used to activate twitch.tv SlugBot modules.\n__**Example:**__ ` ${PREFIX}activate builds `\nThis will activate the `builds` module.\n\nMultiple modules can be activated at once by listing them after the command.\n__**Example:**__ ` ${PREFIX}activate builds follows igot `\nThis will activate the `builds`, `follows`, and `igot` modules.\n\nAll modules can be activated using `${PREFIX}activate slugbot`.\n\n__**- This command requires moderator permissions.**__"
+    "format": "${PREFIX}activate slugbot",
+    "desc": "Use this command to activate slugbot in the twitch chat the command was used in. **SlugBot must first be summoned to the twitch chat using the `!twitch <twitch name>` command IN A DISCORD SERVER WITH SLUGBOT PRESENT**."
   },
   "addcommand": {
     "cmd": "addcommand",
@@ -604,24 +583,23 @@
     "help": "Use this command to set a cooldown period where slugbot will not respond to custom commands after one is used."
   },
   "deactivate": {
+    "cmd": "deactivate",
     "perms": [
       "TWITCH_MOD"
     ],
     "moduleId": "",
     "debug": false,
-    "format": "${PREFIX}deactivate <module>",
-    "help": "Used to deactivate twitch.tv SlugBot modules.\n__**Example:**__ ` ${PREFIX}deactivate builds `\nThis will deactivate the `builds` module.\n\nMultiple modules can be deactivated at once by listing them after the command.\n__**Example:**__ ` ${PREFIX}deactivate builds follows igot `\nThis will deactivate the `builds`, `follows`, and `igot` modules.\n\nAll modules can be deactivated using `${PREFIX}deactivate slugbot`.\n\n__**- This command requires moderator permissions.**__"
+    "format": "${PREFIX}deactivate slugbot",
+    "desc": "Use this command to deactivate slugbot in the twitch chat the command was used in."
   },
   "maldron": {
     "perms": [
       "TWITCH_MOD"
     ],
-    "reqs": [
-      "roll"
-    ],
+    "reqs": [],
     "debug": false,
     "format": "${PREFIX}maldron <viewer> <number>",
-    "help": ""
+    "desc": "Sneaky_Maldron's command for SaintRiots chat."
   },
   "permissions": {
     "perms": [
@@ -678,19 +656,22 @@
         "desc": "The command you wish to set permission constraints for."
       }
     ],
-    "examples": {
-      "command": "!so king_necrow",
-      "desc": "This will shoutout the streamer King_Necrow and link to their channel."
-    }
+    "examples": [
+      {
+        "command": "!so king_necrow",
+        "desc": "This will shoutout the streamer King_Necrow and link to their channel."
+      }
+    ]
   },
   "uptime": {
+    "cmd": "uptime",
     "perms": [
       "USER"
     ],
     "moduleId": "",
     "debug": false,
     "format": "${PREFIX}uptime",
-    "disc": "Use this command to get a response stating the amount of time the stream has been live for."
+    "desc": "Use this command to get a response stating the amount of time the stream has been live for."
   },
   "bl": {
     "perms": [
@@ -700,6 +681,15 @@
     "debug": false,
     "format": "${PREFIX}bl",
     "desc": "Use this command to get the name, blood level, and upgrade level of streamer's current Bloodborne build. A build must be in the streamer's build list and set as their current build using [!addbuild](#addbuild) and [!setbuild](#setbuild) for this command to work."
+  },
+  "iam": {
+    "cmd": "iam",
+    "perms": [
+      "TWITCH_MOD"
+    ],
+    "debug": true,
+    "format": "${PREFIX}iam <member event info>",
+    "desc": "Use this command to create a notification for a Member Event (such as a *dry finger run*).\n\nProvide at least a location and what you are doing there. **Passwords and character names must be in quotes.** If you have multiple platform roles, remember to state which one the event will be on. How you word it doesn't matter too much.\n\n__**Example:**__ `${PREFIX}iam dry fingered in the archives. soul level 81 +10. character name \"The Balnace\", password: \"slug\"`\nThis will create a member Event notification in all member event channels, stating where you are, what you are doing, your soul level, upgrade level, character name, and password.\n\nYou can update the information in the member event without having to re-enter everything again. Simply use the command again and specify your updates.\n\n__**Example:**__ `${PREFIX}iam now SL90 at the ringed city streets.`\nThis will update the soul level and location, leaving everything else unchanged.\n\nYou can add extra event information by including `info: \"<extra info here>\"` when using the command.\n\nUse `${PREFIX}iam done` command to end the event."
   },
   "sl": {
     "perms": [
