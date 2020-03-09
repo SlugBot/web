@@ -502,6 +502,7 @@
     ]
   },
   "reminder": {
+    "cmd": "reminder",
     "perms": [
       "ADMINISTRATOR",
       "TWITCH_MOD"
@@ -511,7 +512,58 @@
     "canEdit": false,
     "canDM": false,
     "format": "${PREFIX}reminder <add [interval period] <message> | remove <reminderId>| list>",
-    "help": "Use this command to add/remove/list periodic reminders in twitch chat\n__**Example:**__ `${PREFIX}reminder add 20 remember to follow to get notified when I go live!`\nThis will create a reminder that will be sent in chat every 20 minutes.\n\n__**Example:**__ `${PREFIX}reminder remove 1`\nThis will remove the reminder with ID `1`\n\n__**Example:**__ `${PREFIX}reminder list`\nThis will list all reminders along with their IDs."
+    "desc": "Use this command to add/remove/list periodic reminders in twitch chat.",
+    "parameters": [
+      {
+        "param": "add|remove|list",
+        "values": [
+          {
+            "value": "add",
+            "desc": "Specify that a reminder is being added."
+          },
+          {
+            "value": "remove",
+            "desc": "Specify that a reminder is being removed. must be followed by a reminder ID."
+          },
+          {
+            "value": "list",
+            "desc": "Get a list of all reminders."
+          }
+        ]
+      },
+      {
+        "param": "[interval period]",
+        "values": [
+          {
+            "value": "Number",
+            "desc": "Number of minutes between the reminder message being sent in chat."
+          }
+        ]
+      },
+      {
+        "param": "<reminderId>",
+        "values": [
+          {
+            "value": "ID number",
+            "desc": "The unique number given to each reminder. Can be viwed in the reminder list."
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "command": "!reminder add 20 remember to follow to get notified when I go live!",
+        "desc": "This will create a reminder that will be sent in chat every 20 minutes."
+      },
+      {
+        "command": "!reminder remove 1",
+        "desc": "This will remove the reminder with ID 1"
+      },
+      {
+        "command": "!reminder list",
+        "desc": "This will list all reminders along with their IDs."
+      }
+    ]
   },
   "activate": {
     "cmd": "activate",
@@ -580,7 +632,7 @@
     "canEdit": false,
     "canDM": false,
     "format": "${PREFIX}cooldown [set <seconds>]",
-    "help": "Use this command to set a cooldown period where slugbot will not respond to custom commands after one is used."
+    "desc": "Use this command to set a cooldown period where slugbot will not respond to custom commands after one is used."
   },
   "deactivate": {
     "cmd": "deactivate",
@@ -689,7 +741,21 @@
     ],
     "debug": true,
     "format": "${PREFIX}iam <member event info>",
-    "desc": "Use this command to create a notification for a Member Event (such as a *dry finger run*).\n\nProvide at least a location and what you are doing there. **Passwords and character names must be in quotes.** If you have multiple platform roles, remember to state which one the event will be on. How you word it doesn't matter too much.\n\n__**Example:**__ `${PREFIX}iam dry fingered in the archives. soul level 81 +10. character name \"The Balnace\", password: \"slug\"`\nThis will create a member Event notification in all member event channels, stating where you are, what you are doing, your soul level, upgrade level, character name, and password.\n\nYou can update the information in the member event without having to re-enter everything again. Simply use the command again and specify your updates.\n\n__**Example:**__ `${PREFIX}iam now SL90 at the ringed city streets.`\nThis will update the soul level and location, leaving everything else unchanged.\n\nYou can add extra event information by including `info: \"<extra info here>\"` when using the command.\n\nUse `${PREFIX}iam done` command to end the event."
+    "desc": "Use this command to create a notification for a Member Event (such as a *dry finger run*).\n\nProvide at least a location and what you are doing there. **Passwords and character names must be in quotes.** If you have multiple platform roles, remember to state which one the event will be on. How you word it doesn't matter too much. You can add extra event information by including `info: \"<extra info here>\"` when using the command.\n\nUse `${PREFIX}iam done` command to end the event.",
+    "examples": [
+      {
+        "command": "!iam dry fingered in the archives. soul level 81 +10. character name \"The Balnace\", password: \"slug\"",
+        "desc": "This will create a member Event notification in all member event channels, stating where you are, what you are doing, your soul level, upgrade level, character name, and password. You can update the information in the member event without having to re-enter everything again. Simply use the command again and specify your updates."
+      },
+      {
+        "command": "!iam now SL90 at the ringed city streets.",
+        "desc": "This will update the soul level and location, leaving everything else unchanged."
+      },
+      {
+        "command": "!am done",
+        "desc": "This will end the event."
+      }
+    ]
   },
   "sl": {
     "perms": [
