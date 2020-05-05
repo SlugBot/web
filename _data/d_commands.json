@@ -1917,6 +1917,19 @@
       }
     ]
   },
+  "log": {
+    "perms": [
+      "USER"
+    ],
+    "moduleId": "economy",
+    "synonyms": [
+      "logs"
+    ],
+    "canDM": true,
+    "canEdit": true,
+    "format": "!log [member]",
+    "desc": "View account logs of your account or an account of a user you have a TRACKER on."
+  },
   "plant": {
     "cmd": "plant",
     "perms": [
@@ -2247,13 +2260,48 @@
     "help": ""
   },
   "slugboard": {
+    "cmd": "slugboard",
+    "moduleId": "slugboard",
     "perms": [
-      "ADMINISTRATOR"
+      "BOT_ADMIN"
     ],
-    "reqs": [],
     "debug": true,
     "format": "${PREFIX}slugboard <threshold <number of reactions> | flag <emoji> | indicator <emoji>>",
-    "help": "Use this command to customise the functionality of Slug-Board.\n\n__**Example:**__ `${PREFIX}slugboard threshold 4`\nThis will set the threshold for the number of reactions needed to add a message to the Slug-Board to 4.\n\n__**Example:**__ `${PREFIX}slugboard flag 🌱`\nThis will set the emoji users must react with to get a message on the Slug-Board to 🌱.\n\n__**Example:**__ `${PREFIX}slugboard indicator`<:smugslug:360807587400122400>\nThis will set the emoji SlugBot reacts with when a message is added to the Slug-Board to <:smugslug:360807587400122400>."
+    "desc": "Use this command to customise the functionality of Slug-Board.",
+    "parameters": [
+      {
+        "param": "<number of reactions>",
+        "values": [
+          {
+            "value": "Number",
+            "desc": "A number specifying the minimum needed reactions to slugboard the message."
+          }
+        ]
+      },
+      {
+        "param": "<emoji>",
+        "values": [
+          {
+            "value": "default or custom emoji",
+            "desc": "An emoji that SlugBot will use as a slugboard flag or indicator."
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "command": "!slugboard threshold 4",
+        "desc": "This will set the threshold for the number of reactions needed to add a message to the Slug-Board to 4."
+      },
+      {
+        "command": "!slugboard flag 🌱",
+        "desc": "This will set the emoji users must react with to get a message on the Slug-Board to 🌱."
+      },
+      {
+        "command": "!slugboard indicator 👺",
+        "desc": "This will set the emoji SlugBot reacts with when a message is added to the Slug-Board to 👺"
+      }
+    ]
   },
   "synctwitch": {
     "perms": [
@@ -2274,21 +2322,107 @@
     "help": "Used to link a Discord account with a Twitch account.\n\n__**Example:**__` ${PREFIX}twitch smugslugbot `\nThis will DM SmugSlugBot with a request to confirm the link."
   },
   "streamer": {
+    "cmd": "streamer",
     "perms": [
-      "ADMINISTRATOR"
+      "BOT_ADMIN"
     ],
-    "reqs": [],
+    "moduleId": "streams",
     "debug": false,
     "format": "${PREFIX}streamer <add|remove> <streamer_name>",
-    "help": "Use this command to add a streamer to the streams notification list or remove a streamer from the list. A notification message will be sent to the '#streams' channel (if set) when a streamer in the list goes live on twitch.tv. The notification gets deleted when the streamer goes offline again.\n\n__**Example:**__ ` ${PREFIX}streamer add Florador `\nThis will add twitch streamer 'Florador' to the notification list.\n\n__**Example:**__ ` ${PREFIX}streamer remove Florador `\nThis will remove twitch streamer 'Florador' from the notification list.`${PREFIX}streamer list`\nThis will list all streamers currently set to display when they go live."
+    "desc": "Use this command to add a streamer to the streams notification list or remove a streamer from the list. A notification message will be sent to the '#streams' channel (if set) when a streamer in the list goes live on twitch.tv. The notification gets deleted when the streamer goes offline again.",
+    "parameters": [
+      {
+        "param": "<add | remove | list>",
+        "values": [
+          {
+            "value": "add",
+            "desc": "specify to add streamer to list"
+          },
+          {
+            "value": "remove",
+            "desc": "specify to remove streamer to list"
+          },
+          {
+            "value": "list",
+            "desc": "specify to list all streamers"
+          }
+        ]
+      },
+      {
+        "param": "<streamer name>",
+        "values": [
+          {
+            "value": "username",
+            "desc": "twitch.tv username. case insensitive"
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "command": "!streamer add Florador",
+        "desc": "This will add twitch streamer 'Florador' to the streams notification list."
+      },
+      {
+        "command": "!streamer remove Florador",
+        "desc": "This will remove twitch streamer 'Florador' from the notification list."
+      },
+      {
+        "command": "!streamer list",
+        "desc": "This will list all streamers currently set to display when they go live."
+      }
+    ]
   },
   "filter": {
+    "format": "${PREFIX}filter <add|remove|list> <filter string>",
+    "desc": "Use this command to add or remove word filters in the current server. The filter string can either be a normal string or RegEx.\n\nWhen a member sends a message in the server containing the filter string, their message will be deleted, score will be deducted and there will be a random chance they will be muted. the mute chance increases each time the same member triggers the filter.\n\nIf a normal string is given, common letter substitutions will be taken into account.\n\nif RegEx is given, the matched message will be deleted but the member will not have score deducted or have a chance to be muted.",
     "perms": [
-      "ADMINISTRATOR"
+      "BOT_ADMIN"
     ],
-    "reqs": [],
-    "debug": true,
-    "format": "${PREFIX}filter <add | remove | list> <filter string>",
-    "help": "Use this command to add or remove word filters in the current server.\n\n__**Example:**__` ${PREFIX}filter add snail`\nThis will make SlugBot delete any messages containing the word 'snail'.\n\n__**Example:**__` ${PREFIX}filter remove snail`\nThis will remove the word filter on the word 'snail' - causing SlugBot to no longer delete messages containing the word.\n\n__**Example:**__` ${PREFIX}filter list`\nThis will display a list of words that are currently being filtered in the server."
+    "canDM": false,
+    "canEdit": false,
+    "debug": false,
+    "parameters": [
+      {
+        "param": "<add|remove|list>",
+        "values": [
+          {
+            "value": "add",
+            "desc": "specify to add new filter"
+          },
+          {
+            "value": "remove",
+            "desc": "specify to remove existing filter"
+          },
+          {
+            "value": "list",
+            "desc": "specify to list all filters"
+          }
+        ]
+      },
+      {
+        "param": "<filter string>",
+        "values": [
+          {
+            "value": "String",
+            "desc": "normal string containing word(s) to be filtered"
+          },
+          {
+            "value": "RegEx",
+            "desc": "Regular expression to have messages deleted when matched"
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "command": "!filter add snail",
+        "desc": "This will make SlugBot delete any messages containing the word 'snail', deduct score from the offending member and have a chance to mute them."
+      },
+      {
+        "command": "!filter add /\\d/",
+        "desc": "This will make SlugBot delete any messages containing any digit. (check [regex101](https://regex101.com/) for RegEx syntax and RegEx testing)"
+      }
+    ]
   }
 }
