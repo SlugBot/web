@@ -129,6 +129,10 @@ A redirect process will redirect a planted process on a user to the redirect tar
 * Offensive Stat: **INJECTOR**
 * Defensive Stat: **SCANNER**
 
+### TRACKER
+```!plant tracker <target user>```
+A tracker process allows the owner to view the account activity logs of the target user as well as having a chance to automatically scan the target user's processes as they plant them. The more trackers you plant on a user, the better they will function.
+
 *More coming soon...*
 
 ## Scanning
@@ -141,7 +145,7 @@ You can also identify malware by accessing the attacker's account and viewing th
 You are not limited to only scanning processes planted on yourself; You can also scan for processes planted on other people. This can be useful for finding good marks, defending other members, or hijacking profitable processes.
 
 ## Cleaning and Hijacking
-Once you've identified a process, you may want to remove it or hijack it. Use the <span class="command-link" data-command="clean"/> or <span class="command-link" data-command="hijack"/> commands respectively to begin process. The more properties of the process you've identified, the more likely it will be successfully removed.
+Once you've identified a process, you may want to remove it or hijack it. Use the <span class="command-link" data-command="clean"/> or <span class="command-link" data-command="hijack"/> commands respectively to begin process. The more properties of the process you've identified, the more likely it will be successfully removed. **A bypass on the process' owner is required to hijack a process.**
 
 ## Investing
 Another method of making SC is to invest in text channels in discord servers. Channel investments let you invest SC in a channel to get return payments for messages sent in that channel for 7 days. The return rates are calculated from the last 7 days activity - meaning that if a channel is more active in the following 7 days, you will see bigger returns. Use the <span class="command-link" data-command="invest"/> command to see the expected return rate on the channel and how much you're expected to make by the end of the investment period. You can confirm or cancel the investment before SC is taken so feel free to use the command to view various channel's return rates.
