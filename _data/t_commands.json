@@ -12,6 +12,37 @@
     "parameters": [],
     "examples": []
   },
+  "help": {
+    "cmd": "help",
+    "synonyms": [
+      "slugbot"
+    ],
+    "format": "${PREFIX}help [command]",
+    "desc": "Use this command to get info on how to use a specific command. Use the command with no arguments to get a link to this documentation.",
+    "perms": [
+      "USER"
+    ],
+    "canDM": true,
+    "canEdit": false,
+    "debug": false,
+    "parameters": [
+      {
+        "param": "[command]",
+        "values": [
+          {
+            "value": "command",
+            "desc": "name of command to display information on"
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "command": "!help giveme",
+        "desc": "This will display documentation on the `giveme` command."
+      }
+    ]
+  },
   "math": {
     "cmd": "math",
     "synonyms": [
@@ -129,120 +160,6 @@
       }
     ]
   },
-  "slugbot": {
-    "cmd": "slugbot",
-    "perms": [
-      "USER"
-    ],
-    "debug": true,
-    "canDM": true,
-    "format": "${PREFIX}slugbot",
-    "desc": "Use this command to get an invite link to the SlugBot discord, invite SlugBot to your discord server, and a link to the SlugBot kofi donation page."
-  },
-  "addbuild": {
-    "cmd": "addbuild",
-    "format": "${PREFIX}addbuild [build name] [soul level] [upgrade level] <link>",
-    "desc": "Used to add a build to your build list. Stating `soul level`, `upgrade level` and `build planner link` are optional but recommended. If a soulsplanner link is suplied, any missing data will be taken from the build directly - often, all thats needed.",
-    "perms": [
-      "TWITCH_MOD"
-    ],
-    "moduleId": "builds",
-    "canDM": true,
-    "canEdit": false,
-    "parameters": [
-      {
-        "param": "[build name]",
-        "values": [
-          {
-            "value": "Name of build",
-            "desc": "Unique identifier for build."
-          }
-        ]
-      },
-      {
-        "param": "[soul level]",
-        "values": [
-          {
-            "value": "Soul level",
-            "desc": "Soul level of a Dark Souls build."
-          },
-          {
-            "value": "Blood level",
-            "desc": "Blood level of a Bloodborne build."
-          }
-        ]
-      },
-      {
-        "param": "[Upgrade level]",
-        "values": [
-          {
-            "value": "Upgrade level",
-            "desc": "Weapon upgrade level of build."
-          }
-        ]
-      },
-      {
-        "param": "<link>",
-        "values": [
-          {
-            "value": "DS1 SoulsPlanner link"
-          },
-          {
-            "value": "DS2 SoulsPlanner link"
-          },
-          {
-            "value": "DS3 SoulsPlanner link",
-            "desc": "All optional parameters will be filled in with the data from build planner link."
-          },
-          {
-            "value": "Bloodborne SoulsPlanner link"
-          }
-        ]
-      }
-    ],
-    "examples": [
-      {
-        "command": "!addbuild Vilhelm's Squire SL60 +7 https://soulsplanner.com/darksouls3/1381",
-        "desc": "This will add a build by the name of 'Vilhelm's Squire' to the build list. If a build by the same name already exists in the list, its information will be updated with the new information stated."
-      },
-      {
-        "command": "!addbuild https://soulsplanner.com/darksouls3/1139",
-        "desc": "This will take the name, soul level, and upgrade level directly from the build linked."
-      }
-    ]
-  },
-  "build": {
-    "cmd": "build",
-    "format": "${PREFIX}build [list]",
-    "desc": "Use this command to get info on the streamer's currently set build. Use the [!setbuild](#setbuild) command to change the current set build.",
-    "perms": [
-      "USER"
-    ],
-    "moduleId": "builds",
-    "canDM": false,
-    "canEdit": false,
-    "parameters": [
-      {
-        "param": "[list]",
-        "values": [
-          {
-            "value": "list",
-            "desc": "Optional parameter to get SlugBot to DM you a full list of the streamer's builds."
-          }
-        ]
-      }
-    ],
-    "examples": [
-      {
-        "command": "!build",
-        "desc": "This will display info on the streamer's currently set build."
-      },
-      {
-        "command": "!build list",
-        "desc": "This will make SlugBot DM you with a list of all of the streamer's builds."
-      }
-    ]
-  },
   "igot": {
     "format": "${PREFIX}igot [ds1|ds3] <souls received>",
     "desc": "Use this command to get a readout containing the estimated level of another player killed in Dark Souls 1 or Dark Souls 3.",
@@ -281,70 +198,6 @@
       {
         "command": "!igot 1919",
         "desc": "This show the possible soul level of a player depending on their phantom type.\n![igot-screenshot](images/igot_demo.png)"
-      }
-    ]
-  },
-  "removebuild": {
-    "cmd": "removebuild",
-    "format": "${PREFIX}removebuild <build id>",
-    "desc": "Used to remove a build from a your build list.",
-    "perms": [
-      "TWITCH_MOD"
-    ],
-    "moduleId": "builds",
-    "canDM": true,
-    "canEdit": false,
-    "parameters": [
-      {
-        "param": "<build id>",
-        "values": [
-          {
-            "value": "build name"
-          },
-          {
-            "value": "build ID",
-            "desc": "Number of a build in the build list"
-          }
-        ]
-      }
-    ],
-    "examples": [
-      {
-        "command": "!removebuild Vilhelm's Squire",
-        "desc": "This will remove the build 'Vilhelm's Squire' from the build list. Build name is case insensitive."
-      }
-    ]
-  },
-  "setbuild": {
-    "cmd": "setbuild",
-    "format": "${PREFIX}setbuild <build name|build number>",
-    "desc": "Use this command to set your current build from your list of added builds.",
-    "perms": [
-      "TWITCH_MOD"
-    ],
-    "moduleId": "builds",
-    "canDM": true,
-    "canEdit": true,
-    "debug": false,
-    "parameters": [
-      {
-        "param": "<build name|build number>",
-        "values": [
-          {
-            "value": "build name",
-            "desc": "Approximate name of an added build"
-          },
-          {
-            "value": "build number",
-            "desc": "Number of build in your build list"
-          }
-        ]
-      }
-    ],
-    "examples": [
-      {
-        "command": "!setbuild Knight Laran",
-        "desc": "This will set your current build to Knight Laran as long as its in your build list."
       }
     ]
   },
@@ -624,10 +477,10 @@
     ]
   },
   "cooldown": {
+    "cmd": "cooldown",
     "perms": [
       "TWITCH_MOD"
     ],
-    "reqs": [],
     "debug": true,
     "canEdit": false,
     "canDM": false,
@@ -725,6 +578,78 @@
     "format": "${PREFIX}uptime",
     "desc": "Use this command to get a response stating the amount of time the stream has been live for."
   },
+  "addbuild": {
+    "cmd": "addbuild",
+    "format": "${PREFIX}addbuild [build name] [soul level] [upgrade level] <link>",
+    "desc": "Used to add a build to your build list. Stating `soul level`, `upgrade level` and `build planner link` are optional but recommended. If a soulsplanner link is suplied, any missing data will be taken from the build directly - often, all thats needed.",
+    "perms": [
+      "TWITCH_MOD"
+    ],
+    "moduleId": "builds",
+    "canDM": true,
+    "canEdit": false,
+    "parameters": [
+      {
+        "param": "[build name]",
+        "values": [
+          {
+            "value": "Name of build",
+            "desc": "Unique identifier for build."
+          }
+        ]
+      },
+      {
+        "param": "[soul level]",
+        "values": [
+          {
+            "value": "Soul level",
+            "desc": "Soul level of a Dark Souls build."
+          },
+          {
+            "value": "Blood level",
+            "desc": "Blood level of a Bloodborne build."
+          }
+        ]
+      },
+      {
+        "param": "[Upgrade level]",
+        "values": [
+          {
+            "value": "Upgrade level",
+            "desc": "Weapon upgrade level of build."
+          }
+        ]
+      },
+      {
+        "param": "<link>",
+        "values": [
+          {
+            "value": "DS1 SoulsPlanner link"
+          },
+          {
+            "value": "DS2 SoulsPlanner link"
+          },
+          {
+            "value": "DS3 SoulsPlanner link",
+            "desc": "All optional parameters will be filled in with the data from build planner link."
+          },
+          {
+            "value": "Bloodborne SoulsPlanner link"
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "command": "!addbuild Vilhelm's Squire SL60 +7 https://soulsplanner.com/darksouls3/1381",
+        "desc": "This will add a build by the name of 'Vilhelm's Squire' to the build list. If a build by the same name already exists in the list, its information will be updated with the new information stated."
+      },
+      {
+        "command": "!addbuild https://soulsplanner.com/darksouls3/1139",
+        "desc": "This will take the name, soul level, and upgrade level directly from the build linked."
+      }
+    ]
+  },
   "bl": {
     "perms": [
       "USER"
@@ -733,6 +658,38 @@
     "debug": false,
     "format": "${PREFIX}bl",
     "desc": "Use this command to get the name, blood level, and upgrade level of streamer's current Bloodborne build. A build must be in the streamer's build list and set as their current build using [!addbuild](#addbuild) and [!setbuild](#setbuild) for this command to work."
+  },
+  "build": {
+    "cmd": "build",
+    "format": "${PREFIX}build [list]",
+    "desc": "Use this command to get info on the streamer's currently set build. Use the [!setbuild](#setbuild) command to change the current set build.",
+    "perms": [
+      "USER"
+    ],
+    "moduleId": "builds",
+    "canDM": false,
+    "canEdit": false,
+    "parameters": [
+      {
+        "param": "[list]",
+        "values": [
+          {
+            "value": "list",
+            "desc": "Optional parameter to get SlugBot to DM you a full list of the streamer's builds."
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "command": "!build",
+        "desc": "This will display info on the streamer's currently set build."
+      },
+      {
+        "command": "!build list",
+        "desc": "This will make SlugBot DM you with a list of all of the streamer's builds."
+      }
+    ]
   },
   "iam": {
     "cmd": "iam",
@@ -754,6 +711,70 @@
       {
         "command": "!am done",
         "desc": "This will end the event."
+      }
+    ]
+  },
+  "removebuild": {
+    "cmd": "removebuild",
+    "format": "${PREFIX}removebuild <build id>",
+    "desc": "Used to remove a build from a your build list.",
+    "perms": [
+      "TWITCH_MOD"
+    ],
+    "moduleId": "builds",
+    "canDM": true,
+    "canEdit": false,
+    "parameters": [
+      {
+        "param": "<build id>",
+        "values": [
+          {
+            "value": "build name"
+          },
+          {
+            "value": "build ID",
+            "desc": "Number of a build in the build list"
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "command": "!removebuild Vilhelm's Squire",
+        "desc": "This will remove the build 'Vilhelm's Squire' from the build list. Build name is case insensitive."
+      }
+    ]
+  },
+  "setbuild": {
+    "cmd": "setbuild",
+    "format": "${PREFIX}setbuild <build name|build number>",
+    "desc": "Use this command to set your current build from your list of added builds.",
+    "perms": [
+      "TWITCH_MOD"
+    ],
+    "moduleId": "builds",
+    "canDM": true,
+    "canEdit": true,
+    "debug": false,
+    "parameters": [
+      {
+        "param": "<build name|build number>",
+        "values": [
+          {
+            "value": "build name",
+            "desc": "Approximate name of an added build"
+          },
+          {
+            "value": "build number",
+            "desc": "Number of build in your build list"
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "command": "!setbuild Knight Laran",
+        "desc": "This will set your current build to Knight Laran as long as its in your build list."
       }
     ]
   },
@@ -794,5 +815,15 @@
         "desc": "This will show three builds from SlugBots build database that most closely match the name `Amil of the Deep`."
       }
     ]
+  },
+  "song": {
+    "cmd": "song",
+    "perms": [
+      "USER"
+    ],
+    "moduleId": "",
+    "debug": false,
+    "format": "${PREFIX}song",
+    "desc": "Use this command to get the streamers currently playing song."
   }
 }

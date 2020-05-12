@@ -2120,13 +2120,78 @@
     "help": "Example: ` ${PREFIX}raffle start 14 This server is hosting a raffle that will end in 14 days. `\nThis will create a raffle notifiction with the raffle message and a countdown for 14 days. Members can click the reaction to take part.\n\nExample: ` ${PREFIX}raffle end `\nThis will end the raffle, delete the raffle notification and **will not select a winner**\n\nExample: ` ${PREFIX}raffle draw `\nThis will end the raffle and edit the raffle notification announcing the randomly selected winner."
   },
   "remindme": {
-    "perms": [],
-    "reqs": [],
-    "debug": true,
+    "cmd": "remindme",
+    "perms": [
+      "USER"
+    ],
+    "moduleId": "reminders",
+    "debug": false,
     "canDM": true,
     "canEdit": true,
     "format": "${PREFIX}remindme to <reminder message> in <time until reminder>",
-    "help": ""
+    "desc": "Get SlugBot to remind you with a message after a given amount of time.",
+    "parameters": [
+      {
+        "param": "<reminder message>",
+        "values": [
+          {
+            "value": "String",
+            "desc": "Reminder message SlugBot will send."
+          }
+        ]
+      },
+      {
+        "param": "<time until reminder>",
+        "values": [
+          {
+            "value": "Time string",
+            "desc": "a list of time values"
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "command": "!remindme to do the dishes in 1 hour and 20 mins",
+        "desc": "This will DM you with the reminder 'do the dishes' in 1 hour and 20 minutes."
+      },
+      {
+        "command": "!remindme in 5 days and 6 hours to check the mail.",
+        "desc": "This will DM you with the reminder 'check the mail.' in 5 days and 6 hours."
+      }
+    ]
+  },
+  "leaderboard": {
+    "cmd": "leaderbaord",
+    "format": "${PREFIX}leaderbaord [weekly]",
+    "desc": "Use this command to view the top 10 ranked members in the server along with the score of adjacent ranks.",
+    "perms": [
+      "USER"
+    ],
+    "canDM": false,
+    "canEdit": false,
+    "debug": false,
+    "parameters": [
+      {
+        "param": "[weekly]",
+        "values": [
+          {
+            "value": "Weekly",
+            "desc": "specify that the weekly leaderboard should be displayed"
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "command": "!leaderboard",
+        "desc": "This will display the score leaderboard for the server the command was used in."
+      },
+      {
+        "command": "!leaderboard weekly",
+        "desc": "This will display the weekly score leaderboard for the server the command was used in."
+      }
+    ]
   },
   "rank": {
     "cmd": "rank",
