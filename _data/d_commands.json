@@ -1742,7 +1742,14 @@
     "canEdit": false,
     "canDM": false,
     "format": "${PREFIX}daily",
-    "desc": "Used to collect your daily bucket of slugs."
+    "desc": "Used to collect your daily bucket of slugs.",
+    "parameters": [],
+    "examples": [
+      {
+        "command": "!daily",
+        "desc": "This will transfer your daily bucket of slugs if you have yet to claim it for this day."
+      }
+    ]
   },
   "giveslugs": {
     "cmd": "giveslugs",
@@ -1938,8 +1945,70 @@
     "moduleId": "economy",
     "canEdit": false,
     "canDm": false,
-    "format": "${PREFIX}plant <malware type> <member> [modifier]",
-    "desc": "Attempt to plant malware on another user.\nThe modifier is often the potency of the malware you are planting. The potency of a LEECH is how many slugs will be taken every hour.\nThe potency of a SKIMMER is the fraction (between 0 and 1) of Slugs that will be skimmed off every incoming transaction. The modifier of a REDIRECT is the target the malware should attempt to redirect to."
+    "format": "${PREFIX}plant <process type> <member> [modifier]",
+    "desc": "Attempt to plant a process on another user.\nThe modifier is often the potency of the process you are planting. The potency of a LEECH is how many slugs will be taken every hour.\nThe potency of a SKIMMER is the fraction (between 0 and 1) of Slugs that will be skimmed off every incoming transaction. The modifier of a REDIRECT is the target the malware should attempt to redirect to.",
+    "parameters": [
+      {
+        "param": "<process type>",
+        "values": [
+          {
+            "value": "skimmer",
+            "desc": "Specifies planting SKIMMER process"
+          },
+          {
+            "value": "leech",
+            "desc": "Specifies planting LEECH process"
+          },
+          {
+            "value": "bypass_virus",
+            "desc": "Specifies planting BYPASS_VIRUS process"
+          },
+          {
+            "value": "honeypot",
+            "desc": "Specifies planting HONEYPOT process"
+          },
+          {
+            "value": "redirect",
+            "desc": "Specifies planting REDIRECT process"
+          },
+          {
+            "value": "tracker",
+            "desc": "Specifies planting TRACKER malware"
+          }
+        ]
+      },
+      {
+        "param": "<member>",
+        "values": [
+          {
+            "value": "Username",
+            "desc": "Discord username of the target member"
+          },
+          {
+            "value": "discord ID",
+            "desc": "discord ID of the target member"
+          },
+          {
+            "value": "discord member mention",
+            "desc": "Mention of target member"
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "command": "!plant skimmer alex_ 0.3",
+        "desc": "This will plant a SKIMMER process on Alex_ with a potency of 30%."
+      },
+      {
+        "command": "!plant leech tikaro 2500",
+        "desc": "This will plant a LEECH process on tikaro that will leech 2500sc per hour."
+      },
+      {
+        "command": "!plant redirect narcolept to errel",
+        "desc": "This will plant a REDIRECT process on Narcolept that will redirect an incoming process to Errel."
+      }
+    ]
   },
   "respecc": {
     "cmd": "respecc",
