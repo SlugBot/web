@@ -1,6 +1,9 @@
 {
   "addcommand": {
     "cmd": "addcommand",
+    "synonyms": [
+      "updatecommand"
+    ],
     "format": "${PREFIX}addcommand <command> <response>",
     "desc": "Used to add/edit a custom command that will respond with a specified string. alternatively regex can be used in place of a command to make SlugBot send a response message whenever the regex matches a members message.\n\nThe response can contain certain replacer flags that will be replaced will specific values when sent by slugbot.\n\nLINK TO REPLACER FLAGS SECTION",
     "perms": [
@@ -109,6 +112,10 @@
   },
   "giveme": {
     "cmd": "giveme",
+    "synonyms": [
+      "getrole",
+      "join"
+    ],
     "format": "${PREFIX}giveme [add|remove] <role name>",
     "desc": "Use this command to set roles to be self-assignable or toggle self-assignable roles. Using the command with no arguments will list all self-assignable roles.",
     "perms": [
@@ -346,13 +353,21 @@
     "debug": false
   },
   "permissions": {
+    "cmd": "permissions",
+    "synonyms": [
+      "perms",
+      "perm",
+      "permission",
+      "constraint",
+      "constraints"
+    ],
     "perms": [
       "BOT_ADMIN"
     ],
     "canDM": false,
     "canEdit": false,
     "debug": true,
-    "format": "${PREFIX}permissions ((module|command <command name>) |score) [(disable|enable|whitelist|blacklist|remove) (channel|role|user)]",
+    "format": "${PREFIX}permissions ((module|command <command name>) | score | slugbot) [<setting> (channel|role|user)]",
     "desc": "Use this command to add or remove constraints on command usage.\n\nAdding a channel constraint will mean the specified command can only be used in that channel.\n\nAdding a role constraint will mean the specified command can only be used by members with that role.\n**ADDING ROLE CONSTRAINTS WILL OVERRIDE DEFAULT PERMISSION REQUIREMENTS**.",
     "parameters": [
       {
@@ -369,7 +384,7 @@
         ]
       },
       {
-        "param": "(disable|enable|whitelist|blacklist|remove)",
+        "param": "<setting>",
         "values": [
           {
             "value": "disable",
@@ -413,12 +428,16 @@
     ],
     "examples": [
       {
-        "command": "!permissions weapon whitelist #bot-stuff",
+        "command": "!permissions command weapon whitelist #bot-stuff",
         "desc": "This will whitelist the channel `#bot-stuff` for the command `!weapon` - meaning the `!weapon` command can only be used in that channel."
       },
       {
         "command": "!permissions score blacklist #bot-stuff",
         "desc": "This will stop SlugBot from giving users XP for activity in the `#bot-stuff` channel."
+      },
+      {
+        "command": "!permissions slugbot whitelist #bot-stuff",
+        "desc": "This will only allow slugbot commands to be used in the `#bot-stuff` channel."
       }
     ]
   },
@@ -1004,8 +1023,11 @@
   },
   "addbuild": {
     "cmd": "addbuild",
+    "synonyms": [
+      "updatebuild"
+    ],
     "format": "${PREFIX}addbuild [build name] [soul level] [upgrade level] <link>",
-    "desc": "Used to add a build to your build list. Stating `soul level`, `upgrade level` and `build planner link` are optional but recommended. If a soulsplanner link is suplied, any missing data will be taken from the build directly - often, all thats needed.",
+    "desc": "Used to add a build to your build list. Stating `soul level`, `upgrade level` and `build planner link` are optional but recommended. If a soulsplanner link is suplied, any missing data will be taken from the build directly - In most cases, a build link is all that is needed.",
     "perms": [
       "MODERATOR"
     ],
@@ -2066,6 +2088,25 @@
     "format": "!scnotifications",
     "help": "Toggle SlugCoin Economy notifications."
   },
+  "shop": {
+    "cmd": "shop",
+    "synonyms": [],
+    "perms": [
+      "BOT_ADMIN"
+    ],
+    "moduleId": "economy",
+    "canEdit": false,
+    "canDM": false,
+    "format": "${PREFIX}shop",
+    "desc": "Use this command to view the weekly public process shop.",
+    "parameters": [],
+    "examples": [
+      {
+        "command": "!daily",
+        "desc": "This will transfer your daily bucket of slugs if you have yet to claim it for this day."
+      }
+    ]
+  },
   "slots": {
     "perms": [
       "USER"
@@ -2137,17 +2178,6 @@
     "canDM": false,
     "format": "${PREFIX}takeslugs <member> <amount>",
     "help": ""
-  },
-  "vault": {
-    "cmd": "vault",
-    "synonyms": [
-      "bank"
-    ],
-    "perms": [],
-    "moduleId": "economy",
-    "canEdit": false,
-    "format": "${PRERIX}vault [member] [amount]",
-    "desc": "Used to move Slugs from your current account into your vault."
   },
   "gallery": {
     "perms": [

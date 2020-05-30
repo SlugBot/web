@@ -507,12 +507,60 @@
     "desc": "Sneaky_Maldron's command for SaintRiots chat."
   },
   "permissions": {
+    "cmd": "permissions",
+    "synonyms": [
+      "perms",
+      "constraints",
+      "permission",
+      "constraint",
+      "perm"
+    ],
     "perms": [
       "TWITCH_MOD"
     ],
     "debug": true,
-    "format": "${PREFIX}permissions module|command <command name> [(user|subscriber|moderator|broadcaster) | (enable|disable)]",
-    "desc": "Use this command to add or remove constraints on command usage.\n\nAdding a channel constraint will mean the specified command can only be used in that channel.\n\nAdding a role constraint will mean the specified command can only be used by members with that role.\n**ADDING ROLE CONSTRAINTS WILL OVERRIDE DEFAULT PERMISSION REQUIREMENTS**."
+    "format": "${PREFIX}permissions module|command <command> [setting]",
+    "desc": "Use this command to add or remove constraints on command usage.\n\nAdding a channel constraint will mean the specified command can only be used in that channel.\n\nAdding a role constraint will mean the specified command can only be used by members with that role.\n**ADDING ROLE CONSTRAINTS WILL OVERRIDE DEFAULT PERMISSION REQUIREMENTS**.",
+    "parameters": [
+      {
+        "param": "<command>",
+        "values": [
+          {
+            "value": "slugbot command",
+            "desc": "The name of the command you wish to set permission constraints for."
+          }
+        ]
+      },
+      {
+        "param": "<setting>",
+        "values": [
+          {
+            "value": "disable",
+            "desc": "disable the command/module."
+          },
+          {
+            "value": "enable",
+            "desc": "enable the command/module."
+          },
+          {
+            "value": "user",
+            "desc": "specify that the command can be used by all users"
+          },
+          {
+            "value": "subscriber",
+            "desc": "specify that the command can only be used by subscribers"
+          },
+          {
+            "value": "moderator",
+            "desc": "specify that the command can only be used by moderators"
+          },
+          {
+            "value": "broadcaster",
+            "desc": "specify that the command can only be used by the broadcaster"
+          }
+        ]
+      }
+    ]
   },
   "removecommand": {
     "cmd": "removecommand",
@@ -580,8 +628,8 @@
   },
   "addbuild": {
     "cmd": "addbuild",
-    "format": "${PREFIX}addbuild [build name] [soul level] [upgrade level] <link>",
-    "desc": "Used to add a build to your build list. Stating `soul level`, `upgrade level` and `build planner link` are optional but recommended. If a soulsplanner link is suplied, any missing data will be taken from the build directly - often, all thats needed.",
+    "format": "${PREFIX}addbuild [build name] [soul level] [upgrade level] [link]",
+    "desc": "Used to add a build to your build list. Stating `soul level`, `upgrade level` and `build planner link` are optional but recommended. If a soulsplanner link is suplied, any missing data will be taken from the build directly - In most cases, a build link is all that is needed.",
     "perms": [
       "TWITCH_MOD"
     ],
@@ -687,6 +735,24 @@
       },
       {
         "command": "!build list",
+        "desc": "This will make SlugBot DM you with a list of all of the streamer's builds."
+      }
+    ]
+  },
+  "builds": {
+    "cmd": "build",
+    "format": "${PREFIX}builds",
+    "desc": "Use this command to get a list of the streamer's added builds.",
+    "perms": [
+      "USER"
+    ],
+    "moduleId": "builds",
+    "canDM": false,
+    "canEdit": false,
+    "parameters": [],
+    "examples": [
+      {
+        "command": "!builds",
         "desc": "This will make SlugBot DM you with a list of all of the streamer's builds."
       }
     ]

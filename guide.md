@@ -73,6 +73,28 @@ To enable/disable individual commands, use the `!permissions <command> <enable|d
 
 ---
 
+# Flag Replacers
+Some SlugBot functions allow users to set strings to be used for responses such as custom welcome messages and command responses. These strings can be made more dynamic with the use of **flag replacers**.
+
+### ${NAME}
+Any appearance of this flag in the string will be replaced with the name of the user who triggered the function.
+### ${ID}
+Any appearance of this flag in the string will be replaced with the ID of the user who triggered the function.
+### ${COUNT}
+Any appearance of this flag in the string will be replaced with the number of times the function has been triggered. If used for a welcome message, the flag will be replaced with the server's member count instead.
+### ${0} ${1} ${2}
+Index flags, when used for command responses, will be replaced by the corresponding argument that was supplied when the command was used.
+### ${VALUE}
+Any appearance of this flag in the string, when used for command responses, will be replaced with a stored value that can be set, incremented, and decremented by supplying a number argument, ++, or -- respectively when the command was used.
+### ${RESTRICT: #<channel id>} ${RESTRICT: @<member id>}
+This flag restricts the use of the function to either within specified channels, or by specified members. The flag is removed from the response.
+### ${REACT: <emoji>}
+This flag will add the specified emoji as a reaction to the message that triggered the function. The flag is removed from the response.
+### ${RAND: <option 1> | <option 2> | <option 3>}
+Any appearance of this flag in the string will be replaced with **one** of the listed options selected at random. The option selection can be weighted by prefixing the option with `{<weight>}` - for example `${RAND: {2} heads | {1} tails}`. This will make the option "heads" be twice as likely to be selected.
+
+---
+
 # Slug Economy
 Like some other bots, SlugBot has an Economy module, letting users earn and trade currency in the form of SlugCoin. However, SlugBot's economy allows users to 'hack' other members, steal from them or plant malware on their accounts. The aim of the game is to earn as much SlugCoin as you can while also protecting your account from other members.
 
