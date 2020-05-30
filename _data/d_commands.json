@@ -1307,7 +1307,7 @@
     "canDM": true,
     "canEdit": true,
     "format": "${PREFIX}item [ds1|ds2|ds3] [name|description] <search words>",
-    "desc": "Used to search items in souls games and return item descriptions.\n__**Example:**__ `${PREFIX}item gael's greatsword`\nThis will search for an item with 'gael's greatsword' in the **name or description** across **all Dark Souls games**.\n__**Example:**__ `${PREFIX}item ds1 name rapier`\nThis will search for an item in **Dark Souls 1** with 'rapier' in the **name**.",
+    "desc": "Used to search items in souls games and return item descriptions.",
     "parameters": [
       {
         "param": "[ds1|ds2|ds3]",

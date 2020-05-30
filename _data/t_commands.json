@@ -431,7 +431,7 @@
   "addcommand": {
     "cmd": "addcommand",
     "format": "${PREFIX}addcommand <command> <response>",
-    "desc": "Used to add/edit a custom command that will respond with a specified string. alternatively regex can be used in place of a command to make SlugBot send a response message whenever the regex matches a members message.\n\nThe response can contain certain replacer flags that will be replaced will specific values when sent by slugbot.\n\nLINK TO REPLACER FLAGS SECTION",
+    "desc": "Used to add/edit a custom command that will respond with a specified string. alternatively regex can be used in place of a command to make SlugBot send a response message whenever the regex matches a members message.\n\nThe response can contain certain replacer flags that will be replaced will specific values when sent by slugbot.\n\nDocumentation on replacer flags can be found [here](guide.html#flag-replacers)",
     "perms": [
       "TWITCH_MOD"
     ],
