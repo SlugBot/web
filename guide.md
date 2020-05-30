@@ -92,7 +92,7 @@ This flag restricts the use of the function to either within specified channels,
 This flag will add the specified emoji as a reaction to the message that triggered the function. The flag is removed from the response.
 ### ${RAND: <option 1> | <option 2> | <option 3>}
 Any appearance of this flag in the string will be replaced with **one** of the listed options selected at random. The option selection can be weighted by prefixing the option with `{<weight>}` - for example `${RAND: {2} heads | {1} tails}`. This will make the option "heads" be twice as likely to be selected.
-### ${TIMEOUT: <duration>}
+### ${TIMEOUT: \<duration>}
 This flag will timeout the user who triggered the function for `<duration>` seconds if possible. This flag only applies for Twitch functions. SlugBot must be a moderator in the relevant Twitch chat. The flag is removed from the response.
 
 
