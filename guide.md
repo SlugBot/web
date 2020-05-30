@@ -86,7 +86,7 @@ Any appearance of this flag in the string will be replaced with the number of ti
 Index flags, when used for command responses, will be replaced by the corresponding argument that was supplied when the command was used.
 ### ${VALUE}
 Any appearance of this flag in the string, when used for command responses, will be replaced with a stored value that can be set, incremented, and decremented by supplying a number argument, ++, or -- respectively when the command was used.
-### ${RESTRICT: #<channel id>} ${RESTRICT: @<member id>}
+### ${RESTRICT: #\<channel id>} ${RESTRICT: @\<member id>}
 This flag restricts the use of the function to either within specified channels, or by specified members. The flag is removed from the response.
 ### ${REACT: <emoji>}
 This flag will add the specified emoji as a reaction to the message that triggered the function. The flag is removed from the response.
