@@ -88,7 +88,7 @@ Index flags, when used for command responses, will be replaced by the correspond
 Any appearance of this flag in the string, when used for command responses, will be replaced with a stored value that can be set, incremented, and decremented by supplying a number argument, ++, or -- respectively when the command was used.
 ### ${RESTRICT: #\<channel id>} ${RESTRICT: @\<member id>}
 This flag restricts the use of the function to either within specified channels, or by specified members. The flag is removed from the response.
-### ${REACT: <emoji>}
+### ${REACT: \<emoji>}
 This flag will add the specified emoji as a reaction to the message that triggered the function. The flag is removed from the response.
 ### ${RAND: <option 1> | <option 2> | <option 3>}
 Any appearance of this flag in the string will be replaced with **one** of the listed options selected at random. The option selection can be weighted by prefixing the option with `{<weight>}` - for example `${RAND: {2} heads | {1} tails}`. This will make the option "heads" be twice as likely to be selected.
