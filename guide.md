@@ -83,6 +83,8 @@ Any appearance of this flag in the string will be replaced with the ID of the us
 ### ${COUNT}
 Any appearance of this flag in the string will be replaced with the number of times the function has been triggered. If used for a welcome message, the flag will be replaced with the server's member count instead.
 ### ${0} ${1} ${2}
+Capture Group flags, when used for regEx match responses, will be replaced by the corresponding capture group in the given regEx. ${0} will always be replaced by the full regEx match.
+### ${ARG:0} ${ARG:1} ${ARG:2}
 Index flags, when used for command responses, will be replaced by the corresponding argument that was supplied when the command was used.
 ### ${VALUE}
 Any appearance of this flag in the string, when used for command responses, will be replaced with a stored value that can be set, incremented, and decremented by supplying a number argument, ++, or -- respectively when the command was used.
