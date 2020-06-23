@@ -2,7 +2,9 @@
   "addcommand": {
     "cmd": "addcommand",
     "synonyms": [
-      "updatecommand"
+      "updatecommand",
+      "addcmd",
+      "updatecmd"
     ],
     "format": "${PREFIX}addcommand <command> <response>",
     "desc": "Used to add/edit a custom command that will respond with a specified string. alternatively regex can be used in place of a command to make SlugBot send a response message whenever the regex matches a members message.\n\nThe response can contain certain replacer flags that will be replaced will specific values when sent by slugbot.\n\nDocumentation on replacer flags can be found [here](guide.html#flag-replacers)",
@@ -110,11 +112,64 @@
     "parameters": [],
     "examples": []
   },
+  "deletemessages": {
+    "cmd": "deletemessages",
+    "synonyms": [
+      "deletemsgs",
+      "deletemsg",
+      "delmsgs",
+      "delmsg"
+    ],
+    "perms": [
+      "BOT_ADMIN"
+    ],
+    "debug": false,
+    "canEdit": false,
+    "canDM": false,
+    "format": "${PREFIX}deletemessages <member> <number of messages>",
+    "desc": "Use this command to delete messages sent by a specific member. Will not delete messages older than 2 weeks.",
+    "parameters": [
+      {
+        "param": "<member>",
+        "values": [
+          {
+            "value": "Username",
+            "desc": "Discord username of the user"
+          },
+          {
+            "value": "discord ID",
+            "desc": "discord ID of the user"
+          },
+          {
+            "value": "discord member mention",
+            "desc": "Mention member"
+          }
+        ]
+      },
+      {
+        "param": "<number of messages>",
+        "values": [
+          {
+            "value": "Number",
+            "desc": "Number of messages to be deleted"
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "command": "!deletemessages alex_ 10",
+        "desc": "This will delete the last 50 messages sent by Alex_."
+      }
+    ]
+  },
   "giveme": {
     "cmd": "giveme",
     "synonyms": [
       "getrole",
-      "join"
+      "join",
+      "toggle",
+      "togglerole"
     ],
     "format": "${PREFIX}giveme [add|remove] <role name>",
     "desc": "Use this command to set roles to be self-assignable or toggle self-assignable roles. Using the command with no arguments will list all self-assignable roles.",
@@ -448,7 +503,7 @@
     "perms": [
       "USER"
     ],
-    "canDM": false,
+    "canDM": true,
     "canEdit": false,
     "debug": false
   },
@@ -563,6 +618,11 @@
   },
   "removecommand": {
     "cmd": "removecommand",
+    "synonyms": [
+      "removecmd",
+      "deletecmd",
+      "deletecommand"
+    ],
     "format": "${PREFIX}removecommand <command>",
     "desc": "Used to remove an existing custom command.",
     "perms": [
@@ -1675,6 +1735,78 @@
     "format": "${PREFIX}activity <days>",
     "help": ""
   },
+  "activate": {
+    "cmd": "activate",
+    "synonyms": [
+      "enable"
+    ],
+    "perms": [
+      "USER"
+    ],
+    "moduleId": "economy",
+    "canEdit": false,
+    "canDM": true,
+    "format": "${PREFIX}activate <process ID>",
+    "desc": "Activate a disabled process.",
+    "parameters": [
+      {
+        "param": "<process ID>",
+        "values": [
+          {
+            "value": "String",
+            "desc": "Unique ID of process"
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "command": "!Activate AL3X1",
+        "desc": "This will activate the process with ID AL3X1 if it was suspended."
+      }
+    ]
+  },
+  "bid": {
+    "cmd": "bid",
+    "synonyms": [
+      "buy",
+      "offer"
+    ],
+    "perms": [
+      "USER"
+    ],
+    "moduleId": "economy",
+    "canEdit": false,
+    "canDM": false,
+    "format": "${PREFIX}bid <process ID> <bid amount>",
+    "desc": "Uses this command to make a bid on a process in the auction.",
+    "parameters": [
+      {
+        "param": "<process ID>",
+        "values": [
+          {
+            "value": "String",
+            "desc": "Process ID of auctioned process"
+          }
+        ]
+      },
+      {
+        "param": "<bid amount>",
+        "values": [
+          {
+            "value": "Number",
+            "desc": "Amount to bid for process on sale"
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "command": "!bid N4RC1 1,000,000",
+        "desc": "This will make a bid of 1,000,000sc on the process N4RC1."
+      }
+    ]
+  },
   "bypass": {
     "perms": [
       "USER"
@@ -1822,6 +1954,24 @@
         "desc": "This will transfer 10,000 slugs to user Tikaro."
       }
     ]
+  },
+  "higherlower": {
+    "cmd": "higherlower",
+    "synonyms": [
+      "hl"
+    ],
+    "perms": [
+      "USER"
+    ],
+    "moduleId": "economy",
+    "canEdit": false,
+    "canDM": false,
+    "format": "!higherlower <bet amount>",
+    "desc": "Play Higher Lower.",
+    "examples": {
+      "command": "!higherlower 10,000",
+      "desc": "This will start a Higher Lower game with a starting bet of 10,000sc."
+    }
   },
   "hijack": {
     "perms": [],
@@ -2088,22 +2238,41 @@
     "format": "!scnotifications",
     "help": "Toggle SlugCoin Economy notifications."
   },
-  "shop": {
-    "cmd": "shop",
+  "sell": {
+    "cmd": "sell",
     "synonyms": [],
     "perms": [
-      "BOT_ADMIN"
+      "USER"
     ],
     "moduleId": "economy",
     "canEdit": false,
     "canDM": false,
-    "format": "${PREFIX}shop",
-    "desc": "Use this command to view the weekly public process shop.",
-    "parameters": [],
+    "format": "${PREFIX}sell <process ID> [starting price]",
+    "desc": "Uses this command to begin an auction on the specified process.",
+    "parameters": [
+      {
+        "param": "<process ID>",
+        "values": [
+          {
+            "value": "String",
+            "desc": "Process ID of auctioned process"
+          }
+        ]
+      },
+      {
+        "param": "[starting price]",
+        "values": [
+          {
+            "value": "Number",
+            "desc": "Optional starting price of listed process. Defaults to 10,000sc"
+          }
+        ]
+      }
+    ],
     "examples": [
       {
-        "command": "!daily",
-        "desc": "This will transfer your daily bucket of slugs if you have yet to claim it for this day."
+        "command": "!sell T1K4R 150,000",
+        "desc": "This will add process T1K4R to the auction at a starting price of 150,000sc where it can be bid on by other users."
       }
     ]
   },
@@ -2124,6 +2293,7 @@
   "slugs": {
     "cmd": "slugs",
     "synonyms": [
+      "bal",
       "balance",
       "menu",
       "myaccount"
@@ -2167,6 +2337,38 @@
       }
     ]
   },
+  "suspend": {
+    "cmd": "suspend",
+    "synonyms": [
+      "disable",
+      "deactivate"
+    ],
+    "perms": [
+      "USER"
+    ],
+    "moduleId": "economy",
+    "canEdit": false,
+    "canDM": true,
+    "format": "${PREFIX}suspend <process ID>",
+    "desc": "Suspend an active process.",
+    "parameters": [
+      {
+        "param": "<process ID>",
+        "values": [
+          {
+            "value": "String",
+            "desc": "Unique ID of process"
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "command": "!suspend AL3X1",
+        "desc": "This will suspend the process with ID AL3X1 if it was active."
+      }
+    ]
+  },
   "takeslugs": {
     "perms": [
       "ADMINISTRATOR"
@@ -2178,6 +2380,17 @@
     "canDM": false,
     "format": "${PREFIX}takeslugs <member> <amount>",
     "help": ""
+  },
+  "vault": {
+    "cmd": "vault",
+    "synonyms": [
+      "bank"
+    ],
+    "perms": [],
+    "moduleId": "economy",
+    "canEdit": false,
+    "format": "${PRERIX}vault [member] [amount]",
+    "desc": "Used to move Slugs from your current account into your vault."
   },
   "gallery": {
     "perms": [
@@ -2466,6 +2679,19 @@
         "desc": "This will set the emoji SlugBot reacts with when a message is added to the Slug-Board to 👺"
       }
     ]
+  },
+  "jointwitch": {
+    "cmd": "jointwitch",
+    "synonyms": [
+      "join"
+    ],
+    "perms": [
+      "USER"
+    ],
+    "moduleId": "",
+    "debug": false,
+    "format": "${PREFIX}jointwitch",
+    "desc": "Use this command to force slugbot to join your twitch chat. You must have first linked your discord and twitch accounts using [!twitch <twitch name>]()"
   },
   "synctwitch": {
     "perms": [
