@@ -54,6 +54,9 @@
   },
   "avatar": {
     "cmd": "avatar",
+    "synonyms": [
+      "pfp"
+    ],
     "format": "${PREFIX}avatar [member]",
     "desc": "Use this command to view a fullsized image of a members avatar. Use the command with no arguments to view a fullsized image of your own avatar.",
     "perms": [
@@ -599,8 +602,16 @@
     ],
     "examples": [
       {
-        "command": "",
-        "desc": ""
+        "command": "!profile Asheran",
+        "desc": "This will display Asheran's profile"
+      },
+      {
+        "command": "!profile color #fffdd0",
+        "desc": "This will set the text color of your profile to the color corresponding to #FFFDD0."
+      },
+      {
+        "command": "!profile wallpaper https://i.imgur.com/Au1shBI.png",
+        "desc": "This will set your profile wallpaper to the linked image."
       }
     ]
   },
