@@ -2538,7 +2538,7 @@
             "desc": "specify to update the RoleReact description"
           },
           {
-            "value": "desc",
+            "value": "color",
             "desc": "specify to update the embed color of the RoleReact message"
           }
         ]
