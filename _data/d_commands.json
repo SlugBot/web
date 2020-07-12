@@ -1171,7 +1171,8 @@
     "cmd": "allocatestats",
     "synonyms": [
       "beststats",
-      "maxar"
+      "maxar",
+      "minmax"
     ],
     "format": "${PREFIX}allocatestats <weapon name> [upgrade level] [base str [dex [int [faith [luck]]]]] <levels to spend>",
     "desc": "Use this command to find the optimal stat spread for a given weapon.",
@@ -1432,6 +1433,12 @@
     ]
   },
   "namecheck": {
+    "cmd": "namecheck",
+    "synonyms": [
+      "checkname",
+      "testname",
+      "nametest"
+    ],
     "format": "${PREFIX}namecheck <name>",
     "desc": "Use this command to check if a name will be censored by the Dark Souls 3 name filters. Will also show if the name is too long.",
     "perms": [
@@ -1788,7 +1795,7 @@
     ],
     "moduleId": "economy",
     "canEdit": false,
-    "canDM": false,
+    "canDM": true,
     "format": "${PREFIX}bid <process ID> <bid amount>",
     "desc": "Uses this command to make a bid on a process in the auction.",
     "parameters": [
@@ -2434,13 +2441,28 @@
     ]
   },
   "raffle": {
+    "cmd": "raffle",
+    "synonyms": [],
     "perms": [
-      "ADMINISTRATOR"
+      "BOT_ADMIN"
     ],
-    "reqs": [],
     "debug": true,
     "format": "${PREFIX}raffle <start [duration] [raffle message] | end | draw>",
-    "help": "Example: ` ${PREFIX}raffle start 14 This server is hosting a raffle that will end in 14 days. `\nThis will create a raffle notifiction with the raffle message and a countdown for 14 days. Members can click the reaction to take part.\n\nExample: ` ${PREFIX}raffle end `\nThis will end the raffle, delete the raffle notification and **will not select a winner**\n\nExample: ` ${PREFIX}raffle draw `\nThis will end the raffle and edit the raffle notification announcing the randomly selected winner."
+    "desc": "Use this command to create a raffle - allowing users to enter by adding a react to the raffle message.",
+    "examples": [
+      {
+        "command": "!raffle start 14 This server is hosting a raffle that will end in 14 days.",
+        "desc": "This will create a raffle notifiction with the raffle message and a countdown for 14 days. Members can click the reaction to take part."
+      },
+      {
+        "command": "!raffle draw",
+        "desc": "This will end the raffle and edit the raffle notification announcing the randomly selected winner. Use the command again to draw a new winner."
+      },
+      {
+        "command": "!raffle end",
+        "desc": "This will end the raffle, delete the raffle notification and **will not select a winner**"
+      }
+    ]
   },
   "remindme": {
     "cmd": "remindme",
@@ -2481,6 +2503,103 @@
       {
         "command": "!remindme in 5 days and 6 hours to check the mail.",
         "desc": "This will DM you with the reminder 'check the mail.' in 5 days and 6 hours."
+      }
+    ]
+  },
+  "rolereact": {
+    "cmd": "rolereact",
+    "synonyms": [
+      "reactrole"
+    ],
+    "perms": [
+      "BOT_ADMIN"
+    ],
+    "debug": true,
+    "format": "${PREFIX}rolereact create | (<msg ID> add <reaction> <role>) | (<msg ID> remove [reaction]) | (<msg ID> desc <description>)",
+    "desc": "Use this command to create a RoleReact message - allowing users to assign roles to themselves using the reactions on the message.",
+    "parameters": [
+      {
+        "param": "[create|add|remove|desc|color]",
+        "values": [
+          {
+            "value": "create",
+            "desc": "specify to create a new RoleReact message"
+          },
+          {
+            "value": "add",
+            "desc": "specify to add new self-assignable role"
+          },
+          {
+            "value": "remove",
+            "desc": "specify to remove existing self-assignable role"
+          },
+          {
+            "value": "desc",
+            "desc": "specify to update the RoleReact description"
+          },
+          {
+            "value": "desc",
+            "desc": "specify to update the embed color of the RoleReact message"
+          }
+        ]
+      },
+      {
+        "param": "<msg ID>",
+        "values": [
+          {
+            "value": "Number",
+            "desc": "The message ID of an existing RoleReact message"
+          }
+        ]
+      },
+      {
+        "param": "<reaction>",
+        "values": [
+          {
+            "value": "emoji",
+            "desc": "A default or custom emoji"
+          }
+        ]
+      },
+      {
+        "param": "<role>",
+        "values": [
+          {
+            "value": "String",
+            "desc": "The name of a role"
+          }
+        ]
+      },
+      {
+        "param": "<description>",
+        "values": [
+          {
+            "value": "String",
+            "desc": "A description to display in the RoleReact message"
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "command": "!rolereact create",
+        "desc": "This will create a new RoleReact message."
+      },
+      {
+        "command": "!rolereact 731977229902282773 add 🍃 PC Player",
+        "desc": "This will add a new reaction - or update an existing one - that will give members the 'PC Player' role when clicked"
+      },
+      {
+        "command": "!rolereact 731977229902282773 remove 🍃",
+        "desc": "This will remove the 🍃 reaction and no longer give members any role when a 🍃 reaction is added."
+      },
+      {
+        "command": "!rolereact 731977229902282773 desc Welcome to the server! Select the relevant roles for you by clicking the reactions on this message.",
+        "desc": "This will update the description in the message."
+      },
+      {
+        "command": "!rolereact 731977229902282773 color #ffffff",
+        "desc": "This will set the color of the embed white."
       }
     ]
   },
