@@ -2,7 +2,7 @@
 ### layout: info
 ### title: Roadmap
 ---
-# TODO list
+# ROADMAP
 ### Misc Features:
   - [ ] Make !giveme use stringSim for role name
   - [ ] Users can set a birth date and slugbot will announce their birthday
