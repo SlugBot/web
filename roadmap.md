@@ -57,6 +57,11 @@
     - [ ] Making them faster reduces scan success chance
     - [ ] Increasing scanner level reduces base duration and increases min success chance
     - [ ] Display more than 6 processes in SCAN complete message if needed
+  - [ ] !stealslugs command to take a lump sum from a member's current
+    - [ ] BYPASS and CRACK required
+    - [ ] Amount stolen capped by vault cap or 30% of target's current (smallest taken)
+    - [ ] All users locked out from stealing from target's current for a duration based on how much was stolen
+    - [ ] chance of failure resulting in consequences (removed processes on target, uncovered processes on target, stat vulnerabilities) 
   - [ ] SlugBot AI
   	- [ ] Increase SlugBot income
 
