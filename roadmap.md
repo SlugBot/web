@@ -3,14 +3,17 @@
 ### title: Roadmap
 ---
 # TODO list
-### Misc:
+### Misc Features:
   - [ ] Make !giveme use stringSim for role name
+  - [ ] Users can set a birth date and slugbot will announce their birthday
   - [ ] meme generator
     - [ ] give image link, top text, bottom text
-
-### Raffle:
-  - [ ] fix raffle module
-  - [ ] Use own database table for raffle data
+  - [ ] Make botadmin exempt from role order warning
+  - [ ] Make !builds lists over 20 builds into multi-page menus
+  - [ ] Add build description field
+  - [ ] !poll command allowing mods to start a poll in chat
+  	- [ ] Use progress bars to display votes
+  - [ ] Togglable option to auto delete spam
 
 ### Member Events:
   - [ ] Add locations (with screenshots) for playable areas without bonfires
@@ -22,16 +25,10 @@
   - [ ] music queue
   - [ ] play, pause, skip, volume
 
-### ds3 builds:
-  - [ ] let mods stop builds from displaying in their servers. (does not remove the build from the db)
-
 ### DS3 Tools:
   - [ ] collect all DS3 weapon data and add to DB
     - [ ] Weapon art motionValues
     - [ ] frame data
-
-### Features:
-  - [ ] Users can set a birth date and slugbot will announce their birthday
 
 ### custom commands:
   custom commands for discord server and twitch channels
@@ -43,21 +40,30 @@
   - [ ] Synonym lookup
 
 ### Slug Hack Game:
-  - [ ] make vaulting SC take 5 minutes
-  - [ ] trade system for trading processes and SC
-    - [ ] something to stop alt account abuse
-    - [ ] SlugBot randomly generated processes weighted to target high rollers
-  - [ ] Private process shop
-    - [ ] only viewable in DMs. gives a tailored list of processes determined by user's total worth and level. (encourage user's to punch up a little)
-    - [ ] refreshes daily
+  - [ ] Process Trading
+    - [ ] trade system for trading processes and SC
+      - [ ] something to stop alt account abuse
+      - [ ] SlugBot randomly generated processes weighted to target high rollers
+    - [ ] Private process shop
+      - [ ] only viewable in DMs. gives a tailored list of processes determined by user's total worth and level. (encourage user's to punch up a little)
+      - [ ] refreshes daily
+  - [ ] ROOTKIT process that allows users to take some control of a bypassed account and plant processes as them
+  - [ ] JAMMER process that can be planted directly on to other processes to suspend them for a finite duration
+    - [ ] Duration and success chance governed by percentage of properties identified and Injector Lvl
+    - [ ] JAMMER process, when planted on a user instead, will obfuscate their logs until removed
+  - [ ] rework SCANs
+  	- [ ] Make SCANs free
+    - [ ] SCAN duration can be specified
+    - [ ] Making them faster reduces scan success chance
+    - [ ] Increasing scanner level reduces base duration and increases min success chance
+    - [ ] Display more than 6 processes in SCAN complete message if needed
+  - [ ] SlugBot AI
+  	- [ ] Increase SlugBot income
 
-### Experiments:
-  - [ ] SlugBot messages two users with a greeting. copies one persons reply to the other. gets two random users to communicate..
-
-### Notes:
-  - [ ] https://www.npmjs.com/package/jimp for possible img manipulation
-
-
+### Auth:
+  - [ ] Automatically refresh Twitch token
+  - [ ] Separate token and auth refs
+ 
 ### WEB:
   - [ ] look into hugo https://gohugo.io/
   - [ ] look into netlify https://www.netlify.com/
