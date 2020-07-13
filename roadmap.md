@@ -12,7 +12,7 @@
   - [ ] Make !builds lists over 20 builds into multi-page menus
   - [ ] Add build description field
   - [ ] !poll command allowing mods to start a poll in chat
-  	- [ ] Use progress bars to display votes
+    - [ ] Use progress bars to display votes
   - [ ] Togglable option to auto delete spam
 
 ### Member Events:
@@ -52,7 +52,7 @@
     - [ ] Duration and success chance governed by percentage of properties identified and Injector Lvl
     - [ ] JAMMER process, when planted on a user instead, will obfuscate their logs until removed
   - [ ] rework SCANs
-  	- [ ] Make SCANs free
+    - [ ] Make SCANs free
     - [ ] SCAN duration can be specified
     - [ ] Making them faster reduces scan success chance
     - [ ] Increasing scanner level reduces base duration and increases min success chance
@@ -63,7 +63,7 @@
     - [ ] All users locked out from stealing from target's current for a duration based on how much was stolen
     - [ ] chance of failure resulting in consequences (removed processes on target, uncovered processes on target, stat vulnerabilities) 
   - [ ] SlugBot AI
-  	- [ ] Increase SlugBot income
+    - [ ] Increase SlugBot income
 
 ### Auth:
   - [ ] Automatically refresh Twitch token
