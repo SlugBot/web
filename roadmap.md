@@ -40,6 +40,8 @@
   - [ ] Synonym lookup
 
 ### Slug Hack Game:
+  - [ ] rebalance max process count per stat Lvl
+  - [ ] min stat requirements for some processes (?)
   - [ ] Process Trading
     - [ ] trade system for trading processes and SC
       - [ ] something to stop alt account abuse
