@@ -38,6 +38,7 @@
   - [ ] Show spellbuff for catalysts instead of R1 damage
   - [ ] Show shield stability
   - [ ] Synonym lookup
+  - [ ] Bundle toggle option
 
 ### Slug Hack Game:
   - [ ] rebalance max process count per stat Lvl
@@ -66,6 +67,33 @@
     - [ ] chance of failure resulting in consequences (removed processes on target, uncovered processes on target, stat vulnerabilities) 
   - [ ] SlugBot AI
     - [ ] Increase SlugBot income
+
+### challenger Ladder
+  - [ ] Allow members to challenge others to duels or put out an open invitation to be challenged
+    - [ ] !challenge [member]
+    - [ ] if no member specified, do open invitation
+    - [ ] challenged member uses the same command to accept the challenge
+      - [ ] !challenge [challenger] to accept. closes open inv
+  - [ ] After match, both parties declair their score
+    - [ ] !iwon 5 2 (if !iwon, know to take the largest as their score)
+    - [ ] !ilost 5 2 (if !ilost, know to take the smallest as their score)
+  - [ ] Active challenges/open invs sent to the leaderboard channel
+    - [ ] challenge/open inv message deletes once scores declared and matched
+    - [ ] if score declarations don't match, challenge/open inv message is edited to a red dispute message for mods to address 
+  - [ ] point system
+    - [ ] point given for each round win
+    - [ ] more points given for match win
+    - [ ] more points given in proportion to how much higher up the leaderboard the loser was
+  - [ ] allow for challenger to optionally specify a game 
+  - [ ] ladderChallengeData
+    - [ ] timestamp
+    - [ ] hasAccepted
+    - [ ] challenger, challengee
+    - [ ] challengerScore, challengeeScore
+    - [ ] winner
+    - [ ] game (default to DS3)
+  - [ ] '!ladder reset' for guild ladder reset
+    - [ ] sets time in guideData to ignore all matches before that time
 
 ### Auth:
   - [ ] Automatically refresh Twitch token
