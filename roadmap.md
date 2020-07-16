@@ -46,7 +46,7 @@
   - [ ] Process Trading
     - [ ] trade system for trading processes and SC
       - [ ] something to stop alt account abuse
-      - [ ] SlugBot randomly generated processes weighted to target high rollers
+      - [X] SlugBot randomly generated processes weighted to target high rollers
     - [ ] Private process shop
       - [ ] only viewable in DMs. gives a tailored list of processes determined by user's total worth and level. (encourage user's to punch up a little)
       - [ ] refreshes daily
@@ -54,12 +54,8 @@
   - [ ] JAMMER process that can be planted directly on to other processes to suspend them for a finite duration
     - [ ] Duration and success chance governed by percentage of properties identified and Injector Lvl
     - [ ] JAMMER process, when planted on a user instead, will obfuscate their logs until removed
-  - [ ] rework SCANs
-    - [ ] Make SCANs free
-    - [ ] SCAN duration can be specified
-    - [ ] Making them faster reduces scan success chance
-    - [ ] Increasing scanner level reduces base duration and increases min success chance
-    - [ ] Display more than 6 processes in SCAN complete message if needed
+  - [x] rework SCANs
+    - [X] Display more than 6 processes in SCAN complete message if needed
   - [ ] !stealslugs command to take a lump sum from a member's current
     - [ ] BYPASS and CRACK required
     - [ ] Amount stolen capped by vault cap or 30% of target's current (smallest taken)
