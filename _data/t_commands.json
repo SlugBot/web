@@ -889,7 +889,7 @@
     ],
     "moduleId": "",
     "debug": false,
-    "format": "${PREFIX}song",
+    "format": "${PREFIX}song [setuser <lastFM username>]",
     "desc": "Use this command to get the streamers currently playing song."
   }
 }

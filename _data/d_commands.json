@@ -2419,6 +2419,101 @@
     "format": "${PREFIX}gallery [add | remove]",
     "help": ""
   },
+  "challenge": {
+    "cmd": "challenge",
+    "synonyms": [
+      "chal",
+      "duel",
+      "fight"
+    ],
+    "moduleId": "ladder",
+    "perms": [
+      "USER"
+    ],
+    "debug": true,
+    "format": "${PREFIX}challenge [member] | cancel",
+    "desc": "Use this command to challenge another member to a ranked fight or put out an open invitation to be challenged.",
+    "examples": [
+      {
+        "command": "!challenge",
+        "desc": "This will put out an open invitation"
+      },
+      {
+        "command": "!challenge dashima",
+        "desc": "This will challenge Dashima to a ranked fight."
+      },
+      {
+        "command": "!challenge cancel",
+        "desc": "This will cancel your last challenge provided it was not already accepted by an opponent."
+      }
+    ]
+  },
+  "ilost": {
+    "cmd": "ilost",
+    "synonyms": [
+      "ilose",
+      "lose",
+      "lost"
+    ],
+    "moduleId": "ladder",
+    "perms": [
+      "USER"
+    ],
+    "debug": true,
+    "format": "${PREFIX}ilost <your score> <their score>",
+    "desc": "Use this command to declare the outcome of a challenge.",
+    "examples": [
+      {
+        "command": "!ilost 3 5",
+        "desc": "This will record that you claimed you lost 5 3 in your active challenge."
+      }
+    ]
+  },
+  "iwon": {
+    "cmd": "iwon",
+    "synonyms": [
+      "iwin",
+      "win"
+    ],
+    "moduleId": "ladder",
+    "perms": [
+      "USER"
+    ],
+    "debug": true,
+    "format": "${PREFIX}iwin <your score> <their score>",
+    "desc": "Use this command to declare the outcome of a challenge.",
+    "examples": [
+      {
+        "command": "!iwon 5 3",
+        "desc": "This will record that you claimed you won 5 3 in your active challenge."
+      }
+    ]
+  },
+  "ladder": {
+    "cmd": "ladder",
+    "synonyms": [],
+    "moduleId": "ladder",
+    "perms": [
+      "BOT_ADMIN"
+    ],
+    "debug": true,
+    "format": "${PREFIX}ladder reset | setchannel | (set <wins | points> <member> <amount>)",
+    "desc": "Use this command reset the ladder or set the leaderboard channel.",
+    "examples": [
+      {
+        "command": "!ladder reset",
+        "desc": "This will reset all members points in the ladder."
+      },
+      {
+        "command": "!ladder setchannel",
+        "desc": "This will set the ladder leaderboard channel to the one this command was used in."
+      },
+      {
+        "command": "!ladder set points Oryx 20",
+        "desc": "This will set Oryx's points to 20."
+      }
+    ]
+  },
   "iam": {
     "cmd": "iam",
     "perms": [],
@@ -2587,7 +2682,7 @@
       },
       {
         "command": "!rolereact 731977229902282773 add 🍃 PC Player",
-        "desc": "This will add a new reaction - or update an existing one - that will give members the 'PC Player' role when clicked"
+        "desc": "This will add a new reaction - or update an existing one - that will give members the 'PC Player' role when clicked."
       },
       {
         "command": "!rolereact 731977229902282773 remove 🍃",
