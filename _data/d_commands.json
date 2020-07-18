@@ -2448,6 +2448,29 @@
       }
     ]
   },
+  "elo": {
+    "cmd": "elo",
+    "synonyms": [
+      "ladderrank"
+    ],
+    "moduleId": "ladder",
+    "perms": [
+      "USER"
+    ],
+    "debug": true,
+    "format": "${PREFIX}elo [member]",
+    "desc": "Use this command to view your ladder stats or the stats of another member.",
+    "examples": [
+      {
+        "command": "!elo",
+        "desc": "This will display your own ladder stats."
+      },
+      {
+        "command": "!elo Aether",
+        "desc": "This will display Aether's ladder stats."
+      }
+    ]
+  },
   "ilost": {
     "cmd": "ilost",
     "synonyms": [
