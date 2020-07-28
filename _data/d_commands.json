@@ -292,64 +292,6 @@
       }
     ]
   },
-  "mute": {
-    "cmd": "mute",
-    "format": "${PREFIX}mute <member> [duration] [reason]",
-    "desc": "This command is used to mute members. Giving a duration and reason are optional. Not giving a duration will mute the user until they are manually unmuted. The member can be specified by ping, user ID or name.",
-    "perms": [
-      "BOT_ADMIN"
-    ],
-    "canDM": false,
-    "canEdit": false,
-    "debug": false,
-    "parameters": [
-      {
-        "param": "<member>",
-        "values": [
-          {
-            "value": "Username",
-            "desc": "Discord username of the user to be muted"
-          },
-          {
-            "value": "discord ID",
-            "desc": "discord ID of the user to be muted"
-          },
-          {
-            "value": "discord member mention",
-            "desc": "Mention member to be muted"
-          }
-        ]
-      },
-      {
-        "param": "[duration]",
-        "values": [
-          {
-            "value": "Number",
-            "desc": "Number of minutes the mute should last for"
-          }
-        ]
-      },
-      {
-        "param": "[reason]",
-        "values": [
-          {
-            "value": "String",
-            "desc": "reason for why the member was muted. Will be DMed to the member"
-          }
-        ]
-      }
-    ],
-    "examples": [
-      {
-        "command": "!mute 2340287340287 10 For reasons and stuff.",
-        "desc": "This will mute the member with ID 2340287340287 for 10 minutes and DM them the reason 'For reasons and stuff'."
-      },
-      {
-        "command": "!mute",
-        "desc": "With no arguments given, a list showing all muted members and their remaining mute times will be shown."
-      }
-    ]
-  },
   "names": {
     "cmd": "names",
     "format": "${PREFIX}names [member]",
@@ -1032,42 +974,6 @@
       }
     ]
   },
-  "unmute": {
-    "cmd": "unmute",
-    "format": "${PREFIX}unmute <member>",
-    "desc": "Use this command to unmute a muted member.",
-    "perms": [
-      "ADMIN"
-    ],
-    "canDM": false,
-    "canEdit": false,
-    "debug": false,
-    "parameters": [
-      {
-        "param": "<member>",
-        "values": [
-          {
-            "value": "Username",
-            "desc": "Discord username of the user to be muted"
-          },
-          {
-            "value": "discord ID",
-            "desc": "discord ID of the user to be muted"
-          },
-          {
-            "value": "discord member mention",
-            "desc": "Mention member to be muted"
-          }
-        ]
-      }
-    ],
-    "examples": [
-      {
-        "command": "!unmute Alex_",
-        "desc": "This will unmute member 'Alex_' if they are muted."
-      }
-    ]
-  },
   "userinfo": {
     "cmd": "userinfo",
     "perms": [
@@ -1373,8 +1279,10 @@
     ]
   },
   "item": {
-    "perms": [],
-    "reqs": {},
+    "perms": [
+      "USER"
+    ],
+    "module": "darksouls",
     "debug": false,
     "canDM": true,
     "canEdit": true,
@@ -2389,7 +2297,7 @@
   },
   "takeslugs": {
     "perms": [
-      "ADMINISTRATOR"
+      "BOTOWNER"
     ],
     "reqs": [],
     "moduleId": "economy",
@@ -2555,6 +2463,264 @@
       {
         "command": "!am done",
         "desc": "This will end the event."
+      }
+    ]
+  },
+  "filter": {
+    "format": "${PREFIX}filter <add|remove|list> <filter string>",
+    "desc": "Use this command to add or remove word filters in the current server. The filter string can either be a normal string or RegEx.\n\nWhen a member sends a message in the server containing the filter string, their message will be deleted, score will be deducted and there will be a random chance they will be muted. the mute chance increases each time the same member triggers the filter.\n\nIf a normal string is given, common letter substitutions will be taken into account.\n\nif RegEx is given, the matched message will be deleted but the member will not have score deducted or have a chance to be muted.",
+    "perms": [
+      "BOT_ADMIN"
+    ],
+    "canDM": false,
+    "canEdit": false,
+    "debug": false,
+    "parameters": [
+      {
+        "param": "<add|remove|list>",
+        "values": [
+          {
+            "value": "add",
+            "desc": "specify to add new filter"
+          },
+          {
+            "value": "remove",
+            "desc": "specify to remove existing filter"
+          },
+          {
+            "value": "list",
+            "desc": "specify to list all filters"
+          }
+        ]
+      },
+      {
+        "param": "<filter string>",
+        "values": [
+          {
+            "value": "String",
+            "desc": "normal string containing word(s) to be filtered"
+          },
+          {
+            "value": "RegEx",
+            "desc": "Regular expression to have messages deleted when matched"
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "command": "!filter add snail",
+        "desc": "This will make SlugBot delete any messages containing the word 'snail', deduct score from the offending member and have a chance to mute them."
+      },
+      {
+        "command": "!filter add /\\d/",
+        "desc": "This will make SlugBot delete any messages containing any digit. (check [regex101](https://regex101.com/) for RegEx syntax and RegEx testing)"
+      }
+    ]
+  },
+  "mute": {
+    "cmd": "mute",
+    "format": "${PREFIX}mute <member> [duration] [reason]",
+    "desc": "This command is used to mute members. Giving a duration and reason are optional. Not giving a duration will mute the user until they are manually unmuted. The member can be specified by ping, user ID or name.",
+    "perms": [
+      "BOT_ADMIN"
+    ],
+    "moduleId": "moderation",
+    "canDM": false,
+    "canEdit": false,
+    "debug": false,
+    "parameters": [
+      {
+        "param": "<member>",
+        "values": [
+          {
+            "value": "Username",
+            "desc": "Discord username of the user to be muted"
+          },
+          {
+            "value": "discord ID",
+            "desc": "discord ID of the user to be muted"
+          },
+          {
+            "value": "discord member mention",
+            "desc": "Mention member to be muted"
+          }
+        ]
+      },
+      {
+        "param": "[duration]",
+        "values": [
+          {
+            "value": "Number",
+            "desc": "Number of minutes the mute should last for"
+          }
+        ]
+      },
+      {
+        "param": "[reason]",
+        "values": [
+          {
+            "value": "String",
+            "desc": "reason for why the member was muted. Will be DMed to the member"
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "command": "!mute 2340287340287 10 For reasons and stuff.",
+        "desc": "This will mute the member with ID 2340287340287 for 10 minutes and DM them the reason 'For reasons and stuff'."
+      },
+      {
+        "command": "!mute",
+        "desc": "With no arguments given, a list showing all muted members and their remaining mute times will be shown."
+      }
+    ]
+  },
+  "unmute": {
+    "cmd": "unmute",
+    "format": "${PREFIX}unmute <member>",
+    "desc": "Use this command to unmute a muted member.",
+    "perms": [
+      "ADMIN"
+    ],
+    "moduleId": "moderation",
+    "canDM": false,
+    "canEdit": false,
+    "debug": false,
+    "parameters": [
+      {
+        "param": "<member>",
+        "values": [
+          {
+            "value": "Username",
+            "desc": "Discord username of the user to be muted"
+          },
+          {
+            "value": "discord ID",
+            "desc": "discord ID of the user to be muted"
+          },
+          {
+            "value": "discord member mention",
+            "desc": "Mention member to be muted"
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "command": "!unmute Alex_",
+        "desc": "This will unmute member 'Alex_' if they are muted."
+      }
+    ]
+  },
+  "warn": {
+    "cmd": "warn",
+    "format": "${PREFIX}warn <member> <reason>|(remove [index])",
+    "desc": "Use this command to record a warning for a member or remove past warnings.",
+    "perms": [
+      "BOT_ADMIN"
+    ],
+    "moduleId": "moderation",
+    "canDM": false,
+    "canEdit": false,
+    "debug": false,
+    "parameters": [
+      {
+        "param": "<member>",
+        "values": [
+          {
+            "value": "Username",
+            "desc": "Discord username of the user to be muted"
+          },
+          {
+            "value": "discord ID",
+            "desc": "discord ID of the user to be muted"
+          },
+          {
+            "value": "discord member mention",
+            "desc": "Mention member to be muted"
+          }
+        ]
+      },
+      {
+        "param": "<reason>",
+        "values": [
+          {
+            "value": "String",
+            "desc": "The reason the member was warned."
+          }
+        ]
+      },
+      {
+        "param": "remove",
+        "values": [
+          {
+            "value": "remove",
+            "desc": "Flag to specify removing a warning from a member."
+          }
+        ]
+      },
+      {
+        "param": "[index]",
+        "values": [
+          {
+            "value": "Number",
+            "desc": "Optional index of a warning. Leaving empty will remove the last warning"
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "command": "!warn Alex_ watch yo profamity!",
+        "desc": "This will record a warning for Alex_ that can be reviewed with !warnlog Alex_."
+      },
+      {
+        "command": "!warn alex_ remove",
+        "desc": "This will remove the last warning given to Alex_"
+      }
+    ]
+  },
+  "warnlog": {
+    "cmd": "warnlog",
+    "synonyms": [
+      "warnlogs",
+      "warninglog",
+      "warninglogs"
+    ],
+    "format": "${PREFIX}warnlog <member>",
+    "desc": "Use this command to view warnings given to a specified member.",
+    "perms": [
+      "BOT_ADMIN"
+    ],
+    "moduleId": "moderation",
+    "canDM": false,
+    "canEdit": false,
+    "debug": false,
+    "parameters": [
+      {
+        "param": "<member>",
+        "values": [
+          {
+            "value": "Username",
+            "desc": "Discord username of the user to be muted"
+          },
+          {
+            "value": "discord ID",
+            "desc": "discord ID of the user to be muted"
+          },
+          {
+            "value": "discord member mention",
+            "desc": "Mention member to be muted"
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "command": "!warnlog Alex_",
+        "desc": "This will display all past warnings given to Alex_."
       }
     ]
   },
@@ -2876,13 +3042,16 @@
     ]
   },
   "weeklyscorereset": {
-    "perms": [
-      "ADMINISTRATOR"
+    "cmd": "weeklyscorereset",
+    "synonyms": [
+      "weeklyreset"
     ],
-    "reqs": [],
+    "perms": [
+      "BOT_ADMIN"
+    ],
     "debug": false,
     "format": "${PREFIX}weeklyscorereset <true | false>",
-    "help": ""
+    "desc": "Use this command to activate weekly score resets and the weekly score leaderboard."
   },
   "slugboard": {
     "cmd": "slugboard",
@@ -3008,58 +3177,6 @@
       {
         "command": "!streamer list",
         "desc": "This will list all streamers currently set to display when they go live."
-      }
-    ]
-  },
-  "filter": {
-    "format": "${PREFIX}filter <add|remove|list> <filter string>",
-    "desc": "Use this command to add or remove word filters in the current server. The filter string can either be a normal string or RegEx.\n\nWhen a member sends a message in the server containing the filter string, their message will be deleted, score will be deducted and there will be a random chance they will be muted. the mute chance increases each time the same member triggers the filter.\n\nIf a normal string is given, common letter substitutions will be taken into account.\n\nif RegEx is given, the matched message will be deleted but the member will not have score deducted or have a chance to be muted.",
-    "perms": [
-      "BOT_ADMIN"
-    ],
-    "canDM": false,
-    "canEdit": false,
-    "debug": false,
-    "parameters": [
-      {
-        "param": "<add|remove|list>",
-        "values": [
-          {
-            "value": "add",
-            "desc": "specify to add new filter"
-          },
-          {
-            "value": "remove",
-            "desc": "specify to remove existing filter"
-          },
-          {
-            "value": "list",
-            "desc": "specify to list all filters"
-          }
-        ]
-      },
-      {
-        "param": "<filter string>",
-        "values": [
-          {
-            "value": "String",
-            "desc": "normal string containing word(s) to be filtered"
-          },
-          {
-            "value": "RegEx",
-            "desc": "Regular expression to have messages deleted when matched"
-          }
-        ]
-      }
-    ],
-    "examples": [
-      {
-        "command": "!filter add snail",
-        "desc": "This will make SlugBot delete any messages containing the word 'snail', deduct score from the offending member and have a chance to mute them."
-      },
-      {
-        "command": "!filter add /\\d/",
-        "desc": "This will make SlugBot delete any messages containing any digit. (check [regex101](https://regex101.com/) for RegEx syntax and RegEx testing)"
       }
     ]
   }
