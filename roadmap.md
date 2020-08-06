@@ -15,6 +15,10 @@
     - [ ] Use progress bars to display votes
   - [ ] Togglable option to auto delete spam
 
+### Twitch:
+  - [ ] Switch from tmi.js to twitch.js library
+  - [ ] Add customisable commands redeemable with channel points
+
 ### Member Events:
   - [ ] Add locations (with screenshots) for playable areas without bonfires
 

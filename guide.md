@@ -124,7 +124,7 @@ Once you've **BYPASS**ed a user's **FIREWALL** you'll have access to their accou
 ### SKIMMER
 ```!plant skimmer <target> <fraction to skim>```
 This process, once planted on a user, will skim a fraction of all income the user receives and transfers the skimmed SC to the planter instead. As the process isn't directly taking SC from an account, but instead intercepting a transaction, **CRACK**ing their encryption is not needed.
-* Offensive Stat: **SKIMMER**
+* Offensive Stat: **INTERCEPTOR**
 * Defensive Stat: **SCANNER**
 
 ### LEECH
@@ -163,13 +163,13 @@ A tracker process allows the owner to view the account activity logs of the targ
 *More coming soon...*
 
 ## Scanning
-You are going to want to make sure your account is malware free - but malware processes aren't always easy to detect. Use the <span class="command-link" data-command="scan"/> command to start a **SCAN** process. Scans cost SC - so be careful about performing them too often. You can optionally state a suspected attacker or specify a process type to limit your search to; As you can only scan at most a number of processes equal to your SCANNER lvl, narrowing your search will increase the chance of scanning the process you want.
+You are going to want to make sure your account is malware free - but malware processes aren't always easy to detect. Use the <span class="command-link" data-command="scan"/> command to start a **SCAN** process. Scanning allows you to identify ANY process that exists - not just ones planted on you - so you'll want to specify a target to scan. To scan yourself state your username after the command. You can also state specific process types and/or attackers; As you can only scan at most a number of processes equal to your SCANNER lvl, narrowing your search will increase the chance of scanning the process you want.
 
 Once you've **SCAN**ned, any detected processes will be displayed in your IDENTIFIED PROCESSES menu tab. You may see that some details of the process are still unidentified. Most processes require a few **SCAN**s to fully identify.
 
 You can also identify malware by accessing the attacker's account and viewing their OUTBOUND PROCESSES. You can only uncover the owner of the process, but its a good way of finding that a process exists.
 
-You are not limited to only scanning processes planted on yourself; You can also scan for processes planted on other people. This can be useful for finding good marks, defending other members, or hijacking profitable processes.
+You are not limited to only scanning processes planted on yourself; You can also scan for processes planted on other people. This can be useful for finding good marks, defending other members, removing defenses or hijacking profitable processes.
 
 ## Cleaning and Hijacking
 Once you've identified a process, you may want to remove it or hijack it. Use the <span class="command-link" data-command="clean"/> or <span class="command-link" data-command="hijack"/> commands respectively to begin process. The more properties of the process you've identified, the more likely it will be successfully removed. **A bypass on the process' owner is required to hijack a process.**
