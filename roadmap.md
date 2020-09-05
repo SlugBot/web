@@ -53,14 +53,13 @@
   - [ ] ROOTKIT process that allows users to take some control of a bypassed account and plant processes as them
   - [ ] JAMMER process that can be planted directly on to other processes to suspend them for a finite duration
     - [ ] Duration and success chance governed by percentage of properties identified and Injector Lvl
-    - [ ] JAMMER process, when planted on a user instead, will obfuscate their logs until removed
+  - [ ] CORRUPTOR process, when planted on a user, will obfuscate their logs until removed. Does not need a bypass
   - [x] rework SCANs
     - [X] Display more than 6 processes in SCAN complete message if needed
-  - [ ] !stealslugs command to take a lump sum from a member's current
-    - [ ] BYPASS and CRACK required
-    - [ ] Amount stolen capped by vault cap or 30% of target's current (smallest taken)
-    - [ ] All users locked out from stealing from target's current for a duration based on how much was stolen
-    - [ ] chance of failure resulting in consequences (removed processes on target, uncovered processes on target, stat vulnerabilities) 
+  - [x] !stealslugs command to take a lump sum from a member's current
+    - [x] BYPASS and CRACK required
+    - [x] Amount stolen dependant on a percentage of target's current and attacker's vault cap (capped at 20% target's current)
+    - [x] All users locked out from stealing from target's current for a duration based on how much was stolen
   - [x] SlugBot AI
     - [x] Increase SlugBot income
 

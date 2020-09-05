@@ -223,6 +223,9 @@
   },
   "guildinfo": {
     "cmd": "guildinfo",
+    "synonyms": [
+      "serverinfo"
+    ],
     "format": "${PREFIX}guildinfo",
     "desc": "Displays info about this guild - including server age, member count, and welcome message.",
     "perms": [
@@ -738,7 +741,11 @@
           },
           {
             "value": "log",
-            "desc": "Channel used for logging."
+            "desc": "Channel used for general logging."
+          },
+          {
+            "value": "modlog",
+            "desc": "Channel used for mod action logging."
           },
           {
             "value": "leaderboard",
@@ -1538,8 +1545,7 @@
   "weapon": {
     "cmd": "weapon",
     "format": "${PREFIX}weapon [weapon name [vs ...]] [upgrade level] [str [dex [int [faith [luck]]]]]",
-    "desc": "Use this command to calculate the AR of any DS3 weapon, along with the expected damage on R1s/L1s, backstabs and ripostes.",
-    "help": "[Documentation](https://slugbot.github.io/web/docs_discord.html#weapon)",
+    "desc": "Use this command to calculate the AR of any DS3 weapon, along with the expected damage on R1s/L1s, backstabs and ripostes.\n\nlisting up to four weapons separated by `vs` will allow you to compare them. Note that the upgrade and stats need to be specified only once, and at the end.\n\nIn the case of an incomplete input, like `!weapon caestus`, the missing upgrade and stat data will be collected from the build you currently have set through the `!setbuild` command.\n\nTyping out the command without a `[weapon name]` argument will make SlugBot calculate the ten best weapons based on expected R1 damage for the upgrade level and stats provided. The printout for this kind of input will include reactions to toggle between various weapon classes. SlugBot will also note if any of the weapons are usable only when 2-handed.",
     "perms": [
       "USER"
     ],
@@ -1591,11 +1597,11 @@
     "examples": [
       {
         "command": "!weapon sharp claymore +7 16 35 10 10 10",
-        "desc": "The 1-hand/2-hand and weapon self-buff states can be toggled via appropriate reactions on the printout. The normal upgrade path input is used for special weapons; `!weapon black knight sword +10 20 18 10 10 10` will print out the data for a black knight sword at an upgrade level of +5.\n\nIn the case of an incomplete input, like `!weapon caestus`, the missing upgrade and stat data will be collected from the build you currently have set through the `!setbuild` command.\n\nThis command can also be used to compare up to four different weapons of a given upgrade level and stat combination. This is done by listing multiple weapons as the `[weapon name and infusion]` argument, separated by \"vs\"."
+        "desc": "The 1-hand/2-hand and weapon self-buff states can be toggled via appropriate reactions. The normal upgrade path input is used for special weapons; `!weapon black knight sword +10 20 18 10 10 10` will print out the data for a black knight sword at an upgrade level of +5."
       },
       {
         "command": "!weapon fire dagger vs chaos dagger +3 10 10 10 10 10",
-        "desc": "Note that the upgrade and stats need to be specified only once, and at the end.\n\nTyping out the command without a `[weapon name and infusion]` argument will make SlugBot calculate the overall ten best weapons based on expected R1 damage for the upgrade level and stats provided. The printout for this kind of input will include reactions to toggle between various weapon classes, along with the usual 1-hand/2-hand and self-buff options. SlugBot will also note if any of the weapons are usable only when 2-handed."
+        "desc": "This will compare the fire dagger and chaos dagger weapons at the given stats. Use the number reactions to view each of the given weapons."
       }
     ]
   },
@@ -1786,23 +1792,27 @@
     "moduleId": "economy",
     "canEdit": false,
     "canDM": false,
-    "format": "${PREFIX}crack <member>",
+    "format": "${PREFIX}crack <target>",
     "desc": "Start the CRACK process on another member.",
     "parameters": [
       {
-        "param": "<member>",
+        "param": "<target>",
         "values": [
           {
             "value": "Username",
-            "desc": "Discord username of the user to be cracked"
+            "desc": "Discord username of the target user"
           },
           {
             "value": "discord ID",
-            "desc": "discord ID of the user to be cracked"
+            "desc": "discord ID of the target user"
           },
           {
             "value": "discord member mention",
-            "desc": "Mention member to be cracked"
+            "desc": "Mention of target user"
+          },
+          {
+            "value": "BYPASS ID",
+            "desc": "ID of a BYPASS process on the target"
           }
         ]
       }
@@ -2007,12 +2017,12 @@
             "desc": "Level up the scanner stat"
           },
           {
-            "value": "leech",
-            "desc": "Level up the leech stat"
+            "value": "wire",
+            "desc": "Level up the wire stat"
           },
           {
-            "value": "skimmer",
-            "desc": "Level up the skimmer stat"
+            "value": "interceptor",
+            "desc": "Level up the interceptor stat"
           },
           {
             "value": "injector",
@@ -2043,7 +2053,7 @@
     "moduleId": "economy",
     "canEdit": false,
     "canDm": false,
-    "format": "${PREFIX}plant <process type> <member> [modifier]",
+    "format": "${PREFIX}plant <process type> <target> [modifier]",
     "desc": "Attempt to plant a process on another user.\nThe modifier is often the potency of the process you are planting. The potency of a LEECH is how many slugs will be taken every hour.\nThe potency of a SKIMMER is the fraction (between 0 and 1) of Slugs that will be skimmed off every incoming transaction. The modifier of a REDIRECT is the target the malware should attempt to redirect to.",
     "parameters": [
       {
@@ -2076,19 +2086,23 @@
         ]
       },
       {
-        "param": "<member>",
+        "param": "<target>",
         "values": [
           {
             "value": "Username",
-            "desc": "Discord username of the target member"
+            "desc": "Discord username of the target user"
           },
           {
             "value": "discord ID",
-            "desc": "discord ID of the target member"
+            "desc": "discord ID of the target user"
           },
           {
             "value": "discord member mention",
-            "desc": "Mention of target member"
+            "desc": "Mention of target user"
+          },
+          {
+            "value": "BYPASS ID",
+            "desc": "ID of a BYPASS process on the target"
           }
         ]
       }
@@ -2122,7 +2136,7 @@
     ],
     "moduleId": "economy",
     "canEdit": true,
-    "format": "${PREFIX}respec [firewall [bypasser [encryption [cracker [scanner [leech [skimmer [injector]]]]]]]]",
+    "format": "${PREFIX}respec [firewall [bypasser [encryption [cracker [scanner [leech [interceptor [injector]]]]]]]]",
     "help": "Respecc stat levels."
   },
   "scan": {
@@ -2151,8 +2165,24 @@
     ],
     "examples": [
       {
-        "command": "",
-        "desc": ""
+        "command": "!scan barry",
+        "desc": "If barry was the one using this command, it would initiate a self-scan"
+      },
+      {
+        "command": "!scan narcolept bypass shandra",
+        "desc": "This will scan for all bypass processes planted by narcolept on shandra"
+      },
+      {
+        "command": "!scan narcolept skimmer",
+        "desc": "This will scan for all skimmers owned by narcolept"
+      },
+      {
+        "command": "!scan skimmer narcolept",
+        "desc": "This will scan for all skimmers planted on narcolept."
+      },
+      {
+        "command": "!scan id J4ES7",
+        "desc": "This will scan for a process with an ID of J4ES7."
       }
     ]
   },
@@ -2296,16 +2326,44 @@
     ]
   },
   "takeslugs": {
-    "perms": [
-      "BOTOWNER"
+    "cmd": "takeslugs",
+    "synonyms": [
+      "steal",
+      "stealslugs",
+      "forcetransfer"
     ],
-    "reqs": [],
+    "perms": [
+      "USER"
+    ],
     "moduleId": "economy",
     "debug": true,
     "canEdit": false,
     "canDM": false,
-    "format": "${PREFIX}takeslugs <member> <amount>",
-    "help": ""
+    "format": "${PREFIX}takeslugs <member>",
+    "desc": "Steals an amount of SC from the target. The target's encryption must be CRACKed to be able to steal.",
+    "parameters": [
+      {
+        "param": "<target>",
+        "values": [
+          {
+            "value": "Username",
+            "desc": "Discord username of the target user"
+          },
+          {
+            "value": "discord ID",
+            "desc": "discord ID of the target user"
+          },
+          {
+            "value": "discord member mention",
+            "desc": "Mention of target user"
+          },
+          {
+            "value": "BYPASS ID",
+            "desc": "ID of a BYPASS process on the target"
+          }
+        ]
+      }
+    ]
   },
   "vault": {
     "cmd": "vault",
@@ -2447,8 +2505,12 @@
   },
   "iam": {
     "cmd": "iam",
-    "perms": [],
-    "debug": true,
+    "synonyms": [],
+    "canEdit": true,
+    "moduleId": "memberEvent",
+    "perms": [
+      "USER"
+    ],
     "format": "${PREFIX}iam <member event info>",
     "desc": "Use this command to create a notification for a Member Event (such as a *dry finger run*).\n\nProvide at least a location and what you are doing there. **Passwords and character names must be in quotes.** If you have multiple platform roles, remember to state which one the event will be on. How you word it doesn't matter too much. You can add extra event information by including `info: \"<extra info here>\"` when using the command.\n\nUse `${PREFIX}iam done` command to end the event.",
     "examples": [
@@ -2463,6 +2525,52 @@
       {
         "command": "!am done",
         "desc": "This will end the event."
+      }
+    ]
+  },
+  "ban": {
+    "cmd": "ban",
+    "format": "${PREFIX}ban <member> [reason]",
+    "desc": "Use this command to ban a member.",
+    "perms": [
+      "BOT_ADMIN"
+    ],
+    "moduleId": "moderation",
+    "canDM": false,
+    "canEdit": false,
+    "debug": false,
+    "parameters": [
+      {
+        "param": "<member>",
+        "values": [
+          {
+            "value": "Username",
+            "desc": "Discord username of the user to be muted"
+          },
+          {
+            "value": "discord ID",
+            "desc": "discord ID of the user to be muted"
+          },
+          {
+            "value": "discord member mention",
+            "desc": "Mention member to be muted"
+          }
+        ]
+      },
+      {
+        "param": "[reason]",
+        "values": [
+          {
+            "value": "String",
+            "desc": "Optional reason for the ban"
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "command": "!ban Alex_",
+        "desc": "This will ban Alex_ from the server."
       }
     ]
   },
@@ -2520,7 +2628,7 @@
   },
   "mute": {
     "cmd": "mute",
-    "format": "${PREFIX}mute <member> [duration] [reason]",
+    "format": "${PREFIX}mute <member> [duration] [reason: <reason>]",
     "desc": "This command is used to mute members. Giving a duration and reason are optional. Not giving a duration will mute the user until they are manually unmuted. The member can be specified by ping, user ID or name.",
     "perms": [
       "BOT_ADMIN"
@@ -2551,13 +2659,13 @@
         "param": "[duration]",
         "values": [
           {
-            "value": "Number",
-            "desc": "Number of minutes the mute should last for"
+            "value": "String",
+            "desc": "amount of time the member should be muted for"
           }
         ]
       },
       {
-        "param": "[reason]",
+        "param": "<reason>",
         "values": [
           {
             "value": "String",
@@ -2568,7 +2676,7 @@
     ],
     "examples": [
       {
-        "command": "!mute 2340287340287 10 For reasons and stuff.",
+        "command": "!mute 2340287340287 1 hour 30 mins reason: For reasons and stuff.",
         "desc": "This will mute the member with ID 2340287340287 for 10 minutes and DM them the reason 'For reasons and stuff'."
       },
       {
@@ -2687,7 +2795,11 @@
     "synonyms": [
       "warnlogs",
       "warninglog",
-      "warninglogs"
+      "warninglogs",
+      "modlog",
+      "modlogs",
+      "mutelog",
+      "mutelogs"
     ],
     "format": "${PREFIX}warnlog <member>",
     "desc": "Use this command to view warnings given to a specified member.",
@@ -2888,7 +3000,7 @@
     ]
   },
   "leaderboard": {
-    "cmd": "leaderbaord",
+    "cmd": "leaderboard",
     "format": "${PREFIX}leaderbaord [weekly]",
     "desc": "Use this command to view the top 10 ranked members in the server along with the score of adjacent ranks.",
     "perms": [
@@ -2973,10 +3085,11 @@
     ]
   },
   "roleatlevel": {
+    "cmd": "roleatlevel",
+    "synonyms": [],
     "perms": [
       "BOT_ADMIN"
     ],
-    "moduleId": "score",
     "debug": true,
     "format": "${PREFIX}roleatlevel (add <role> <give at level> [remove at level] [sendNotification?]) | remove <role>)",
     "desc": "Used to specify a role to be given to members once they reach a certain level. If [remove at level] is specified, the role will be removed from members who's level is higher than the stated [remove at level] value",
