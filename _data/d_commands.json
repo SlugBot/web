@@ -2339,8 +2339,8 @@
     "debug": true,
     "canEdit": false,
     "canDM": false,
-    "format": "${PREFIX}takeslugs <member>",
-    "desc": "Steals an amount of SC from the target. The target's encryption must be CRACKed to be able to steal.",
+    "format": "${PREFIX}takeslugs <target>",
+    "desc": "Steals an amount of SC from the target. The target's encryption must be CRACKed to be able to steal. The command must be used in a channel the target has access to.",
     "parameters": [
       {
         "param": "<target>",
