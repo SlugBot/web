@@ -1,6 +1,6 @@
 ---
 ### layout: info
-### title: Patch_Notes
+### title: Patch Notes
 ---
 # PATCH NOTES
 
