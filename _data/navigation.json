@@ -18,5 +18,9 @@
 	{
 		name: "Roadmap",
 		link: "roadmap.html"
+	},
+	{
+		name: "Patch Notes",
+		link: "patch_notes.html"
 	}
 ]
