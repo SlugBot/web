@@ -10,6 +10,10 @@
   - Adjusted initial injection success chance to be more affected by injector stat.
   - !log now allows for process IDs to be specified to show logs pertaining to only those processes.
 
+### Bug Fixes
+  - Fixed error with the removing filter fail response.
+  - Correctly sorted auction list buy time remaining on sale.
+
 *****************************
 
 ## 7th September 2020
