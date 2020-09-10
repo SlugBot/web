@@ -4,7 +4,22 @@
 ---
 # PATCH NOTES
 
-### 8th September 2020
+## 9th September 2020
+### New Additions
+  - Poll module added. Users can now create polls that allow other users to vote on the specified options.
+    - `!poll [description] 1: <option 1 description> 2: <option 2 description> [...]` command to start a poll.
+    - `!poll end` command will end the user's most recent poll and display the final results.
+    - `!poll end [poll msg ID]` command will attempt to terminate a poll with the given message ID.
+
+### Updates
+  - Improved suspended process duration handling.
+    - The duration a process has been suspended will no longer affect fast track or delay durations.
+    - UI elements displaying process duration will now be more accurate.
+  - Reduced STEAL fast track amount.
+
+*****************************
+
+## 8th September 2020
 ### Updates
   - SlugBot_AI now attempts to plant processes in channels the target has access to.
   - Adjusted initial injection success chance to be more affected by injector stat.

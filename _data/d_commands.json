@@ -915,16 +915,6 @@
       }
     ]
   },
-  "setscore": {
-    "cmd": "setscore",
-    "perms": [
-      "BOTOWNER"
-    ],
-    "reqs": [],
-    "debug": false,
-    "format": "${PREFIX}setscore <member> <score>",
-    "desc": ""
-  },
   "setwelcomemessage": {
     "cmd": "setwelcomemessage",
     "format": "${PREFIX}setwelcomemessage [welcome message]",
@@ -1639,34 +1629,6 @@
       }
     ]
   },
-  "debug": {
-    "perms": [
-      "BOTOWNER"
-    ],
-    "reqs": [],
-    "debug": true,
-    "format": "${PREFIX}debug <args>",
-    "help": ""
-  },
-  "togglelogs": {
-    "perms": [
-      "BOTOWNER"
-    ],
-    "moduleId": "dev",
-    "canEdit": true,
-    "canDM": true,
-    "format": "!togglelogs",
-    "desc": ""
-  },
-  "activity": {
-    "perms": [
-      "BOTOWNER"
-    ],
-    "reqs": [],
-    "debug": true,
-    "format": "${PREFIX}activity <days>",
-    "help": ""
-  },
   "activate": {
     "cmd": "activate",
     "synonyms": [
@@ -2229,6 +2191,28 @@
       {
         "command": "!sell T1K4R 150,000",
         "desc": "This will add process T1K4R to the auction at a starting price of 150,000sc where it can be bid on by other users."
+      }
+    ]
+  },
+  "shop": {
+    "cmd": "shop",
+    "synonyms": [
+      "auction",
+      "store"
+    ],
+    "perms": [
+      "USER"
+    ],
+    "moduleId": "economy",
+    "canEdit": false,
+    "canDM": false,
+    "format": "${PREFIX}shop",
+    "desc": "Use this command to view the weekly public process shop.",
+    "parameters": [],
+    "examples": [
+      {
+        "command": "!shop",
+        "desc": "Displays the global process auction where users can buy and sell processes."
       }
     ]
   },
@@ -2833,6 +2817,60 @@
       {
         "command": "!warnlog Alex_",
         "desc": "This will display all past warnings given to Alex_."
+      }
+    ]
+  },
+  "poll": {
+    "cmd": "poll",
+    "synonyms": [],
+    "perms": [
+      "USER"
+    ],
+    "debug": true,
+    "canDM": false,
+    "format": "${PREFIX}poll (end [poll msg ID]) | ([description] 1: <option 1 description> 2: <option 2 description> [...])",
+    "desc": "Use this command to start a poll with the given options. If an amount of time is given in the description, that will be used as the duration of the poll. End a poll by using the `end` argument and optionally a poll message ID.",
+    "parameters": [
+      {
+        "param": "[description]",
+        "values": [
+          {
+            "value": "String",
+            "desc": "Optional parameter to add a description to the poll message."
+          }
+        ]
+      },
+      {
+        "param": "1: <option 1 description>",
+        "values": [
+          {
+            "value": "String",
+            "desc": "A label for a voting option. The prefix number must be included."
+          }
+        ]
+      },
+      {
+        "param": "[poll msg ID]",
+        "values": [
+          {
+            "value": "Discord message ID",
+            "desc": "The message ID of a poll message."
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "command": "!poll Should I stream Dark Souls 1 or Dark Souls 3 today? You have 30 mins to vote! 1: Dark Souls 1 2: Dark Souls 3",
+        "desc": "This will create a new poll with the description of \"Should I stream Dark Souls 1 or Dark Souls 3 today? You have 30 mins to vote!\", with two options, that will automatically conclude in 30 minutes."
+      },
+      {
+        "command": "!poll end",
+        "desc": "This will terminate the most recent poll started by the command user. The poll message will be edited with the final results."
+      },
+      {
+        "command": "!poll end 753674416801579040",
+        "desc": "This will attempt to terminate the poll with message ID 753674416801579040."
       }
     ]
   },

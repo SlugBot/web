@@ -264,15 +264,6 @@
       }
     ]
   },
-  "debug": {
-    "perms": [
-      "BOTOWNER"
-    ],
-    "reqs": [],
-    "debug": true,
-    "format": "${PREFIX}debug <args>",
-    "help": ""
-  },
   "addquote": {
     "cmd": "addquote",
     "format": "${PREFIX}addquote <quote>",
