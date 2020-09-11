@@ -4,6 +4,15 @@
 ---
 # PATCH NOTES
 
+## 11th September 2020
+### Updates
+  - Improved !roll to allow for multiple dice rolls.
+  - Improved time parsing for all modules that use it.
+  - Initial injection success chance will now stay the same for restarted processes.
+  - Changed diminishing returns of scan duration based on scanner level.
+
+*****************************
+
 ## 9th September 2020
 ### New Additions
   - Poll module added. Users can now create polls that allow other users to vote on the specified options.
