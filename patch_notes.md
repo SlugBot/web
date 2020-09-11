@@ -6,6 +6,7 @@
 
 ## 11th September 2020
 ### Updates
+  - Added optionally displaying new member's profiles with the welcome message.
   - Improved !roll to allow for multiple dice rolls.
   - Improved time parsing for all modules that use it.
   - Initial injection success chance will now stay the same for restarted processes.
