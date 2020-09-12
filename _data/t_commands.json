@@ -73,7 +73,7 @@
   },
   "roll": {
     "cmd": "roll",
-    "format": "${PREFIX}roll [avg] <dice count>D<dice type> [modifier]",
+    "format": "${PREFIX}roll <dice count>D<dice type>[+|- <dice count>D<dice type> [...]] [+|- modifier]",
     "desc": "Use this command to get SlugBot to roll dice. Including the `avg` flag will return a readout displaying statistical information on the roll instead.",
     "perms": [
       "USER"
@@ -83,15 +83,6 @@
     "canEdit": false,
     "debug": false,
     "parameters": [
-      {
-        "param": "[avg]",
-        "values": [
-          {
-            "value": "avg",
-            "desc": "Specify that statistical information should be displayed instead"
-          }
-        ]
-      },
       {
         "param": "<dice count>",
         "values": [
@@ -111,7 +102,7 @@
         ]
       },
       {
-        "param": "[modifier]",
+        "param": "[+|- modifier]",
         "values": [
           {
             "value": "Integer number",
@@ -126,8 +117,8 @@
         "desc": "This will roll four D6s, subtract 2, then display the outcome."
       },
       {
-        "command": "!roll avg 4d6",
-        "desc": "This will display the statistics of rolling four D6s."
+        "command": "!roll 4d8 + 2d6 + 5",
+        "desc": "This will roll four D8s, add two D6s, add 5, then display the outcome."
       }
     ]
   },

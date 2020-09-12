@@ -12,6 +12,9 @@
   - Initial injection success chance will now stay the same for restarted processes.
   - Changed diminishing returns of scan duration based on scanner level.
 
+### Bug Fixes
+  - Fixed bug where removing a BYPASS on self would cause some planting processes to be suspended.
+
 *****************************
 
 ## 9th September 2020

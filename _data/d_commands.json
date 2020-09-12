@@ -660,7 +660,7 @@
   },
   "roll": {
     "cmd": "roll",
-    "format": "${PREFIX}roll [avg] <dice count>D<dice type> [modifier]",
+    "format": "${PREFIX}roll <dice count>D<dice type>[+|- <dice count>D<dice type> [...]] [+|- modifier]",
     "desc": "Use this command to get SlugBot to roll dice. Including the `avg` flag will return a readout displaying statistical information on the roll instead.",
     "perms": [
       "USER"
@@ -670,15 +670,6 @@
     "canEdit": false,
     "debug": false,
     "parameters": [
-      {
-        "param": "[avg]",
-        "values": [
-          {
-            "value": "avg",
-            "desc": "Specify that statistical information should be displayed instead"
-          }
-        ]
-      },
       {
         "param": "<dice count>",
         "values": [
@@ -698,7 +689,7 @@
         ]
       },
       {
-        "param": "[modifier]",
+        "param": "[+|- modifier]",
         "values": [
           {
             "value": "Integer number",
@@ -713,8 +704,8 @@
         "desc": "This will roll four D6s, subtract 2, then display the outcome."
       },
       {
-        "command": "!roll avg 4d6",
-        "desc": "This will display the statistics of rolling four D6s."
+        "command": "!roll 4d8 + 2d6 + 5",
+        "desc": "This will roll four D8s, add two D6s, add 5, then display the outcome."
       }
     ]
   },
@@ -917,7 +908,13 @@
   },
   "setwelcomemessage": {
     "cmd": "setwelcomemessage",
-    "format": "${PREFIX}setwelcomemessage [welcome message]",
+    "synonyms": [
+      "setwelcomemsg",
+      "setwelcome",
+      "welcomemessage",
+      "welcomemsg"
+    ],
+    "format": "${PREFIX}setwelcomemessage [welcome message] | showProfile [true|false] | reset",
     "desc": "Use this command to customise the welcome message sent when a new member joins the server.\n\nUsing the command with no arguments will display the current welcome message along with a demo of how it will appear when a member joins.\n\nDocumentation on replacer flags can be found [here](guide.html#flag-replacers)",
     "perms": [
       "BOT_ADMIN"
@@ -939,6 +936,14 @@
       {
         "command": "!setwelcomemessage welcome ${member} to the server!",
         "desc": "`${member}` will be replaced with the new member's display name."
+      },
+      {
+        "command": "!setwelcomemessage showProfile false",
+        "desc": "This will disable showing the new member's profile with the welcome message."
+      },
+      {
+        "command": "!setwelcomemessage reset",
+        "desc": "This will reset the welcome message and not send a welcome message when a member joins."
       }
     ]
   },
