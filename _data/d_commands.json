@@ -661,7 +661,7 @@
   "roll": {
     "cmd": "roll",
     "format": "${PREFIX}roll <dice count>D<dice type>[+|- <dice count>D<dice type> [...]] [+|- modifier]",
-    "desc": "Use this command to get SlugBot to roll dice. Including the `avg` flag will return a readout displaying statistical information on the roll instead.",
+    "desc": "Use this command to get SlugBot to roll dice.",
     "perms": [
       "USER"
     ],
