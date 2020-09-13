@@ -4,6 +4,17 @@
 ---
 # PATCH NOTES
 
+## 13th September 2020
+### Updates
+  - Allowed users to specify a starting tab for `!slugs` menu by appending the tab emoji when using the command.
+  - A bypass process ID can now be given with the `!slugs` command to view the target's account.
+  - Using `!slugs` to view a mark's account no longer has to be done in a channel the mark can see. 
+
+### Bug Fixes
+  - Sanitised usernames to alleviate possible bugs with markdown formatting. 
+
+  *****************************
+
 ## 11th September 2020
 ### Updates
   - Added optionally displaying new member's profiles with the welcome message.
