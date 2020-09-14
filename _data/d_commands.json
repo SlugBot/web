@@ -1861,7 +1861,8 @@
   "higherlower": {
     "cmd": "higherlower",
     "synonyms": [
-      "hl"
+      "hl",
+      "hilo"
     ],
     "perms": [
       "USER"

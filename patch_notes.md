@@ -4,6 +4,16 @@ title: Patch Notes
 ---
 # PATCH NOTES
 
+## 14th September 2020
+### Updates
+  - Reformatted the website and added more to the Economy Guide.
+  - Added !hilo as a command synonym for !higherlower.
+
+### New Additions
+  - Added more filigree profile mod variations to shop pool.
+
+*****************************
+
 ## 13th September 2020
 ### Updates
   - Allowed users to specify a starting tab for `!slugs` menu by appending the tab emoji when using the command.
@@ -14,7 +24,7 @@ title: Patch Notes
 ### Bug Fixes
   - Sanitised usernames to alleviate possible bugs with markdown formatting. 
 
-  *****************************
+*****************************
 
 ## 11th September 2020
 ### Updates
