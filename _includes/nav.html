@@ -13,10 +13,28 @@
 				</li>
 			{% endfor %}
 
-			{% if page.type == 'user_guide' %}
+			{% if page.type == 'setup_guide' %}
 				<hr>
 				<div id="toc-wrapper">
-					{% for shortcut in site.data.user_guide %}
+					{% for shortcut in site.data.setup_guide %}
+					<li>
+						<a href="{{ shortcut.link }}" title="{{ shortcut.name }}">{{ shortcut.name }}</a>
+						{% if shortcut.subsections %}
+						<ul>
+							{% for subShortcut in shortcut.subsections %}	
+							<li><a href="{{ subShortcut.link }}" title="{{ subShortcut.name }}">{{ subShortcut.name }}</a></li>
+							{% endfor %}
+						</ul>
+						{% endif %}
+					</li>
+					{% endfor %}
+				</div>
+			{% endif %}
+
+			{% if page.type == 'economy_guide' %}
+				<hr>
+				<div id="toc-wrapper">
+					{% for shortcut in site.data.economy_guide %}
 					<li>
 						<a href="{{ shortcut.link }}" title="{{ shortcut.name }}">{{ shortcut.name }}</a>
 						{% if shortcut.subsections %}
@@ -74,10 +92,10 @@
 			</li>
 		{% endfor %}
 
-		{% if page.type == 'user_guide' %}
+		{% if page.type == 'setup_guide' %}
 			<hr>
 			<div id="toc-wrapper">
-				{% for shortcut in site.data.user_guide %}
+				{% for shortcut in site.data.setup_guide %}
 				<li>
 					<a href="{{ shortcut.link }}" title="{{ shortcut.name }}">{{ shortcut.name }}</a>
 					{% if shortcut.subsections %}
