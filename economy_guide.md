@@ -1,9 +1,8 @@
 ---
 layout: info
 Title: SlugBot User Guide
-type: 'setup_guide'
+type: 'economy_guide'
 ---
-
 # SlugBot Economy Guide
 Like some other bots, SlugBot has an Economy module, letting users earn and trade currency in the form of SlugCoin. However, SlugBot's economy allows users to 'hack' other members, steal from them or plant malware on their accounts. The aim of the game is to earn as much SlugCoin as you can while also protecting your account from other members.
 
