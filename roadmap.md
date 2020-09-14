@@ -1,6 +1,6 @@
 ---
-### layout: info
-### title: Roadmap
+layout: info
+title: Roadmap
 ---
 # ROADMAP
 ### Misc Features:

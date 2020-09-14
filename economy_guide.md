@@ -1,6 +1,7 @@
+---
 layout: info
-Title: SlugBot Economy Guide
-type: 'economy_guide'
+Title: SlugBot User Guide
+type: 'setup_guide'
 ---
 
 # SlugBot Economy Guide
