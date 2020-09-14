@@ -147,8 +147,10 @@ A redirect process will redirect a planted process on a user to the redirect tar
 ## TRACKER
 ```!plant tracker <target user>```
 A tracker process allows the owner to view the account activity logs of the target user as well as having a chance to automatically scan the target user's processes as they plant them. The more trackers you plant on a user, the better they will function.
+* Offensive Stat: **SCANNER**
+* Defensive Stat: **ENCRYPTION**
 
-| **INJECTOR Lvl**     | **Upgrades**            |
+| **SCANNER Lvl**     | **Upgrades**            |
 | -------------------- | ----------------------- |
 | Lvl 3                | Unlocked, Plant 3 max, 3 per mark |
 | Lvl 4                | Plant 4 max,            |
