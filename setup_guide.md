@@ -1,7 +1,7 @@
 ---
 layout: info
 Title: SlugBot User Guide
-type: 'user_guide'
+type: 'setup_guide'
 ---
 # SlugBot User Guide
 The following page will provide an easy-to-follow overview on how to install and run SlugBot in your Discord server or Twitch chat, and how to get the most out of it.
