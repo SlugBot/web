@@ -61,11 +61,36 @@ This process, once planted on a user, will skim a fraction of all income the use
 * Offensive Stat: **INTERCEPTOR**
 * Defensive Stat: **SCANNER**
 
+| **INTERCEPTOR Lvl**  | **Upgrades**            |
+| -------------------- | ----------------------- |
+| Lvl 1                | Plant 2 max, 1 per mark |
+| Lvl 3                | Plant 3 max             |
+| Lvl 5                | Plant 3 max, 2 per mark |
+| Lvl 6                | Plant 4 max             |
+| Lvl 9                | Plant 5 max             |
+| Lvl 12               | Plant 6 max             |
+| Lvl 15               | Plant 7 max             |
+| Lvl 18               | Plant 8 max             |
+| Lvl 20               | Plant 10 max            |
+
 ## LEECH
 ```!plant leech <target> <amount/hour>```
 This malware will siphon an amount of SC out of a users current account and transfer it to the planter every hour. Requires that the user's **ENCRYPTION** has been **CRACK**ed.
 * Offensive Stat: **WIRE**
 * Defensive Stat: **ENCRYPTION**
+
+| **WIRE Lvl**         | **Upgrades**            |
+| -------------------- | ----------------------- |
+| Lvl 1                | Plant 5 max, 1 per mark |
+| Lvl 2                | Plant 6 max, 2 per mark |
+| Lvl 3                | Plant 7 max             |
+| Lvl 4                | Plant 8 max             |
+| Lvl 5                | Plant 9 max, 3 per mark |
+| Lvl 6                | Plant 10 max            |
+| Lvl 7                | Plant 11 max            |
+| Lvl 8                | Plant 12 max            |
+| Lvl 9                | Plant 13 max            |
+| Lvl 10               | Plant 15 max, 4 per mark|
 
 ## BYPASS_VIRUS
 ```!plant bypass_virus <target>```
@@ -73,16 +98,38 @@ When a user with this process planted on them **BYPASS**es another, the planter 
 * Offensive Stat: **BYPASSER**
 * Defensive Stat: **SCANNER**
 
+| **BYPASSER Lvl**     | **Upgrades**            |
+| -------------------- | ----------------------- |
+| Lvl 5                | Unlocked, Plant 2 max, 1 per mark |
+| Lvl 7                | Plant 3 max,            |
+| Lvl 10               | Plant 4 max             |
+| Lvl 15               | Plant 5 max             |
+
 ## HIJACKER
 ```!plant hijacker <target user> <potency>```
 A planted HIJACKER will attempt to hijack processes planted by the infected user. The potency of the HIJACKER process determines the success chance of the hijack attempts as well as the likelihood of its detection by a scan.
 * Offensive Stat: **INJECTOR**
 * Defensive Stat: **SCANNER**
 
+| **INJECTOR Lvl**     | **Upgrades**            |
+| -------------------- | ----------------------- |
+| Lvl 5                | Unlocked, Plant 2 max, 1 per mark |
+| Lvl 7                | Plant 3 max,            |
+| Lvl 10               | Plant 4 max             |
+| Lvl 15               | Plant 5 max             |
+
 ## HONEYPOT
 A honeypot, when planted on a user, bypass attackers attempting to bypass the user, or crack attackers attempting to crack the user. It's best to plant these on high value targets so you can gain access to the attacker's accounts.
 * Offensive Stat: **INJECTOR**
 * Defensive Stat: **SCANNER**
+
+| **INJECTOR Lvl**     | **Upgrades**            |
+| -------------------- | ----------------------- |
+| Lvl 1                | Plant 1 max, 1 per mark |
+| Lvl 3                | Plant 2 max,            |
+| Lvl 5                | Plant 3 max             |
+| Lvl 7                | Plant 4 max             |
+| Lvl 10               | Plant 5 max             |
 
 ## REDIRECT
 ```!plant redirect <target user> to <redirect target user>```
@@ -90,9 +137,30 @@ A redirect process will redirect a planted process on a user to the redirect tar
 * Offensive Stat: **INJECTOR**
 * Defensive Stat: **SCANNER**
 
+| **INJECTOR Lvl**     | **Upgrades**            |
+| -------------------- | ----------------------- |
+| Lvl 1                | Plant 1 max, 1 per mark |
+| Lvl 3                | Plant 2 max,            |
+| Lvl 5                | Plant 4 max             |
+| Lvl 7                | Plant 5 max             |
+| Lvl 10               | Plant 6 max             |
+| Lvl 15               | Plant 8 max             |
+
 ## TRACKER
 ```!plant tracker <target user>```
 A tracker process allows the owner to view the account activity logs of the target user as well as having a chance to automatically scan the target user's processes as they plant them. The more trackers you plant on a user, the better they will function.
+
+| **INJECTOR Lvl**     | **Upgrades**            |
+| -------------------- | ----------------------- |
+| Lvl 3                | Unlocked, Plant 3 max, 3 per mark |
+| Lvl 4                | Plant 4 max,            |
+| Lvl 5                | Plant 5 max             |
+| Lvl 6                | Plant 6 max             |
+| Lvl 7                | Plant 7 max             |
+| Lvl 8                | Plant 8 max             |
+| Lvl 9                | Plant 9 max             |
+| Lvl 12               | Plant 12 max            |
+| Lvl 15               | Plant 15 max            |
 
 *More coming soon...*
 
