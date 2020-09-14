@@ -1,0 +1,13 @@
+[
+  {
+    name: "The Basics",
+    link: "#the-basics",
+    subsections: [
+      {
+        name: "Your Account",
+        link: "#your-account"
+      }
+    ]
+  }
+]
+

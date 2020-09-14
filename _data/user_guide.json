@@ -71,6 +71,14 @@
         link: "#stats"
       }
     ]
-  }  
+  },
+
+  {
+    name: "PvP Ladder",
+    link: "#pvp-ladder",
+    subsections: [
+      
+    ]
+  } 
 ]
 

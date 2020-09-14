@@ -4,8 +4,12 @@
 		link: "index.html"
 	},
 	{
-		name: "Guide",
-		link: "guide.html"
+		name: "Setup Guide",
+		link: "user_guide.html"
+	},
+	{
+		name: "Ecomomy Guide",
+		link: "economy_guide.html"
 	},
 	{
 		name: "Discord Docs",

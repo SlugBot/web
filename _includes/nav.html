@@ -13,10 +13,10 @@
 				</li>
 			{% endfor %}
 
-			{% if page.type == 'guide' %}
+			{% if page.type == 'user_guide' %}
 				<hr>
 				<div id="toc-wrapper">
-					{% for shortcut in site.data.guide %}
+					{% for shortcut in site.data.user_guide %}
 					<li>
 						<a href="{{ shortcut.link }}" title="{{ shortcut.name }}">{{ shortcut.name }}</a>
 						{% if shortcut.subsections %}
@@ -74,29 +74,59 @@
 			</li>
 		{% endfor %}
 
-		{% if page.type == 'guide' %}
-				<hr>
-				<div id="toc-wrapper">
-					{% for shortcut in site.data.guide %}
-					<li>
-						<a href="{{ shortcut.link }}" title="{{ shortcut.name }}">{{ shortcut.name }}</a>
-						{% if shortcut.subsections %}
-						<ul>
-							{% for subShortcut in shortcut.subsections %}	
-							<li><a href="{{ subShortcut.link }}" title="{{ subShortcut.name }}">{{ subShortcut.name }}</a></li>
-							{% endfor %}
-						</ul>
-						{% endif %}
-					</li>
-					{% endfor %}
-				</div>
-			{% endif %}
+		{% if page.type == 'user_guide' %}
+			<hr>
+			<div id="toc-wrapper">
+				{% for shortcut in site.data.user_guide %}
+				<li>
+					<a href="{{ shortcut.link }}" title="{{ shortcut.name }}">{{ shortcut.name }}</a>
+					{% if shortcut.subsections %}
+					<ul>
+						{% for subShortcut in shortcut.subsections %}	
+						<li><a href="{{ subShortcut.link }}" title="{{ subShortcut.name }}">{{ subShortcut.name }}</a></li>
+						{% endfor %}
+					</ul>
+					{% endif %}
+				</li>
+				{% endfor %}
+			</div>
+		{% endif %}
 
-		{% if page.type == 'docs' %}
+		{% if page.type == 'economy_guide' %}
+			<hr>
+			<div id="toc-wrapper">
+				{% for shortcut in site.data.economy_guide %}
+				<li>
+					<a href="{{ shortcut.link }}" title="{{ shortcut.name }}">{{ shortcut.name }}</a>
+					{% if shortcut.subsections %}
+					<ul>
+						{% for subShortcut in shortcut.subsections %}	
+						<li><a href="{{ subShortcut.link }}" title="{{ subShortcut.name }}">{{ subShortcut.name }}</a></li>
+						{% endfor %}
+					</ul>
+					{% endif %}
+				</li>
+				{% endfor %}
+			</div>
+		{% endif %}
+
+		{% if page.type == 'docs_discord' %}
 			<hr>
 			<li>Available commands:</li>
 			<div id="toc-wrapper">
-				{% for shortcut in site.data.docs %}
+				{% for shortcut in site.data.d_commands %}
+				<li>
+					<a href="{{ shortcut.link }}">{{ shortcut.name }}</a>
+				</li>
+				{% endfor %}
+			</div>
+		{% endif %}
+
+		{% if page.type == 'docs_twitch' %}
+			<hr>
+			<li>Available commands:</li>
+			<div id="toc-wrapper">
+				{% for shortcut in site.data.t_commands %}
 				<li>
 					<a href="{{ shortcut.link }}">{{ shortcut.name }}</a>
 				</li>
