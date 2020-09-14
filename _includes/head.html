@@ -9,7 +9,7 @@
 <!-- TODO - host icons locally for better resilience -->
 
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-{% if page.type == 'guide' %}
+{% if page.type == 'setup_guide' or page.type == 'economy_guide' %}
 <script>
 	var commandData = {};
 	commandData.discord = JSON.parse(decodeURIComponent("{{ site.data.d_commands | jsonify | uri_escape  }}"));
