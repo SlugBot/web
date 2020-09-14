@@ -11,6 +11,7 @@ title: Patch Notes
 
 ### New Additions
   - Added more filigree profile mod variations to shop pool.
+  - Added smoke glow profile mod to the shop pool.
 
 *****************************
 
