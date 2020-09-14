@@ -21,7 +21,7 @@ If you are feeling generous, you can give SC to others using the <span class="co
 
 
 # Stats
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel eros eleifend, lobortis velit accumsan, scelerisque risus. Nam vel placerat metus. Vivamus scelerisque accumsan tincidunt. Nunc semper lectus non est placerat mattis. Proin eget rutrum felis.
+Your account's strengths and weaknesses are all dependant on your stats and where you specialise. Use the <span class="command-link" data-command="levelup"/> command to increase your stats at the cost of time and SC. Every level-up increases your POWER Lvl by 1. You can reallocate your stats once a week using the <span class="command-link" data-command="respecc"/> command.
 
 ## Firewall
 Firewall is the first line of defense when it comes to protecting your account. In most cases, the Firewall must be BYPASSed before any process can be planted on an account.
