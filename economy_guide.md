@@ -50,10 +50,8 @@ Processes can be modified at runtime via injecting - the chance of successive in
 
 # Processes and Malware
 One of the best ways to make SC is to steal, either directly or through the effects of malware processes. First you'll want to **BYPASS** your target's **FIREWALL** using the <span class="command-link" data-command="bypass"/> command. This will begin the **BYPASS** process which will take a certain amount of time determined by your BYPASSER level and their FIREWALL level.
-<div class="note">
-Most processes take time - be that BYPASSing, SCANning for processes, or planting processes of your own on someones account. The time a process takes is usually determined by your offensive stat and your target's defensive stat. Use the `!plant` command with no arguments to view a list of possible processes you can plant and their corresponding offensive stat and defensive stat.
-</div>
-Once you've **BYPASS**ed a user's **FIREWALL** you'll have access to their account. Use `!slugs <target>` command to open their account menu and view their info. You won't be able to take anything from their bank balance just yet - Their SC reserves are still protected by their bank **ENCRYPTION** which will need to be **CRACK**ed - a time consuming process (`!crack <target>`), but access to their account now lets you plant various processes on them using the <span class="command-link" data-command="plant"/> command.
+
+Once you've **BYPASS**ed a user's **FIREWALL** you'll have access to their account. Use `!slugs <target>` command to open their account menu and view their info. You won't be able to take anything from their bank balance just yet - Their SC reserves are still protected by their **ENCRYPTION** which will need to be **CRACK**ed - a time consuming process (<span class="command-link" data-command="crack"/>), but access to their account now lets you plant various processes on them using the <span class="command-link" data-command="plant"/> command.
 
 ## SKIMMER
 ```!plant skimmer <target> <fraction to skim>```
