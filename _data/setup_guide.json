@@ -27,8 +27,8 @@
   },
 
   {
-    name: "Setting up SlugBot for twitch",
-    link: "#setting-up-slugbot-for-twitch",
+    name: "Twitch Setup",
+    link: "#twitch-setup",
     subsections: [
       {
         name: "Modules and Permissions",
@@ -40,45 +40,6 @@
   {
     name: "Flag Replacers",
     link: "#flag-replacers"
-  },
- 
-  {
-    name: "Slug Economy",
-    link: "#slug-economy",
-    subsections: [
-      {
-        name: "The Basics",
-        link: "#the-basics"
-      },
-      {
-        name: "Processes and Malware",
-        link: "#processes-and-malware"
-      },
-      {
-        name: "Scanning",
-        link: "#scanning"
-      },
-      {
-        name: "Cleaning and Hijacking",
-        link: "#cleaning-and-hijacking"
-      },      
-      {
-        name: "Investing",
-        link: "#investing"
-      },
-      {
-        name: "Stats",
-        link: "#stats"
-      }
-    ]
-  },
-
-  {
-    name: "PvP Ladder",
-    link: "#pvp-ladder",
-    subsections: [
-      
-    ]
-  } 
+  }
 ]
 
