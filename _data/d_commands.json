@@ -2105,7 +2105,24 @@
     "moduleId": "economy",
     "canEdit": true,
     "format": "${PREFIX}respec [firewall [bypasser [encryption [cracker [scanner [leech [interceptor [injector]]]]]]]]",
-    "help": "Respecc stat levels."
+    "desc": "Re-allocate stat levels.",
+    "parameters": [
+      {
+        "param": "[stat]",
+        "values": [
+          {
+            "value": "Integer",
+            "desc": "The new stat level wanted for the stat."
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "commands": "!respecc",
+        "desc": "This will set all stats to 1 and allow instant levelups until all remaining stat levels are spend."
+      }
+    ]
   },
   "scan": {
     "cmd": "scan",
