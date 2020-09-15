@@ -1998,6 +1998,12 @@
           }
         ]
       }
+    ],
+    "examples": [
+      {
+        "command": "!levelup firewall",
+        "desc": "This will start a levelup Firewall process."
+      }
     ]
   },
   "log": {
