@@ -12,6 +12,9 @@ title: Patch Notes
     - process corrupt error is less likely.
     - Delay consequence delays less.
 
+### Bug Fixes
+  - Fixed minor display bug with obfuscated balance history graphs.
+
 *****************************
 
 ## 14th September 2020
