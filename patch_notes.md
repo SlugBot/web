@@ -4,6 +4,16 @@ title: Patch Notes
 ---
 # PATCH NOTES
 
+## 15th September 2020
+### Updates
+  - Redirects can now be planted using a BYPASS ID for both the target and the redirect target.
+  - Reduced the severity of injection fail consequences.
+    - Stat vulnerabilities are more likely.
+    - process corrupt error is less likely.
+    - Delay consequence delays less.
+
+*****************************
+
 ## 14th September 2020
 ### Updates
   - Reformatted the website and added more to the Economy Guide.
