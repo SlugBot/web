@@ -2386,8 +2386,25 @@
     "perms": [],
     "moduleId": "economy",
     "canEdit": false,
-    "format": "${PRERIX}vault [member] [amount]",
-    "desc": "Used to move Slugs from your current account into your vault."
+    "format": "${PRERIX}vault [amount]",
+    "desc": "Used to move Slugs from your current account into your vault.",
+    "parameters": [
+      {
+        "param": "[amount]",
+        "values": [
+          {
+            "value": "SlugCoin amount",
+            "desc": "Optional amount of SC to vault."
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "command": "!vault",
+        "desc": "This will put as much as possible in the vault."
+      }
+    ]
   },
   "gallery": {
     "perms": [
