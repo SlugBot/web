@@ -5,6 +5,12 @@ title: Patch Notes
 # PATCH NOTES
 
 ## 15th September 2020
+### Bug Fixes
+  - Fixed bug allowing anyone to view any user's !slugs menu
+
+*****************************
+
+## 15th September 2020
 ### Updates
   - Redirects can now be planted using a BYPASS ID for both the target and the redirect target.
   - Reduced the severity of injection fail consequences.
