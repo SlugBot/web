@@ -11,7 +11,7 @@ title: Patch Notes
     - Stat vulnerabilities are more likely.
     - process corrupt error is less likely.
     - Delay consequence delays less.
-  - Capped !higherlower bet at max vault capacity.
+  - Capped !higherlower bet at max vault capacity. (I would have capped the other gambling games but people would have got mad.)
 
 ### Bug Fixes
   - Fixed minor display bug with obfuscated balance history graphs.
