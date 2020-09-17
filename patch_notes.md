@@ -4,7 +4,15 @@ title: Patch Notes
 ---
 # PATCH NOTES
 
-## 15th September 2020
+## 17th September 2020
+### Updates
+  - Increased effectiveness of Injector stat with regards to initial injection success chance and injection success chance decay.
+  - Increased REDIRECT plant duration.
+  - Improved STEAL logs.
+
+*****************************
+
+## 16th September 2020
 ### Bug Fixes
   - Fixed bug allowing anyone to view any user's !slugs menu
 
