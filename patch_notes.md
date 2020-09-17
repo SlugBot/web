@@ -6,9 +6,17 @@ title: Patch Notes
 
 ## 17th September 2020
 ### Updates
+  - Updated `!clean` and `!hijack` documentation.
   - Increased effectiveness of Injector stat with regards to initial injection success chance and injection success chance decay.
   - Increased REDIRECT plant duration.
   - Improved STEAL logs.
+  - `!giveslugs` now transfers SC over time using a TRANSFER process.
+    - Duration based on WIRE stat.
+    - Injection success chance regenerates faster than normal processes.
+    - TRANSFER processes can be hijacked. The hijacker becomes the recipient.
+
+### Bug Fixes
+  - Fixed bug allowing suspended TRACKER processes to still function.
 
 *****************************
 
