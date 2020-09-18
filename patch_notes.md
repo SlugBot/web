@@ -17,7 +17,8 @@ title: Patch Notes
   - Reduced the severity of Balance Error consequences.
   - SlugBot will now periodically scan itself and clean processes off itself.
     - Processes owned by higher level players will be prioritised.
-
+  - Command message when a `!steal` attempt fails gets deleted immediately.
+  
 ### Bug Fixes
   - Fixed bug allowing suspended TRACKER processes to still function.
   - Minor bug fix with display of scan inject when process is already fully identified.
