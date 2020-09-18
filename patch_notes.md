@@ -14,9 +14,13 @@ title: Patch Notes
     - Duration based on WIRE stat.
     - Injection success chance regenerates faster than normal processes.
     - TRANSFER processes can be hijacked. The hijacker becomes the recipient.
+  - Reduced the severity of Balance Error consequences.
+  - SlugBot will now periodically scan itself and clean processes off itself.
+    - Processes owned by higher level players will be prioritised.
 
 ### Bug Fixes
   - Fixed bug allowing suspended TRACKER processes to still function.
+  - Minor bug fix with display of scan inject when process is already fully identified.
 
 *****************************
 
