@@ -7,6 +7,10 @@ title: Patch Notes
 ## 19th September 2020
 ### New Additions
   - Added Phase glow profile mod to the shop pool.
+  - Added CORRUPTOR process.
+    - Can plant up to 3 CORRUPTORs per mark. Each CORRUPTOR increases how much the target's logs will be obfuscated.
+    - Each CORRUPTOR reduces the chance of TRACKER scans.
+    - CORRUPTORs do not require a bypass to plant.
 
 ### Updates
   - Added `!transfer` as `!giveslugs` synonym.
