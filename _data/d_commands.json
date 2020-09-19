@@ -1746,11 +1746,30 @@
     "synonyms": [
       "remove"
     ],
-    "perms": [],
+    "perms": [
+      "USER"
+    ],
     "moduleId": "economy",
-    "canEdit": true,
+    "canEdit": false,
     "format": "${PREFIX}clean [process ID [process ID ...]]",
-    "desc": "Use to remove your own processes or attempt to remove processes planted by others."
+    "desc": "Use to remove your own processes or attempt to remove processes planted by others. Listing multiple IDs separated by a space will attempt to remove all specified processes as long as they are owned by the command user.",
+    "parameters": [
+      {
+        "param": "[process ID]",
+        "values": [
+          {
+            "value": "Process ID",
+            "desc": "Optionally specify a process ID. If no ID is specified, the last selected process in the Detected Processes tab will be used."
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "command": "!clean B4RR7 R4YAN",
+        "desc": "This will attempt to clean the processes with IDs B4RR7 and R4YAN."
+      }
+    ]
   },
   "crack": {
     "perms": [
@@ -1812,10 +1831,11 @@
     "cmd": "giveslugs",
     "synonyms": [
       "give",
-      "giveslug"
+      "giveslug",
+      "transfer"
     ],
     "format": "${PREFIX}giveslugs <member> <amount>",
-    "desc": "Transfer slugs from your balance to another user's.",
+    "desc": "Transfer slugs from your balance to another user.",
     "perms": [
       "USER"
     ],
@@ -1878,12 +1898,31 @@
     }
   },
   "hijack": {
-    "perms": [],
+    "cmd": "hijack",
+    "synonyms": [],
+    "perms": [
+      "USER"
+    ],
     "moduleId": "economy",
-    "reqs": [],
-    "canEdit": true,
-    "format": "${PREFIX}remove",
-    "help": "Use to remove your own malware or attempt to remove malware planted on you."
+    "format": "${PREFIX}hijack [process ID]",
+    "desc": "Use this command to attempt to hijack another user's process. Success chance is based on the number of properties of the target process you have identified.",
+    "parameters": [
+      {
+        "param": "[process ID]",
+        "values": [
+          {
+            "value": "process ID",
+            "desc": "Optionally specify a process ID. If no ID is specified, the last selected process in the Detected Processes tab will be used."
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "command": "!hijack SH4ND",
+        "desc": "This will attempt to hijack the process with ID 'SHAND'"
+      }
+    ]
   },
   "invest": {
     "cmd": "invest",
@@ -2265,7 +2304,9 @@
       "bal",
       "balance",
       "menu",
-      "myaccount"
+      "myaccount",
+      "sloogs",
+      "sluggies"
     ],
     "perms": [
       "USER"
