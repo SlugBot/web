@@ -150,7 +150,25 @@ A tracker process allows the owner to view the account activity logs of the targ
 * Offensive Stat: **SCANNER**
 * Defensive Stat: **ENCRYPTION**
 
-| **SCANNER Lvl**     | **Upgrades**            |
+| **SCANNER Lvl**      | **Upgrades**            |
+| -------------------- | ----------------------- |
+| Lvl 3                | Unlocked, Plant 3 max, 3 per mark |
+| Lvl 4                | Plant 4 max,            |
+| Lvl 5                | Plant 5 max             |
+| Lvl 6                | Plant 6 max             |
+| Lvl 7                | Plant 7 max             |
+| Lvl 8                | Plant 8 max             |
+| Lvl 9                | Plant 9 max             |
+| Lvl 12               | Plant 12 max            |
+| Lvl 15               | Plant 15 max            |
+
+## CORRUPTOR
+```!plant corruptor <target user>```
+CORRUPTORs, when planted on a user, will corrupt their log viewer - making it difficult to read to completely impossible, depending on how many CORRUPTORs are planted. CORRUPTORs also reduce the chance of TRACKERs scanning initated processes. **CORRUPTOR processes do NOT need a BYPASS to be planted.**
+* Offensive Stat: **INJECTOR**
+* Defensive Stat: **SCANNER**
+
+| **INJECTOR Lvl**     | **Upgrades**            |
 | -------------------- | ----------------------- |
 | Lvl 3                | Unlocked, Plant 3 max, 3 per mark |
 | Lvl 4                | Plant 4 max,            |
