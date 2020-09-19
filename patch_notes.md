@@ -5,6 +5,9 @@ title: Patch Notes
 # PATCH NOTES
 
 ## 19th September 2020
+### New Additions
+  - Added Phase glow profile mod to the shop pool.
+
 ### Updates
   - Added `!transfer` as `!giveslugs` synonym.
   - Made the last interval of STEAL and TRANSFER always transfer the last 1%.
@@ -62,7 +65,7 @@ title: Patch Notes
 
 ### New Additions
   - Added more filigree profile mod variations to shop pool.
-  - Added smoke glow profile mod to the shop pool.
+  - Added Smoke glow profile mod to the shop pool.
 
 *****************************
 
