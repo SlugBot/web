@@ -4,6 +4,16 @@ title: Patch Notes
 ---
 # PATCH NOTES
 
+## 19th September 2020
+### Updates
+  - Added `!transfer` as `!giveslugs` synonym.
+  - Made the last interval of STEAL and TRANSFER always transfer the last 1%.
+
+### Bug Fixes
+  - Renabling a suspended TRACKER will only show user logs back to when the tracker was enabled and not when the TRACKER was originally planted.
+
+*****************************
+
 ## 17th September 2020
 ### Updates
   - Updated `!clean` and `!hijack` documentation.
@@ -18,7 +28,7 @@ title: Patch Notes
   - SlugBot will now periodically scan itself and clean processes off itself.
     - Processes owned by higher level players will be prioritised.
   - Command message when a `!steal` attempt fails gets deleted immediately.
-  
+
 ### Bug Fixes
   - Fixed bug allowing suspended TRACKER processes to still function.
   - Minor bug fix with display of scan inject when process is already fully identified.
