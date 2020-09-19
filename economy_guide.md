@@ -164,7 +164,7 @@ A tracker process allows the owner to view the account activity logs of the targ
 
 ## CORRUPTOR
 ```!plant corruptor <target user>```
-CORRUPTORs, when planted on a user, will corrupt their log viewer - making it difficult to read to completely impossible, depending on how many CORRUPTORs are planted. CORRUPTORs also reduce the chance of TRACKERs scanning initated processes. **CORRUPTOR processes do NOT need a BYPASS to be planted.**
+CORRUPTORs, when planted on a user, will corrupt their log viewer - making it difficult to read to completely impossible, depending on how many CORRUPTORs are planted. CORRUPTORs also reduce the chance of TRACKERs scanning initated processes. **CORRUPTOR processes do NOT require the target to be BYPASSed before they can be planted.**
 * Offensive Stat: **INJECTOR**
 * Defensive Stat: **SCANNER**
 
