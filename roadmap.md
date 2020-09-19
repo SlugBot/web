@@ -48,7 +48,7 @@ title: Roadmap
   - [ ] ROOTKIT process that allows users to take some control of a bypassed account and plant processes as them
   - [ ] JAMMER process that can be planted directly on to other processes to suspend them for a finite duration
     - [ ] Duration and success chance governed by percentage of properties identified and Injector Lvl
-  - [ ] CORRUPTOR process, when planted on a user, will obfuscate their logs until removed. Does not need a bypass
+  - [ ] !daily chance for process rewards
  
 ### WEB:
   - [ ] look into hugo https://gohugo.io/
