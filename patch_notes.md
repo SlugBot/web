@@ -8,6 +8,9 @@ title: Patch Notes
 ### Updates
   - Decreased levelup durations to give people more levels to play with.
 
+### Bug Fixes
+  - Fixed bug with concealError not properly uncovering process properties.
+
 *****************************
 
 ## 19th September 2020
