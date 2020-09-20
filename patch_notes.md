@@ -4,6 +4,12 @@ title: Patch Notes
 ---
 # PATCH NOTES
 
+## 17th September 2020
+### Updates
+  - Decreased levelup durations to give people more levels to play with.
+
+*****************************
+
 ## 19th September 2020
 ### New Additions
   - Added Phase glow profile mod to the shop pool.
