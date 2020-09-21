@@ -4,6 +4,14 @@ title: Patch Notes
 ---
 # PATCH NOTES
 
+## 21st September 2020
+### Updates
+  - Lowered the frequency of STEAL transfers to once per minute.
+  - Made TRANSFER messages update at least once every 2.5 minutes.
+  - Added "Amount transferred" field to transfer messages.
+
+*****************************
+
 ## 20th September 2020
 ### Updates
   - Decreased levelup durations to give people more levels to play with.
