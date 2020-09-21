@@ -4,13 +4,14 @@ title: Patch Notes
 ---
 # PATCH NOTES
 
-## 17th September 2020
+## 20th September 2020
 ### Updates
   - Decreased levelup durations to give people more levels to play with.
   - `!streamer list` can now be used by all members instead of just bot admins.
 
 ### Bug Fixes
   - Fixed bug with concealError not properly uncovering process properties.
+  - Fixed bug where a start steal error was not correctly stopping the process initiation.
 
 *****************************
 
