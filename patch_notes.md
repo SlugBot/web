@@ -2,7 +2,17 @@
 layout: info
 title: Patch Notes
 ---
+
 # PATCH NOTES
+
+## 22nd September 2020
+### Updates
+  - HIJACKER processes will now send a notification when a process is hijacked.
+
+### Bug Fixes
+  - Fixed hijackers failing to hijack any process.
+
+*****************************
 
 ## 21st September 2020
 ### Updates
