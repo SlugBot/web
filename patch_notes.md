@@ -11,6 +11,7 @@ title: Patch Notes
 
 ### Bug Fixes
   - Fixed hijackers failing to hijack any process.
+  - Fixed scans incorrectly limiting scanned processes to specified filter.
 
 *****************************
 
