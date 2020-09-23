@@ -50,6 +50,8 @@ title: Roadmap
     - [ ] Duration and success chance governed by percentage of properties identified and Injector Lvl
   - [ ] !daily chance for process rewards
   - [ ] !roll against another member instead of SlugBot
+  - [ ] A method to manually spoof process properties using Encryption stat
+  - [ ] Scanning a process by ID has a chance to removed spoofed properties
  
 ### WEB:
   - [ ] look into hugo https://gohugo.io/
