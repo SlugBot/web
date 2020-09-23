@@ -5,6 +5,12 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 23rd September 2020
+### Updates
+  - Increased minimum detect chance for CRACK and BYPASS processes.
+
+*****************************
+
 ## 22nd September 2020
 ### Updates
   - HIJACKER processes will now send a notification when a process is hijacked.
