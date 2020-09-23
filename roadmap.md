@@ -41,7 +41,7 @@ title: Roadmap
 ### Slug Hack Game:
   - [ ] Process Trading
     - [ ] trade system for trading processes and SC
-      - [ ] something to stop alt account abuse
+      - [ ] something to stop alt account abuse. (possibly trade tax)
     - [ ] Private process shop
       - [ ] only viewable in DMs. gives a tailored list of processes determined by user's total worth and level. (encourage user's to punch up a little)
       - [ ] refreshes daily
@@ -49,6 +49,7 @@ title: Roadmap
   - [ ] JAMMER process that can be planted directly on to other processes to suspend them for a finite duration
     - [ ] Duration and success chance governed by percentage of properties identified and Injector Lvl
   - [ ] !daily chance for process rewards
+  - [ ] !roll against another member instead of SlugBot
  
 ### WEB:
   - [ ] look into hugo https://gohugo.io/
