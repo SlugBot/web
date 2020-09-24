@@ -5,9 +5,27 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 24th September 2020
+### Updates
+  - Refactored process intevals to allow for minimum durations of 10 seconds.
+  - Added PvP `!roll`.
+    - Mention one or more members to challenge them to a roll.
+    - All members must accept before the roll proceeds.
+    - Roll will cancel if member accepts but does not have the funds to match the bet.
+    - Amount won/lost is proportional to how high you rolled.
+
+### Bug Fixes
+  - Fixed incorrect percentage being displayed in transfer logs
+  - Hopefully tricked Discord into displaying graphs correctly.
+
+*****************************
+
 ## 23rd September 2020
 ### Updates
   - Increased minimum detect chance for CRACK and BYPASS processes.
+
+### Bug Fixes
+  - Fixed SlugBot attempting to bypass when currently at bypass limit.
 
 *****************************
 
