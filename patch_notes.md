@@ -6,6 +6,13 @@ title: Patch Notes
 # PATCH NOTES
 
 ## 24th September 2020
+### Bug Fixes
+  - Fixed pvp roll when one member has a negative balance.
+  - Fixed some TRANSFER processes not removing themselves.
+
+*****************************
+
+## 24th September 2020
 ### Updates
   - Refactored process intevals to allow for minimum durations of 10 seconds.
   - Added PvP `!roll`.
