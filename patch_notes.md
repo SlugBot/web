@@ -17,6 +17,7 @@ title: Patch Notes
 ### Bug Fixes
   - Fixed incorrect percentage being displayed in transfer logs
   - Hopefully tricked Discord into displaying graphs correctly.
+  - Fixed bug with some scans not displaying their description properly.
 
 *****************************
 
