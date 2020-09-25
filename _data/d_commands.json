@@ -7,7 +7,7 @@
       "updatecmd"
     ],
     "format": "${PREFIX}addcommand <command> <response>",
-    "desc": "Used to add/edit a custom command that will respond with a specified string. alternatively regex can be used in place of a command to make SlugBot send a response message whenever the regex matches a members message.\n\nThe response can contain certain replacer flags that will be replaced will specific values when sent by slugbot.\n\nDocumentation on replacer flags can be found [here](guide.html#flag-replacers)",
+    "desc": "Used to add/edit a custom command that will respond with a specified string. alternatively regex can be used in place of a command to make SlugBot send a response message whenever the regex matches a members message.\n\nThe response can contain certain replacer flags that will be replaced will specific values when sent by slugbot.\n\nDocumentation on replacer flags can be found [here](setup_guide.html#flag-replacers)",
     "perms": [
       "BOT_ADMIN"
     ],
@@ -658,57 +658,6 @@
       }
     ]
   },
-  "roll": {
-    "cmd": "roll",
-    "format": "${PREFIX}roll <dice count>D<dice type>[+|- <dice count>D<dice type> [...]] [+|- modifier]",
-    "desc": "Use this command to get SlugBot to roll dice.",
-    "perms": [
-      "USER"
-    ],
-    "moduleId": "roll",
-    "canDM": false,
-    "canEdit": false,
-    "debug": false,
-    "parameters": [
-      {
-        "param": "<dice count>",
-        "values": [
-          {
-            "value": "Integer number",
-            "desc": "Corresponding to the number of dice to roll"
-          }
-        ]
-      },
-      {
-        "param": "<dice type>",
-        "values": [
-          {
-            "value": "Integer number",
-            "desc": "Corresponding to the type of dice to roll"
-          }
-        ]
-      },
-      {
-        "param": "[+|- modifier]",
-        "values": [
-          {
-            "value": "Integer number",
-            "desc": "Corresponding to a value to add or subtract from the total roll"
-          }
-        ]
-      }
-    ],
-    "examples": [
-      {
-        "command": "!roll 4d6 - 2",
-        "desc": "This will roll four D6s, subtract 2, then display the outcome."
-      },
-      {
-        "command": "!roll 4d8 + 2d6 + 5",
-        "desc": "This will roll four D8s, add two D6s, add 5, then display the outcome."
-      }
-    ]
-  },
   "setchannel": {
     "cmd": "setchannel",
     "format": "${PREFIX}setchannel [<channel to set> [reset]]",
@@ -915,7 +864,7 @@
       "welcomemsg"
     ],
     "format": "${PREFIX}setwelcomemessage [welcome message] | showProfile [true|false] | reset",
-    "desc": "Use this command to customise the welcome message sent when a new member joins the server.\n\nUsing the command with no arguments will display the current welcome message along with a demo of how it will appear when a member joins.\n\nDocumentation on replacer flags can be found [here](guide.html#flag-replacers)",
+    "desc": "Use this command to customise the welcome message sent when a new member joins the server.\n\nUsing the command with no arguments will display the current welcome message along with a demo of how it will appear when a member joins.\n\nDocumentation on replacer flags can be found [here](setup_guide.html#flag-replacers)",
     "perms": [
       "BOT_ADMIN"
     ],
@@ -2094,7 +2043,11 @@
           },
           {
             "value": "tracker",
-            "desc": "Specifies planting TRACKER malware"
+            "desc": "Specifies planting TRACKER process"
+          },
+          {
+            "value": "corruptor",
+            "desc": "Specifies planting CORRUPTOR process"
           }
         ]
       },
@@ -2166,6 +2119,61 @@
       {
         "commands": "!respecc",
         "desc": "This will set all stats to 1 and allow instant levelups until all remaining stat levels are spend."
+      }
+    ]
+  },
+  "roll": {
+    "cmd": "roll",
+    "format": "${PREFIX}roll <dice count>D<dice type>[+|- <dice count>D<dice type> [...]] [+|- modifier]",
+    "desc": "Use this command to get SlugBot to roll dice.",
+    "perms": [
+      "USER"
+    ],
+    "moduleId": "economy",
+    "canDM": false,
+    "canEdit": false,
+    "debug": false,
+    "parameters": [
+      {
+        "param": "<dice count>",
+        "values": [
+          {
+            "value": "Integer number",
+            "desc": "Corresponding to the number of dice to roll"
+          }
+        ]
+      },
+      {
+        "param": "<dice type>",
+        "values": [
+          {
+            "value": "Integer number",
+            "desc": "Corresponding to the type of dice to roll"
+          }
+        ]
+      },
+      {
+        "param": "[+|- modifier]",
+        "values": [
+          {
+            "value": "Integer number",
+            "desc": "Corresponding to a value to add or subtract from the total roll"
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "command": "!roll 4d6 - 2",
+        "desc": "This will roll four D6s, subtract 2, then display the outcome."
+      },
+      {
+        "command": "!roll 4d8 + 2d6 + 5",
+        "desc": "This will roll four D8s, add two D6s, add 5, then display the outcome."
+      },
+      {
+        "command": "!roll 1000",
+        "desc": "This will bet 1000sc on a dice roll against SlugBot."
       }
     ]
   },
@@ -3369,7 +3377,7 @@
   "streamer": {
     "cmd": "streamer",
     "perms": [
-      "BOT_ADMIN"
+      "USER"
     ],
     "moduleId": "streams",
     "debug": false,
@@ -3381,15 +3389,15 @@
         "values": [
           {
             "value": "add",
-            "desc": "specify to add streamer to list"
+            "desc": "specify to add streamer to list. BOT_ADMIN only."
           },
           {
             "value": "remove",
-            "desc": "specify to remove streamer to list"
+            "desc": "specify to remove streamer to list. BOT_ADMIN only."
           },
           {
             "value": "list",
-            "desc": "specify to list all streamers"
+            "desc": "specify to list all streamers."
           }
         ]
       },
