@@ -12,6 +12,7 @@ title: Patch Notes
 ### Bug Fixes
   - Fixed pvp roll when one member has a negative balance.
   - Fixed some TRANSFER processes not removing themselves.
+  - Fixed SlugBot trying to remove transfers to SlugBot.
 
 *****************************
 
