@@ -5,6 +5,12 @@ title: Patch Notes
 
 # PATCH NOTES
 
+### 26th September 2020
+### Updates
+  - Improved `!roll` input parsing.
+
+*****************************
+
 ## 25th September 2020
 ### Updates
   - Added 'winner takes all' rolls. Add 'all in' to the end of the !roll command to change the payout mode to 'winner takes all'.
