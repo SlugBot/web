@@ -8,6 +8,10 @@ title: Patch Notes
 ### 26th September 2020
 ### Updates
   - Improved `!roll` input parsing.
+  - Clamped gambling bets to effective balance after all outbound transfers.
+
+### Bug Fix
+  - Fixed [winner takes all] description not displaying.
 
 *****************************
 
