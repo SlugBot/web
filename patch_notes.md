@@ -5,7 +5,10 @@ title: Patch Notes
 
 # PATCH NOTES
 
-## 24th September 2020
+## 25th September 2020
+### Updates
+  - Added 'winner takes all' rolls. Add 'all in' to the end of the !roll command to change the payout mode to 'winner takes all'.
+
 ### Bug Fixes
   - Fixed pvp roll when one member has a negative balance.
   - Fixed some TRANSFER processes not removing themselves.
