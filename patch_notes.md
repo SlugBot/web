@@ -5,6 +5,12 @@ title: Patch Notes
 
 # PATCH NOTES
 
+### Bug Fix
+  - Fixed bug where removing a bypass would suspend processes in progress even if the process didn't require a bypass to plant.
+  - Fixed LEECH processes not starting with the correct potency.
+
+*****************************
+
 ### 26th September 2020
 ### Updates
   - Improved `!roll` input parsing.
