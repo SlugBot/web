@@ -38,7 +38,7 @@ title: Roadmap
   - [ ] Synonym lookup
   - [ ] Bundle toggle option
 
-### Slug Hack Game:
+### Slug Economy Game:
   - [ ] Process Trading
     - [ ] trade system for trading processes and SC
       - [ ] something to stop alt account abuse. (possibly trade tax)
