@@ -5,13 +5,23 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 1st October 2020
+### Updates
+  - Allowed moderators to end any poll in their server by providing the poll message ID.
+
+### Bug Fix
+  - Fixed profile mods displaying in spoofed !slugs menu if viewer does not have the process identified.
+
+*****************************
+
+## 30th September 2020
 ### Bug Fix
   - Fixed bug where removing a bypass would suspend processes in progress even if the process didn't require a bypass to plant.
   - Fixed LEECH processes not starting with the correct potency.
 
 *****************************
 
-### 26th September 2020
+## 26th September 2020
 ### Updates
   - Improved `!roll` input parsing.
   - Clamped gambling bets to effective balance after all outbound transfers.
