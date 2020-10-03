@@ -5,12 +5,22 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 3rd October 2020
+### Upates
+  - Removed botAdmin permission overrides. Disabling a command/module will also disable it for admins/moderators.
+
+### Bug Fixes
+  - Fixed last TRANSFER/STEAL interval happening after completion.
+
+*****************************
+
 ## 1st October 2020
 ### Updates
   - Allowed moderators to end any poll in their server by providing the poll message ID.
 
 ### Bug Fix
   - Fixed profile mods displaying in spoofed !slugs menu if viewer does not have the process identified.
+  - Fixed twitch custom commands not working.
 
 *****************************
 
