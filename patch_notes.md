@@ -7,6 +7,7 @@ title: Patch Notes
 
 ## 3rd October 2020
 ### Upates
+  - Added border_dashitek_0 to shop pool.
   - Removed botAdmin permission overrides. Disabling a command/module will also disable it for admins/moderators.
 
 ### Bug Fixes
