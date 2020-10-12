@@ -5,6 +5,12 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 4th October 2020
+### Bug Fixes
+  - Fixed markdown characters in usernames interfering with embed formatting.
+
+*****************************
+
 ## 3rd October 2020
 ### Upates
   - Added border_dashitek_0 to shop pool.
