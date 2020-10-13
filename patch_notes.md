@@ -5,6 +5,12 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 13th October 2020
+### Bug Fixes
+  - Fixed the reddit video embedding module.
+
+***************************** 
+
 ## 4th October 2020
 ### Bug Fixes
   - Fixed markdown characters in usernames interfering with embed formatting.
