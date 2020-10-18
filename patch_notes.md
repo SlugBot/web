@@ -8,6 +8,10 @@ title: Patch Notes
 ## 17th October 2020
 ### Updates
   - Added `!roll anyone <bet>` functionality to !roll. Allows anyone to join the roll. After 5 minutes the roll commences.
+  - Servers can now have multiple ladders at the same time.
+    - Use `!ladder create <ladder title>` in the channel you wish to use as the leaderboard channel.
+    - When challenging a member in a server with multiple ladders, the user can specify the ladder at the end of the command or use the reactions to select a ladder from a list.
+    - `!elo` lets users view their stats and match history per ladder. 
 
 ### Bug Fixes
   - Added self-correcting to duplicate investments due to discord lag.
