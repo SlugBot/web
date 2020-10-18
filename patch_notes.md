@@ -5,6 +5,15 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 17th October 2020
+### Updates
+  - Added `!roll anyone <bet>` functionality to !roll. Allows anyone to join the roll. After 5 minutes the roll commences.
+
+### Bug Fixes
+  - Added self-correcting to duplicate investments due to discord lag.
+
+***************************** 
+
 ## 13th October 2020
 ### Bug Fixes
   - Fixed the reddit video embedding module.
