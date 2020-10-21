@@ -5,6 +5,15 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 21st October 2020
+### Updates
+  - Ladders can now be renamed with `!ladder <ladder name> rename <new name>`.
+
+### Bug Fixes
+  - An ungodly number of bugfixes due to the caching changes of the discord library. Pretty much every module needed to be updated.
+
+***************************** 
+
 ## 17th October 2020
 ### Updates
   - Added `!roll anyone <bet>` functionality to !roll. Allows anyone to join the roll. After 5 minutes the roll commences.
