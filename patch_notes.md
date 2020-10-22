@@ -5,6 +5,14 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 22nd October 2020
+### Bug Fixes
+  - A tonne more bug fixes across the board.
+  - Fixed !giveme not responding with confirmation.
+  - Fixed !streamer command not working.
+
+*****************************
+
 ## 21st October 2020
 ### Updates
   - Ladders can now be renamed with `!ladder <ladder name> rename <new name>`.
