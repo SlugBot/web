@@ -5,6 +5,17 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 24th October 2020
+
+### Updates
+  - `!giveslugs` will now cap amount at effective slug balance including running transfers.
+
+### Bug Fixes
+  - `!giveme` should work again now.
+  - Fixed porting over role settings to new backend.
+
+*****************************
+
 ## 22nd October 2020
 ### Bug Fixes
   - A tonne more bug fixes across the board.

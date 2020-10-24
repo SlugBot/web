@@ -55,6 +55,7 @@ title: Roadmap
   - [ ] !daily chance for process rewards.
   - [ ] A method to manually spoof process properties using Encryption stat.
   - [ ] Scanning a process by ID has a chance to removed spoofed properties.
+  - [ ] password cracking minigame to debuff targets firewall/encryption
  
 ### WEB:
   - [ ] look into hugo https://gohugo.io/
