@@ -5,8 +5,17 @@ title: Patch Notes
 
 # PATCH NOTES
 
-## 24th October 2020
+## 25th October 2020
+### New Additions
+  - STAT_BOOST process. Grants temporary stat boosts on activation.
 
+### Updates
+  - `!daily` now has a chance to generate random stat boosts.
+  - STEALs can no longer be suspended.
+
+*****************************
+
+## 24th October 2020
 ### Updates
   - `!giveslugs` will now cap amount at effective slug balance including running transfers.
 

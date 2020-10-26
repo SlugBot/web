@@ -14,9 +14,7 @@ title: Roadmap
   - [ ] Togglable option to auto delete spam.
 
 ### Ladder
-  - [ ] Allow for multiple different ladders.
-    - [ ] Set a channel for each ladder leaderboard individually.
-    - [ ] Challenger can state the ladder they are challenging in or be given a reaction menu to select a possible ladder.
+  - [ ] Allow accepting a challenge by reacting to the original chal command response.
  
 ### Twitch:
   - [ ] Switch from tmi.js to twitch.js library.
