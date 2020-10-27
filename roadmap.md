@@ -13,6 +13,9 @@ title: Roadmap
   - [ ] Add build description field.
   - [ ] Togglable option to auto delete spam.
 
+### Reminders
+  - [ ] Ability to edit and remove existing reminders.
+
 ### Ladder
   - [ ] Allow accepting a challenge by reacting to the original chal command response.
  

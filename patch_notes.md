@@ -5,6 +5,13 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 26th October 2020
+### Updates
+  - Corruptors will now parially obfuscate HONEYPOT and REDIRECT notifications, obscuring the owner name and process type of the trapped process.
+  - Ladder betting now increases the amount bet each time to make it easier to bet larger amounts. 
+
+*****************************
+
 ## 25th October 2020
 ### New Additions
   - STAT_BOOST process. Grants temporary stat boosts on activation.
