@@ -5,6 +5,17 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 30th October 2020
+### Updates
+  - Ladder challenge bets now scale such that each bet is `+(5000sc + half existing bet)`. Allows for bigger bets without having to spam the react as much.
+  - `!ladder remove <ladder name>` command added.
+  - Injector effect on initial injection chance and injection chance reduction reduced.
+
+### Bug Fixes
+  - Fixed challenges in servers with multiple ladders defaulting to a ladder when the reaction menu timed out.
+
+*****************************
+
 ## 26th October 2020
 ### Updates
   - Corruptors will now parially obfuscate HONEYPOT and REDIRECT notifications, obscuring the owner name and process type of the trapped process.
