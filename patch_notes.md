@@ -8,6 +8,7 @@ title: Patch Notes
 ## 4th November 2020
 ### New Additions
   - Settable `init` role that will be given to new members **once**. Will not be reapplied if removed like the `global` role.
+  - Putting a process on sale will unveil the actual target if the target had been spoofed.
 
 ### Bug Fixes
   - Can no longer suspend PvP roll transfers.
