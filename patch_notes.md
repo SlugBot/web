@@ -5,6 +5,16 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 4th November 2020
+### New Additions
+  - Settable `init` role that will be given to new members **once**. Will not be reapplied if removed like the `global` role.
+
+### Bug Fixes
+  - Can no longer suspend PvP roll transfers.
+  - Servers should no longer get unverified after a bot restart.
+
+*****************************
+
 ## 30th October 2020
 ### Updates
   - Ladder challenge bets now scale such that each bet is `+(5000sc + half existing bet)`. Allows for bigger bets without having to spam the react as much.
