@@ -8,11 +8,15 @@ title: Patch Notes
 ## 4th November 2020
 ### New Additions
   - Settable `init` role that will be given to new members **once**. Will not be reapplied if removed like the `global` role.
+
+### Updates
   - Putting a process on sale will unveil the actual target if the target had been spoofed.
+  - HIJACKERs now hijack transfers on process init.
 
 ### Bug Fixes
   - Can no longer suspend PvP roll transfers.
   - Servers should no longer get unverified after a bot restart.
+  - Fixed open challenges ignoring ladder types.
 
 *****************************
 
