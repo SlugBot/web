@@ -346,7 +346,7 @@
   "pc": {
     "cmd": "pc",
     "format": "${PREFIX}pc",
-    "desc": "Use this command to toggle your PC platform role.",
+    "desc": "Use this command to toggle your pc platform role.",
     "perms": [
       "USER"
     ],
@@ -563,7 +563,7 @@
   "ps4": {
     "cmd": "ps4",
     "format": "${PREFIX}ps4",
-    "desc": "Use this command to toggle your PS4 platform role.",
+    "desc": "Use this command to toggle your ps4 platform role.",
     "perms": [
       "USER"
     ],
@@ -805,6 +805,10 @@
             "desc": "Role assigned to all members"
           },
           {
+            "value": "init",
+            "desc": "Role assigned on member join"
+          },
+          {
             "value": "weeklytoprank",
             "desc": "Role given to weekly top ranking member"
           },
@@ -940,7 +944,7 @@
   "xbox": {
     "cmd": "xbox",
     "format": "${PREFIX}xbox",
-    "desc": "Use this command to toggle your XBox One platform role.",
+    "desc": "Use this command to toggle your xbox platform role.",
     "perms": [
       "USER"
     ],
@@ -1583,10 +1587,43 @@
       }
     ]
   },
+  "guess": {
+    "cmd": "avatar",
+    "synonyms": [
+      "pfp"
+    ],
+    "format": "${PREFIX}guess <answer>",
+    "desc": "Use this command to guess at the answer for Harvey's scavenger hunt.",
+    "perms": [
+      "USER"
+    ],
+    "canDM": true,
+    "canEdit": false,
+    "debug": false,
+    "parameters": [
+      {
+        "param": "<answer>",
+        "values": [
+          {
+            "value": "String",
+            "desc": "Guess to the answer of Harvey's riddle."
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "command": "!guess parsnip",
+        "desc": "This will check if the guess of parsnip is correct."
+      }
+    ]
+  },
   "activate": {
     "cmd": "activate",
     "synonyms": [
-      "enable"
+      "enable",
+      "unsuspend",
+      "resume"
     ],
     "perms": [
       "USER"
@@ -1873,6 +1910,48 @@
       }
     ]
   },
+  "install": {
+    "cmd": "install",
+    "synonyms": [],
+    "perms": [
+      "USER"
+    ],
+    "moduleId": "economy",
+    "canEdit": false,
+    "canDM": true,
+    "format": "${PREFIX}install <process type> [count]",
+    "desc": "Install a process type to increase the total number of that process you can use.",
+    "parameters": [
+      {
+        "param": "<process type>",
+        "values": [
+          {
+            "value": "String",
+            "desc": "Name of process"
+          }
+        ]
+      },
+      {
+        "param": "[count]",
+        "values": [
+          {
+            "value": "Number",
+            "desc": "Number of processes to install"
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "command": "!install BYPASS",
+        "desc": "This will install a BYPASS process as long as there are enough free slots available."
+      },
+      {
+        "command": "!install HIJACKER 2",
+        "desc": "This will install two HIJACKER processes as long as there are enough free slots available."
+      }
+    ]
+  },
   "invest": {
     "cmd": "invest",
     "synonyms": [
@@ -1937,9 +2016,9 @@
   "levelup": {
     "cmd": "levelup",
     "synonyms": [
-      "upgrade",
       "lvlup",
-      "level"
+      "level",
+      "lvl"
     ],
     "perms": [
       "USER"
@@ -1993,6 +2072,18 @@
         "desc": "This will start a levelup Firewall process."
       }
     ]
+  },
+  "lockdown": {
+    "perms": [
+      "USER"
+    ],
+    "moduleId": "economy",
+    "canEdit": false,
+    "canDM": false,
+    "format": "${PREFIX}lockdown",
+    "desc": "Locks down your account for a limited time.",
+    "parameters": [],
+    "examples": []
   },
   "log": {
     "perms": [
@@ -2117,7 +2208,7 @@
     ],
     "examples": [
       {
-        "commands": "!respecc",
+        "command": "!respecc",
         "desc": "This will set all stats to 1 and allow instant levelups until all remaining stat levels are spend."
       }
     ]
@@ -2314,7 +2405,8 @@
       "menu",
       "myaccount",
       "sloogs",
-      "sluggies"
+      "sluggies",
+      "slorgs"
     ],
     "perms": [
       "USER"
@@ -2427,6 +2519,48 @@
       }
     ]
   },
+  "uninstall": {
+    "cmd": "uninstall",
+    "synonyms": [],
+    "perms": [
+      "USER"
+    ],
+    "moduleId": "economy",
+    "canEdit": false,
+    "canDM": true,
+    "format": "${PREFIX}uninstall <process type> [count]",
+    "desc": "Uninstall a process type to derease the total number of that process you can use and free up process slots for other processes.",
+    "parameters": [
+      {
+        "param": "<process type>",
+        "values": [
+          {
+            "value": "String",
+            "desc": "Name of process to uninstall"
+          }
+        ]
+      },
+      {
+        "param": "[count]",
+        "values": [
+          {
+            "value": "Number",
+            "desc": "Number of processes to uninstall"
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "command": "!uninstall BYPASS",
+        "desc": "This will uninstall a BYPASS process as long as doing so can still support the total number of active BYPASS processes."
+      },
+      {
+        "command": "!uninstall HIJACKER 2",
+        "desc": "This will uninstall two HIJACKER processes as long as doing so can still support the total number of active HIJACKER processes."
+      }
+    ]
+  },
   "vault": {
     "cmd": "vault",
     "synonyms": [
@@ -2435,7 +2569,7 @@
     "perms": [],
     "moduleId": "economy",
     "canEdit": false,
-    "format": "${PRERIX}vault [amount]",
+    "format": "${PREFIX}vault [amount]",
     "desc": "Used to move Slugs from your current account into your vault.",
     "parameters": [
       {
@@ -2503,7 +2637,7 @@
       "USER"
     ],
     "debug": true,
-    "format": "${PREFIX}elo [member]",
+    "format": "${PREFIX}elo [member] [ladder name]",
     "desc": "Use this command to view your ladder stats or the stats of another member.",
     "examples": [
       {
@@ -2565,20 +2699,96 @@
       "BOT_ADMIN"
     ],
     "debug": true,
-    "format": "${PREFIX}ladder reset | setchannel | (set <wins | points> <member> <amount>)",
+    "format": "${PREFIX}ladder (create|remove <ladder title>) | (<ladder> reset) | (<ladder> set <wins|points> <member> <amount>) | (<ladder> rename <new name>)",
     "desc": "Use this command reset the ladder or set the leaderboard channel.",
+    "parameters": [
+      {
+        "param": "<ladder>",
+        "values": [
+          {
+            "value": "String",
+            "desc": "Name of a specific ladder in the server."
+          }
+        ]
+      },
+      {
+        "param": "<ladder title>",
+        "values": [
+          {
+            "value": "String",
+            "desc": "Name of new ladder."
+          }
+        ]
+      },
+      {
+        "param": "<wins|points>",
+        "values": [
+          {
+            "value": "wins",
+            "desc": "Specify that the member's win count should be modified."
+          },
+          {
+            "value": "points",
+            "desc": "Specify that the member's points should be modified."
+          }
+        ]
+      },
+      {
+        "param": "<member>",
+        "values": [
+          {
+            "value": "Username",
+            "desc": "Discord username of the member."
+          },
+          {
+            "value": "discord ID",
+            "desc": "discord ID of the member."
+          },
+          {
+            "value": "Mention member",
+            "desc": "discord member mention of member."
+          }
+        ]
+      },
+      {
+        "param": "<amount>",
+        "values": [
+          {
+            "value": "Number",
+            "desc": "Amount to set member's win count or points to."
+          }
+        ]
+      },
+      {
+        "param": "<new name>",
+        "values": [
+          {
+            "value": "String",
+            "desc": "New title for an existing ladder."
+          }
+        ]
+      }
+    ],
     "examples": [
       {
-        "command": "!ladder reset",
-        "desc": "This will reset all members points in the ladder."
+        "command": "!ladder create DS1",
+        "desc": "This will create a DS1 ladder and use the current channel for the leaderboard."
       },
       {
-        "command": "!ladder setchannel",
-        "desc": "This will set the ladder leaderboard channel to the one this command was used in."
+        "command": "!ladder remove DS1",
+        "desc": "This will remove the DS1 ladder."
       },
       {
-        "command": "!ladder set points Oryx 20",
-        "desc": "This will set Oryx's points to 20."
+        "command": "!ladder DS3 reset",
+        "desc": "This will reset all members points in the DS3 ladder."
+      },
+      {
+        "command": "!ladder DS3 set points Oryx 20",
+        "desc": "This will set Oryx's points to 20 in the DS3 ladder."
+      },
+      {
+        "command": "!ladder DS3 rename Dark Souls 3",
+        "desc": "This will rename the existing ladder 'DS3' to 'Dark Souls 3'"
       }
     ]
   },
