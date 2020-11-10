@@ -13,8 +13,8 @@ type: 'docs_discord'
 
 {% for module in site.data.d_commands %}
 
-	
-	{% for command in module.commands %}
+	<p>{{module.first}}</p>
+	{% for command in module %}
 		{% assign commandData = command.last %}
 		<h2 id="{{command.first}}"><code>{{command.first}}</code></h2>
 		<pre class="highlight"><code>!{{commandData.format | escape | slice: 9, 999}}</code></pre>
