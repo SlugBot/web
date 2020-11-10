@@ -12,9 +12,9 @@ type: 'docs_discord'
 
 
 {% for module in site.data.d_commands %}
-	<h2 id="{{module.first}}"><code>{{module.first}}</code></h2>
+	<p>{{module.module | markdownify}}<p>
 	
-	{% for command in module %}
+	{% for command in module.commands %}
 		{% assign commandData = command.last %}
 		<h2 id="{{command.first}}"><code>{{command.first}}</code></h2>
 		<pre class="highlight"><code>!{{commandData.format | escape | slice: 9, 999}}</code></pre>
