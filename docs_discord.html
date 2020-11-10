@@ -16,8 +16,8 @@ type: 'docs_discord'
 	<p>{{module.first}}</p>
 	{% for command in module %}
 		{% assign commandData = command.last %}
-		<h2 id="{{command.cmd}}"><code>{{command.cmd}}</code></h2>
-		<pre class="highlight"><code>!{{commandData.format | escape | slice: 9, 999}}</code></pre>
+		<h2 id="{{command.first}}"><code>{{command.first}}</code></h2>
+		<pre class="highlight"><code>!{{command.format | escape | slice: 9, 999}}</code></pre>
 			<!-- this is a fairly crude workaround. A better alternative would be to use "repalce: ${PREFIX}, "!" ", but that doesn't work because of the curly braces, which Liquid syntax uses for its own markup.-->
 		<p>{{commandData.desc | markdownify}}<p>
 
