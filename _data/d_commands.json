@@ -2296,12 +2296,25 @@
     "moduleId": "economy",
     "canEdit": false,
     "canDM": false,
-    "format": "!slots <bet amount>",
+    "format": "${PREFIX}slots <bet amount>",
     "desc": "Play slots.",
-    "examples": {
-      "command": "!slots 10,000",
-      "desc": "This will put a 10,000sc bet on the slots."
-    }
+    "parameters": [
+      {
+        "param": "<bet amount>",
+        "values": [
+          {
+            "value": "Number",
+            "desc": "Amount to bet on slots."
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "command": "!slots 10,000",
+        "desc": "This will put a 10,000sc bet on the slots."
+      }
+    ]
   },
   "slugs": {
     "cmd": "slugs",

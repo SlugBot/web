@@ -5,7 +5,7 @@ type: 'setup_guide'
 ---
 
 # Discord setup
-The following page will provide an easy-to-follow overview on how to install and run SlugBot in your Discord server or Twitch chat, and how to get the most out of it.
+The following page will provide an easy-to-follow overview on how to install and run SlugBot in your Discord server or Twitch chat, and how to get the most out of it. Any underlined command can be clicked to view extra information on it. e.g. <span class="command-link" data-command="help"/>
 
 *****************************
 

@@ -5,6 +5,16 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 10th November 2020
+
+### Updates
+  - Updated command documentation page on website to include module names.
+
+### Bug Fixes
+  - Fixed Crow Quills weapon type in database.
+
+*****************************
+
 ## 4th November 2020
 ### New Additions
   - Settable `init` role that will be given to new members **once**. Will not be reapplied if removed like the `global` role.
