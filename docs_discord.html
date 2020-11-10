@@ -12,7 +12,7 @@ type: 'docs_discord'
 
 
 {% for module in site.data.d_commands %}
-	<h4>Parameters</h4>
+	<p>{{module.module}}<p>
 	
 	{% for command in module.commands %}
 		{% assign commandData = command.last %}
