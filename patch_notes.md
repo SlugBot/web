@@ -5,8 +5,17 @@ title: Patch Notes
 
 # PATCH NOTES
 
-## 10th November 2020
+## 11th November 2020
+### Updates
+  - A DM notification will now be sent to winning ladder betters.
 
+### Bug Fixes
+  - Fixed hijacked PROFILE_MODs not properly disabling the border for the original owner.
+  - Fixed ability to have multiple STEALs running on one user.
+
+*****************************
+
+## 10th November 2020
 ### Updates
   - Updated command documentation page on website to include module names.
 
