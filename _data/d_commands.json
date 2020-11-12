@@ -764,6 +764,55 @@
       }
     ]
   },
+  "setscore": {
+    "cmd": "setscore",
+    "synonyms": [
+      "setxp"
+    ],
+    "moduleId": "setup",
+    "format": "${PREFIX}setscore [member] <score amount>",
+    "desc": "Use this command to set a member's score to a specified amount.",
+    "perms": [
+      "BOT_ADMIN"
+    ],
+    "canDM": false,
+    "canEdit": false,
+    "debug": false,
+    "parameters": [
+      {
+        "param": "<member>",
+        "values": [
+          {
+            "value": "Username",
+            "desc": "Discord username of the user"
+          },
+          {
+            "value": "discord ID",
+            "desc": "discord ID of the user"
+          },
+          {
+            "value": "Mention member",
+            "desc": "discord member mention"
+          }
+        ]
+      },
+      {
+        "param": "<score amount>",
+        "values": [
+          {
+            "value": "Number",
+            "desc": "Amount to set member's score to."
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "command": "!setscore Gutty 10,000",
+        "desc": "This will set Gutty's score to 10,000 xp."
+      }
+    ]
+  },
   "setwelcomemessage": {
     "cmd": "setwelcomemessage",
     "synonyms": [
@@ -3099,7 +3148,7 @@
   "poll": {
     "cmd": "poll",
     "synonyms": [],
-    "moduleId": "polls",
+    "moduleId": "",
     "perms": [
       "USER"
     ],
@@ -3517,6 +3566,53 @@
       {
         "command": "!roleatlevel add Sleg 5 10",
         "desc": "This will give the role 'Sleg' to any member who reaches level 5 but will be removed again once they reach level 10."
+      }
+    ]
+  },
+  "setlevel": {
+    "cmd": "setlevel",
+    "synonyms": [],
+    "moduleId": "setup",
+    "format": "${PREFIX}setlevel [member] <level>",
+    "desc": "Use this command to set a member's level to a specified value.",
+    "perms": [
+      "BOT_ADMIN"
+    ],
+    "canDM": false,
+    "canEdit": false,
+    "debug": false,
+    "parameters": [
+      {
+        "param": "<member>",
+        "values": [
+          {
+            "value": "Username",
+            "desc": "Discord username of the user"
+          },
+          {
+            "value": "discord ID",
+            "desc": "discord ID of the user"
+          },
+          {
+            "value": "Mention member",
+            "desc": "discord member mention"
+          }
+        ]
+      },
+      {
+        "param": "<level>",
+        "values": [
+          {
+            "value": "Number",
+            "desc": "Level to set member to."
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "command": "!setlevel sophs 10",
+        "desc": "This will set sophs' level to 10."
       }
     ]
   },

@@ -625,6 +625,61 @@
         ]
       },
       {
+        "cmd": "poll",
+        "synonyms": [],
+        "moduleId": "",
+        "perms": [
+          "USER"
+        ],
+        "debug": true,
+        "canDM": false,
+        "format": "${PREFIX}poll (end [poll msg ID]) | ([description] 1: <option 1 description> 2: <option 2 description> [...])",
+        "desc": "Use this command to start a poll with the given options. If an amount of time is given in the description, that will be used as the duration of the poll. End a poll by using the `end` argument and optionally a poll message ID.",
+        "parameters": [
+          {
+            "param": "[description]",
+            "values": [
+              {
+                "value": "String",
+                "desc": "Optional parameter to add a description to the poll message."
+              }
+            ]
+          },
+          {
+            "param": "1: <option 1 description>",
+            "values": [
+              {
+                "value": "String",
+                "desc": "A label for a voting option. The prefix number must be included."
+              }
+            ]
+          },
+          {
+            "param": "[poll msg ID]",
+            "values": [
+              {
+                "value": "Discord message ID",
+                "desc": "The message ID of a poll message."
+              }
+            ]
+          }
+        ],
+        "examples": [
+          {
+            "command": "!poll Should I stream Dark Souls 1 or Dark Souls 3 today? You have 30 mins to vote! 1: Dark Souls 1 2: Dark Souls 3",
+            "desc": "This will create a new poll with the description of \"Should I stream Dark Souls 1 or Dark Souls 3 today? You have 30 mins to vote!\", with two options, that will automatically conclude in 30 minutes."
+          },
+          {
+            "command": "!poll end",
+            "desc": "This will terminate the most recent poll started by the command user. The poll message will be edited with the final results."
+          },
+          {
+            "command": "!poll end 753674416801579040",
+            "desc": "This will attempt to terminate the poll with message ID 753674416801579040."
+          }
+        ]
+      },
+      {
         "cmd": "leaderboard",
         "format": "${PREFIX}leaderbaord [weekly]",
         "desc": "Use this command to view the top 10 ranked members in the server along with the score of adjacent ranks.",
@@ -1316,6 +1371,55 @@
         ]
       },
       {
+        "cmd": "setscore",
+        "synonyms": [
+          "setxp"
+        ],
+        "moduleId": "setup",
+        "format": "${PREFIX}setscore [member] <score amount>",
+        "desc": "Use this command to set a member's score to a specified amount.",
+        "perms": [
+          "BOT_ADMIN"
+        ],
+        "canDM": false,
+        "canEdit": false,
+        "debug": false,
+        "parameters": [
+          {
+            "param": "<member>",
+            "values": [
+              {
+                "value": "Username",
+                "desc": "Discord username of the user"
+              },
+              {
+                "value": "discord ID",
+                "desc": "discord ID of the user"
+              },
+              {
+                "value": "Mention member",
+                "desc": "discord member mention"
+              }
+            ]
+          },
+          {
+            "param": "<score amount>",
+            "values": [
+              {
+                "value": "Number",
+                "desc": "Amount to set member's score to."
+              }
+            ]
+          }
+        ],
+        "examples": [
+          {
+            "command": "!setscore Gutty 10,000",
+            "desc": "This will set Gutty's score to 10,000 xp."
+          }
+        ]
+      },
+      {
         "cmd": "setwelcomemessage",
         "synonyms": [
           "setwelcomemsg",
@@ -1354,6 +1458,53 @@
           {
             "command": "!setwelcomemessage reset",
             "desc": "This will reset the welcome message and not send a welcome message when a member joins."
+          }
+        ]
+      },
+      {
+        "cmd": "setlevel",
+        "synonyms": [],
+        "moduleId": "setup",
+        "format": "${PREFIX}setlevel [member] <level>",
+        "desc": "Use this command to set a member's level to a specified value.",
+        "perms": [
+          "BOT_ADMIN"
+        ],
+        "canDM": false,
+        "canEdit": false,
+        "debug": false,
+        "parameters": [
+          {
+            "param": "<member>",
+            "values": [
+              {
+                "value": "Username",
+                "desc": "Discord username of the user"
+              },
+              {
+                "value": "discord ID",
+                "desc": "discord ID of the user"
+              },
+              {
+                "value": "Mention member",
+                "desc": "discord member mention"
+              }
+            ]
+          },
+          {
+            "param": "<level>",
+            "values": [
+              {
+                "value": "Number",
+                "desc": "Level to set member to."
+              }
+            ]
+          }
+        ],
+        "examples": [
+          {
+            "command": "!setlevel sophs 10",
+            "desc": "This will set sophs' level to 10."
           }
         ]
       }
@@ -3496,66 +3647,6 @@
           {
             "command": "!warnlog Alex_",
             "desc": "This will display all past warnings given to Alex_."
-          }
-        ]
-      }
-    ]
-  },
-  "polls": {
-    "module": "polls",
-    "commands": [
-      {
-        "cmd": "poll",
-        "synonyms": [],
-        "moduleId": "polls",
-        "perms": [
-          "USER"
-        ],
-        "debug": true,
-        "canDM": false,
-        "format": "${PREFIX}poll (end [poll msg ID]) | ([description] 1: <option 1 description> 2: <option 2 description> [...])",
-        "desc": "Use this command to start a poll with the given options. If an amount of time is given in the description, that will be used as the duration of the poll. End a poll by using the `end` argument and optionally a poll message ID.",
-        "parameters": [
-          {
-            "param": "[description]",
-            "values": [
-              {
-                "value": "String",
-                "desc": "Optional parameter to add a description to the poll message."
-              }
-            ]
-          },
-          {
-            "param": "1: <option 1 description>",
-            "values": [
-              {
-                "value": "String",
-                "desc": "A label for a voting option. The prefix number must be included."
-              }
-            ]
-          },
-          {
-            "param": "[poll msg ID]",
-            "values": [
-              {
-                "value": "Discord message ID",
-                "desc": "The message ID of a poll message."
-              }
-            ]
-          }
-        ],
-        "examples": [
-          {
-            "command": "!poll Should I stream Dark Souls 1 or Dark Souls 3 today? You have 30 mins to vote! 1: Dark Souls 1 2: Dark Souls 3",
-            "desc": "This will create a new poll with the description of \"Should I stream Dark Souls 1 or Dark Souls 3 today? You have 30 mins to vote!\", with two options, that will automatically conclude in 30 minutes."
-          },
-          {
-            "command": "!poll end",
-            "desc": "This will terminate the most recent poll started by the command user. The poll message will be edited with the final results."
-          },
-          {
-            "command": "!poll end 753674416801579040",
-            "desc": "This will attempt to terminate the poll with message ID 753674416801579040."
           }
         ]
       }
