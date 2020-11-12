@@ -4,6 +4,11 @@ title: Patch Notes
 ---
 
 # PATCH NOTES
+## 12th November 2020
+### New Additions
+  - Added `!setscore` and `!setlevel` commands for admins to set member's activity score and level values.
+
+*****************************
 
 ## 11th November 2020
 ### Updates
