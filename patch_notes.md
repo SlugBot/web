@@ -8,6 +8,9 @@ title: Patch Notes
 ### New Additions
   - Added `!setscore` and `!setlevel` commands for admins to set member's activity score and level values.
 
+### Bug Fix
+  - Fixed error causing `!invest` command to fail.
+
 *****************************
 
 ## 11th November 2020
