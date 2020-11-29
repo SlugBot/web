@@ -997,7 +997,7 @@
           "BOT_ADMIN"
         ],
         "debug": true,
-        "format": "${PREFIX}rolereact create | (<msg ID> add <reaction> <role>) | (<msg ID> remove [reaction]) | (<msg ID> desc <description>)",
+        "format": "${PREFIX}rolereact create | (<msg ID> add <reaction> <role>) | (<msg ID> remove [reaction]) | (<msg ID> desc <description>) | (<msg ID> require <role>)",
         "desc": "Use this command to create a RoleReact message - allowing users to assign roles to themselves using the reactions on the message.",
         "parameters": [
           {
@@ -1022,6 +1022,10 @@
               {
                 "value": "color",
                 "desc": "specify to update the embed color of the RoleReact message"
+              },
+              {
+                "value": "require",
+                "desc": "specify to that a react role requires a role to use the rolereact"
               }
             ]
           },
@@ -2371,6 +2375,27 @@
         ]
       },
       {
+        "cmd": "hex",
+        "synonyms": [
+          "hexmine"
+        ],
+        "perms": [
+          "USER"
+        ],
+        "moduleId": "economy",
+        "canEdit": false,
+        "canDM": true,
+        "format": "${PREFIX}hex",
+        "desc": " ",
+        "parameters": [],
+        "examples": [
+          {
+            "command": "!hex mine",
+            "desc": "."
+          }
+        ]
+      },
+      {
         "cmd": "higherlower",
         "synonyms": [
           "hl",
@@ -2603,6 +2628,44 @@
         "canEdit": true,
         "format": "!log [member]",
         "desc": "View account logs of your account or an account of a user you have a TRACKER on."
+      },
+      {
+        "cmd": "pipe",
+        "synonyms": [],
+        "perms": [
+          "USER"
+        ],
+        "moduleId": "economy",
+        "canEdit": false,
+        "canDM": true,
+        "format": "${PREFIX}pipe <to user> <cost per hex>",
+        "desc": "Uses this command to offer a hex pipe to a user. A selection menu will be shown allowing you to select which of your available hex you would like to pipe.",
+        "parameters": [
+          {
+            "param": "<to user>",
+            "values": [
+              {
+                "value": "String",
+                "desc": "Process ID of auctioned process"
+              }
+            ]
+          },
+          {
+            "param": "<cost per hex>",
+            "values": [
+              {
+                "value": "Number",
+                "desc": "Amount you would like to receive per hex piped."
+              }
+            ]
+          }
+        ],
+        "examples": [
+          {
+            "command": "!pipe Amilia 1,000",
+            "desc": "."
+          }
+        ]
       },
       {
         "cmd": "plant",
@@ -3077,6 +3140,35 @@
           {
             "command": "!uninstall HIJACKER 2",
             "desc": "This will uninstall two HIJACKER processes as long as doing so can still support the total number of active HIJACKER processes."
+          }
+        ]
+      },
+      {
+        "cmd": "upgrade",
+        "synonyms": [],
+        "perms": [
+          "USER"
+        ],
+        "moduleId": "economy",
+        "canEdit": false,
+        "canDM": true,
+        "format": "${PREFIX}upgrade <process type>",
+        "desc": "Upgrade a process type to increase its efficacy. Upgrading a process type also increases the number of slots required to install.",
+        "parameters": [
+          {
+            "param": "<process type>",
+            "values": [
+              {
+                "value": "String",
+                "desc": "Name of process"
+              }
+            ]
+          }
+        ],
+        "examples": [
+          {
+            "command": "!upgrade BYPASS",
+            "desc": "This will upgrade BYPASS processes."
           }
         ]
       },

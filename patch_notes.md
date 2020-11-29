@@ -6,6 +6,9 @@ title: Patch Notes
 # PATCH NOTES
 
 ## 29th November 2020
+### Updates
+  - RoleReacts can now have a set 'required' role. Only members with that role will be allowed to use the RoleReact. The required role will be displayed in the RoleReact.
+
 ### Bug Fixes
   - Improved dynamic caching to hopefully fix reaction events not emitting on bot restart.
 
