@@ -4,6 +4,13 @@ title: Patch Notes
 ---
 
 # PATCH NOTES
+
+## 29th November 2020
+### Bug Fixes
+  - Improved dynamic caching to hopefully fix reaction events not emitting on bot restart.
+
+*****************************
+
 ## 12th November 2020
 ### New Additions
   - Added `!setscore` and `!setlevel` commands for admins to set member's activity score and level values.
