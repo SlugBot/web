@@ -5,6 +5,12 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 4th December 2020
+### Bug Fixes
+  - Fixed order of permission checks.
+
+*****************************
+
 ## 29th November 2020
 ### Updates
   - RoleReacts can now have a set 'required' role. Only members with that role will be allowed to use the RoleReact. The required role will be displayed in the RoleReact.
