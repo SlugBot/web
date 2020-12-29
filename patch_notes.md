@@ -5,6 +5,12 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 29th December 2020
+### Bug Fixes
+  - Fixed SlugBot disconnecting from twitch then not properly re-authenticating and reconnecting.
+
+*****************************
+
 ## 4th December 2020
 ### Bug Fixes
   - Fixed order of permission checks.
