@@ -5,6 +5,10 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 5th January 2021
+### Bug Fixes
+  - fixed muted members not being muted again after leaving and rejoining.
+
 ## 29th December 2020
 ### Bug Fixes
   - Fixed SlugBot disconnecting from twitch then not properly re-authenticating and reconnecting.
