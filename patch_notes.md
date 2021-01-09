@@ -5,6 +5,13 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 9th January 2021
+### Updates
+  - Added ${math: \<expression\>} flag replacer.
+  - Improved flag replacer nesting.
+
+*****************************
+
 ## 5th January 2021
 ### Bug Fixes
   - fixed muted members not being muted again after leaving and rejoining.
