@@ -10,6 +10,7 @@ If you'd like to support SlugBot development you can buy The Slug a ~~beer~~ cof
 
 [![ko-fi](images/donate_sm.png)](https://ko-fi.com/G2G0NP0R)
 [![patreon](images/become_a_patron_button.png)](https://www.patreon.com/slugbot)
+[![librerapay](images/donate_librerapay.png)](https://liberapay.com/Narcolept/)
 
 Join the SlugBot discord to get a direct line of communication with the dev for suggestions and bug reports. 
 Click the widget below to join.
