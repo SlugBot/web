@@ -5,6 +5,12 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 25th January 2021
+### Updates
+  - !remindme now allows for decimal time values.
+
+*****************************
+
 ## 9th January 2021
 ### Updates
   - Added ${math: \<expression\>} flag replacer.
