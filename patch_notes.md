@@ -5,6 +5,12 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 29th January 2021
+### New Additions
+  - Added `!blackjack <bet>`.
+
+*****************************
+
 ## 25th January 2021
 ### Updates
   - !remindme now allows for decimal time values.
