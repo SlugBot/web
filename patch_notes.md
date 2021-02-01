@@ -5,9 +5,20 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 1st February 2021
+### Updates
+  - Added Bloodborne item descriptions to `!item` command.
+  - Improved `!item` command search algorithm to better find matches in item descriptions.
+
+### Bug Fixes
+  - Fixed blackjack payout multiplier.
+
+*****************************
+
 ## 29th January 2021
 ### New Additions
-  - Added `!blackjack <bet>`.
+  - Added `!blackjack <bet>` command.
+  - Added `!teambuilder [member, [member, [...]]] <team count>` command. Will try to evenly distribute members among the stated number of teams, or if no members were stated, will allow anyone to react and be put in a random team.
 
 *****************************
 
