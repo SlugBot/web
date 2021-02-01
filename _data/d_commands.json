@@ -835,6 +835,60 @@
       }
     ]
   },
+  "teambuilder": {
+    "cmd": "teambuilder",
+    "synonyms": [
+      "tb",
+      "buildteam",
+      "buildteams"
+    ],
+    "format": "${PREFIX}teambuilder [member, [member, [...]]] <team count>",
+    "desc": "Use this command to build a specific number of random teams.",
+    "perms": [
+      "USER"
+    ],
+    "canDM": false,
+    "canEdit": false,
+    "debug": false,
+    "parameters": [
+      {
+        "param": "[member]",
+        "values": [
+          {
+            "value": "Username",
+            "desc": "Discord username of the user"
+          },
+          {
+            "value": "discord ID",
+            "desc": "discord ID of the user"
+          },
+          {
+            "value": "Mention member",
+            "desc": "discord member mention"
+          }
+        ]
+      },
+      {
+        "param": "<team count>",
+        "values": [
+          {
+            "value": "Number",
+            "desc": "number of teams to split the members into."
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "command": "!teambuilder alex, tikaro, Cog, Eve 2",
+        "desc": "This will split the four given members into two teams of two."
+      },
+      {
+        "command": "!teambuilder 4",
+        "desc": "This will split any member who reacts to the message into 4 teams, as evenly as possible."
+      }
+    ]
+  },
   "userinfo": {
     "cmd": "userinfo",
     "perms": [
@@ -1147,11 +1201,11 @@
     "debug": false,
     "canDM": true,
     "canEdit": true,
-    "format": "${PREFIX}item [ds1|ds2|ds3] [name|description] <search words>",
-    "desc": "Used to search items in souls games and return item descriptions.",
+    "format": "${PREFIX}item [ds1|ds2|ds3|bb] <search words>",
+    "desc": "Used to search items in soulsborne games and return item descriptions.",
     "parameters": [
       {
-        "param": "[ds1|ds2|ds3]",
+        "param": "[ds1|ds2|ds3|bb]",
         "values": [
           {
             "value": "ds1",
@@ -1164,19 +1218,10 @@
           {
             "value": "ds3",
             "desc": "Limit the item search to only Dark Souls 3."
-          }
-        ]
-      },
-      {
-        "param": "[name|description]",
-        "values": [
-          {
-            "value": "name",
-            "desc": "Limit the item search to only matches in the item name."
           },
           {
-            "value": "description",
-            "desc": "Limit the item search to only matches in the item description."
+            "value": "bb",
+            "desc": "Limit the item search to only Bloodborne."
           }
         ]
       },
@@ -1196,8 +1241,8 @@
         "desc": "This will search for an item with 'gael's greatsword' in the name or description across all Dark Souls games."
       },
       {
-        "command": "!item ds1 name rapier",
-        "desc": "This will search for an item in Dark Souls 1 with 'rapier' in the name."
+        "command": "!item ds1 rapier",
+        "desc": "This will search for an item in Dark Souls 1 with 'rapier' in the name or description."
       }
     ]
   },
@@ -1598,6 +1643,24 @@
       }
     ]
   },
+  "blackjack": {
+    "cmd": "blackjack",
+    "synonyms": [
+      "bj"
+    ],
+    "perms": [
+      "USER"
+    ],
+    "moduleId": "economy",
+    "canEdit": false,
+    "canDM": false,
+    "format": "!blackjack <bet amount>",
+    "desc": "Play blackjack.",
+    "examples": {
+      "command": "!blackjack 10,000",
+      "desc": "This will start a blackjack game with a starting bet of 10,000sc."
+    }
+  },
   "bypass": {
     "perms": [
       "USER"
@@ -1719,6 +1782,35 @@
       }
     ]
   },
+  "downgrade": {
+    "cmd": "downgrade",
+    "synonyms": [],
+    "perms": [
+      "USER"
+    ],
+    "moduleId": "economy",
+    "canEdit": false,
+    "canDM": true,
+    "format": "${PREFIX}downgrade <process type>",
+    "desc": "Downgrade a process type to decrease it's efficacy but reducing the number of slots required to install.",
+    "parameters": [
+      {
+        "param": "<process type>",
+        "values": [
+          {
+            "value": "String",
+            "desc": "Name of process"
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "command": "!downgrade BYPASS",
+        "desc": "This will downgrade BYPASS processes."
+      }
+    ]
+  },
   "giveslugs": {
     "cmd": "giveslugs",
     "synonyms": [
@@ -1767,27 +1859,6 @@
       {
         "command": "!giveslugs tikaro 10,000",
         "desc": "This will transfer 10,000 slugs to user Tikaro."
-      }
-    ]
-  },
-  "hex": {
-    "cmd": "hex",
-    "synonyms": [
-      "hexmine"
-    ],
-    "perms": [
-      "USER"
-    ],
-    "moduleId": "economy",
-    "canEdit": false,
-    "canDM": true,
-    "format": "${PREFIX}hex",
-    "desc": " ",
-    "parameters": [],
-    "examples": [
-      {
-        "command": "!hex mine",
-        "desc": "."
       }
     ]
   },
@@ -2025,44 +2096,6 @@
     "format": "!log [member]",
     "desc": "View account logs of your account or an account of a user you have a TRACKER on."
   },
-  "pipe": {
-    "cmd": "pipe",
-    "synonyms": [],
-    "perms": [
-      "USER"
-    ],
-    "moduleId": "economy",
-    "canEdit": false,
-    "canDM": true,
-    "format": "${PREFIX}pipe <to user> <cost per hex>",
-    "desc": "Uses this command to offer a hex pipe to a user. A selection menu will be shown allowing you to select which of your available hex you would like to pipe.",
-    "parameters": [
-      {
-        "param": "<to user>",
-        "values": [
-          {
-            "value": "String",
-            "desc": "Process ID of auctioned process"
-          }
-        ]
-      },
-      {
-        "param": "<cost per hex>",
-        "values": [
-          {
-            "value": "Number",
-            "desc": "Amount you would like to receive per hex piped."
-          }
-        ]
-      }
-    ],
-    "examples": [
-      {
-        "command": "!pipe Amilia 1,000",
-        "desc": "."
-      }
-    ]
-  },
   "plant": {
     "cmd": "plant",
     "perms": [
@@ -2086,8 +2119,8 @@
             "desc": "Specifies planting LEECH process"
           },
           {
-            "value": "bypass_virus",
-            "desc": "Specifies planting BYPASS_VIRUS process"
+            "value": "cloner",
+            "desc": "Specifies planting CLONER process"
           },
           {
             "value": "honeypot",
@@ -2549,7 +2582,7 @@
     "canEdit": false,
     "canDM": true,
     "format": "${PREFIX}upgrade <process type>",
-    "desc": "Upgrade a process type to increase its efficacy. Upgrading a process type also increases the number of slots required to install.",
+    "desc": "Upgrade a process type to increase it's efficacy. Upgrading a process type also increases the number of slots required to install.",
     "parameters": [
       {
         "param": "<process type>",
@@ -3236,6 +3269,29 @@
       {
         "command": "!poll end 753674416801579040",
         "desc": "This will attempt to terminate the poll with message ID 753674416801579040."
+      }
+    ]
+  },
+  "quote": {
+    "cmd": "quote",
+    "format": "${PREFIX}quote [list]",
+    "desc": "Use this command to pull a random quote from the streamer's list of quotes. add quotes to the list using [!addquote](#addquote).\n\nIncluding the 'list' parameter will display all quotes with their corresponding quote number. This can only be done by moderators.",
+    "perms": [
+      "USER"
+    ],
+    "moduleId": "quotes",
+    "canDM": false,
+    "canEdit": false,
+    "debug": false,
+    "parameters": [
+      {
+        "param": "[list]",
+        "values": [
+          {
+            "value": "list",
+            "desc": "Optional parameter used by moderators to display a list of all quotes with their quote numbers."
+          }
+        ]
       }
     ]
   },
