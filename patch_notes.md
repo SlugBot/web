@@ -5,6 +5,12 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 15th February 2021
+### Bug Fixes
+  - Fixed improper parsing of flag replacers when name contained parentheses. 
+
+*****************************
+
 ## 1st February 2021
 ### Updates
   - Added Bloodborne item descriptions to `!item` command.
