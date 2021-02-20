@@ -2458,42 +2458,10 @@
       }
     ]
   },
-  "suspend": {
-    "cmd": "suspend",
+  "steal": {
+    "cmd": "steal",
     "synonyms": [
-      "disable",
-      "deactivate"
-    ],
-    "perms": [
-      "USER"
-    ],
-    "moduleId": "economy",
-    "canEdit": false,
-    "canDM": true,
-    "format": "${PREFIX}suspend <process ID>",
-    "desc": "Suspend an active process.",
-    "parameters": [
-      {
-        "param": "<process ID>",
-        "values": [
-          {
-            "value": "String",
-            "desc": "Unique ID of process"
-          }
-        ]
-      }
-    ],
-    "examples": [
-      {
-        "command": "!suspend AL3X1",
-        "desc": "This will suspend the process with ID AL3X1 if it was active."
-      }
-    ]
-  },
-  "takeslugs": {
-    "cmd": "takeslugs",
-    "synonyms": [
-      "steal",
+      "takeslugs",
       "stealslugs",
       "forcetransfer"
     ],
@@ -2527,6 +2495,38 @@
             "desc": "ID of a BYPASS process on the target"
           }
         ]
+      }
+    ]
+  },
+  "suspend": {
+    "cmd": "suspend",
+    "synonyms": [
+      "disable",
+      "deactivate"
+    ],
+    "perms": [
+      "USER"
+    ],
+    "moduleId": "economy",
+    "canEdit": false,
+    "canDM": true,
+    "format": "${PREFIX}suspend <process ID>",
+    "desc": "Suspend an active process.",
+    "parameters": [
+      {
+        "param": "<process ID>",
+        "values": [
+          {
+            "value": "String",
+            "desc": "Unique ID of process"
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "command": "!suspend AL3X1",
+        "desc": "This will suspend the process with ID AL3X1 if it was active."
       }
     ]
   },
