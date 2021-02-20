@@ -23,6 +23,8 @@ title: Patch Notes
   - Various upgrade levels for processes. Use `!upgrade <process type>` to get a description of what each upgrade level does.
   - Deleting `!log` command message will now also delete the log menu.
   - Adding a ❌ reaction to the process message of a process you own will now remove the process.
+  - Cleaning processes takes longer if the process is not planted on you.
+  - Cleaning processes takes a shorter amount of time if you know it is planted on you.
 
 ### Bug Fixes
   - Fixed bug with Interceptor stat_boosts not working.
