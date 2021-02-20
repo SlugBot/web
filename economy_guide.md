@@ -22,6 +22,7 @@ If you are feeling generous, you can give SC to others using the <span class="co
 
 # Stats
 Your account's strengths and weaknesses are all dependant on your stats and where you specialise. Use the <span class="command-link" data-command="levelup"/> command to increase your stats at the cost of time and SC. Every level-up increases your POWER Lvl by 1. You can reallocate your stats once a week using the <span class="command-link" data-command="respecc"/> command.
+Stat level also governs how many slots you have to install processes.
 
 ## Firewall
 Firewall is the first line of defense when it comes to protecting your account. In most cases, the Firewall must be BYPASSed before any process can be planted on an account.
@@ -30,7 +31,7 @@ Firewall is the first line of defense when it comes to protecting your account. 
 To bypass an accounts Firewall, a BYPASS process must be completed. The time it takes to bypass a Firewall is dependant on the attacker's Bypasser level vs the target's Firewall level.
 
 ## Encryption
-Encryption keeps your Current balance secure. For a process to take SC directly out of your account, your encryption will have to be cracked first.
+Encryption keeps your Current balance secure. For a process to take SC directly out of your account, your encryption will have to be cracked first. A higher Encryption stat will also increase the duration you can put your account in <span class="command-link" data-command="lockdown"/> for - protecting you from <span class="command-link" data-command="steal"/> attempts.
 
 ## Cracker
 Cracking encryption takes time. The duration is governed by the attacker's Cracker level vs the target's Encryption level.
@@ -39,7 +40,7 @@ Cracking encryption takes time. The duration is governed by the attacker's Crack
 Scanning the network for other user's processes is a major part of keeping your account secure and successfully attacking another user's account. Your Scanner level governs your scan durations along with various other detection based actions.
 
 ## Interceptor
-Your Interceptor level governs the duration and efficacy of processes that pertain to intercepting transactions between accounts. A higher Interceptor level will, for example, make SKIMMERs plant faster and increase the number of SKIMMERs you can plant.
+Your Interceptor level governs the duration and efficacy of processes that pertain to intercepting transactions between accounts. A higher Interceptor level will, for example, make SKIMMERs plant faster.
 
 ## Wire
 Any activity that involves transfering SC between accounts is governed by the Wire stat.
@@ -54,80 +55,33 @@ One of the best ways to make SC is to steal, either directly or through the effe
 Once you've **BYPASS**ed a user's **FIREWALL** you'll have access to their account. Use `!slugs <target>` command to open their account menu and view their info. You won't be able to take anything from their bank balance just yet - Their SC reserves are still protected by their **ENCRYPTION** which will need to be **CRACK**ed - a time consuming process (<span class="command-link" data-command="crack"/>), but access to their account now lets you plant various processes on them using the <span class="command-link" data-command="plant"/> command.
 
 ## SKIMMER
-```!plant skimmer <target> <fraction to skim>```
+```!plant skimmer <target>```
 This process, once planted on a user, will skim a fraction of all income the user receives and transfers the skimmed SC to the planter instead. As the process isn't directly taking SC from an account, but instead intercepting a transaction, **CRACK**ing their encryption is not needed.
 * Offensive Stat: **INTERCEPTOR**
 * Defensive Stat: **SCANNER**
 
-| **INTERCEPTOR Lvl**  | **Upgrades**            |
-| -------------------- | ----------------------- |
-| Lvl 1                | Plant 2 max, 1 per mark |
-| Lvl 3                | Plant 3 max             |
-| Lvl 5                | Plant 3 max, 2 per mark |
-| Lvl 6                | Plant 4 max             |
-| Lvl 9                | Plant 5 max             |
-| Lvl 12               | Plant 6 max             |
-| Lvl 15               | Plant 7 max             |
-| Lvl 18               | Plant 8 max             |
-| Lvl 20               | Plant 10 max            |
-
 ## LEECH
-```!plant leech <target> <amount/hour>```
+```!plant leech <target>```
 This malware will siphon an amount of SC out of a users current account and transfer it to the planter every hour. Requires that the user's **ENCRYPTION** has been **CRACK**ed.
 * Offensive Stat: **WIRE**
 * Defensive Stat: **ENCRYPTION**
 
-| **WIRE Lvl**         | **Upgrades**            |
-| -------------------- | ----------------------- |
-| Lvl 1                | Plant 5 max, 1 per mark |
-| Lvl 2                | Plant 6 max, 2 per mark |
-| Lvl 3                | Plant 7 max             |
-| Lvl 4                | Plant 8 max             |
-| Lvl 5                | Plant 9 max, 3 per mark |
-| Lvl 6                | Plant 10 max            |
-| Lvl 7                | Plant 11 max            |
-| Lvl 8                | Plant 12 max            |
-| Lvl 9                | Plant 13 max            |
-| Lvl 10               | Plant 15 max, 4 per mark|
-
-## BYPASS_VIRUS
-```!plant bypass_virus <target>```
-When a user with this process planted on them **BYPASS**es another, the planter of this process will also gain access to that account - essentially cloning their **BYPASS** process.
+## CLONER
+```!plant CLONER <target>```
+When a user with this process planted on them **BYPASS**es another, the planter of this process will also gain access to that account - essentially cloning their **BYPASS** process. A CLONER will expire after a number of activations. Upgrading this process will increase the number of uses before expiring.
 * Offensive Stat: **BYPASSER**
 * Defensive Stat: **SCANNER**
 
-| **BYPASSER Lvl**     | **Upgrades**            |
-| -------------------- | ----------------------- |
-| Lvl 5                | Unlocked, Plant 2 max, 1 per mark |
-| Lvl 7                | Plant 3 max,            |
-| Lvl 10               | Plant 4 max             |
-| Lvl 15               | Plant 5 max             |
-
 ## HIJACKER
-```!plant hijacker <target user> <potency>```
-A planted HIJACKER will attempt to hijack processes planted by the infected user. The potency of the HIJACKER process determines the success chance of the hijack attempts as well as the likelihood of its detection by a scan.
+```!plant hijacker <target user>```
+A planted HIJACKER will attempt to automatically hijack processes planted by the infected user.
 * Offensive Stat: **INJECTOR**
 * Defensive Stat: **SCANNER**
-
-| **INJECTOR Lvl**     | **Upgrades**            |
-| -------------------- | ----------------------- |
-| Lvl 5                | Unlocked, Plant 2 max, 1 per mark |
-| Lvl 7                | Plant 3 max,            |
-| Lvl 10               | Plant 4 max             |
-| Lvl 15               | Plant 5 max             |
 
 ## HONEYPOT
-A honeypot, when planted on a user, bypass attackers attempting to bypass the user, or crack attackers attempting to crack the user. It's best to plant these on high value targets so you can gain access to the attacker's accounts.
+A honeypot, when planted on a user, bypass attackers attempting to bypass the user. It's best to plant these on high value targets so you can gain access to the attacker's accounts. Upgrading this process will allow it to trigger on cracks as well as bypasses.
 * Offensive Stat: **INJECTOR**
 * Defensive Stat: **SCANNER**
-
-| **INJECTOR Lvl**     | **Upgrades**            |
-| -------------------- | ----------------------- |
-| Lvl 1                | Plant 1 max, 1 per mark |
-| Lvl 3                | Plant 2 max,            |
-| Lvl 5                | Plant 3 max             |
-| Lvl 7                | Plant 4 max             |
-| Lvl 10               | Plant 5 max             |
 
 ## REDIRECT
 ```!plant redirect <target user> to <redirect target user>```
@@ -135,32 +89,11 @@ A redirect process will redirect a planted process on a user to the redirect tar
 * Offensive Stat: **INJECTOR**
 * Defensive Stat: **SCANNER**
 
-| **INJECTOR Lvl**     | **Upgrades**            |
-| -------------------- | ----------------------- |
-| Lvl 1                | Plant 1 max, 1 per mark |
-| Lvl 3                | Plant 2 max,            |
-| Lvl 5                | Plant 4 max             |
-| Lvl 7                | Plant 5 max             |
-| Lvl 10               | Plant 6 max             |
-| Lvl 15               | Plant 8 max             |
-
 ## TRACKER
 ```!plant tracker <target user>```
 A tracker process allows the owner to view the account activity logs of the target user as well as having a chance to automatically scan the target user's processes as they plant them. The more trackers you plant on a user, the better they will function.
 * Offensive Stat: **SCANNER**
 * Defensive Stat: **ENCRYPTION**
-
-| **SCANNER Lvl**      | **Upgrades**            |
-| -------------------- | ----------------------- |
-| Lvl 3                | Unlocked, Plant 3 max, 3 per mark |
-| Lvl 4                | Plant 4 max,            |
-| Lvl 5                | Plant 5 max             |
-| Lvl 6                | Plant 6 max             |
-| Lvl 7                | Plant 7 max             |
-| Lvl 8                | Plant 8 max             |
-| Lvl 9                | Plant 9 max             |
-| Lvl 12               | Plant 12 max            |
-| Lvl 15               | Plant 15 max            |
 
 ## CORRUPTOR
 ```!plant corruptor <target user>```
@@ -168,19 +101,16 @@ CORRUPTORs, when planted on a user, will corrupt their log viewer - making it di
 * Offensive Stat: **INJECTOR**
 * Defensive Stat: **SCANNER**
 
-| **INJECTOR Lvl**     | **Upgrades**            |
-| -------------------- | ----------------------- |
-| Lvl 3                | Unlocked, Plant 3 max, 3 per mark |
-| Lvl 4                | Plant 4 max,            |
-| Lvl 5                | Plant 5 max             |
-| Lvl 6                | Plant 6 max             |
-| Lvl 7                | Plant 7 max             |
-| Lvl 8                | Plant 8 max             |
-| Lvl 9                | Plant 9 max             |
-| Lvl 12               | Plant 12 max            |
-| Lvl 15               | Plant 15 max            |
-
 *More coming soon...*
+
+# Installing and Upgrading
+You have control over what processes and how many of each process you want to be able to use by installing and uninstalling processes. Most processes can also be upgraded at the cost of SC and increased slot size. Your account has limited process slots (which can be increased by leveling up the governing stat) so managing your process configuration will require careful consideration.
+
+Use the <span class="command-link" data-command="install"/> command to install a specific process type - allowing you to plant more of that process. It costs SC to install processes so think carefully before adjusting your configuration.
+
+Use the <span class="command-link" data-command="uninstall"/> command to uninstall a process type. A process can not be uninstalled if the resulting installed process count would not be able to support your planted processes. You will be partially refunded the install cost when uninstalling.
+
+Use the <span class="command-link" data-command="upgrade"/> command to upgrade a process type. A description of what the upgrade does will be shown before you confirm the upgrade. Upgrading a process will increase its slot size by 1. The <span class="command-link" data-command="downgrade"/> command allows you to revert a process back to a lower upgrade level - reducing its slot size and partially refunding you the upgrade cost. 
 
 # Scanning
 You are going to want to make sure your account is malware free - but malware processes aren't always easy to detect. Use the <span class="command-link" data-command="scan"/> command to start a **SCAN** process. Scanning allows you to identify ANY process that exists - not just ones planted on you - so you'll want to specify a target to scan. To scan yourself state your username after the command. You can also state specific process types and/or attackers; As you can only scan at most a number of processes equal to your SCANNER lvl, narrowing your search will increase the chance of scanning the process you want.
@@ -199,5 +129,3 @@ Another method of making SC is to invest in text channels in discord servers. Ch
 
 To terminate an investment early, use the command `!invest terminate <channel>`. You will NOT be reimbursed any SC.
 
-# Stats
-Stats determine how long it takes for processes to complete, how effective processes are, or how secure your account is. For example, a higher **FIREWALL** stat will mean it will take longer for others to **BYPASS** it and access your account. You can level up using the command <span class="command-link" data-command="levelup"/> but it will cost SC. Every stat leveled increases your POWER Lvl. Every fifth POWER Lvl increases your vault capacity. every tenth POWER Lvl increases the number of investments you can make.
