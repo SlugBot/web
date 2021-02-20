@@ -5,6 +5,30 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 20th February 2021
+### Updates
+  - Stat Rework
+    - Added configuration tab in `!slugs` menu.
+    - Processes can now be installed and uninstalled with `!install` and `!uninstall`.
+    - Processes can now be upgraded and downgraded with `!upgrade` and `!downgrade`.
+    - Stat levels now control available slots for processes to occupy.
+    - Process plant duration formula updated to have diminishing returns.
+  - Added `!lockdown` command to force a short account lockdown. duration governed by Encryption stat.
+  - BYPASS_VIRUS renamed to CLONER
+  - CLONER expires after a number of activations. Number increases with upgrade level.
+  - Only one CLONER will trigger per target if multiple are planted on them.
+  - LEECH now takes a small fraction of target's current balance every hour.
+  - REDIRECT now increases redirected process duration if the plant time on the redirect target would be longer.
+  - Upgrading VAULT process will increase vault capacity.
+  - Various upgrade levels for processes. Use `!upgrade <process type>` to get a description of what each upgrade level does.
+  - Deleting `!log` command message will now also delete the log menu.
+  - Adding a ❌ reaction to the process message of a process you own will now remove the process.
+
+### Bug Fixes
+  - Fixed bug with Interceptor stat_boosts not working.
+
+*****************************
+
 ## 15th February 2021
 ### Bug Fixes
   - Fixed improper parsing of flag replacers when name contained parentheses. 
