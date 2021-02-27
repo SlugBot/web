@@ -5,6 +5,12 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 27th February 2021
+### Bug Fixes
+  - Fixed bug with certain failed respeccs not ending the action correctly. 
+
+*****************************
+
 ## 20th February 2021
 ### Updates
   - Stat Rework
