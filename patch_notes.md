@@ -5,6 +5,12 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 5th March 2021
+### Bug Fixes
+  - Fixed bug causing `!whowas` command to fail.
+
+*****************************
+
 ## 27th February 2021
 ### Bug Fixes
   - Fixed bug with certain failed respeccs not ending the action correctly. 
