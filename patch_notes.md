@@ -5,6 +5,25 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 5th April 2021
+### Updates
+  - Rolereacts can now be put on any message using `!rolereact create <msg ID>`
+
+*****************************
+
+## 27th Match 2021
+### Bug Fixes
+  - Fixed `!banme` not working in certain circumstances.
+
+*****************************
+
+## 18th March 2021
+### New Additions
+  - Added ability to slime other member's profiles with `!slime <member>`.
+  - Added border_glow_shard_outer profile mod.
+
+*****************************
+
 ## 5th March 2021
 ### Bug Fixes
   - Fixed bug causing `!whowas` command to fail.

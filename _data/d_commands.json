@@ -806,6 +806,44 @@
       }
     ]
   },
+  "slime": {
+    "cmd": "slime",
+    "synonyms": [],
+    "moduleId": "",
+    "perms": [
+      "USER"
+    ],
+    "debug": true,
+    "canDM": false,
+    "canEdit": false,
+    "format": "${PREFIX}slime <member>",
+    "desc": "Use this command to slime a member's profile",
+    "parameters": [
+      {
+        "param": "<member>",
+        "values": [
+          {
+            "value": "Username",
+            "desc": "Discord username of the user"
+          },
+          {
+            "value": "discord ID",
+            "desc": "discord ID of the user"
+          },
+          {
+            "value": "Mention member",
+            "desc": "discord member mention"
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "command": "!slime Tikaro",
+        "desc": "This will slime Tikaro's profile if a slime token is owned."
+      }
+    ]
+  },
   "slugballs": {
     "cmd": "slugballs",
     "format": "${PREFIX}slugballs <question>",
@@ -1147,7 +1185,7 @@
     ],
     "examples": [
       {
-        "command": "!damagecalc 500 31 134",
+        "command": "!damagecalc 500 134 31",
         "desc": "This will calculate the damage received from a 500 AR weapon through 134 defense and 31% absorption."
       }
     ]
@@ -1862,6 +1900,27 @@
       }
     ]
   },
+  "hex": {
+    "cmd": "hex",
+    "synonyms": [
+      "hexmine"
+    ],
+    "perms": [
+      "USER"
+    ],
+    "moduleId": "economy",
+    "canEdit": false,
+    "canDM": true,
+    "format": "${PREFIX}hex",
+    "desc": " ",
+    "parameters": [],
+    "examples": [
+      {
+        "command": "!hex mine",
+        "desc": "."
+      }
+    ]
+  },
   "higherlower": {
     "cmd": "higherlower",
     "synonyms": [
@@ -2095,6 +2154,45 @@
     "canEdit": true,
     "format": "!log [member]",
     "desc": "View account logs of your account or an account of a user you have a TRACKER on."
+  },
+  "pipe": {
+    "cmd": "pipe",
+    "synonyms": [],
+    "perms": [
+      "USER"
+    ],
+    "moduleId": "economy",
+    "canEdit": false,
+    "canDM": true,
+    "debug": true,
+    "format": "${PREFIX}pipe <to user> <cost per hex>",
+    "desc": "Uses this command to offer a hex pipe to a user. A selection menu will be shown allowing you to select which of your available hex you would like to pipe.",
+    "parameters": [
+      {
+        "param": "<to user>",
+        "values": [
+          {
+            "value": "String",
+            "desc": "Process ID of auctioned process"
+          }
+        ]
+      },
+      {
+        "param": "<cost per hex>",
+        "values": [
+          {
+            "value": "Number",
+            "desc": "Amount you would like to receive per hex piped."
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "command": "!pipe Amilia 1,000",
+        "desc": "."
+      }
+    ]
   },
   "plant": {
     "cmd": "plant",
@@ -3372,7 +3470,7 @@
       "BOT_ADMIN"
     ],
     "debug": true,
-    "format": "${PREFIX}rolereact create | (<msg ID> add <reaction> <role>) | (<msg ID> remove [reaction]) | (<msg ID> desc <description>) | (<msg ID> require <role>)",
+    "format": "${PREFIX}rolereact create [msg ID] | (<msg ID> add <reaction> <role>) | (<msg ID> remove [reaction]) | (<msg ID> desc <description>) | (<msg ID> require <role>)",
     "desc": "Use this command to create a RoleReact message - allowing users to assign roles to themselves using the reactions on the message.",
     "parameters": [
       {
@@ -3380,27 +3478,27 @@
         "values": [
           {
             "value": "create",
-            "desc": "specify to create a new RoleReact message"
+            "desc": "specify to create a new RoleReact message. Optionally giving a message ID will initialise rolereacts on that message instead of creating a roleReact embed."
           },
           {
             "value": "add",
-            "desc": "specify to add new self-assignable role"
+            "desc": "specify to add new self-assignable role."
           },
           {
             "value": "remove",
-            "desc": "specify to remove existing self-assignable role"
+            "desc": "specify to remove existing self-assignable role."
           },
           {
             "value": "desc",
-            "desc": "specify to update the RoleReact description"
+            "desc": "specify to update the RoleReact description."
           },
           {
             "value": "color",
-            "desc": "specify to update the embed color of the RoleReact message"
+            "desc": "specify to update the embed color of the RoleReact message."
           },
           {
             "value": "require",
-            "desc": "specify to that a react role requires a role to use the rolereact"
+            "desc": "specify to that a react role requires a role to use the rolereact."
           }
         ]
       },
@@ -3409,7 +3507,7 @@
         "values": [
           {
             "value": "Number",
-            "desc": "The message ID of an existing RoleReact message"
+            "desc": "The message ID of an existing RoleReact message."
           }
         ]
       },
@@ -3418,7 +3516,7 @@
         "values": [
           {
             "value": "emoji",
-            "desc": "A default or custom emoji"
+            "desc": "A default or custom emoji."
           }
         ]
       },
@@ -3427,7 +3525,7 @@
         "values": [
           {
             "value": "String",
-            "desc": "The name of a role"
+            "desc": "The name of a role."
           }
         ]
       },
@@ -3436,7 +3534,7 @@
         "values": [
           {
             "value": "String",
-            "desc": "A description to display in the RoleReact message"
+            "desc": "A description to display in the RoleReact message."
           }
         ]
       }
@@ -3463,318 +3561,6 @@
         "desc": "This will set the color of the embed white."
       }
     ]
-  },
-  "leaderboard": {
-    "cmd": "leaderboard",
-    "format": "${PREFIX}leaderbaord [weekly]",
-    "desc": "Use this command to view the top 10 ranked members in the server along with the score of adjacent ranks.",
-    "perms": [
-      "USER"
-    ],
-    "canDM": false,
-    "canEdit": false,
-    "debug": false,
-    "parameters": [
-      {
-        "param": "[weekly]",
-        "values": [
-          {
-            "value": "Weekly",
-            "desc": "specify that the weekly leaderboard should be displayed"
-          }
-        ]
-      }
-    ],
-    "examples": [
-      {
-        "command": "!leaderboard",
-        "desc": "This will display the score leaderboard for the server the command was used in."
-      },
-      {
-        "command": "!leaderboard weekly",
-        "desc": "This will display the weekly score leaderboard for the server the command was used in."
-      }
-    ]
-  },
-  "rank": {
-    "cmd": "rank",
-    "format": "${PREFIX}rank [member] | [rank]",
-    "desc": "Use this command with no arguments to view your own profile - displaying score and rank. Specify a member to view their profile.",
-    "perms": [
-      "USER"
-    ],
-    "canDM": false,
-    "canEdit": false,
-    "debug": false,
-    "parameters": [
-      {
-        "param": "[member]",
-        "values": [
-          {
-            "value": "Username",
-            "desc": "Discord username of the user"
-          },
-          {
-            "value": "discord ID",
-            "desc": "discord ID of the user"
-          },
-          {
-            "value": "Mention member",
-            "desc": "discord member mention"
-          }
-        ]
-      },
-      {
-        "param": "[rank]",
-        "values": [
-          {
-            "value": "#Number",
-            "desc": "Get profile of member at specified rank. Denoted by '#' followed by rank."
-          },
-          {
-            "value": "##Number",
-            "desc": "Get profile of member at specified WEEKLY rank. Denoted by '##' followed by weekly rank."
-          }
-        ]
-      }
-    ],
-    "examples": [
-      {
-        "command": "!rank Tikaro",
-        "desc": "This will display Tikaro's profile with server rank and weekly rank if applicable."
-      },
-      {
-        "command": "!rank #2",
-        "desc": "This will display the profile of the member with server score rank 2."
-      }
-    ]
-  },
-  "rep": {
-    "cmd": "rep",
-    "synonyms": [
-      "reputation",
-      "giverep"
-    ],
-    "format": "${PREFIX}rep <member> [amount of rep]",
-    "desc": "Use this command to view a members profile or give another member rep points.",
-    "perms": [
-      "USER"
-    ],
-    "canDM": false,
-    "canEdit": false,
-    "debug": false,
-    "parameters": [
-      {
-        "param": "<member>",
-        "values": [
-          {
-            "value": "Username",
-            "desc": "Discord username of the user"
-          },
-          {
-            "value": "discord ID",
-            "desc": "discord ID of the user"
-          },
-          {
-            "value": "Mention member",
-            "desc": "discord member mention"
-          }
-        ]
-      },
-      {
-        "param": "[amount of rep]",
-        "values": [
-          {
-            "value": "Integer number",
-            "desc": "Amount of rep to give to specified member"
-          }
-        ]
-      }
-    ],
-    "examples": [
-      {
-        "command": "!rep Tikaro 2",
-        "desc": "This will attempt to give member Tikaro 2 rep points."
-      }
-    ]
-  },
-  "roleatlevel": {
-    "cmd": "roleatlevel",
-    "synonyms": [],
-    "perms": [
-      "BOT_ADMIN"
-    ],
-    "debug": true,
-    "format": "${PREFIX}roleatlevel (add <role> <give at level> [remove at level] [sendNotification?]) | remove <role>)",
-    "desc": "Used to specify a role to be given to members once they reach a certain level. If [remove at level] is specified, the role will be removed from members who's level is higher than the stated [remove at level] value",
-    "parameters": [
-      {
-        "param": "<role>",
-        "values": [
-          {
-            "value": "Role name",
-            "desc": "Name of role that will be given when the specified level requirement is met."
-          }
-        ]
-      },
-      {
-        "param": "<give at level>",
-        "values": [
-          {
-            "value": "Number",
-            "desc": "Level requirement for the role to be given."
-          }
-        ]
-      },
-      {
-        "param": "<remove at level>",
-        "values": [
-          {
-            "value": "Number",
-            "desc": "Level requirement for the role to be removed."
-          }
-        ]
-      },
-      {
-        "param": "[sendNotification?]",
-        "values": [
-          {
-            "value": "true",
-            "desc": "Specify that a notification should be sent in chat when a member reaches the level requirement."
-          },
-          {
-            "value": "false",
-            "desc": "Specify that a notification SHOULD NOT be sent in chat when a member reaches the level requirement."
-          },
-          {
-            "value": "null",
-            "desc": "If omitted, will default to 'true'."
-          }
-        ]
-      }
-    ],
-    "examples": [
-      {
-        "command": "!roleatlevel add Trusted 10",
-        "desc": "This will give the role 'Trusted' to any member who reaches level 10."
-      },
-      {
-        "command": "!roleatlevel add Trusted 10 false",
-        "desc": "This will give the role 'Trusted' to any member who reaches level 10. No chat notification will be sent."
-      },
-      {
-        "command": "!roleatlevel add Sleg 5 10",
-        "desc": "This will give the role 'Sleg' to any member who reaches level 5 but will be removed again once they reach level 10."
-      }
-    ]
-  },
-  "setlevel": {
-    "cmd": "setlevel",
-    "synonyms": [],
-    "moduleId": "setup",
-    "format": "${PREFIX}setlevel [member] <level>",
-    "desc": "Use this command to set a member's level to a specified value.",
-    "perms": [
-      "BOT_ADMIN"
-    ],
-    "canDM": false,
-    "canEdit": false,
-    "debug": false,
-    "parameters": [
-      {
-        "param": "<member>",
-        "values": [
-          {
-            "value": "Username",
-            "desc": "Discord username of the user"
-          },
-          {
-            "value": "discord ID",
-            "desc": "discord ID of the user"
-          },
-          {
-            "value": "Mention member",
-            "desc": "discord member mention"
-          }
-        ]
-      },
-      {
-        "param": "<level>",
-        "values": [
-          {
-            "value": "Number",
-            "desc": "Level to set member to."
-          }
-        ]
-      }
-    ],
-    "examples": [
-      {
-        "command": "!setlevel sophs 10",
-        "desc": "This will set sophs' level to 10."
-      }
-    ]
-  },
-  "setscore": {
-    "cmd": "setscore",
-    "synonyms": [
-      "setxp"
-    ],
-    "moduleId": "setup",
-    "format": "${PREFIX}setscore [member] <score amount>",
-    "desc": "Use this command to set a member's score to a specified amount.",
-    "perms": [
-      "BOT_ADMIN"
-    ],
-    "canDM": false,
-    "canEdit": false,
-    "debug": false,
-    "parameters": [
-      {
-        "param": "<member>",
-        "values": [
-          {
-            "value": "Username",
-            "desc": "Discord username of the user"
-          },
-          {
-            "value": "discord ID",
-            "desc": "discord ID of the user"
-          },
-          {
-            "value": "Mention member",
-            "desc": "discord member mention"
-          }
-        ]
-      },
-      {
-        "param": "<score amount>",
-        "values": [
-          {
-            "value": "Number",
-            "desc": "Amount to set member's score to."
-          }
-        ]
-      }
-    ],
-    "examples": [
-      {
-        "command": "!setscore Gutty 10,000",
-        "desc": "This will set Gutty's score to 10,000 xp."
-      }
-    ]
-  },
-  "weeklyscorereset": {
-    "cmd": "weeklyscorereset",
-    "synonyms": [
-      "weeklyreset"
-    ],
-    "perms": [
-      "BOT_ADMIN"
-    ],
-    "debug": false,
-    "format": "${PREFIX}weeklyscorereset <true | false>",
-    "desc": "Use this command to activate weekly score resets and the weekly score leaderboard."
   },
   "slugboard": {
     "cmd": "slugboard",
@@ -3831,7 +3617,7 @@
     "moduleId": "",
     "debug": false,
     "format": "${PREFIX}jointwitch",
-    "desc": "Use this command to force slugbot to join your twitch chat. You must have first linked your discord and twitch accounts using [!twitch <twitch name>]()"
+    "desc": "Use this command to force slugbot to join your twitch chat. You must have first linked your discord and twitch accounts using [!twitch <twitch name>]"
   },
   "synctwitch": {
     "perms": [
