@@ -5,6 +5,13 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 11th April 2021
+### Updates
+  - Investment saturation is now based on total amount invested instead of number of investments in a guild/channel. This means a small investment won't affect the return rate as much.
+  - Improved SlugBot AI.
+
+*****************************
+
 ## 5th April 2021
 ### Updates
   - Rolereacts can now be put on any message using `!rolereact create <msg ID>`
