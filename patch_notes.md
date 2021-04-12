@@ -8,6 +8,7 @@ title: Patch Notes
 ## 11th April 2021
 ### Updates
   - Investment saturation is now based on total amount invested instead of number of investments in a guild/channel. This means a small investment won't affect the return rate as much.
+  - Reduced Install and upgrade taxes.
   - Improved SlugBot AI.
 
 *****************************
