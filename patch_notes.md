@@ -5,6 +5,12 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 13th April 2021
+### Bug Fixes
+  - Fixed occasional miscounts with slugboarded messages. 
+
+*****************************
+
 ## 11th April 2021
 ### Updates
   - Investment saturation is now based on total amount invested instead of number of investments in a guild/channel. This means a small investment won't affect the return rate as much.
