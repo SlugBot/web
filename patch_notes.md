@@ -5,6 +5,13 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 16th April 2021
+### Updates
+  - Added Slugboard leaderboard `!leaderboard slugboard`/
+  - Added slugboard embed colour customisation `!slugboard color <hex color>`.
+
+*****************************
+
 ## 13th April 2021
 ### Bug Fixes
   - Fixed occasional miscounts with slugboarded messages. 
