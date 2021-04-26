@@ -5,6 +5,17 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 26th April 2021
+### Updates
+  - HIJACKERs success chance now slightly decays with each successful hijack.
+  - HIJACKs and HIJACKERs will now fail if the attacker already has a similar process to the one being hijacked.
+  - Level up duration has been uncapped (was capped at 14 days).
+
+### Bug Fixes
+  - Fixed REDIRECT notifications not sending in certain circumstances.
+
+*****************************
+
 ## 16th April 2021
 ### Updates
   - Added Slugboard leaderboard `!leaderboard slugboard`/
