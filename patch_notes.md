@@ -10,9 +10,11 @@ title: Patch Notes
   - HIJACKERs success chance now slightly decays with each successful hijack.
   - HIJACKs and HIJACKERs will now fail if the attacker already has a similar process to the one being hijacked.
   - Level up duration has been uncapped (was capped at 14 days).
+  - Added settings customisation to PvP ladder using `!ladder <ladder name> <setting> <value>`.
 
 ### Bug Fixes
   - Fixed REDIRECT notifications not sending in certain circumstances.
+  - Fixed `!so` on twitch erroring when no previous stream data is found.
 
 *****************************
 
