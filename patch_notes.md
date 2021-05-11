@@ -5,6 +5,15 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 11th May 2021
+### Updates
+  - 'Invite used' info will now be displayed in the 'MEMBER JOINED' log message if possible.
+
+### Bug Fixes
+  - Fixed 'Invite used' info not always displaying in `!userinfo` response when used by an admin and invite data was present.
+
+*****************************
+
 ## 26th April 2021
 ### Updates
   - HIJACKERs success chance now slightly decays with each successful hijack.
