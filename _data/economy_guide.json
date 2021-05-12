@@ -90,6 +90,11 @@
     ]
   },
   {
+    name: "Installing and Upgrading",
+    link: "#installing-and-upgrading",
+    subsections: []
+  },
+  {
     name: "Scanning",
     link: "#scanning",
     subsections: []
