@@ -5,12 +5,20 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 13th May 2021
+### New Additions
+  - Added CONTRACT processes.
+  - CONTRACTs will be generated once a day and put on the shop.
+
+*****************************
+
 ## 11th May 2021
 ### Updates
   - 'Invite used' info will now be displayed in the 'MEMBER JOINED' log message if possible.
 
 ### Bug Fixes
   - Fixed 'Invite used' info not always displaying in `!userinfo` response when used by an admin and invite data was present.
+  - Fixed padding error with avatars in profiles.
 
 *****************************
 
