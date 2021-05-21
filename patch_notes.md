@@ -5,6 +5,12 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 21st May 2021
+### Updates
+  - `!daily` now gives an extra 1000sc per power level.
+
+*****************************
+
 ## 13th May 2021
 ### New Additions
   - Added CONTRACT processes.
