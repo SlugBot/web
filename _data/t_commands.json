@@ -259,6 +259,166 @@
       }
     ]
   },
+  "elo": {
+    "cmd": "elo",
+    "synonyms": [
+      "ladderrank"
+    ],
+    "moduleId": "ladder",
+    "perms": [
+      "USER"
+    ],
+    "debug": true,
+    "format": "${PREFIX}elo [member] [ladder name]",
+    "desc": "Use this command to view your ladder stats or the stats of another member.",
+    "examples": [
+      {
+        "command": "!elo",
+        "desc": "This will display your own ladder stats."
+      },
+      {
+        "command": "!elo Aether",
+        "desc": "This will display Aether's ladder stats."
+      }
+    ]
+  },
+  "fightclub": {
+    "cmd": "fightclub",
+    "synonyms": [
+      "ladder",
+      "fc",
+      "leaderboard"
+    ],
+    "format": "${PREFIX}fightclub (start [discord server ID] <fight club name>) | end | (remove <flightclub name>)",
+    "desc": "Use this command to start a twitch fight club. If a discord server ID is given and the fight club name matches an existing ladder name, the FC will sync the ladder.",
+    "perms": [
+      "TWITCH_MOD"
+    ],
+    "moduleId": "ladder",
+    "canDM": false,
+    "canEdit": false,
+    "parameters": [
+      {
+        "param": "[discord server ID]",
+        "values": [
+          {
+            "value": "Discord Server ID",
+            "desc": "ID of discord server you are a BotAdmin in."
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "command": "!fightclub start Weekend Fight club",
+        "desc": "This will start a fight club for this twitch channel."
+      },
+      {
+        "command": "!fightclub start 672205714047107074 DS3 Ladder",
+        "desc": "This will start a fight club for this twitch channel that will sync to an existing leaderboard in a discord server."
+      }
+    ]
+  },
+  "join": {
+    "cmd": "join",
+    "format": "${PREFIX}join [in-game name]",
+    "desc": "Use this command to join a twitch fight club.",
+    "perms": [
+      "USER"
+    ],
+    "moduleId": "ladder",
+    "canDM": false,
+    "canEdit": false,
+    "parameters": [
+      {
+        "param": "[in-game name]",
+        "values": [
+          {
+            "value": "String",
+            "desc": "Name of your character in-game"
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "command": "!join The Balance",
+        "desc": "This will join the fight club queue with in-game name \"The Balance\"."
+      }
+    ]
+  },
+  "next": {
+    "cmd": "next",
+    "format": "${PREFIX}next",
+    "desc": "Use this command to display the combatants for the next fight in the fight club.",
+    "perms": [
+      "TWITCH_MOD"
+    ],
+    "moduleId": "ladder",
+    "canDM": false,
+    "canEdit": false,
+    "parameters": [],
+    "examples": [
+      {
+        "command": "!next",
+        "desc": "This will reply with a message stating the next two combatants in the current fight club."
+      }
+    ]
+  },
+  "skip": {
+    "cmd": "skip",
+    "format": "${PREFIX}skip",
+    "desc": "Use this command to skip a member in the fight club queue. Give no arguments to skip the next player.",
+    "perms": [
+      "TWITCH_MOD"
+    ],
+    "moduleId": "ladder",
+    "canDM": false,
+    "canEdit": false,
+    "parameters": [],
+    "examples": [
+      {
+        "command": "!skip",
+        "desc": "This will skip the next player in the queue, pairing the player after with the current champion."
+      },
+      {
+        "command": "!skip Gabri",
+        "desc": "This will reply with a message stating the next two combatants in the current fight club."
+      }
+    ]
+  },
+  "winner": {
+    "cmd": "join",
+    "format": "${PREFIX}winner <winner name>",
+    "desc": "Use this to declare a winner of a fight club fight.",
+    "perms": [
+      "TWITCH_MOD"
+    ],
+    "moduleId": "ladder",
+    "canDM": false,
+    "canEdit": false,
+    "parameters": [
+      {
+        "param": "<winner name>",
+        "values": [
+          {
+            "value": "String",
+            "desc": "Name of winner"
+          },
+          {
+            "value": "String",
+            "desc": "Name of winner character in-game"
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "command": "!winner Halvard",
+        "desc": "This will declare Halvard the winner, award points, and state the next combatant."
+      }
+    ]
+  },
   "addquote": {
     "cmd": "addquote",
     "format": "${PREFIX}addquote <quote>",
