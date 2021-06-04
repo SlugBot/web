@@ -6,6 +6,9 @@ title: Patch Notes
 # PATCH NOTES
 
 ## 4th june 2021
+### New Additions
+  - Added `!roleAtLadderRank` command, allowing roles to be given and taken away automatically based on member's rank in PvP ladders. 
+
 ### Updates
   - Added customisable point decay to ladder.
 
