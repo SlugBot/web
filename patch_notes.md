@@ -5,10 +5,17 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 4th june 2021
+### Updates
+  - Added customisable point decay to ladder.
+
+*****************************
+
 ## 25th May 2021
 ### Bug Fixes
   - Logging should now properly log invite used for new members.
   - Command use rate limit should now not trigger when an invalid command is used.
+  
 *****************************
 
 ## 21st May 2021
