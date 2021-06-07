@@ -68,13 +68,13 @@ This malware will siphon an amount of SC out of a users current account and tran
 
 ## CLONER
 ```!plant CLONER <target>```
-When a user with this process planted on them **BYPASS**es another, the planter of this process will also gain access to that account - essentially cloning their **BYPASS** process. A CLONER will expire after a number of activations. Upgrading this process will increase the number of uses before expiring.
+When planted on a target, any **BYPASS**es planted by the target will be cloned - giving the **CLONER** owner a copy. A CLONER will expire after a number of activations. Upgrading this process will increase the number of uses before expiring. Only one **CLONER** process will trigger if multiple are planted on the same target.
 * Offensive Stat: **BYPASSER**
 * Defensive Stat: **SCANNER**
 
 ## HIJACKER
 ```!plant hijacker <target user>```
-A planted HIJACKER will attempt to automatically hijack processes planted by the infected user.
+A planted **HIJACKER** will attempt to automatically hijack processes planted by the infected user. The initial chance of hijacking can be increased by upgrading. The chance of hijacking decays with each successful hijack.
 * Offensive Stat: **INJECTOR**
 * Defensive Stat: **SCANNER**
 
