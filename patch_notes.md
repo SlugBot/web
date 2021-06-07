@@ -5,6 +5,13 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 7th June 2021
+### Updates
+  - `!elo` now displays all past matches separated into pages.
+  - `!elo` now displays when the ladder was reset.
+
+*****************************
+
 ## 4th june 2021
 ### New Additions
   - Added `!roleAtLadderRank` command, allowing roles to be given and taken away automatically based on member's rank in PvP ladders. 
