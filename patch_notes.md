@@ -5,6 +5,18 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 9th June 2021
+### New Additions
+  - Added ROOTKIT process. Allows remote control of another user.
+
+### Updates
+  - Improved ladder leaderboard display.
+
+### Bug Fixes
+  - Fixed bug where leveling a stat while planting a process would error the process.
+
+*****************************
+
 ## 7th June 2021
 ### Updates
   - `!elo` now displays all past matches separated into pages.
@@ -15,6 +27,7 @@ title: Patch Notes
 ## 4th june 2021
 ### New Additions
   - Added `!roleAtLadderRank` command, allowing roles to be given and taken away automatically based on member's rank in PvP ladders. 
+  - Added twitch fight club handling. Can sync with discord ladders.
 
 ### Updates
   - Added customisable point decay to ladder.
