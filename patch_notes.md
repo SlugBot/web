@@ -5,6 +5,12 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 12th June 2021
+### Updates
+  - Added `!fightclub force <member1> <member2>` command to force a fight between two members in a fightclub.
+
+*****************************
+
 ## 9th June 2021
 ### New Additions
   - Added ROOTKIT process. Allows remote control of another user.
