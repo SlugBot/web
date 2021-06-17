@@ -101,6 +101,7 @@
     ]
   },
   "igot": {
+    "cmd": "igot",
     "format": "${PREFIX}igot [ds1|ds3] <souls received>",
     "desc": "Use this command to get a readout containing the estimated level of another player killed in Dark Souls 1 or Dark Souls 3.",
     "perms": [

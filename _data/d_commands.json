@@ -633,15 +633,58 @@
     ]
   },
   "setcolor": {
-    "perms": [
-      "BOT_ADMIN"
-    ],
+    "cmd": "setcolor",
     "synonyms": [
       "setcolour"
     ],
+    "perms": [
+      "BOT_ADMIN"
+    ],
     "debug": true,
-    "format": "${PREFIX}setcolor [member] <color hex code|reset>",
-    "desc": "Use this command to set your role color."
+    "format": "${PREFIX}setcolor [member] <color hex code | reset>",
+    "desc": "Use this command to set your role color.",
+    "parameters": [
+      {
+        "param": "[member]",
+        "values": [
+          {
+            "value": "Username",
+            "desc": "Discord username of the user."
+          },
+          {
+            "value": "discord ID",
+            "desc": "discord ID of the user."
+          },
+          {
+            "value": "discord member mention",
+            "desc": "Mention member."
+          }
+        ]
+      },
+      {
+        "param": "<color hex code | reset>",
+        "values": [
+          {
+            "value": "Color hex code",
+            "desc": "Hex code for color."
+          },
+          {
+            "value": "reset",
+            "desc": "'reset' keyword to reset member's set color."
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "command": "!setcolor Specter #ffffff",
+        "desc": "This will set Specters name color to white."
+      },
+      {
+        "command": "!setcolor Specter reset",
+        "desc": "This will revert Specter's name color to their normal highest-role-defined color."
+      }
+    ]
   },
   "setnick": {
     "cmd": "setnick",
@@ -720,6 +763,10 @@
           {
             "value": "totaltoprank",
             "desc": "Role given to top ranking member"
+          },
+          {
+            "value": "fchost",
+            "desc": "Members with this role can host fight clubs on twitch linked to ladders in this server."
           },
           {
             "value": "streamer",
@@ -1191,6 +1238,7 @@
     ]
   },
   "igot": {
+    "cmd": "igot",
     "format": "${PREFIX}igot [ds1|ds3] <souls received>",
     "desc": "Use this command to get a readout containing the estimated level of another player killed in Dark Souls 1 or Dark Souls 3.",
     "perms": [
@@ -1232,6 +1280,7 @@
     ]
   },
   "item": {
+    "cmd": "item",
     "perms": [
       "USER"
     ],
@@ -1700,6 +1749,7 @@
     }
   },
   "bypass": {
+    "cmd": "bypass",
     "perms": [
       "USER"
     ],
@@ -1765,6 +1815,7 @@
     ]
   },
   "crack": {
+    "cmd": "crack",
     "perms": [
       "USER"
     ],
@@ -1897,27 +1948,6 @@
       {
         "command": "!giveslugs tikaro 10,000",
         "desc": "This will transfer 10,000 slugs to user Tikaro."
-      }
-    ]
-  },
-  "hex": {
-    "cmd": "hex",
-    "synonyms": [
-      "hexmine"
-    ],
-    "perms": [
-      "USER"
-    ],
-    "moduleId": "economy",
-    "canEdit": false,
-    "canDM": true,
-    "format": "${PREFIX}hex",
-    "desc": " ",
-    "parameters": [],
-    "examples": [
-      {
-        "command": "!hex mine",
-        "desc": "."
       }
     ]
   },
@@ -2155,45 +2185,6 @@
     "format": "!log [member]",
     "desc": "View account logs of your account or an account of a user you have a TRACKER on."
   },
-  "pipe": {
-    "cmd": "pipe",
-    "synonyms": [],
-    "perms": [
-      "USER"
-    ],
-    "moduleId": "economy",
-    "canEdit": false,
-    "canDM": true,
-    "debug": true,
-    "format": "${PREFIX}pipe <to user> <cost per hex>",
-    "desc": "Uses this command to offer a hex pipe to a user. A selection menu will be shown allowing you to select which of your available hex you would like to pipe.",
-    "parameters": [
-      {
-        "param": "<to user>",
-        "values": [
-          {
-            "value": "String",
-            "desc": "Process ID of auctioned process"
-          }
-        ]
-      },
-      {
-        "param": "<cost per hex>",
-        "values": [
-          {
-            "value": "Number",
-            "desc": "Amount you would like to receive per hex piped."
-          }
-        ]
-      }
-    ],
-    "examples": [
-      {
-        "command": "!pipe Amilia 1,000",
-        "desc": "."
-      }
-    ]
-  },
   "plant": {
     "cmd": "plant",
     "perms": [
@@ -2361,6 +2352,68 @@
       {
         "command": "!roll 1000",
         "desc": "This will bet 1000sc on a dice roll against SlugBot."
+      }
+    ]
+  },
+  "rootkit": {
+    "cmd": "rootkit",
+    "perms": [
+      "USER"
+    ],
+    "moduleId": "economy",
+    "canEdit": false,
+    "canDM": false,
+    "format": "${PREFIX}rootkit <target> <cmd> <args>",
+    "desc": "Run processes through another user's account.",
+    "parameters": [
+      {
+        "param": "<target>",
+        "values": [
+          {
+            "value": "Username",
+            "desc": "Discord username of the user to be bypassed."
+          },
+          {
+            "value": "Discord ID",
+            "desc": "discord ID of the user to be bypassed."
+          },
+          {
+            "value": "Discord member mention",
+            "desc": "Mention member to be bypassed."
+          },
+          {
+            "value": "BYPASS ID",
+            "desc": "BYPASS process ID of BYPASS on target."
+          },
+          {
+            "value": "ROOTKIT ID",
+            "desc": "ROOTKIT process ID of ROOTKIT on target."
+          }
+        ]
+      },
+      {
+        "param": "<cmd>",
+        "values": [
+          {
+            "value": "Process command",
+            "desc": "Command to be run as if ROOTKIT'ed user"
+          }
+        ]
+      },
+      {
+        "param": "<args>",
+        "values": [
+          {
+            "value": "Arguments",
+            "desc": "Arguments for command"
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "command": "!rootkit Alex_ !bypass Gabri",
+        "desc": "This will initiate a BYPASS process from Alex_ on Gabri."
       }
     ]
   },
@@ -2930,6 +2983,68 @@
       }
     ]
   },
+  "roleatladderrank": {
+    "cmd": "roleatladderrank",
+    "synonyms": [],
+    "perms": [
+      "BOT_ADMIN"
+    ],
+    "debug": true,
+    "format": "${PREFIX}roleatladderrank <ladder name> (add <role> <give at rank> [remove at rank]) | remove <role>)",
+    "desc": "Used to specify a role to be given to members once they reach a rank in the ladder. If [remove at rank] is specified, the role will be removed from members who's rank is higher than the stated [remove at rank] value",
+    "parameters": [
+      {
+        "param": "<ladder name>",
+        "values": [
+          {
+            "value": "Ladder name",
+            "desc": "Name of ladder to check rank in."
+          }
+        ]
+      },
+      {
+        "param": "<role>",
+        "values": [
+          {
+            "value": "Role name",
+            "desc": "Name of role that will be given when the specified rank requirement is met."
+          }
+        ]
+      },
+      {
+        "param": "<give at rank>",
+        "values": [
+          {
+            "value": "Number",
+            "desc": "Level requirement for the role to be given."
+          }
+        ]
+      },
+      {
+        "param": "<remove at rank>",
+        "values": [
+          {
+            "value": "Number",
+            "desc": "Level requirement for the role to be removed."
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "command": "!roleatladderrank PC DS3 add Bronze 3",
+        "desc": "This will give the role 'Bronze' to any member who is rank 3 or higher in the 'PC DS3' ladder."
+      },
+      {
+        "command": "!roleatladderrank PC DS3 remove Bronze",
+        "desc": "This will stop the 'Bronze' role from being given to members based on ladder rank."
+      },
+      {
+        "command": "!roleatladderrank PC DS3 list",
+        "desc": "This will list all roles that will be given to/removed from members based on their ranking in the PC DS3 ladder."
+      }
+    ]
+  },
   "iam": {
     "cmd": "iam",
     "synonyms": [],
@@ -3401,8 +3516,58 @@
       "BOT_ADMIN"
     ],
     "debug": true,
-    "format": "${PREFIX}raffle <start [duration] [raffle message] | end | draw>",
+    "format": "${PREFIX}raffle (start <duration> [raffle message]) | (edit <raffle msg ID> [duration] [raffle message]) | (end <raffle msg ID>) | (draw <raffle msg ID>)",
     "desc": "Use this command to create a raffle - allowing users to enter by adding a react to the raffle message.",
+    "parameters": [
+      {
+        "param": "start | edit | end | draw",
+        "values": [
+          {
+            "value": "start",
+            "desc": "Create a new raffle."
+          },
+          {
+            "value": "edit",
+            "desc": "Edit existing raffle with new duration and/or raffle message."
+          },
+          {
+            "value": "end",
+            "desc": "End existing raffle WITHOUT drawing winner."
+          },
+          {
+            "value": "draw",
+            "desc": "End existing raffle and draw winner. Draw new winner if raffle has already been ended."
+          }
+        ]
+      },
+      {
+        "param": "<duration>",
+        "values": [
+          {
+            "value": "Number",
+            "desc": "Number of days the raffle should last."
+          }
+        ]
+      },
+      {
+        "param": "[raffle message]",
+        "values": [
+          {
+            "value": "String",
+            "desc": "Raffle description to be displayed in the raffle embed."
+          }
+        ]
+      },
+      {
+        "param": "<raffle msg ID>",
+        "values": [
+          {
+            "value": "Message ID",
+            "desc": "Discord message ID of raffle embed."
+          }
+        ]
+      }
+    ],
     "examples": [
       {
         "command": "!raffle start 14 This server is hosting a raffle that will end in 14 days.",
@@ -3973,12 +4138,20 @@
     "help": "Sync commands and quotes with the server owner's twitch channel."
   },
   "twitch": {
-    "perms": [],
-    "reqs": [],
+    "cmd": "twitch",
+    "synonyms": [
+      "twitchlink",
+      "linktwitch"
+    ],
+    "perms": [
+      "USER"
+    ],
     "debug": true,
     "canDM": true,
-    "format": "${PREFIX}twitch <twitch name>",
-    "help": "Used to link a Discord account with a Twitch account.\n\n__**Example:**__` ${PREFIX}twitch smugslugbot `\nThis will DM SmugSlugBot with a request to confirm the link."
+    "format": "${PREFIX}twitch",
+    "desc": "Used to link a Discord account with a Twitch account. After using the command, you will be DMed with a six digit code on Discord. Send this code in SmugSlugBot's chat on twitch to confirm the account link.",
+    "parameters": [],
+    "examples": []
   },
   "streamer": {
     "cmd": "streamer",
