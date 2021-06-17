@@ -64,7 +64,8 @@ SlugBots command prefix can be set using <span class="command-link" data-command
 ---
 
 # Twitch Setup
-To get SlugBot in your twitch chat, use the command `!twitch <your twitch name>` in any Discord server with SlugBot. SlugBot will DM you on twitch with confirmation so make sure you can receive DMs. **If you do not receive a DM on twitch after attempting the link, DM SmugSlugBot on twitch with the message `confirm`**. SlugBot will then be lurking until activation - use the command `!activate slugbot` to get it listening to commands and enable all SlugBot functionality.
+To get SlugBot in your twitch chat, use the command `!twitchlink` in any Discord server with SlugBot. You will then receive a direct message with instructions on how to complete the account link process.
+Once you've linked your accounts, SlugBot will then be lurking in your twitch chat until activation - use the command `!activate slugbot` to get it listening to commands and enable all SlugBot functionality.
 
 Alternatively you can whisper smugSlugBot with the word `join` to bring SlugBot into your twitch chat without needing to use discord.
 
