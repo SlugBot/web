@@ -5,6 +5,12 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 17th June 2021
+### Updates
+  - Improved Discord <> Twitch account link process.
+  
+*****************************
+
 ## 13th June 2021
 ### Bug Fixes
   - Fixed raffle module.
