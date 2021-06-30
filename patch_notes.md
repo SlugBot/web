@@ -5,6 +5,13 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 30th June 2021
+### Updates
+  - Accepted ladder challenges can now be cancelled if both parties use `!challenge cancel`.
+  - Region roles and rank of the challenger are now displayed in the challenge message.
+
+*****************************
+
 ## 17th June 2021
 ### Updates
   - Improved Discord <> Twitch account link process.
