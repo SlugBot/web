@@ -9,6 +9,7 @@ title: Patch Notes
 ### Updates
   - Accepted ladder challenges can now be cancelled if both parties use `!challenge cancel`.
   - Region roles and rank of the challenger are now displayed in the challenge message.
+  - Unmutes will now be logged in set #mod-log channels.
 
 *****************************
 
