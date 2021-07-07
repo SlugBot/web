@@ -5,6 +5,12 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 7th July 2021
+### Bug Fixes
+  - Processes hijacked or created via processes initiated through ROOTKITs should now properly inherit ROOTKIT ownership.
+
+*****************************
+
 ## 30th June 2021
 ### Updates
   - Accepted ladder challenges can now be cancelled if both parties use `!challenge cancel`.
