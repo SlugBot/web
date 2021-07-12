@@ -5,6 +5,15 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 12th July 2021
+### New Additions
+  - `!comp <target> <stat>` command for the economy module, allowing users to temporarily compromise a target's stats.
+
+### Bug Fixes
+  - Fixed `!deletemessages` command not working on messages where the author had left the server.
+
+*****************************
+
 ## 7th July 2021
 ### Bug Fixes
   - Processes hijacked or created via processes initiated through ROOTKITs should now properly inherit ROOTKIT ownership.
