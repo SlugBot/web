@@ -5,6 +5,13 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 16th July 2021
+### Updates
+  - Improved memory usage when displaying PROFILE_MOD previews.
+  - PROFILE_MOD previews and your own profile can now be viewed in DMs with slugbot.
+
+*****************************
+
 ## 12th July 2021
 ### New Additions
   - `!comp <target> <stat>` command for the economy module, allowing users to temporarily compromise a target's stats.
