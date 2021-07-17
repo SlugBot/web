@@ -6,6 +6,9 @@ title: Patch Notes
 # PATCH NOTES
 
 ## 16th July 2021
+### New Additions
+  - New PROFILE_MOD border_fracture added.
+  
 ### Updates
   - Improved memory usage when displaying PROFILE_MOD previews.
   - PROFILE_MOD previews and your own profile can now be viewed in DMs with slugbot.
