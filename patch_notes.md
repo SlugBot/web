@@ -8,6 +8,7 @@ title: Patch Notes
 ## 16th July 2021
 ### New Additions
   - New PROFILE_MOD border_fracture added.
+  - New PROFILE_MOD border_cat added.
   
 ### Updates
   - Improved memory usage when displaying PROFILE_MOD previews.
