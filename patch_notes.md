@@ -9,6 +9,7 @@ title: Patch Notes
 ### Updates
   - Viewing the marks of another user will now be obfuscated depending on what processes you have identified.
   - Respecc'ing now takes 24 hours to complete and can be cancelled any time by removing the RESPECC process.
+  - Added error feedback when `!twitch` command can not send a DM to user.
 
 ### Bug Fixes
   - Removed ability to attempt to install invalid process types.
