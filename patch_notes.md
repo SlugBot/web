@@ -5,6 +5,22 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 22nd July 2021
+### Updates
+  - Viewing the marks of another user will now be obfuscated depending on what processes you have identified.
+  - Respecc'ing now takes 24 hours to complete and can be cancelled any time by removing the RESPECC process.
+
+### Bug Fixes
+  - Removed ability to attempt to install invalid process types.
+
+*****************************
+
+## 20th July 2021
+### Updates
+  - Added admin page to `!userinfo` command. Invite info and moderator notes are now displayed there.
+
+*****************************
+
 ## 16th July 2021
 ### New Additions
   - New PROFILE_MOD border_fracture added.
