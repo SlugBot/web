@@ -5,6 +5,22 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 1st August 2021
+### Updates
+  - Word filter algorithm made more efficient.
+
+*****************************
+
+## 25th July 2021
+### New Additions
+  - Added ExclusiveChar module.
+  - A character or string can be specified as exclusive to specific members. The character/string will be removed from all but the specified member's display names and appended to the specified member's display names. 
+
+### Bug Fixes
+  - Fixed bug allowing you to respecc into stats that would not support your process configuration.
+
+*****************************
+
 ## 22nd July 2021
 ### Updates
   - Viewing the marks of another user will now be obfuscated depending on what processes you have identified.
