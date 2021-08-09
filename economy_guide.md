@@ -72,6 +72,10 @@ When planted on a target, any **BYPASS**es planted by the target will be cloned 
 * Offensive Stat: **BYPASSER**
 * Defensive Stat: **SCANNER**
 
+## HIJACK
+```!hijack <process ID>```
+Hijacking is the act of manually stealing another user's processes. The original owner of the process must be **BYPASS**ed before you can attempt to **HIJACK**. The success chance is based on how many properties of the process you have identified.
+
 ## HIJACKER
 ```!plant hijacker <target user>```
 A planted **HIJACKER** will attempt to automatically hijack processes planted by the infected user. The initial chance of hijacking can be increased by upgrading. The chance of hijacking decays with each successful hijack.
@@ -100,6 +104,18 @@ A tracker process allows the owner to view the account activity logs of the targ
 CORRUPTORs, when planted on a user, will corrupt their log viewer - making it difficult to read to completely impossible, depending on how many CORRUPTORs are planted. CORRUPTORs also reduce the chance of TRACKERs scanning initated processes. **CORRUPTOR processes do NOT require the target to be BYPASSed before they can be planted.**
 * Offensive Stat: **INJECTOR**
 * Defensive Stat: **SCANNER**
+
+## COMP
+```!comp <target user> <stat>```
+Compromising a target's stats will temporarily lower their effectiveness. Compromising a target requires a correct password to be guessed - failing to do so may result in the attacker getting compromised.
+* Offensive Stat: **BYPASSER**
+* Defensive Stat: **ENCRYPTION**
+
+## ROOTKIT
+```!plant rootkit <target user>```
+A ROOTKIT, when planted on a user, will allow you to run processes remotely from that user. Use the command `!rootkit <rootkit ID>` followed by the command you'd like to execute *as the rootkit'ed user*.
+* Offensive Stat: **CRACKER**
+* Defensive Stat: **ENCRYPTION**
 
 *More coming soon...*
 
