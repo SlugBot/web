@@ -68,6 +68,10 @@
         link: "#cloner"
       },
       {
+        name: "Hijack",
+        link: "#hijack"
+      },
+      {
         name: "Hijacker",
         link: "#hijacker"
       },
@@ -86,6 +90,14 @@
       {
         name: "Corruptor",
         link: "#corruptor"
+      },
+      {
+        name: "Comp",
+        link: "#comp"
+      },
+      {
+        name: "Rootkit",
+        link: "#rootkit"
       }
     ]
   },
