@@ -5,6 +5,20 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 11th August 2021
+### Updates
+  - Updated Discord.js to v13!
+   
+  - `!addcommand` and `!removecommand` have been removed and replaced with `/command add` and `/command remove` slash commands.
+  - `!challange` has been updated and can now be used as a slash command. 
+  - `!weapon` will now display multiple weapons simultaneously if multiple weapons are given, allowing for easy comparison.
+  - Process messages now use buttons for injections instead of reactions.
+
+### Bug Fixes
+  - `!whowas` command now works again.
+
+*****************************
+
 ## 1st August 2021
 ### Updates
   - Word filter algorithm made more efficient.
