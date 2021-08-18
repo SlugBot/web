@@ -5,6 +5,15 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 18th August 2021
+### Updates
+  - Updated `slugs`, `plant`, `bypass`, `crack`, and `clean` to /slash commands.
+  - These commands will now also use the new discord buttons and select menus.
+  - Button in `/slugs` menu to begin the CLEAN process directly.
+  - Refactored process display to lay the groundwork for more useful data to be displayed on each process (graphing LEECH earnings over time, process logs, etc). 
+
+*****************************
+
 ## 11th August 2021
 ### Updates
   - Updated Discord.js to v13!
