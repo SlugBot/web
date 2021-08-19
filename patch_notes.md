@@ -10,7 +10,12 @@ title: Patch Notes
   - Updated `slugs`, `plant`, `bypass`, `crack`, and `clean` to /slash commands.
   - These commands will now also use the new discord buttons and select menus.
   - Button in `/slugs` menu to begin the CLEAN process directly.
-  - Refactored process display to lay the groundwork for more useful data to be displayed on each process (graphing LEECH earnings over time, process logs, etc). 
+  - Refactored process display to lay the groundwork for more useful data to be displayed on each process (graphing LEECH earnings over time, process logs, etc).
+  - Increased profile slime duration to four weeks.
+  - Updated member event participation buttons.
+
+## Bug Fixes
+  - Fixed initial Member Event display.
 
 *****************************
 
