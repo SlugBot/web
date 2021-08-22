@@ -83,6 +83,7 @@ A planted **HIJACKER** will attempt to automatically hijack processes planted by
 * Defensive Stat: **SCANNER**
 
 ## HONEYPOT
+```!plant honeypot <target user>```
 A honeypot, when planted on a user, bypass attackers attempting to bypass the user. It's best to plant these on high value targets so you can gain access to the attacker's accounts. Upgrading this process will allow it to trigger on cracks as well as bypasses.
 * Offensive Stat: **INJECTOR**
 * Defensive Stat: **SCANNER**

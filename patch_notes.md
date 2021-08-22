@@ -5,6 +5,18 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 22nd August 2021
+### Updates
+  - Updated `/streamer` to slash command.
+  - SKIMMERs now accurately display how much they skim.
+
+### Bug Fixes
+  - Fixed bug in economy tutorial stopping progression at stage 4.
+  - Fixed bug with process descriptions being too long to embed in select menus.
+  - Fixed bug when streamer in streamer notification list gets banned while live, making it impossible to remove them from the notification list.
+
+*****************************
+
 ## 18th August 2021
 ### Updates
   - Updated `slugs`, `plant`, `bypass`, `crack`, and `clean` to /slash commands.
