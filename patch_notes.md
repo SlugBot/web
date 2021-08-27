@@ -5,6 +5,29 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 27th August 2021
+### New Additions
+  - New PROFILE_MOD border_dog added.
+  - New PROFILE_MOD border_snake_light_0 added.
+  - New PROFILE_MOD border_snake_light_1 added.
+  - New PROFILE_MOD border_snake_light_2 added.
+  - New PROFILE_MOD border_snake_dark_0 added.
+  - New PROFILE_MOD border_snake_dark_1 added.
+  - New PROFILE_MOD border_snake_dark_2 added.
+
+### Updates
+  - Added DISC company stocks to the stock market.
+  - DISC stock trend is influenced by the general activity across all servers with slugbot. 
+
+*****************************
+
+## 25th August 2021
+### New Additions
+  - You can now buy and sell stocks in "companies".
+  - New PROFILE_MOD border_dragon added.
+
+*****************************
+
 ## 22nd August 2021
 ### Updates
   - Updated `/streamer` to slash command.
