@@ -5,6 +5,15 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 29th August 2021
+### Updates
+  - Added sales tax.
+
+### Bug Fixes
+  - Various formatting errors with process displays.
+
+*****************************
+
 ## 27th August 2021
 ### New Additions
   - New PROFILE_MOD border_dog added.
