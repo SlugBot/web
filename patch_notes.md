@@ -17,7 +17,11 @@ title: Patch Notes
 
 ### Updates
   - Added DISC company stocks to the stock market.
-  - DISC stock trend is influenced by the general activity across all servers with slugbot. 
+  - DISC stock trend is influenced by the general activity across all servers with slugbot.
+  - Updated `/names` to slash command. 
+  - Updated `/avatar` to slash command. 
+  - Updated `/daily` to slash command.
+  - Updated `/vault` to slash command. 
 
 *****************************
 
