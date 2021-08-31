@@ -5,6 +5,16 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 31st August 2021
+### Updates
+  - Updated `/allcatestats` to slash command.
+  - Improved `!rep` argument parsing.
+
+### Bug Fixes
+  - Fixed removing process from `!slugs` menu not resetting selection.
+
+*****************************
+
 ## 29th August 2021
 ### Updates
   - Added sales tax.
