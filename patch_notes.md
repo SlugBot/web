@@ -5,6 +5,17 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 4th September 2021
+### New Additions
+  - New PROFILE_MOD border_glow_fire_outer added.
+  - New PROFILE_MOD border_glow_lightning_outer added.
+
+### Updates
+  - Updated `/weapon` to slash command.
+  - Increased contract reward for CORRUPTOR plants.
+
+*****************************
+
 ## 31st August 2021
 ### Updates
   - Updated `/allcatestats` to slash command.
