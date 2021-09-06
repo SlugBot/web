@@ -99,6 +99,8 @@ Any appearance of this flag in the string will be replaced with **one** of the l
 This flag will be replaced by the result of evaluating the expression given. Other replacer flags can be nested within this flag and factored into the expression - for example `${MATH: ${COUNT} + 10}`.
 ### ${TIMEOUT: \<duration>}
 This flag will timeout the user who triggered the function for `<duration>` seconds if possible. This flag only applies for Twitch functions. SlugBot must be a moderator in the relevant Twitch chat. The flag is removed from the response.
+### ${MUTE: \<duration>}
+This flag will mute the user who triggered the function for `<duration>` seconds if possible. This flag only applies for Discord functions. Slugbot must have the ability to apply roles. The flag is removed from the response.
 
 
 ---

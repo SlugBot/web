@@ -5,6 +5,15 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 6th September 2021
+### New Additions
+  - `${MUTE: <duration>}` replacer flag added.
+
+### Bug Fixes 
+  - Fixed bug with twitch `${timeout: <duration>}` flag when duration was greater than 9 seconds.
+
+*****************************
+
 ## 4th September 2021
 ### New Additions
   - New PROFILE_MOD border_glow_fire_outer added.
