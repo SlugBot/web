@@ -5,6 +5,14 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 8th September 2021
+### Updates
+  - Improved time formatting in various locations.
+  - Added point decay regeneration display in ladder messages.
+  - Improved UI for ladder challenges.
+
+*****************************
+
 ## 6th September 2021
 ### New Additions
   - `${MUTE: <duration>}` replacer flag added.
