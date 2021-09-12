@@ -5,6 +5,17 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 10th September 2021
+### Updates
+  - Added physical infusion only toggle to `/allocatestats`.
+  - Updated Ladder challenge interface.
+  - Updated investment graphs.
+
+### New Additions
+  - Auto fix broken embed links from copied video URLs on mobile.
+
+*****************************
+
 ## 8th September 2021
 ### Updates
   - Improved time formatting in various locations.
