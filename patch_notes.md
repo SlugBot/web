@@ -5,6 +5,12 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 21st September 2021
+### Updates 
+  - Added Weekly Top Sleg SC reward.
+  
+*****************************
+
 ## 10th September 2021
 ### Updates
   - Added physical infusion only toggle to `/allocatestats`.
