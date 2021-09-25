@@ -6,6 +6,9 @@ title: Patch Notes
 # PATCH NOTES
 
 ## 21st September 2021
+### New Additions
+  - Added `/persistentroles` command to manage persistent roles.
+  
 ### Updates 
   - Added Weekly Top Sleg SC reward.
   
