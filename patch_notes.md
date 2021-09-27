@@ -11,6 +11,9 @@ title: Patch Notes
   
 ### Updates 
   - Added Weekly Top Sleg SC reward.
+
+### Bug Fixes
+  - Fixed bug where incorrect attacker was displayed for `onAccountAccessed` log.
   
 *****************************
 
