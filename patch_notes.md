@@ -5,6 +5,13 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 28th September 2021
+### Updates
+  - `/weapon info` now displays counter hit damage where applicable.
+  - Added Leo ring toggle for `/weapon info` where applicable.
+
+*****************************
+
 ## 21st September 2021
 ### New Additions
   - Added `/persistentroles` command to manage persistent roles.
