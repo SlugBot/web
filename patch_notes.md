@@ -5,6 +5,19 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 8th October 2021
+### Updates
+  - Updated `/deletemessages` to slash command.
+  - `/deletemessages` now takes `member` as an optional argument. Not supplying a member will delete the last X messages by any member.
+  - Updated `/rank` to slash command.
+  - Updated `/mute` to slash command.
+  - Added failsafe for dead stream notifications.
+
+### Bug Fix
+  - Fixed linebreaks in ${rand: } replacer flag not behaving properly.
+
+*****************************
+
 ## 28th September 2021
 ### Updates
   - `/weapon info` now displays counter hit damage where applicable.
