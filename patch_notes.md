@@ -11,7 +11,9 @@ title: Patch Notes
   - `/deletemessages` now takes `member` as an optional argument. Not supplying a member will delete the last X messages by any member.
   - Updated `/rank` to slash command.
   - Updated `/mute` to slash command.
+  - Updated `/filter` to slash command.
   - Added failsafe for dead stream notifications.
+  - Added failsafe for dead challenge notifications.
 
 ### Bug Fix
   - Fixed linebreaks in ${rand: } replacer flag not behaving properly.
