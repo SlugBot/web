@@ -5,6 +5,21 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 6th November 2021
+### Updates
+  - Updated `/ban` to slash command.
+  - Updated `/warn` to slash command.
+  - Updated `/unmute` to slash command.
+  - Added autocomplete to `/unmute` member param
+  - Added autocomplete to `/challenge` leaderboard param
+  - Added rank_range param to `/challenge` allowing users to limit the rank of the opponent to within a range.
+
+### Bug Fixes
+  - Fixed permissions overrides for command > module > global permissions.
+  - Fixed dead streams notification failsafe
+
+*****************************
+
 ## 8th October 2021
 ### Updates
   - Updated `/deletemessages` to slash command.
@@ -15,7 +30,7 @@ title: Patch Notes
   - Added failsafe for dead stream notifications.
   - Added failsafe for dead challenge notifications.
 
-### Bug Fix
+### Bug Fixes
   - Fixed linebreaks in ${rand: } replacer flag not behaving properly.
 
 *****************************
