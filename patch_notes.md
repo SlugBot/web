@@ -5,6 +5,12 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 15th November 2021
+### Updates
+  - Added `${DELETE}` flag replacer to delete the message that matched the trigger.
+
+*****************************
+
 ## 6th November 2021
 ### Updates
   - Updated `/ban` to slash command.
