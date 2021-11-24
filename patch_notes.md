@@ -5,6 +5,16 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 24th November 2021
+### Updates
+  - Updated `/warn` to slash command.
+  - `!warnlog` removed. Functionality moved to `/warn list`
+  - `/warn` now has a confirmation step before warning.
+  - `/warn` now DMs the target user.
+  - Various time displays updated.
+
+*****************************
+
 ## 15th November 2021
 ### Updates
   - Added `${DELETE}` flag replacer to delete the message that matched the trigger.
