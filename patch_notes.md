@@ -7,11 +7,24 @@ title: Patch Notes
 
 ## 24th November 2021
 ### Updates
-  - Updated `/warn` to slash command.
   - `!warnlog` removed. Functionality moved to `/warn list`
   - `/warn` now has a confirmation step before warning.
   - `/warn` now DMs the target user.
   - Various time displays updated.
+
+  - Updated `/install` to slash command.
+  - Updated `/uninstall` to slash command.
+  - Updated `/upgrade` to slash command.
+  - Updated `/downgrade` to slash command.
+
+### Bug Fixes
+  - Fixed `/daily` display.
+  - Fixed `/crack` with rootkit
+  - Fixed `/bypass` with rootkit
+  - Fixed `/clean` with rootkit
+  - Fixed missing `password` argument in `/memberevent`.
+  - Fixed `level` and `upgrade` argments in `/memberevent`.
+  - Fixed `/slugs` in DMs.
 
 *****************************
 
