@@ -5,6 +5,13 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 30th November 2021
+### Updates
+  - Updated `/poise` to slash command.
+  - Added weapon descriptions to `/weapon`.
+
+*****************************
+
 ## 24th November 2021
 ### Updates
   - `!warnlog` removed. Functionality moved to `/warn list`
