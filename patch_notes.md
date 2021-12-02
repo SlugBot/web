@@ -9,6 +9,7 @@ title: Patch Notes
 ### Updates
   - Updated `/poise` to slash command.
   - Added weapon descriptions to `/weapon`.
+  - Added autocomplete to `/weapon info` `weapon` argument
 
 *****************************
 
