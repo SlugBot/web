@@ -9,7 +9,9 @@ title: Patch Notes
 ### Updates
   - Updated `/poise` to slash command.
   - Added weapon descriptions to `/weapon`.
-  - Added autocomplete to `/weapon info` `weapon` argument
+  - Added autocomplete to `/weapon info` `weapon` argument.
+  - Added autocomplete to `/plant` `target` argument.
+  - Added autocomplete to `/crack` `target` argument.
 
 *****************************
 
