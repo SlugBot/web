@@ -5,6 +5,14 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 10th December 2021
+### Updates
+  - Reformatted weapon data in prep for Elden Ring.
+  - Added infusion selection to `/weapon`.
+  - Slightly improved speed of `/allocatestats`
+
+*****************************
+
 ## 30th November 2021
 ### Updates
   - Updated `/poise` to slash command.
