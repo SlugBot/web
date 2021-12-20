@@ -1,17 +1,4 @@
 {
-  "commands": {
-    "cmd": "commands",
-    "format": "${PREFIX}commands",
-    "desc": "Used to get a list of all custom commands in the server DMed to you.",
-    "perms": [
-      "USER"
-    ],
-    "moduleId": "customcommands",
-    "canDM": false,
-    "canEdit": false,
-    "parameters": [],
-    "examples": []
-  },
   "help": {
     "cmd": "help",
     "synonyms": [
@@ -203,7 +190,198 @@
         "command": "!weapon fire dagger vs chaos dagger +3 10 10 10 10 10",
         "desc": "This will compare the fire dagger and chaos dagger weapons at the given stats. Use the number reactions to view each of the given weapons."
       }
-    ]
+    ],
+    "data": {
+      "name": "weapon",
+      "description": "Get info on a given weapon, or get the top 10 weapons of each class",
+      "options": [
+        {
+          "name": "info",
+          "type": "SUB_COMMAND",
+          "description": "Get info on a weapon or list of weapons separated by commas",
+          "options": [
+            {
+              "name": "weapon",
+              "type": "STRING",
+              "description": "Weapon name or list of weapon names",
+              "required": true,
+              "autocomplete": true
+            },
+            {
+              "name": "upgrade",
+              "description": "Upgrade level of the weapon. Use equivalent standard upgrade for special weapons",
+              "type": "STRING",
+              "choices": [
+                {
+                  "name": "+0",
+                  "value": "+0"
+                },
+                {
+                  "name": "+1",
+                  "value": "+1"
+                },
+                {
+                  "name": "+2",
+                  "value": "+2"
+                },
+                {
+                  "name": "+3",
+                  "value": "+3"
+                },
+                {
+                  "name": "+4",
+                  "value": "+4"
+                },
+                {
+                  "name": "+5",
+                  "value": "+5"
+                },
+                {
+                  "name": "+6",
+                  "value": "+6"
+                },
+                {
+                  "name": "+7",
+                  "value": "+7"
+                },
+                {
+                  "name": "+8",
+                  "value": "+8"
+                },
+                {
+                  "name": "+9",
+                  "value": "+9"
+                },
+                {
+                  "name": "+10",
+                  "value": "+10"
+                }
+              ],
+              "required": false
+            },
+            {
+              "name": "strength",
+              "type": "INTEGER",
+              "description": "Strength level",
+              "required": false
+            },
+            {
+              "name": "dexterity",
+              "type": "INTEGER",
+              "description": "Dexterity level",
+              "required": false
+            },
+            {
+              "name": "intelligence",
+              "type": "INTEGER",
+              "description": "Intelligence level",
+              "required": false
+            },
+            {
+              "name": "faith",
+              "type": "INTEGER",
+              "description": "Faith level",
+              "required": false
+            },
+            {
+              "name": "luck",
+              "type": "INTEGER",
+              "description": "Luck level",
+              "required": false
+            }
+          ]
+        },
+        {
+          "name": "bestinclass",
+          "type": "SUB_COMMAND",
+          "description": "Get the top 10 weapons of each class",
+          "options": [
+            {
+              "name": "upgrade",
+              "description": "Upgrade level of the weapon. Use equivalent standard upgrade for special weapons",
+              "type": "STRING",
+              "choices": [
+                {
+                  "name": "+0",
+                  "value": "+0"
+                },
+                {
+                  "name": "+1",
+                  "value": "+1"
+                },
+                {
+                  "name": "+2",
+                  "value": "+2"
+                },
+                {
+                  "name": "+3",
+                  "value": "+3"
+                },
+                {
+                  "name": "+4",
+                  "value": "+4"
+                },
+                {
+                  "name": "+5",
+                  "value": "+5"
+                },
+                {
+                  "name": "+6",
+                  "value": "+6"
+                },
+                {
+                  "name": "+7",
+                  "value": "+7"
+                },
+                {
+                  "name": "+8",
+                  "value": "+8"
+                },
+                {
+                  "name": "+9",
+                  "value": "+9"
+                },
+                {
+                  "name": "+10",
+                  "value": "+10"
+                }
+              ],
+              "required": false
+            },
+            {
+              "name": "strength",
+              "type": "INTEGER",
+              "description": "Strength level",
+              "required": false
+            },
+            {
+              "name": "dexterity",
+              "type": "INTEGER",
+              "description": "Dexterity level",
+              "required": false
+            },
+            {
+              "name": "intelligence",
+              "type": "INTEGER",
+              "description": "Intelligence level",
+              "required": false
+            },
+            {
+              "name": "faith",
+              "type": "INTEGER",
+              "description": "Faith level",
+              "required": false
+            },
+            {
+              "name": "luck",
+              "type": "INTEGER",
+              "description": "Luck level",
+              "required": false
+            }
+          ]
+        }
+      ]
+    }
   },
   "roll": {
     "cmd": "roll",
@@ -390,6 +568,9 @@
   },
   "winner": {
     "cmd": "join",
+    "synonyms": [
+      "victor"
+    ],
     "format": "${PREFIX}winner <winner name>",
     "desc": "Use this to declare a winner of a fight club fight.",
     "perms": [
@@ -621,6 +802,19 @@
         "desc": "This will create a regex keyword match that will respond with a discord mention whenever a message contains the string `don't @ me`."
       }
     ]
+  },
+  "commands": {
+    "cmd": "commands",
+    "format": "${PREFIX}commands",
+    "desc": "Used to get a list of all custom commands in the server DMed to you.",
+    "perms": [
+      "USER"
+    ],
+    "moduleId": "customcommands",
+    "canDM": false,
+    "canEdit": false,
+    "parameters": [],
+    "examples": []
   },
   "cooldown": {
     "cmd": "cooldown",

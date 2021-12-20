@@ -5,11 +5,21 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## New Additions
+  - Added temporary VC creation and customisation.
+
+## Bug Fixes 
+  - Fixed `Remove process` button not working.
+
+*****************************
+
 ## 10th December 2021
 ### Updates
   - Reformatted weapon data in prep for Elden Ring.
   - Added infusion selection to `/weapon`.
   - Slightly improved speed of `/allocatestats`
+  - Updated `/build` to slash command.
+  - `/build` now includes `add`, `remove`, and `list` subcommands.
 
 *****************************
 
