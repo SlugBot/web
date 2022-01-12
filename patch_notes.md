@@ -5,6 +5,11 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## Updates
+  - Updated `/allocatestats` algorithm to be more accurate.
+
+*****************************
+
 ## New Additions
   - Added temporary VC creation and customisation.
 
