@@ -5,15 +5,15 @@ title: Patch Notes
 
 # PATCH NOTES
 
-## Updates
+## 10th January 2022
+### Updates
   - Updated `/allocatestats` algorithm to be more accurate.
+  - Updated `/guildinfo` to slash command.
 
-*****************************
-
-## New Additions
+### New Additions
   - Added temporary VC creation and customisation.
 
-## Bug Fixes 
+### Bug Fixes 
   - Fixed `Remove process` button not working.
 
 *****************************
