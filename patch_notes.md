@@ -5,6 +5,16 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 25th January 2022
+### Updates
+  - Updated `/range` to slash command.
+  - Updated `/levelup` to slash command.
+
+### Bug Fixes
+  - Fixed rounding error with `/range` command
+
+*****************************
+
 ## 10th January 2022
 ### Updates
   - Updated `/allocatestats` algorithm to be more accurate.
