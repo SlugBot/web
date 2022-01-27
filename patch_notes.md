@@ -9,6 +9,8 @@ title: Patch Notes
 ### Updates
   - Updated `/range` to slash command.
   - Updated `/levelup` to slash command.
+  - Updated `/invest` to slash command.
+  - Added autocomplete to `/invest terminate`.
   - Added `cross-server` setting for `/memberevent` allowing member events to be displayed in all servers the member shares with slugbot.
 
 ### Bug Fixes
