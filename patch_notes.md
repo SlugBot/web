@@ -14,10 +14,11 @@ title: Patch Notes
   - Added `cross-server` setting for `/memberevent` allowing member events to be displayed in all servers the member shares with slugbot.
 
 ### Bug Fixes
-  - Fixed rounding error with `/range` command
-  - Fixed member events failing to take level data
-  - Fixed member events failing to take set build data
-  - Fixed member events not timing out
+  - Fixed rounding error with `/range` command.
+  - Fixed member events failing to take level data.
+  - Fixed member events failing to take set build data.
+  - Fixed member events not timing out.
+  - Fixed `/vc` commands not working for Custom VCs.
 
 *****************************
 
