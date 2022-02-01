@@ -5,6 +5,13 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 1st February 2022
+### Bug Fixes
+  - Fixed !userinfo not working with no arguments.
+  - Fixed !blackjack incorrectly calling a draw on some instances of getting blackjack.
+
+*****************************
+
 ## 25th January 2022
 ### Updates
   - Updated `/range` to slash command.
