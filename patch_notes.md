@@ -5,6 +5,18 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 8th February 2022
+### Updates
+  - Added autocompete to `/slugs` `target` argument.
+  - `/slugs` menu now refreshes data on tab change. 
+
+### Bug Fixes
+  - Fixed `daily` when used through a ROOTKIT.
+  - Fixed `crack` when used through a ROOTKIT.
+  - Fixed UI error when cleaning own process with the REMOVE PROCESS button.
+
+*****************************
+
 ## 1st February 2022
 ### Bug Fixes
   - Fixed !userinfo not working with no arguments.
