@@ -7,9 +7,12 @@ title: Patch Notes
 
 ## 8th February 2022
 ### Updates
+  - Ported Twitch API wrapper to @twurple.
+  - Improved responsiveness of `/streamer remove` `streamer` argument autocomplete. 
   - Added autocompete to `/command remove` `command` argument.
   - Added autocompete to `/slugs` `target` argument.
   - `/slugs` menu now refreshes data on tab change. 
+  - Added optional region limit to `/challenge`.
 
 ### Bug Fixes
   - Fixed `daily` when used through a ROOTKIT.
