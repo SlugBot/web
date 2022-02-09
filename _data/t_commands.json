@@ -127,7 +127,35 @@
         "command": "!igot 1919",
         "desc": "This show the possible soul level of a player depending on their phantom type.\n![igot-screenshot](images/igot_demo.png)"
       }
-    ]
+    ],
+    "data": {
+      "name": "igot",
+      "description": "Get the estimated level of another player killed in DS1 or DS3",
+      "options": [
+        {
+          "name": "game",
+          "description": "game",
+          "type": "STRING",
+          "required": true,
+          "choices": [
+            {
+              "name": "DS1",
+              "value": "DS1"
+            },
+            {
+              "name": "DS3",
+              "value": "DS3"
+            }
+          ]
+        },
+        {
+          "name": "souls_dropped",
+          "description": "Number of souls received when you killed the player",
+          "type": "INTEGER",
+          "required": true
+        }
+      ]
+    }
   },
   "weapon": {
     "cmd": "weapon",

@@ -275,7 +275,11 @@
     "moduleId": "general",
     "canDM": false,
     "canEdit": false,
-    "debug": false
+    "debug": false,
+    "data": {
+      "name": "guildinfo",
+      "description": "Displays general server information"
+    }
   },
   "help": {
     "cmd": "help",
@@ -1094,7 +1098,19 @@
         "command": "!userinfo Alex_",
         "desc": "This will display guild info on member 'Alex_'. Stating no member will display userinfo on the member who used the command."
       }
-    ]
+    ],
+    "data": {
+      "name": "userinfo",
+      "description": "Get general user information about yourself or another member",
+      "options": [
+        {
+          "name": "member",
+          "description": "Get this member's user info",
+          "type": "USER",
+          "required": false
+        }
+      ]
+    }
   },
   "xbox": {
     "cmd": "xbox",
@@ -1258,7 +1274,8 @@
           "name": "weapon",
           "description": "Weapon to allocate stats for",
           "type": "STRING",
-          "required": true
+          "required": true,
+          "autocomplete": true
         },
         {
           "name": "spend",
@@ -1455,6 +1472,20 @@
           ]
         },
         {
+          "name": "set",
+          "type": "SUB_COMMAND",
+          "description": "Set a current build",
+          "options": [
+            {
+              "name": "name",
+              "type": "STRING",
+              "description": "Name of build to set as current",
+              "required": true,
+              "autocomplete": true
+            }
+          ]
+        },
+        {
           "name": "list",
           "type": "SUB_COMMAND",
           "description": "View your build list or the build list of another member",
@@ -1557,7 +1588,35 @@
         "command": "!igot 1919",
         "desc": "This show the possible soul level of a player depending on their phantom type.\n![igot-screenshot](images/igot_demo.png)"
       }
-    ]
+    ],
+    "data": {
+      "name": "igot",
+      "description": "Get the estimated level of another player killed in DS1 or DS3",
+      "options": [
+        {
+          "name": "game",
+          "description": "game",
+          "type": "STRING",
+          "required": true,
+          "choices": [
+            {
+              "name": "DS1",
+              "value": "DS1"
+            },
+            {
+              "name": "DS3",
+              "value": "DS3"
+            }
+          ]
+        },
+        {
+          "name": "souls_dropped",
+          "description": "Number of souls received when you killed the player",
+          "type": "INTEGER",
+          "required": true
+        }
+      ]
+    }
   },
   "item": {
     "cmd": "item",
@@ -1769,7 +1828,41 @@
         "command": "!range invader 90",
         "desc": "This will show the soul level ranges for multiplayer interaction for soul level 90 invaders."
       }
-    ]
+    ],
+    "data": {
+      "name": "range",
+      "description": "find the upper and lower soul level limits for players invading you or hosts you invade",
+      "options": [
+        {
+          "name": "mode",
+          "description": "From the perspective of the host or invader",
+          "type": "STRING",
+          "required": true,
+          "choices": [
+            {
+              "name": "host",
+              "value": "host"
+            },
+            {
+              "name": "invader",
+              "value": "invader"
+            }
+          ]
+        },
+        {
+          "name": "soul_level",
+          "description": "Level of character",
+          "required": true,
+          "type": "INTEGER"
+        },
+        {
+          "name": "upgrade_level",
+          "description": "Upgrade level of weapon",
+          "required": false,
+          "type": "INTEGER"
+        }
+      ]
+    }
   },
   "removebuild": {
     "cmd": "removebuild",
@@ -2733,7 +2826,46 @@
         "command": "!invest terminate #general",
         "desc": "This will terminate an existing investment in the #general text channel. A confirmation reaction must be pressed before the investment is terminated. The termination can be cancelled with the cancel reaction."
       }
-    ]
+    ],
+    "data": {
+      "name": "invest",
+      "description": "Invest SC in text channels",
+      "options": [
+        {
+          "name": "add",
+          "description": "Make a new investment",
+          "type": "SUB_COMMAND",
+          "options": [
+            {
+              "name": "channel",
+              "description": "Channel to invest in",
+              "type": "CHANNEL",
+              "required": true
+            },
+            {
+              "name": "amount",
+              "description": "Amount of SC to invest",
+              "type": "NUMBER",
+              "required": false
+            }
+          ]
+        },
+        {
+          "name": "terminate",
+          "description": "Terminate an existing investment prematurely",
+          "type": "SUB_COMMAND",
+          "options": [
+            {
+              "name": "channel",
+              "description": "Channel to terminate investment in",
+              "type": "STRING",
+              "required": true,
+              "autocomplete": true
+            }
+          ]
+        }
+      ]
+    }
   },
   "levelup": {
     "cmd": "levelup",
@@ -2746,6 +2878,7 @@
       "USER"
     ],
     "moduleId": "economy",
+    "canDM": false,
     "canEdit": false,
     "format": "${PREFIX}levelup <stat>",
     "desc": "Use this command to level up a stat.",
@@ -2793,7 +2926,59 @@
         "command": "!levelup firewall",
         "desc": "This will start a levelup Firewall process."
       }
-    ]
+    ],
+    "data": {
+      "name": "levelup",
+      "description": "Level up a stat",
+      "options": [
+        {
+          "name": "stat",
+          "description": "Stat to level up",
+          "type": "STRING",
+          "required": true,
+          "choices": [
+            {
+              "name": "FIREWALL",
+              "value": "firewall"
+            },
+            {
+              "name": "BYPASSER",
+              "value": "bypasser"
+            },
+            {
+              "name": "ENCRYPTION",
+              "value": "encryption"
+            },
+            {
+              "name": "CRACKER",
+              "value": "cracker"
+            },
+            {
+              "name": "SCANNER",
+              "value": "scanner"
+            },
+            {
+              "name": "INTERCEPTOR",
+              "value": "interceptor"
+            },
+            {
+              "name": "WIRE",
+              "value": "wire"
+            },
+            {
+              "name": "INJECTOR",
+              "value": "injector"
+            }
+          ]
+        },
+        {
+          "name": "number_of_levels",
+          "description": "If remaining stat levels from a respecc, number of levels to increase stat by",
+          "required": false,
+          "type": "INTEGER"
+        }
+      ]
+    }
   },
   "lockdown": {
     "perms": [
@@ -3408,7 +3593,8 @@
           "name": "target",
           "description": "BYPASS ID or target username of account owner",
           "type": "STRING",
-          "required": false
+          "required": false,
+          "autocomplete": true
         }
       ]
     }
@@ -4366,30 +4552,109 @@
       }
     ]
   },
-  "iam": {
-    "cmd": "iam",
+  "tourney": {
+    "cmd": "tourney",
     "synonyms": [],
-    "canEdit": true,
-    "moduleId": "memberevent",
+    "moduleId": "ladder",
     "perms": [
-      "USER"
+      "BOT_ADMIN"
     ],
-    "format": "${PREFIX}iam <member event info>",
-    "desc": "Use this command to create a notification for a Member Event (such as a *dry finger run*).\n\nProvide at least a location and what you are doing there. **Passwords and character names must be in quotes.** If you have multiple platform roles, remember to state which one the event will be on. How you word it doesn't matter too much. You can add extra event information by including `info: \"<extra info here>\"` when using the command.\n\nUse `${PREFIX}iam done` command to end the event.",
+    "debug": true,
+    "format": "${PREFIX}host",
+    "desc": "",
     "examples": [
       {
-        "command": "!iam dry fingered in the archives. soul level 81 +10. character name \"The Balnace\", password: \"slug\"",
-        "desc": "This will create a member Event notification in all member event channels, stating where you are, what you are doing, your soul level, upgrade level, character name, and password. You can update the information in the member event without having to re-enter everything again. Simply use the command again and specify your updates."
-      },
-      {
-        "command": "!iam now SL90 at the ringed city streets.",
-        "desc": "This will update the soul level and location, leaving everything else unchanged."
-      },
-      {
-        "command": "!iam done",
-        "desc": "This will end the event."
+        "command": "/tourney",
+        "desc": ""
       }
-    ]
+    ],
+    "data": {
+      "name": "tourney",
+      "description": "Host a tourney for the top ranking members on the leaderboard",
+      "options": [
+        {
+          "type": "SUB_COMMAND",
+          "name": "create",
+          "description": "Host a new tourney",
+          "options": [
+            {
+              "name": "leaderboard",
+              "description": "Pick a leaderboard to select participants from",
+              "type": "STRING",
+              "autocomplete": true,
+              "required": true
+            },
+            {
+              "name": "name",
+              "type": "STRING",
+              "description": "Title of the tourney",
+              "required": true
+            },
+            {
+              "name": "player_count",
+              "type": "INTEGER",
+              "description": "Number of tourney participants",
+              "required": true
+            },
+            {
+              "name": "start_in",
+              "type": "STRING",
+              "description": "Time before tourney will commence; e.g. \"4 days 12 hours\"",
+              "required": true
+            }
+          ]
+        },
+        {
+          "type": "SUB_COMMAND",
+          "name": "abort",
+          "description": "Abort an existing tourney",
+          "options": [
+            {
+              "name": "name",
+              "type": "STRING",
+              "description": "Title of the tourney to abort",
+              "required": true,
+              "autocomplete": true
+            }
+          ]
+        },
+        {
+          "type": "SUB_COMMAND",
+          "name": "status",
+          "description": "Get the current status of a tourney",
+          "options": [
+            {
+              "name": "name",
+              "type": "STRING",
+              "description": "Title of the tourney",
+              "required": true,
+              "autocomplete": true
+            }
+          ]
+        },
+        {
+          "type": "SUB_COMMAND",
+          "name": "match",
+          "description": "Declare the outcome of a match",
+          "options": [
+            {
+              "name": "name",
+              "type": "STRING",
+              "description": "Name of the tourney the match is for",
+              "required": true,
+              "autocomplete": true
+            },
+            {
+              "name": "winner",
+              "type": "STRING",
+              "description": "Name of winner",
+              "required": true,
+              "autocomplete": true
+            }
+          ]
+        }
+      ]
+    }
   },
   "memberevent": {
     "cmd": "memberevent",
@@ -4487,6 +4752,13 @@
               "required": false,
               "type": "INTEGER",
               "autocomplete": true
+            },
+            {
+              "name": "password",
+              "description": "Password for multiplayer.",
+              "required": false,
+              "type": "STRING",
+              "autocomplete": false
             }
           ]
         },
@@ -4571,6 +4843,13 @@
               "required": false,
               "type": "STRING",
               "autocomplete": false
+            },
+            {
+              "name": "cross_server",
+              "description": "Should the event be displayed in all servers you share with slugbot?",
+              "required": false,
+              "type": "BOOLEAN",
+              "autocomplete": false
             }
           ]
         },
@@ -4599,15 +4878,15 @@
         "values": [
           {
             "value": "Username",
-            "desc": "Discord username of the user to be muted"
+            "desc": "Discord username of the user to be banned"
           },
           {
             "value": "discord ID",
-            "desc": "discord ID of the user to be muted"
+            "desc": "discord ID of the user to be banned"
           },
           {
             "value": "discord member mention",
-            "desc": "Mention member to be muted"
+            "desc": "Mention member to be banned"
           }
         ]
       },
@@ -4637,8 +4916,8 @@
       "options": [
         {
           "name": "member",
-          "type": "USER",
-          "description": "Member to ban",
+          "type": "STRING",
+          "description": "Member to ban or user ID of user to preemptively ban",
           "required": true
         },
         {
@@ -4988,6 +5267,55 @@
           "type": "SUB_COMMAND",
           "name": "list",
           "description": "List all persistent roles in this guild"
+        }
+      ]
+    }
+  },
+  "unban": {
+    "cmd": "unban",
+    "format": "${PREFIX}unban <member>",
+    "desc": "Use this command to unban a member.",
+    "perms": [
+      "BOT_ADMIN"
+    ],
+    "moduleId": "moderation",
+    "canDM": false,
+    "canEdit": false,
+    "debug": false,
+    "parameters": [
+      {
+        "param": "<member>",
+        "values": [
+          {
+            "value": "Username",
+            "desc": "Discord username of the user to be unbanned"
+          },
+          {
+            "value": "discord ID",
+            "desc": "discord ID of the user to be unbanned"
+          },
+          {
+            "value": "discord member mention",
+            "desc": "Mention member to be unbanned"
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "command": "!unban Alex_",
+        "desc": "This will unban Alex_ from the server."
+      }
+    ],
+    "data": {
+      "name": "unban",
+      "description": "Unban a member",
+      "options": [
+        {
+          "name": "user_id",
+          "type": "STRING",
+          "description": "User ID of user to unban",
+          "required": true
         }
       ]
     }
@@ -5713,6 +6041,11 @@
               "name": "is_mutually_exclusive",
               "type": "BOOLEAN",
               "description": "If true, only one role can be taken at a time"
+            },
+            {
+              "name": "is_toggle",
+              "type": "BOOLEAN",
+              "description": "Reacting adds and removes roles. Reactions are automatically removed"
             }
           ]
         }
@@ -6125,6 +6458,104 @@
       }
     ]
   },
+  "slugtactics": {
+    "cmd": "slugtactics",
+    "moduleId": "slugtactics",
+    "perms": [
+      "USER"
+    ],
+    "debug": true,
+    "canDM": true,
+    "format": "${PREFIX}slugtactics",
+    "desc": "Start, join, play, or view a SlugTactics game",
+    "parameters": [],
+    "examples": [],
+    "data": {
+      "name": "slugtactics",
+      "description": "create, start, join, play, or view a SlugTactics game",
+      "options": [
+        {
+          "name": "create",
+          "description": "Start a new SlugTactics game",
+          "type": "SUB_COMMAND",
+          "options": [
+            {
+              "name": "buy_in",
+              "description": "Set buy-in amount",
+              "type": "INTEGER",
+              "required": true
+            },
+            {
+              "name": "grid_size",
+              "description": "Set grid dimensions",
+              "type": "INTEGER",
+              "required": false
+            },
+            {
+              "name": "max_players",
+              "description": "Set max player count",
+              "type": "INTEGER",
+              "required": false
+            },
+            {
+              "name": "turn_timeout",
+              "description": "Amount of time players get to submit a turn (in minutes)",
+              "type": "INTEGER",
+              "required": false
+            }
+          ]
+        },
+        {
+          "name": "start",
+          "description": "Start a SlugTactics game you have created",
+          "type": "SUB_COMMAND",
+          "options": [
+            {
+              "name": "game_id",
+              "description": "Game ID of game you created",
+              "type": "STRING",
+              "required": true,
+              "autocomplete": true
+            }
+          ]
+        },
+        {
+          "name": "join",
+          "description": "Pick a SlugTactics game to join",
+          "type": "SUB_COMMAND",
+          "options": []
+        },
+        {
+          "name": "play",
+          "description": "Make your move in a current game",
+          "type": "SUB_COMMAND",
+          "options": [
+            {
+              "name": "game_id",
+              "description": "Game ID of game to play",
+              "type": "STRING",
+              "required": true,
+              "autocomplete": true
+            }
+          ]
+        },
+        {
+          "name": "view",
+          "description": "View an on-going or past game",
+          "type": "SUB_COMMAND",
+          "options": [
+            {
+              "name": "game_id",
+              "description": "Game ID of game to view",
+              "type": "STRING",
+              "required": true,
+              "autocomplete": true
+            }
+          ]
+        }
+      ]
+    }
+  },
   "jointwitch": {
     "cmd": "jointwitch",
     "synonyms": [
@@ -6246,7 +6677,8 @@
               "type": "STRING",
               "name": "streamer",
               "description": "Twitch username of streamer to remove",
-              "required": true
+              "required": true,
+              "autocomplete": true
             }
           ]
         },

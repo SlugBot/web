@@ -56,17 +56,96 @@
         ]
       },
       {
-        "cmd": "commands",
-        "format": "${PREFIX}commands",
-        "desc": "Used to get a list of all custom commands in the server DMed to you.",
+        "cmd": "command",
+        "synonyms": [],
+        "format": "${PREFIX}command (add <command> <response>) | (remove <command>) | list",
+        "desc": "Used to add/edit a custom command that will respond with a specified string. alternatively regex can be used in place of a command to make SlugBot send a response message whenever the regex matches a members message.\n\nThe response can contain certain replacer flags that will be replaced will specific values when sent by slugbot.\n\nDocumentation on replacer flags can be found [here](setup_guide.html#flag-replacers)",
         "perms": [
           "USER"
         ],
-        "moduleId": "customcommands",
+        "moduleId": "customCommands",
         "canDM": false,
         "canEdit": false,
-        "parameters": [],
-        "examples": []
+        "parameters": [
+          {
+            "param": "<command>",
+            "values": [
+              {
+                "value": "New command string"
+              },
+              {
+                "value": "Existing command string",
+                "desc": "Will overwrite its response"
+              },
+              {
+                "value": "Regex keyword",
+                "desc": "indicated by a string starting and ending with `/`"
+              }
+            ]
+          },
+          {
+            "param": "<response>",
+            "values": [
+              {
+                "value": "String",
+                "desc": "will be displayed when the custom command is used or the regex is matched"
+              }
+            ]
+          }
+        ],
+        "examples": [
+          {
+            "command": "/command add flip You flipped a coin and got ${rand:heads|tails}!",
+            "desc": "This will add a command that will respond with `You flipped a coin and got heads!` OR `You flipped a coin and got tails!` when the command `!flip` is used."
+          },
+          {
+            "command": "/command add /don't\\s@\\sme/ <@${id}>",
+            "desc": "This will create a regex keyword match that will respond with a discord mention whenever a message contains the string `don't @ me`."
+          }
+        ],
+        "data": {
+          "name": "command",
+          "description": "Add or remove custom commands or regex keyword matches.",
+          "options": [
+            {
+              "type": "SUB_COMMAND",
+              "name": "add",
+              "description": "Add or update a custom command or regex keyword match",
+              "options": [
+                {
+                  "name": "command",
+                  "description": "Command word or regEx",
+                  "type": "STRING",
+                  "required": true
+                },
+                {
+                  "name": "response",
+                  "description": "Response to the command",
+                  "type": "STRING",
+                  "required": true
+                }
+              ]
+            },
+            {
+              "type": "SUB_COMMAND",
+              "name": "remove",
+              "description": "Remove a custom command or regex keyword match",
+              "options": [
+                {
+                  "name": "command",
+                  "description": "Command word or regEx",
+                  "type": "STRING",
+                  "required": true
+                }
+              ]
+            },
+            {
+              "type": "SUB_COMMAND",
+              "name": "list",
+              "description": "List all custom commands in this guild"
+            }
+          ]
+        }
       },
       {
         "cmd": "removecommand",
@@ -116,7 +195,7 @@
           "pfp"
         ],
         "format": "${PREFIX}avatar [member]",
-        "desc": "Use this command to view a fullsized image of a members avatar. Use the command with no arguments to view a fullsized image of your own avatar.",
+        "desc": "Use this command to view a fullsized image of a member's avatar. Use the command with no arguments to view a fullsized image of your own avatar.",
         "perms": [
           "USER"
         ],
@@ -147,7 +226,19 @@
             "command": "!avatar Tikaro",
             "desc": "This will display Tikaro's avatar."
           }
-        ]
+        ],
+        "data": {
+          "name": "avatar",
+          "description": "View a fullsized image of a member's avatar",
+          "options": [
+            {
+              "type": "USER",
+              "name": "member",
+              "description": "View this member's avatar",
+              "required": false
+            }
+          ]
+        }
       },
       {
         "cmd": "banme",
@@ -250,99 +341,22 @@
         ],
         "examples": [
           {
-            "command": "!avatar Tikaro",
-            "desc": "This will display Tikaro's avatar."
-          }
-        ]
-      },
-      {
-        "cmd": "permissions",
-        "synonyms": [
-          "perms",
-          "perm",
-          "permission",
-          "constraint",
-          "constraints"
-        ],
-        "perms": [
-          "BOT_ADMIN"
-        ],
-        "canDM": false,
-        "canEdit": false,
-        "debug": true,
-        "format": "${PREFIX}permissions ((module|command <command name>) | score | slugbot) [<setting> (channel|role|user)]",
-        "desc": "Use this command to add or remove constraints on command usage.\n\nAdding a channel constraint will mean the specified command can only be used in that channel.\n\nAdding a role constraint will mean the specified command can only be used by members with that role.\n**ADDING ROLE CONSTRAINTS WILL OVERRIDE DEFAULT PERMISSION REQUIREMENTS**.",
-        "parameters": [
-          {
-            "param": "<command|score>",
-            "values": [
-              {
-                "value": "slugbot command name",
-                "desc": "The name of the command you wish to set permission constraints for."
-              },
-              {
-                "value": "score",
-                "desc": "The string `score` stating that constraints on when XP is given are to be set instead."
-              }
-            ]
-          },
-          {
-            "param": "<setting>",
-            "values": [
-              {
-                "value": "disable",
-                "desc": "disable the command/module."
-              },
-              {
-                "value": "enable",
-                "desc": "enable the command/module."
-              },
-              {
-                "value": "whitelist",
-                "desc": "specify that the command should be whitelisted"
-              },
-              {
-                "value": "blacklist",
-                "desc": "specify that the command should be blacklisted"
-              },
-              {
-                "value": "remove",
-                "desc": "specify that the permissions should be removed"
-              }
-            ]
-          },
-          {
-            "param": "(channel|role|user)",
-            "values": [
-              {
-                "value": "channel",
-                "desc": "A channel mention stating the command/module permissions are confined to that channel."
-              },
-              {
-                "value": "role",
-                "desc": "A role name stating the command/module permissions are confined to that role."
-              },
-              {
-                "value": "user",
-                "desc": "A user mention stating the command/module permissions are confined to that user."
-              }
-            ]
+            "command": "!names Tikaro",
+            "desc": "This will display Tikaro's past display names."
           }
         ],
-        "examples": [
-          {
-            "command": "!permissions command weapon whitelist #bot-stuff",
-            "desc": "This will whitelist the channel `#bot-stuff` for the command `!weapon` - meaning the `!weapon` command can only be used in that channel."
-          },
-          {
-            "command": "!permissions score blacklist #bot-stuff",
-            "desc": "This will stop SlugBot from giving users XP for activity in the `#bot-stuff` channel."
-          },
-          {
-            "command": "!permissions slugbot whitelist #bot-stuff",
-            "desc": "This will only allow slugbot commands to be used in the `#bot-stuff` channel."
-          }
-        ]
+        "data": {
+          "name": "names",
+          "description": "Get a list of past usernames and display names of a member",
+          "options": [
+            {
+              "type": "USER",
+              "name": "member",
+              "description": "View this member's names",
+              "required": true
+            }
+          ]
+        }
       },
       {
         "cmd": "ping",
@@ -362,7 +376,7 @@
         "perms": [
           "USER"
         ],
-        "canDM": false,
+        "canDM": true,
         "canEdit": false,
         "debug": false,
         "parameters": [
@@ -660,9 +674,25 @@
         ]
       },
       {
+        "cmd": "dm",
+        "synonyms": [
+          "dm"
+        ],
+        "format": "${PREFIX}dm <user ID> <string>",
+        "desc": "",
+        "perms": [
+          "USER"
+        ],
+        "canDM": true,
+        "canEdit": false,
+        "debug": false,
+        "parameters": [],
+        "examples": []
+      },
+      {
         "cmd": "guess",
         "synonyms": [
-          "pfp"
+          "guess"
         ],
         "format": "${PREFIX}guess <answer>",
         "desc": "Use this command to guess at the answer for the scavenger hunt.",
@@ -811,7 +841,44 @@
             "command": "!filter add /\\d/",
             "desc": "This will make SlugBot delete any messages containing any digit. (check [regex101](https://regex101.com/) for RegEx syntax and RegEx testing)"
           }
-        ]
+        ],
+        "data": {
+          "name": "filter",
+          "description": "Manage filters in this server.",
+          "options": [
+            {
+              "type": "SUB_COMMAND",
+              "name": "add",
+              "description": "Add a new word or regEx filter.",
+              "options": [
+                {
+                  "type": "STRING",
+                  "name": "filter",
+                  "description": "word or regEx to filter.",
+                  "required": true
+                }
+              ]
+            },
+            {
+              "type": "SUB_COMMAND",
+              "name": "remove",
+              "description": "Remove an existing word or regEx filter.",
+              "options": [
+                {
+                  "type": "STRING",
+                  "name": "filter",
+                  "description": "word or regEx to filter.",
+                  "required": true
+                }
+              ]
+            },
+            {
+              "type": "SUB_COMMAND",
+              "name": "list",
+              "description": "List all existing word and regEx filters."
+            }
+          ]
+        }
       },
       {
         "cmd": "poll",
@@ -888,7 +955,10 @@
       },
       {
         "cmd": "leaderboard",
-        "format": "${PREFIX}leaderbaord [weekly]",
+        "synonyms": [
+          "lb"
+        ],
+        "format": "${PREFIX}leaderboard [weekly]",
         "desc": "Use this command to view the top 10 ranked members in the server along with the score of adjacent ranks.",
         "perms": [
           "USER"
@@ -969,7 +1039,41 @@
             "command": "!rank #2",
             "desc": "This will display the profile of the member with server score rank 2."
           }
-        ]
+        ],
+        "data": {
+          "name": "rank",
+          "description": "View your own or another's profile and rank",
+          "options": [
+            {
+              "name": "member",
+              "type": "USER",
+              "description": "View a member's profile and rank",
+              "required": false
+            },
+            {
+              "name": "rank",
+              "type": "INTEGER",
+              "description": "View member at a specific rank",
+              "required": false
+            },
+            {
+              "name": "lb_type",
+              "type": "STRING",
+              "description": "weekly or overall rank",
+              "required": false,
+              "choices": [
+                {
+                  "name": "All time",
+                  "value": "allTime"
+                },
+                {
+                  "name": "Weekly",
+                  "value": "weekly"
+                }
+              ]
+            }
+          ]
+        }
       },
       {
         "cmd": "rep",
@@ -1139,7 +1243,11 @@
         "format": "${PREFIX}twitch",
         "desc": "Used to link a Discord account with a Twitch account. After using the command, you will be DMed with a six digit code on Discord. Send this code in SmugSlugBot's chat on twitch to confirm the account link.",
         "parameters": [],
-        "examples": []
+        "examples": [],
+        "data": {
+          "name": "twitch",
+          "description": "link a Discord account with a Twitch account"
+        }
       }
     ]
   },
@@ -1211,6 +1319,7 @@
         "perms": [
           "BOT_ADMIN"
         ],
+        "canDM": false,
         "debug": true,
         "format": "${PREFIX}rolereact create [msg ID] | (<msg ID> add <reaction> <role>) | (<msg ID> remove [reaction]) | (<msg ID> desc <description>) | (<msg ID> require <role>)",
         "desc": "Use this command to create a RoleReact message - allowing users to assign roles to themselves using the reactions on the message.",
@@ -1220,27 +1329,31 @@
             "values": [
               {
                 "value": "create",
-                "desc": "specify to create a new RoleReact message. Optionally giving a message ID will initialise rolereacts on that message instead of creating a roleReact embed."
+                "desc": "Create a new RoleReact message. Optionally giving a message ID will initialise rolereacts on that message instead of creating a roleReact embed."
               },
               {
                 "value": "add",
-                "desc": "specify to add new self-assignable role."
+                "desc": "Add new self-assignable role."
               },
               {
                 "value": "remove",
-                "desc": "specify to remove existing self-assignable role."
+                "desc": "Remove existing self-assignable role."
               },
               {
                 "value": "desc",
-                "desc": "specify to update the RoleReact description."
+                "desc": "Update the RoleReact description."
               },
               {
                 "value": "color",
-                "desc": "specify to update the embed color of the RoleReact message."
+                "desc": "Update the embed color of the RoleReact message."
               },
               {
                 "value": "require",
-                "desc": "specify to that a react role requires a role to use the rolereact."
+                "desc": "Specify a required role needed to use the RoleReact."
+              },
+              {
+                "value": "exclusive",
+                "desc": "specify that only one role from this RoleReact can be taken at a time."
               }
             ]
           },
@@ -1302,7 +1415,110 @@
             "command": "!rolereact 731977229902282773 color #ffffff",
             "desc": "This will set the color of the embed white."
           }
-        ]
+        ],
+        "data": {
+          "name": "rolereact",
+          "description": "Create a RoleReact message, allowing users to self-assign roles using the reactions on the message",
+          "options": [
+            {
+              "name": "create",
+              "type": "SUB_COMMAND",
+              "description": "Create a new RoleReact",
+              "options": [
+                {
+                  "name": "rolereact_id",
+                  "type": "STRING",
+                  "description": "Discord message ID of message to use for RoleReact"
+                }
+              ]
+            },
+            {
+              "name": "add",
+              "type": "SUB_COMMAND",
+              "description": "Add a reaction role to a RoleReact",
+              "options": [
+                {
+                  "name": "rolereact_id",
+                  "type": "STRING",
+                  "description": "Discord message ID of RoleReact",
+                  "required": true,
+                  "autocomplete": true
+                },
+                {
+                  "name": "reaction",
+                  "type": "STRING",
+                  "description": "Emoji to use",
+                  "required": true
+                },
+                {
+                  "name": "role",
+                  "type": "ROLE",
+                  "description": "Role to use",
+                  "required": true
+                }
+              ]
+            },
+            {
+              "name": "remove",
+              "type": "SUB_COMMAND",
+              "description": "Remove a reaction role from a RoleReact",
+              "options": [
+                {
+                  "name": "rolereact_id",
+                  "type": "STRING",
+                  "description": "Discord message ID of RoleReact",
+                  "required": true,
+                  "autocomplete": true
+                },
+                {
+                  "name": "reaction",
+                  "type": "STRING",
+                  "description": "Emoji to remove",
+                  "required": true
+                }
+              ]
+            },
+            {
+              "name": "update",
+              "type": "SUB_COMMAND",
+              "description": "Update properties of a RoleReact",
+              "options": [
+                {
+                  "name": "rolereact_id",
+                  "type": "STRING",
+                  "description": "Discord message ID of RoleReact",
+                  "required": true,
+                  "autocomplete": true
+                },
+                {
+                  "name": "description",
+                  "type": "STRING",
+                  "description": "Description to add to RoleReact. Use \\n to denote line-breaks"
+                },
+                {
+                  "name": "colour",
+                  "type": "STRING",
+                  "description": "Hexcode of colour to use for the RoleReact embed"
+                },
+                {
+                  "name": "required_role",
+                  "type": "ROLE",
+                  "description": "Role a user must have to use the RoleReact"
+                },
+                {
+                  "name": "is_mutually_exclusive",
+                  "type": "BOOLEAN",
+                  "description": "If true, only one role can be taken at a time"
+                },
+                {
+                  "name": "is_toggle",
+                  "type": "BOOLEAN",
+                  "description": "Reacting adds and removes roles. Reactions are automatically removed"
+                }
+              ]
+            }
+          ]
+        }
       }
     ]
   },
@@ -1322,7 +1538,11 @@
         "moduleId": "general",
         "canDM": false,
         "canEdit": false,
-        "debug": false
+        "debug": false,
+        "data": {
+          "name": "guildinfo",
+          "description": "Displays general server information"
+        }
       },
       {
         "cmd": "userinfo",
@@ -1334,7 +1554,25 @@
         "canDM": false,
         "canEdit": false,
         "format": "${PREFIX}userinfo [member]",
-        "desc": "Example: ` ${PREFIX}userinfo Alex_ `\nThis will display guild info on member 'Alex_'.\nStating no member will display userinfo on the member who used the command."
+        "desc": "This command will display general info on yourself or the specified member.",
+        "examples": [
+          {
+            "command": "!userinfo Alex_",
+            "desc": "This will display guild info on member 'Alex_'. Stating no member will display userinfo on the member who used the command."
+          }
+        ],
+        "data": {
+          "name": "userinfo",
+          "description": "Get general user information about yourself or another member",
+          "options": [
+            {
+              "name": "member",
+              "description": "Get this member's user info",
+              "type": "USER",
+              "required": false
+            }
+          ]
+        }
       }
     ]
   },
@@ -1400,6 +1638,101 @@
         "canDM": false,
         "canEdit": false,
         "debug": false
+      }
+    ]
+  },
+  "admin": {
+    "module": "admin",
+    "commands": [
+      {
+        "cmd": "permissions",
+        "synonyms": [
+          "perms",
+          "perm",
+          "permission",
+          "constraint",
+          "constraints"
+        ],
+        "perms": [
+          "BOT_ADMIN"
+        ],
+        "moduleId": "admin",
+        "canDM": false,
+        "canEdit": false,
+        "debug": true,
+        "format": "${PREFIX}permissions ((module|command <command name>) | score | slugbot) [<setting> (channel|role|user)]",
+        "desc": "Use this command to add or remove constraints on command usage.\n\nAdding a channel constraint will mean the specified command can only be used in that channel.\n\nAdding a role constraint will mean the specified command can only be used by members with that role.\n**ADDING ROLE CONSTRAINTS WILL OVERRIDE DEFAULT PERMISSION REQUIREMENTS**.",
+        "parameters": [
+          {
+            "param": "<command|score>",
+            "values": [
+              {
+                "value": "slugbot command name",
+                "desc": "The name of the command you wish to set permission constraints for."
+              },
+              {
+                "value": "score",
+                "desc": "The string `score` stating that constraints on when XP is given are to be set instead."
+              }
+            ]
+          },
+          {
+            "param": "<setting>",
+            "values": [
+              {
+                "value": "disable",
+                "desc": "disable the command/module."
+              },
+              {
+                "value": "enable",
+                "desc": "enable the command/module."
+              },
+              {
+                "value": "whitelist",
+                "desc": "specify that the command should be whitelisted"
+              },
+              {
+                "value": "blacklist",
+                "desc": "specify that the command should be blacklisted"
+              },
+              {
+                "value": "remove",
+                "desc": "specify that the permissions should be removed"
+              }
+            ]
+          },
+          {
+            "param": "(channel|role|user)",
+            "values": [
+              {
+                "value": "channel",
+                "desc": "A channel mention stating the command/module permissions are confined to that channel."
+              },
+              {
+                "value": "role",
+                "desc": "A role name stating the command/module permissions are confined to that role."
+              },
+              {
+                "value": "user",
+                "desc": "A user mention stating the command/module permissions are confined to that user."
+              }
+            ]
+          }
+        ],
+        "examples": [
+          {
+            "command": "!permissions command weapon whitelist #bot-stuff",
+            "desc": "This will whitelist the channel `#bot-stuff` for the command `!weapon` - meaning the `!weapon` command can only be used in that channel."
+          },
+          {
+            "command": "!permissions score blacklist #bot-stuff",
+            "desc": "This will stop SlugBot from giving users XP for activity in the `#bot-stuff` channel."
+          },
+          {
+            "command": "!permissions slugbot whitelist #bot-stuff",
+            "desc": "This will only allow slugbot commands to be used in the `#bot-stuff` channel."
+          }
+        ]
       }
     ]
   },
@@ -1911,7 +2244,84 @@
             "command": "!allocatestats claymore +7 16 35 25",
             "desc": "This will find the optimal stats for a +7 claymore from a starting point of 16 strength and 35 dex, given 25 levels to distribute."
           }
-        ]
+        ],
+        "data": {
+          "name": "allocatestats",
+          "description": "Find the optimal stat spread for a given weapon",
+          "options": [
+            {
+              "name": "weapon",
+              "description": "Weapon to allocate stats for",
+              "type": "STRING",
+              "required": true,
+              "autocomplete": true
+            },
+            {
+              "name": "spend",
+              "description": "How many stat levels allowed to allocate",
+              "type": "INTEGER",
+              "required": true
+            },
+            {
+              "name": "upgrade",
+              "description": "Upgrade level of the weapon. Use equivalent standard upgrade for special weapons",
+              "type": "STRING",
+              "choices": [
+                {
+                  "name": "+0",
+                  "value": "+0"
+                },
+                {
+                  "name": "+1",
+                  "value": "+1"
+                },
+                {
+                  "name": "+2",
+                  "value": "+2"
+                },
+                {
+                  "name": "+3",
+                  "value": "+3"
+                },
+                {
+                  "name": "+4",
+                  "value": "+4"
+                },
+                {
+                  "name": "+5",
+                  "value": "+5"
+                },
+                {
+                  "name": "+6",
+                  "value": "+6"
+                },
+                {
+                  "name": "+7",
+                  "value": "+7"
+                },
+                {
+                  "name": "+8",
+                  "value": "+8"
+                },
+                {
+                  "name": "+9",
+                  "value": "+9"
+                },
+                {
+                  "name": "+10",
+                  "value": "+10"
+                }
+              ],
+              "required": false
+            },
+            {
+              "name": "stats",
+              "description": "Initial str dex int faith luck levels. e.g. \"10 18 9 30 7\"",
+              "type": "STRING",
+              "required": false
+            }
+          ]
+        }
       },
       {
         "cmd": "build",
@@ -1924,7 +2334,7 @@
           "USER"
         ],
         "moduleId": "darksouls",
-        "canDM": false,
+        "canDM": true,
         "canEdit": false,
         "parameters": [
           {
@@ -1960,7 +2370,115 @@
             "command": "!build @Tikaro 3",
             "desc": "This will display the build info of Tikaro's build numbered '3'."
           }
-        ]
+        ],
+        "data": {
+          "name": "build",
+          "description": "Manage your builds or view the builds of another member",
+          "options": [
+            {
+              "name": "add",
+              "type": "SUB_COMMAND",
+              "description": "Add a build to your buid list",
+              "options": [
+                {
+                  "name": "name",
+                  "type": "STRING",
+                  "description": "Character name",
+                  "required": false
+                },
+                {
+                  "name": "level",
+                  "type": "INTEGER",
+                  "description": "Character level",
+                  "required": false
+                },
+                {
+                  "name": "upgrade_level",
+                  "type": "INTEGER",
+                  "description": "Weapon upgrade level",
+                  "required": false
+                },
+                {
+                  "name": "game",
+                  "type": "STRING",
+                  "description": "Game",
+                  "choices": [
+                    {
+                      "name": "BB",
+                      "value": "BB"
+                    },
+                    {
+                      "name": "DS1",
+                      "value": "DS1"
+                    },
+                    {
+                      "name": "DS2",
+                      "value": "DS2"
+                    },
+                    {
+                      "name": "DS3",
+                      "value": "DS3"
+                    }
+                  ],
+                  "required": false
+                },
+                {
+                  "name": "planner_link",
+                  "type": "STRING",
+                  "description": "Extract build info from a SoulsPlanner link",
+                  "required": false
+                },
+                {
+                  "name": "image_link",
+                  "type": "STRING",
+                  "description": "Add a character portrait by providing a direct image link",
+                  "required": false
+                }
+              ]
+            },
+            {
+              "name": "remove",
+              "type": "SUB_COMMAND",
+              "description": "Remove a build from your build list",
+              "options": [
+                {
+                  "name": "name",
+                  "type": "STRING",
+                  "description": "Name of build to remove",
+                  "required": true,
+                  "autocomplete": true
+                }
+              ]
+            },
+            {
+              "name": "set",
+              "type": "SUB_COMMAND",
+              "description": "Set a current build",
+              "options": [
+                {
+                  "name": "name",
+                  "type": "STRING",
+                  "description": "Name of build to set as current",
+                  "required": true,
+                  "autocomplete": true
+                }
+              ]
+            },
+            {
+              "name": "list",
+              "type": "SUB_COMMAND",
+              "description": "View your build list or the build list of another member",
+              "options": [
+                {
+                  "name": "member",
+                  "type": "USER",
+                  "description": "View builds by this member",
+                  "required": false
+                }
+              ]
+            }
+          ]
+        }
       },
       {
         "cmd": "damagecalc",
@@ -2049,7 +2567,35 @@
             "command": "!igot 1919",
             "desc": "This show the possible soul level of a player depending on their phantom type.\n![igot-screenshot](images/igot_demo.png)"
           }
-        ]
+        ],
+        "data": {
+          "name": "igot",
+          "description": "Get the estimated level of another player killed in DS1 or DS3",
+          "options": [
+            {
+              "name": "game",
+              "description": "game",
+              "type": "STRING",
+              "required": true,
+              "choices": [
+                {
+                  "name": "DS1",
+                  "value": "DS1"
+                },
+                {
+                  "name": "DS3",
+                  "value": "DS3"
+                }
+              ]
+            },
+            {
+              "name": "souls_dropped",
+              "description": "Number of souls received when you killed the player",
+              "type": "INTEGER",
+              "required": true
+            }
+          ]
+        }
       },
       {
         "cmd": "namecheck",
@@ -2129,7 +2675,34 @@
             "command": "!poise greatsword vs halberd",
             "desc": "This will display various poise breakpoints required for a greatsword class weapon to poise through halberd attacks."
           }
-        ]
+        ],
+        "data": {
+          "name": "poise",
+          "description": "View poise breakpoints needed for weapon 1 to poise through the weapon 2",
+          "options": [
+            {
+              "name": "ds3",
+              "description": "View DS3 poise breakpoints needed for weapon 1 to poise through the weapon 2",
+              "type": "SUB_COMMAND",
+              "options": [
+                {
+                  "name": "weapon_1",
+                  "description": "Poise weapon",
+                  "type": "STRING",
+                  "required": true,
+                  "autocomplete": true
+                },
+                {
+                  "name": "weapon_2",
+                  "description": "Weapon to poise through",
+                  "type": "STRING",
+                  "required": true,
+                  "autocomplete": true
+                }
+              ]
+            }
+          ]
+        }
       },
       {
         "cmd": "range",
@@ -2180,7 +2753,41 @@
             "command": "!range invader 90",
             "desc": "This will show the soul level ranges for multiplayer interaction for soul level 90 invaders."
           }
-        ]
+        ],
+        "data": {
+          "name": "range",
+          "description": "find the upper and lower soul level limits for players invading you or hosts you invade",
+          "options": [
+            {
+              "name": "mode",
+              "description": "From the perspective of the host or invader",
+              "type": "STRING",
+              "required": true,
+              "choices": [
+                {
+                  "name": "host",
+                  "value": "host"
+                },
+                {
+                  "name": "invader",
+                  "value": "invader"
+                }
+              ]
+            },
+            {
+              "name": "soul_level",
+              "description": "Level of character",
+              "required": true,
+              "type": "INTEGER"
+            },
+            {
+              "name": "upgrade_level",
+              "description": "Upgrade level of weapon",
+              "required": false,
+              "type": "INTEGER"
+            }
+          ]
+        }
       },
       {
         "cmd": "removebuild",
@@ -2307,7 +2914,198 @@
             "command": "!weapon fire dagger vs chaos dagger +3 10 10 10 10 10",
             "desc": "This will compare the fire dagger and chaos dagger weapons at the given stats. Use the number reactions to view each of the given weapons."
           }
-        ]
+        ],
+        "data": {
+          "name": "weapon",
+          "description": "Get info on a given weapon, or get the top 10 weapons of each class",
+          "options": [
+            {
+              "name": "info",
+              "type": "SUB_COMMAND",
+              "description": "Get info on a weapon or list of weapons separated by commas",
+              "options": [
+                {
+                  "name": "weapon",
+                  "type": "STRING",
+                  "description": "Weapon name or list of weapon names",
+                  "required": true,
+                  "autocomplete": true
+                },
+                {
+                  "name": "upgrade",
+                  "description": "Upgrade level of the weapon. Use equivalent standard upgrade for special weapons",
+                  "type": "STRING",
+                  "choices": [
+                    {
+                      "name": "+0",
+                      "value": "+0"
+                    },
+                    {
+                      "name": "+1",
+                      "value": "+1"
+                    },
+                    {
+                      "name": "+2",
+                      "value": "+2"
+                    },
+                    {
+                      "name": "+3",
+                      "value": "+3"
+                    },
+                    {
+                      "name": "+4",
+                      "value": "+4"
+                    },
+                    {
+                      "name": "+5",
+                      "value": "+5"
+                    },
+                    {
+                      "name": "+6",
+                      "value": "+6"
+                    },
+                    {
+                      "name": "+7",
+                      "value": "+7"
+                    },
+                    {
+                      "name": "+8",
+                      "value": "+8"
+                    },
+                    {
+                      "name": "+9",
+                      "value": "+9"
+                    },
+                    {
+                      "name": "+10",
+                      "value": "+10"
+                    }
+                  ],
+                  "required": false
+                },
+                {
+                  "name": "strength",
+                  "type": "INTEGER",
+                  "description": "Strength level",
+                  "required": false
+                },
+                {
+                  "name": "dexterity",
+                  "type": "INTEGER",
+                  "description": "Dexterity level",
+                  "required": false
+                },
+                {
+                  "name": "intelligence",
+                  "type": "INTEGER",
+                  "description": "Intelligence level",
+                  "required": false
+                },
+                {
+                  "name": "faith",
+                  "type": "INTEGER",
+                  "description": "Faith level",
+                  "required": false
+                },
+                {
+                  "name": "luck",
+                  "type": "INTEGER",
+                  "description": "Luck level",
+                  "required": false
+                }
+              ]
+            },
+            {
+              "name": "bestinclass",
+              "type": "SUB_COMMAND",
+              "description": "Get the top 10 weapons of each class",
+              "options": [
+                {
+                  "name": "upgrade",
+                  "description": "Upgrade level of the weapon. Use equivalent standard upgrade for special weapons",
+                  "type": "STRING",
+                  "choices": [
+                    {
+                      "name": "+0",
+                      "value": "+0"
+                    },
+                    {
+                      "name": "+1",
+                      "value": "+1"
+                    },
+                    {
+                      "name": "+2",
+                      "value": "+2"
+                    },
+                    {
+                      "name": "+3",
+                      "value": "+3"
+                    },
+                    {
+                      "name": "+4",
+                      "value": "+4"
+                    },
+                    {
+                      "name": "+5",
+                      "value": "+5"
+                    },
+                    {
+                      "name": "+6",
+                      "value": "+6"
+                    },
+                    {
+                      "name": "+7",
+                      "value": "+7"
+                    },
+                    {
+                      "name": "+8",
+                      "value": "+8"
+                    },
+                    {
+                      "name": "+9",
+                      "value": "+9"
+                    },
+                    {
+                      "name": "+10",
+                      "value": "+10"
+                    }
+                  ],
+                  "required": false
+                },
+                {
+                  "name": "strength",
+                  "type": "INTEGER",
+                  "description": "Strength level",
+                  "required": false
+                },
+                {
+                  "name": "dexterity",
+                  "type": "INTEGER",
+                  "description": "Dexterity level",
+                  "required": false
+                },
+                {
+                  "name": "intelligence",
+                  "type": "INTEGER",
+                  "description": "Intelligence level",
+                  "required": false
+                },
+                {
+                  "name": "faith",
+                  "type": "INTEGER",
+                  "description": "Faith level",
+                  "required": false
+                },
+                {
+                  "name": "luck",
+                  "type": "INTEGER",
+                  "description": "Luck level",
+                  "required": false
+                }
+              ]
+            }
+          ]
+        }
       },
       {
         "cmd": "whowas",
@@ -2394,7 +3192,7 @@
         "canEdit": false,
         "canDM": true,
         "format": "${PREFIX}bid <process ID> <bid amount>",
-        "desc": "Uses this command to make a bid on a process in the auction.",
+        "desc": "Use this command to make a bid on a process in the auction.",
         "parameters": [
           {
             "param": "<process ID>",
@@ -2474,7 +3272,19 @@
             "command": "!bypass Alex_",
             "desc": "This will begin the BYPASS process on user Alex_."
           }
-        ]
+        ],
+        "data": {
+          "name": "bypass",
+          "description": "Start the BYPASS process on another member",
+          "options": [
+            {
+              "name": "target",
+              "type": "STRING",
+              "description": "Target identifier",
+              "required": true
+            }
+          ]
+        }
       },
       {
         "cmd": "clean",
@@ -2503,6 +3313,66 @@
           {
             "command": "!clean B4RR7 R4YAN",
             "desc": "This will attempt to clean the processes with IDs B4RR7 and R4YAN."
+          }
+        ],
+        "data": {
+          "name": "clean",
+          "description": "Remove your own processes or attempt to remove processes planted by others",
+          "options": [
+            {
+              "name": "process_ids",
+              "type": "STRING",
+              "required": false,
+              "description": "Process ID or list of process IDs separated by spaces"
+            }
+          ]
+        }
+      },
+      {
+        "cmd": "compromise",
+        "synonyms": [
+          "comp"
+        ],
+        "perms": [
+          "USER"
+        ],
+        "moduleId": "economy",
+        "canEdit": false,
+        "canDM": false,
+        "format": "${PREFIX}compromise (<member> <stat>) | <bet>",
+        "desc": "Start the BYPASS process on another member.",
+        "parameters": [
+          {
+            "param": "<member>",
+            "values": [
+              {
+                "value": "Username",
+                "desc": "Discord username of the user to be bypassed"
+              },
+              {
+                "value": "discord ID",
+                "desc": "discord ID of the user to be bypassed"
+              },
+              {
+                "value": "discord member mention",
+                "desc": "Mention member to be bypassed"
+              }
+            ]
+          },
+          {
+            "param": "<stat>",
+            "values": [
+              {
+                "value": "Stat",
+                "desc": "Stat to compromise."
+              }
+            ]
+          }
+        ],
+        "examples": [
+          {
+            "command": "!compromise Sandy firewall",
+            "desc": "This will attempt to compromise Sandy's Firewall stat provided the user succeeds the compromise hack."
           }
         ]
       },
@@ -2544,7 +3414,20 @@
             "command": "!crack Alex_",
             "desc": "This will begin the CRACK process on user Alex_."
           }
-        ]
+        ],
+        "data": {
+          "name": "crack",
+          "description": "Start the CRACK process on another member",
+          "options": [
+            {
+              "name": "target",
+              "type": "STRING",
+              "description": "Target identifier",
+              "required": true,
+              "autocomplete": true
+            }
+          ]
+        }
       },
       {
         "perms": [
@@ -2561,7 +3444,11 @@
             "command": "!daily",
             "desc": "This will transfer your daily bucket of slugs if you have yet to claim it for this day."
           }
-        ]
+        ],
+        "data": {
+          "name": "daily",
+          "description": "collect your daily bucket of slugs"
+        }
       },
       {
         "cmd": "downgrade",
@@ -2590,7 +3477,20 @@
             "command": "!downgrade BYPASS",
             "desc": "This will downgrade BYPASS processes."
           }
-        ]
+        ],
+        "data": {
+          "name": "downgrade",
+          "description": "Downgrade a process type to reduce it's slot cost",
+          "options": [
+            {
+              "name": "process",
+              "description": "Process type to downgrade",
+              "type": "STRING",
+              "required": true,
+              "autocomplete": true
+            }
+          ]
+        }
       },
       {
         "cmd": "giveslugs",
@@ -2729,7 +3629,26 @@
             "command": "!install HIJACKER 2",
             "desc": "This will install two HIJACKER processes as long as there are enough free slots available."
           }
-        ]
+        ],
+        "data": {
+          "name": "install",
+          "description": "Install a process type to increase the total number of that process you can use",
+          "options": [
+            {
+              "name": "process",
+              "description": "Process type to install",
+              "type": "STRING",
+              "required": true,
+              "autocomplete": true
+            },
+            {
+              "name": "count",
+              "description": "Number to install",
+              "type": "INTEGER",
+              "required": false
+            }
+          ]
+        }
       },
       {
         "cmd": "invest",
@@ -2790,7 +3709,46 @@
             "command": "!invest terminate #general",
             "desc": "This will terminate an existing investment in the #general text channel. A confirmation reaction must be pressed before the investment is terminated. The termination can be cancelled with the cancel reaction."
           }
-        ]
+        ],
+        "data": {
+          "name": "invest",
+          "description": "Invest SC in text channels",
+          "options": [
+            {
+              "name": "add",
+              "description": "Make a new investment",
+              "type": "SUB_COMMAND",
+              "options": [
+                {
+                  "name": "channel",
+                  "description": "Channel to invest in",
+                  "type": "CHANNEL",
+                  "required": true
+                },
+                {
+                  "name": "amount",
+                  "description": "Amount of SC to invest",
+                  "type": "NUMBER",
+                  "required": false
+                }
+              ]
+            },
+            {
+              "name": "terminate",
+              "description": "Terminate an existing investment prematurely",
+              "type": "SUB_COMMAND",
+              "options": [
+                {
+                  "name": "channel",
+                  "description": "Channel to terminate investment in",
+                  "type": "STRING",
+                  "required": true,
+                  "autocomplete": true
+                }
+              ]
+            }
+          ]
+        }
       },
       {
         "cmd": "levelup",
@@ -2803,6 +3761,7 @@
           "USER"
         ],
         "moduleId": "economy",
+        "canDM": false,
         "canEdit": false,
         "format": "${PREFIX}levelup <stat>",
         "desc": "Use this command to level up a stat.",
@@ -2850,7 +3809,59 @@
             "command": "!levelup firewall",
             "desc": "This will start a levelup Firewall process."
           }
-        ]
+        ],
+        "data": {
+          "name": "levelup",
+          "description": "Level up a stat",
+          "options": [
+            {
+              "name": "stat",
+              "description": "Stat to level up",
+              "type": "STRING",
+              "required": true,
+              "choices": [
+                {
+                  "name": "FIREWALL",
+                  "value": "firewall"
+                },
+                {
+                  "name": "BYPASSER",
+                  "value": "bypasser"
+                },
+                {
+                  "name": "ENCRYPTION",
+                  "value": "encryption"
+                },
+                {
+                  "name": "CRACKER",
+                  "value": "cracker"
+                },
+                {
+                  "name": "SCANNER",
+                  "value": "scanner"
+                },
+                {
+                  "name": "INTERCEPTOR",
+                  "value": "interceptor"
+                },
+                {
+                  "name": "WIRE",
+                  "value": "wire"
+                },
+                {
+                  "name": "INJECTOR",
+                  "value": "injector"
+                }
+              ]
+            },
+            {
+              "name": "number_of_levels",
+              "description": "If remaining stat levels from a respecc, number of levels to increase stat by",
+              "required": false,
+              "type": "INTEGER"
+            }
+          ]
+        }
       },
       {
         "perms": [
@@ -2886,7 +3897,7 @@
         "canEdit": false,
         "canDm": false,
         "format": "${PREFIX}plant <process type> <target> [modifier]",
-        "desc": "Attempt to plant a process on another user.\nThe modifier is often the potency of the process you are planting. The potency of a LEECH is how many slugs will be taken every hour.\nThe potency of a SKIMMER is the fraction (between 0 and 1) of Slugs that will be skimmed off every incoming transaction. The modifier of a REDIRECT is the target the malware should attempt to redirect to.",
+        "desc": "Attempt to plant a process on another user.\nThe modifier is often the potency of the process you are planting.",
         "parameters": [
           {
             "param": "<process type>",
@@ -2945,18 +3956,156 @@
         ],
         "examples": [
           {
-            "command": "!plant skimmer alex_ 0.3",
-            "desc": "This will plant a SKIMMER process on Alex_ with a potency of 30%."
+            "command": "!plant skimmer alex_",
+            "desc": "This will plant a SKIMMER process on Alex_."
           },
           {
-            "command": "!plant leech tikaro 2500",
-            "desc": "This will plant a LEECH process on tikaro that will leech 2500sc per hour."
+            "command": "!plant leech tikaro",
+            "desc": "This will plant a LEECH process on tikaro."
           },
           {
             "command": "!plant redirect narcolept to errel",
             "desc": "This will plant a REDIRECT process on Narcolept that will redirect an incoming process to Errel."
           }
-        ]
+        ],
+        "data": {
+          "name": "plant",
+          "description": "Begin the planting a process on a target",
+          "options": [
+            {
+              "type": "SUB_COMMAND",
+              "name": "skimmer",
+              "description": "Plant a SKIMMER process on a target",
+              "options": [
+                {
+                  "name": "target",
+                  "type": "STRING",
+                  "description": "Target identifier",
+                  "required": true,
+                  "autocomplete": true
+                }
+              ]
+            },
+            {
+              "type": "SUB_COMMAND",
+              "name": "leech",
+              "description": "Plant a LEECH process on a target",
+              "options": [
+                {
+                  "name": "target",
+                  "type": "STRING",
+                  "description": "Target identifier",
+                  "required": true,
+                  "autocomplete": true
+                }
+              ]
+            },
+            {
+              "type": "SUB_COMMAND",
+              "name": "cloner",
+              "description": "Plant a CLONER process on a target",
+              "options": [
+                {
+                  "name": "target",
+                  "type": "STRING",
+                  "description": "Target identifier",
+                  "required": true,
+                  "autocomplete": true
+                }
+              ]
+            },
+            {
+              "type": "SUB_COMMAND",
+              "name": "hijacker",
+              "description": "Plant a HIJACKER process on a target",
+              "options": [
+                {
+                  "name": "target",
+                  "type": "STRING",
+                  "description": "Target identifier",
+                  "required": true,
+                  "autocomplete": true
+                }
+              ]
+            },
+            {
+              "type": "SUB_COMMAND",
+              "name": "honeypot",
+              "description": "Plant a HONEYPOT process on a target",
+              "options": [
+                {
+                  "name": "target",
+                  "type": "STRING",
+                  "description": "Target identifier",
+                  "required": true,
+                  "autocomplete": true
+                }
+              ]
+            },
+            {
+              "type": "SUB_COMMAND",
+              "name": "redirect",
+              "description": "Plant a REDIRECT process on a target, redirecting processes to another target",
+              "options": [
+                {
+                  "name": "target",
+                  "type": "STRING",
+                  "description": "Target identifier",
+                  "required": true,
+                  "autocomplete": true
+                },
+                {
+                  "name": "redirect_target",
+                  "type": "STRING",
+                  "description": "redirect_target identifier",
+                  "required": true,
+                  "autocomplete": true
+                }
+              ]
+            },
+            {
+              "type": "SUB_COMMAND",
+              "name": "tracker",
+              "description": "Plant a TRACKER process on a target",
+              "options": [
+                {
+                  "name": "target",
+                  "type": "STRING",
+                  "description": "Target identifier",
+                  "required": true,
+                  "autocomplete": true
+                }
+              ]
+            },
+            {
+              "type": "SUB_COMMAND",
+              "name": "corruptor",
+              "description": "Plant a CORRUPTOR process on a target",
+              "options": [
+                {
+                  "name": "target",
+                  "type": "STRING",
+                  "description": "Target identifier",
+                  "required": true
+                }
+              ]
+            },
+            {
+              "type": "SUB_COMMAND",
+              "name": "rootkit",
+              "description": "Plant a ROOTKIT process on a target",
+              "options": [
+                {
+                  "name": "target",
+                  "type": "STRING",
+                  "description": "Target identifier",
+                  "required": true,
+                  "autocomplete": true
+                }
+              ]
+            }
+          ]
+        }
       },
       {
         "cmd": "respecc",
@@ -3107,7 +4256,26 @@
             "command": "!rootkit Alex_ !bypass Gabri",
             "desc": "This will initiate a BYPASS process from Alex_ on Gabri."
           }
-        ]
+        ],
+        "data": {
+          "name": "rootkit",
+          "description": "Run a command as a ROOTKIT'ed user",
+          "options": [
+            {
+              "name": "target",
+              "description": "User you have a ROOTKIT planted on",
+              "type": "STRING",
+              "required": true,
+              "autocomplete": true
+            },
+            {
+              "name": "command",
+              "description": "Command and arguments to run as target",
+              "type": "STRING",
+              "required": true
+            }
+          ]
+        }
       },
       {
         "cmd": "scan",
@@ -3299,7 +4467,20 @@
             "command": "!slugs ausi",
             "desc": "This will open ausi's account menu only if you have bypassed their firewall."
           }
-        ]
+        ],
+        "data": {
+          "name": "slugs",
+          "description": "open your SlugCoin account menu or view another user's account",
+          "options": [
+            {
+              "name": "target",
+              "description": "BYPASS ID or target username of account owner",
+              "type": "STRING",
+              "required": false,
+              "autocomplete": true
+            }
+          ]
+        }
       },
       {
         "cmd": "steal",
@@ -3342,6 +4523,168 @@
         ]
       },
       {
+        "cmd": "stocks",
+        "synonyms": [
+          "stonks"
+        ],
+        "perms": [
+          "USER"
+        ],
+        "moduleId": "economy",
+        "debug": true,
+        "canEdit": false,
+        "canDM": false,
+        "format": "${PREFIX}stocks list | (<buy|sell> <stock ID> <amount>)",
+        "desc": "Buy or sell stocks",
+        "parameters": [
+          {
+            "param": "<list|buy|sell>",
+            "values": [
+              {
+                "value": "buy",
+                "desc": "Buy stocks"
+              },
+              {
+                "value": "sell",
+                "desc": "Sell stocks"
+              },
+              {
+                "value": "list",
+                "desc": "Display data on all available stocks."
+              }
+            ]
+          },
+          {
+            "param": "<stock ID>",
+            "values": [
+              {
+                "value": "DISC",
+                "desc": "DISC stocks"
+              },
+              {
+                "value": "SLUG",
+                "desc": "SLUG stocks"
+              },
+              {
+                "value": "NARG",
+                "desc": "NARG stocks"
+              },
+              {
+                "value": "QQ",
+                "desc": "QQ stocks"
+              },
+              {
+                "value": "PINC",
+                "desc": "PINC stocks"
+              }
+            ]
+          },
+          {
+            "param": "<amount>",
+            "values": [
+              {
+                "value": "Number",
+                "desc": "Amount of stocks to buy in SC"
+              }
+            ]
+          }
+        ],
+        "data": {
+          "name": "stocks",
+          "description": "Buy or sell stocks",
+          "options": [
+            {
+              "type": "SUB_COMMAND",
+              "name": "buy",
+              "description": "Buy stocks",
+              "options": [
+                {
+                  "type": "STRING",
+                  "name": "stock",
+                  "description": "Stock to buy",
+                  "required": true,
+                  "choices": [
+                    {
+                      "name": "DISC",
+                      "value": "DISC"
+                    },
+                    {
+                      "name": "SLUG",
+                      "value": "SLUG"
+                    },
+                    {
+                      "name": "NARG",
+                      "value": "NARG"
+                    },
+                    {
+                      "name": "QQ",
+                      "value": "QQ"
+                    },
+                    {
+                      "name": "PINC",
+                      "value": "PINC"
+                    }
+                  ]
+                },
+                {
+                  "type": "NUMBER",
+                  "name": "amount",
+                  "description": "Amount of stock to buy in SC",
+                  "required": true
+                }
+              ]
+            },
+            {
+              "type": "SUB_COMMAND",
+              "name": "sell",
+              "description": "Sell stocks",
+              "options": [
+                {
+                  "type": "STRING",
+                  "name": "stock",
+                  "description": "Stock to sell",
+                  "required": true,
+                  "choices": [
+                    {
+                      "name": "DISC",
+                      "value": "DISC"
+                    },
+                    {
+                      "name": "SLUG",
+                      "value": "SLUG"
+                    },
+                    {
+                      "name": "NARG",
+                      "value": "NARG"
+                    },
+                    {
+                      "name": "QQ",
+                      "value": "QQ"
+                    },
+                    {
+                      "name": "PINC",
+                      "value": "PINC"
+                    }
+                  ]
+                },
+                {
+                  "type": "NUMBER",
+                  "name": "amount",
+                  "description": "Amount of stock to sell in SC",
+                  "required": true
+                }
+              ]
+            },
+            {
+              "type": "SUB_COMMAND",
+              "name": "list",
+              "description": "View stock values",
+              "options": []
+            }
+          ]
+        }
+      },
+      {
         "cmd": "suspend",
         "synonyms": [
           "disable",
@@ -3372,6 +4715,22 @@
             "desc": "This will suspend the process with ID AL3X1 if it was active."
           }
         ]
+      },
+      {
+        "cmd": "tutorial",
+        "synonyms": [
+          "tut"
+        ],
+        "perms": [
+          "USER"
+        ],
+        "moduleId": "economy",
+        "canEdit": false,
+        "canDM": false,
+        "format": "${PREFIX}tutorial",
+        "desc": "Use this command to start the economy game tutorial.",
+        "parameters": [],
+        "examples": []
       },
       {
         "cmd": "uninstall",
@@ -3413,7 +4772,26 @@
             "command": "!uninstall HIJACKER 2",
             "desc": "This will uninstall two HIJACKER processes as long as doing so can still support the total number of active HIJACKER processes."
           }
-        ]
+        ],
+        "data": {
+          "name": "uninstall",
+          "description": "Uninstall a process type to free up process slots",
+          "options": [
+            {
+              "name": "process",
+              "description": "Process type to uninstall",
+              "type": "STRING",
+              "required": true,
+              "autocomplete": true
+            },
+            {
+              "name": "count",
+              "description": "Number to uninstall",
+              "type": "INTEGER",
+              "required": false
+            }
+          ]
+        }
       },
       {
         "cmd": "upgrade",
@@ -3442,7 +4820,20 @@
             "command": "!upgrade BYPASS",
             "desc": "This will upgrade BYPASS processes."
           }
-        ]
+        ],
+        "data": {
+          "name": "upgrade",
+          "description": "Upgrade a process type to increase it's efficacy",
+          "options": [
+            {
+              "name": "process",
+              "description": "Process type to upgrade",
+              "type": "STRING",
+              "required": true,
+              "autocomplete": true
+            }
+          ]
+        }
       },
       {
         "cmd": "vault",
@@ -3470,7 +4861,19 @@
             "command": "!vault",
             "desc": "This will put as much as possible in the vault."
           }
-        ]
+        ],
+        "data": {
+          "name": "vault",
+          "description": "Move Slugs from your current account into your vault",
+          "options": [
+            {
+              "type": "NUMBER",
+              "name": "amount",
+              "description": "Amount of SC to vault",
+              "required": false
+            }
+          ]
+        }
       }
     ]
   },
@@ -3490,7 +4893,7 @@
         ],
         "debug": true,
         "format": "${PREFIX}challenge [member] | cancel",
-        "desc": "Use this command to challenge another member to a ranked fight or put out an open invitation to be challenged.",
+        "desc": "Use this command to challenge another member to a ranked fight or put out an open invitation to be challenged",
         "examples": [
           {
             "command": "!challenge",
@@ -3498,13 +4901,64 @@
           },
           {
             "command": "!challenge dashima",
-            "desc": "This will challenge Dashima to a ranked fight."
+            "desc": "This will challenge Dashima to a ranked fight"
           },
           {
             "command": "!challenge cancel",
-            "desc": "This will cancel your last challenge provided it was not already accepted by an opponent."
+            "desc": "This will cancel your last challenge provided it was not already accepted by an opponent"
           }
-        ]
+        ],
+        "data": {
+          "name": "challenge",
+          "description": "Challenge another member to a ranked fight or put out an open invitation to be challenged",
+          "options": [
+            {
+              "type": "SUB_COMMAND",
+              "name": "cancel",
+              "description": "Abort your existing challenge"
+            },
+            {
+              "type": "SUB_COMMAND",
+              "name": "anyone",
+              "description": "Put out an open challenge anyone can accept",
+              "options": [
+                {
+                  "name": "leaderboard",
+                  "description": "Pick a leaderboard to participate in",
+                  "type": "STRING",
+                  "autocomplete": true,
+                  "required": true
+                },
+                {
+                  "name": "rank_range",
+                  "description": "Only those within this rank range can accept your challenge (Only applicable above rank #25)",
+                  "type": "INTEGER",
+                  "required": false
+                }
+              ]
+            },
+            {
+              "type": "SUB_COMMAND",
+              "name": "someone",
+              "description": "Challenge a specific member",
+              "options": [
+                {
+                  "type": "USER",
+                  "name": "opponent",
+                  "description": "Member to challenge",
+                  "required": true
+                },
+                {
+                  "name": "leaderboard",
+                  "description": "Pick a leaderboard to participate in",
+                  "type": "STRING",
+                  "autocomplete": true,
+                  "required": true
+                }
+              ]
+            }
+          ]
+        }
       },
       {
         "cmd": "elo",
@@ -3548,13 +5002,32 @@
             "command": "!ilost 3 5",
             "desc": "This will record that you claimed you lost 5 3 in your active challenge."
           }
-        ]
+        ],
+        "data": {
+          "name": "ilost",
+          "description": "declare the outcome of a challenge as a loss",
+          "options": [
+            {
+              "type": "INTEGER",
+              "name": "rounds_won",
+              "description": "Number of rounds you won",
+              "required": true
+            },
+            {
+              "type": "INTEGER",
+              "name": "rounds_lost",
+              "description": "Number of rounds you lost",
+              "required": true
+            }
+          ]
+        }
       },
       {
         "cmd": "iwon",
         "synonyms": [
           "iwin",
-          "win"
+          "win",
+          "won"
         ],
         "moduleId": "ladder",
         "perms": [
@@ -3568,7 +5041,25 @@
             "command": "!iwon 5 3",
             "desc": "This will record that you claimed you won 5 3 in your active challenge."
           }
-        ]
+        ],
+        "data": {
+          "name": "iwon",
+          "description": "declare the outcome of a challenge as a win",
+          "options": [
+            {
+              "type": "INTEGER",
+              "name": "rounds_won",
+              "description": "Number of rounds you won",
+              "required": true
+            },
+            {
+              "type": "INTEGER",
+              "name": "rounds_lost",
+              "description": "Number of rounds you lost",
+              "required": true
+            }
+          ]
+        }
       },
       {
         "cmd": "ladder",
@@ -3669,7 +5160,318 @@
             "command": "!ladder DS3 rename Dark Souls 3",
             "desc": "This will rename the existing ladder 'DS3' to 'Dark Souls 3'"
           }
-        ]
+        ],
+        "data": {
+          "name": "ladder",
+          "description": "Create and configure PvP ladders",
+          "options": [
+            {
+              "type": "SUB_COMMAND",
+              "name": "create",
+              "description": "Create a new PvP ladder",
+              "options": [
+                {
+                  "name": "title",
+                  "description": "Ladder title",
+                  "type": "STRING",
+                  "required": true
+                },
+                {
+                  "name": "channel",
+                  "description": "Channel to display the leaderboard",
+                  "type": "CHANNEL",
+                  "required": true
+                }
+              ]
+            },
+            {
+              "type": "SUB_COMMAND",
+              "name": "remove",
+              "description": "Delete an existing ladder",
+              "options": [
+                {
+                  "name": "ladder",
+                  "description": "Ladder name of ladder to be deleted",
+                  "type": "STRING",
+                  "required": true
+                }
+              ]
+            },
+            {
+              "type": "SUB_COMMAND",
+              "name": "rename",
+              "description": "Rename an existing ladder",
+              "options": [
+                {
+                  "name": "ladder",
+                  "description": "Original name of ladder to be renamed",
+                  "type": "STRING",
+                  "required": true
+                },
+                {
+                  "name": "new_ladder_name",
+                  "description": "New name for ladder",
+                  "type": "STRING",
+                  "required": true
+                }
+              ]
+            },
+            {
+              "type": "SUB_COMMAND",
+              "name": "reset",
+              "description": "Reset all scores in ladder",
+              "options": [
+                {
+                  "name": "ladder",
+                  "description": "Ladder name of ladder to be reset",
+                  "type": "STRING",
+                  "required": true
+                }
+              ]
+            },
+            {
+              "type": "SUB_COMMAND",
+              "name": "set",
+              "description": "Set a user's points or wins in a ladder",
+              "options": [
+                {
+                  "name": "ladder",
+                  "description": "Ladder name of ladder to set user's points/wins in",
+                  "type": "STRING",
+                  "required": true
+                },
+                {
+                  "name": "user",
+                  "description": "User to set points/wins for",
+                  "type": "USER",
+                  "required": true
+                },
+                {
+                  "name": "property",
+                  "description": "either POINTS or WINS",
+                  "type": "STRING",
+                  "required": true,
+                  "choices": [
+                    {
+                      "name": "POINTS",
+                      "value": "points"
+                    },
+                    {
+                      "name": "WINS",
+                      "value": "wins"
+                    }
+                  ]
+                },
+                {
+                  "name": "value",
+                  "description": "New value for user's points/wins in specified ladder",
+                  "type": "INTEGER",
+                  "required": true
+                }
+              ]
+            },
+            {
+              "type": "SUB_COMMAND",
+              "name": "settings",
+              "description": "View the current parameter settings for a ladder",
+              "options": [
+                {
+                  "name": "ladder",
+                  "description": "Ladder name of ladder to settings of",
+                  "type": "STRING",
+                  "required": true
+                }
+              ]
+            },
+            {
+              "type": "SUB_COMMAND",
+              "name": "modify",
+              "description": "Modify various paramters of the ladder",
+              "options": [
+                {
+                  "name": "ladder",
+                  "description": "Ladder name of ladder to modify",
+                  "type": "STRING",
+                  "required": true
+                },
+                {
+                  "name": "param",
+                  "description": "Parameter to modify",
+                  "type": "STRING",
+                  "required": true,
+                  "choices": [
+                    {
+                      "name": "challengeTimeout",
+                      "value": "challengetimeout"
+                    },
+                    {
+                      "name": "matchTimeout",
+                      "value": "matchtimeout"
+                    },
+                    {
+                      "name": "scalingRate",
+                      "value": "scalingrate"
+                    },
+                    {
+                      "name": "pointsPerRound",
+                      "value": "pointsperround"
+                    },
+                    {
+                      "name": "pointsPerWin",
+                      "value": "pointsperwin"
+                    },
+                    {
+                      "name": "maxRounds",
+                      "value": "maxrounds"
+                    },
+                    {
+                      "name": "ladderReachUp",
+                      "value": "ladderreachup"
+                    },
+                    {
+                      "name": "ladderReachDown",
+                      "value": "ladderreachdown"
+                    },
+                    {
+                      "name": "repeatChallengeDecay",
+                      "value": "repeatchallengedecay"
+                    },
+                    {
+                      "name": "repeatChallengeMemory",
+                      "value": "repeatchallengememory"
+                    },
+                    {
+                      "name": "pointDecayRate",
+                      "value": "pointdecayrate"
+                    },
+                    {
+                      "name": "pointRegenRate",
+                      "value": "pointregenrate"
+                    },
+                    {
+                      "name": "pointDecayGracePeriod",
+                      "value": "pointdecaygraceperiod"
+                    },
+                    {
+                      "name": "dailyMatchLimit",
+                      "value": "dailymatchlimit"
+                    }
+                  ]
+                },
+                {
+                  "name": "value",
+                  "description": "New parameter value",
+                  "type": "NUMBER",
+                  "required": true
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "cmd": "tourney",
+        "synonyms": [],
+        "moduleId": "ladder",
+        "perms": [
+          "BOT_ADMIN"
+        ],
+        "debug": true,
+        "format": "${PREFIX}host",
+        "desc": "",
+        "examples": [
+          {
+            "command": "/tourney",
+            "desc": ""
+          }
+        ],
+        "data": {
+          "name": "tourney",
+          "description": "Host a tourney for the top ranking members on the leaderboard",
+          "options": [
+            {
+              "type": "SUB_COMMAND",
+              "name": "create",
+              "description": "Host a new tourney",
+              "options": [
+                {
+                  "name": "leaderboard",
+                  "description": "Pick a leaderboard to select participants from",
+                  "type": "STRING",
+                  "autocomplete": true,
+                  "required": true
+                },
+                {
+                  "name": "name",
+                  "type": "STRING",
+                  "description": "Title of the tourney",
+                  "required": true
+                },
+                {
+                  "name": "player_count",
+                  "type": "INTEGER",
+                  "description": "Number of tourney participants",
+                  "required": true
+                },
+                {
+                  "name": "start_in",
+                  "type": "STRING",
+                  "description": "Time before tourney will commence; e.g. \"4 days 12 hours\"",
+                  "required": true
+                }
+              ]
+            },
+            {
+              "type": "SUB_COMMAND",
+              "name": "abort",
+              "description": "Abort an existing tourney",
+              "options": [
+                {
+                  "name": "name",
+                  "type": "STRING",
+                  "description": "Title of the tourney to abort",
+                  "required": true,
+                  "autocomplete": true
+                }
+              ]
+            },
+            {
+              "type": "SUB_COMMAND",
+              "name": "status",
+              "description": "Get the current status of a tourney",
+              "options": [
+                {
+                  "name": "name",
+                  "type": "STRING",
+                  "description": "Title of the tourney",
+                  "required": true,
+                  "autocomplete": true
+                }
+              ]
+            },
+            {
+              "type": "SUB_COMMAND",
+              "name": "match",
+              "description": "Declare the outcome of a match",
+              "options": [
+                {
+                  "name": "name",
+                  "type": "STRING",
+                  "description": "Name of the tourney the match is for",
+                  "required": true,
+                  "autocomplete": true
+                },
+                {
+                  "name": "winner",
+                  "type": "STRING",
+                  "description": "Name of winner",
+                  "required": true,
+                  "autocomplete": true
+                }
+              ]
+            }
+          ]
+        }
       }
     ]
   },
@@ -3677,29 +5479,209 @@
     "module": "memberevent",
     "commands": [
       {
-        "cmd": "iam",
-        "synonyms": [],
+        "cmd": "memberevent",
+        "synonyms": [
+          "event"
+        ],
         "canEdit": true,
         "moduleId": "memberevent",
         "perms": [
           "USER"
         ],
-        "format": "${PREFIX}iam <member event info>",
-        "desc": "Use this command to create a notification for a Member Event (such as a *dry finger run*).\n\nProvide at least a location and what you are doing there. **Passwords and character names must be in quotes.** If you have multiple platform roles, remember to state which one the event will be on. How you word it doesn't matter too much. You can add extra event information by including `info: \"<extra info here>\"` when using the command.\n\nUse `${PREFIX}iam done` command to end the event.",
+        "format": "${PREFIX}memberevent <member event info>",
+        "desc": "",
         "examples": [
           {
-            "command": "!iam dry fingered in the archives. soul level 81 +10. character name \"The Balnace\", password: \"slug\"",
-            "desc": "This will create a member Event notification in all member event channels, stating where you are, what you are doing, your soul level, upgrade level, character name, and password. You can update the information in the member event without having to re-enter everything again. Simply use the command again and specify your updates."
-          },
-          {
-            "command": "!iam now SL90 at the ringed city streets.",
-            "desc": "This will update the soul level and location, leaving everything else unchanged."
-          },
-          {
-            "command": "!am done",
-            "desc": "This will end the event."
+            "command": "/memberevent",
+            "desc": "-"
           }
-        ]
+        ],
+        "data": {
+          "name": "memberevent",
+          "description": "Create an event notification for others to participate in.",
+          "options": [
+            {
+              "type": "SUB_COMMAND",
+              "name": "start",
+              "description": "Start a new member event.",
+              "options": [
+                {
+                  "name": "game",
+                  "description": "The game the event will take place on.",
+                  "type": "STRING",
+                  "required": true,
+                  "choices": [
+                    {
+                      "name": "Dark Souls 1",
+                      "value": "DS1"
+                    },
+                    {
+                      "name": "Dark Souls 2",
+                      "value": "DS2"
+                    },
+                    {
+                      "name": "Dark Souls 3",
+                      "value": "DS3"
+                    },
+                    {
+                      "name": "Bloodborne",
+                      "value": "BB"
+                    },
+                    {
+                      "name": "Elden Ring",
+                      "value": "ER"
+                    }
+                  ]
+                },
+                {
+                  "name": "platform",
+                  "description": "The platform the event will be on.",
+                  "required": true,
+                  "type": "STRING",
+                  "autocomplete": true
+                },
+                {
+                  "name": "location",
+                  "description": "Where the event will take place.",
+                  "required": false,
+                  "type": "STRING",
+                  "autocomplete": true
+                },
+                {
+                  "name": "event_type",
+                  "description": "Type of event to host.",
+                  "required": false,
+                  "type": "STRING",
+                  "autocomplete": true
+                },
+                {
+                  "name": "character",
+                  "description": "The name of build you will be using.",
+                  "required": false,
+                  "type": "STRING",
+                  "autocomplete": true
+                },
+                {
+                  "name": "level",
+                  "description": "The soul level (or equivalent) of your character.",
+                  "required": false,
+                  "type": "INTEGER",
+                  "autocomplete": false
+                },
+                {
+                  "name": "upgrade_level",
+                  "description": "The weapon upgrade level of your character.",
+                  "required": false,
+                  "type": "INTEGER",
+                  "autocomplete": true
+                },
+                {
+                  "name": "password",
+                  "description": "Password for multiplayer.",
+                  "required": false,
+                  "type": "STRING",
+                  "autocomplete": false
+                }
+              ]
+            },
+            {
+              "type": "SUB_COMMAND",
+              "name": "update",
+              "description": "Update your member event.",
+              "options": [
+                {
+                  "name": "game",
+                  "description": "The game the event will take place on.",
+                  "type": "STRING",
+                  "required": false,
+                  "choices": [
+                    {
+                      "name": "Dark Souls 1",
+                      "value": "DS1"
+                    },
+                    {
+                      "name": "Dark Souls 2",
+                      "value": "DS2"
+                    },
+                    {
+                      "name": "Dark Souls 3",
+                      "value": "DS3"
+                    },
+                    {
+                      "name": "Bloodborne",
+                      "value": "BB"
+                    },
+                    {
+                      "name": "Elden Ring",
+                      "value": "ER"
+                    }
+                  ]
+                },
+                {
+                  "name": "platform",
+                  "description": "The platform the event will be on.",
+                  "required": false,
+                  "type": "STRING",
+                  "autocomplete": true
+                },
+                {
+                  "name": "location",
+                  "description": "Where the event will take place.",
+                  "required": false,
+                  "type": "STRING",
+                  "autocomplete": true
+                },
+                {
+                  "name": "event_type",
+                  "description": "Type of event to host.",
+                  "required": false,
+                  "type": "STRING",
+                  "autocomplete": true
+                },
+                {
+                  "name": "character",
+                  "description": "The name of build you will be using.",
+                  "required": false,
+                  "type": "STRING",
+                  "autocomplete": true
+                },
+                {
+                  "name": "level",
+                  "description": "The soul level (or equivalent) of your character.",
+                  "required": false,
+                  "type": "INTEGER",
+                  "autocomplete": false
+                },
+                {
+                  "name": "upgrade_level",
+                  "description": "The weapon upgrade level of your character.",
+                  "required": false,
+                  "type": "INTEGER",
+                  "autocomplete": true
+                },
+                {
+                  "name": "password",
+                  "description": "Password for multiplayer.",
+                  "required": false,
+                  "type": "STRING",
+                  "autocomplete": false
+                },
+                {
+                  "name": "cross_server",
+                  "description": "Should the event be displayed in all servers you share with slugbot?",
+                  "required": false,
+                  "type": "BOOLEAN",
+                  "autocomplete": false
+                }
+              ]
+            },
+            {
+              "type": "SUB_COMMAND",
+              "name": "end",
+              "description": "End your member event."
+            }
+          ]
+        }
       }
     ]
   },
@@ -3708,7 +5690,7 @@
     "commands": [
       {
         "cmd": "ban",
-        "format": "${PREFIX}ban <member> [reason]",
+        "format": "${PREFIX}ban <member> [reason: <reason>]",
         "desc": "Use this command to ban a member.",
         "perms": [
           "BOT_ADMIN"
@@ -3723,20 +5705,20 @@
             "values": [
               {
                 "value": "Username",
-                "desc": "Discord username of the user to be muted"
+                "desc": "Discord username of the user to be banned"
               },
               {
                 "value": "discord ID",
-                "desc": "discord ID of the user to be muted"
+                "desc": "discord ID of the user to be banned"
               },
               {
                 "value": "discord member mention",
-                "desc": "Mention member to be muted"
+                "desc": "Mention member to be banned"
               }
             ]
           },
           {
-            "param": "[reason]",
+            "param": "<reason>",
             "values": [
               {
                 "value": "String",
@@ -3747,10 +5729,38 @@
         ],
         "examples": [
           {
-            "command": "!ban Alex_",
-            "desc": "This will ban Alex_ from the server."
+            "command": "!ban Alex_ reason: For reasons and stuff",
+            "desc": "This will ban Alex_ from the server - Sending the reason \"For reasons and stuff\" to them."
+          },
+          {
+            "command": "!ban Amir 7 days reason: Uncouth tone.",
+            "desc": "This will ban Amir for 7 days with the given reason sent to them. They will automatically be unbanned after 7 days."
           }
-        ]
+        ],
+        "data": {
+          "name": "ban",
+          "description": "Ban a member",
+          "options": [
+            {
+              "name": "member",
+              "type": "STRING",
+              "description": "Member to ban or user ID of user to preemptively ban",
+              "required": true
+            },
+            {
+              "name": "duration",
+              "type": "STRING",
+              "description": "Duration in english; e.g. \"1 hour 20 mins\"",
+              "required": false
+            },
+            {
+              "name": "reason",
+              "type": "STRING",
+              "description": "Reason for banning. The reason is DMed to member.",
+              "required": false
+            }
+          ]
+        }
       },
       {
         "cmd": "deletemessages",
@@ -3802,7 +5812,31 @@
             "command": "!deletemessages alex_ 10",
             "desc": "This will delete the last 50 messages sent by Alex_."
           }
-        ]
+        ],
+        "data": {
+          "name": "deletemessages",
+          "description": "Delete a given number of past messages",
+          "options": [
+            {
+              "name": "msg_count",
+              "type": "INTEGER",
+              "description": "Number of messages to delete",
+              "required": true
+            },
+            {
+              "name": "member",
+              "type": "USER",
+              "description": "Only delete messages by this member",
+              "required": false
+            },
+            {
+              "name": "user_id",
+              "type": "STRING",
+              "description": "Only delete messages by member with this ID",
+              "required": false
+            }
+          ]
+        }
       },
       {
         "cmd": "mute",
@@ -3861,7 +5895,168 @@
             "command": "!mute",
             "desc": "With no arguments given, a list showing all muted members and their remaining mute times will be shown."
           }
-        ]
+        ],
+        "data": {
+          "name": "mute",
+          "description": "Mute a member",
+          "options": [
+            {
+              "name": "member",
+              "type": "USER",
+              "description": "Member to mute",
+              "required": true
+            },
+            {
+              "name": "duration",
+              "type": "STRING",
+              "description": "Duration in english; e.g. \"1 hour 20 mins\"",
+              "required": false
+            },
+            {
+              "name": "reason",
+              "type": "STRING",
+              "description": "Reason for muting. The reason is DMed to member.",
+              "required": false
+            }
+          ]
+        }
+      },
+      {
+        "cmd": "persistentrole",
+        "synonyms": [],
+        "format": "${PREFIX}persistentrole (add <role>) | (remove <role>) | list",
+        "desc": "Used to add/remove persistent roles. A persistent role is one that will be reapplied to a member when they join if they left the server with the role.",
+        "perms": [
+          "BOT_ADMIN"
+        ],
+        "moduleId": "moderation",
+        "canDM": false,
+        "canEdit": false,
+        "parameters": [
+          {
+            "param": "add | remove",
+            "values": [
+              {
+                "value": "add",
+                "desc": "Add a persistent role"
+              },
+              {
+                "value": "remove",
+                "desc": "Remove a persistent role"
+              }
+            ]
+          },
+          {
+            "param": "<role>",
+            "values": [
+              {
+                "value": "Role",
+                "desc": "Discord server role"
+              }
+            ]
+          },
+          {
+            "param": "list",
+            "values": [
+              {
+                "value": "list",
+                "desc": "list all persistent roles"
+              }
+            ]
+          }
+        ],
+        "examples": [
+          {
+            "command": "/persistentrole add @leaderboard Blacklist",
+            "desc": "This will make the '@leaderboard Blacklist' role persistent"
+          }
+        ],
+        "data": {
+          "name": "persistentrole",
+          "description": "Add or remove persistent roles",
+          "options": [
+            {
+              "type": "SUB_COMMAND",
+              "name": "add",
+              "description": "Add persistent role",
+              "options": [
+                {
+                  "name": "role",
+                  "description": "role to make persistent",
+                  "type": "ROLE",
+                  "required": true
+                }
+              ]
+            },
+            {
+              "type": "SUB_COMMAND",
+              "name": "remove",
+              "description": "Remove persistent role",
+              "options": [
+                {
+                  "name": "role",
+                  "description": "Remove role as persistent",
+                  "type": "ROLE",
+                  "required": true
+                }
+              ]
+            },
+            {
+              "type": "SUB_COMMAND",
+              "name": "list",
+              "description": "List all persistent roles in this guild"
+            }
+          ]
+        }
+      },
+      {
+        "cmd": "unban",
+        "format": "${PREFIX}unban <member>",
+        "desc": "Use this command to unban a member.",
+        "perms": [
+          "BOT_ADMIN"
+        ],
+        "moduleId": "moderation",
+        "canDM": false,
+        "canEdit": false,
+        "debug": false,
+        "parameters": [
+          {
+            "param": "<member>",
+            "values": [
+              {
+                "value": "Username",
+                "desc": "Discord username of the user to be unbanned"
+              },
+              {
+                "value": "discord ID",
+                "desc": "discord ID of the user to be unbanned"
+              },
+              {
+                "value": "discord member mention",
+                "desc": "Mention member to be unbanned"
+              }
+            ]
+          }
+        ],
+        "examples": [
+          {
+            "command": "!unban Alex_",
+            "desc": "This will unban Alex_ from the server."
+          }
+        ],
+        "data": {
+          "name": "unban",
+          "description": "Unban a member",
+          "options": [
+            {
+              "name": "user_id",
+              "type": "STRING",
+              "description": "User ID of user to unban",
+              "required": true
+            }
+          ]
+        }
       },
       {
         "cmd": "unmute",
@@ -3897,6 +6092,90 @@
           {
             "command": "!unmute Alex_",
             "desc": "This will unmute member 'Alex_' if they are muted."
+          }
+        ],
+        "data": {
+          "name": "unmute",
+          "description": "Unmute a muted member.",
+          "options": [
+            {
+              "name": "member",
+              "type": "STRING",
+              "description": "Member to unmute",
+              "required": true,
+              "autocomplete": true
+            }
+          ]
+        }
+      },
+      {
+        "cmd": "usernote",
+        "synonyms": [
+          "note"
+        ],
+        "format": "${PREFIX}usernote <member> <note> | (remove [index])",
+        "desc": "Use this command to record a note for a member or remove past notes.",
+        "perms": [
+          "BOT_ADMIN"
+        ],
+        "moduleId": "moderation",
+        "canDM": false,
+        "canEdit": false,
+        "debug": false,
+        "parameters": [
+          {
+            "param": "<member>",
+            "values": [
+              {
+                "value": "Username",
+                "desc": "Discord username of the user to be muted"
+              },
+              {
+                "value": "discord ID",
+                "desc": "discord ID of the user to be muted"
+              },
+              {
+                "value": "discord member mention",
+                "desc": "Mention member to be muted"
+              }
+            ]
+          },
+          {
+            "param": "<note>",
+            "values": [
+              {
+                "value": "String",
+                "desc": "Note on the member."
+              }
+            ]
+          },
+          {
+            "param": "remove",
+            "values": [
+              {
+                "value": "remove",
+                "desc": "Flag to specify removing a note from a member."
+              }
+            ]
+          },
+          {
+            "param": "[index]",
+            "values": [
+              {
+                "value": "Number",
+                "desc": "Optional index of a note. Leaving empty will remove note added by you."
+              }
+            ]
+          }
+        ],
+        "examples": [
+          {
+            "command": "!note Halvard Seems pretty sus.",
+            "desc": "This will record a persistant note on Halvard - visable to other moderators."
+          },
+          {
+            "command": "!note Halvard remove",
+            "desc": "This will remove the last note you made on Halvard."
           }
         ]
       },
@@ -3966,31 +6245,106 @@
             "command": "!warn alex_ remove",
             "desc": "This will remove the last warning given to Alex_"
           }
-        ]
-      },
-      {
-        "cmd": "warnlog",
-        "synonyms": [
-          "warnlogs",
-          "warninglog",
-          "warninglogs",
-          "modlog",
-          "modlogs",
-          "mutelog",
-          "mutelogs"
         ],
-        "format": "${PREFIX}warnlog <member>",
-        "desc": "Use this command to view warnings given to a specified member.",
+        "data": {
+          "name": "warn",
+          "description": "Warn a member, remove a warning, or view warnings",
+          "options": [
+            {
+              "name": "add",
+              "type": "SUB_COMMAND",
+              "description": "Warn a member",
+              "options": [
+                {
+                  "name": "member",
+                  "type": "STRING",
+                  "description": "Member to warn",
+                  "required": true
+                },
+                {
+                  "name": "warning",
+                  "type": "STRING",
+                  "description": "Warning message.",
+                  "required": true
+                }
+              ]
+            },
+            {
+              "name": "remove",
+              "type": "SUB_COMMAND",
+              "description": "Remove a warning",
+              "options": [
+                {
+                  "name": "member",
+                  "type": "STRING",
+                  "description": "Member to remove warning from",
+                  "required": true
+                },
+                {
+                  "name": "index",
+                  "type": "INTEGER",
+                  "description": "Warning to remove",
+                  "required": true
+                }
+              ]
+            },
+            {
+              "name": "list",
+              "type": "SUB_COMMAND",
+              "description": "view a member's warnings",
+              "options": [
+                {
+                  "name": "member",
+                  "type": "STRING",
+                  "description": "View warnings for this member",
+                  "required": true
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "nicknames": {
+    "module": "nicknames",
+    "commands": [
+      {
+        "cmd": "ban",
+        "format": "${PREFIX}exclusivechar add|remove <char> [member [member [...]]]",
+        "desc": "Use this command to reserve a given character or string for specific member's display names.",
         "perms": [
           "BOT_ADMIN"
         ],
-        "moduleId": "moderation",
+        "moduleId": "nicknames",
         "canDM": false,
         "canEdit": false,
         "debug": false,
         "parameters": [
           {
-            "param": "<member>",
+            "param": "add|remove",
+            "values": [
+              {
+                "value": "add",
+                "desc": "Used to specify adding an exclusive character or giving the character to specified members."
+              },
+              {
+                "value": "remove",
+                "desc": "Used to specify removing an exclusive character or to stop giving the character to specified members."
+              }
+            ]
+          },
+          {
+            "param": "<char>",
+            "values": [
+              {
+                "value": "Character",
+                "desc": "A character to make exclusive to given members."
+              }
+            ]
+          },
+          {
+            "param": "[member]",
             "values": [
               {
                 "value": "Username",
@@ -4009,8 +6363,12 @@
         ],
         "examples": [
           {
-            "command": "!warnlog Alex_",
-            "desc": "This will display all past warnings given to Alex_."
+            "command": "!exclusivechar add 🐌 gabri specter",
+            "desc": "This will add 🐌 to members Gabri and Specter, and remove 🐌 from all other member's display names."
+          },
+          {
+            "command": "!exclusivechar remove 🐌 specter",
+            "desc": "This will stop adding 🐌 to Specter's name and prevent them from adding it to their own name."
           }
         ]
       }
@@ -4233,16 +6591,120 @@
       }
     ]
   },
+  "slugtactics": {
+    "module": "slugtactics",
+    "commands": [
+      {
+        "cmd": "slugtactics",
+        "moduleId": "slugtactics",
+        "perms": [
+          "USER"
+        ],
+        "debug": true,
+        "canDM": true,
+        "format": "${PREFIX}slugtactics",
+        "desc": "Start, join, play, or view a SlugTactics game",
+        "parameters": [],
+        "examples": [],
+        "data": {
+          "name": "slugtactics",
+          "description": "create, start, join, play, or view a SlugTactics game",
+          "options": [
+            {
+              "name": "create",
+              "description": "Start a new SlugTactics game",
+              "type": "SUB_COMMAND",
+              "options": [
+                {
+                  "name": "buy_in",
+                  "description": "Set buy-in amount",
+                  "type": "INTEGER",
+                  "required": true
+                },
+                {
+                  "name": "grid_size",
+                  "description": "Set grid dimensions",
+                  "type": "INTEGER",
+                  "required": false
+                },
+                {
+                  "name": "max_players",
+                  "description": "Set max player count",
+                  "type": "INTEGER",
+                  "required": false
+                },
+                {
+                  "name": "turn_timeout",
+                  "description": "Amount of time players get to submit a turn (in minutes)",
+                  "type": "INTEGER",
+                  "required": false
+                }
+              ]
+            },
+            {
+              "name": "start",
+              "description": "Start a SlugTactics game you have created",
+              "type": "SUB_COMMAND",
+              "options": [
+                {
+                  "name": "game_id",
+                  "description": "Game ID of game you created",
+                  "type": "STRING",
+                  "required": true,
+                  "autocomplete": true
+                }
+              ]
+            },
+            {
+              "name": "join",
+              "description": "Pick a SlugTactics game to join",
+              "type": "SUB_COMMAND",
+              "options": []
+            },
+            {
+              "name": "play",
+              "description": "Make your move in a current game",
+              "type": "SUB_COMMAND",
+              "options": [
+                {
+                  "name": "game_id",
+                  "description": "Game ID of game to play",
+                  "type": "STRING",
+                  "required": true,
+                  "autocomplete": true
+                }
+              ]
+            },
+            {
+              "name": "view",
+              "description": "View an on-going or past game",
+              "type": "SUB_COMMAND",
+              "options": [
+                {
+                  "name": "game_id",
+                  "description": "Game ID of game to view",
+                  "type": "STRING",
+                  "required": true,
+                  "autocomplete": true
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
   "streams": {
     "module": "streams",
     "commands": [
       {
         "cmd": "streamer",
         "perms": [
-          "USER"
+          "BOT_ADMIN"
         ],
         "moduleId": "streams",
         "debug": false,
+        "canDM": false,
         "format": "${PREFIX}streamer <add|remove> <streamer_name>",
         "desc": "Use this command to add a streamer to the streams notification list or remove a streamer from the list. A notification message will be sent to the '#streams' channel (if set) when a streamer in the list goes live on twitch.tv. The notification gets deleted when the streamer goes offline again.",
         "parameters": [
@@ -4286,7 +6748,159 @@
             "command": "!streamer list",
             "desc": "This will list all streamers currently set to display when they go live."
           }
-        ]
+        ],
+        "data": {
+          "name": "streamer",
+          "description": "Manage the server's twitch stream notification list",
+          "options": [
+            {
+              "type": "SUB_COMMAND",
+              "name": "add",
+              "description": "Add a streamer to the streamer list",
+              "options": [
+                {
+                  "type": "STRING",
+                  "name": "streamer",
+                  "description": "Twitch username of streamer to add",
+                  "required": true
+                }
+              ]
+            },
+            {
+              "type": "SUB_COMMAND",
+              "name": "remove",
+              "description": "Remove a streamer from the streamer list",
+              "options": [
+                {
+                  "type": "STRING",
+                  "name": "streamer",
+                  "description": "Twitch username of streamer to remove",
+                  "required": true,
+                  "autocomplete": true
+                }
+              ]
+            },
+            {
+              "type": "SUB_COMMAND",
+              "name": "list",
+              "description": "List all streamers currently in the streamer list"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "voicechannels": {
+    "module": "voicechannels",
+    "commands": [
+      {
+        "cmd": "vc",
+        "synonyms": [],
+        "moduleId": "voicechannels",
+        "perms": [
+          "USER"
+        ],
+        "debug": true,
+        "canDM": false,
+        "format": "${PREFIX}vc (create) | (name <VC name>) | (set_limit <limit>) | (whitelist <member>|<role>) | (blacklist <member>|<role>)",
+        "desc": "Use this command to customise a temporary VC.",
+        "parameters": [
+          {
+            "param": "<VC name>",
+            "values": [
+              {
+                "value": "String",
+                "desc": "VC name."
+              }
+            ]
+          },
+          {
+            "param": "<limit>",
+            "values": [
+              {
+                "value": "Number",
+                "desc": "Member limit of VC."
+              }
+            ]
+          }
+        ],
+        "examples": [],
+        "data": {
+          "name": "vc",
+          "description": "Customise properties of your temporary VC",
+          "options": [
+            {
+              "name": "name",
+              "description": "Set the name of your VC",
+              "type": "SUB_COMMAND",
+              "options": [
+                {
+                  "name": "name",
+                  "description": "Name to use",
+                  "type": "STRING",
+                  "required": true
+                }
+              ]
+            },
+            {
+              "name": "set_limit",
+              "description": "Set the member limit of your VC",
+              "type": "SUB_COMMAND",
+              "options": [
+                {
+                  "name": "limit",
+                  "description": "Member limit",
+                  "type": "INTEGER",
+                  "required": true
+                }
+              ]
+            },
+            {
+              "name": "whitelist",
+              "description": "Whitelist a member or role",
+              "type": "SUB_COMMAND",
+              "options": [
+                {
+                  "name": "subject",
+                  "description": "Member or role",
+                  "type": "MENTIONABLE",
+                  "required": true
+                }
+              ]
+            },
+            {
+              "name": "blacklist",
+              "description": "Blacklist a member or role and kick members if present",
+              "type": "SUB_COMMAND",
+              "options": [
+                {
+                  "name": "subject",
+                  "description": "Member or role",
+                  "type": "MENTIONABLE",
+                  "required": true
+                }
+              ]
+            },
+            {
+              "name": "create",
+              "description": "Instatiate custom VCs",
+              "type": "SUB_COMMAND",
+              "options": []
+            },
+            {
+              "name": "private",
+              "description": "Set your VC to private, kicking all members that aren't whitelisted.",
+              "type": "SUB_COMMAND",
+              "options": []
+            },
+            {
+              "name": "public",
+              "description": "Set your VC to public",
+              "type": "SUB_COMMAND",
+              "options": []
+            }
+          ]
+        }
       }
     ]
   }
