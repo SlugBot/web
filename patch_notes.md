@@ -7,6 +7,7 @@ title: Patch Notes
 
 ## 8th February 2022
 ### Updates
+  - Added autocompete to `/command remove` `command` argument.
   - Added autocompete to `/slugs` `target` argument.
   - `/slugs` menu now refreshes data on tab change. 
 
