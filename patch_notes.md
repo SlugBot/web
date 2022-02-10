@@ -11,13 +11,14 @@ title: Patch Notes
   - Improved responsiveness of `/streamer remove` `streamer` argument autocomplete. 
   - Added autocompete to `/command remove` `command` argument.
   - Added autocompete to `/slugs` `target` argument.
-  - `/slugs` menu now refreshes data on tab change. 
-  - Added optional region limit to `/challenge`.
+  - `/slugs` menu now refreshes data on tab change.
 
 ### Bug Fixes
   - Fixed `daily` when used through a ROOTKIT.
   - Fixed `crack` when used through a ROOTKIT.
   - Fixed UI error when cleaning own process with the REMOVE PROCESS button.
+  - Fixed `!blackjack` bug when getting 21 with three or more cards.
+  - Fixed bug where banned member could sometimes get unbanned.
 
 *****************************
 
