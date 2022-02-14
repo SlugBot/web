@@ -5,6 +5,15 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 14th February 2022
+### Updates
+  - Added 'dead leafing' to the slugboard. By default, reacting with a dead leaf will count as -1 leaf to the slugboard.
+
+### Bug Fixes 
+  - Fixed visual bug when setting a rank range limit on a challenge before being ranked.
+
+*****************************
+
 ## 8th February 2022
 ### Updates
   - Ported Twitch API wrapper to @twurple.
