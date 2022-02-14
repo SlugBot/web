@@ -11,6 +11,7 @@ title: Patch Notes
 
 ### Bug Fixes 
   - Fixed visual bug when setting a rank range limit on a challenge before being ranked.
+  - Fixed visual bug when giving fractional rep
 
 *****************************
 
