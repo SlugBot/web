@@ -135,7 +135,8 @@
                   "name": "command",
                   "description": "Command word or regEx",
                   "type": "STRING",
-                  "required": true
+                  "required": true,
+                  "autocomplete": true
                 }
               ]
             },
@@ -672,22 +673,6 @@
             "desc": "This will search for an item in Dark Souls 1 with 'rapier' in the name or description."
           }
         ]
-      },
-      {
-        "cmd": "dm",
-        "synonyms": [
-          "dm"
-        ],
-        "format": "${PREFIX}dm <user ID> <string>",
-        "desc": "",
-        "perms": [
-          "USER"
-        ],
-        "canDM": true,
-        "canEdit": false,
-        "debug": false,
-        "parameters": [],
-        "examples": []
       },
       {
         "cmd": "guess",
@@ -4892,6 +4877,7 @@
           "USER"
         ],
         "debug": true,
+        "canDM": false,
         "format": "${PREFIX}challenge [member] | cancel",
         "desc": "Use this command to challenge another member to a ranked fight or put out an open invitation to be challenged",
         "examples": [
@@ -4926,8 +4912,15 @@
                   "name": "leaderboard",
                   "description": "Pick a leaderboard to participate in",
                   "type": "STRING",
-                  "autocomplete": true,
-                  "required": true
+                  "required": true,
+                  "autocomplete": true
+                },
+                {
+                  "name": "region",
+                  "description": "Limit opponents to only ones in the given region",
+                  "type": "STRING",
+                  "required": false,
+                  "autocomplete": true
                 },
                 {
                   "name": "rank_range",
@@ -5418,6 +5411,12 @@
                   "type": "STRING",
                   "description": "Time before tourney will commence; e.g. \"4 days 12 hours\"",
                   "required": true
+                },
+                {
+                  "name": "description",
+                  "type": "STRING",
+                  "description": "Description to display with the invite. Use \\n to denote line-breaks",
+                  "required": false
                 }
               ]
             },
@@ -6177,7 +6176,52 @@
             "command": "!note Halvard remove",
             "desc": "This will remove the last note you made on Halvard."
           }
-        ]
+        ],
+        "data": {
+          "name": "usernote",
+          "description": "Add or remove a private note about a user. Only mods can see these notes.",
+          "options": [
+            {
+              "name": "add",
+              "description": "Add a note",
+              "type": "SUB_COMMAND",
+              "options": [
+                {
+                  "name": "member",
+                  "description": "Member to add note to",
+                  "type": "USER",
+                  "required": true
+                },
+                {
+                  "name": "note",
+                  "description": "The note to add",
+                  "type": "STRING",
+                  "required": true
+                }
+              ]
+            },
+            {
+              "name": "remove",
+              "description": "remove an existing user note",
+              "type": "SUB_COMMAND",
+              "options": [
+                {
+                  "name": "member",
+                  "description": "Member to add note to",
+                  "type": "USER",
+                  "required": true
+                },
+                {
+                  "name": "note",
+                  "description": "Note to remove",
+                  "type": "STRING",
+                  "required": true,
+                  "autocomplete": true
+                }
+              ]
+            }
+          ]
+        }
       },
       {
         "cmd": "warn",
@@ -6587,7 +6631,55 @@
             "command": "!slugboard color #000000",
             "desc": "This will set the slugboard message embed color to black."
           }
-        ]
+        ],
+        "data": {
+          "name": "slugboard",
+          "description": "Customise the settings for the Slug-Board",
+          "options": [
+            {
+              "name": "flag",
+              "description": "Emoji members can react with to flag a message for the Slug-Board",
+              "type": "STRING",
+              "required": false
+            },
+            {
+              "name": "response",
+              "description": "Emoji SlugBot will react with when a message gets Slug-Board'ed",
+              "type": "STRING",
+              "required": false
+            },
+            {
+              "name": "threshold",
+              "description": "Number of flag reacts needed for a message to be posted on the Slug-Board",
+              "type": "INTEGER",
+              "required": false
+            },
+            {
+              "name": "unflag",
+              "description": "Emoji members can react with to count against the flag count",
+              "type": "STRING",
+              "required": false
+            },
+            {
+              "name": "allow_unflag",
+              "description": "Can members use unflag reacts to count against flag reacts?",
+              "type": "BOOLEAN",
+              "required": false
+            },
+            {
+              "name": "delete_threshold",
+              "description": "Number of unflag reacts more than flag reacts needed to delete the message",
+              "type": "INTEGER",
+              "required": false
+            },
+            {
+              "name": "color",
+              "description": "Hex color code of the Slug-Board embed",
+              "type": "STRING",
+              "required": false
+            }
+          ]
+        }
       }
     ]
   },
