@@ -5,6 +5,12 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 24th February 2022
+### Updates
+  - Updated `/usernote` to slash command.
+
+*****************************
+
 ## 14th February 2022
 ### Updates
   - Added 'dead leafing' to the slugboard. By default, reacting with a dead leaf will count as -1 leaf to the slugboard.
