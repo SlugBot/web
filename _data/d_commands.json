@@ -1200,14 +1200,13 @@
       }
     ]
   },
-  "allocatestats": {
-    "cmd": "allocatestats",
+  "allocatestatsds3": {
+    "cmd": "allocatestatsds3",
     "synonyms": [
-      "beststats",
-      "maxar",
-      "minmax"
+      "allocatestatsds3",
+      "ds3allocatestats"
     ],
-    "format": "${PREFIX}allocatestats <weapon name> [upgrade level] [base str [dex [int [faith [luck]]]]] <levels to spend>",
+    "format": "${PREFIX}allocatestatsds3 <weapon name> [upgrade level] [base str [dex [int [faith [luck]]]]] <levels to spend>",
     "desc": "Use this command to find the optimal stat spread for a given weapon.",
     "perms": [
       "USER"
@@ -1268,7 +1267,7 @@
       }
     ],
     "data": {
-      "name": "allocatestats",
+      "name": "allocatestatsds3",
       "description": "Find the optimal stat spread for a given weapon",
       "options": [
         {
@@ -1551,8 +1550,8 @@
   },
   "igot": {
     "cmd": "igot",
-    "format": "${PREFIX}igot [ds1|ds3] <souls received>",
-    "desc": "Use this command to get a readout containing the estimated level of another player killed in Dark Souls 1 or Dark Souls 3.",
+    "format": "${PREFIX}igot [ds1|ds3|er] <souls received>",
+    "desc": "Use this command to get a readout containing the estimated level of another player killed in DS1, DS3, or ER.",
     "perms": [
       "USER"
     ],
@@ -1571,6 +1570,10 @@
           {
             "value": "ds3",
             "desc": "specify to calculate the soul level of a Dark Souls 3 player."
+          },
+          {
+            "value": "er",
+            "desc": "specify to calculate the rune level of an Elden Ring player."
           }
         ]
       },
@@ -1607,11 +1610,15 @@
             {
               "name": "DS3",
               "value": "DS3"
+            },
+            {
+              "name": "ER",
+              "value": "ER"
             }
           ]
         },
         {
-          "name": "souls_dropped",
+          "name": "souls_received",
           "description": "Number of souls received when you killed the player",
           "type": "INTEGER",
           "required": true
@@ -1835,32 +1842,74 @@
       "description": "find the upper and lower soul level limits for players invading you or hosts you invade",
       "options": [
         {
-          "name": "mode",
-          "description": "From the perspective of the host or invader",
-          "type": "STRING",
-          "required": true,
-          "choices": [
+          "name": "ds3",
+          "description": "Summon/invasion ranges for Dark Souls 3",
+          "type": "SUB_COMMAND",
+          "options": [
             {
-              "name": "host",
-              "value": "host"
+              "name": "mode",
+              "description": "From the perspective of the host or invader",
+              "type": "STRING",
+              "required": true,
+              "choices": [
+                {
+                  "name": "host",
+                  "value": "host"
+                },
+                {
+                  "name": "invader",
+                  "value": "invader"
+                }
+              ]
             },
             {
-              "name": "invader",
-              "value": "invader"
+              "name": "soul_level",
+              "description": "Level of character",
+              "required": true,
+              "type": "INTEGER"
+            },
+            {
+              "name": "upgrade_level",
+              "description": "Upgrade level of weapon",
+              "required": false,
+              "type": "INTEGER"
             }
           ]
         },
         {
-          "name": "soul_level",
-          "description": "Level of character",
-          "required": true,
-          "type": "INTEGER"
-        },
-        {
-          "name": "upgrade_level",
-          "description": "Upgrade level of weapon",
-          "required": false,
-          "type": "INTEGER"
+          "name": "er",
+          "description": "Summon/invasion ranges for Elden Ring",
+          "type": "SUB_COMMAND",
+          "options": [
+            {
+              "name": "mode",
+              "description": "From the perspective of the host or invader",
+              "type": "STRING",
+              "required": true,
+              "choices": [
+                {
+                  "name": "host",
+                  "value": "host"
+                },
+                {
+                  "name": "invader",
+                  "value": "invader"
+                }
+              ]
+            },
+            {
+              "name": "rune_level",
+              "description": "Level of character",
+              "required": true,
+              "type": "INTEGER"
+            },
+            {
+              "name": "upgrade_level",
+              "description": "Upgrade level of weapon",
+              "required": false,
+              "type": "INTEGER"
+            }
+          ]
         }
       ]
     }
@@ -1929,9 +1978,9 @@
       }
     ]
   },
-  "weapon": {
-    "cmd": "weapon",
-    "format": "${PREFIX}weapon [weapon name [vs ...]] [upgrade level] [str [dex [int [faith [luck]]]]]",
+  "weaponds3": {
+    "cmd": "weaponds3",
+    "format": "${PREFIX}weaponds3 [weapon name [vs ...]] [upgrade level] [str [dex [int [faith [luck]]]]]",
     "desc": "Use this command to calculate the AR of any DS3 weapon, along with the expected damage on R1s/L1s, backstabs and ripostes.\n\nlisting up to four weapons separated by `vs` will allow you to compare them. Note that the upgrade and stats need to be specified only once, and at the end.\n\nIn the case of an incomplete input, like `!weapon caestus`, the missing upgrade and stat data will be collected from the build you currently have set through the `!setbuild` command.\n\nTyping out the command without a `[weapon name]` argument will make SlugBot calculate the ten best weapons based on expected R1 damage for the upgrade level and stats provided. The printout for this kind of input will include reactions to toggle between various weapon classes. SlugBot will also note if any of the weapons are usable only when 2-handed.",
     "perms": [
       "USER"
@@ -1983,16 +2032,16 @@
     ],
     "examples": [
       {
-        "command": "!weapon sharp claymore +7 16 35 10 10 10",
+        "command": "!weaponds3 sharp claymore +7 16 35 10 10 10",
         "desc": "The 1-hand/2-hand and weapon self-buff states can be toggled via appropriate reactions. The normal upgrade path input is used for special weapons; `!weapon black knight sword +10 20 18 10 10 10` will print out the data for a black knight sword at an upgrade level of +5."
       },
       {
-        "command": "!weapon fire dagger vs chaos dagger +3 10 10 10 10 10",
+        "command": "!weaponds3 fire dagger vs chaos dagger +3 10 10 10 10 10",
         "desc": "This will compare the fire dagger and chaos dagger weapons at the given stats. Use the number reactions to view each of the given weapons."
       }
     ],
     "data": {
-      "name": "weapon",
+      "name": "weaponds3",
       "description": "Get info on a given weapon, or get the top 10 weapons of each class",
       "options": [
         {
@@ -2060,33 +2109,9 @@
               "required": false
             },
             {
-              "name": "strength",
-              "type": "INTEGER",
-              "description": "Strength level",
-              "required": false
-            },
-            {
-              "name": "dexterity",
-              "type": "INTEGER",
-              "description": "Dexterity level",
-              "required": false
-            },
-            {
-              "name": "intelligence",
-              "type": "INTEGER",
-              "description": "Intelligence level",
-              "required": false
-            },
-            {
-              "name": "faith",
-              "type": "INTEGER",
-              "description": "Faith level",
-              "required": false
-            },
-            {
-              "name": "luck",
-              "type": "INTEGER",
-              "description": "Luck level",
+              "name": "stats",
+              "description": "str dex int faith luck levels. e.g. \"10 18 9 30 7\"",
+              "type": "STRING",
               "required": false
             }
           ]
@@ -2149,33 +2174,9 @@
               "required": false
             },
             {
-              "name": "strength",
-              "type": "INTEGER",
-              "description": "Strength level",
-              "required": false
-            },
-            {
-              "name": "dexterity",
-              "type": "INTEGER",
-              "description": "Dexterity level",
-              "required": false
-            },
-            {
-              "name": "intelligence",
-              "type": "INTEGER",
-              "description": "Intelligence level",
-              "required": false
-            },
-            {
-              "name": "faith",
-              "type": "INTEGER",
-              "description": "Faith level",
-              "required": false
-            },
-            {
-              "name": "luck",
-              "type": "INTEGER",
-              "description": "Luck level",
+              "name": "stats",
+              "description": "str dex int faith luck levels. e.g. \"10 18 9 30 7\"",
+              "type": "STRING",
               "required": false
             }
           ]
@@ -3672,10 +3673,6 @@
             "desc": "NARG stocks"
           },
           {
-            "value": "QQ",
-            "desc": "QQ stocks"
-          },
-          {
             "value": "PINC",
             "desc": "PINC stocks"
           }
@@ -3719,10 +3716,6 @@
                   "value": "NARG"
                 },
                 {
-                  "name": "QQ",
-                  "value": "QQ"
-                },
-                {
                   "name": "PINC",
                   "value": "PINC"
                 }
@@ -3758,10 +3751,6 @@
                 {
                   "name": "NARG",
                   "value": "NARG"
-                },
-                {
-                  "name": "QQ",
-                  "value": "QQ"
                 },
                 {
                   "name": "PINC",
@@ -3973,6 +3962,266 @@
           "name": "amount",
           "description": "Amount of SC to vault",
           "required": false
+        }
+      ]
+    }
+  },
+  "allocatestatser": {
+    "cmd": "allocatestatser",
+    "synonyms": [
+      "allocatestatser",
+      "erallocatestats"
+    ],
+    "format": "${PREFIX}allocatestatser <weapon name> [upgrade level] [base str [dex [int [faith [arc]]]]] <levels to spend>",
+    "desc": "Use this command to find the optimal stat spread for a given weapon.",
+    "perms": [
+      "USER"
+    ],
+    "moduleId": "eldenring",
+    "canDM": true,
+    "canEdit": true,
+    "debug": true,
+    "parameters": [
+      {
+        "param": "[weapon name]",
+        "values": [
+          {
+            "value": "Elden Ring 3 weapon name",
+            "desc": "Should include infusion type if desired. Spelling is lenient."
+          },
+          {
+            "value": "null",
+            "desc": "If no weapon name is given, info on all weapons will be given."
+          }
+        ]
+      },
+      {
+        "param": "[upgrade level]",
+        "values": [
+          {
+            "value": "Weapon upgrade level",
+            "desc": "For special weapons, UPGRADE LEVELS SHOULD BE CONVERTED TO STANDARD UPGRADE LEVEL EQUIVALENTS so weapons can be compared. In the format of '+2'"
+          },
+          {
+            "value": "null",
+            "desc": "If no upgrade level is given, the upgrade level of your set build will be used."
+          }
+        ]
+      },
+      {
+        "param": "[str [dex [int [faith [arc]]]]]",
+        "values": [
+          {
+            "value": "Stat levels",
+            "desc": "List of stat levels given in order and separated by spaces or '/'s"
+          },
+          {
+            "value": "null",
+            "desc": "If no stat level is given, the corresponding stat level of your set build will be used."
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "command": "/allocatestatser gaels greatsword 40",
+        "desc": "This will disribute 40 levels across damage stats to give the most damage per R1."
+      },
+      {
+        "command": "/allocatestatser claymore +7 16 35 25",
+        "desc": "This will find the optimal stats for a +7 claymore from a starting point of 16 strength and 35 dex, given 25 levels to distribute."
+      }
+    ],
+    "data": {
+      "name": "allocatestatser",
+      "description": "Find the optimal stat spread for a given Elden Ring weapon",
+      "options": [
+        {
+          "name": "weapon",
+          "description": "Weapon to allocate stats for",
+          "type": "STRING",
+          "required": true,
+          "autocomplete": true
+        },
+        {
+          "name": "spend",
+          "description": "How many stat levels allowed to allocate",
+          "type": "INTEGER",
+          "required": true
+        },
+        {
+          "name": "upgrade",
+          "description": "Upgrade level of the weapon. Use equivalent standard upgrade for special weapons",
+          "type": "STRING",
+          "choices": [
+            {
+              "name": "+0",
+              "value": "+0"
+            },
+            {
+              "name": "+1",
+              "value": "+1"
+            },
+            {
+              "name": "+2",
+              "value": "+2"
+            },
+            {
+              "name": "+3",
+              "value": "+3"
+            },
+            {
+              "name": "+4",
+              "value": "+4"
+            },
+            {
+              "name": "+5",
+              "value": "+5"
+            },
+            {
+              "name": "+6",
+              "value": "+6"
+            },
+            {
+              "name": "+7",
+              "value": "+7"
+            },
+            {
+              "name": "+8",
+              "value": "+8"
+            },
+            {
+              "name": "+9",
+              "value": "+9"
+            },
+            {
+              "name": "+10",
+              "value": "+10"
+            }
+          ],
+          "required": false
+        },
+        {
+          "name": "stats",
+          "description": "Initial str dex int faith arc levels. e.g. \"10 18 9 30 7\"",
+          "type": "STRING",
+          "required": false
+        }
+      ]
+    }
+  },
+  "weaponer": {
+    "cmd": "weaponer",
+    "format": "${PREFIX}weaponer [weapon name [vs ...]] [upgrade level] [str [dex [int [faith [luck]]]]]",
+    "desc": "Use this command to calculate the AR of any DS3 weapon, along with the expected damage on R1s/L1s, backstabs and ripostes.\n\nlisting up to four weapons separated by `vs` will allow you to compare them. Note that the upgrade and stats need to be specified only once, and at the end.\n\nIn the case of an incomplete input, like `!weapon caestus`, the missing upgrade and stat data will be collected from the build you currently have set through the `!setbuild` command.\n\nTyping out the command without a `[weapon name]` argument will make SlugBot calculate the ten best weapons based on expected R1 damage for the upgrade level and stats provided. The printout for this kind of input will include reactions to toggle between various weapon classes. SlugBot will also note if any of the weapons are usable only when 2-handed.",
+    "perms": [
+      "USER"
+    ],
+    "moduleId": "eldenring",
+    "canDM": true,
+    "canEdit": true,
+    "debug": true,
+    "parameters": [
+      {
+        "param": "[weapon name]",
+        "values": [
+          {
+            "value": "Elden Ring weapon name",
+            "desc": "Should include infusion type if desired. Spelling is lenient."
+          },
+          {
+            "value": "null",
+            "desc": "If no weapon name is given, info on all weapons will be given."
+          }
+        ]
+      },
+      {
+        "param": "[upgrade level]",
+        "values": [
+          {
+            "value": "Weapon upgrade level",
+            "desc": "For special weapons, UPGRADE LEVELS SHOULD BE CONVERTED TO STANDARD UPGRADE LEVEL EQUIVALENTS so weapons can be compared. In the format of '+2'"
+          },
+          {
+            "value": "null",
+            "desc": "If no upgrade level is given, the upgrade level of your set build will be used."
+          }
+        ]
+      },
+      {
+        "param": "[str [dex [int [faith [luck]]]]]",
+        "values": [
+          {
+            "value": "Stat levels",
+            "desc": "List of stat levels given in order and separated by spaces or '/'s"
+          },
+          {
+            "value": "null",
+            "desc": "If no stat level is given, the corresponding stat level of your set build will be used."
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "command": "!weaponer sharp claymore +7 16 35 10 10 10",
+        "desc": "The 1-hand/2-hand and weapon self-buff states can be toggled via appropriate reactions. The normal upgrade path input is used for special weapons; `!weapon black knight sword +10 20 18 10 10 10` will print out the data for a black knight sword at an upgrade level of +5."
+      },
+      {
+        "command": "!weaponer fire dagger vs chaos dagger +3 10 10 10 10 10",
+        "desc": "This will compare the fire dagger and chaos dagger weapons at the given stats. Use the number reactions to view each of the given weapons."
+      }
+    ],
+    "data": {
+      "name": "weaponer",
+      "description": "Get info on a given Elden Ring weapon, or get the top 10 weapons of each class",
+      "options": [
+        {
+          "name": "info",
+          "type": "SUB_COMMAND",
+          "description": "Get info on a weapon or list of weapons separated by commas",
+          "options": [
+            {
+              "name": "weapon",
+              "type": "STRING",
+              "description": "Weapon name or list of weapon names",
+              "required": true,
+              "autocomplete": true
+            },
+            {
+              "name": "upgrade",
+              "description": "Upgrade level of the weapon. Use equivalent standard upgrade for special weapons",
+              "type": "STRING",
+              "autocomplete": true,
+              "required": false
+            },
+            {
+              "name": "stats",
+              "description": "str dex int faith arc levels. e.g. \"10 18 9 30 7\"",
+              "type": "STRING",
+              "required": false
+            }
+          ]
+        },
+        {
+          "name": "bestinclass",
+          "type": "SUB_COMMAND",
+          "description": "Get the top 10 weapons of each class",
+          "options": [
+            {
+              "name": "upgrade",
+              "description": "Upgrade level of the weapon. Use equivalent standard upgrade for special weapons",
+              "type": "STRING",
+              "autocomplete": true,
+              "required": false
+            },
+            {
+              "name": "stats",
+              "description": "str dex int faith arc levels. e.g. \"10 18 9 30 7\"",
+              "type": "STRING",
+              "required": false
+            }
+          ]
         }
       ]
     }
@@ -5374,7 +5623,7 @@
     "synonyms": [
       "note"
     ],
-    "format": "${PREFIX}usernote <member> <note> | (remove [index])",
+    "format": "/usernote ( add <member> <note>) | (remove <member> <note>)",
     "desc": "Use this command to record a note for a member or remove past notes.",
     "perms": [
       "BOT_ADMIN"
@@ -5418,25 +5667,16 @@
             "desc": "Flag to specify removing a note from a member."
           }
         ]
-      },
-      {
-        "param": "[index]",
-        "values": [
-          {
-            "value": "Number",
-            "desc": "Optional index of a note. Leaving empty will remove note added by you."
-          }
-        ]
       }
     ],
     "examples": [
       {
-        "command": "!note Halvard Seems pretty sus.",
+        "command": "!note add member:Halvard note:Seems pretty sus.",
         "desc": "This will record a persistant note on Halvard - visable to other moderators."
       },
       {
-        "command": "!note Halvard remove",
-        "desc": "This will remove the last note you made on Halvard."
+        "command": "!note remove member:Halvard note:Seems pretty sus",
+        "desc": "This will remove the note you made on Halvard."
       }
     ],
     "data": {
@@ -5445,7 +5685,7 @@
       "options": [
         {
           "name": "add",
-          "description": "Add a note",
+          "description": "Add a note to a member. Only mods can see these notes.",
           "type": "SUB_COMMAND",
           "options": [
             {
@@ -6090,6 +6330,16 @@
               "name": "is_toggle",
               "type": "BOOLEAN",
               "description": "Reacting adds and removes roles. Reactions are automatically removed"
+            },
+            {
+              "name": "is_select_menu",
+              "type": "BOOLEAN",
+              "description": "A select menu is used instead of reactions (Buttons will be used for less than 3 options)"
+            },
+            {
+              "name": "do_feedback",
+              "type": "BOOLEAN",
+              "description": "Users will receive an ephemeral message notifying them of the roles assigned/removed"
             }
           ]
         }
