@@ -5,6 +5,23 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 27th March 2022
+### New Additions
+  - Added `/allocatestatser` for stat allocation for Elden Ring weapons.
+  - Added `/weaponer` for weapon data for Elden Ring weapons.
+
+### Updates
+  - Changed `/allocatestats` to `/allocatestatsds3` for DS3 stat allocation.
+  - Changed `/weapon` to `/weaponds3` for DS3 weapon data.
+  - Updated `/range` command to work with Elden Ring summon ranges.
+  - Updated `/igot` command to work with Elden Ring level calculation.
+
+### Bug Fixes
+  - Fixed Frost aux scaling with reinforce.
+  - Fixed `/allocatestatser` ignoring fth scaling.
+
+*****************************
+
 ## 24th February 2022
 ### Updates
   - Updated `/usernote` to slash command.
