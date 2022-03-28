@@ -19,6 +19,8 @@ title: Patch Notes
 ### Bug Fixes
   - Fixed Frost aux scaling with reinforce.
   - Fixed `/allocatestatser` ignoring fth scaling.
+  - Fixed `/weaponer bestinclass` holy AR display.
+  - Fixed `!igot` twitch command for ER.
 
 *****************************
 
