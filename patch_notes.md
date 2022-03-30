@@ -15,12 +15,14 @@ title: Patch Notes
   - Changed `/weapon` to `/weaponds3` for DS3 weapon data.
   - Updated `/range` command to work with Elden Ring summon ranges.
   - Updated `/igot` command to work with Elden Ring level calculation.
+  - Updated `/ladder` to slash command.
 
 ### Bug Fixes
   - Fixed Frost aux scaling with reinforce.
   - Fixed `/allocatestatser` ignoring fth scaling.
   - Fixed `/weaponer bestinclass` holy AR display.
   - Fixed `!igot` twitch command for ER.
+  - Added failsafe to custom VC cleanup.
 
 *****************************
 
