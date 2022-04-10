@@ -5,6 +5,16 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 10th April 2022
+### Updates
+  - Updated `/exclusivechar` to slash command.
+  - Add automatic thread creation for leaderboard challenges.
+
+### Bug Fixes
+  - Fixed incorrect weapon being recognised by name in `/weaponer`.
+
+*****************************
+
 ## 27th March 2022
 ### New Additions
   - Added `/allocatestatser` for stat allocation for Elden Ring weapons.

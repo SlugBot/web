@@ -1595,33 +1595,46 @@
     ],
     "data": {
       "name": "igot",
-      "description": "Get the estimated level of another player killed in DS1 or DS3",
+      "description": "Get the estimated level of another player killed in DS1, DS3 or ER",
       "options": [
         {
-          "name": "game",
-          "description": "game",
-          "type": "STRING",
-          "required": true,
-          "choices": [
+          "name": "er",
+          "description": "Get the estimated level of another player killed in Elden Ring",
+          "type": "SUB_COMMAND",
+          "options": [
             {
-              "name": "DS1",
-              "value": "DS1"
-            },
-            {
-              "name": "DS3",
-              "value": "DS3"
-            },
-            {
-              "name": "ER",
-              "value": "ER"
+              "name": "runes_received",
+              "description": "Number of runes received when you killed the player",
+              "type": "INTEGER",
+              "required": true
             }
           ]
         },
         {
-          "name": "souls_received",
-          "description": "Number of souls received when you killed the player",
-          "type": "INTEGER",
-          "required": true
+          "name": "ds3",
+          "description": "Get the estimated level of another player killed in Dark Souls 3",
+          "type": "SUB_COMMAND",
+          "options": [
+            {
+              "name": "souls_received",
+              "description": "Number of souls received when you killed the player",
+              "type": "INTEGER",
+              "required": true
+            }
+          ]
+        },
+        {
+          "name": "ds1",
+          "description": "Get the estimated level of another player killed in Dark Souls 1",
+          "type": "SUB_COMMAND",
+          "options": [
+            {
+              "name": "souls_received",
+              "description": "Number of souls received when you killed the player",
+              "type": "INTEGER",
+              "required": true
+            }
+          ]
         }
       ]
     }
@@ -1907,7 +1920,109 @@
               "name": "upgrade_level",
               "description": "Upgrade level of weapon",
               "required": false,
-              "type": "INTEGER"
+              "type": "INTEGER",
+              "choices": [
+                {
+                  "name": 1,
+                  "value": 1
+                },
+                {
+                  "name": 2,
+                  "value": 2
+                },
+                {
+                  "name": 3,
+                  "value": 3
+                },
+                {
+                  "name": 4,
+                  "value": 4
+                },
+                {
+                  "name": 5,
+                  "value": 5
+                },
+                {
+                  "name": 6,
+                  "value": 6
+                },
+                {
+                  "name": 7,
+                  "value": 7
+                },
+                {
+                  "name": 8,
+                  "value": 8
+                },
+                {
+                  "name": 9,
+                  "value": 9
+                },
+                {
+                  "name": 10,
+                  "value": 10
+                },
+                {
+                  "name": 11,
+                  "value": 11
+                },
+                {
+                  "name": 12,
+                  "value": 12
+                },
+                {
+                  "name": 13,
+                  "value": 13
+                },
+                {
+                  "name": 14,
+                  "value": 14
+                },
+                {
+                  "name": 15,
+                  "value": 15
+                },
+                {
+                  "name": 16,
+                  "value": 16
+                },
+                {
+                  "name": 17,
+                  "value": 17
+                },
+                {
+                  "name": 18,
+                  "value": 18
+                },
+                {
+                  "name": 19,
+                  "value": 19
+                },
+                {
+                  "name": 20,
+                  "value": 20
+                },
+                {
+                  "name": 21,
+                  "value": 21
+                },
+                {
+                  "name": 22,
+                  "value": 22
+                },
+                {
+                  "name": 23,
+                  "value": 23
+                },
+                {
+                  "name": 24,
+                  "value": 24
+                },
+                {
+                  "name": 25,
+                  "value": 25
+                }
+              ]
             }
           ]
         }
@@ -4051,54 +4166,9 @@
         },
         {
           "name": "upgrade",
-          "description": "Upgrade level of the weapon. Use equivalent standard upgrade for special weapons",
+          "description": "Upgrade level of the weapon",
           "type": "STRING",
-          "choices": [
-            {
-              "name": "+0",
-              "value": "+0"
-            },
-            {
-              "name": "+1",
-              "value": "+1"
-            },
-            {
-              "name": "+2",
-              "value": "+2"
-            },
-            {
-              "name": "+3",
-              "value": "+3"
-            },
-            {
-              "name": "+4",
-              "value": "+4"
-            },
-            {
-              "name": "+5",
-              "value": "+5"
-            },
-            {
-              "name": "+6",
-              "value": "+6"
-            },
-            {
-              "name": "+7",
-              "value": "+7"
-            },
-            {
-              "name": "+8",
-              "value": "+8"
-            },
-            {
-              "name": "+9",
-              "value": "+9"
-            },
-            {
-              "name": "+10",
-              "value": "+10"
-            }
-          ],
+          "autocomplete": true,
           "required": false
         },
         {
@@ -4106,6 +4176,44 @@
           "description": "Initial str dex int faith arc levels. e.g. \"10 18 9 30 7\"",
           "type": "STRING",
           "required": false
+        }
+      ]
+    }
+  },
+  "parryframes": {
+    "cmd": "parryframes",
+    "synonyms": [
+      "parryframes"
+    ],
+    "format": "${PREFIX}parryframes",
+    "desc": "Use this command to view the parry frames of all parry types in Elden Ring or Dark Souls 3.",
+    "perms": [
+      "USER"
+    ],
+    "moduleId": "eldenring",
+    "canDM": true,
+    "canEdit": false,
+    "debug": false,
+    "parameters": [],
+    "examples": [
+      {
+        "command": "/parryframes",
+        "desc": "This will display parry frame data for Elden Ring and Dark Souls 3."
+      }
+    ],
+    "data": {
+      "name": "parryframes",
+      "description": "Use this command to view the parry frames of all parry types in Elden Ring or Dark Souls 3",
+      "options": [
+        {
+          "name": "ds3",
+          "description": "Display Dark Souls 3 parry frame data",
+          "type": "SUB_COMMAND"
+        },
+        {
+          "name": "er",
+          "description": "Display Elden Ring parry frame data",
+          "type": "SUB_COMMAND"
         }
       ]
     }
@@ -4190,7 +4298,7 @@
             },
             {
               "name": "upgrade",
-              "description": "Upgrade level of the weapon. Use equivalent standard upgrade for special weapons",
+              "description": "Upgrade level of the weapon",
               "type": "STRING",
               "autocomplete": true,
               "required": false
@@ -4556,7 +4664,8 @@
               "name": "ladder",
               "description": "Ladder name of ladder to be deleted",
               "type": "STRING",
-              "required": true
+              "required": true,
+              "autocomplete": true
             }
           ]
         },
@@ -4569,7 +4678,8 @@
               "name": "ladder",
               "description": "Original name of ladder to be renamed",
               "type": "STRING",
-              "required": true
+              "required": true,
+              "autocomplete": true
             },
             {
               "name": "new_ladder_name",
@@ -4588,7 +4698,8 @@
               "name": "ladder",
               "description": "Ladder name of ladder to be reset",
               "type": "STRING",
-              "required": true
+              "required": true,
+              "autocomplete": true
             }
           ]
         },
@@ -4601,7 +4712,8 @@
               "name": "ladder",
               "description": "Ladder name of ladder to set user's points/wins in",
               "type": "STRING",
-              "required": true
+              "required": true,
+              "autocomplete": true
             },
             {
               "name": "user",
@@ -4642,7 +4754,8 @@
               "name": "ladder",
               "description": "Ladder name of ladder to settings of",
               "type": "STRING",
-              "required": true
+              "required": true,
+              "autocomplete": true
             }
           ]
         },
@@ -4655,7 +4768,8 @@
               "name": "ladder",
               "description": "Ladder name of ladder to modify",
               "type": "STRING",
-              "required": true
+              "required": true,
+              "autocomplete": true
             },
             {
               "name": "param",
@@ -5803,7 +5917,7 @@
           "options": [
             {
               "name": "member",
-              "type": "STRING",
+              "type": "USER",
               "description": "Member to warn",
               "required": true
             },
@@ -5822,7 +5936,7 @@
           "options": [
             {
               "name": "member",
-              "type": "STRING",
+              "type": "USER",
               "description": "Member to remove warning from",
               "required": true
             },
@@ -5841,7 +5955,7 @@
           "options": [
             {
               "name": "member",
-              "type": "STRING",
+              "type": "USER",
               "description": "View warnings for this member",
               "required": true
             }
@@ -5889,15 +6003,15 @@
         "values": [
           {
             "value": "Username",
-            "desc": "Discord username of the user to be muted"
+            "desc": "Discord username of the user"
           },
           {
             "value": "discord ID",
-            "desc": "discord ID of the user to be muted"
+            "desc": "discord ID of the user"
           },
           {
             "value": "discord member mention",
-            "desc": "Mention member to be muted"
+            "desc": "Mention member"
           }
         ]
       }
@@ -5911,7 +6025,56 @@
         "command": "!exclusivechar remove 🐌 specter",
         "desc": "This will stop adding 🐌 to Specter's name and prevent them from adding it to their own name."
       }
-    ]
+    ],
+    "data": {
+      "name": "exclusivechar",
+      "description": "Reserve a given character or string for specific member's or role's display names",
+      "options": [
+        {
+          "name": "add",
+          "description": "Add or update an exclusive character for a member or role",
+          "type": "SUB_COMMAND",
+          "options": [
+            {
+              "name": "char",
+              "type": "STRING",
+              "description": "Exclusive character for member or role",
+              "required": true
+            },
+            {
+              "name": "member",
+              "type": "MENTIONABLE",
+              "description": "Member or role to apply exclusive character to",
+              "required": true
+            }
+          ]
+        },
+        {
+          "name": "remove",
+          "description": "remove an exclusive character for a member or role",
+          "type": "SUB_COMMAND",
+          "options": [
+            {
+              "name": "char",
+              "type": "STRING",
+              "description": "Exclusive character",
+              "required": true
+            },
+            {
+              "name": "member",
+              "type": "MENTIONABLE",
+              "description": "Member or role to remove exclusive character from",
+              "required": true
+            }
+          ]
+        },
+        {
+          "name": "list",
+          "description": "View all existing exclusive characters in this guild",
+          "type": "SUB_COMMAND"
+        }
+      ]
+    }
   },
   "poll": {
     "cmd": "poll",

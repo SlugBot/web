@@ -134,33 +134,46 @@
     ],
     "data": {
       "name": "igot",
-      "description": "Get the estimated level of another player killed in DS1 or DS3",
+      "description": "Get the estimated level of another player killed in DS1, DS3 or ER",
       "options": [
         {
-          "name": "game",
-          "description": "game",
-          "type": "STRING",
-          "required": true,
-          "choices": [
+          "name": "er",
+          "description": "Get the estimated level of another player killed in Elden Ring",
+          "type": "SUB_COMMAND",
+          "options": [
             {
-              "name": "DS1",
-              "value": "DS1"
-            },
-            {
-              "name": "DS3",
-              "value": "DS3"
-            },
-            {
-              "name": "ER",
-              "value": "ER"
+              "name": "runes_received",
+              "description": "Number of runes received when you killed the player",
+              "type": "INTEGER",
+              "required": true
             }
           ]
         },
         {
-          "name": "souls_received",
-          "description": "Number of souls received when you killed the player",
-          "type": "INTEGER",
-          "required": true
+          "name": "ds3",
+          "description": "Get the estimated level of another player killed in Dark Souls 3",
+          "type": "SUB_COMMAND",
+          "options": [
+            {
+              "name": "souls_received",
+              "description": "Number of souls received when you killed the player",
+              "type": "INTEGER",
+              "required": true
+            }
+          ]
+        },
+        {
+          "name": "ds1",
+          "description": "Get the estimated level of another player killed in Dark Souls 1",
+          "type": "SUB_COMMAND",
+          "options": [
+            {
+              "name": "souls_received",
+              "description": "Number of souls received when you killed the player",
+              "type": "INTEGER",
+              "required": true
+            }
+          ]
         }
       ]
     }
@@ -506,7 +519,7 @@
             },
             {
               "name": "upgrade",
-              "description": "Upgrade level of the weapon. Use equivalent standard upgrade for special weapons",
+              "description": "Upgrade level of the weapon",
               "type": "STRING",
               "autocomplete": true,
               "required": false
