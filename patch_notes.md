@@ -12,6 +12,7 @@ title: Patch Notes
 
 ### Bug Fixes
   - Fixed incorrect weapon being recognised by name in `/weaponer`.
+  - Fixed Spear Talisman toggle not working.
 
 *****************************
 
