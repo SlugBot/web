@@ -5,6 +5,15 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 20th April 2022
+### Updates
+  - Updated motion values for ER weapon commands.
+
+### Bug Fixes
+  - Fixed bug with rolereacts allowing two options to give the same role.
+
+*****************************
+
 ## 10th April 2022
 ### Updates
   - Updated `/exclusivechar` to slash command.
