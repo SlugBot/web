@@ -8,9 +8,12 @@ title: Patch Notes
 ## 20th April 2022
 ### Updates
   - Updated motion values for ER weapon commands.
+  - Updated guard values for ER weapon commands.
+  - Updated scaling values for ER weapon commands.
 
 ### Bug Fixes
   - Fixed bug with rolereacts allowing two options to give the same role.
+  - Fixed bug with Custom VC mic-muted channels not initialising with the correct permissions.
 
 *****************************
 
