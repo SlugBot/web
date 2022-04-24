@@ -14,6 +14,7 @@ title: Patch Notes
 ### Bug Fixes
   - Fixed bug with rolereacts allowing two options to give the same role.
   - Fixed bug with Custom VC mic-muted channels not initialising with the correct permissions.
+  - Fixed Greatsword weapon using incorrect motion values.
 
 *****************************
 
