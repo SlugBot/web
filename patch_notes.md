@@ -5,6 +5,15 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 3rd May 2022
+### Updates
+  - Added Claw Talisman toggle to `/weaponer` command.
+
+### Bug Fixes
+  - Fixed counter hit display for `/weaponer` command.
+
+*****************************
+
 ## 20th April 2022
 ### Updates
   - Updated motion values for ER weapon commands.
@@ -15,6 +24,8 @@ title: Patch Notes
   - Fixed bug with rolereacts allowing two options to give the same role.
   - Fixed bug with Custom VC mic-muted channels not initialising with the correct permissions.
   - Fixed Greatsword weapon using incorrect motion values.
+  - Fixed incorrect status MVs for crits.
+  - Tentative fix for custom VC cleanup issues.
 
 *****************************
 
