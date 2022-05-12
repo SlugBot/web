@@ -8,6 +8,8 @@ title: Patch Notes
 ## 3rd May 2022
 ### Updates
   - Added Claw Talisman toggle to `/weaponer` command.
+  - Improved word filter matching.
+  - Added autocomplete to `/filter remove <word>` `<word>` argument
 
 ### Bug Fixes
   - Fixed counter hit display for `/weaponer` command.
