@@ -9,7 +9,8 @@ title: Patch Notes
 ### Updates
   - Added Claw Talisman toggle to `/weaponer` command.
   - Improved word filter matching.
-  - Added autocomplete to `/filter remove <word>` `<word>` argument
+  - Added autocomplete to `/filter remove <word>` `<word>` argument.
+  - Improved `/ban` and `/mute` target matching.
 
 ### Bug Fixes
   - Fixed counter hit display for `/weaponer` command.
