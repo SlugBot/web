@@ -17,6 +17,7 @@ title: Patch Notes
   - Fixed point transfer from twitch FCs when syncing Twitch and Discord accounts.
   - Fixed bug where `/rolereact` `<rolereact_id>` failed to display autocomplete options.
   - Fixed bug where rolereacts failed to update in some cases.
+  - Fixed bug where mic-muted channel perms were incorrectly set when going from one custom VC to another.
 
 *****************************
 
