@@ -18,6 +18,7 @@ title: Patch Notes
   - Fixed bug where `/rolereact` `<rolereact_id>` failed to display autocomplete options.
   - Fixed bug where rolereacts failed to update in some cases.
   - Fixed bug where mic-muted channel perms were incorrectly set when going from one custom VC to another.
+  - Fixed display error in challenge messages.
 
 *****************************
 
