@@ -5,6 +5,15 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 29th May 2022
+### New Additions
+  - Added `/tourney` command to automatically handle tournament invites selecting from leaderboards.
+
+### Updates
+  - `/warn` and `/mute` now store a message link to easily get back to when the action was performed.
+
+*****************************
+
 ## 3rd May 2022
 ### Updates
   - Added Claw Talisman toggle to `/weaponer` command.
