@@ -11,6 +11,10 @@ title: Patch Notes
 
 ### Updates
   - `/warn` and `/mute` now store a message link to easily get back to when the action was performed.
+  - Added `logging` perms to control which events in channels and by members get logged.
+
+### Bug Fixes
+  - Fixed bug with custom VCs not being cleaned up if host left the server.
 
 *****************************
 
