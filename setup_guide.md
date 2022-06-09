@@ -90,7 +90,7 @@ Index flags, when used for command responses, will be replaced by the correspond
 ### ${VALUE}
 Any appearance of this flag in the string, when used for command responses, will be replaced with a stored value that can be set, incremented, and decremented by supplying a number argument, ++, or -- respectively when the command was used.
 ### ${RESTRICT: #\<channel id>} ${RESTRICT: @\<member id>}
-This flag restricts the use of the function to either within specified channels, or by specified members. The flag is removed from the response.
+This flag restricts the use of the function to either within specified channels, or by specified members. Multiple channel and member restrictions can be listed. **The member must satisfy at least one of each restriction type listed.** The flag is removed from the response.
 ### ${REACT: \<emoji>}
 This flag will add the specified emoji as a reaction to the message that triggered the function. The flag is removed from the response.
 ### ${RAND: \<option 1> | \<option 2> | \<option 3>}
@@ -103,6 +103,9 @@ This flag will timeout the user who triggered the function for `<duration>` seco
 This flag will mute the user who triggered the function for `<duration>` seconds if possible. This flag only applies for Discord functions. Slugbot must have the ability to apply roles. The flag is removed from the response.
 ### ${DELETE}
 This flag will delete the message that triggered the response with this flag in it. This flag only applies for Discord functions. Slugbot must have the ability to delete messages. The flag is removed from the response.
+### ${DELETESELF: \<time>}
+This flag will delete the command response sent by SlugBot after the specified amount of time (in seconds). If no time is given, the default is 10 seconds. This flag only applies for Discord functions. Slugbot must have the ability to delete messages. The flag is removed from the response.
+
 
 ---
 
