@@ -5,6 +5,15 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 23rd June 2022
+### Updates
+  - Added `${IF: {\<boolean_expression>} option 1 | option 2}` flag replacer.
+
+### Bug Fixes
+  - Fixed interaction timeout for several slash commands. 
+
+*****************************
+
 ## 29th May 2022
 ### New Additions
   - Added `/tourney` command to automatically handle tournament invites selecting from leaderboards.

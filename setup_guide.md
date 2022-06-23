@@ -93,8 +93,10 @@ Any appearance of this flag in the string, when used for command responses, will
 This flag restricts the use of the function to either within specified channels, or by specified members. Multiple channel and member restrictions can be listed. **The member must satisfy at least one of each restriction type listed.** The flag is removed from the response.
 ### ${REACT: \<emoji>}
 This flag will add the specified emoji as a reaction to the message that triggered the function. The flag is removed from the response.
-### ${RAND: \<option 1> | \<option 2> | \<option 3>}
+### ${RAND: \<option 1> | \<option 2> | \<option 3> | ...}
 Any appearance of this flag in the string will be replaced with **one** of the listed options selected at random. The option selection can be weighted by prefixing the option with `{<weight>}` - for example `${RAND: {2} heads | {1} tails}`. This will make the option "heads" be twice as likely to be selected.
+### ${IF: {\<logic expression>} \<option 1> | \<option 2> }
+This flag will attempt to resolve the given `<logic expression>` to either **TRUE** or **FALSE**. If true, `<option 1>` will replace the flag - otherwise `<option 2>` will replace the flag. Replacer flags can be nested within the logic expression and/or the options.
 ### ${MATH: \<expression>}
 This flag will be replaced by the result of evaluating the expression given. Other replacer flags can be nested within this flag and factored into the expression - for example `${MATH: ${COUNT} + 10}`.
 ### ${TIMEOUT: \<duration>}
