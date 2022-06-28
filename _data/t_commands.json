@@ -65,9 +65,9 @@
     "perms": [
       "USER"
     ],
-    "moduleId": "slugballs",
+    "moduleId": "misc",
     "canDM": true,
-    "canEdit": true,
+    "canEdit": false,
     "debug": false,
     "parameters": [
       {
@@ -576,7 +576,19 @@
         "command": "!elo Aether",
         "desc": "This will display Aether's ladder stats."
       }
-    ]
+    ],
+    "data": {
+      "name": "elo",
+      "description": "View your rank and match history",
+      "options": [
+        {
+          "name": "member",
+          "description": "View match history of this member",
+          "type": "USER",
+          "required": false
+        }
+      ]
+    }
   },
   "fightclub": {
     "cmd": "fightclub",

@@ -567,6 +567,35 @@
         ]
       },
       {
+        "cmd": "slugballs",
+        "format": "${PREFIX}slugballs <question>",
+        "desc": "Use this command to ask SlugBot a question, like a magic eight ball - only more rude.",
+        "perms": [
+          "USER"
+        ],
+        "moduleId": "misc",
+        "canDM": true,
+        "canEdit": false,
+        "debug": false,
+        "parameters": [
+          {
+            "param": "<question>",
+            "values": [
+              {
+                "value": "String",
+                "desc": "The question you wish to ask SlugBot"
+              }
+            ]
+          }
+        ],
+        "examples": [
+          {
+            "command": "!slugballs Should I play dark souls?",
+            "desc": "This will make SlugBot respond with an answer to the question."
+          }
+        ]
+      },
+      {
         "cmd": "teambuilder",
         "synonyms": [
           "tb",
@@ -853,7 +882,8 @@
                   "type": "STRING",
                   "name": "filter",
                   "description": "word or regEx to filter.",
-                  "required": true
+                  "required": true,
+                  "autocomplete": true
                 }
               ]
             },
@@ -1306,7 +1336,7 @@
         ],
         "canDM": false,
         "debug": true,
-        "format": "${PREFIX}rolereact create [msg ID] | (<msg ID> add <reaction> <role>) | (<msg ID> remove [reaction]) | (<msg ID> desc <description>) | (<msg ID> require <role>)",
+        "format": "${PREFIX}rolereact create [msg ID] | (<msg ID> add <reaction> <role>) | (<msg ID> remove [reaction]) | (<msg ID> update)",
         "desc": "Use this command to create a RoleReact message - allowing users to assign roles to themselves using the reactions on the message.",
         "parameters": [
           {
@@ -1379,28 +1409,7 @@
             ]
           }
         ],
-        "examples": [
-          {
-            "command": "!rolereact create",
-            "desc": "This will create a new RoleReact message."
-          },
-          {
-            "command": "!rolereact 731977229902282773 add 🍃 PC Player",
-            "desc": "This will add a new reaction - or update an existing one - that will give members the 'PC Player' role when clicked."
-          },
-          {
-            "command": "!rolereact 731977229902282773 remove 🍃",
-            "desc": "This will remove the 🍃 reaction and no longer give members any role when a 🍃 reaction is added."
-          },
-          {
-            "command": "!rolereact 731977229902282773 desc Welcome to the server! Select the relevant roles for you by clicking the reactions on this message.",
-            "desc": "This will update the description in the message."
-          },
-          {
-            "command": "!rolereact 731977229902282773 color #ffffff",
-            "desc": "This will set the color of the embed white."
-          }
-        ],
+        "examples": [],
         "data": {
           "name": "rolereact",
           "description": "Create a RoleReact message, allowing users to self-assign roles using the reactions on the message",
@@ -1474,6 +1483,11 @@
                   "description": "Discord message ID of RoleReact",
                   "required": true,
                   "autocomplete": true
+                },
+                {
+                  "name": "title",
+                  "type": "STRING",
+                  "description": "Title to set for RoleReact"
                 },
                 {
                   "name": "description",
@@ -2061,40 +2075,6 @@
       }
     ]
   },
-  "slugballs": {
-    "module": "slugballs",
-    "commands": [
-      {
-        "cmd": "slugballs",
-        "format": "${PREFIX}slugballs <question>",
-        "desc": "Use this command to ask SlugBot a question, like a magic eight ball - only more rude.",
-        "perms": [
-          "USER"
-        ],
-        "moduleId": "slugballs",
-        "canDM": true,
-        "canEdit": true,
-        "debug": false,
-        "parameters": [
-          {
-            "param": "<question>",
-            "values": [
-              {
-                "value": "String",
-                "desc": "The question you wish to ask SlugBot"
-              }
-            ]
-          }
-        ],
-        "examples": [
-          {
-            "command": "!slugballs Should I play dark souls?",
-            "desc": "This will make SlugBot respond with an answer to the question."
-          }
-        ]
-      }
-    ]
-  },
   "darksouls": {
     "module": "darksouls",
     "commands": [
@@ -2644,7 +2624,39 @@
             "command": "!namecheck Knight Plumfinger",
             "desc": "This will test the name \"Knight Plumfinger\" against the Dark Souls 3 name filter - showing how the censored name will appear in game."
           }
-        ]
+        ],
+        "data": {
+          "name": "namecheck",
+          "description": "Check if a name will be censored by the DS3 or ER name filters",
+          "options": [
+            {
+              "name": "er",
+              "description": "Check against the Elden Ring name filter",
+              "type": "SUB_COMMAND",
+              "options": [
+                {
+                  "name": "name",
+                  "description": "Character name",
+                  "type": "STRING",
+                  "required": true
+                }
+              ]
+            },
+            {
+              "name": "ds3",
+              "description": "Check against the Dark Souls 3 name filter",
+              "type": "SUB_COMMAND",
+              "options": [
+                {
+                  "name": "name",
+                  "description": "Character name",
+                  "type": "STRING",
+                  "required": true
+                }
+              ]
+            }
+          ]
+        }
       },
       {
         "cmd": "poise",
@@ -5079,6 +5091,39 @@
         }
       },
       {
+        "cmd": "iframes",
+        "synonyms": [
+          "iframes"
+        ],
+        "format": "${PREFIX}iframes",
+        "desc": "Use this command to view the iframe data of all actions that have invulnerability in Elden Ring",
+        "perms": [
+          "USER"
+        ],
+        "moduleId": "eldenring",
+        "canDM": true,
+        "canEdit": false,
+        "debug": false,
+        "parameters": [],
+        "examples": [
+          {
+            "command": "/iframes er",
+            "desc": "This will display iframe data for Elden Ring."
+          }
+        ],
+        "data": {
+          "name": "iframes",
+          "description": "View the iframe data of all actions that have invulnerability in Elden Ring",
+          "options": [
+            {
+              "name": "er",
+              "description": "Display Elden Ring iframe data",
+              "type": "SUB_COMMAND"
+            }
+          ]
+        }
+      },
+      {
         "cmd": "parryframes",
         "synonyms": [
           "parryframes"
@@ -5296,8 +5341,14 @@
                 },
                 {
                   "name": "rank_range",
-                  "description": "Only those within this rank range can accept your challenge (Only applicable above rank #25)",
+                  "description": "Only those within this rank range can accept your challenge",
                   "type": "INTEGER",
+                  "required": false
+                },
+                {
+                  "name": "automatch",
+                  "description": "Should this open challenge automatically match with other valid open challenges?",
+                  "type": "BOOLEAN",
                   "required": false
                 }
               ]
@@ -5346,7 +5397,19 @@
             "command": "!elo Aether",
             "desc": "This will display Aether's ladder stats."
           }
-        ]
+        ],
+        "data": {
+          "name": "elo",
+          "description": "View your rank and match history",
+          "options": [
+            {
+              "name": "member",
+              "description": "View match history of this member",
+              "type": "USER",
+              "required": false
+            }
+          ]
+        }
       },
       {
         "cmd": "ilost",
@@ -5684,16 +5747,32 @@
                       "value": "scalingrate"
                     },
                     {
-                      "name": "pointsPerRound",
-                      "value": "pointsperround"
+                      "name": "maxPointScale",
+                      "value": "maxpointscale"
                     },
                     {
                       "name": "pointsPerWin",
                       "value": "pointsperwin"
                     },
                     {
+                      "name": "pointsPerRound",
+                      "value": "pointsperround"
+                    },
+                    {
                       "name": "maxRounds",
                       "value": "maxrounds"
+                    },
+                    {
+                      "name": "pointWinCap",
+                      "value": "pointwincap"
+                    },
+                    {
+                      "name": "pointLossRange",
+                      "value": "pointlossrange"
+                    },
+                    {
+                      "name": "pointLossMult",
+                      "value": "pointlossmult"
                     },
                     {
                       "name": "ladderReachUp",
@@ -5716,12 +5795,12 @@
                       "value": "pointdecayrate"
                     },
                     {
-                      "name": "pointRegenRate",
-                      "value": "pointregenrate"
-                    },
-                    {
                       "name": "pointDecayGracePeriod",
                       "value": "pointdecaygraceperiod"
+                    },
+                    {
+                      "name": "pointRegenRate",
+                      "value": "pointregenrate"
                     },
                     {
                       "name": "dailyMatchLimit",
@@ -5748,8 +5827,8 @@
           "BOT_ADMIN"
         ],
         "debug": true,
-        "format": "${PREFIX}host",
-        "desc": "",
+        "format": "${PREFIX}tourney",
+        "desc": "Automatically invite members from a leaderboard to create a tourney roster",
         "examples": [
           {
             "command": "/tourney",
@@ -5795,6 +5874,65 @@
                   "type": "STRING",
                   "description": "Description to display with the invite. Use \\n to denote line-breaks",
                   "required": false
+                },
+                {
+                  "name": "reserve_count",
+                  "type": "INTEGER",
+                  "description": "Number of reserve players needed",
+                  "required": false
+                }
+              ]
+            },
+            {
+              "type": "SUB_COMMAND",
+              "name": "invite",
+              "description": "Manually invite member to tournament",
+              "options": [
+                {
+                  "name": "name",
+                  "type": "STRING",
+                  "description": "Title of the tourney",
+                  "required": true,
+                  "autocomplete": true
+                },
+                {
+                  "name": "member",
+                  "type": "USER",
+                  "description": "Member to invite",
+                  "required": true
+                },
+                {
+                  "name": "reserve",
+                  "type": "BOOLEAN",
+                  "description": "Invite member as reserve?",
+                  "required": false
+                }
+              ]
+            },
+            {
+              "type": "SUB_COMMAND",
+              "name": "revoke",
+              "description": "Manually revoke invite sent out to a member",
+              "options": [
+                {
+                  "name": "name",
+                  "type": "STRING",
+                  "description": "Title of the tourney",
+                  "required": true,
+                  "autocomplete": true
+                },
+                {
+                  "name": "member",
+                  "type": "STRING",
+                  "description": "Member to revoke invite from",
+                  "required": true,
+                  "autocomplete": true
+                },
+                {
+                  "name": "reason",
+                  "type": "STRING",
+                  "description": "Reason for revoking invite. Will be to DMed to member",
+                  "required": false
                 }
               ]
             },
@@ -5821,27 +5959,6 @@
                   "name": "name",
                   "type": "STRING",
                   "description": "Title of the tourney",
-                  "required": true,
-                  "autocomplete": true
-                }
-              ]
-            },
-            {
-              "type": "SUB_COMMAND",
-              "name": "match",
-              "description": "Declare the outcome of a match",
-              "options": [
-                {
-                  "name": "name",
-                  "type": "STRING",
-                  "description": "Name of the tourney the match is for",
-                  "required": true,
-                  "autocomplete": true
-                },
-                {
-                  "name": "winner",
-                  "type": "STRING",
-                  "description": "Name of winner",
                   "required": true,
                   "autocomplete": true
                 }
@@ -6294,6 +6411,12 @@
               "type": "STRING",
               "description": "Reason for muting. The reason is DMed to member.",
               "required": false
+            },
+            {
+              "name": "context_url",
+              "type": "STRING",
+              "description": "Link to message or image for extra context.",
+              "required": false
             }
           ]
         }
@@ -6679,6 +6802,12 @@
                   "type": "STRING",
                   "description": "Warning message.",
                   "required": true
+                },
+                {
+                  "name": "context_link",
+                  "type": "STRING",
+                  "description": "Link to message or image for extra context",
+                  "required": false
                 }
               ]
             },
@@ -6710,6 +6839,19 @@
                   "name": "member",
                   "type": "USER",
                   "description": "View warnings for this member",
+                  "required": true
+                }
+              ]
+            },
+            {
+              "name": "list_id",
+              "type": "SUB_COMMAND",
+              "description": "view a user's warnings",
+              "options": [
+                {
+                  "name": "user_id",
+                  "type": "STRING",
+                  "description": "View warnings for this user",
                   "required": true
                 }
               ]
@@ -6822,7 +6964,7 @@
                   "name": "member",
                   "type": "MENTIONABLE",
                   "description": "Member or role to remove exclusive character from",
-                  "required": true
+                  "required": false
                 }
               ]
             },
@@ -7194,6 +7336,225 @@
                   "name": "game_id",
                   "description": "Game ID of game to view",
                   "type": "STRING",
+                  "required": true,
+                  "autocomplete": true
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "ticket": {
+    "module": "ticket",
+    "commands": [
+      {
+        "cmd": "ticketer",
+        "synonyms": [
+          "ticketer"
+        ],
+        "moduleId": "ticket",
+        "perms": [
+          "BOT_ADMIN"
+        ],
+        "canDM": false,
+        "debug": true,
+        "format": "${PREFIX}ticketer",
+        "desc": "Use this command to create a ticketer - allowing users to submit tickets.",
+        "parameters": [
+          {
+            "param": "[create|add|remove|desc|color]",
+            "values": [
+              {
+                "value": "create",
+                "desc": "Create a new Ticketer message."
+              },
+              {
+                "value": "desc",
+                "desc": "Update the Ticketer description."
+              },
+              {
+                "value": "color",
+                "desc": "Update the embed color of the Ticketer message."
+              },
+              {
+                "value": "require",
+                "desc": "Specify a required role needed to submit a ticket."
+              }
+            ]
+          },
+          {
+            "param": "<msg ID>",
+            "values": [
+              {
+                "value": "Number",
+                "desc": "The message ID of an existing Ticketer message."
+              }
+            ]
+          },
+          {
+            "param": "<role>",
+            "values": [
+              {
+                "value": "String",
+                "desc": "The name of a role."
+              }
+            ]
+          },
+          {
+            "param": "<description>",
+            "values": [
+              {
+                "value": "String",
+                "desc": "A description to display in the RoleReact message."
+              }
+            ]
+          }
+        ],
+        "examples": [],
+        "data": {
+          "name": "ticketer",
+          "description": "Create a Ticketer message, allowing users to submit tickets",
+          "options": [
+            {
+              "name": "create",
+              "type": "SUB_COMMAND",
+              "description": "Create a new Ticketer",
+              "options": [
+                {
+                  "name": "send_to_channel",
+                  "type": "CHANNEL",
+                  "description": "Channel to send submitted tickets to",
+                  "required": true
+                }
+              ]
+            },
+            {
+              "name": "update",
+              "type": "SUB_COMMAND",
+              "description": "Update properties of a Ticketer message",
+              "options": [
+                {
+                  "name": "ticketer_id",
+                  "type": "STRING",
+                  "description": "Discord message ID of Ticketer",
+                  "required": true,
+                  "autocomplete": true
+                },
+                {
+                  "name": "send_to_channel",
+                  "type": "CHANNEL",
+                  "description": "Channel to send submitted tickets to"
+                },
+                {
+                  "name": "title",
+                  "type": "STRING",
+                  "description": "Title to set for Ticketer"
+                },
+                {
+                  "name": "description",
+                  "type": "STRING",
+                  "description": "Description to add to Ticketer. Use \\n to denote line-breaks"
+                },
+                {
+                  "name": "button",
+                  "type": "STRING",
+                  "description": "Button label to set for Ticketer"
+                },
+                {
+                  "name": "colour",
+                  "type": "STRING",
+                  "description": "Hexcode of colour to use for the Ticketer embed"
+                },
+                {
+                  "name": "is_anonymous",
+                  "type": "BOOLEAN",
+                  "description": "Should the username be submitted with the ticket?"
+                },
+                {
+                  "name": "whitelist_role",
+                  "type": "ROLE",
+                  "description": "Role a user must have to use the Ticketer"
+                },
+                {
+                  "name": "blacklist_role",
+                  "type": "ROLE",
+                  "description": "Role a user must not have to use the Ticketer"
+                },
+                {
+                  "name": "do_feedback",
+                  "type": "BOOLEAN",
+                  "description": "Users will receive an ephemeral message notifying them that their ticket was submitted"
+                },
+                {
+                  "name": "do_thread",
+                  "type": "BOOLEAN",
+                  "description": "If true, a thread will be created on the submitted ticket"
+                }
+              ]
+            },
+            {
+              "name": "add_field",
+              "type": "SUB_COMMAND",
+              "description": "Add a question field to a Ticketer",
+              "options": [
+                {
+                  "name": "ticketer_id",
+                  "type": "STRING",
+                  "description": "Discord message ID of Ticketer",
+                  "required": true,
+                  "autocomplete": true
+                },
+                {
+                  "name": "question",
+                  "type": "STRING",
+                  "description": "Field header",
+                  "required": true
+                },
+                {
+                  "name": "max_length",
+                  "type": "INTEGER",
+                  "description": "Max response length"
+                },
+                {
+                  "name": "is_required",
+                  "type": "BOOLEAN",
+                  "description": "Is the field required?"
+                },
+                {
+                  "name": "style",
+                  "type": "STRING",
+                  "description": "Field style",
+                  "choices": [
+                    {
+                      "name": "SHORT",
+                      "value": "SHORT"
+                    },
+                    {
+                      "name": "PARAGRAPH",
+                      "value": "PARAGRAPH"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "remove_field",
+              "type": "SUB_COMMAND",
+              "description": "Remove a question field from a Ticketer",
+              "options": [
+                {
+                  "name": "ticketer_id",
+                  "type": "STRING",
+                  "description": "Discord message ID of Ticketer",
+                  "required": true,
+                  "autocomplete": true
+                },
+                {
+                  "name": "question",
+                  "type": "STRING",
+                  "description": "Question to remove",
                   "required": true,
                   "autocomplete": true
                 }
