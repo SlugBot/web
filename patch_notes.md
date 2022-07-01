@@ -5,6 +5,15 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 30th June 2022
+### Updates
+  - Added HIJACK button to `/slugs` menu when selecting valid processes.
+
+### Bug Fixes
+  - Fixed interaction failed error when using `/clean` with invalid params.
+
+*****************************
+
 ## 23rd June 2022
 ### Updates
   - Added `${IF: {\<boolean_expression>} option 1 | option 2}` flag replacer.
