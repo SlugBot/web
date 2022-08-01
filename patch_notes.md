@@ -5,6 +5,16 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 19th July 2022
+### Updates
+  - Added ability to automatically set participant and reserve roles for tourney invites.
+  - Refactored `/leaderboard` to allow for modular leaderboards.
+
+### Bug Fixes
+  - Fixed `!perms score` not working (it is now `!perms exp`).
+
+*****************************
+
 ## 30th June 2022
 ### Updates
   - Added HIJACK button to `/slugs` menu when selecting valid processes.
