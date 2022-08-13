@@ -5,6 +5,21 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 3rd August 2022
+### New Additions
+  - Added `/knuckleslug` minigame to economy module.
+  
+### Updates
+  - Updated `/roleatlevel` to slash command.
+  - Updated `/setexp` to slash command (was `!setscore`).
+  - Updated `/setlevel` to slash command.
+  - Added roles-at-levels for weekly activity levels.
+
+### Bug Fixes
+  - Fixed bug that would cause process scans to terminate prematurely.
+
+*****************************
+
 ## 19th July 2022
 ### Updates
   - Added ability to automatically set participant and reserve roles for tourney invites.

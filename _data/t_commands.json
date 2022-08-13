@@ -1208,24 +1208,6 @@
       }
     ]
   },
-  "builds": {
-    "cmd": "build",
-    "format": "${PREFIX}builds",
-    "desc": "Use this command to get a list of the streamer's added builds.",
-    "perms": [
-      "USER"
-    ],
-    "moduleId": "builds",
-    "canDM": false,
-    "canEdit": false,
-    "parameters": [],
-    "examples": [
-      {
-        "command": "!builds",
-        "desc": "This will make SlugBot DM you with a list of all of the streamer's builds."
-      }
-    ]
-  },
   "iam": {
     "cmd": "iam",
     "perms": [
@@ -1360,5 +1342,41 @@
     "debug": false,
     "format": "${PREFIX}song [setuser <lastFM username>]",
     "desc": "Use this command to get the streamers currently playing song."
+  },
+  "hostkilled": {
+    "perms": [
+      "TWITCH_MOD"
+    ],
+    "moduleId": "stoevent",
+    "debug": false,
+    "format": "${PREFIX}hostkilled",
+    "desc": "-"
+  },
+  "phantomkilled": {
+    "perms": [
+      "TWITCH_MOD"
+    ],
+    "moduleId": "stoevent",
+    "debug": false,
+    "format": "${PREFIX}phantomkilled",
+    "desc": "-"
+  },
+  "shadow": {
+    "perms": [
+      "TWITCH_MOD"
+    ],
+    "moduleId": "stoevent",
+    "debug": false,
+    "format": "${PREFIX}shadow <add | remove> <twitch_name>",
+    "desc": "Add or remove a shadow host for the event."
+  },
+  "shadowkilled": {
+    "perms": [
+      "USER"
+    ],
+    "moduleId": "stoevent",
+    "debug": false,
+    "format": "${PREFIX}phantomkilled",
+    "desc": "-"
   }
 }

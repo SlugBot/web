@@ -313,6 +313,57 @@
       }
     ]
   },
+  "leaderboard": {
+    "cmd": "leaderboard",
+    "synonyms": [
+      "lb"
+    ],
+    "format": "${PREFIX}leaderboard <leaderboard>",
+    "desc": "Use this command to view the specified leaderboard",
+    "perms": [
+      "USER"
+    ],
+    "canDM": false,
+    "canEdit": false,
+    "debug": false,
+    "parameters": [
+      {
+        "param": "<leaderboard>",
+        "values": [
+          {
+            "value": "Activity",
+            "desc": "View activity leaderboard"
+          },
+          {
+            "value": "Activity weekly",
+            "desc": "View weekly activity leaderboard"
+          },
+          {
+            "value": "Slugboard",
+            "desc": "View Slugboard leaderboard"
+          },
+          {
+            "value": "Ladder",
+            "desc": "View Ladder leaderboards"
+          }
+        ]
+      }
+    ],
+    "examples": [],
+    "data": {
+      "name": "leaderboard",
+      "description": "view one of the various leaderboards",
+      "options": [
+        {
+          "name": "leaderboard",
+          "description": "Which leaderboard to view",
+          "type": "STRING",
+          "required": true,
+          "autocomplete": true
+        }
+      ]
+    }
+  },
   "math": {
     "cmd": "math",
     "synonyms": [
@@ -2834,10 +2885,22 @@
     ],
     "examples": [
       {
-        "command": "!hijack SH4ND",
-        "desc": "This will attempt to hijack the process with ID 'SHAND'"
+        "command": "/hijack SH4ND",
+        "desc": "This will attempt to hijack the process with ID 'SH4ND'"
       }
-    ]
+    ],
+    "data": {
+      "name": "hijack",
+      "description": "hijack another user's process. Success chance is based on the number of properties identified.",
+      "options": [
+        {
+          "name": "process_id",
+          "description": "Process ID of the process you wish to hijack",
+          "type": "STRING",
+          "required": true
+        }
+      ]
+    }
   },
   "install": {
     "cmd": "install",
@@ -2996,6 +3059,51 @@
               "autocomplete": true
             }
           ]
+        }
+      ]
+    }
+  },
+  "knuckleslug": {
+    "perms": [
+      "USER"
+    ],
+    "moduleId": "economy",
+    "canEdit": false,
+    "canDM": false,
+    "format": "${PREFIX}knuckleslug <bet amount>",
+    "desc": "Play knuckleslug.",
+    "parameters": [
+      {
+        "param": "<bet amount>",
+        "values": [
+          {
+            "value": "Number",
+            "desc": "Amount to bet on knuckleslug."
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "command": "!knuckleslug 10,000",
+        "desc": "This will put a 10,000sc bet on knuckleslug."
+      }
+    ],
+    "data": {
+      "name": "knuckleslug",
+      "description": "Play knuckleslug",
+      "options": [
+        {
+          "name": "bet",
+          "description": "Amount to bet on knuckleslug",
+          "type": "NUMBER",
+          "required": true
+        },
+        {
+          "name": "opponent",
+          "description": "Optionally play against another user",
+          "type": "USER",
+          "required": true
         }
       ]
     }
@@ -3678,7 +3786,10 @@
       "myaccount",
       "sloogs",
       "sluggies",
-      "slorgs"
+      "slorgs",
+      "aluga",
+      "sluga",
+      "alugs"
     ],
     "perms": [
       "USER"
@@ -4917,6 +5028,10 @@
                   "value": "repeatchallengememory"
                 },
                 {
+                  "name": "WinRateScalingMemory",
+                  "value": "winratescalingmemory"
+                },
+                {
                   "name": "pointDecayRate",
                   "value": "pointdecayrate"
                 },
@@ -5067,6 +5182,18 @@
               "name": "reserve_count",
               "type": "INTEGER",
               "description": "Number of reserve players needed",
+              "required": false
+            },
+            {
+              "name": "participant_role",
+              "type": "ROLE",
+              "description": "Role to be given to participants who have accepted their invite",
+              "required": false
+            },
+            {
+              "name": "reserve_role",
+              "type": "ROLE",
+              "description": "Role to be given to reserves who have accepted their invite",
               "required": false
             }
           ]
@@ -6656,41 +6783,6 @@
       ]
     }
   },
-  "leaderboard": {
-    "cmd": "leaderboard",
-    "synonyms": [
-      "lb"
-    ],
-    "format": "${PREFIX}leaderboard [weekly]",
-    "desc": "Use this command to view the top 10 ranked members in the server along with the score of adjacent ranks.",
-    "perms": [
-      "USER"
-    ],
-    "canDM": false,
-    "canEdit": false,
-    "debug": false,
-    "parameters": [
-      {
-        "param": "[weekly]",
-        "values": [
-          {
-            "value": "Weekly",
-            "desc": "specify that the weekly leaderboard should be displayed"
-          }
-        ]
-      }
-    ],
-    "examples": [
-      {
-        "command": "!leaderboard",
-        "desc": "This will display the score leaderboard for the server the command was used in."
-      },
-      {
-        "command": "!leaderboard weekly",
-        "desc": "This will display the weekly score leaderboard for the server the command was used in."
-      }
-    ]
-  },
   "rank": {
     "cmd": "rank",
     "format": "${PREFIX}rank [member] | [rank]",
@@ -6895,7 +6987,169 @@
         "command": "!roleatlevel add Sleg 5 10",
         "desc": "This will give the role 'Sleg' to any member who reaches level 5 but will be removed again once they reach level 10."
       }
-    ]
+    ],
+    "data": {
+      "name": "roleatlevel",
+      "description": "Give/remove a role to/from members once they reach a certain level",
+      "options": [
+        {
+          "name": "add",
+          "type": "SUB_COMMAND",
+          "description": "Create a new role-at-level",
+          "options": [
+            {
+              "name": "role",
+              "type": "ROLE",
+              "description": "Role to be given",
+              "required": true
+            },
+            {
+              "name": "level_add",
+              "type": "INTEGER",
+              "description": "Minimum level needed to receive the role",
+              "required": true
+            },
+            {
+              "name": "level_remove",
+              "type": "INTEGER",
+              "description": "Minimum level needed to remove the role",
+              "required": false
+            },
+            {
+              "name": "do_notification",
+              "type": "BOOLEAN",
+              "description": "Should a message in chat be sent when a member earns a role?",
+              "required": false
+            },
+            {
+              "name": "is_weekly",
+              "type": "BOOLEAN",
+              "description": "Should weekly activity be used instead?",
+              "required": false
+            }
+          ]
+        },
+        {
+          "name": "remove",
+          "type": "SUB_COMMAND",
+          "description": "Remove an existing role-at-level",
+          "options": [
+            {
+              "name": "role",
+              "type": "ROLE",
+              "description": "Role to be removed",
+              "required": true
+            }
+          ]
+        },
+        {
+          "name": "list",
+          "type": "SUB_COMMAND",
+          "description": "List all role-at-levels",
+          "options": [
+            {
+              "name": "is_weekly",
+              "type": "BOOLEAN",
+              "description": "Display weekly activity role-at-levels",
+              "required": false
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "setexp": {
+    "cmd": "setexp",
+    "synonyms": [
+      "setxp"
+    ],
+    "moduleId": "setup",
+    "format": "${PREFIX}setexp [member] <exp amount>",
+    "desc": "Use this command to set a member's exp to a specified amount.",
+    "perms": [
+      "BOT_ADMIN"
+    ],
+    "canDM": false,
+    "canEdit": false,
+    "debug": false,
+    "parameters": [
+      {
+        "param": "<member>",
+        "values": [
+          {
+            "value": "Username",
+            "desc": "Discord username of the user"
+          },
+          {
+            "value": "discord ID",
+            "desc": "discord ID of the user"
+          },
+          {
+            "value": "Mention member",
+            "desc": "discord member mention"
+          }
+        ]
+      },
+      {
+        "param": "<exp amount>",
+        "values": [
+          {
+            "value": "Number",
+            "desc": "Amount to set member's exp to."
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "command": "!setexp Gutty 10,000",
+        "desc": "This will set Gutty's exp to 10,000."
+      }
+    ],
+    "data": {
+      "name": "setexp",
+      "description": "Set the activity exp of a member",
+      "options": [
+        {
+          "name": "total",
+          "description": "Set the total activity exp of a member",
+          "type": "SUB_COMMAND",
+          "options": [
+            {
+              "name": "member",
+              "description": "Member to set exp for",
+              "type": "USER",
+              "required": true
+            },
+            {
+              "name": "exp",
+              "description": "Exp amount to set",
+              "type": "INTEGER",
+              "required": true
+            }
+          ]
+        },
+        {
+          "name": "weekly",
+          "description": "Set the weekly activity exp of a member",
+          "type": "SUB_COMMAND",
+          "options": [
+            {
+              "name": "member",
+              "description": "Member to set weekly exp for",
+              "type": "USER",
+              "required": true
+            },
+            {
+              "name": "exp",
+              "description": "weekly exp amount to set",
+              "type": "INTEGER",
+              "required": true
+            }
+          ]
+        }
+      ]
+    }
   },
   "setlevel": {
     "cmd": "setlevel",
@@ -6942,56 +7196,51 @@
         "command": "!setlevel sophs 10",
         "desc": "This will set sophs' level to 10."
       }
-    ]
-  },
-  "setscore": {
-    "cmd": "setscore",
-    "synonyms": [
-      "setxp"
     ],
-    "moduleId": "setup",
-    "format": "${PREFIX}setscore [member] <score amount>",
-    "desc": "Use this command to set a member's score to a specified amount.",
-    "perms": [
-      "BOT_ADMIN"
-    ],
-    "canDM": false,
-    "canEdit": false,
-    "debug": false,
-    "parameters": [
-      {
-        "param": "<member>",
-        "values": [
-          {
-            "value": "Username",
-            "desc": "Discord username of the user"
-          },
-          {
-            "value": "discord ID",
-            "desc": "discord ID of the user"
-          },
-          {
-            "value": "Mention member",
-            "desc": "discord member mention"
-          }
-        ]
-      },
-      {
-        "param": "<score amount>",
-        "values": [
-          {
-            "value": "Number",
-            "desc": "Amount to set member's score to."
-          }
-        ]
-      }
-    ],
-    "examples": [
-      {
-        "command": "!setscore Gutty 10,000",
-        "desc": "This will set Gutty's score to 10,000 xp."
-      }
-    ]
+    "data": {
+      "name": "setlevel",
+      "description": "Set the activity level of a member",
+      "options": [
+        {
+          "name": "total",
+          "description": "Set the total activity level of a member",
+          "type": "SUB_COMMAND",
+          "options": [
+            {
+              "name": "member",
+              "description": "Member to set level for",
+              "type": "USER",
+              "required": true
+            },
+            {
+              "name": "level",
+              "description": "level to set",
+              "type": "INTEGER",
+              "required": true
+            }
+          ]
+        },
+        {
+          "name": "weekly",
+          "description": "Set the weekly activity level of a member",
+          "type": "SUB_COMMAND",
+          "options": [
+            {
+              "name": "member",
+              "description": "Member to set weekly level for",
+              "type": "USER",
+              "required": true
+            },
+            {
+              "name": "level",
+              "description": "weekly level to set",
+              "type": "INTEGER",
+              "required": true
+            }
+          ]
+        }
+      ]
+    }
   },
   "weeklyscorereset": {
     "cmd": "weeklyscorereset",
