@@ -17,6 +17,8 @@ title: Patch Notes
 
 ### Bug Fixes
   - Fixed bug that would cause process scans to terminate prematurely.
+  - Fixed bug causing `/roleatlevel` command to fail.
+  - Fixed bug where `/roleatlevel` could not be used with level_add of 0.
 
 *****************************
 
