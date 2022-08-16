@@ -14,6 +14,7 @@ title: Patch Notes
   - Updated `/setexp` to slash command (was `!setscore`).
   - Updated `/setlevel` to slash command.
   - Added roles-at-levels for weekly activity levels.
+  - Added `automatch` ladder setting param.
 
 ### Bug Fixes
   - Fixed bug that would cause process scans to terminate prematurely.
