@@ -5,6 +5,20 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 31st August 2022
+### New Additions
+  - Added Elden Ring item descriptions to `!item`
+
+### Updates
+  - Added SlugBot AI opponent to `/knuckleslug`
+  - Added the ability to put out an open challenge in `/knuckleslug`.
+  - Added item descriptions and weapon icons to `/weaponer` and `/allocatestatser`.
+
+### Bug Fixes
+  - Fixed bug causing `/ticketer update send_to_channel` to fail.
+
+*****************************
+
 ## 3rd August 2022
 ### New Additions
   - Added `/knuckleslug` minigame to economy module.
