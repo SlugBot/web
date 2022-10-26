@@ -5,6 +5,23 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 26th October 2022
+### Updates
+  - Added `content_message` option to ticketers allowing a custom message to be sent along with the submitted ticket embed.
+  - Reworked `/stocks`. 
+  - Added ability to create stop and limit orders.
+
+*****************************
+
+## 18th October 2022
+### New Additions
+  - Added `/bet` command to start bets.
+
+### Updates
+  - Added team functionality to PvP leaderboards.
+
+*****************************
+
 ## 31st August 2022
 ### New Additions
   - Added Elden Ring item descriptions to `!item`
