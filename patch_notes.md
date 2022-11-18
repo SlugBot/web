@@ -5,6 +5,25 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 18th November 2022
+### Updates
+  - Welcome message, `init`, and `global` roles will now not apply until member has passed Rules Screening.
+  - Added select menu to `/stocks list`.
+  - Various other `/stocks` UI improvements. 
+
+### Bug Fixes
+  - Fixed unmute command autocomplete.
+  - Fixed Stocks sell order bug.
+  - Fixed Stocks profit display.
+  - Fixed Investment terminate UI bug.
+  - Fixed Standard to Somber weapon upgrade level conversion.
+  - Fixed Elo and starting points not instatiating correctly for some members.
+  - Fixed custom command use count updating on restricted responses.
+  - Fixed `/tourney status` display bug caused by host leaving server.
+  - Prevented race condition issue when multiple players accept a leaderboard challenge at the same time.
+
+*****************************
+
 ## 26th October 2022
 ### Updates
   - Added `content_message` option to ticketers allowing a custom message to be sent along with the submitted ticket embed.
