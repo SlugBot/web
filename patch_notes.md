@@ -5,6 +5,21 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 22nd November 2022
+### New Additions
+  - Added `/say` command allowing admins to send and edit messages via SlugBot. Useful for server rule messages that can be edited by any admin.
+
+### Updates
+  - Added `give_role` parameter to `/ticketer update` allowing a role to be given on ticket create.
+  - Updated `/stocks list` display to show total profit.
+  - Updated `/stocks sell` display to cap sell amount to the quantity of owned shares.
+
+### Bug fixes
+  - Fixed `/say` message edit when original message was longer than 100 characters. 
+  - Fixed `/challenge` command listing leaderboards the user does not have access to.
+
+*****************************
+
 ## 18th November 2022
 ### Updates
   - Welcome message, `init`, and `global` roles will now not apply until member has passed Rules Screening.
