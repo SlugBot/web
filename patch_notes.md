@@ -5,6 +5,16 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 4th December
+### Updates
+  - Updated `/shop` to slash command.
+  - Added `bid` button to shop.
+
+### Bug Fixes
+  - Fixed `/mute` failing when member leaves during command being run.
+
+*****************************
+
 ## 22nd November 2022
 ### New Additions
   - Added `/say` command allowing admins to send and edit messages via SlugBot. Useful for server rule messages that can be edited by any admin.
