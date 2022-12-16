@@ -5,13 +5,27 @@ title: Patch Notes
 
 # PATCH NOTES
 
-## 4th December
+## 12th December 2022
+### Updates
+  - Updated Elden Ring weapon data for 1.08 changes.
+  - Updated `/allocatestatser` and `/weaponer` to view paired attacks.
+  - Updated counter hit and Spear Talisman counter hits to 1.08 values.
+
+### Bug Fixes
+  - Fixed incorrect motion values for Rusted Anchor.
+
+*****************************
+
+## 4th December 2022
 ### Updates
   - Updated `/shop` to slash command.
   - Added `bid` button to shop.
+  - Updated `/elo` to allow team match history viewing.
+  - Updated `/challenge team` to allow specific team challenges.
 
 ### Bug Fixes
   - Fixed `/mute` failing when member leaves during command being run.
+  - Fixed various typos in command descriptions.
 
 *****************************
 
