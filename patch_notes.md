@@ -5,6 +5,15 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 8th January 2023
+### Updates
+  - `/vc private` now whitelists all current members of the VC at time of use.
+
+### Bug Fixes
+  - Fixed several instances of `/vc` commands failing.
+
+*****************************
+
 ## 12th December 2022
 ### Updates
   - Updated Elden Ring weapon data for 1.08 changes.
