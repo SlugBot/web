@@ -11,6 +11,9 @@ title: Patch Notes
 
 ### Bug Fixes
   - Fixed several instances of `/vc` commands failing.
+  - Fixed `/ladder reset` not resetting point decay.
+  - Fixed `/ladder reset` not setting to starting point value.
+  - Fixed `/elo` not displaying reset times.
 
 *****************************
 
