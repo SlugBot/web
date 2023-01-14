@@ -14,6 +14,7 @@ title: Patch Notes
   - Fixed `/ladder reset` not resetting point decay.
   - Fixed `/ladder reset` not setting to starting point value.
   - Fixed `/elo` not displaying reset times.
+  - Fixed `/bet` autocomplete field not functioning.
 
 *****************************
 
