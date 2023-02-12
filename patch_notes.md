@@ -5,6 +5,13 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 12th February 2023
+### Updates
+  - Added ability for members to create tourneys to be validated by admins.
+  - Added tourney description and banner customisation modal.
+
+*****************************
+
 ## 8th January 2023
 ### Updates
   - `/vc private` now whitelists all current members of the VC at time of use.
