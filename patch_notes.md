@@ -10,6 +10,10 @@ title: Patch Notes
   - Added ability for members to create tourneys to be validated by admins.
   - Added tourney description and banner customisation modal.
 
+### Bug Fixes
+  - Fixed leaderboard challenges automatching with existing challenges that do not meet region limit parameters.
+  - Fixed `/tourney abort` not working.
+
 *****************************
 
 ## 8th January 2023
