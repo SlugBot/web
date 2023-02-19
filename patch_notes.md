@@ -13,6 +13,7 @@ title: Patch Notes
 ### Bug Fixes
   - Fixed leaderboard challenges automatching with existing challenges that do not meet region limit parameters.
   - Fixed `/tourney abort` not working.
+  - Fixed direct challenges becoming open challenges when the recipient cancels.
 
 *****************************
 
