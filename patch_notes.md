@@ -5,6 +5,20 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 20th February 2023
+### Updates
+  - Refactored the flag replacer parser.
+  - Made `/command add` a modal with text fields for input.
+
+### New Additions
+  - Added `${call: }` flag replacer.
+  - Added `${setvalue: }` flag replacer.
+
+### Bug Fixes
+  - Fixed filter trigger mute chance sometimes not displaying in the log message.
+
+*****************************
+
 ## 12th February 2023
 ### Updates
   - Added ability for members to create tourneys to be validated by admins.
