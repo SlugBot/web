@@ -9,6 +9,9 @@ title: Patch Notes
 ### Updates
   - Refactored the flag replacer parser.
   - Made `/command add` a modal with text fields for input.
+  - Added ladder player `/iwon` override with `/ladder player_override iwon`.
+  - Added ladder player `/ilost` override with `/ladder player_override ilost`.
+  - Added ladder player `/challenge cancel` override with `/ladder player_override cancel`.
 
 ### New Additions
   - Added `${call: }` flag replacer.
