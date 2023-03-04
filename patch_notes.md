@@ -5,6 +5,21 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 4th March
+### Updates
+  - Updated `/lockdown` to slash command.
+  - Updated `/activate` to slash command.
+  - Updated `/suspend` to slash command.
+  - Allowed `/elo` command to view team matches of a given member.
+
+### Bug Fixes
+  - Hopefully improved economy processes failing sometimes.
+  - Improved UI when using a scan through a rootkit.
+  - Fixed `/challenge team` command showing default teams.
+  - Fixed last match played time being incorrectly saved.
+
+*****************************
+
 ## 20th February 2023
 ### Updates
   - Refactored the flag replacer parser.
