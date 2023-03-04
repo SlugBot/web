@@ -10,6 +10,7 @@ title: Patch Notes
   - Updated `/lockdown` to slash command.
   - Updated `/activate` to slash command.
   - Updated `/suspend` to slash command.
+  - Updated economy process injection log display.
   - Allowed `/elo` command to view team matches of a given member.
 
 ### Bug Fixes
