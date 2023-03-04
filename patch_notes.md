@@ -18,6 +18,7 @@ title: Patch Notes
   - Improved UI when using a scan through a rootkit.
   - Fixed `/challenge team` command showing default teams.
   - Fixed last match played time being incorrectly saved.
+  - Fixed matches not terminating when all members have left.
 
 *****************************
 
