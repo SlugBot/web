@@ -1,192 +1,4 @@
 {
-  "customcommands": {
-    "module": "customcommands",
-    "commands": [
-      {
-        "cmd": "addcommand",
-        "synonyms": [
-          "updatecommand",
-          "addcmd",
-          "updatecmd"
-        ],
-        "format": "${PREFIX}addcommand <command> <response>",
-        "desc": "Used to add/edit a custom command that will respond with a specified string. alternatively regex can be used in place of a command to make SlugBot send a response message whenever the regex matches a members message.\n\nThe response can contain certain replacer flags that will be replaced will specific values when sent by slugbot.\n\nDocumentation on replacer flags can be found [here](setup_guide.html#flag-replacers)",
-        "perms": [
-          "BOT_ADMIN"
-        ],
-        "moduleId": "customCommands",
-        "canDM": false,
-        "canEdit": false,
-        "parameters": [
-          {
-            "param": "<command>",
-            "values": [
-              {
-                "value": "New command string"
-              },
-              {
-                "value": "Existing command string",
-                "desc": "Will overwrite its response"
-              },
-              {
-                "value": "Regex keyword",
-                "desc": "indicated by a string starting and ending with `/`"
-              }
-            ]
-          },
-          {
-            "param": "<response>",
-            "values": [
-              {
-                "value": "String",
-                "desc": "will be displayed when the custom command is used or the regex is matched"
-              }
-            ]
-          }
-        ],
-        "examples": [
-          {
-            "command": "!addcommand flip You flipped a coin and got ${rand:heads|tails}!",
-            "desc": "This will add a command that will respond with `You flipped a coin and got heads!` OR `You flipped a coin and got tails!` when the command `!flip` is used."
-          },
-          {
-            "command": "!addcommand /don't\\s@\\sme/ <@${id}>",
-            "desc": "This will create a regex keyword match that will respond with a discord mention whenever a message contains the string `don't @ me`."
-          }
-        ]
-      },
-      {
-        "cmd": "command",
-        "synonyms": [],
-        "format": "${PREFIX}command (add <command> <response>) | (remove <command>) | list",
-        "desc": "Used to add/edit a custom command that will respond with a specified string. alternatively regex can be used in place of a command to make SlugBot send a response message whenever the regex matches a members message.\n\nThe response can contain certain replacer flags that will be replaced will specific values when sent by slugbot.\n\nDocumentation on replacer flags can be found [here](setup_guide.html#flag-replacers)",
-        "perms": [
-          "USER"
-        ],
-        "moduleId": "customCommands",
-        "canDM": false,
-        "canEdit": false,
-        "parameters": [
-          {
-            "param": "<command>",
-            "values": [
-              {
-                "value": "New command string"
-              },
-              {
-                "value": "Existing command string",
-                "desc": "Will overwrite its response"
-              },
-              {
-                "value": "Regex keyword",
-                "desc": "indicated by a string starting and ending with `/`"
-              }
-            ]
-          },
-          {
-            "param": "<response>",
-            "values": [
-              {
-                "value": "String",
-                "desc": "will be displayed when the custom command is used or the regex is matched"
-              }
-            ]
-          }
-        ],
-        "examples": [
-          {
-            "command": "/command add flip You flipped a coin and got ${rand:heads|tails}!",
-            "desc": "This will add a command that will respond with `You flipped a coin and got heads!` OR `You flipped a coin and got tails!` when the command `!flip` is used."
-          },
-          {
-            "command": "/command add /don't\\s@\\sme/ <@${id}>",
-            "desc": "This will create a regex keyword match that will respond with a discord mention whenever a message contains the string `don't @ me`."
-          }
-        ],
-        "data": {
-          "name": "command",
-          "description": "Add or remove custom commands or regex keyword matches.",
-          "options": [
-            {
-              "type": "SUB_COMMAND",
-              "name": "add",
-              "description": "Add or update a custom command or regex keyword match",
-              "options": [
-                {
-                  "name": "command",
-                  "description": "Command word or regEx",
-                  "type": "STRING",
-                  "required": true
-                },
-                {
-                  "name": "response",
-                  "description": "Response to the command",
-                  "type": "STRING",
-                  "required": true
-                }
-              ]
-            },
-            {
-              "type": "SUB_COMMAND",
-              "name": "remove",
-              "description": "Remove a custom command or regex keyword match",
-              "options": [
-                {
-                  "name": "command",
-                  "description": "Command word or regEx",
-                  "type": "STRING",
-                  "required": true,
-                  "autocomplete": true
-                }
-              ]
-            },
-            {
-              "type": "SUB_COMMAND",
-              "name": "list",
-              "description": "List all custom commands in this guild"
-            }
-          ]
-        }
-      },
-      {
-        "cmd": "removecommand",
-        "synonyms": [
-          "removecmd",
-          "deletecmd",
-          "deletecommand"
-        ],
-        "format": "${PREFIX}removecommand <command>",
-        "desc": "Used to remove an existing custom command.",
-        "perms": [
-          "BOT_ADMIN"
-        ],
-        "moduleId": "customcommands",
-        "canDM": false,
-        "canEdit": false,
-        "parameters": [
-          {
-            "param": "<command>",
-            "values": [
-              {
-                "value": "Existing command",
-                "desc": "Must match existing command exactly"
-              },
-              {
-                "value": "Existing regex keyword to remove",
-                "desc": "Must match existing command exactly"
-              }
-            ]
-          }
-        ],
-        "examples": [
-          {
-            "command": "!removecommand ping",
-            "desc": "This will remove the custom command `!ping`."
-          }
-        ]
-      }
-    ]
-  },
   "misc": {
     "module": "misc",
     "commands": [
@@ -253,10 +65,46 @@
         "debug": false
       },
       {
-        "cmd": "help",
+        "cmd": "getrawmessage",
         "synonyms": [
-          "slugbot"
+          "pfp"
         ],
+        "format": "${PREFIX}getrawmessage <message>",
+        "desc": "Use this command to view the raw message text of a message with out embedded markdown.",
+        "perms": [
+          "USER"
+        ],
+        "canDM": false,
+        "canEdit": false,
+        "debug": false,
+        "parameters": [
+          {
+            "param": "<message ID>",
+            "values": [
+              {
+                "value": "Number",
+                "desc": "Discord message ID of message"
+              }
+            ]
+          }
+        ],
+        "examples": [],
+        "data": {
+          "name": "getrawmessage",
+          "description": "Return the raw message text without embedding markdown",
+          "options": [
+            {
+              "name": "message_id",
+              "description": "Discord message ID of message",
+              "type": "STRING",
+              "required": true
+            }
+          ]
+        }
+      },
+      {
+        "cmd": "help",
+        "synonyms": [],
         "format": "${PREFIX}help [command]",
         "desc": "Use this command to get info on how to use a specific command. Use the command with no arguments to get a link to this documentation.",
         "perms": [
@@ -515,6 +363,50 @@
         ]
       },
       {
+        "cmd": "say",
+        "synonyms": [
+          "send"
+        ],
+        "format": "${PREFIX}say [channel] [message]",
+        "desc": "Use this command to make SlugBot send a message in the specified channel. If no channel is mentioned, SlugBot will send the message in the channel the command was used in.",
+        "perms": [
+          "BOT_ADMIN"
+        ],
+        "canDM": false,
+        "canEdit": false,
+        "debug": false,
+        "parameters": [
+          {
+            "param": "[channel]",
+            "values": [
+              {
+                "value": "Channel mention",
+                "desc": "Discord channel to send message to."
+              }
+            ]
+          }
+        ],
+        "examples": [],
+        "data": {
+          "name": "say",
+          "description": "Send a message in a specified channel.",
+          "options": [
+            {
+              "type": "CHANNEL",
+              "name": "channel",
+              "description": "Channel to send message to",
+              "required": false
+            },
+            {
+              "type": "STRING",
+              "name": "msg_id",
+              "description": "ID of SlugBot msg to edit",
+              "required": false
+            }
+          ]
+        }
+      },
+      {
         "cmd": "setcolor",
         "synonyms": [
           "setcolour"
@@ -567,17 +459,6 @@
             "desc": "This will revert Specter's name color to their normal highest-role-defined color."
           }
         ]
-      },
-      {
-        "cmd": "setnick",
-        "perms": [
-          "BOT_ADMIN"
-        ],
-        "debug": false,
-        "canDM": false,
-        "canEdit": false,
-        "format": "${PREFIX}setnick <member> <new nickname>",
-        "desc": ""
       },
       {
         "cmd": "slime",
@@ -709,11 +590,11 @@
         "debug": false,
         "canDM": true,
         "canEdit": true,
-        "format": "${PREFIX}item [ds1|ds2|ds3|bb] <search words>",
+        "format": "${PREFIX}item [ds1|ds2|ds3|bb|er] <search words>",
         "desc": "Used to search items in soulsborne games and return item descriptions.",
         "parameters": [
           {
-            "param": "[ds1|ds2|ds3|bb]",
+            "param": "[ds1|ds2|ds3|bb|er]",
             "values": [
               {
                 "value": "ds1",
@@ -730,6 +611,10 @@
               {
                 "value": "bb",
                 "desc": "Limit the item search to only Bloodborne."
+              },
+              {
+                "value": "er",
+                "desc": "Limit the item search to only Elden Ring."
               }
             ]
           },
@@ -784,6 +669,17 @@
             "desc": "This will check if the guess of parsnip is correct."
           }
         ]
+      },
+      {
+        "cmd": "setnick",
+        "perms": [
+          "BOT_ADMIN"
+        ],
+        "debug": false,
+        "canDM": false,
+        "canEdit": false,
+        "format": "${PREFIX}setnick <member> <new nickname>",
+        "desc": ""
       },
       {
         "perms": [
@@ -855,96 +751,6 @@
             "desc": "This will list all roles that will be given to/removed from members based on their ranking in the PC DS3 ladder."
           }
         ]
-      },
-      {
-        "format": "${PREFIX}filter <add|remove|list> <filter string>",
-        "desc": "Use this command to add or remove word filters in the current server. The filter string can either be a normal string or RegEx.\n\nWhen a member sends a message in the server containing the filter string, their message will be deleted, score will be deducted and there will be a random chance they will be muted. the mute chance increases each time the same member triggers the filter.\n\nIf a normal string is given, common letter substitutions will be taken into account.\n\nif RegEx is given, the matched message will be deleted but the member will not have score deducted or have a chance to be muted.",
-        "perms": [
-          "BOT_ADMIN"
-        ],
-        "canDM": false,
-        "canEdit": false,
-        "debug": false,
-        "parameters": [
-          {
-            "param": "<add|remove|list>",
-            "values": [
-              {
-                "value": "add",
-                "desc": "specify to add new filter"
-              },
-              {
-                "value": "remove",
-                "desc": "specify to remove existing filter"
-              },
-              {
-                "value": "list",
-                "desc": "specify to list all filters"
-              }
-            ]
-          },
-          {
-            "param": "<filter string>",
-            "values": [
-              {
-                "value": "String",
-                "desc": "normal string containing word(s) to be filtered"
-              },
-              {
-                "value": "RegEx",
-                "desc": "Regular expression to have messages deleted when matched"
-              }
-            ]
-          }
-        ],
-        "examples": [
-          {
-            "command": "!filter add snail",
-            "desc": "This will make SlugBot delete any messages containing the word 'snail', deduct score from the offending member and have a chance to mute them."
-          },
-          {
-            "command": "!filter add /\\d/",
-            "desc": "This will make SlugBot delete any messages containing any digit. (check [regex101](https://regex101.com/) for RegEx syntax and RegEx testing)"
-          }
-        ],
-        "data": {
-          "name": "filter",
-          "description": "Manage filters in this server.",
-          "options": [
-            {
-              "type": "SUB_COMMAND",
-              "name": "add",
-              "description": "Add a new word or regEx filter.",
-              "options": [
-                {
-                  "type": "STRING",
-                  "name": "filter",
-                  "description": "word or regEx to filter.",
-                  "required": true
-                }
-              ]
-            },
-            {
-              "type": "SUB_COMMAND",
-              "name": "remove",
-              "description": "Remove an existing word or regEx filter.",
-              "options": [
-                {
-                  "type": "STRING",
-                  "name": "filter",
-                  "description": "word or regEx to filter.",
-                  "required": true,
-                  "autocomplete": true
-                }
-              ]
-            },
-            {
-              "type": "SUB_COMMAND",
-              "name": "list",
-              "description": "List all existing word and regEx filters."
-            }
-          ]
-        }
       },
       {
         "cmd": "poll",
@@ -1290,6 +1096,19 @@
                   "required": false
                 }
               ]
+            },
+            {
+              "name": "set_image",
+              "type": "SUB_COMMAND",
+              "description": "Set the image on the 'earned role' notification",
+              "options": [
+                {
+                  "name": "image_url",
+                  "type": "STRING",
+                  "description": "Direct image link to a png/gif",
+                  "required": true
+                }
+              ]
             }
           ]
         }
@@ -1347,6 +1166,91 @@
         "data": {
           "name": "twitch",
           "description": "link a Discord account with a Twitch account"
+        }
+      }
+    ]
+  },
+  "customcommands": {
+    "module": "customcommands",
+    "commands": [
+      {
+        "cmd": "command",
+        "synonyms": [],
+        "format": "${PREFIX}command (add | (remove <command>) | list",
+        "desc": "Used to add/edit a custom command that will respond with a specified string. alternatively regex can be used in place of a command to make SlugBot send a response message whenever the regex matches a members message.\n\nThe response can contain certain replacer flags that will be replaced will specific values when sent by slugbot.\n\nDocumentation on replacer flags can be found [here](setup_guide.html#flag-replacers)",
+        "perms": [
+          "USER"
+        ],
+        "moduleId": "customCommands",
+        "canDM": false,
+        "canEdit": false,
+        "parameters": [
+          {
+            "param": "<command>",
+            "values": [
+              {
+                "value": "New command string"
+              },
+              {
+                "value": "Existing command string",
+                "desc": "Will overwrite its response"
+              },
+              {
+                "value": "Regex keyword",
+                "desc": "indicated by a string starting and ending with `/`"
+              }
+            ]
+          },
+          {
+            "param": "<response>",
+            "values": [
+              {
+                "value": "String",
+                "desc": "will be displayed when the custom command is used or the regex is matched"
+              }
+            ]
+          }
+        ],
+        "examples": [
+          {
+            "command": "/command add flip You flipped a coin and got ${rand:heads|tails}!",
+            "desc": "This will add a command that will respond with `You flipped a coin and got heads!` OR `You flipped a coin and got tails!` when the command `!flip` is used."
+          },
+          {
+            "command": "/command add /don't\\s@\\sme/ <@${id}>",
+            "desc": "This will create a regex keyword match that will respond with a discord mention whenever a message contains the string `don't @ me`."
+          }
+        ],
+        "data": {
+          "name": "command",
+          "description": "Add or remove custom commands or regex keyword matches.",
+          "options": [
+            {
+              "type": "SUB_COMMAND",
+              "name": "add",
+              "description": "Add or update a custom command or regex keyword match",
+              "options": []
+            },
+            {
+              "type": "SUB_COMMAND",
+              "name": "remove",
+              "description": "Remove a custom command or regex keyword match",
+              "options": [
+                {
+                  "name": "command",
+                  "description": "Command word or regEx",
+                  "type": "STRING",
+                  "required": true,
+                  "autocomplete": true
+                }
+              ]
+            },
+            {
+              "type": "SUB_COMMAND",
+              "name": "list",
+              "description": "List all custom commands in this guild"
+            }
+          ]
         }
       }
     ]
@@ -1670,71 +1574,6 @@
       }
     ]
   },
-  "platforms": {
-    "module": "platforms",
-    "commands": [
-      {
-        "cmd": "optoutpings",
-        "format": "${PREFIX}optoutpings",
-        "moduleId": "platforms",
-        "desc": "Use this allow users to toggle whether they receive platform pings or not.",
-        "perms": [
-          "BOT_ADMIN"
-        ],
-        "canDM": false,
-        "canEdit": false,
-        "debug": false
-      },
-      {
-        "cmd": "pc",
-        "format": "${PREFIX}pc",
-        "desc": "Use this command to toggle your pc platform role.",
-        "perms": [
-          "USER"
-        ],
-        "moduleId": "platforms",
-        "canDM": false,
-        "canEdit": false,
-        "debug": false
-      },
-      {
-        "cmd": "pings",
-        "format": "${PREFIX}pings",
-        "desc": "This will toggle whether or not you receive role pings from other members or member events.",
-        "perms": [
-          "USER"
-        ],
-        "moduleId": "platforms",
-        "canDM": false,
-        "canEdit": false,
-        "debug": false
-      },
-      {
-        "cmd": "ps4",
-        "format": "${PREFIX}ps4",
-        "desc": "Use this command to toggle your ps4 platform role.",
-        "perms": [
-          "USER"
-        ],
-        "moduleId": "platforms",
-        "canDM": false,
-        "canEdit": false,
-        "debug": false
-      },
-      {
-        "cmd": "xbox",
-        "format": "${PREFIX}xbox",
-        "desc": "Use this command to toggle your xbox platform role.",
-        "perms": [
-          "USER"
-        ],
-        "moduleId": "platforms",
-        "canDM": false,
-        "canEdit": false,
-        "debug": false
-      }
-    ]
-  },
   "admin": {
     "module": "admin",
     "commands": [
@@ -1754,14 +1593,14 @@
         "canDM": false,
         "canEdit": false,
         "debug": true,
-        "format": "${PREFIX}permissions ((module|command <command name>) | score | slugbot) [<setting> (channel|role|user)]",
+        "format": "${PREFIX}permissions ((module|command <command name>) | score | SlugBot) [<setting> (channel|role|user)]",
         "desc": "Use this command to add or remove constraints on command usage.\n\nAdding a channel constraint will mean the specified command can only be used in that channel.\n\nAdding a role constraint will mean the specified command can only be used by members with that role.\n**ADDING ROLE CONSTRAINTS WILL OVERRIDE DEFAULT PERMISSION REQUIREMENTS**.",
         "parameters": [
           {
             "param": "<command|score>",
             "values": [
               {
-                "value": "slugbot command name",
+                "value": "SlugBot command name",
                 "desc": "The name of the command you wish to set permission constraints for."
               },
               {
@@ -1823,10 +1662,82 @@
             "desc": "This will stop SlugBot from giving users XP for activity in the `#bot-stuff` channel."
           },
           {
-            "command": "!permissions slugbot whitelist #bot-stuff",
-            "desc": "This will only allow slugbot commands to be used in the `#bot-stuff` channel."
+            "command": "!permissions SlugBot whitelist #bot-stuff",
+            "desc": "This will only allow SlugBot commands to be used in the `#bot-stuff` channel."
           }
-        ]
+        ],
+        "data": {
+          "name": "permissions",
+          "description": "Customise user permissions for SlugBot, Command Groups, Commands, and Sub-Commands",
+          "options": [
+            {
+              "name": "slugbot",
+              "description": "Permissions for ALL SlugBot commands",
+              "type": "SUB_COMMAND",
+              "options": [
+                {
+                  "name": "channel",
+                  "description": "Set permissions will only apply in this channel",
+                  "type": "CHANNEL",
+                  "required": false
+                }
+              ]
+            },
+            {
+              "name": "command_group",
+              "description": "Permissions for a Command Group",
+              "type": "SUB_COMMAND",
+              "options": [
+                {
+                  "name": "command_group",
+                  "description": "Command group name",
+                  "type": "STRING",
+                  "required": true,
+                  "autocomplete": true
+                },
+                {
+                  "name": "channel",
+                  "description": "Set permissions will only apply in this channel",
+                  "type": "CHANNEL",
+                  "required": false
+                },
+                {
+                  "name": "mode",
+                  "description": "whitelist, blacklist, or disable",
+                  "type": "STRING",
+                  "required": false
+                }
+              ]
+            },
+            {
+              "name": "sub_command",
+              "description": "Permissions for a Sub-Command",
+              "type": "SUB_COMMAND",
+              "options": [
+                {
+                  "name": "command",
+                  "description": "Command name",
+                  "type": "STRING",
+                  "required": true,
+                  "autocomplete": true
+                },
+                {
+                  "name": "sub_command",
+                  "description": "Sub-Command name",
+                  "type": "STRING",
+                  "required": true,
+                  "autocomplete": true
+                },
+                {
+                  "name": "channel",
+                  "description": "Set permissions will only apply in this channel",
+                  "type": "CHANNEL",
+                  "required": false
+                }
+              ]
+            }
+          ]
+        }
       }
     ]
   },
@@ -1980,18 +1891,6 @@
               {
                 "value": "streamer",
                 "desc": "Role that adds members to the streamer list"
-              },
-              {
-                "value": "pc",
-                "desc": "PC platform role"
-              },
-              {
-                "value": "ps4",
-                "desc": "PS4 platform role"
-              },
-              {
-                "value": "xbox",
-                "desc": "XBox platform role"
               }
             ]
           },
@@ -2004,15 +1903,15 @@
               },
               {
                 "value": "role name",
-                "desc": "An existing role for slugbot to use"
+                "desc": "An existing role for SlugBot to use"
               }
             ]
           }
         ],
         "examples": [
           {
-            "command": "!setrole totalTopRank Top Sleg",
-            "desc": "This will set totalTopRank to use a server role called 'Top Sleg'."
+            "command": "!setrole totalTopRank Top Rank",
+            "desc": "This will set totalTopRank to use a server role called 'Top Rank'."
           },
           {
             "command": "!setrole weeklyTopRank reset",
@@ -3473,7 +3372,117 @@
             "command": "!Activate AL3X1",
             "desc": "This will activate the process with ID AL3X1 if it was suspended."
           }
-        ]
+        ],
+        "data": {
+          "name": "activate",
+          "description": "Activate a disabled process",
+          "options": [
+            {
+              "name": "process_ids",
+              "description": "Process IDs of the processes you wish to activate",
+              "type": "STRING",
+              "required": true
+            }
+          ]
+        }
+      },
+      {
+        "cmd": "bet",
+        "perms": [
+          "USER"
+        ],
+        "moduleId": "economy",
+        "canEdit": false,
+        "canDM": false,
+        "format": "${PREFIX}bet (create) | (close <bet>) | (open <bet>) | (resolve <bet> <outcome>)",
+        "desc": "Start a wager on predefined outcomes and allow other members to place bets",
+        "parameters": [
+          {
+            "param": "[option]",
+            "values": [
+              {
+                "value": "bet option",
+                "desc": "Selected bet option"
+              }
+            ]
+          },
+          {
+            "param": "<bet>",
+            "values": [
+              {
+                "value": "bet identifier",
+                "desc": "Identifier of bet to complete"
+              }
+            ]
+          }
+        ],
+        "examples": [
+          {
+            "command": "!bet create",
+            "desc": "This will open a modal where the bet parameters can be input."
+          }
+        ],
+        "data": {
+          "name": "bet",
+          "description": "Create a bet or bet on an existing bet",
+          "options": [
+            {
+              "name": "create",
+              "type": "SUB_COMMAND",
+              "description": "Create a new bet",
+              "options": []
+            },
+            {
+              "name": "close",
+              "type": "SUB_COMMAND",
+              "description": "Close a bet and stop members placing bets",
+              "options": [
+                {
+                  "name": "bet",
+                  "type": "STRING",
+                  "description": "Bet identifier",
+                  "required": true,
+                  "autocomplete": true
+                }
+              ]
+            },
+            {
+              "name": "open",
+              "type": "SUB_COMMAND",
+              "description": "Reopen a closed bet and allow members to bet again",
+              "options": [
+                {
+                  "name": "bet",
+                  "type": "STRING",
+                  "description": "Bet identifier",
+                  "required": true,
+                  "autocomplete": true
+                }
+              ]
+            },
+            {
+              "name": "resolve",
+              "type": "SUB_COMMAND",
+              "description": "Declare the outcome of a bet",
+              "options": [
+                {
+                  "name": "bet",
+                  "type": "STRING",
+                  "description": "Bet identifier",
+                  "required": true,
+                  "autocomplete": true
+                },
+                {
+                  "name": "outcome",
+                  "type": "INTEGER",
+                  "description": "Final outcome of the bet",
+                  "required": true,
+                  "autocomplete": true
+                }
+              ]
+            }
+          ]
+        }
       },
       {
         "cmd": "bid",
@@ -4098,7 +4107,7 @@
               "name": "opponent",
               "description": "Optionally play against another user",
               "type": "USER",
-              "required": true
+              "required": false
             }
           ]
         }
@@ -4226,7 +4235,11 @@
         "format": "${PREFIX}lockdown",
         "desc": "Locks down your account for a limited time.",
         "parameters": [],
-        "examples": []
+        "examples": [],
+        "data": {
+          "name": "lockdown",
+          "description": "Locks down your account for a limited time."
+        }
       },
       {
         "perms": [
@@ -4743,7 +4756,12 @@
             "command": "!shop",
             "desc": "Displays the global process auction where users can buy and sell processes."
           }
-        ]
+        ],
+        "data": {
+          "name": "shop",
+          "description": "Buy and sell processes including profile cosmetics!",
+          "options": []
+        }
       },
       {
         "perms": [
@@ -4914,20 +4932,8 @@
             "param": "<stock ID>",
             "values": [
               {
-                "value": "DISC",
-                "desc": "DISC stocks"
-              },
-              {
-                "value": "SLUG",
-                "desc": "SLUG stocks"
-              },
-              {
-                "value": "NARG",
-                "desc": "NARG stocks"
-              },
-              {
-                "value": "PINC",
-                "desc": "PINC stocks"
+                "value": "Ticker",
+                "desc": "Stock name"
               }
             ]
           },
@@ -4955,30 +4961,25 @@
                   "name": "stock",
                   "description": "Stock to buy",
                   "required": true,
-                  "choices": [
-                    {
-                      "name": "DISC",
-                      "value": "DISC"
-                    },
-                    {
-                      "name": "SLUG",
-                      "value": "SLUG"
-                    },
-                    {
-                      "name": "NARG",
-                      "value": "NARG"
-                    },
-                    {
-                      "name": "PINC",
-                      "value": "PINC"
-                    }
-                  ]
+                  "autocomplete": true
                 },
                 {
                   "type": "NUMBER",
                   "name": "amount",
-                  "description": "Amount of stock to buy in SC",
+                  "description": "Amount of shares to buy",
                   "required": true
+                },
+                {
+                  "type": "NUMBER",
+                  "name": "limit_order",
+                  "description": "Buy stock when below the given price",
+                  "required": false
+                },
+                {
+                  "type": "NUMBER",
+                  "name": "stop_order",
+                  "description": "Buy stock when above the given price",
+                  "required": false
                 }
               ]
             },
@@ -4992,30 +4993,25 @@
                   "name": "stock",
                   "description": "Stock to sell",
                   "required": true,
-                  "choices": [
-                    {
-                      "name": "DISC",
-                      "value": "DISC"
-                    },
-                    {
-                      "name": "SLUG",
-                      "value": "SLUG"
-                    },
-                    {
-                      "name": "NARG",
-                      "value": "NARG"
-                    },
-                    {
-                      "name": "PINC",
-                      "value": "PINC"
-                    }
-                  ]
+                  "autocomplete": true
                 },
                 {
                   "type": "NUMBER",
                   "name": "amount",
-                  "description": "Amount of stock to sell in SC",
+                  "description": "Amount of shares to sell",
                   "required": true
+                },
+                {
+                  "type": "NUMBER",
+                  "name": "limit_order",
+                  "description": "Sell stock when above the given price",
+                  "required": false
+                },
+                {
+                  "type": "NUMBER",
+                  "name": "stop_order",
+                  "description": "Sell stock when below the given price",
+                  "required": false
                 }
               ]
             },
@@ -5058,7 +5054,19 @@
             "command": "!suspend AL3X1",
             "desc": "This will suspend the process with ID AL3X1 if it was active."
           }
-        ]
+        ],
+        "data": {
+          "name": "suspend",
+          "description": "Suspend an active process",
+          "options": [
+            {
+              "name": "process_ids",
+              "description": "Process IDs of the processes you wish to suspend",
+              "type": "STRING",
+              "required": true
+            }
+          ]
+        }
       },
       {
         "cmd": "tutorial",
@@ -5605,6 +5613,41 @@
                   "required": true
                 }
               ]
+            },
+            {
+              "type": "SUB_COMMAND",
+              "name": "team",
+              "description": "Challenge a team or use a specific team, or both",
+              "options": [
+                {
+                  "name": "leaderboard",
+                  "description": "Pick a leaderboard to participate in",
+                  "type": "STRING",
+                  "autocomplete": true,
+                  "required": true
+                },
+                {
+                  "type": "STRING",
+                  "name": "your_team",
+                  "description": "Team name of your team",
+                  "required": false,
+                  "autocomplete": true
+                },
+                {
+                  "type": "STRING",
+                  "name": "opponent_team",
+                  "description": "Team name of opponent",
+                  "required": false,
+                  "autocomplete": true
+                },
+                {
+                  "name": "region",
+                  "description": "Limit opponents to only ones in the given region",
+                  "type": "STRING",
+                  "required": false,
+                  "autocomplete": true
+                }
+              ]
             }
           ]
         }
@@ -5640,6 +5683,13 @@
               "description": "View match history of this member",
               "type": "USER",
               "required": false
+            },
+            {
+              "name": "team",
+              "description": "View match history of this team",
+              "type": "STRING",
+              "required": false,
+              "autocomplete": true
             }
           ]
         }
@@ -5730,8 +5780,8 @@
           "BOT_ADMIN"
         ],
         "debug": true,
-        "format": "${PREFIX}ladder (create|remove <ladder title>) | (<ladder> reset) | (<ladder> set <wins|points> <member> <amount>) | (<ladder> rename <new name>)",
-        "desc": "Use this command reset the ladder or set the leaderboard channel.",
+        "format": "${PREFIX}ladder",
+        "desc": "Use this command to modify various ladder settings.",
         "parameters": [
           {
             "param": "<ladder>",
@@ -5741,87 +5791,9 @@
                 "desc": "Name of a specific ladder in the server."
               }
             ]
-          },
-          {
-            "param": "<ladder title>",
-            "values": [
-              {
-                "value": "String",
-                "desc": "Name of new ladder."
-              }
-            ]
-          },
-          {
-            "param": "<wins|points>",
-            "values": [
-              {
-                "value": "wins",
-                "desc": "Specify that the member's win count should be modified."
-              },
-              {
-                "value": "points",
-                "desc": "Specify that the member's points should be modified."
-              }
-            ]
-          },
-          {
-            "param": "<member>",
-            "values": [
-              {
-                "value": "Username",
-                "desc": "Discord username of the member."
-              },
-              {
-                "value": "discord ID",
-                "desc": "discord ID of the member."
-              },
-              {
-                "value": "Mention member",
-                "desc": "discord member mention of member."
-              }
-            ]
-          },
-          {
-            "param": "<amount>",
-            "values": [
-              {
-                "value": "Number",
-                "desc": "Amount to set member's win count or points to."
-              }
-            ]
-          },
-          {
-            "param": "<new name>",
-            "values": [
-              {
-                "value": "String",
-                "desc": "New title for an existing ladder."
-              }
-            ]
           }
         ],
-        "examples": [
-          {
-            "command": "!ladder create DS1",
-            "desc": "This will create a DS1 ladder and use the current channel for the leaderboard."
-          },
-          {
-            "command": "!ladder remove DS1",
-            "desc": "This will remove the DS1 ladder."
-          },
-          {
-            "command": "!ladder DS3 reset",
-            "desc": "This will reset all members points in the DS3 ladder."
-          },
-          {
-            "command": "!ladder DS3 set points Oryx 20",
-            "desc": "This will set Oryx's points to 20 in the DS3 ladder."
-          },
-          {
-            "command": "!ladder DS3 rename Dark Souls 3",
-            "desc": "This will rename the existing ladder 'DS3' to 'Dark Souls 3'"
-          }
-        ],
+        "examples": [],
         "data": {
           "name": "ladder",
           "description": "Create and configure PvP ladders",
@@ -5906,10 +5878,11 @@
                   "autocomplete": true
                 },
                 {
-                  "name": "user",
-                  "description": "User to set points/wins for",
-                  "type": "USER",
-                  "required": true
+                  "name": "user_or_team",
+                  "description": "user or team to set points/wins for",
+                  "type": "STRING",
+                  "required": true,
+                  "autocomplete": true
                 },
                 {
                   "name": "property",
@@ -5937,7 +5910,7 @@
             },
             {
               "type": "SUB_COMMAND",
-              "name": "settings",
+              "name": "view_settings",
               "description": "View the current parameter settings for a ladder",
               "options": [
                 {
@@ -5951,7 +5924,7 @@
             },
             {
               "type": "SUB_COMMAND",
-              "name": "modify",
+              "name": "point_settings",
               "description": "Modify various paramters of the ladder",
               "options": [
                 {
@@ -5967,14 +5940,6 @@
                   "type": "STRING",
                   "required": true,
                   "choices": [
-                    {
-                      "name": "challengeTimeout",
-                      "value": "challengetimeout"
-                    },
-                    {
-                      "name": "matchTimeout",
-                      "value": "matchtimeout"
-                    },
                     {
                       "name": "scalingRate",
                       "value": "scalingrate"
@@ -5992,10 +5957,6 @@
                       "value": "pointsperround"
                     },
                     {
-                      "name": "maxRounds",
-                      "value": "maxrounds"
-                    },
-                    {
                       "name": "pointWinCap",
                       "value": "pointwincap"
                     },
@@ -6008,24 +5969,12 @@
                       "value": "pointlossmult"
                     },
                     {
-                      "name": "ladderReachUp",
-                      "value": "ladderreachup"
-                    },
-                    {
-                      "name": "ladderReachDown",
-                      "value": "ladderreachdown"
-                    },
-                    {
                       "name": "repeatChallengeDecay",
                       "value": "repeatchallengedecay"
                     },
                     {
                       "name": "repeatChallengeMemory",
                       "value": "repeatchallengememory"
-                    },
-                    {
-                      "name": "WinRateScalingMemory",
-                      "value": "winratescalingmemory"
                     },
                     {
                       "name": "pointDecayRate",
@@ -6040,8 +5989,16 @@
                       "value": "pointregenrate"
                     },
                     {
-                      "name": "dailyMatchLimit",
-                      "value": "dailymatchlimit"
+                      "name": "startingPoints",
+                      "value": "startingpoints"
+                    },
+                    {
+                      "name": "eloBlend",
+                      "value": "eloblend"
+                    },
+                    {
+                      "name": "eloChangeFactor",
+                      "value": "elochangefactor"
                     }
                   ]
                 },
@@ -6050,6 +6007,270 @@
                   "description": "New parameter value",
                   "type": "NUMBER",
                   "required": true
+                }
+              ]
+            },
+            {
+              "type": "SUB_COMMAND",
+              "name": "ladder_settings",
+              "description": "Modify various paramters of the ladder",
+              "options": [
+                {
+                  "name": "ladder",
+                  "description": "Ladder name of ladder to modify",
+                  "type": "STRING",
+                  "required": true,
+                  "autocomplete": true
+                },
+                {
+                  "name": "param",
+                  "description": "Parameter to modify",
+                  "type": "STRING",
+                  "required": true,
+                  "choices": [
+                    {
+                      "name": "team0SizeMin",
+                      "value": "team0sizemin"
+                    },
+                    {
+                      "name": "team0SizeMax",
+                      "value": "team0sizemax"
+                    },
+                    {
+                      "name": "team1SizeMin",
+                      "value": "team1sizemin"
+                    },
+                    {
+                      "name": "team1SizeMax",
+                      "value": "team1sizemax"
+                    },
+                    {
+                      "name": "maxReserves",
+                      "value": "maxreserves"
+                    },
+                    {
+                      "name": "rankByPlayer",
+                      "value": "rankbyplayer"
+                    },
+                    {
+                      "name": "challengeTimeout",
+                      "value": "challengetimeout"
+                    },
+                    {
+                      "name": "matchTimeout",
+                      "value": "matchtimeout"
+                    },
+                    {
+                      "name": "automatch",
+                      "value": "automatch"
+                    },
+                    {
+                      "name": "ladderReachUp",
+                      "value": "ladderreachup"
+                    },
+                    {
+                      "name": "ladderReachDown",
+                      "value": "ladderreachdown"
+                    },
+                    {
+                      "name": "dailyMatchLimit",
+                      "value": "dailymatchlimit"
+                    },
+                    {
+                      "name": "maxRounds",
+                      "value": "maxrounds"
+                    }
+                  ]
+                },
+                {
+                  "name": "value",
+                  "description": "New parameter value",
+                  "type": "NUMBER",
+                  "required": true
+                }
+              ]
+            },
+            {
+              "type": "SUB_COMMAND_GROUP",
+              "name": "player_override",
+              "description": "Override a player's actions in a challenge",
+              "options": [
+                {
+                  "type": "SUB_COMMAND",
+                  "name": "iwon",
+                  "description": "Run the /iwon command as a given player",
+                  "options": [
+                    {
+                      "type": "STRING",
+                      "name": "player",
+                      "description": "Player to override",
+                      "autocomplete": true,
+                      "required": true
+                    },
+                    {
+                      "type": "INTEGER",
+                      "name": "rounds_won",
+                      "description": "Number of rounds won",
+                      "required": true
+                    },
+                    {
+                      "type": "INTEGER",
+                      "name": "rounds_lost",
+                      "description": "Number of rounds lost",
+                      "required": true
+                    }
+                  ]
+                },
+                {
+                  "type": "SUB_COMMAND",
+                  "name": "ilost",
+                  "description": "Run the /ilost command as a given player",
+                  "options": [
+                    {
+                      "type": "STRING",
+                      "name": "player",
+                      "description": "Player to override",
+                      "autocomplete": true,
+                      "required": true
+                    },
+                    {
+                      "type": "INTEGER",
+                      "name": "rounds_won",
+                      "description": "Number of rounds won",
+                      "required": true
+                    },
+                    {
+                      "type": "INTEGER",
+                      "name": "rounds_lost",
+                      "description": "Number of rounds lost",
+                      "required": true
+                    }
+                  ]
+                },
+                {
+                  "type": "SUB_COMMAND",
+                  "name": "cancel",
+                  "description": "Run /challenge cancel command as a given player",
+                  "options": [
+                    {
+                      "type": "STRING",
+                      "name": "player",
+                      "description": "Player to override",
+                      "autocomplete": true,
+                      "required": true
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "cmd": "team",
+        "synonyms": [],
+        "moduleId": "ladder",
+        "perms": [
+          "USER"
+        ],
+        "debug": true,
+        "canDM": false,
+        "format": "${PREFIX}team (create [member [member [...]]]) | update | disband",
+        "desc": "Use this command to create and manage a team for a PvP leaderboard",
+        "examples": [],
+        "data": {
+          "name": "team",
+          "description": "Create and manage a team for a PvP leaderboard",
+          "options": [
+            {
+              "type": "SUB_COMMAND",
+              "name": "create",
+              "description": "Create a new team",
+              "options": [
+                {
+                  "name": "leaderboard",
+                  "description": "Pick a leaderboard to create a team for",
+                  "type": "STRING",
+                  "required": true,
+                  "autocomplete": true
+                },
+                {
+                  "name": "name",
+                  "type": "STRING",
+                  "description": "Team name",
+                  "required": true
+                },
+                {
+                  "name": "members",
+                  "type": "STRING",
+                  "description": "List of members to invite to team (@member)",
+                  "required": true
+                }
+              ]
+            },
+            {
+              "type": "SUB_COMMAND",
+              "name": "update",
+              "description": "Update",
+              "options": [
+                {
+                  "name": "leaderboard",
+                  "description": "Leaderboard of team to update",
+                  "type": "STRING",
+                  "required": true,
+                  "autocomplete": true
+                },
+                {
+                  "name": "name",
+                  "type": "STRING",
+                  "description": "Team name of team to update",
+                  "required": true,
+                  "autocomplete": true
+                },
+                {
+                  "name": "new_name",
+                  "type": "STRING",
+                  "description": "New team name",
+                  "required": false
+                },
+                {
+                  "name": "new_leader",
+                  "type": "USER",
+                  "description": "New team leader",
+                  "required": false
+                },
+                {
+                  "name": "add_members",
+                  "type": "STRING",
+                  "description": "List of members to invite to team (@member)",
+                  "required": false
+                },
+                {
+                  "name": "remove_members",
+                  "type": "STRING",
+                  "description": "List of members to remove from team (@member)",
+                  "required": false
+                }
+              ]
+            },
+            {
+              "type": "SUB_COMMAND",
+              "name": "disband",
+              "description": "Disband an existing team",
+              "options": [
+                {
+                  "name": "leaderboard",
+                  "description": "Pick the leaderboard your team is for",
+                  "type": "STRING",
+                  "required": true,
+                  "autocomplete": true
+                },
+                {
+                  "name": "name",
+                  "type": "STRING",
+                  "description": "Team name",
+                  "required": true,
+                  "autocomplete": true
                 }
               ]
             }
@@ -6076,6 +6297,19 @@
           "name": "tourney",
           "description": "Host a tourney for the top ranking members on the leaderboard",
           "options": [
+            {
+              "type": "SUB_COMMAND",
+              "name": "set_organising_category",
+              "description": "Set a category where channels will be created for tourney organisation",
+              "options": [
+                {
+                  "name": "category",
+                  "type": "CHANNEL",
+                  "description": "Category where tourney organisation channels will be created",
+                  "required": true
+                }
+              ]
+            },
             {
               "type": "SUB_COMMAND",
               "name": "create",
@@ -6107,9 +6341,9 @@
                   "required": true
                 },
                 {
-                  "name": "description",
+                  "name": "begin_invites_in",
                   "type": "STRING",
-                  "description": "Description to display with the invite. Use \\n to denote line-breaks",
+                  "description": "Time before invites will begin sending; e.g. \"4 days 12 hours\"",
                   "required": false
                 },
                 {
@@ -6501,6 +6735,12 @@
               "type": "STRING",
               "description": "Reason for banning. The reason is DMed to member.",
               "required": false
+            },
+            {
+              "name": "context_url",
+              "type": "STRING",
+              "description": "Link to a message or image for extra context.",
+              "required": false
             }
           ]
         }
@@ -6576,6 +6816,230 @@
               "name": "user_id",
               "type": "STRING",
               "description": "Only delete messages by member with this ID",
+              "required": false
+            }
+          ]
+        }
+      },
+      {
+        "format": "${PREFIX}filter <add|remove|list> <filter string>",
+        "desc": "Use this command to add or remove word filters in the current server. The filter string can either be a normal string or RegEx.\n\nWhen a member sends a message in the server containing the filter string, their message will be deleted, score will be deducted and there will be a random chance they will be muted. the mute chance increases each time the same member triggers the filter.\n\nIf a normal string is given, common letter substitutions will be taken into account.\n\nif RegEx is given, the matched message will be deleted but the member will not have score deducted or have a chance to be muted.",
+        "moduleId": "moderation",
+        "perms": [
+          "BOT_ADMIN"
+        ],
+        "canDM": false,
+        "canEdit": false,
+        "debug": false,
+        "parameters": [
+          {
+            "param": "<add|remove|list>",
+            "values": [
+              {
+                "value": "add",
+                "desc": "specify to add new filter"
+              },
+              {
+                "value": "remove",
+                "desc": "specify to remove existing filter"
+              },
+              {
+                "value": "list",
+                "desc": "specify to list all filters"
+              }
+            ]
+          },
+          {
+            "param": "<filter string>",
+            "values": [
+              {
+                "value": "String",
+                "desc": "normal string containing word(s) to be filtered"
+              },
+              {
+                "value": "RegEx",
+                "desc": "Regular expression to have messages deleted when matched"
+              }
+            ]
+          }
+        ],
+        "examples": [
+          {
+            "command": "!filter add snail",
+            "desc": "This will make SlugBot delete any messages containing the word 'snail', deduct score from the offending member and have a chance to mute them."
+          },
+          {
+            "command": "!filter add /\\d/",
+            "desc": "This will make SlugBot delete any messages containing any digit. (check [regex101](https://regex101.com/) for RegEx syntax and RegEx testing)"
+          }
+        ],
+        "data": {
+          "name": "filter",
+          "description": "Manage filters in this server.",
+          "options": [
+            {
+              "name": "add",
+              "type": "SUB_COMMAND",
+              "description": "Add a new word or regEx filter.",
+              "options": [
+                {
+                  "name": "filter",
+                  "type": "STRING",
+                  "description": "word or regEx to filter.",
+                  "required": true
+                },
+                {
+                  "name": "match_repeating_chars",
+                  "type": "BOOLEAN",
+                  "description": "Should the filter account for repeating characters?",
+                  "required": false
+                }
+              ]
+            },
+            {
+              "name": "remove",
+              "type": "SUB_COMMAND",
+              "description": "Remove an existing word or regEx filter.",
+              "options": [
+                {
+                  "name": "filter",
+                  "type": "STRING",
+                  "description": "word or regEx to filter.",
+                  "required": true,
+                  "autocomplete": true
+                }
+              ]
+            },
+            {
+              "name": "list",
+              "type": "SUB_COMMAND",
+              "description": "List all existing word and regEx filters."
+            },
+            {
+              "name": "mute_settings",
+              "type": "SUB_COMMAND",
+              "description": "Customise auto-mute settings",
+              "options": [
+                {
+                  "name": "base_mute_chance",
+                  "type": "NUMBER",
+                  "description": "Starting probability for mute (0 to 1)",
+                  "required": false
+                },
+                {
+                  "name": "mute_chance_increase",
+                  "type": "NUMBER",
+                  "description": "Amount mute chance increases with each trigger",
+                  "required": false
+                },
+                {
+                  "name": "base_mute_duration",
+                  "type": "NUMBER",
+                  "description": "Starting mute duration (in minutes)",
+                  "required": false
+                },
+                {
+                  "name": "mute_duration_increase",
+                  "type": "NUMBER",
+                  "description": "Amount mute duration increases with each mute (in minutes)",
+                  "required": false
+                },
+                {
+                  "name": "mute_duration_mult",
+                  "type": "NUMBER",
+                  "description": "Amount mute duration gets multiplied by with each mute",
+                  "required": false
+                },
+                {
+                  "name": "mute_message",
+                  "type": "STRING",
+                  "description": "Message sent when a member triggers a filter",
+                  "required": false
+                }
+              ]
+            },
+            {
+              "name": "set_next_mute_duration",
+              "type": "SUB_COMMAND",
+              "description": "Set a member's next auto-mute duration",
+              "options": [
+                {
+                  "name": "member",
+                  "type": "USER",
+                  "description": "Member to set next auto-mute duration for",
+                  "required": true
+                },
+                {
+                  "name": "duration",
+                  "type": "NUMBER",
+                  "description": "Next auto-mute duration (in minutes)",
+                  "required": true
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "cmd": "ban",
+        "format": "${PREFIX}kick <member> [reason: <reason>]",
+        "desc": "Use this command to kick a member.",
+        "perms": [
+          "BOT_ADMIN"
+        ],
+        "moduleId": "moderation",
+        "canDM": false,
+        "canEdit": false,
+        "debug": false,
+        "parameters": [
+          {
+            "param": "<member>",
+            "values": [
+              {
+                "value": "Username",
+                "desc": "Discord username of the user to be kicked"
+              },
+              {
+                "value": "discord ID",
+                "desc": "discord ID of the user to be kicked"
+              },
+              {
+                "value": "discord member mention",
+                "desc": "Mention member to be kicked"
+              }
+            ]
+          },
+          {
+            "param": "<reason>",
+            "values": [
+              {
+                "value": "String",
+                "desc": "Optional reason for the ban"
+              }
+            ]
+          }
+        ],
+        "examples": [],
+        "data": {
+          "name": "kick",
+          "description": "Kick a member from the server",
+          "options": [
+            {
+              "name": "member",
+              "type": "USER",
+              "description": "Member to kick from the server",
+              "required": true
+            },
+            {
+              "name": "reason",
+              "type": "STRING",
+              "description": "Reason for kicking. The reason is DMed to member.",
+              "required": false
+            },
+            {
+              "name": "context_link",
+              "type": "STRING",
+              "description": "Link to a message or image for extra context",
               "required": false
             }
           ]
@@ -6664,7 +7128,7 @@
             {
               "name": "context_url",
               "type": "STRING",
-              "description": "Link to message or image for extra context.",
+              "description": "Link to a message or image for extra context.",
               "required": false
             }
           ]
@@ -6788,12 +7252,7 @@
             ]
           }
         ],
-        "examples": [
-          {
-            "command": "!unban Alex_",
-            "desc": "This will unban Alex_ from the server."
-          }
-        ],
+        "examples": [],
         "data": {
           "name": "unban",
           "description": "Unban a member",
@@ -6803,6 +7262,18 @@
               "type": "STRING",
               "description": "User ID of user to unban",
               "required": true
+            },
+            {
+              "name": "reason",
+              "type": "STRING",
+              "description": "Reason for unbanning. The reason is NOT DMed to user.",
+              "required": false
+            },
+            {
+              "name": "context_url",
+              "type": "STRING",
+              "description": "Link to a message or image for extra context.",
+              "required": false
             }
           ]
         }
@@ -6849,10 +7320,9 @@
           "options": [
             {
               "name": "member",
-              "type": "STRING",
+              "type": "USER",
               "description": "Member to unmute",
-              "required": true,
-              "autocomplete": true
+              "required": true
             }
           ]
         }
@@ -7055,7 +7525,7 @@
                 {
                   "name": "context_link",
                   "type": "STRING",
-                  "description": "Link to message or image for extra context",
+                  "description": "Link to a message or image for extra context",
                   "required": false
                 }
               ]
@@ -7393,7 +7863,7 @@
         ],
         "debug": true,
         "format": "${PREFIX}slugboard <threshold <number of reactions> | flag <emoji> | indicator <emoji> | color <hex color>>",
-        "desc": "Use this command to customise the functionality of Slug-Board.",
+        "desc": "Use this command to customise the functionality of Slugboard.",
         "parameters": [
           {
             "param": "<number of reactions>",
@@ -7473,12 +7943,6 @@
               "name": "allow_unflag",
               "description": "Can members use unflag reacts to count against flag reacts?",
               "type": "BOOLEAN",
-              "required": false
-            },
-            {
-              "name": "delete_threshold",
-              "description": "Number of unflag reacts more than flag reacts needed to delete the message",
-              "type": "INTEGER",
               "required": false
             },
             {
@@ -7732,6 +8196,11 @@
                   "description": "Role a user must not have to use the Ticketer"
                 },
                 {
+                  "name": "give_role",
+                  "type": "ROLE",
+                  "description": "Role to give to the user on creating a ticket"
+                },
+                {
                   "name": "do_feedback",
                   "type": "BOOLEAN",
                   "description": "Users will receive an ephemeral message notifying them that their ticket was submitted"
@@ -7740,6 +8209,16 @@
                   "name": "do_thread",
                   "type": "BOOLEAN",
                   "description": "If true, a thread will be created on the submitted ticket"
+                },
+                {
+                  "name": "init_message",
+                  "type": "STRING",
+                  "description": "Message to be sent in the accompanying thread"
+                },
+                {
+                  "name": "content_message",
+                  "type": "STRING",
+                  "description": "Message to be sent before the sent ticket embed"
                 }
               ]
             },

@@ -1,9 +1,7 @@
 {
   "help": {
     "cmd": "help",
-    "synonyms": [
-      "slugbot"
-    ],
+    "synonyms": [],
     "format": "${PREFIX}help [command]",
     "desc": "Use this command to get info on how to use a specific command. Use the command with no arguments to get a link to this documentation.",
     "perms": [
@@ -586,6 +584,13 @@
           "description": "View match history of this member",
           "type": "USER",
           "required": false
+        },
+        {
+          "name": "team",
+          "description": "View match history of this team",
+          "type": "STRING",
+          "required": false,
+          "autocomplete": true
         }
       ]
     }
@@ -1343,40 +1348,22 @@
     "format": "${PREFIX}song [setuser <lastFM username>]",
     "desc": "Use this command to get the streamers currently playing song."
   },
-  "hostkilled": {
+  "vip": {
     "perms": [
       "TWITCH_MOD"
     ],
     "moduleId": "stoevent",
     "debug": false,
-    "format": "${PREFIX}hostkilled",
+    "format": "${PREFIX}vip <add | remove> <twitch name>",
     "desc": "-"
   },
-  "phantomkilled": {
-    "perms": [
-      "TWITCH_MOD"
-    ],
-    "moduleId": "stoevent",
-    "debug": false,
-    "format": "${PREFIX}phantomkilled",
-    "desc": "-"
-  },
-  "shadow": {
-    "perms": [
-      "TWITCH_MOD"
-    ],
-    "moduleId": "stoevent",
-    "debug": false,
-    "format": "${PREFIX}shadow <add | remove> <twitch_name>",
-    "desc": "Add or remove a shadow host for the event."
-  },
-  "shadowkilled": {
+  "vipslain": {
     "perms": [
       "USER"
     ],
     "moduleId": "stoevent",
     "debug": false,
-    "format": "${PREFIX}phantomkilled",
+    "format": "${PREFIX}vipslain",
     "desc": "-"
   }
 }
