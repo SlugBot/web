@@ -12,6 +12,7 @@ title: Patch Notes
   - Updated `/suspend` to slash command.
   - Updated economy process injection log display.
   - Allowed `/elo` command to view team matches of a given member.
+  - Updated PvP Leaderboards to display 50 ranks
 
 ### Bug Fixes
   - Hopefully improved economy processes failing sometimes.
