@@ -20,6 +20,7 @@ title: Patch Notes
   - Fixed `/challenge team` command showing default teams.
   - Fixed last match played time being incorrectly saved.
   - Fixed matches not terminating when all members have left.
+  - Fixed `/suspend` failing in DMs.
 
 *****************************
 
