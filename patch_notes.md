@@ -5,11 +5,22 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 12th March
+
+### New Additions
+  - Added Pick/Ban options for leaderboard matches
+### Updates
+  - Improved Economy process initiation messages
+  - Improved Tourney role handling.
+
+*****************************
+
 ## 4th March
 ### Updates
   - Updated `/lockdown` to slash command.
   - Updated `/activate` to slash command.
   - Updated `/suspend` to slash command.
+  - Updated `/giveslugs` to slash command.
   - Updated economy process injection log display.
   - Allowed `/elo` command to view team matches of a given member.
   - Updated PvP Leaderboards to display 50 ranks
@@ -24,6 +35,8 @@ title: Patch Notes
   - Fixed matches not terminating when all members have left.
   - Fixed `/suspend` failing in DMs.
   - Fixed long command responses causing `/command add` to not send a confirmation.
+  - Fixed custom command value and count updates not being saved correctly.
+  - Fixed tourney reserve invites not being initiated.
 
 *****************************
 
