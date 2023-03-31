@@ -5,13 +5,24 @@ title: Patch Notes
 
 # PATCH NOTES
 
-## 12th March
+## 31st March
+### Updates
+  - Added LATCH process type.
+  - Added FORGET PROC button to scanned processes tab.
+  - Added tax to levelup cost.
 
+*****************************
+
+## 12th March
 ### New Additions
   - Added Pick/Ban options for leaderboard matches
+
 ### Updates
   - Improved Economy process initiation messages
   - Improved Tourney role handling.
+
+### Bug Fixes
+  - Fixed `/deletemessages` command failing when attempting to delete messages older than 14 days.
 
 *****************************
 
