@@ -6,10 +6,19 @@ title: Patch Notes
 # PATCH NOTES
 
 ## 31st March
-### Updates
+### New Additions
+  - New PROFILE_MOD border_celtic_0 added.
+  - New PROFILE_MOD border_plasmodia added.
   - Added LATCH process type.
+
+### Updates  
   - Added FORGET PROC button to scanned processes tab.
   - Added tax to levelup cost.
+  - leaderboard roleAtRank command moved to `/ladder roleatrank`.
+  - leaderboard roleAtRanks will now not be removed if the member qualifies for the role on at least one leaderboard.
+
+### Bug Fixes
+  - Fixed Pick/Ban embed failing to send if the icon emotes couldn't be fetched.
 
 *****************************
 
