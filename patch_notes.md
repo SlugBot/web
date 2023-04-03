@@ -14,8 +14,9 @@ title: Patch Notes
 ### Updates  
   - Added FORGET PROC button to scanned processes tab.
   - Added tax to levelup cost.
-  - leaderboard roleAtRank command moved to `/ladder roleatrank`.
-  - leaderboard roleAtRanks will now not be removed if the member qualifies for the role on at least one leaderboard.
+  - Leaderboard roleAtRank command moved to `/ladder roleatrank`.
+  - Leaderboard roleAtRanks will now not be removed if the member qualifies for the role on at least one leaderboard.
+  - Updated `${MATCH}` flag to allow an index argument.
 
 ### Bug Fixes
   - Fixed Pick/Ban embed failing to send if the icon emotes couldn't be fetched.
