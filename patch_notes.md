@@ -5,7 +5,13 @@ title: Patch Notes
 
 # PATCH NOTES
 
-## 31st March
+## 16th April 2023
+### Bug Fixes
+  - Fixed custom permissions for `logging` being ignored.
+
+*****************************
+
+## 31st March 2023
 ### New Additions
   - New PROFILE_MOD border_celtic_0 added.
   - New PROFILE_MOD border_plasmodia added.
@@ -23,7 +29,7 @@ title: Patch Notes
 
 *****************************
 
-## 12th March
+## 12th March 2023
 ### New Additions
   - Added Pick/Ban options for leaderboard matches
 
@@ -36,7 +42,7 @@ title: Patch Notes
 
 *****************************
 
-## 4th March
+## 4th March 2023
 ### Updates
   - Updated `/lockdown` to slash command.
   - Updated `/activate` to slash command.
