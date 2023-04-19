@@ -6,8 +6,13 @@ title: Patch Notes
 # PATCH NOTES
 
 ## 16th April 2023
+### Updates
+  - Manually unmuting a muted member with an infinite duration will now log the updated mute duration.
+  
 ### Bug Fixes
   - Fixed custom permissions for `logging` being ignored.
+  - Fixed unmutes not getting logged.
+  - Fixed timed mutes not unmuting at the correct time when using a mute role.
 
 *****************************
 
