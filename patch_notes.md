@@ -8,6 +8,7 @@ title: Patch Notes
 ## 16th April 2023
 ### Updates
   - Manually unmuting a muted member with an infinite duration will now log the updated mute duration.
+  - `/say` now allows for an array of embeds in JSON format to all be sent in one message. 
   
 ### Bug Fixes
   - Fixed custom permissions for `logging` being ignored.
