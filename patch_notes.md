@@ -13,6 +13,7 @@ title: Patch Notes
 ### Updates
   - Manually unmuting a muted member with an infinite duration will now log the updated mute duration.
   - `/say` now allows for an array of embeds in JSON format to all be sent in one message. 
+  - Economy transfers over time are now only logged every 10% as to not spam log display.
 
 ### Bug Fixes
   - Fixed custom permissions for `logging` being ignored.
