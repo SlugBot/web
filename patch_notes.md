@@ -6,10 +6,14 @@ title: Patch Notes
 # PATCH NOTES
 
 ## 16th April 2023
+### New Additions
+  - New PROFILE_MOD border_cloud_0 added.
+  - New PROFILE_MOD border_cloud_1 added.
+  
 ### Updates
   - Manually unmuting a muted member with an infinite duration will now log the updated mute duration.
   - `/say` now allows for an array of embeds in JSON format to all be sent in one message. 
-  
+
 ### Bug Fixes
   - Fixed custom permissions for `logging` being ignored.
   - Fixed unmutes not getting logged.
