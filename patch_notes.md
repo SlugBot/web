@@ -5,6 +5,13 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 24th April 2023
+### Updates
+  - Added secondary and tertiary role options to roleReacts.
+  - Removing roleReact options is now done by specifying the primary role of an option. 
+
+*****************************
+
 ## 16th April 2023
 ### New Additions
   - New PROFILE_MOD border_cloud_0 added.
