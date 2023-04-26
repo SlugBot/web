@@ -8,7 +8,8 @@ title: Patch Notes
 ## 24th April 2023
 ### Updates
   - Added secondary and tertiary role options to roleReacts.
-  - Removing roleReact options is now done by specifying the primary role of an option. 
+  - Removing roleReact options is now done by specifying the primary role of an option.
+  - Improved channel permissions update logging. 
 
 *****************************
 
