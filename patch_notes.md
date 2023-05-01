@@ -9,7 +9,11 @@ title: Patch Notes
 ### Updates
   - Added secondary and tertiary role options to roleReacts.
   - Removing roleReact options is now done by specifying the primary role of an option.
-  - Improved channel permissions update logging. 
+  - Improved channel permissions update logging.
+  - `/mute` now asks for confirmation before muting.
+
+### Bug Fixes
+  - Fixed `/weaponer bestinclass` using invalid stroke by default.
 
 *****************************
 
