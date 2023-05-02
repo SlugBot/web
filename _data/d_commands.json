@@ -3338,7 +3338,7 @@
     ],
     "canDM": true,
     "canEdit": true,
-    "format": "!log [member]",
+    "format": "${prefix}log [member]",
     "desc": "View account logs of your account or an account of a user you have a TRACKER on."
   },
   "plant": {
