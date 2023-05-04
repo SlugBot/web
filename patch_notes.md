@@ -11,6 +11,7 @@ title: Patch Notes
   - Removing roleReact options is now done by specifying the primary role of an option.
   - Improved channel permissions update logging.
   - `/mute` now asks for confirmation before muting.
+  - Reduced cache memory usage.
 
 ### Bug Fixes
   - Fixed `/weaponer bestinclass` using invalid stroke by default.
