@@ -5,6 +5,15 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 4th May 2023
+### Updates
+  - Added permissions control for slugboard flagging.
+  
+### Bug Fixes
+  - Fixed permissions error when whitelisted channels/roles are deleted.
+
+*****************************
+
 ## 24th April 2023
 ### Updates
   - Added secondary and tertiary role options to roleReacts.
