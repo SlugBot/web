@@ -11,6 +11,7 @@ title: Patch Notes
   
 ### Bug Fixes
   - Fixed permissions error when whitelisted channels/roles are deleted.
+  - Fixed member search for various commands not working.
 
 *****************************
 
