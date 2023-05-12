@@ -5,6 +5,15 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 12nd May 2023
+### New Additions
+  - Added `er-build-planner.nyasu.business` Elden Ring build planner embedder.
+
+### Updates
+  - Updated formatting for Soulsplanner embedder.
+
+*****************************
+
 ## 4th May 2023
 ### Updates
   - Added permissions control for slugboard flagging.
@@ -12,6 +21,8 @@ title: Patch Notes
 ### Bug Fixes
   - Fixed permissions error when whitelisted channels/roles are deleted.
   - Fixed member search for various commands not working.
+  - Fixed Bug where set LB members were not decaying.
+  - Fixed Bug where `/elo` would not respond.
 
 *****************************
 
