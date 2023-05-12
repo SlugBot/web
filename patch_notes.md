@@ -11,6 +11,8 @@ title: Patch Notes
 
 ### Updates
   - Updated formatting for Soulsplanner embedder.
+  - Added `EMOJI CREATE` event logger.
+  - Added `EMOJI DELETE` event logger.
 
 *****************************
 
