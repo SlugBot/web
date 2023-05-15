@@ -5,6 +5,18 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 13th May 2023
+### Updates
+  - Improved build embedding feedback.
+  - Added setting `${value}` value shortcuts.
+
+### Bug Fixes
+  - Fixed some builds not being displayed correctly.
+  - Fixed error feedback not displaying.
+  - Fixed custom commands on twitch not working.
+
+*****************************
+
 ## 12nd May 2023
 ### New Additions
   - Added `er-build-planner.nyasu.business` Elden Ring build planner embedder.
