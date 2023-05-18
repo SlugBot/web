@@ -10,6 +10,7 @@ title: Patch Notes
   - Improved build embedding feedback.
   - Added setting `${value}` value shortcuts.
   - image URLs sent in ticketer's responses will now attempt to embed.
+  - Added executor to MEMBER_UPDATE event log.
 
 ### Bug Fixes
   - Fixed some builds not being displayed correctly.
