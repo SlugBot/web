@@ -5,7 +5,19 @@ title: Patch Notes
 
 # PATCH NOTES
 
-## 13th May 2023
+## 23rd May 2023
+### Updates
+  - Updated `/weaponer` display formatting.
+  - Updated `/weaponds3` display formatting.
+  - Updated `/allocatestatser` display formatting.
+  - Updated `/allocatestatsds3` display formatting.
+
+### Bug Fixes
+  - Fixed `/tourney` autocomplete list not displaying all past tourneys.
+
+*****************************
+
+## 13rd May 2023
 ### Updates
   - Improved build embedding feedback.
   - Added setting `${value}` value shortcuts.
