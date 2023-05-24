@@ -11,6 +11,7 @@ title: Patch Notes
   - Updated `/weaponds3` display formatting.
   - Updated `/allocatestatser` display formatting.
   - Updated `/allocatestatsds3` display formatting.
+  - Added ELO display to `/tourney status`.
 
 ### Bug Fixes
   - Fixed `/tourney` autocomplete list not displaying all past tourneys.
