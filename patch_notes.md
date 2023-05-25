@@ -5,6 +5,14 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 25th May 2023
+### Updates
+  - Allowed for any number of Slugboards
+  - Added delete threshold setting.
+  - Added flag member list on hover.
+  
+*****************************
+
 ## 23rd May 2023
 ### Updates
   - Updated `/weaponer` display formatting.
