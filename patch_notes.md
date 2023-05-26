@@ -10,6 +10,10 @@ title: Patch Notes
   - Allowed for any number of Slugboards
   - Added delete threshold setting.
   - Added flag member list on hover.
+  - Added ER build planner support to `/build` commands.
+
+### Bug Fixes
+  - Fixed `!addbuild` twitch command.
   
 *****************************
 
