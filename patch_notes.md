@@ -11,9 +11,14 @@ title: Patch Notes
   - Added delete threshold setting.
   - Added flag member list on hover.
   - Added ER build planner support to `/build` commands.
+  - Added confirmation to `/ladder reset`.
+  - Added point, matches played, and ELO options to `/ladder reset`.
+  - Updated `eloBlend` ladder point setting to be a point multiplier that tries to pull player's relative points towards their relative ELOs. 
 
 ### Bug Fixes
   - Fixed `!addbuild` twitch command.
+  - Fixed `/weapon bestinclass` commands always displaying damage with status included.
+  - Fixed `/weapon bestinclass` damage display disappearing when the command timed out.
   
 *****************************
 
