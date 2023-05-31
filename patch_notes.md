@@ -19,6 +19,8 @@ title: Patch Notes
   - Fixed `!addbuild` twitch command.
   - Fixed `/weapon bestinclass` commands always displaying damage with status included.
   - Fixed `/weapon bestinclass` damage display disappearing when the command timed out.
+  - Fixed stock order bug.
+  - Disabled process shop bid button if over trade limit.
   
 *****************************
 
