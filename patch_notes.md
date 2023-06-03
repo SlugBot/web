@@ -13,7 +13,8 @@ title: Patch Notes
   - Added ER build planner support to `/build` commands.
   - Added confirmation to `/ladder reset`.
   - Added point, matches played, and ELO options to `/ladder reset`.
-  - Updated `eloBlend` ladder point setting to be a point multiplier that tries to pull player's relative points towards their relative ELOs. 
+  - Updated `eloBlend` ladder point setting to be a point multiplier that tries to pull player's relative points towards their relative ELOs.
+  - Added `timeBeforeCleanup` ladder setting to control when completed challenge messages get deleted.
 
 ### Bug Fixes
   - Fixed `!addbuild` twitch command.
@@ -21,6 +22,7 @@ title: Patch Notes
   - Fixed `/weapon bestinclass` damage display disappearing when the command timed out.
   - Fixed stock order bug.
   - Disabled process shop bid button if over trade limit.
+  - Several Slugboard bug fixes.
   
 *****************************
 
