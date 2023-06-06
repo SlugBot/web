@@ -5,6 +5,20 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 4th June 2023
+### Updates
+  - Updated `poll` to slash command.
+  - Updated poll interaction to use buttons.
+  - Updated bets interaction to use buttons.
+  - Added `timeBeforeCleanup` ladder setting to control when completed challenge messages get deleted.
+  - Added `clear_option` setting to RoleReacts.
+
+### Bug Fixes
+  - Several Slugboard bug fixes.
+  - Fixed Stock going under notification not being sent.
+
+*****************************
+
 ## 25th May 2023
 ### Updates
   - Allowed for any number of Slugboards
@@ -14,7 +28,7 @@ title: Patch Notes
   - Added confirmation to `/ladder reset`.
   - Added point, matches played, and ELO options to `/ladder reset`.
   - Updated `eloBlend` ladder point setting to be a point multiplier that tries to pull player's relative points towards their relative ELOs.
-  - Added `timeBeforeCleanup` ladder setting to control when completed challenge messages get deleted.
+
 
 ### Bug Fixes
   - Fixed `!addbuild` twitch command.
@@ -22,7 +36,6 @@ title: Patch Notes
   - Fixed `/weapon bestinclass` damage display disappearing when the command timed out.
   - Fixed stock order bug.
   - Disabled process shop bid button if over trade limit.
-  - Several Slugboard bug fixes.
   
 *****************************
 
