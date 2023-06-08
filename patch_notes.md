@@ -19,6 +19,7 @@ title: Patch Notes
   - Fixed Stock going under notification not being sent.
   - Fixed CLONER processes not expiring when they should.
   - Maybe fixed #lost-and-found process message sending.
+  - Fixed issue causing slugbot to be untargetable in certain servers.
 
 *****************************
 
