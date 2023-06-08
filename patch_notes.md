@@ -12,10 +12,13 @@ title: Patch Notes
   - Updated bets interaction to use buttons.
   - Added `timeBeforeCleanup` ladder setting to control when completed challenge messages get deleted.
   - Added `clear_option` setting to RoleReacts.
+  - Updated CLONER trigger notification messages to include uses until expire.
 
 ### Bug Fixes
   - Several Slugboard bug fixes.
   - Fixed Stock going under notification not being sent.
+  - Fixed CLONER processes not expiring when they should.
+  - Maybe fixed #lost-and-found process message sending.
 
 *****************************
 
