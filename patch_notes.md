@@ -13,6 +13,7 @@ title: Patch Notes
   - Added `timeBeforeCleanup` ladder setting to control when completed challenge messages get deleted.
   - Added `clear_option` setting to RoleReacts.
   - Updated CLONER trigger notification messages to include uses until expire.
+  - Added `!cooldown` twitch command.
 
 ### Bug Fixes
   - Several Slugboard bug fixes.
