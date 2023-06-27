@@ -5,6 +5,14 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 27th June 2023
+### Updates
+  - Various discord event logging improvements.
+  - Updated `/rep` to slash command.
+  - Updated `/setcolor` to slash command.
+
+*****************************
+
 ## 4th June 2023
 ### Updates
   - Updated `poll` to slash command.
