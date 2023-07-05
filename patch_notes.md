@@ -5,6 +5,22 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 5th July 2023
+### Updates
+  - Updated MARKS tab of `/slugs` menu.
+  - Updated CONFIG tab of `/slugs` menu to display planted process count.
+  - Added activate/suspend button to `/slug` menu.
+  - `/rootkit` rework
+    - Using the `/rootkit` command now puts the user in 'rootkit mode'.
+    - All subsequent commands are run as if the rootkitted user ran them.
+    - User can instantly clean a process if they have a rootkit on the owner and the process was planted via a rootkit.
+    - User can activate/suspend a process if they have a rootkit on the owner and the process was planted via a rootkit.
+
+### Bug Fixes
+  - Fixed HIJACKED processes not inheriting rootkit owner if HIJACK or HIJACKER was planted via rootkit.
+
+*****************************
+
 ## 27th June 2023
 ### Updates
   - Various discord event logging improvements.
