@@ -8,6 +8,7 @@ title: Patch Notes
 ## 5th July 2023
 ### Updates
   - Updated `/team` command to allow the removal of non-members from teams.
+  - Updated `/respecc` to slash command.
   - Updated MARKS tab of `/slugs` menu.
   - Updated CONFIG tab of `/slugs` menu to display planted process count.
   - Added activate/suspend button to `/slug` menu.
@@ -21,6 +22,9 @@ title: Patch Notes
   - Fixed HIJACKED processes not inheriting rootkit owner if HIJACK or HIJACKER was planted via rootkit.
   - Fixed `/steal` displaying the wrong target options when run through a rootkit.
   - Fixed `/leaderboard ELO` displaying members/teams with no matches played.
+  - Fixed bug causing `/upgrade` and `/install` commands to fail.
+  - Fixed `/respecc` not responding.
+  - Fixed ROOTKITs not needing to be upgraded to v1 to run levelups.
 
 *****************************
 
