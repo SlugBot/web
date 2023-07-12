@@ -5,6 +5,15 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 12th July 2023
+### Updates
+  - Added `Invite Info` text field for `/tourney create` that will only be shown in the invite message.
+
+### Bug Fixes
+  - Fixed twitch fightclub integration with pvp leaderboards.
+
+*****************************
+
 ## 5th July 2023
 ### Updates
   - Updated `/team` command to allow the removal of non-members from teams.
