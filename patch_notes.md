@@ -8,6 +8,7 @@ title: Patch Notes
 ## 12th July 2023
 ### Updates
   - Added `Invite Info` text field for `/tourney create` that will only be shown in the invite message.
+  - Added `/ladder undo` command to undo a match.
 
 ### Bug Fixes
   - Fixed twitch fightclub integration with pvp leaderboards.
