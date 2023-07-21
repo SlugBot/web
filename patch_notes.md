@@ -10,6 +10,7 @@ title: Patch Notes
   - Added `Invite Info` text field for `/tourney create` that will only be shown in the invite message.
   - Added `/ladder undo` command to undo a match.
   - Updated profiles to display usernames instead of obsolete tags.
+  - Improved `/slugboard` board selection autocomplete.
 
 ### Bug Fixes
   - Fixed twitch fightclub integration with pvp leaderboards.
