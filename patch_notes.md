@@ -6,6 +6,9 @@ title: Patch Notes
 # PATCH NOTES
 
 ## 12th July 2023
+### New Additions
+  - Added discord repeat reminders with `/reminder`.
+   
 ### Updates
   - Added `Invite Info` text field for `/tourney create` that will only be shown in the invite message.
   - Added `/ladder undo` command to undo a match.
