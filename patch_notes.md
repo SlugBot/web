@@ -19,6 +19,7 @@ title: Patch Notes
   - Fixed twitch fightclub integration with pvp leaderboards.
   - Fixed a bug causing `/activate` to fail in some conditions.
   - Fixed ladder match display bug regarding player names with special characters.
+  - Fixed ladder point decay not decaying small point totals.
 
 *****************************
 
