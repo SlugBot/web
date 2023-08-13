@@ -5,6 +5,14 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 13th August 2023
+### Bug Fixes
+  - Fixed bug where daily match limits on a PvP leaderboard would cause `/challenge` commands to become unresponsive.
+  - Fixed bug where time-limited polls would keep getting updated.
+  - Fixed bug where Dark Souls builds would be added with incorrect level type.
+
+*****************************
+
 ## 12th July 2023
 ### New Additions
   - Added discord repeat reminders with `/reminder`.
