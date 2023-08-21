@@ -5,6 +5,12 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 21st August 2023
+### Updates
+  - Updated Elden Ring weapon command crit motion values.
+
+*****************************
+
 ## 13th August 2023
 ### Bug Fixes
   - Fixed bug where daily match limits on a PvP leaderboard would cause `/challenge` commands to become unresponsive.
@@ -90,7 +96,6 @@ title: Patch Notes
   - Added confirmation to `/ladder reset`.
   - Added point, matches played, and ELO options to `/ladder reset`.
   - Updated `eloBlend` ladder point setting to be a point multiplier that tries to pull player's relative points towards their relative ELOs.
-
 
 ### Bug Fixes
   - Fixed `!addbuild` twitch command.
