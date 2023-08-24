@@ -8,6 +8,8 @@ title: Patch Notes
 ## 21st August 2023
 ### Updates
   - Updated Elden Ring weapon command crit motion values.
+  - Updated ticketer module to allow ticketer attaching.
+    - New ticketer buttons can be added to existing ticketer messages.
 
 *****************************
 
