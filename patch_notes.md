@@ -10,6 +10,8 @@ title: Patch Notes
   - Updated Elden Ring weapon command crit motion values.
   - Updated ticketer module to allow ticketer attaching.
     - New ticketer buttons can be added to existing ticketer messages.
+  - Updated `/deletemessages` command to allow an earliest and latest message to delete all messages between.
+  - Improved bulk message delete logging.
 
 *****************************
 
