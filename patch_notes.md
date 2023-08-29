@@ -8,10 +8,14 @@ title: Patch Notes
 ## 21st August 2023
 ### Updates
   - Updated Elden Ring weapon command crit motion values.
+  - Updated Elden Ring weapon command defence values.
   - Updated ticketer module to allow ticketer attaching.
     - New ticketer buttons can be added to existing ticketer messages.
   - Updated `/deletemessages` command to allow an earliest and latest message to delete all messages between.
   - Improved bulk message delete logging.
+
+### Bug Fixes
+  - Fixed `!fc start` not working on twitch
 
 *****************************
 
