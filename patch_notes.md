@@ -6,6 +6,10 @@ title: Patch Notes
 # PATCH NOTES
 
 ## 28th September 2023
+### New Additions
+  - Auction house channel where bid notifications are listed.
+  - Bid button to last bid notifications to allow quick out-bids.
+  
 ### Updates
   - Unmute logs now display info on the mute being unmuted.
   - Unmute logs now display who unmuted the user if it was a manual unmute.
@@ -13,6 +17,7 @@ title: Patch Notes
   - Added invite used to `SUSPICIOUS JOIN` event log if possible
   - Both `er-build-planner.nyasu.business` and `er-inventory.nyasu.business` build links will now be embedded if possible.
   - Updated `/welcomemessage` to slash command.
+
 
 *****************************
 
