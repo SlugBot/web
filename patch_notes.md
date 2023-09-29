@@ -5,6 +5,28 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 28th September 2023
+### Updates
+  - Unmute logs now display info on the mute being unmuted.
+  - Unmute logs now display who unmuted the user if it was a manual unmute.
+  - `/unmute` command can now be given a `reason` that will be logged.
+  - Added invite used to `SUSPICIOUS JOIN` event log if possible
+  - Both `er-build-planner.nyasu.business` and `er-inventory.nyasu.business` build links will now be embedded if possible.
+  - Updated `/welcomemessage` to slash command.
+
+*****************************
+
+## 14th September 2023
+### Updates
+  - Brought back `!rep`
+  - Brought back `!slime`
+  - Added point leaderboards to `/leaderboard` command.
+    - `/leaderboard pvp` for points leaderboard.
+    - `/leaderboard pvp_elo` for Elo leaderboard.
+  - Improved leaderboard match stat logging to allow for better tracking of info over time in the future.
+
+*****************************
+
 ## 21st August 2023
 ### Updates
   - Updated Elden Ring weapon command crit motion values.
