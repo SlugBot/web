@@ -17,7 +17,13 @@ title: Patch Notes
   - Added invite used to `SUSPICIOUS JOIN` event log if possible
   - Both `er-build-planner.nyasu.business` and `er-inventory.nyasu.business` build links will now be embedded if possible.
   - Updated `/welcomemessage` to slash command.
+  - Tourney invites will now not timeout, and instead just send a new invite.
+  - Added event log for ticket submissions.
 
+### Bug Fixes
+  - Fixed ticket ID index labels being displayed incorrectly.
+  - Fixed tourney invites not being sent.
+  - Fixed tourney invites being sent too frequently.
 
 *****************************
 
