@@ -5,6 +5,22 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 1st October 2023
+### New Additions
+  - Added functionality for profile element mods.
+  - Added loads of profile stickers.
+
+### Updates
+  - Profile elements are now randomly generated and added to the shop.
+
+### Bug Fixes
+  - Removed obsolete tourney invite timeout string from invite embeds.
+  - Fixed profile being displayed on all process bids.
+  - Fixed final sale not being sent to auction channel.
+  - Fixed inconsistency in bidder name obfuscation.
+
+*****************************
+
 ## 28th September 2023
 ### New Additions
   - Auction house channel where bid notifications are listed.
