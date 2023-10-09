@@ -9,15 +9,24 @@ title: Patch Notes
 ### New Additions
   - Added functionality for profile element mods.
   - Added loads of profile stickers.
+    - Several Elden Ring weapon icons
+    - All Elden Ring talisman icons
+    - Several blob emoji
+    - Several suggested emoji
+  - New PROFILE_MOD border_pthumeru added.
 
 ### Updates
   - Profile elements are now randomly generated and added to the shop.
+  - Notifications sent to Auction house channel when a process is put on sale.
 
 ### Bug Fixes
   - Removed obsolete tourney invite timeout string from invite embeds.
   - Fixed profile being displayed on all process bids.
   - Fixed final sale not being sent to auction channel.
   - Fixed inconsistency in bidder name obfuscation.
+  - Disabled bidders being able to bid on a process they already have the highest bid on.
+  - Fixed display error in Elden Ring build embeds where Endurance was shown as Vitality.
+  - Fixed display error in Elden Ring build embeds where Mind was shown below Endurance.
 
 *****************************
 
