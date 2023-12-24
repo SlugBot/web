@@ -5,6 +5,41 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 23rd December 2023
+### Updates
+- Updated `/scan` to slash command.
+- Improved `TRANSFER` process messages.
+- The string at the top of the leaderboard embed can now be customised.
+- Improved various autocomplete fields in `/ladder` command.
+- Minor improvement to word filtering.
+
+### Bug Fixes
+- Fixed incorrect starting bet being made on leaderboard challenges.
+- Fixed commands being added multiple times if the attempts were cancelled.
+
+*****************************
+
+## 9th December 2023
+### Updates
+- Improved Knuckleslug AI
+- Reduced Knuckleslug payout to 1.75x
+
+*****************************
+
+## 1st December 2023
+### Updates
+- Updated Tutorial strings to be more up-to-date.
+- Improved caching for server word filters to increase performance.
+- New PROFILE_MOD border_loran added.
+
+### Bug Fixes
+- Fixed tutorial not responding.
+- Fixed incorrect plant count of process types in config menu.
+- Fixed incorrect log being shown when process planted on self.
+- Fixed typo in filter description.
+
+*****************************
+
 ## 1st October 2023
 ### New Additions
   - Added functionality for profile element mods.
