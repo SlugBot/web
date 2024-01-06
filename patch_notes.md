@@ -5,6 +5,18 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## 2nd January 2023
+### Updates
+- Added `Remove Reminder` button to `/reminder list`.
+- Added `always_send` option to `/reminder add`, allowing reminders to be force-sent even if the previous reminder was within the last few messages in that channel.
+
+### Bug Fixes
+- Fixed formatting bug in `STEAL` warning DM.
+- Fixed incorrect `/scan` prompt in `STEAL` warning DM.
+- Fixed vulnerability with imported module used in flag replacers.
+
+*****************************
+
 ## 23rd December 2023
 ### Updates
 - Updated `/scan` to slash command.
