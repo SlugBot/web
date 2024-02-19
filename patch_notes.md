@@ -5,15 +5,29 @@ title: Patch Notes
 
 # PATCH NOTES
 
-## 2nd January 2023
+## January 2024
+### New Additions
+- Added platform limit option to `/challenge`.
 ### Updates
 - Added `Remove Reminder` button to `/reminder list`.
 - Added `always_send` option to `/reminder add`, allowing reminders to be force-sent even if the previous reminder was within the last few messages in that channel.
-
+- Allowed `!maths` to be used in DMs.
+- Completely rewrote economy investments backend. `/invest` should respond much quicker now.
+- Added past usernames list to member join logs for returning members.
+- `/warn list` has been removed and its information can now be viewed in `/userinfo`.
+- Removed `/getrawmessage` command as discord now allows you to copy raw message text.
 ### Bug Fixes
 - Fixed formatting bug in `STEAL` warning DM.
 - Fixed incorrect `/scan` prompt in `STEAL` warning DM.
-- Fixed vulnerability with imported module used in flag replacers.
+- Fixed vulnerability with imported `math.js` module used in flag replacers.
+- Profiles now show display name instead of username.
+- Fixed `/elo` command not display past matches for teams.
+- Fixed Slugboard not responding to flags due to Discord changing how custom emojis are embedded.
+- Fixed incorrect motion values for the Wakizashi and Lance.
+- Fixed interactions from old tourneys still being processed.
+- Fixed `/ban` command failing to respond if no reason is given.
+- Fixed ticketers not sending ticket if feedback contains an invalid URL.
+
 
 *****************************
 
