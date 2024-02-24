@@ -101,6 +101,8 @@ This flag will attempt to resolve the given `<logic expression>` to either **TRU
 This flag will be replaced by the result of evaluating the expression given. Other replacer flags can be nested within this flag and factored into the expression - for example `${MATH: ${COUNT} + 10}`.
 ### ${CALL: \<command> [arg0 [arg1 [...]]]}
 This replacer flag will replace itself with the response of the given command. This essentially turns commands into functions. The arguments passed in can be referenced in the called command's response with `${ARG: <arg index>}`
+### ${CALLONLY}
+If this flag is present in the response of a command, that command can only be used through `${CALL: }` and by no other means.
 ### ${TIMEOUT: \<duration>}
 This flag will timeout the user who triggered the function for `<duration>` seconds if possible. This flag only applies for Twitch functions. SlugBot must be a moderator in the relevant Twitch chat. The flag is removed from the response.
 ### ${MUTE: \<duration>}
