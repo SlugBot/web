@@ -5,6 +5,60 @@ title: Patch Notes
 
 # PATCH NOTES
 
+## March 2024
+### New Additions
+- Added `/ladder info` command to show leaderboard statistics.
+- Added Swiss Tourney system to PvP leaderboards.
+### Updates
+- You can now move `/rolereact`s with `/rolereact move` 
+- You can now move `/ticketer`s with `/ticketer move` 
+- `/ladder player_override force` now creates a thread on the created challenge.
+- `/ladder info` will account for reset times by default, and ignore matches before resets if the time range includes a reset.
+- PvP leaderboard matches can now handle draws.
+- Banning using Discord's native ban option will now create a SlugBot mod log.
+- A fraction of bets on PvP leaderboard matches are now given to the players of the match.
+- `/slugboard create` now takes an initial emoji flag parameter.
+- `/ladder info` now displays number of unique players in the given period.
+- `/ladder info` now displays top three greatest Elo improvements.
+### Bug Fixes
+- Fixed `/leaderboard activity weekly` being shown when weekly activity is disabled.
+- Fixed activity Exp not updating on profiles.
+- Fixed bug in `/blackjack` where draws were displayed as wins.
+- Fixed bug where the wrong emoji was listed in `/leaderboard slugboard`.
+- Fixed bug causing `/userinfo` to fail when an invalid user ID was given.
+- Fixed bug causing `/blackjack` to not pay out on getting blackjack.
+- Fixed bug causing no persistent roles to be listed in `/persistentrole list`.
+
+***
+
+## February 2024
+### New Additions
+- You can now optionally schedule when `/say` will send the given message using the `schedule_send_time` field.
+- Added `${CALLONLY}` flag replacer. Any command with this flag in its response can only be used through `${CALL: }`.
+### Updates
+- Bans and timeouts handled directly through Discord will now be logged in `/userinfo`.
+- `/userinfo` `user_id` field will now also do a similar name check if a name was given instead of a user ID.
+- Various ladder feedback messages will now link back to the leaderboard message.
+- You can now supply an ER build planner link to `/weaponer` and `/allocatestatser` to use as a recipient for damage calculations.
+- Added link back to message for `messageReactionAdd` and `messageReactionRemove` event logs.
+- Removed SlugTactics mini-game.
+### Bug Fixes
+- Custom RegEx commands are no-longer forced lower case, breaking some RegEx tokens.
+- Fixed invest logic counting number of active members incorrectly.
+- Fixed `/range er` failing to respond if weapon upgrade level was set to `+11`
+- Fixed `/say` command erroring when giving embed JSON that contained colour hex code.
+- Fixed `/say` command not allowing editing of existing SlugBot messages. 
+- Fixed `/weaponer bestinclass` only showing the dagger weapon class.
+- Fixed `/team` command not allowing team leader to update team.
+- Fixed `STEAL` process messages not updating.
+- Fixed `/tourney` command confirm button not responding.
+- Fixed `/poll create` sending twice after cancelling once.
+- Fixed `/command add` not responding if the response is longer than 1024 characters.
+- Fixed `/blackjack` card displays on mobile discord.
+- Fixed `/knuckleslug` not pinging opponent when playing against another member.
+
+***
+
 ## January 2024
 ### New Additions
 - Added platform limit option to `/challenge`.
@@ -28,8 +82,7 @@ title: Patch Notes
 - Fixed `/ban` command failing to respond if no reason is given.
 - Fixed ticketers not sending ticket if feedback contains an invalid URL.
 
-
-*****************************
+***
 
 ## 23rd December 2023
 ### Updates
@@ -43,14 +96,14 @@ title: Patch Notes
 - Fixed incorrect starting bet being made on leaderboard challenges.
 - Fixed commands being added multiple times if the attempts were cancelled.
 
-*****************************
+***
 
 ## 9th December 2023
 ### Updates
 - Improved Knuckleslug AI
 - Reduced Knuckleslug payout to 1.75x
 
-*****************************
+***
 
 ## 1st December 2023
 ### Updates
@@ -64,7 +117,7 @@ title: Patch Notes
 - Fixed incorrect log being shown when process planted on self.
 - Fixed typo in filter description.
 
-*****************************
+***
 
 ## 1st October 2023
 ### New Additions
@@ -89,7 +142,7 @@ title: Patch Notes
   - Fixed display error in Elden Ring build embeds where Endurance was shown as Vitality.
   - Fixed display error in Elden Ring build embeds where Mind was shown below Endurance.
 
-*****************************
+***
 
 ## 28th September 2023
 ### New Additions
@@ -111,7 +164,7 @@ title: Patch Notes
   - Fixed tourney invites not being sent.
   - Fixed tourney invites being sent too frequently.
 
-*****************************
+***
 
 ## 14th September 2023
 ### Updates
@@ -122,7 +175,7 @@ title: Patch Notes
     - `/leaderboard pvp_elo` for Elo leaderboard.
   - Improved leaderboard match stat logging to allow for better tracking of info over time in the future.
 
-*****************************
+***
 
 ## 21st August 2023
 ### Updates
@@ -136,7 +189,7 @@ title: Patch Notes
 ### Bug Fixes
   - Fixed `!fc start` not working on twitch
 
-*****************************
+***
 
 ## 13th August 2023
 ### Bug Fixes
@@ -144,7 +197,7 @@ title: Patch Notes
   - Fixed bug where time-limited polls would keep getting updated.
   - Fixed bug where Dark Souls builds would be added with incorrect level type.
 
-*****************************
+***
 
 ## 12th July 2023
 ### New Additions
@@ -162,7 +215,7 @@ title: Patch Notes
   - Fixed ladder match display bug regarding player names with special characters.
   - Fixed ladder point decay not decaying small point totals.
 
-*****************************
+***
 
 ## 5th July 2023
 ### Updates
@@ -185,7 +238,7 @@ title: Patch Notes
   - Fixed `/respecc` not responding.
   - Fixed ROOTKITs not needing to be upgraded to v1 to run levelups.
 
-*****************************
+***
 
 ## 27th June 2023
 ### Updates
@@ -193,7 +246,7 @@ title: Patch Notes
   - Updated `/rep` to slash command.
   - Updated `/setcolor` to slash command.
 
-*****************************
+***
 
 ## 4th June 2023
 ### Updates
@@ -212,7 +265,7 @@ title: Patch Notes
   - Maybe fixed #lost-and-found process message sending.
   - Fixed issue causing slugbot to be untargetable in certain servers.
 
-*****************************
+***
 
 ## 25th May 2023
 ### Updates
@@ -231,7 +284,7 @@ title: Patch Notes
   - Fixed stock order bug.
   - Disabled process shop bid button if over trade limit.
   
-*****************************
+***
 
 ## 23rd May 2023
 ### Updates
@@ -244,7 +297,7 @@ title: Patch Notes
 ### Bug Fixes
   - Fixed `/tourney` autocomplete list not displaying all past tourneys.
 
-*****************************
+***
 
 ## 13rd May 2023
 ### Updates
@@ -258,7 +311,7 @@ title: Patch Notes
   - Fixed error feedback not displaying.
   - Fixed custom commands on twitch not working.
 
-*****************************
+***
 
 ## 12nd May 2023
 ### New Additions
@@ -269,7 +322,7 @@ title: Patch Notes
   - Added `EMOJI CREATE` event logger.
   - Added `EMOJI DELETE` event logger.
 
-*****************************
+***
 
 ## 4th May 2023
 ### Updates
@@ -281,7 +334,7 @@ title: Patch Notes
   - Fixed Bug where set LB members were not decaying.
   - Fixed Bug where `/elo` would not respond.
 
-*****************************
+***
 
 ## 24th April 2023
 ### Updates
@@ -294,7 +347,7 @@ title: Patch Notes
 ### Bug Fixes
   - Fixed `/weaponer bestinclass` using invalid stroke by default.
 
-*****************************
+***
 
 ## 16th April 2023
 ### New Additions
@@ -311,7 +364,7 @@ title: Patch Notes
   - Fixed unmutes not getting logged.
   - Fixed timed mutes not unmuting at the correct time when using a mute role.
 
-*****************************
+***
 
 ## 31st March 2023
 ### New Additions
@@ -329,7 +382,7 @@ title: Patch Notes
 ### Bug Fixes
   - Fixed Pick/Ban embed failing to send if the icon emotes couldn't be fetched.
 
-*****************************
+***
 
 ## 12th March 2023
 ### New Additions
@@ -342,7 +395,7 @@ title: Patch Notes
 ### Bug Fixes
   - Fixed `/deletemessages` command failing when attempting to delete messages older than 14 days.
 
-*****************************
+***
 
 ## 4th March 2023
 ### Updates
@@ -367,7 +420,7 @@ title: Patch Notes
   - Fixed custom command value and count updates not being saved correctly.
   - Fixed tourney reserve invites not being initiated.
 
-*****************************
+***
 
 ## 20th February 2023
 ### Updates
@@ -384,7 +437,7 @@ title: Patch Notes
 ### Bug Fixes
   - Fixed filter trigger mute chance sometimes not displaying in the log message.
 
-*****************************
+***
 
 ## 12th February 2023
 ### Updates
@@ -396,7 +449,7 @@ title: Patch Notes
   - Fixed `/tourney abort` not working.
   - Fixed direct challenges becoming open challenges when the recipient cancels.
 
-*****************************
+***
 
 ## 8th January 2023
 ### Updates
@@ -409,7 +462,7 @@ title: Patch Notes
   - Fixed `/elo` not displaying reset times.
   - Fixed `/bet` autocomplete field not functioning.
 
-*****************************
+***
 
 ## 12th December 2022
 ### Updates
@@ -420,7 +473,7 @@ title: Patch Notes
 ### Bug Fixes
   - Fixed incorrect motion values for Rusted Anchor.
 
-*****************************
+***
 
 ## 4th December 2022
 ### Updates
@@ -433,7 +486,7 @@ title: Patch Notes
   - Fixed `/mute` failing when member leaves during command being run.
   - Fixed various typos in command descriptions.
 
-*****************************
+***
 
 ## 22nd November 2022
 ### New Additions
@@ -448,7 +501,7 @@ title: Patch Notes
   - Fixed `/say` message edit when original message was longer than 100 characters. 
   - Fixed `/challenge` command listing leaderboards the user does not have access to.
 
-*****************************
+***
 
 ## 18th November 2022
 ### Updates
@@ -467,7 +520,7 @@ title: Patch Notes
   - Fixed `/tourney status` display bug caused by host leaving server.
   - Prevented race condition issue when multiple players accept a leaderboard challenge at the same time.
 
-*****************************
+***
 
 ## 26th October 2022
 ### Updates
@@ -475,7 +528,7 @@ title: Patch Notes
   - Reworked `/stocks`. 
   - Added ability to create stop and limit orders.
 
-*****************************
+***
 
 ## 18th October 2022
 ### New Additions
@@ -484,7 +537,7 @@ title: Patch Notes
 ### Updates
   - Added team functionality to PvP leaderboards.
 
-*****************************
+***
 
 ## 31st August 2022
 ### New Additions
@@ -498,7 +551,7 @@ title: Patch Notes
 ### Bug Fixes
   - Fixed bug causing `/ticketer update send_to_channel` to fail.
 
-*****************************
+***
 
 ## 3rd August 2022
 ### New Additions
@@ -516,7 +569,7 @@ title: Patch Notes
   - Fixed bug causing `/roleatlevel` command to fail.
   - Fixed bug where `/roleatlevel` could not be used with level_add of 0.
 
-*****************************
+***
 
 ## 19th July 2022
 ### Updates
@@ -526,7 +579,7 @@ title: Patch Notes
 ### Bug Fixes
   - Fixed `!perms score` not working (it is now `!perms exp`).
 
-*****************************
+***
 
 ## 30th June 2022
 ### Updates
@@ -535,7 +588,7 @@ title: Patch Notes
 ### Bug Fixes
   - Fixed interaction failed error when using `/clean` with invalid params.
 
-*****************************
+***
 
 ## 23rd June 2022
 ### Updates
@@ -544,7 +597,7 @@ title: Patch Notes
 ### Bug Fixes
   - Fixed interaction timeout for several slash commands. 
 
-*****************************
+***
 
 ## 29th May 2022
 ### New Additions
@@ -557,7 +610,7 @@ title: Patch Notes
 ### Bug Fixes
   - Fixed bug with custom VCs not being cleaned up if host left the server.
 
-*****************************
+***
 
 ## 3rd May 2022
 ### Updates
@@ -574,7 +627,7 @@ title: Patch Notes
   - Fixed bug where mic-muted channel perms were incorrectly set when going from one custom VC to another.
   - Fixed display error in challenge messages.
 
-*****************************
+***
 
 ## 20th April 2022
 ### Updates
@@ -589,7 +642,7 @@ title: Patch Notes
   - Fixed incorrect status MVs for crits.
   - Tentative fix for custom VC cleanup issues.
 
-*****************************
+***
 
 ## 10th April 2022
 ### Updates
@@ -600,7 +653,7 @@ title: Patch Notes
   - Fixed incorrect weapon being recognised by name in `/weaponer`.
   - Fixed Spear Talisman toggle not working.
 
-*****************************
+***
 
 ## 27th March 2022
 ### New Additions
@@ -621,13 +674,13 @@ title: Patch Notes
   - Fixed `!igot` twitch command for ER.
   - Added failsafe to custom VC cleanup.
 
-*****************************
+***
 
 ## 24th February 2022
 ### Updates
   - Updated `/usernote` to slash command.
 
-*****************************
+***
 
 ## 14th February 2022
 ### Updates
@@ -637,7 +690,7 @@ title: Patch Notes
   - Fixed visual bug when setting a rank range limit on a challenge before being ranked.
   - Fixed visual bug when giving fractional rep
 
-*****************************
+***
 
 ## 8th February 2022
 ### Updates
@@ -654,14 +707,14 @@ title: Patch Notes
   - Fixed `!blackjack` bug when getting 21 with three or more cards.
   - Fixed bug where banned member could sometimes get unbanned.
 
-*****************************
+***
 
 ## 1st February 2022
 ### Bug Fixes
   - Fixed !userinfo not working with no arguments.
   - Fixed !blackjack incorrectly calling a draw on some instances of getting blackjack.
 
-*****************************
+***
 
 ## 25th January 2022
 ### Updates
@@ -678,7 +731,7 @@ title: Patch Notes
   - Fixed member events not timing out.
   - Fixed `/vc` commands not working for Custom VCs.
 
-*****************************
+***
 
 ## 10th January 2022
 ### Updates
@@ -691,7 +744,7 @@ title: Patch Notes
 ### Bug Fixes 
   - Fixed `Remove process` button not working.
 
-*****************************
+***
 
 ## 10th December 2021
 ### Updates
@@ -701,7 +754,7 @@ title: Patch Notes
   - Updated `/build` to slash command.
   - `/build` now includes `add`, `remove`, and `list` subcommands.
 
-*****************************
+***
 
 ## 30th November 2021
 ### Updates
@@ -711,7 +764,7 @@ title: Patch Notes
   - Added autocomplete to `/plant` `target` argument.
   - Added autocomplete to `/crack` `target` argument.
 
-*****************************
+***
 
 ## 24th November 2021
 ### Updates
@@ -734,13 +787,13 @@ title: Patch Notes
   - Fixed `level` and `upgrade` argments in `/memberevent`.
   - Fixed `/slugs` in DMs.
 
-*****************************
+***
 
 ## 15th November 2021
 ### Updates
   - Added `${DELETE}` flag replacer to delete the message that matched the trigger.
 
-*****************************
+***
 
 ## 6th November 2021
 ### Updates
@@ -755,7 +808,7 @@ title: Patch Notes
   - Fixed permissions overrides for command > module > global permissions.
   - Fixed dead streams notification failsafe
 
-*****************************
+***
 
 ## 8th October 2021
 ### Updates
@@ -770,14 +823,14 @@ title: Patch Notes
 ### Bug Fixes
   - Fixed linebreaks in ${rand: } replacer flag not behaving properly.
 
-*****************************
+***
 
 ## 28th September 2021
 ### Updates
   - `/weapon info` now displays counter hit damage where applicable.
   - Added Leo ring toggle for `/weapon info` where applicable.
 
-*****************************
+***
 
 ## 21st September 2021
 ### New Additions
@@ -789,7 +842,7 @@ title: Patch Notes
 ### Bug Fixes
   - Fixed bug where incorrect attacker was displayed for `onAccountAccessed` log.
   
-*****************************
+***
 
 ## 10th September 2021
 ### Updates
@@ -800,7 +853,7 @@ title: Patch Notes
 ### New Additions
   - Auto fix broken embed links from copied video URLs on mobile.
 
-*****************************
+***
 
 ## 8th September 2021
 ### Updates
@@ -808,7 +861,7 @@ title: Patch Notes
   - Added point decay regeneration display in ladder messages.
   - Improved UI for ladder challenges.
 
-*****************************
+***
 
 ## 6th September 2021
 ### New Additions
@@ -817,7 +870,7 @@ title: Patch Notes
 ### Bug Fixes 
   - Fixed bug with twitch `${timeout: <duration>}` flag when duration was greater than 9 seconds.
 
-*****************************
+***
 
 ## 4th September 2021
 ### New Additions
@@ -828,7 +881,7 @@ title: Patch Notes
   - Updated `/weapon` to slash command.
   - Increased contract reward for CORRUPTOR plants.
 
-*****************************
+***
 
 ## 31st August 2021
 ### Updates
@@ -838,7 +891,7 @@ title: Patch Notes
 ### Bug Fixes
   - Fixed removing process from `!slugs` menu not resetting selection.
 
-*****************************
+***
 
 ## 29th August 2021
 ### Updates
@@ -847,7 +900,7 @@ title: Patch Notes
 ### Bug Fixes
   - Various formatting errors with process displays.
 
-*****************************
+***
 
 ## 27th August 2021
 ### New Additions
@@ -867,14 +920,14 @@ title: Patch Notes
   - Updated `/daily` to slash command.
   - Updated `/vault` to slash command. 
 
-*****************************
+***
 
 ## 25th August 2021
 ### New Additions
   - You can now buy and sell stocks in "companies".
   - New PROFILE_MOD border_dragon added.
 
-*****************************
+***
 
 ## 22nd August 2021
 ### Updates
@@ -886,7 +939,7 @@ title: Patch Notes
   - Fixed bug with process descriptions being too long to embed in select menus.
   - Fixed bug when streamer in streamer notification list gets banned while live, making it impossible to remove them from the notification list.
 
-*****************************
+***
 
 ## 18th August 2021
 ### Updates
@@ -900,7 +953,7 @@ title: Patch Notes
 ## Bug Fixes
   - Fixed initial Member Event display.
 
-*****************************
+***
 
 ## 11th August 2021
 ### Updates
@@ -914,13 +967,13 @@ title: Patch Notes
 ### Bug Fixes
   - `!whowas` command now works again.
 
-*****************************
+***
 
 ## 1st August 2021
 ### Updates
   - Word filter algorithm made more efficient.
 
-*****************************
+***
 
 ## 25th July 2021
 ### New Additions
@@ -930,7 +983,7 @@ title: Patch Notes
 ### Bug Fixes
   - Fixed bug allowing you to respecc into stats that would not support your process configuration.
 
-*****************************
+***
 
 ## 22nd July 2021
 ### Updates
@@ -941,13 +994,13 @@ title: Patch Notes
 ### Bug Fixes
   - Removed ability to attempt to install invalid process types.
 
-*****************************
+***
 
 ## 20th July 2021
 ### Updates
   - Added admin page to `!userinfo` command. Invite info and moderator notes are now displayed there.
 
-*****************************
+***
 
 ## 16th July 2021
 ### New Additions
@@ -958,7 +1011,7 @@ title: Patch Notes
   - Improved memory usage when displaying PROFILE_MOD previews.
   - PROFILE_MOD previews and your own profile can now be viewed in DMs with slugbot.
 
-*****************************
+***
 
 ## 12th July 2021
 ### New Additions
@@ -967,13 +1020,13 @@ title: Patch Notes
 ### Bug Fixes
   - Fixed `!deletemessages` command not working on messages where the author had left the server.
 
-*****************************
+***
 
 ## 7th July 2021
 ### Bug Fixes
   - Processes hijacked or created via processes initiated through ROOTKITs should now properly inherit ROOTKIT ownership.
 
-*****************************
+***
 
 ## 30th June 2021
 ### Updates
@@ -981,25 +1034,25 @@ title: Patch Notes
   - Region roles and rank of the challenger are now displayed in the challenge message.
   - Unmutes will now be logged in set #mod-log channels.
 
-*****************************
+***
 
 ## 17th June 2021
 ### Updates
   - Improved Discord <> Twitch account link process.
   
-*****************************
+***
 
 ## 13th June 2021
 ### Bug Fixes
   - Fixed raffle module.
 
-*****************************
+***
 
 ## 12th June 2021
 ### Updates
   - Added `!fightclub force <member1> <member2>` command to force a fight between two members in a fightclub.
 
-*****************************
+***
 
 ## 9th June 2021
 ### New Additions
@@ -1011,14 +1064,14 @@ title: Patch Notes
 ### Bug Fixes
   - Fixed bug where leveling a stat while planting a process would error the process.
 
-*****************************
+***
 
 ## 7th June 2021
 ### Updates
   - `!elo` now displays all past matches separated into pages.
   - `!elo` now displays when the ladder was reset.
 
-*****************************
+***
 
 ## 4th june 2021
 ### New Additions
@@ -1028,27 +1081,27 @@ title: Patch Notes
 ### Updates
   - Added customisable point decay to ladder.
 
-*****************************
+***
 
 ## 25th May 2021
 ### Bug Fixes
   - Logging should now properly log invite used for new members.
   - Command use rate limit should now not trigger when an invalid command is used.
   
-*****************************
+***
 
 ## 21st May 2021
 ### Updates
   - `!daily` now gives an extra 1000sc per power level.
 
-*****************************
+***
 
 ## 13th May 2021
 ### New Additions
   - Added CONTRACT processes.
   - CONTRACTs will be generated once a day and put on the shop.
 
-*****************************
+***
 
 ## 11th May 2021
 ### Updates
@@ -1058,7 +1111,7 @@ title: Patch Notes
   - Fixed 'Invite used' info not always displaying in `!userinfo` response when used by an admin and invite data was present.
   - Fixed padding error with avatars in profiles.
 
-*****************************
+***
 
 ## 26th April 2021
 ### Updates
@@ -1071,20 +1124,20 @@ title: Patch Notes
   - Fixed REDIRECT notifications not sending in certain circumstances.
   - Fixed `!so` on twitch erroring when no previous stream data is found.
 
-*****************************
+***
 
 ## 16th April 2021
 ### Updates
   - Added Slugboard leaderboard `!leaderboard slugboard`/
   - Added slugboard embed colour customisation `!slugboard color <hex color>`.
 
-*****************************
+***
 
 ## 13th April 2021
 ### Bug Fixes
   - Fixed occasional miscounts with slugboarded messages. 
 
-*****************************
+***
 
 ## 11th April 2021
 ### Updates
@@ -1092,38 +1145,38 @@ title: Patch Notes
   - Reduced Install and upgrade taxes.
   - Improved SlugBot AI.
 
-*****************************
+***
 
 ## 5th April 2021
 ### Updates
   - Rolereacts can now be put on any message using `!rolereact create <msg ID>`
 
-*****************************
+***
 
 ## 27th Match 2021
 ### Bug Fixes
   - Fixed `!banme` not working in certain circumstances.
 
-*****************************
+***
 
 ## 18th March 2021
 ### New Additions
   - Added ability to slime other member's profiles with `!slime <member>`.
   - Added border_glow_shard_outer profile mod.
 
-*****************************
+***
 
 ## 5th March 2021
 ### Bug Fixes
   - Fixed bug causing `!whowas` command to fail.
 
-*****************************
+***
 
 ## 27th February 2021
 ### Bug Fixes
   - Fixed bug with certain failed respeccs not ending the action correctly. 
 
-*****************************
+***
 
 ## 20th February 2021
 ### Updates
@@ -1149,13 +1202,13 @@ title: Patch Notes
 ### Bug Fixes
   - Fixed bug with Interceptor stat_boosts not working.
 
-*****************************
+***
 
 ## 15th February 2021
 ### Bug Fixes
   - Fixed improper parsing of flag replacers when name contained parentheses. 
 
-*****************************
+***
 
 ## 1st February 2021
 ### Updates
@@ -1165,27 +1218,27 @@ title: Patch Notes
 ### Bug Fixes
   - Fixed blackjack payout multiplier.
 
-*****************************
+***
 
 ## 29th January 2021
 ### New Additions
   - Added `!blackjack <bet>` command.
   - Added `!teambuilder [member, [member, [...]]] <team count>` command. Will try to evenly distribute members among the stated number of teams, or if no members were stated, will allow anyone to react and be put in a random team.
 
-*****************************
+***
 
 ## 25th January 2021
 ### Updates
   - !remindme now allows for decimal time values.
 
-*****************************
+***
 
 ## 9th January 2021
 ### Updates
   - Added ${math: \<expression\>} flag replacer.
   - Improved flag replacer nesting.
 
-*****************************
+***
 
 ## 5th January 2021
 ### Bug Fixes
@@ -1195,13 +1248,13 @@ title: Patch Notes
 ### Bug Fixes
   - Fixed SlugBot disconnecting from twitch then not properly re-authenticating and reconnecting.
 
-*****************************
+***
 
 ## 4th December 2020
 ### Bug Fixes
   - Fixed order of permission checks.
 
-*****************************
+***
 
 ## 29th November 2020
 ### Updates
@@ -1210,7 +1263,7 @@ title: Patch Notes
 ### Bug Fixes
   - Improved dynamic caching to hopefully fix reaction events not emitting on bot restart.
 
-*****************************
+***
 
 ## 12th November 2020
 ### New Additions
@@ -1219,7 +1272,7 @@ title: Patch Notes
 ### Bug Fix
   - Fixed error causing `!invest` command to fail.
 
-*****************************
+***
 
 ## 11th November 2020
 ### Updates
@@ -1229,7 +1282,7 @@ title: Patch Notes
   - Fixed hijacked PROFILE_MODs not properly disabling the border for the original owner.
   - Fixed ability to have multiple STEALs running on one user.
 
-*****************************
+***
 
 ## 10th November 2020
 ### Updates
@@ -1238,7 +1291,7 @@ title: Patch Notes
 ### Bug Fixes
   - Fixed Crow Quills weapon type in database.
 
-*****************************
+***
 
 ## 4th November 2020
 ### New Additions
@@ -1253,7 +1306,7 @@ title: Patch Notes
   - Servers should no longer get unverified after a bot restart.
   - Fixed open challenges ignoring ladder types.
 
-*****************************
+***
 
 ## 30th October 2020
 ### Updates
@@ -1264,14 +1317,14 @@ title: Patch Notes
 ### Bug Fixes
   - Fixed challenges in servers with multiple ladders defaulting to a ladder when the reaction menu timed out.
 
-*****************************
+***
 
 ## 26th October 2020
 ### Updates
   - Corruptors will now parially obfuscate HONEYPOT and REDIRECT notifications, obscuring the owner name and process type of the trapped process.
   - Ladder betting now increases the amount bet each time to make it easier to bet larger amounts. 
 
-*****************************
+***
 
 ## 25th October 2020
 ### New Additions
@@ -1281,7 +1334,7 @@ title: Patch Notes
   - `!daily` now has a chance to generate random stat boosts.
   - STEALs can no longer be suspended.
 
-*****************************
+***
 
 ## 24th October 2020
 ### Updates
@@ -1291,7 +1344,7 @@ title: Patch Notes
   - `!giveme` should work again now.
   - Fixed porting over role settings to new backend.
 
-*****************************
+***
 
 ## 22nd October 2020
 ### Bug Fixes
@@ -1299,7 +1352,7 @@ title: Patch Notes
   - Fixed !giveme not responding with confirmation.
   - Fixed !streamer command not working.
 
-*****************************
+***
 
 ## 21st October 2020
 ### Updates
@@ -1308,7 +1361,7 @@ title: Patch Notes
 ### Bug Fixes
   - An ungodly number of bugfixes due to the caching changes of the discord library. Pretty much every module needed to be updated.
 
-***************************** 
+*** 
 
 ## 17th October 2020
 ### Updates
@@ -1321,19 +1374,19 @@ title: Patch Notes
 ### Bug Fixes
   - Added self-correcting to duplicate investments due to discord lag.
 
-***************************** 
+*** 
 
 ## 13th October 2020
 ### Bug Fixes
   - Fixed the reddit video embedding module.
 
-***************************** 
+*** 
 
 ## 4th October 2020
 ### Bug Fixes
   - Fixed markdown characters in usernames interfering with embed formatting.
 
-*****************************
+***
 
 ## 3rd October 2020
 ### Upates
@@ -1343,7 +1396,7 @@ title: Patch Notes
 ### Bug Fixes
   - Fixed last TRANSFER/STEAL interval happening after completion.
 
-*****************************
+***
 
 ## 1st October 2020
 ### Updates
@@ -1353,14 +1406,14 @@ title: Patch Notes
   - Fixed profile mods displaying in spoofed !slugs menu if viewer does not have the process identified.
   - Fixed twitch custom commands not working.
 
-*****************************
+***
 
 ## 30th September 2020
 ### Bug Fix
   - Fixed bug where removing a bypass would suspend processes in progress even if the process didn't require a bypass to plant.
   - Fixed LEECH processes not starting with the correct potency.
 
-*****************************
+***
 
 ## 26th September 2020
 ### Updates
@@ -1370,7 +1423,7 @@ title: Patch Notes
 ### Bug Fix
   - Fixed [winner takes all] description not displaying.
 
-*****************************
+***
 
 ## 25th September 2020
 ### Updates
@@ -1381,7 +1434,7 @@ title: Patch Notes
   - Fixed some TRANSFER processes not removing themselves.
   - Fixed SlugBot trying to remove transfers to SlugBot.
 
-*****************************
+***
 
 ## 24th September 2020
 ### Updates
@@ -1397,7 +1450,7 @@ title: Patch Notes
   - Hopefully tricked Discord into displaying graphs correctly.
   - Fixed bug with some scans not displaying their description properly.
 
-*****************************
+***
 
 ## 23rd September 2020
 ### Updates
@@ -1406,7 +1459,7 @@ title: Patch Notes
 ### Bug Fixes
   - Fixed SlugBot attempting to bypass when currently at bypass limit.
 
-*****************************
+***
 
 ## 22nd September 2020
 ### Updates
@@ -1416,7 +1469,7 @@ title: Patch Notes
   - Fixed hijackers failing to hijack any process.
   - Fixed scans incorrectly limiting scanned processes to specified filter.
 
-*****************************
+***
 
 ## 21st September 2020
 ### Updates
@@ -1425,7 +1478,7 @@ title: Patch Notes
   - Added "Amount transferred" field to transfer messages.
   - Added some plant duration fuzzing.
 
-*****************************
+***
 
 ## 20th September 2020
 ### Updates
@@ -1436,7 +1489,7 @@ title: Patch Notes
   - Fixed bug with concealError not properly uncovering process properties.
   - Fixed bug where a start steal error was not correctly stopping the process initiation.
 
-*****************************
+***
 
 ## 19th September 2020
 ### New Additions
@@ -1453,7 +1506,7 @@ title: Patch Notes
 ### Bug Fixes
   - Renabling a suspended TRACKER will only show user logs back to when the tracker was enabled and not when the TRACKER was originally planted.
 
-*****************************
+***
 
 ## 17th September 2020
 ### Updates
@@ -1474,13 +1527,13 @@ title: Patch Notes
   - Fixed bug allowing suspended TRACKER processes to still function.
   - Minor bug fix with display of scan inject when process is already fully identified.
 
-*****************************
+***
 
 ## 16th September 2020
 ### Bug Fixes
   - Fixed bug allowing anyone to view any user's !slugs menu
 
-*****************************
+***
 
 ## 15th September 2020
 ### Updates
@@ -1494,7 +1547,7 @@ title: Patch Notes
 ### Bug Fixes
   - Fixed minor display bug with obfuscated balance history graphs.
 
-*****************************
+***
 
 ## 14th September 2020
 ### Updates
@@ -1505,7 +1558,7 @@ title: Patch Notes
   - Added more filigree profile mod variations to shop pool.
   - Added Smoke glow profile mod to the shop pool.
 
-*****************************
+***
 
 ## 13th September 2020
 ### Updates
@@ -1517,7 +1570,7 @@ title: Patch Notes
 ### Bug Fixes
   - Sanitised usernames to alleviate possible bugs with markdown formatting. 
 
-*****************************
+***
 
 ## 11th September 2020
 ### Updates
@@ -1530,7 +1583,7 @@ title: Patch Notes
 ### Bug Fixes
   - Fixed bug where removing a BYPASS on self would cause some planting processes to be suspended.
 
-*****************************
+***
 
 ## 9th September 2020
 ### New Additions
@@ -1545,7 +1598,7 @@ title: Patch Notes
     - UI elements displaying process duration will now be more accurate.
   - Reduced STEAL fast track amount.
 
-*****************************
+***
 
 ## 8th September 2020
 ### Updates
@@ -1557,7 +1610,7 @@ title: Patch Notes
   - Fixed error with the removing filter fail response.
   - Correctly sorted auction list buy time remaining on sale.
 
-*****************************
+***
 
 ## 7th September 2020
 ### Updates
@@ -1570,7 +1623,7 @@ title: Patch Notes
   - Excluded duplicate process types when specifying scan parameters.
   - Fixed SlugBot_AI attempting to use itself as a redirect target.
 
-*****************************
+***
 
 ## 6th September 2020
 ### New Additions
