@@ -28,7 +28,7 @@
 ## February 2024
 ### New Additions
 - You can now optionally schedule when [[say|/say]] will send the given message using the `schedule_send_time` field.
-- Added [[Flag Replacers#CALLONLY|${CALLONLY}]] flag replacer. Any command with this flag in its response can only be used through [[Flag Replacers#CALL|${CALL: }]].
+- Added [[Flag Replacers#CALLONLY|CALLONLY]] flag replacer. Any command with this flag in its response can only be used through [[Flag Replacers#CALL|CALL]].
 ### Updates
 - Bans and timeouts handled directly through Discord will now be logged in `/userinfo`.
 - `/userinfo` `user_id` field will now also do a similar name check if a name was given instead of a user ID.
