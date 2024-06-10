@@ -1,5 +1,5 @@
 # setexp
-*Module: [[Setup]]*
+*Module: [[ActivityExp]]*
 Set the activity exp of a member
 ## `/setexp total`
 Set the total activity exp of a member

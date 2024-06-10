@@ -1,5 +1,5 @@
 # setlevel
-*Module: [[Setup]]*
+*Module: [[ActivityExp]]*
 Set the activity level of a member
 ## `/setlevel total`
 Set the total activity level of a member
