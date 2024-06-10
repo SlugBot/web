@@ -1,0 +1,11 @@
+# ilost
+*Module: [[Ladder]]*
+declare the outcome of a challenge as a loss
+#### rounds_won
+Number of rounds you won
+- Type: `INTEGER`
+- Required: `true`
+#### rounds_lost
+Number of rounds you lost
+- Type: `INTEGER`
+- Required: `true`
