@@ -1,4 +1,5 @@
 # say
+*Module: [[Misc]]*
 Send a message in a specified channel.
 #### channel
 Channel to send message to

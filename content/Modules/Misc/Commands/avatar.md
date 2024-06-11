@@ -1,4 +1,5 @@
 # avatar
+*Module: [[Misc]]*
 View a fullsized image of a member's avatar
 #### member
 View this member's avatar

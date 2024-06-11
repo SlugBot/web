@@ -2,7 +2,7 @@
 *Module: [[Moderation]]*
 Ban a member
 #### member
-Member to ban or user ID of user to pre-emptively ban
+Member to ban or user ID of user to preemptively ban
 - Type: `STRING`
 - Required: `true`
 #### duration

@@ -142,3 +142,32 @@ Another method of making SC is to invest in text channels in discord servers. Ch
 
 To terminate an investment early, use the command [[invest#`/invest terminate`|/invest]]. You will NOT be reimbursed any SC.
 
+
+# Commands
+- [[activate]]
+- [[bet]]
+- [[blackjack]]
+- [[bypass]]
+- [[clean]]
+- [[crack]]
+- [[daily]]
+- [[downgrade]]
+- [[giveslugs]]
+- [[hijack]]
+- [[install]]
+- [[invest]]
+- [[knuckleslug]]
+- [[levelup]]
+- [[lockdown]]
+- [[plant]]
+- [[respecc]]
+- [[rootkit]]
+- [[scan]]
+- [[shop]]
+- [[slugs]]
+- [[steal]]
+- [[stocks]]
+- [[suspend]]
+- [[uninstall]]
+- [[upgrade]]
+- [[vault]]

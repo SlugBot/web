@@ -15,3 +15,11 @@ Join the SlugBot discord to get a direct line of communication with the dev for 
 Click the widget below to join.
 
 [![discord](https://img.shields.io/discord/451495220438106112.svg?style=for-the-badge&logo=discord&colorB=7289DA)](https://discord.gg/Tpm2X2b)
+
+# Getting Started
+Once you've [invited SlugBot](https://discord.com/oauth2/authorize?client_id=344179202259419136&permissions=8&scope=bot%20applications.commands) to your server, you may want to get some [[Modules]] set up.
+- [[Roles|Role Management]]
+- [[Logging]]
+- [[Moderation]]
+- [[Permissions]]
+- [[PvP Leaderboard]]

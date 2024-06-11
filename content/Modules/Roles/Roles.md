@@ -20,3 +20,6 @@ Reaction specifies the emoji that SlugBot will use under the message. The emoji 
 Role specifies the role that is assigned by that option. Make sure the role being assigned is below SlugBot in the role hierarchy.
 
 Removing role reacts functions the same way.
+# Commands
+- [[rolereact]]
+- [[temprole]]

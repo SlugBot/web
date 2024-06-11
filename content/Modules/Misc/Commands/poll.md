@@ -1,4 +1,5 @@
 # poll
+*Module: [[Misc]]*
 Create a poll
 ## `/poll create`
 Create a new poll

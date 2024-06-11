@@ -1,4 +1,5 @@
 # setcolor
+*Module: [[Misc]]*
 Customise your name colour
 #### color
 Hex colour code (e.g. #ff002b) or 'reset' to reset colour
