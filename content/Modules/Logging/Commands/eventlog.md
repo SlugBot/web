@@ -1,5 +1,5 @@
 # eventlog
-*Module: [[Misc]]*
+*Module: [[Logging]]*
 Manage discord event logging channels
 ## `/eventlog create`
 Create a new event logging channel

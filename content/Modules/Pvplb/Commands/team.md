@@ -1,5 +1,5 @@
 # team
-*Module: [[Ladder]]*
+*Module: [[Pvplb]]*
 Create and manage a team for a PvP leaderboard
 ## `/team create`
 Create a new team

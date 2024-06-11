@@ -1,5 +1,5 @@
 # memberevent
-*Module: [[Memberevent]]*
+*Module: [[Memberevents]]*
 Create an event notification for others to participate in.
 ## `/memberevent start`
 Start a new member event.

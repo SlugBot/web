@@ -1,5 +1,5 @@
 # slugboard
-*Module: [[Slugboard]]*
+*Module: [[Pins]]*
 Customise the settings for the Slugboard
 ## `/slugboard create`
 Create a new Slugboard

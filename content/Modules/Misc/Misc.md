@@ -7,7 +7,6 @@
 - [[say]]
 - [[setcolor]]
 - [[slime]]
-- [[eventlog]]
 - [[poll]]
 - [[rep]]
 - [[twitch]]

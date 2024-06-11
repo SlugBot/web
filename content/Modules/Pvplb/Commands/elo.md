@@ -1,5 +1,5 @@
 # elo
-*Module: [[Ladder]]*
+*Module: [[Pvplb]]*
 View your rank and match history
 #### member
 View match history of this member

@@ -1,6 +1,6 @@
-# iwon
-*Module: [[Ladder]]*
-declare the outcome of a challenge as a win
+# ilost
+*Module: [[Pvplb]]*
+declare the outcome of a challenge as a loss
 #### rounds_won
 Number of rounds you won
 - Type: `INTEGER`

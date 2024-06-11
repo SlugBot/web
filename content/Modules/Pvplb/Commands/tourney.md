@@ -1,5 +1,5 @@
 # tourney
-*Module: [[Ladder]]*
+*Module: [[Pvplb]]*
 Host a tourney for the top ranking members on the leaderboard
 ## `/tourney set_organising_category`
 Set a category where channels will be created for tourney organisation
