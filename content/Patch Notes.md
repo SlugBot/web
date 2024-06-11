@@ -256,7 +256,7 @@
   - Several Slugboard bug fixes.
   - Fixed Stock going under notification not being sent.
   - Fixed CLONER processes not expiring when they should.
-  - Maybe fixed #lost-and-found process message sending.
+  - Maybe fixed `#lost-and-found` process message sending.
   - Fixed issue causing slugbot to be untargetable in certain servers.
 
 ***
@@ -1026,13 +1026,13 @@
 ### Updates
   - Accepted ladder challenges can now be cancelled if both parties use `!challenge cancel`.
   - Region roles and rank of the challenger are now displayed in the challenge message.
-  - Unmutes will now be logged in set #mod-log channels.
+  - Unmutes will now be logged in set `#mod-log` channels.
 
 ***
 
 ## 17th June 2021
 ### Updates
-  - Improved Discord <> Twitch account link process.
+  - Improved Discord <-> Twitch account link process.
   
 ***
 
