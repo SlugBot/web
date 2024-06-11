@@ -1,6 +1,6 @@
 # `/team`
+*Module: [[Pvplb]]*<br>
 Create and manage a team for a PvP leaderboard
-*Module: [[Pvplb]]*
 ## `/team create`
 Create a new team
 #### leaderboard

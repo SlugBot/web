@@ -1,6 +1,6 @@
 # `/range`
+*Module: [[Darksouls]]*<br>
 find the upper and lower soul level limits for players invading you or hosts you invade
-*Module: [[Darksouls]]*
 ## `/range ds3`
 Summon/invasion ranges for Dark Souls 3
 #### mode

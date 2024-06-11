@@ -1,6 +1,6 @@
 # `/rolereact`
+*Module: [[Roles]]*<br>
 Create a RoleReact message, allowing users to self-assign roles using the reactions on the message
-*Module: [[Roles]]*
 ## `/rolereact create`
 Create a new RoleReact
 #### message_id

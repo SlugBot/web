@@ -1,6 +1,6 @@
 # `/exclusivechar`
+*Module: [[Nicknames]]*<br>
 Reserve a given character or string for specific member's or role's display names
-*Module: [[Nicknames]]*
 ## `/exclusivechar add`
 Add or update an exclusive character for a member or role
 #### char

@@ -1,6 +1,6 @@
 # `/challenge`
+*Module: [[Pvplb]]*<br>
 Challenge another member to a ranked fight or put out an open invitation to be challenged
-*Module: [[Pvplb]]*
 ## `/challenge cancel`
 Abort your existing challenge
 

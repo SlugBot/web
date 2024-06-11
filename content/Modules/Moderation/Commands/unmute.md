@@ -1,6 +1,6 @@
 # `/unmute`
+*Module: [[Moderation]]*<br>
 Unmute a muted member.
-*Module: [[Moderation]]*
 #### member
 Member to unmute
 - Type: `USER`

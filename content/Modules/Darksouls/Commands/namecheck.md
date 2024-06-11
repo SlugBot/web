@@ -1,6 +1,6 @@
 # `/namecheck`
+*Module: [[Darksouls]]*<br>
 Check if a name will be censored by the DS3 or ER name filters
-*Module: [[Darksouls]]*
 ## `/namecheck er`
 Check against the Elden Ring name filter
 #### name

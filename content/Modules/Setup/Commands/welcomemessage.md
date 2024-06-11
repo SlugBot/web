@@ -1,6 +1,6 @@
 # `/welcomemessage`
+*Module: [[Setup]]*<br>
 Set a welcome message for new members
-*Module: [[Setup]]*
 ## `/welcomemessage disable`
 Disable welcome messages
 

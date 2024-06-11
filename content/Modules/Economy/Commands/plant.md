@@ -1,6 +1,6 @@
 # `/plant`
+*Module: [[Economy]]*<br>
 Begin the planting a process on a target
-*Module: [[Economy]]*
 ## `/plant skimmer`
 Plant a SKIMMER process on a target
 #### target

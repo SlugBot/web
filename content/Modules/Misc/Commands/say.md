@@ -1,6 +1,6 @@
 # `/say`
+*Module: [[Misc]]*<br>
 Send a message in a specified channel.
-*Module: [[Misc]]*
 #### channel
 Channel to send message to
 - Type: `CHANNEL`

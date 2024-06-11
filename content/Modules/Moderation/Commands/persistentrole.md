@@ -1,6 +1,6 @@
 # `/persistentrole`
+*Module: [[Moderation]]*<br>
 Add or remove persistent roles
-*Module: [[Moderation]]*
 ## `/persistentrole add`
 Add persistent role
 #### role

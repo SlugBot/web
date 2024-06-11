@@ -1,6 +1,6 @@
 # `/rootkit`
+*Module: [[Economy]]*<br>
 Enable or disable ROOTKIT mode. A ROOTKIT allows the control of another user's account
-*Module: [[Economy]]*
 ## `/rootkit enable`
 Enable ROOTKIT mode
 #### target

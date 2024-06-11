@@ -1,6 +1,6 @@
 # `/poll`
+*Module: [[Misc]]*<br>
 Create a poll
-*Module: [[Misc]]*
 ## `/poll create`
 Create a new poll
 #### duration

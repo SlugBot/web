@@ -1,6 +1,6 @@
 # `/ticketer`
+*Module: [[Ticket]]*<br>
 Create a Ticketer message, allowing users to submit tickets
-*Module: [[Ticket]]*
 ## `/ticketer create`
 Create a new Ticketer
 #### send_to_channel

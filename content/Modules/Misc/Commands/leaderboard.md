@@ -1,6 +1,6 @@
 # `/leaderboard`
+*Module: [[Misc]]*<br>
 view one of the various leaderboards
-*Module: [[Misc]]*
 #### leaderboard
 Which leaderboard to view
 - Type: `Autocomplete Selection`

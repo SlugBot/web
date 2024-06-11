@@ -1,6 +1,6 @@
 # `/bet`
+*Module: [[Economy]]*<br>
 Create a bet
-*Module: [[Economy]]*
 ## `/bet create`
 Create a new bet
 

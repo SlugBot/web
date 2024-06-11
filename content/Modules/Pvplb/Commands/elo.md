@@ -1,6 +1,6 @@
 # `/elo`
+*Module: [[Pvplb]]*<br>
 View your rank and match history
-*Module: [[Pvplb]]*
 #### member
 View match history of this member
 - Type: `USER`

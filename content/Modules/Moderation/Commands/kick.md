@@ -1,6 +1,6 @@
 # `/kick`
+*Module: [[Moderation]]*<br>
 Kick a member from the server
-*Module: [[Moderation]]*
 #### member
 Member to kick from the server
 - Type: `USER`

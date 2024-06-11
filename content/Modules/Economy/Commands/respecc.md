@@ -1,6 +1,6 @@
 # `/respecc`
+*Module: [[Economy]]*<br>
 Respecc your Slug Economy stats
-*Module: [[Economy]]*
 #### firewall
 New FIREWALL level
 - Type: `INTEGER`

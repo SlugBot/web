@@ -1,6 +1,6 @@
 # `/rank`
+*Module: [[ActivityExp]]*<br>
 View your own or another's profile and rank
-*Module: [[ActivityExp]]*
 #### member
 View a member's profile and rank
 - Type: `USER`

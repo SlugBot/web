@@ -1,6 +1,6 @@
 # `/deletemessages`
+*Module: [[Moderation]]*<br>
 Bulk delete messages
-*Module: [[Moderation]]*
 #### earliest_msg
 Messages between this and the latest message will be deleted
 - Type: `STRING`

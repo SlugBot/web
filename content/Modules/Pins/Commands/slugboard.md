@@ -1,6 +1,6 @@
 # `/slugboard`
+*Module: [[Pins]]*<br>
 Customise the settings for the Slugboard
-*Module: [[Pins]]*
 ## `/slugboard create`
 Create a new Slugboard
 #### channel

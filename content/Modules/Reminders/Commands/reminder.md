@@ -1,6 +1,6 @@
 # `/reminder`
+*Module: [[Reminders]]*<br>
 Create repeating reminders sent to channels
-*Module: [[Reminders]]*
 ## `/reminder add`
 Add a new reminder
 #### channel

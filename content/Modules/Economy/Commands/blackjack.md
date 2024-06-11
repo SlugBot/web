@@ -1,6 +1,6 @@
 # `/blackjack`
+*Module: [[Economy]]*<br>
 Play Blackjack
-*Module: [[Economy]]*
 #### bet
 Amount to bet on Blackjack
 - Type: `NUMBER`

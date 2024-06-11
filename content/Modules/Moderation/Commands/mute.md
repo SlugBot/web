@@ -1,6 +1,6 @@
 # `/mute`
+*Module: [[Moderation]]*<br>
 Mute a member
-*Module: [[Moderation]]*
 #### member
 Member to mute
 - Type: `USER`

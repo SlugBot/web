@@ -1,6 +1,6 @@
 # `/setcolor`
+*Module: [[Misc]]*<br>
 Customise your name colour
-*Module: [[Misc]]*
 #### color
 Hex colour code (e.g. #ff002b) or 'reset' to reset colour
 - Type: `STRING`

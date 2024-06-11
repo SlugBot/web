@@ -1,6 +1,6 @@
 # `/invest`
+*Module: [[Economy]]*<br>
 Invest SC in text channels
-*Module: [[Economy]]*
 ## `/invest add`
 Make a new investment
 #### channel
