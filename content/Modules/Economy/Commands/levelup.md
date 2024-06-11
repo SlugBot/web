@@ -1,6 +1,6 @@
-# levelup
-*Module: [[Economy]]*
+# `/levelup`
 Level up a stat
+*Module: [[Economy]]*
 #### stat
 Stat to level up
 - Type: `STRING`

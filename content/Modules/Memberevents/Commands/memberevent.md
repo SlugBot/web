@@ -1,6 +1,6 @@
-# memberevent
-*Module: [[Memberevents]]*
+# `/memberevent`
 Create an event notification for others to participate in.
+*Module: [[Memberevents]]*
 ## `/memberevent start`
 Start a new member event.
 #### game

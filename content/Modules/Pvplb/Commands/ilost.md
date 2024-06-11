@@ -1,6 +1,6 @@
-# ilost
-*Module: [[Pvplb]]*
+# `/ilost`
 declare the outcome of a challenge as a loss
+*Module: [[Pvplb]]*
 #### rounds_won
 Number of rounds you won
 - Type: `INTEGER`

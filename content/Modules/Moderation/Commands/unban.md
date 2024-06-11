@@ -1,6 +1,6 @@
-# unban
-*Module: [[Moderation]]*
+# `/unban`
 Unban a member
+*Module: [[Moderation]]*
 #### user_id
 User ID of user to unban
 - Type: `STRING`

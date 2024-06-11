@@ -1,6 +1,6 @@
-# igot
-*Module: [[Darksouls]]*
+# `/igot`
 Get the estimated level of another player killed in DS1, DS3 or ER
+*Module: [[Darksouls]]*
 ## `/igot er`
 Get the estimated level of another player killed in Elden Ring
 #### runes_received

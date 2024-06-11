@@ -1,6 +1,6 @@
-# ladder
-*Module: [[Pvplb]]*
+# `/ladder`
 Create and configure PvP leaderboard
+*Module: [[Pvplb]]*
 ## `/ladder create leaderboard`
 Ranked PvP leaderboard
 #### title

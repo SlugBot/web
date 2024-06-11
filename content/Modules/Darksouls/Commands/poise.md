@@ -1,6 +1,6 @@
-# poise
-*Module: [[Darksouls]]*
+# `/poise`
 View poise breakpoints needed for weapon 1 to poise through the weapon 2
+*Module: [[Darksouls]]*
 ## `/poise ds3`
 View DS3 poise breakpoints needed for weapon 1 to poise through the weapon 2
 #### weapon_1

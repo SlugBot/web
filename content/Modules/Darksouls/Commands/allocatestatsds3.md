@@ -1,6 +1,6 @@
-# allocatestatsds3
-*Module: [[Darksouls]]*
+# `/allocatestatsds3`
 Find the optimal stat spread for a given weapon
+*Module: [[Darksouls]]*
 #### weapon
 Weapon to allocate stats for
 - Type: `Autocomplete Selection`

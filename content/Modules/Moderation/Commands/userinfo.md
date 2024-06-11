@@ -1,6 +1,6 @@
-# userinfo
-*Module: [[Moderation]]*
+# `/userinfo`
 Get general user information about yourself or another member
+*Module: [[Moderation]]*
 #### member
 Get this member's user info
 - Type: `USER`

@@ -1,6 +1,6 @@
-# roleatlevel
-*Module: [[ActivityExp]]*
+# `/roleatlevel`
 Give/remove a role to/from members once they reach a certain level
+*Module: [[ActivityExp]]*
 ## `/roleatlevel add`
 Create a new role-at-level
 #### role

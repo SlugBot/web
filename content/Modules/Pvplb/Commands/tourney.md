@@ -1,6 +1,6 @@
-# tourney
-*Module: [[Pvplb]]*
+# `/tourney`
 Host a tourney for the top ranking members on the leaderboard
+*Module: [[Pvplb]]*
 ## `/tourney set_organising_category`
 Set a category where channels will be created for tourney organisation
 #### category

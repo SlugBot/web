@@ -1,6 +1,6 @@
-# vc
-*Module: [[Voicechannels]]*
+# `/vc`
 Customise properties of your temporary VC
+*Module: [[Voicechannels]]*
 ## `/vc name`
 Set the name of your VC
 #### name

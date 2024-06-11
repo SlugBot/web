@@ -1,6 +1,6 @@
-# rep
-*Module: [[Misc]]*
+# `/rep`
 Give positive or negative rep to another member
+*Module: [[Misc]]*
 #### member
 Member to rep
 - Type: `USER`

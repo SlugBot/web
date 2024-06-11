@@ -1,6 +1,6 @@
-# profile
-*Module: [[Misc]]*
+# `/profile`
 View a member's profile or edit your own.
+*Module: [[Misc]]*
 ## `/profile view`
 View a member's profile
 #### member

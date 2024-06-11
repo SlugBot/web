@@ -1,6 +1,6 @@
-# iwon
-*Module: [[Pvplb]]*
+# `/iwon`
 declare the outcome of a challenge as a win
+*Module: [[Pvplb]]*
 #### rounds_won
 Number of rounds you won
 - Type: `INTEGER`

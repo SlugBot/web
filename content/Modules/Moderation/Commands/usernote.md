@@ -1,6 +1,6 @@
-# usernote
-*Module: [[Moderation]]*
+# `/usernote`
 Add or remove a private note about a user. Only mods can see these notes.
+*Module: [[Moderation]]*
 ## `/usernote add`
 Add a note to a member. Only mods can see these notes.
 #### member

@@ -1,6 +1,6 @@
-# weaponer
-*Module: [[Eldenring]]*
+# `/weaponer`
 Get info on a given Elden Ring weapon, or get the top 10 weapons of each class
+*Module: [[Eldenring]]*
 ## `/weaponer info`
 Get info on a weapon or list of weapons separated by commas
 #### weapon

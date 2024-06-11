@@ -1,6 +1,6 @@
-# temprole
-*Module: [[Roles]]*
+# `/temprole`
 Set a role as 'temporary', meaning it will automatically be removed after a period of time
+*Module: [[Roles]]*
 ## `/temprole add`
 Add a new temporary role
 #### role

@@ -1,6 +1,6 @@
-# warn
-*Module: [[Moderation]]*
+# `/warn`
 Warn a member, remove a warning, or view warnings
+*Module: [[Moderation]]*
 ## `/warn add`
 Warn a member
 #### member

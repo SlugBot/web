@@ -1,6 +1,6 @@
-# filter
-*Module: [[Moderation]]*
+# `/filter`
 Manage filters in this server.
+*Module: [[Moderation]]*
 ## `/filter add`
 Add a new word or regEx filter.
 #### filter

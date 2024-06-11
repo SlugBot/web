@@ -1,6 +1,6 @@
-# stocks
-*Module: [[Economy]]*
+# `/stocks`
 Buy or sell stocks
+*Module: [[Economy]]*
 ## `/stocks buy`
 Buy stocks
 #### stock

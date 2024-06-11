@@ -1,6 +1,6 @@
-# build
-*Module: [[Darksouls]]*
+# `/build`
 Manage your builds or view the builds of another member
+*Module: [[Darksouls]]*
 ## `/build add`
 Add a build to your buid list
 #### name

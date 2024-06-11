@@ -1,6 +1,6 @@
-# streamer
-*Module: [[Streams]]*
+# `/streamer`
 Manage the server's twitch stream notification list
+*Module: [[Streams]]*
 ## `/streamer add`
 Add a streamer to the streamer list
 #### streamer

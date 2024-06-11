@@ -1,6 +1,6 @@
-# ban
-*Module: [[Moderation]]*
+# `/ban`
 Ban a member
+*Module: [[Moderation]]*
 #### member
 Member to ban or user ID of user to preemptively ban
 - Type: `STRING`

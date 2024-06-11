@@ -1,6 +1,6 @@
-# command
-*Module: [[CustomCommands]]*
+# `/command`
 Add or remove custom commands or regex keyword matches.
+*Module: [[CustomCommands]]*
 ## `/command add`
 Add or update a custom command or regex keyword match
 

@@ -1,6 +1,6 @@
-# scan
-*Module: [[Economy]]*
+# `/scan`
 Scan for processes
+*Module: [[Economy]]*
 #### attacker_user
 Scan for processes owned by this user
 - Type: `Autocomplete Selection`

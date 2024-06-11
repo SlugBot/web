@@ -1,6 +1,6 @@
-# allocatestatser
-*Module: [[Eldenring]]*
+# `/allocatestatser`
 Find the optimal stat spread for a given Elden Ring weapon
+*Module: [[Eldenring]]*
 #### weapon
 Weapon to allocate stats for
 - Type: `Autocomplete Selection`

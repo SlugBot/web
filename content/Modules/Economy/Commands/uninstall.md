@@ -1,6 +1,6 @@
-# uninstall
-*Module: [[Economy]]*
+# `/uninstall`
 Uninstall a process type to free up process slots
+*Module: [[Economy]]*
 #### process
 Process type to uninstall
 - Type: `Autocomplete Selection`

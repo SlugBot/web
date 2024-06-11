@@ -1,6 +1,6 @@
-# knuckleslug
-*Module: [[Economy]]*
+# `/knuckleslug`
 Play knuckleslug
+*Module: [[Economy]]*
 #### bet
 Amount to bet on knuckleslug
 - Type: `NUMBER`
