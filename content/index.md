@@ -22,4 +22,4 @@ Once you've [invited SlugBot](https://discord.com/oauth2/authorize?client_id=344
 - [[Logging]]
 - [[Moderation]]
 - [[Permissions]]
-- [[PvP Leaderboard]]
+- [[pvplb|PvP Leaderboard]]
