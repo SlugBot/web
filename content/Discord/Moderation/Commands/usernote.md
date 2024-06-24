@@ -6,18 +6,18 @@ Add a note to a member. Only mods can see these notes.
 #### member
 Member to add note to
 - Type: `USER`
-- Required: `true`
+- Required: `TRUE`
 #### note
 The note to add
 - Type: `STRING`
-- Required: `true`
+- Required: `TRUE`
 ## `/usernote remove <member> <note>`
 remove an existing user note
 #### member
 Member to add note to
 - Type: `USER`
-- Required: `true`
+- Required: `TRUE`
 #### note
 Note to remove
-- Type: `Autocomplete Selection`
-- Required: `true`
+- Type: `AUTOCMPLETE SELECTION`
+- Required: `TRUE`

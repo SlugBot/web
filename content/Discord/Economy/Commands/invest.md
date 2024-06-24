@@ -6,14 +6,14 @@ Make a new investment
 #### channel
 Channel to invest in
 - Type: `CHANNEL`
-- Required: `true`
+- Required: `TRUE`
 #### amount
 Amount of SC to invest
 - Type: `NUMBER`
-- Required: `false`
+- Required: `FALSE`
 ## `/invest terminate <channel>`
 Terminate an existing investment prematurely
 #### channel
 Channel to terminate investment in
-- Type: `Autocomplete Selection`
-- Required: `true`
+- Type: `AUTOCMPLETE SELECTION`
+- Required: `TRUE`

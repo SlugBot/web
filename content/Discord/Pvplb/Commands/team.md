@@ -5,49 +5,49 @@ Create and manage a team for a PvP leaderboard
 Create a new team
 #### leaderboard
 Pick a leaderboard to create a team for
-- Type: `Autocomplete Selection`
-- Required: `true`
+- Type: `AUTOCMPLETE SELECTION`
+- Required: `TRUE`
 #### name
 Team name
 - Type: `STRING`
-- Required: `true`
+- Required: `TRUE`
 #### members
 List of members to invite to team (@member)
 - Type: `STRING`
-- Required: `true`
+- Required: `TRUE`
 ## `/team update <leaderboard> <name> [new_name] [new_leader] [add_members] [remove_members]`
 Update
 #### leaderboard
 Leaderboard of team to update
-- Type: `Autocomplete Selection`
-- Required: `true`
+- Type: `AUTOCMPLETE SELECTION`
+- Required: `TRUE`
 #### name
 Team name of team to update
-- Type: `Autocomplete Selection`
-- Required: `true`
+- Type: `AUTOCMPLETE SELECTION`
+- Required: `TRUE`
 #### new_name
 New team name
 - Type: `STRING`
-- Required: `false`
+- Required: `FALSE`
 #### new_leader
 New team leader
 - Type: `USER`
-- Required: `false`
+- Required: `FALSE`
 #### add_members
 List of members to invite to team (@member)
 - Type: `STRING`
-- Required: `false`
+- Required: `FALSE`
 #### remove_members
 List of members to remove from team (@member)
 - Type: `STRING`
-- Required: `false`
+- Required: `FALSE`
 ## `/team disband <leaderboard> <name>`
 Disband an existing team
 #### leaderboard
 Pick the leaderboard your team is for
-- Type: `Autocomplete Selection`
-- Required: `true`
+- Type: `AUTOCMPLETE SELECTION`
+- Required: `TRUE`
 #### name
 Team name
-- Type: `Autocomplete Selection`
-- Required: `true`
+- Type: `AUTOCMPLETE SELECTION`
+- Required: `TRUE`

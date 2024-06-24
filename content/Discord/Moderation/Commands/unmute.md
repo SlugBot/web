@@ -5,14 +5,12 @@ Unmute a muted member.
 #### member
 Member to unmute
 - Type: `USER`
-- Required: `true`
-## `/unmute <member> [reason] [context_url]`
+- Required: `TRUE`
 #### reason
 Reason for unmuting.
 - Type: `STRING`
-- Required: `false`
-## `/unmute <member> [reason] [context_url]`
+- Required: `FALSE`
 #### context_url
 Link to a message or image for extra context.
 - Type: `STRING`
-- Required: `false`
+- Required: `FALSE`

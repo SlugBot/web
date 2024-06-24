@@ -5,9 +5,8 @@ View your rank and match history
 #### member
 View match history of this member
 - Type: `USER`
-- Required: `false`
-## `/elo [member] [team]`
+- Required: `FALSE`
 #### team
 View match history of this team
-- Type: `Autocomplete Selection`
-- Required: `false`
+- Type: `AUTOCMPLETE SELECTION`
+- Required: `FALSE`

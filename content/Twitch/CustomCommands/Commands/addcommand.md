@@ -5,9 +5,8 @@ Add a custom command or regex response
 #### command
 Command or regEx match to respond to
 - Type: `STRING`
-- Required: `true`
-## `!addcommand <command> <response>`
+- Required: `TRUE`
 #### response
 Response string. Can include [[Flag Replacers]]
 - Type: `STRING`
-- Required: `true`
+- Required: `TRUE`

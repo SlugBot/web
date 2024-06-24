@@ -12,10 +12,10 @@ Modify welcome message settings
 #### channel
 Channel to send welcome messages to
 - Type: `CHANNEL`
-- Required: `false`
+- Required: `FALSE`
 #### show_profile
 Show member's profile banner with the welcome message?
 - Type: `BOOLEAN`
-- Required: `false`
+- Required: `FALSE`
 ## `/welcomemessage view`
 View current welcome message and settings

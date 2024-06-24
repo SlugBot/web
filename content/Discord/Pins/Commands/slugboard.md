@@ -6,48 +6,48 @@ Create a new Slugboard
 #### channel
 Channel to send slugboarded messages to
 - Type: `CHANNEL`
-- Required: `true`
+- Required: `TRUE`
 #### flag
 Members can react with this Emoji to flag a message for the Slugboard
 - Type: `STRING`
-- Required: `true`
+- Required: `TRUE`
 ## `/slugboard remove <slugboard>`
 Remove an existing Slugboard
 #### slugboard
 Slugboad to remove
-- Type: `Autocomplete Selection`
-- Required: `true`
+- Type: `AUTOCMPLETE SELECTION`
+- Required: `TRUE`
 ## `/slugboard update <slugboard> [flag] [response] [threshold] [delete_threshold] [unflag] [allow_unflag] [color]`
 Update settings of an existing Slugboard
 #### slugboard
 Slugboad to update
-- Type: `Autocomplete Selection`
-- Required: `true`
+- Type: `AUTOCMPLETE SELECTION`
+- Required: `TRUE`
 #### flag
 Members can react with this Emoji to flag a message for the Slugboard
 - Type: `STRING`
-- Required: `false`
+- Required: `FALSE`
 #### response
 Emoji SlugBot will react with when a message gets Slugboard'ed
 - Type: `STRING`
-- Required: `false`
+- Required: `FALSE`
 #### threshold
 Flag total threshold to be posted on the Slugboard
 - Type: `INTEGER`
-- Required: `false`
+- Required: `FALSE`
 #### delete_threshold
 Flag total lower threshold to be removed from the Slugboard
 - Type: `INTEGER`
-- Required: `false`
+- Required: `FALSE`
 #### unflag
 Emoji members can react with to count against the flag count
 - Type: `STRING`
-- Required: `false`
+- Required: `FALSE`
 #### allow_unflag
 Can members use unflag reacts to count against flag reacts?
 - Type: `BOOLEAN`
-- Required: `false`
+- Required: `FALSE`
 #### color
 Hex color code of the Slugboard embed
 - Type: `STRING`
-- Required: `false`
+- Required: `FALSE`

@@ -5,19 +5,16 @@ Bulk delete messages
 #### earliest_msg
 Messages between this and the latest message will be deleted
 - Type: `STRING`
-- Required: `true`
-## `/deletemessages <earliest_msg> [latest_msg] [member] [user_id]`
+- Required: `TRUE`
 #### latest_msg
 Messages between this and the earliest message will be deleted
 - Type: `STRING`
-- Required: `false`
-## `/deletemessages <earliest_msg> [latest_msg] [member] [user_id]`
+- Required: `FALSE`
 #### member
 Only delete messages by this member
 - Type: `USER`
-- Required: `false`
-## `/deletemessages <earliest_msg> [latest_msg] [member] [user_id]`
+- Required: `FALSE`
 #### user_id
 Only delete messages by member with this ID
 - Type: `STRING`
-- Required: `false`
+- Required: `FALSE`

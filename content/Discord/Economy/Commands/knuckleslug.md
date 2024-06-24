@@ -5,9 +5,8 @@ Play knuckleslug
 #### bet
 Amount to bet on knuckleslug
 - Type: `NUMBER`
-- Required: `true`
-## `/knuckleslug <bet> [opponent]`
+- Required: `TRUE`
 #### opponent
 Optionally play against another user
 - Type: `USER`
-- Required: `false`
+- Required: `FALSE`

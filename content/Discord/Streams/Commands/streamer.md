@@ -6,12 +6,12 @@ Add a streamer to the streamer list
 #### streamer
 Twitch username of streamer to add
 - Type: `STRING`
-- Required: `true`
+- Required: `TRUE`
 ## `/streamer remove <streamer>`
 Remove a streamer from the streamer list
 #### streamer
 Twitch username of streamer to remove
-- Type: `Autocomplete Selection`
-- Required: `true`
+- Type: `AUTOCMPLETE SELECTION`
+- Required: `TRUE`
 ## `/streamer list`
 List all streamers currently in the streamer list

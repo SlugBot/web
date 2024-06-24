@@ -5,4 +5,4 @@ Remove an existing custom command
 #### command
 existing command or regEx to remove
 - Type: `STRING`
-- Required: `true`
+- Required: `TRUE`

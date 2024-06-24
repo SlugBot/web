@@ -5,14 +5,12 @@ Kick a member from the server
 #### member
 Member to kick from the server
 - Type: `USER`
-- Required: `true`
-## `/kick <member> [reason] [context_link]`
+- Required: `TRUE`
 #### reason
 Reason for kicking. The reason is DMed to member.
 - Type: `STRING`
-- Required: `false`
-## `/kick <member> [reason] [context_link]`
+- Required: `FALSE`
 #### context_link
 Link to a message or image for extra context
 - Type: `STRING`
-- Required: `false`
+- Required: `FALSE`

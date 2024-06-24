@@ -6,18 +6,18 @@ Set the total activity exp of a member
 #### member
 Member to set exp for
 - Type: `USER`
-- Required: `true`
+- Required: `TRUE`
 #### exp
 Exp amount to set
 - Type: `INTEGER`
-- Required: `true`
+- Required: `TRUE`
 ## `/setexp weekly <member> <exp>`
 Set the weekly activity exp of a member
 #### member
 Member to set weekly exp for
 - Type: `USER`
-- Required: `true`
+- Required: `TRUE`
 #### exp
 weekly exp amount to set
 - Type: `INTEGER`
-- Required: `true`
+- Required: `TRUE`

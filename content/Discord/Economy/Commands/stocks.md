@@ -5,37 +5,37 @@ Buy or sell stocks
 Buy stocks
 #### stock
 Stock to buy
-- Type: `Autocomplete Selection`
-- Required: `true`
+- Type: `AUTOCMPLETE SELECTION`
+- Required: `TRUE`
 #### amount
 Amount of shares to buy
 - Type: `NUMBER`
-- Required: `true`
+- Required: `TRUE`
 #### limit_order
 Buy stock when below the given price
 - Type: `NUMBER`
-- Required: `false`
+- Required: `FALSE`
 #### stop_order
 Buy stock when above the given price
 - Type: `NUMBER`
-- Required: `false`
+- Required: `FALSE`
 ## `/stocks sell <stock> <amount> [limit_order] [stop_order]`
 Sell stocks
 #### stock
 Stock to sell
-- Type: `Autocomplete Selection`
-- Required: `true`
+- Type: `AUTOCMPLETE SELECTION`
+- Required: `TRUE`
 #### amount
 Amount of shares to sell
 - Type: `NUMBER`
-- Required: `true`
+- Required: `TRUE`
 #### limit_order
 Sell stock when above the given price
 - Type: `NUMBER`
-- Required: `false`
+- Required: `FALSE`
 #### stop_order
 Sell stock when below the given price
 - Type: `NUMBER`
-- Required: `false`
+- Required: `FALSE`
 ## `/stocks list`
 View stock values

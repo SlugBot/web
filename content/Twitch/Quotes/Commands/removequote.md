@@ -5,4 +5,4 @@ remove a quote by referencing its quote number. Quote numbers can be viewed usin
 #### quote_number
 Quote number, displayed in the quote list
 - Type: `STRING`
-- Required: `true`
+- Required: `TRUE`

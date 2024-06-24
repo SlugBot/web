@@ -5,39 +5,32 @@ Respecc your Slug Economy stats
 #### firewall
 New FIREWALL level
 - Type: `INTEGER`
-- Required: `false`
-## `/respecc [firewall] [bypasser] [encryption] [cracker] [scanner] [interceptor] [wire] [injector]`
+- Required: `FALSE`
 #### bypasser
 New BYPASSER level
 - Type: `INTEGER`
-- Required: `false`
-## `/respecc [firewall] [bypasser] [encryption] [cracker] [scanner] [interceptor] [wire] [injector]`
+- Required: `FALSE`
 #### encryption
 New ENCRYPTION level
 - Type: `INTEGER`
-- Required: `false`
-## `/respecc [firewall] [bypasser] [encryption] [cracker] [scanner] [interceptor] [wire] [injector]`
+- Required: `FALSE`
 #### cracker
 New CRACKER level
 - Type: `INTEGER`
-- Required: `false`
-## `/respecc [firewall] [bypasser] [encryption] [cracker] [scanner] [interceptor] [wire] [injector]`
+- Required: `FALSE`
 #### scanner
 New SCANNER level
 - Type: `INTEGER`
-- Required: `false`
-## `/respecc [firewall] [bypasser] [encryption] [cracker] [scanner] [interceptor] [wire] [injector]`
+- Required: `FALSE`
 #### interceptor
 New INTERCEPTOR level
 - Type: `INTEGER`
-- Required: `false`
-## `/respecc [firewall] [bypasser] [encryption] [cracker] [scanner] [interceptor] [wire] [injector]`
+- Required: `FALSE`
 #### wire
 New WIRE level
 - Type: `INTEGER`
-- Required: `false`
-## `/respecc [firewall] [bypasser] [encryption] [cracker] [scanner] [interceptor] [wire] [injector]`
+- Required: `FALSE`
 #### injector
 New INJECTOR level
 - Type: `INTEGER`
-- Required: `false`
+- Required: `FALSE`

@@ -5,4 +5,4 @@ Adds quote to quote list to be randomly selected by [[quote]]
 #### quote
 Quote to add
 - Type: `STRING`
-- Required: `true`
+- Required: `TRUE`

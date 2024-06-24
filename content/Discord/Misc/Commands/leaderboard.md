@@ -4,5 +4,5 @@ view one of the various leaderboards
 ## `/leaderboard <leaderboard>`
 #### leaderboard
 Which leaderboard to view
-- Type: `Autocomplete Selection`
-- Required: `true`
+- Type: `AUTOCMPLETE SELECTION`
+- Required: `TRUE`

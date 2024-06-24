@@ -5,4 +5,4 @@ Get the estimated level of another player killed in DS1, DS3 or ER
 #### souls_received
 Number of souls or runes received when you killed the player
 - Type: `INTEGER`
-- Required: `true`
+- Required: `TRUE`

@@ -8,53 +8,53 @@ Abort your existing challenge
 Put out an open challenge anyone can accept
 #### leaderboard
 Pick a leaderboard to participate in
-- Type: `Autocomplete Selection`
-- Required: `true`
+- Type: `AUTOCMPLETE SELECTION`
+- Required: `TRUE`
 #### region
 Limit opponents to only ones in the given region
-- Type: `Autocomplete Selection`
-- Required: `false`
+- Type: `AUTOCMPLETE SELECTION`
+- Required: `FALSE`
 #### platform
 Limit opponents to only ones on the given platforms
-- Type: `Autocomplete Selection`
-- Required: `false`
+- Type: `AUTOCMPLETE SELECTION`
+- Required: `FALSE`
 #### rank_range
 Only those within this rank range can accept your challenge
 - Type: `INTEGER`
-- Required: `false`
+- Required: `FALSE`
 #### automatch
 Should this open challenge automatically match with other valid open challenges?
 - Type: `BOOLEAN`
-- Required: `false`
+- Required: `FALSE`
 ## `/challenge someone <opponent> <leaderboard>`
 Challenge a specific member
 #### opponent
 Member to challenge
 - Type: `USER`
-- Required: `true`
+- Required: `TRUE`
 #### leaderboard
 Pick a leaderboard to participate in
-- Type: `Autocomplete Selection`
-- Required: `true`
+- Type: `AUTOCMPLETE SELECTION`
+- Required: `TRUE`
 ## `/challenge team <leaderboard> [your_team] [opponent_team] [region] [platform]`
 Challenge a team or use a specific team, or both
 #### leaderboard
 Pick a leaderboard to participate in
-- Type: `Autocomplete Selection`
-- Required: `true`
+- Type: `AUTOCMPLETE SELECTION`
+- Required: `TRUE`
 #### your_team
 Team name of your team
-- Type: `Autocomplete Selection`
-- Required: `false`
+- Type: `AUTOCMPLETE SELECTION`
+- Required: `FALSE`
 #### opponent_team
 Team name of opponent
-- Type: `Autocomplete Selection`
-- Required: `false`
+- Type: `AUTOCMPLETE SELECTION`
+- Required: `FALSE`
 #### region
 Limit opponents to only ones in the given regions
-- Type: `Autocomplete Selection`
-- Required: `false`
+- Type: `AUTOCMPLETE SELECTION`
+- Required: `FALSE`
 #### platform
 Limit opponents to only ones on the given platforms
-- Type: `Autocomplete Selection`
-- Required: `false`
+- Type: `AUTOCMPLETE SELECTION`
+- Required: `FALSE`

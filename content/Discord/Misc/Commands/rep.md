@@ -5,12 +5,12 @@ Give positive or negative rep to another member
 #### member
 Member to rep
 - Type: `USER`
-- Required: `false`
-## `/rep [member] [amount]`
+- Required: `FALSE`
 #### amount
 Amount of rep to give
-  - -2
-  - -1
-  - 1
-  - 2
-- Required: `false`
+- Type: `SELECTION`
+  - `-2`
+  - `-1`
+  - `1`
+  - `2`
+- Required: `FALSE`

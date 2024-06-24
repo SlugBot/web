@@ -5,19 +5,16 @@ Send a message in a specified channel.
 #### channel
 Channel to send message to
 - Type: `CHANNEL`
-- Required: `false`
-## `/say [channel] [edit_msg_id] [do_embed] [schedule_send_time]`
+- Required: `FALSE`
 #### edit_msg_id
 ID of SlugBot msg to edit
 - Type: `STRING`
-- Required: `false`
-## `/say [channel] [edit_msg_id] [do_embed] [schedule_send_time]`
+- Required: `FALSE`
 #### do_embed
 Should the message be put inside an embed?
 - Type: `BOOLEAN`
-- Required: `false`
-## `/say [channel] [edit_msg_id] [do_embed] [schedule_send_time]`
+- Required: `FALSE`
 #### schedule_send_time
 Delay sending the message; e.g. "4 days 12 hours"
 - Type: `STRING`
-- Required: `false`
+- Required: `FALSE`

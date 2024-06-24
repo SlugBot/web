@@ -6,46 +6,47 @@ Add a build to your buid list
 #### name
 Character name
 - Type: `STRING`
-- Required: `false`
+- Required: `FALSE`
 #### level
 Character level
 - Type: `INTEGER`
-- Required: `false`
+- Required: `FALSE`
 #### upgrade_level
 Weapon upgrade level
 - Type: `INTEGER`
-- Required: `false`
+- Required: `FALSE`
 #### game
 Game
-  - BB
-  - DS1
-  - DS2
-  - DS3
-  - ER
-- Required: `false`
+- Type: `SELECTION`
+  - `BB`
+  - `DS1`
+  - `DS2`
+  - `DS3`
+  - `ER`
+- Required: `FALSE`
 #### planner_link
 Extract build info from a build planner link
 - Type: `STRING`
-- Required: `false`
+- Required: `FALSE`
 #### image_link
 Add a character portrait by providing a direct image link
 - Type: `STRING`
-- Required: `false`
+- Required: `FALSE`
 ## `/build remove <name>`
 Remove a build from your build list
 #### name
 Name of build to remove
-- Type: `Autocomplete Selection`
-- Required: `true`
+- Type: `AUTOCMPLETE SELECTION`
+- Required: `TRUE`
 ## `/build set <name>`
 Set a current build
 #### name
 Name of build to set as current
-- Type: `Autocomplete Selection`
-- Required: `true`
+- Type: `AUTOCMPLETE SELECTION`
+- Required: `TRUE`
 ## `/build list [member]`
 View your build list or the build list of another member
 #### member
 View builds by this member
 - Type: `USER`
-- Required: `false`
+- Required: `FALSE`

@@ -6,38 +6,38 @@ Create a new role-at-level
 #### role
 Role to be given
 - Type: `ROLE`
-- Required: `true`
+- Required: `TRUE`
 #### level_add
 Minimum level needed to receive the role
 - Type: `INTEGER`
-- Required: `true`
+- Required: `TRUE`
 #### level_remove
 Minimum level needed to remove the role
 - Type: `INTEGER`
-- Required: `false`
+- Required: `FALSE`
 #### do_notification
 Should a message in chat be sent when a member earns a role?
 - Type: `BOOLEAN`
-- Required: `false`
+- Required: `FALSE`
 #### is_weekly
 Should weekly activity be used instead?
 - Type: `BOOLEAN`
-- Required: `false`
+- Required: `FALSE`
 ## `/roleatlevel remove <role>`
 Remove an existing role-at-level
 #### role
 Role to be removed
 - Type: `ROLE`
-- Required: `true`
+- Required: `TRUE`
 ## `/roleatlevel list [is_weekly]`
 List all role-at-levels
 #### is_weekly
 Display weekly activity role-at-levels
 - Type: `BOOLEAN`
-- Required: `false`
+- Required: `FALSE`
 ## `/roleatlevel set_image <image_url>`
 Set the image on the 'earned role' notification
 #### image_url
 Direct image link to a png/gif
 - Type: `STRING`
-- Required: `true`
+- Required: `TRUE`

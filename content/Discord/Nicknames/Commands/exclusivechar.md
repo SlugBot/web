@@ -6,20 +6,20 @@ Add or update an exclusive character for a member or role
 #### char
 Exclusive character for member or role
 - Type: `STRING`
-- Required: `true`
+- Required: `TRUE`
 #### member
 Member or role to apply exclusive character to
 - Type: `MENTIONABLE`
-- Required: `true`
+- Required: `TRUE`
 ## `/exclusivechar remove <char> [member]`
 remove an exclusive character for a member or role
 #### char
 Exclusive character
 - Type: `STRING`
-- Required: `true`
+- Required: `TRUE`
 #### member
 Member or role to remove exclusive character from
 - Type: `MENTIONABLE`
-- Required: `false`
+- Required: `FALSE`
 ## `/exclusivechar list`
 View all existing exclusive characters in this guild

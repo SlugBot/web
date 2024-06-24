@@ -6,18 +6,18 @@ Set the total activity level of a member
 #### member
 Member to set level for
 - Type: `USER`
-- Required: `true`
+- Required: `TRUE`
 #### level
 level to set
 - Type: `INTEGER`
-- Required: `true`
+- Required: `TRUE`
 ## `/setlevel weekly <member> <level>`
 Set the weekly activity level of a member
 #### member
 Member to set weekly level for
 - Type: `USER`
-- Required: `true`
+- Required: `TRUE`
 #### level
 weekly level to set
 - Type: `INTEGER`
-- Required: `true`
+- Required: `TRUE`
