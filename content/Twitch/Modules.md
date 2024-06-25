@@ -5,3 +5,5 @@ SlugBot's commands and functionality are grouped into several modules. This allo
 - [[Misc]]
 - [[CustomCommands]]
 - [[So]]
+- [[Builds]]
+- [[TwitchMusic]]
