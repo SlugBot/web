@@ -1,12 +1,13 @@
 `UNDER CONSTRUCTION`
 # Commands
 - [[allocatestatsds3]]
+- [[allocatestatser]]
 - [[build]]
+- [[iframes]]
 - [[igot]]
 - [[namecheck]]
+- [[parryframes]]
 - [[poise]]
 - [[range]]
 - [[weaponds3]]
-- [[allocatestatser]]
-- [[iframes]]
-- [[parryframes]]
+- [[weaponer]]
