@@ -1,5 +1,5 @@
 # `!setbuild`
-*Module: [[Builds]]*<br>
+*Module: [[Soulsborne]]*<br>
 Set a build from your build list
 ## `!setbuild <build_name>`
 #### build_name

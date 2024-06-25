@@ -1,5 +1,5 @@
 # `!addbuild`
-*Module: [[Builds]]*<br>
+*Module: [[Soulsborne]]*<br>
 Add a Souls game build to the streamer's build list
 ## `!addbuild <planner_link>`
 #### planner_link

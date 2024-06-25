@@ -1,5 +1,5 @@
 # `!removebuild`
-*Module: [[Builds]]*<br>
+*Module: [[Soulsborne]]*<br>
 remove a build from the streamer's build list
 ## `!removebuild <build_name>`
 #### build_name

@@ -1,5 +1,5 @@
 # `!igot`
-*Module: [[Darksouls]]*<br>
+*Module: [[Soulsborne]]*<br>
 Get the estimated level of another player killed in DS1, DS3 or ER
 ## `!igot <souls_received>`
 #### souls_received

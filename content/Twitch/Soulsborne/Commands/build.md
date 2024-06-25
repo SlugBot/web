@@ -1,5 +1,5 @@
 # `!build`
-*Module: [[Builds]]*<br>
+*Module: [[Soulsborne]]*<br>
 Get info on the streamer's currently set build
 ## `!build [list]`
 #### list

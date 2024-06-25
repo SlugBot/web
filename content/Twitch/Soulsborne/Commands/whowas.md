@@ -1,5 +1,5 @@
 # `!whowas`
-*Module: [[Builds]]*<br>
+*Module: [[Soulsborne]]*<br>
 find the owner of a character you met in-game. Will attempt to find three builds in its database with the most similar names.
 ## `!whowas <build_name>`
 #### build_name

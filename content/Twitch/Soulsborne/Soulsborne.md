@@ -1,5 +1,6 @@
 `UNDER CONSTRUCTION`
 # Commands
+- [[igot]]
 - [[addbuild]]
 - [[bl]]
 - [[build]]

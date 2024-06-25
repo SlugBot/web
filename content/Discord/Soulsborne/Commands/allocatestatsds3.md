@@ -1,5 +1,5 @@
 # `/allocatestatsds3`
-*Module: [[Darksouls]]*<br>
+*Module: [[Soulsborne]]*<br>
 Find the optimal stat spread for a given weapon
 ## `/allocatestatsds3 <weapon> <spend> [upgrade] [stats]`
 #### weapon

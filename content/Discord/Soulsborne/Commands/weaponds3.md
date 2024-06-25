@@ -1,5 +1,5 @@
 # `/weaponds3`
-*Module: [[Darksouls]]*<br>
+*Module: [[Soulsborne]]*<br>
 Get info on a given weapon, or get the top 10 weapons of each class
 ## `/weaponds3 info <weapon> [upgrade] [stats]`
 Get info on a weapon or list of weapons separated by commas

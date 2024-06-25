@@ -7,3 +7,6 @@
 - [[poise]]
 - [[range]]
 - [[weaponds3]]
+- [[allocatestatser]]
+- [[iframes]]
+- [[parryframes]]

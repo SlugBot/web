@@ -1,5 +1,5 @@
 # `/allocatestatser`
-*Module: [[Eldenring]]*<br>
+*Module: [[Soulsborne]]*<br>
 Find the optimal stat spread for a given Elden Ring weapon
 ## `/allocatestatser <weapon> <spend> [upgrade] [stats] [calc_against]`
 #### weapon

@@ -1,5 +1,5 @@
 # `/build`
-*Module: [[Darksouls]]*<br>
+*Module: [[Soulsborne]]*<br>
 Manage your builds or view the builds of another member
 ## `/build add [name] [level] [upgrade_level] [game] [planner_link] [image_link]`
 Add a build to your buid list
