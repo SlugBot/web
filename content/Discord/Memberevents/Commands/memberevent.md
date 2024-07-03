@@ -80,7 +80,7 @@ Password for multiplayer.
 - Type: `STRING`
 - Required: `FALSE`
 #### cross_server
-Should the event be displayed in all servers you share with slugbot?
+Should the event be displayed in all servers you share with SlugBot?
 - Type: `BOOLEAN`
 - Required: `FALSE`
 ## `/memberevent end`

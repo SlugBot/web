@@ -1,3 +1,63 @@
+## June 2024
+### New Additions
+- Added `pointLossCap` point setting to [[ladder#`/ladder point_settings`|/ladder point_settings]].
+- [[Flag Replacers#ARG]] now work in [[ticketer]] `content_message` and `init_message`strings. They will embed the corresponding ticketer question response.
+- Giving a valid JSON object for a discord embed for [[ticketer]] `content_message` or `init_message` will now convert them to embeds automatically.
+- Giving a valid JSON object for a discord embed for [[command#`/command add`|/command add]] command response will now convert the response to an embed automatically.
+### Updates
+- Updated [[profile]] to slash command.
+- Added event log for [[say]] command so moderators can see who used SlugBot to send a message.
+- `ladder` module renamed to [[Pvplb]].
+- You can now build embeds for both `init_message` and `content_message` of [[ticketer]]s.
+- You can now hide the default ticket response embed by setting `hideReponseEmbed` to true in [[ticketer#`/ticketer update`|ticketer update]].
+- You can now customise [[ticketer]] thread titles.
+### Bug Fixes
+- Swiss tourney round count is locked in on start. Players dropping can no-longer reduce the number of rounds.
+- Fixed bug causing embedded reminders to break.
+- Fixed bug causing Slugboard colour to be ignored.
+- Fixed bug causing ticketers that do not spawn a thread to fail.
+- Fixed bug causing Slugboard autocomplete to fail when more than 25 Slugboards exist.
+- Profile backgrounds will now never expire as they are uploaded directly to SlugBot and don't need to be externally hosted.
+- Fixed bug where the displayed ticketer ID did not show the same one you selected when using [[ticketer#`/ticketer remove`|ticketer remove]].
+- Fixed bug with ticketer selection autocomplete caching making ticketer searching inconsistent.
+
+---
+
+## May 2024
+### New Additions
+- Added private thread option to [[ticketer]].
+### Updates
+- Can now set if temporary [[vc]] channels create a text channel or use the built-in VC text channel on creation.
+- Temporary [[vc]]s now move the user to a new channel instead of repurposing the `JOIN to CREATE VC` channel.
+- Say command max character limit will now update dynamically depending on if the message is embedded or not.
+### Bug Fixes
+- Fixed bug causing [[vc]] tutorial message to be sent to the wrong channel.
+- Fixed bug with swiss tourney match timeout not accounting for pre-round delay.
+- Fixed bug causing [[Pvplb]] team matches to ping unnecessarily. 
+- Fixed bug causing swiss tourneys to fail to abort.
+- Fixed bug causing [[say]] to double send.
+
+---
+
+## April 2024
+### Updates
+- Added `Prestige` profile border.
+- Inbound transfers are now logged for the recipient as well as the sender.
+- [[slugboard]]'ed messages that contain an embed will now display the embed contents.
+- [[slugboard]]s that share the same channel will merge if the same message is flagged for multiple [[slugboard]]s.
+- Increased investment cap.
+- Tourney channels created by [[tourney]] now inherit the category permissions.
+- Optimised [[challenge]] creating and joining.
+- Improved [[tourney#`/tourney revoke <name> <member> [reason]`|tourney revoke]] autocomplete options.
+### Bug Fixes
+- Fixed bug with [[ladder#`/ladder info <ladder> [start_time] [end_time] [ignore_resets]`|ladder info]] time range not accounting for the correct reset time.
+- Fixed bug allowing players to infinitely double down in [[blackjack]].
+- Fixed bug causing gambling cap to be applied to PvP [[roll]]s.
+- Fixed incorrect lance values for [[weaponer]] and [[allocatestatser]].
+- Fixed bug making scheduled message edits through [[say]] impossible.
+- Fixed bug that stopped direct challenges from pinging the opponent.
+
+---
 
 ## March 2024
 ### New Additions
@@ -78,42 +138,25 @@
 
 ***
 
-## 23rd December 2023
-### Updates
-- Updated [[scan|/scan]] to slash command.
-- Improved `TRANSFER` process messages.
-- The string at the top of the leaderboard embed can now be customised.
-- Improved various autocomplete fields in [[ladder|/ladder]] command.
-- Minor improvement to word filtering.
-
-### Bug Fixes
-- Fixed incorrect starting bet being made on leaderboard challenges.
-- Fixed commands being added multiple times if the attempts were cancelled.
-
-***
-
-## 9th December 2023
-### Updates
-- Improved [[Knuckleslug]] AI
-- Reduced Knuckleslug payout to 1.75x
-
-***
-
-## 1st December 2023
+## December 2023
+### New Additions
+- Added `border_loran` to shop stock.
+- Added [[ladder#`/ladder player_override force <ladder> <player_or_team1> <player_or_team2> [rounds_won] [rounds_lost]`|ladder player_override force]] for admins to force a match between players.
+- You can now customise the text at the top of Leaderboards.
 ### Updates
 - Updated Tutorial strings to be more up-to-date.
-- Improved caching for server word filters to increase performance.
-- New PROFILE_MOD border_loran added.
-
+- Server word filters are now cached to reduced DB queries.
+- Fixed typo in filter description.
+- updated [[scan]] to slash command.
 ### Bug Fixes
 - Fixed tutorial not responding.
 - Fixed incorrect plant count of process types in config menu.
 - Fixed incorrect log being shown when process planted on self.
-- Fixed typo in filter description.
+- Fixed bug when a command was added but aborted.
 
 ***
 
-## 1st October 2023
+## October 2023
 ### New Additions
   - Added functionality for profile element mods.
   - Added loads of profile stickers.

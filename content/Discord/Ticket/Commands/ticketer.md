@@ -37,7 +37,7 @@ Channel to move ticketer to
 Optional SlugBot message ID to replace with this ticketer
 - Type: `STRING`
 - Required: `FALSE`
-## `/ticketer update <ticketer_id> [send_to_channel] [title] [description] [button] [button_colour] [colour] [is_anonymous] [is_private] [whitelist_role] [blacklist_role] [hide_extra_info] [hide_response_embed] [give_role] [do_feedback] [do_thread] [init_message] [content_message]`
+## `/ticketer update <ticketer_id> [send_to_channel] [title] [description] [button] [button_colour] [colour] [is_anonymous] [is_private] [whitelist_role] [blacklist_role] [hide_extra_info] [hide_response_embed] [give_role] [do_feedback] [do_thread] [init_message] [content_message] [thread_title]`
 Update properties of a Ticketer message
 #### ticketer_id
 ID of Ticketer
@@ -113,6 +113,10 @@ Message to be sent in the accompanying thread
 - Required: `FALSE`
 #### content_message
 Message to be sent before the sent ticket embed
+- Type: `STRING`
+- Required: `FALSE`
+#### thread_title
+Title of accompanying thread if 'do_thread' set to true
 - Type: `STRING`
 - Required: `FALSE`
 ## `/ticketer add_field <ticketer_id> <question> [max_length] [is_required] [style]`
