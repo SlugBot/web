@@ -11,8 +11,9 @@ const config: QuartzConfig = {
     pageTitle: "SlugBot",
     enableSPA: true,
     enablePopovers: true,
-    analytics: {
-      provider: "plausible",
+    analytics: { 
+      provider: 'google', 
+      tagId: 'G-TM329WKMYV' 
     },
     locale: "en-US",
     baseUrl: "quartz.jzhao.xyz",
