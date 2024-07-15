@@ -15,3 +15,10 @@ Twitch username of streamer to remove
 - Required: `TRUE`
 ## `/streamer list`
 List all streamers currently in the streamer list
+
+## `/streamer set_role <role>`
+Members with this role will be shown in the streams channel when they go live
+#### role
+Members with this role will be shown in the streams channel when they go live
+- Type: `ROLE`
+- Required: `TRUE`

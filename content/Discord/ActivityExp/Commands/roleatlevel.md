@@ -35,6 +35,16 @@ List all role-at-levels
 Display weekly activity role-at-levels
 - Type: `BOOLEAN`
 - Required: `FALSE`
+## `/roleatlevel set_top_rank_role [top_rank_role] [weekly_top_rank_role]`
+Set role to be given to the member with the most activity EXP
+#### top_rank_role
+Role to be given to the member with the most activity EXP. Set to @everyone to reset
+- Type: `ROLE`
+- Required: `FALSE`
+#### weekly_top_rank_role
+Role to be given to the member with the most weekly activity EXP. Set to @everyone to reset
+- Type: `ROLE`
+- Required: `FALSE`
 ## `/roleatlevel set_image <image_url>`
 Set the image on the 'earned role' notification
 #### image_url
