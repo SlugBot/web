@@ -12,7 +12,7 @@ Channel to display the leaderboard
 - Type: `CHANNEL`
 - Required: `TRUE`
 ## `/ladder create swiss <title> <participant_role> <channel>`
-Swiss tournament manager
+Tournament manager using a [[Swiss Tournament Structure]]
 #### title
 leaderboard title
 - Type: `STRING`
