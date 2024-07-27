@@ -1,14 +1,3 @@
----
-tags:
-  - research
-topics:
-  - "[[gaming]]"
-  - "[[mathematics]]"
-dateAdded: 2024-03-14
-dateCompleted: 2024-03-20
-progress: complete
----
-
 A Swiss-system tournament is a non-eliminating tournament format that features a fixed number of rounds of competition, but considerably fewer than for a Round-Robin Tournament Structure; thus each competitor (team or individual) does not play all the other competitors.
 
 # Pairing
