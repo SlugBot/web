@@ -1,0 +1,11 @@
+`UNDER CONSTRUCTION`
+# Commands
+- [[igot]]
+- [[addbuild]]
+- [[bl]]
+- [[build]]
+- [[removebuild]]
+- [[rl]]
+- [[setbuild]]
+- [[sl]]
+- [[whowas]]

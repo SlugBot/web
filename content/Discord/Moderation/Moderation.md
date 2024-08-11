@@ -1,0 +1,13 @@
+`UNDER CONSTRUCTION`
+# Commands
+- [[ban]]
+- [[deletemessages]]
+- [[filter]]
+- [[kick]]
+- [[mute]]
+- [[persistentrole]]
+- [[unban]]
+- [[unmute]]
+- [[userinfo]]
+- [[usernote]]
+- [[warn]]
