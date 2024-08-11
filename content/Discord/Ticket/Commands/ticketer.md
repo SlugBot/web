@@ -108,15 +108,15 @@ If true, a thread will be created on the submitted ticket
 - Type: `BOOLEAN`
 - Required: `FALSE`
 #### init_message
-Message to be sent in the accompanying thread
+Message to be sent in the accompanying thread. Can include [[Flag Replacers]]
 - Type: `STRING`
 - Required: `FALSE`
 #### content_message
-Message to be sent before the sent ticket embed
+Message to be sent before the sent ticket embed. Can include [[Flag Replacers]]
 - Type: `STRING`
 - Required: `FALSE`
 #### thread_title
-Title of accompanying thread if 'do_thread' set to true
+Title of accompanying thread if 'do_thread' set to true. Can include [[Flag Replacers]]
 - Type: `STRING`
 - Required: `FALSE`
 ## `/ticketer add_field <ticketer_id> <question> [max_length] [is_required] [style]`

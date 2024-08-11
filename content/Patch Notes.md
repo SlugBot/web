@@ -1,3 +1,26 @@
+## July 2024
+### New Additions
+- Added [[jointwitch]] command allowing streamers to force slugbot back into their twitch chat.
+### Updates
+- Reminders will now only ignore SlugBot messages if they are also reminders.
+- Hosts of temporary [[vc]]s can no-longer blacklist or whitelist members who have roles with inherited permissions.
+- Temporary [[vc]]s now have spam protection to stop channel create/delete rate-limits from being hit.
+- [[ticketer]]s with whitelist/blacklist roles will now give feedback to the user if they do not meet the requirements to use the ticketer.
+- Updated [[weaponer]] and [[allocatestatser]] to Elden Ring 1.12.3
+- Added poise damage display to [[weaponer]].
+- Added searchable strings to most event logs.
+- [[parryframes]] command updated to Elden Ring 1.12.3 data.
+- [[ticketer]]s can now be attached to [[reminder]]s.
+### Bug Fixes
+- Fixed bug causing user inputs through ticketers to break embedded content that contains [[Flag Replacers#ARG|${ARG: }]]s.
+- Fixed bug causing [[weaponer#`/weaponer bestinclass [upgrade] [stats] [calc_against]`|weaponer bestinclass]] to fail to respond.
+- Fixed bug causing [[names]] to fail to respond.
+- Fixed bug making it impossible to set a [[ticketer]] button colour to grey.
+- Fixed bug causing [[temprole#`/temprole list`|temprole list]] to fail to respond.
+- Fixed bug causing forced leaderboard matches to not display the challenge message.
+
+***
+
 ## June 2024
 ### New Additions
 - Added `pointLossCap` point setting to [[ladder#`/ladder point_settings`|/ladder point_settings]].
@@ -21,7 +44,7 @@
 - Fixed bug where the displayed ticketer ID did not show the same one you selected when using [[ticketer#`/ticketer remove`|ticketer remove]].
 - Fixed bug with ticketer selection autocomplete caching making ticketer searching inconsistent.
 
----
+***
 
 ## May 2024
 ### New Additions
@@ -37,7 +60,7 @@
 - Fixed bug causing swiss tourneys to fail to abort.
 - Fixed bug causing [[say]] to double send.
 
----
+***
 
 ## April 2024
 ### Updates
@@ -57,7 +80,7 @@
 - Fixed bug making scheduled message edits through [[say]] impossible.
 - Fixed bug that stopped direct challenges from pinging the opponent.
 
----
+***
 
 ## March 2024
 ### New Additions

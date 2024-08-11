@@ -121,7 +121,7 @@ New parameter value
 - Type: `NUMBER`
 - Required: `TRUE`
 ## `/ladder string_settings <ladder> <param>`
-Modify various strings displayed on the ladder
+Modify various strings displayed on the ladder. Can include [[Flag Replacers]]
 #### ladder
 Ladder name of ladder to modify
 - Type: `AUTOCMPLETE SELECTION`

@@ -43,7 +43,7 @@ Amount mute duration gets multiplied by with each mute
 - Type: `NUMBER`
 - Required: `FALSE`
 #### mute_message
-Message sent when a member triggers a filter
+Message sent when a member triggers a filter. Can include [[Flag Replacers]]
 - Type: `STRING`
 - Required: `FALSE`
 ## `/filter set_next_mute_duration <member> <duration>`

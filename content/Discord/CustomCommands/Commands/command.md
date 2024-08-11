@@ -2,7 +2,7 @@
 *Module: [[CustomCommands]]*<br>
 Add or remove custom commands or regex keyword matches.
 ## `/command add`
-Add or update a custom command or regex keyword match
+Add or update a custom command or regex keyword match. Can include [[Flag Replacers]]
 
 ## `/command remove <command>`
 Remove a custom command or regex keyword match

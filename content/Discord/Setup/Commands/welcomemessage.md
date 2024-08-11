@@ -5,7 +5,7 @@ Set a welcome message for new members
 Disable welcome messages
 
 ## `/welcomemessage set_message`
-Set a welcome message
+Set a welcome message. Can include [[Flag Replacers]]
 
 ## `/welcomemessage settings [channel] [show_profile]`
 Modify welcome message settings
