@@ -1,7 +1,7 @@
 # `/memberevent`
 *Module: [[Memberevents]]*<br>
 Create an event notification for others to participate in.
-## `/memberevent start <game> <platform> [location] [event_type] [character] [level] [upgrade_level] [password]`
+## `/memberevent start <game> <platform> [location] [event_type] [character] [level] [upgrade_level] [password] [instructions]`
 Start a new member event.
 #### game
 The game the event will take place on.
@@ -40,7 +40,11 @@ The weapon upgrade level of your character.
 Password for multiplayer.
 - Type: `STRING`
 - Required: `FALSE`
-## `/memberevent update [game] [platform] [location] [event_type] [character] [level] [upgrade_level] [password] [cross_server]`
+#### instructions
+Extra information to display in the Member Event notification.
+- Type: `STRING`
+- Required: `FALSE`
+## `/memberevent update [game] [platform] [location] [event_type] [character] [level] [upgrade_level] [password] [instructions] [cross_server]`
 Update your member event.
 #### game
 The game the event will take place on.
@@ -79,9 +83,24 @@ The weapon upgrade level of your character.
 Password for multiplayer.
 - Type: `STRING`
 - Required: `FALSE`
+#### instructions
+Extra information to display in the Member Event notification.
+- Type: `STRING`
+- Required: `FALSE`
 #### cross_server
 Should the event be displayed in all servers you share with SlugBot?
 - Type: `BOOLEAN`
 - Required: `FALSE`
 ## `/memberevent end`
 End your member event.
+
+## `/memberevent setup [channel] [content_message]`
+Configure server Member Event module. (Admins only)
+#### channel
+Set channel to be used for Member Event notifications
+- Type: `CHANNEL`
+- Required: `FALSE`
+#### content_message
+Set message to be sent with Member Event notifications
+- Type: `STRING`
+- Required: `FALSE`
