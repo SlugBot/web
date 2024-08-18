@@ -1,5 +1,6 @@
 # `!deactivate`
 *Module: [[Misc]]*<br>
 Dectivate SlugBot, returning it to a dormant state
-## `!deactivate slugbot`
+## !deactivate slugbot
+`!deactivate slugbot`
 Dectivate SlugBot, returning it to a dormant state

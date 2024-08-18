@@ -1,13 +1,15 @@
 # `/tourney`
 *Module: [[Pvplb]]*<br>
 Host a tourney for the top ranking members on the leaderboard
-## `/tourney set_organising_category <category>`
+## /tourney set_organising_category
+`/tourney set_organising_category <category>`
 Set a category where channels will be created for tourney organisation
 #### category
 Category where tourney organisation channels will be created
 - Type: `CHANNEL`
 - Required: `TRUE`
-## `/tourney create <leaderboard> <name> <player_count> <start_in> [begin_invites_in] [reserve_count] [participant_role] [reserve_role]`
+## /tourney create
+`/tourney create <leaderboard> <name> <player_count> <start_in> [begin_invites_in] [reserve_count] [participant_role] [reserve_role]`
 Host a new tourney
 #### leaderboard
 Pick a leaderboard to select participants from
@@ -41,7 +43,8 @@ Role to be given to participants who have accepted their invite
 Role to be given to reserves who have accepted their invite
 - Type: `ROLE`
 - Required: `FALSE`
-## `/tourney invite <name> <member> [reserve]`
+## /tourney invite
+`/tourney invite <name> <member> [reserve]`
 Manually invite member to tournament
 #### name
 Title of the tourney
@@ -55,7 +58,8 @@ Member to invite
 Invite member as reserve?
 - Type: `BOOLEAN`
 - Required: `FALSE`
-## `/tourney revoke <name> <member> [reason]`
+## /tourney revoke
+`/tourney revoke <name> <member> [reason]`
 Manually revoke invite sent out to a member
 #### name
 Title of the tourney
@@ -69,13 +73,15 @@ Member to revoke invite from
 Reason for revoking invite. Will be to DMed to member
 - Type: `STRING`
 - Required: `FALSE`
-## `/tourney abort <name>`
+## /tourney abort
+`/tourney abort <name>`
 Abort an existing tourney
 #### name
 Title of the tourney to abort
 - Type: `AUTOCMPLETE SELECTION`
 - Required: `TRUE`
-## `/tourney status <name>`
+## /tourney status
+`/tourney status <name>`
 Get the current status of a tourney
 #### name
 Title of the tourney

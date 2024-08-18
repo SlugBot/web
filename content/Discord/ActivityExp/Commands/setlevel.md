@@ -1,7 +1,8 @@
 # `/setlevel`
 *Module: [[ActivityExp]]*<br>
 Set the activity level of a member
-## `/setlevel total <member> <level>`
+## /setlevel total
+`/setlevel total <member> <level>`
 Set the total activity level of a member
 #### member
 Member to set level for
@@ -11,7 +12,8 @@ Member to set level for
 level to set
 - Type: `INTEGER`
 - Required: `TRUE`
-## `/setlevel weekly <member> <level>`
+## /setlevel weekly
+`/setlevel weekly <member> <level>`
 Set the weekly activity level of a member
 #### member
 Member to set weekly level for

@@ -1,7 +1,8 @@
 # `/stocks`
 *Module: [[Economy]]*<br>
 Buy or sell stocks
-## `/stocks buy <stock> <amount> [limit_order] [stop_order]`
+## /stocks buy
+`/stocks buy <stock> <amount> [limit_order] [stop_order]`
 Buy stocks
 #### stock
 Stock to buy
@@ -19,7 +20,8 @@ Buy stock when below the given price
 Buy stock when above the given price
 - Type: `NUMBER`
 - Required: `FALSE`
-## `/stocks sell <stock> <amount> [limit_order] [stop_order]`
+## /stocks sell
+`/stocks sell <stock> <amount> [limit_order] [stop_order]`
 Sell stocks
 #### stock
 Stock to sell
@@ -37,5 +39,6 @@ Sell stock when above the given price
 Sell stock when below the given price
 - Type: `NUMBER`
 - Required: `FALSE`
-## `/stocks list`
+## /stocks list
+`/stocks list`
 View stock values

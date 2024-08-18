@@ -1,7 +1,8 @@
 # `/invest`
 *Module: [[Economy]]*<br>
 Invest SC in text channels
-## `/invest add <channel> [amount]`
+## /invest add
+`/invest add <channel> [amount]`
 Make a new investment
 #### channel
 Channel to invest in
@@ -11,7 +12,8 @@ Channel to invest in
 Amount of SC to invest
 - Type: `NUMBER`
 - Required: `FALSE`
-## `/invest terminate <channel>`
+## /invest terminate
+`/invest terminate <channel>`
 Terminate an existing investment prematurely
 #### channel
 Channel to terminate investment in

@@ -1,17 +1,20 @@
 # `/persistentrole`
 *Module: [[Moderation]]*<br>
 Add or remove persistent roles
-## `/persistentrole add <role>`
+## /persistentrole add
+`/persistentrole add <role>`
 Add persistent role
 #### role
 role to make persistent
 - Type: `ROLE`
 - Required: `TRUE`
-## `/persistentrole remove <role>`
+## /persistentrole remove
+`/persistentrole remove <role>`
 Remove persistent role
 #### role
 Remove role as persistent
 - Type: `ROLE`
 - Required: `TRUE`
-## `/persistentrole list`
+## /persistentrole list
+`/persistentrole list`
 List all persistent roles in this guild

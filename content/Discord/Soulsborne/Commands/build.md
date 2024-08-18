@@ -1,7 +1,8 @@
 # `/build`
 *Module: [[Soulsborne]]*<br>
 Manage your builds or view the builds of another member
-## `/build add [name] [level] [upgrade_level] [game] [planner_link] [image_link]`
+## /build add
+`/build add [name] [level] [upgrade_level] [game] [planner_link] [image_link]`
 Add a build to your buid list
 #### name
 Character name
@@ -32,19 +33,22 @@ Extract build info from a build planner link
 Add a character portrait by providing a direct image link
 - Type: `STRING`
 - Required: `FALSE`
-## `/build remove <name>`
+## /build remove
+`/build remove <name>`
 Remove a build from your build list
 #### name
 Name of build to remove
 - Type: `AUTOCMPLETE SELECTION`
 - Required: `TRUE`
-## `/build set <name>`
+## /build set
+`/build set <name>`
 Set a current build
 #### name
 Name of build to set as current
 - Type: `AUTOCMPLETE SELECTION`
 - Required: `TRUE`
-## `/build list [member]`
+## /build list
+`/build list [member]`
 View your build list or the build list of another member
 #### member
 View builds by this member

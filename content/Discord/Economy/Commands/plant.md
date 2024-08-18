@@ -1,37 +1,43 @@
 # `/plant`
 *Module: [[Economy]]*<br>
 Begin the planting a process on a target
-## `/plant skimmer <target>`
+## /plant skimmer
+`/plant skimmer <target>`
 Plant a SKIMMER process on a target
 #### target
 Target identifier
 - Type: `AUTOCMPLETE SELECTION`
 - Required: `TRUE`
-## `/plant leech <target>`
+## /plant leech
+`/plant leech <target>`
 Plant a LEECH process on a target
 #### target
 Target identifier
 - Type: `AUTOCMPLETE SELECTION`
 - Required: `TRUE`
-## `/plant cloner <target>`
+## /plant cloner
+`/plant cloner <target>`
 Plant a CLONER process on a target
 #### target
 Target identifier
 - Type: `AUTOCMPLETE SELECTION`
 - Required: `TRUE`
-## `/plant hijacker <target>`
+## /plant hijacker
+`/plant hijacker <target>`
 Plant a HIJACKER process on a target
 #### target
 Target identifier
 - Type: `AUTOCMPLETE SELECTION`
 - Required: `TRUE`
-## `/plant honeypot <target>`
+## /plant honeypot
+`/plant honeypot <target>`
 Plant a HONEYPOT process on a target
 #### target
 Target identifier
 - Type: `AUTOCMPLETE SELECTION`
 - Required: `TRUE`
-## `/plant redirect <target> <redirect_target>`
+## /plant redirect
+`/plant redirect <target> <redirect_target>`
 Plant a REDIRECT process on a target, redirecting processes to another target
 #### target
 Target identifier
@@ -41,7 +47,8 @@ Target identifier
 redirect_target identifier
 - Type: `AUTOCMPLETE SELECTION`
 - Required: `TRUE`
-## `/plant latch <target> <attach_process_id> [trigger_process_types] [trigger_target]`
+## /plant latch
+`/plant latch <target> <attach_process_id> [trigger_process_types] [trigger_target]`
 Plant a LATCH process on a target
 #### target
 Target identifier
@@ -59,19 +66,22 @@ Limit the LATCH to only trigger on given process types
 Limit the LATCH to only trigger by processes on a given target
 - Type: `STRING`
 - Required: `FALSE`
-## `/plant tracker <target>`
+## /plant tracker
+`/plant tracker <target>`
 Plant a TRACKER process on a target
 #### target
 Target identifier
 - Type: `AUTOCMPLETE SELECTION`
 - Required: `TRUE`
-## `/plant corruptor <target>`
+## /plant corruptor
+`/plant corruptor <target>`
 Plant a CORRUPTOR process on a target
 #### target
 Target identifier
 - Type: `STRING`
 - Required: `TRUE`
-## `/plant rootkit <target>`
+## /plant rootkit
+`/plant rootkit <target>`
 Plant a ROOTKIT process on a target
 #### target
 Target identifier

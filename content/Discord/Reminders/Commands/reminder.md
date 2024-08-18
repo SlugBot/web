@@ -1,7 +1,8 @@
 # `/reminder`
 *Module: [[Reminders]]*<br>
 Create repeating reminders sent to channels
-## `/reminder add <channel> [do_embed] [always_send] [attach_component]`
+## /reminder add
+`/reminder add <channel> [do_embed] [always_send] [attach_component]`
 Add a new reminder
 #### channel
 Channel to send reminder to
@@ -19,17 +20,20 @@ Reminder will be sent even if the last reminder is in the channel's recent messa
 Attach a Ticketer or RoleReact component to the reminder by supplying its message ID
 - Type: `STRING`
 - Required: `FALSE`
-## `/reminder update <reminder>`
+## /reminder update
+`/reminder update <reminder>`
 Update an existing reminder
 #### reminder
 Reminder to update
 - Type: `AUTOCMPLETE SELECTION`
 - Required: `TRUE`
-## `/reminder remove <reminder>`
+## /reminder remove
+`/reminder remove <reminder>`
 Remove an existing reminder
 #### reminder
 Reminder to remove
 - Type: `AUTOCMPLETE SELECTION`
 - Required: `TRUE`
-## `/reminder list`
+## /reminder list
+`/reminder list`
 View all existing reminders in this server

@@ -1,10 +1,12 @@
 # `/challenge`
 *Module: [[Pvplb]]*<br>
 Challenge another member to a ranked fight or put out an open invitation to be challenged
-## `/challenge cancel`
+## /challenge cancel
+`/challenge cancel`
 Abort your existing challenge
 
-## `/challenge anyone <leaderboard> [region] [platform] [rank_range] [automatch]`
+## /challenge anyone
+`/challenge anyone <leaderboard> [region] [platform] [rank_range] [automatch]`
 Put out an open challenge anyone can accept
 #### leaderboard
 Pick a leaderboard to participate in
@@ -26,7 +28,8 @@ Only those within this rank range can accept your challenge
 Should this open challenge automatically match with other valid open challenges?
 - Type: `BOOLEAN`
 - Required: `FALSE`
-## `/challenge someone <opponent> <leaderboard>`
+## /challenge someone
+`/challenge someone <opponent> <leaderboard>`
 Challenge a specific member
 #### opponent
 Member to challenge
@@ -36,7 +39,8 @@ Member to challenge
 Pick a leaderboard to participate in
 - Type: `AUTOCMPLETE SELECTION`
 - Required: `TRUE`
-## `/challenge team <leaderboard> [your_team] [opponent_team] [region] [platform]`
+## /challenge team
+`/challenge team <leaderboard> [your_team] [opponent_team] [region] [platform]`
 Challenge a team or use a specific team, or both
 #### leaderboard
 Pick a leaderboard to participate in

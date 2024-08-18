@@ -1,22 +1,26 @@
 # `/bet`
 *Module: [[Economy]]*<br>
 Create a bet
-## `/bet create`
+## /bet create
+`/bet create`
 Create a new bet
 
-## `/bet close <bet>`
+## /bet close
+`/bet close <bet>`
 Close a bet and stop members placing bets
 #### bet
 Bet identifier
 - Type: `AUTOCMPLETE SELECTION`
 - Required: `TRUE`
-## `/bet open <bet>`
+## /bet open
+`/bet open <bet>`
 Reopen a closed bet and allow members to bet again
 #### bet
 Bet identifier
 - Type: `AUTOCMPLETE SELECTION`
 - Required: `TRUE`
-## `/bet resolve <bet> <outcome>`
+## /bet resolve
+`/bet resolve <bet> <outcome>`
 Declare the outcome of a bet
 #### bet
 Bet identifier

@@ -4,5 +4,5 @@ SlugBot's commands and functionality are grouped into several modules. This allo
 - [[Twitch/Soulsborne/Soulsborne|Soulsborne]]
 - [[Twitch/Misc/Misc|Misc]]
 - [[Twitch/CustomCommands/CustomCommands|CustomCommands]]
-- [[Twitch/So/So|So]]
+- [[Twitch/Shoutout/Shoutout|Shoutout]]
 - [[Twitch/TwitchMusic/TwitchMusic|TwitchMusic]]

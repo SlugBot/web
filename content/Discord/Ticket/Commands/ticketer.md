@@ -1,13 +1,15 @@
 # `/ticketer`
 *Module: [[Ticket]]*<br>
 Create a Ticketer message, allowing users to submit tickets
-## `/ticketer create <send_to_channel>`
+## /ticketer create
+`/ticketer create <send_to_channel>`
 Create a new Ticketer
 #### send_to_channel
 Channel to send submitted tickets to
 - Type: `CHANNEL`
 - Required: `TRUE`
-## `/ticketer attach <ticketer_id> <send_to_channel>`
+## /ticketer attach
+`/ticketer attach <ticketer_id> <send_to_channel>`
 Attach another ticketer button onto an existing ticketer
 #### ticketer_id
 Discord message ID of Ticketer
@@ -17,13 +19,15 @@ Discord message ID of Ticketer
 Channel to send submitted tickets to
 - Type: `CHANNEL`
 - Required: `TRUE`
-## `/ticketer remove <ticketer_id>`
+## /ticketer remove
+`/ticketer remove <ticketer_id>`
 Remove an existing ticketer
 #### ticketer_id
 ID of Ticketer
 - Type: `AUTOCMPLETE SELECTION`
 - Required: `TRUE`
-## `/ticketer move <ticketer_id> <channel> [message_id]`
+## /ticketer move
+`/ticketer move <ticketer_id> <channel> [message_id]`
 Move ticketer to a different channel or message
 #### ticketer_id
 ID of Ticketer
@@ -37,7 +41,8 @@ Channel to move ticketer to
 Optional SlugBot message ID to replace with this ticketer
 - Type: `STRING`
 - Required: `FALSE`
-## `/ticketer update <ticketer_id> [send_to_channel] [title] [description] [button] [button_colour] [colour] [is_anonymous] [is_private] [whitelist_role] [blacklist_role] [hide_extra_info] [hide_response_embed] [give_role] [do_feedback] [do_thread] [init_message] [content_message] [thread_title]`
+## /ticketer update
+`/ticketer update <ticketer_id> [send_to_channel] [title] [description] [button] [button_colour] [colour] [is_anonymous] [is_private] [whitelist_role] [blacklist_role] [hide_extra_info] [hide_response_embed] [give_role] [do_feedback] [do_thread] [init_message] [content_message] [thread_title]`
 Update properties of a Ticketer message
 #### ticketer_id
 ID of Ticketer
@@ -119,7 +124,8 @@ Message to be sent before the sent ticket embed. Can include [[Flag Replacers]]
 Title of accompanying thread if 'do_thread' set to true. Can include [[Flag Replacers]]
 - Type: `STRING`
 - Required: `FALSE`
-## `/ticketer add_field <ticketer_id> <question> [max_length] [is_required] [style]`
+## /ticketer add_field
+`/ticketer add_field <ticketer_id> <question> [max_length] [is_required] [style]`
 Add a question field to a Ticketer
 #### ticketer_id
 Discord message ID of Ticketer
@@ -143,7 +149,8 @@ Field style
   - `SHORT`
   - `PARAGRAPH`
 - Required: `FALSE`
-## `/ticketer remove_field <ticketer_id> <question>`
+## /ticketer remove_field
+`/ticketer remove_field <ticketer_id> <question>`
 Remove a question field from a Ticketer
 #### ticketer_id
 Discord message ID of Ticketer

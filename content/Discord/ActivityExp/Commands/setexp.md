@@ -1,7 +1,8 @@
 # `/setexp`
 *Module: [[ActivityExp]]*<br>
 Set the activity exp of a member
-## `/setexp total <member> <exp>`
+## /setexp total
+`/setexp total <member> <exp>`
 Set the total activity exp of a member
 #### member
 Member to set exp for
@@ -11,7 +12,8 @@ Member to set exp for
 Exp amount to set
 - Type: `INTEGER`
 - Required: `TRUE`
-## `/setexp weekly <member> <exp>`
+## /setexp weekly
+`/setexp weekly <member> <exp>`
 Set the weekly activity exp of a member
 #### member
 Member to set weekly exp for
