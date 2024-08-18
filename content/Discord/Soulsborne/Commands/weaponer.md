@@ -2,7 +2,7 @@
 *Module: [[Soulsborne]]*<br>
 Get info on a given Elden Ring weapon, or get the top 10 weapons of each class
 ## /weaponer info
-`/weaponer info <weapon> [upgrade] [stats] [calc_against]`
+`/weaponer info <weapon> [upgrade] [stats] [calc_against]`<br>
 Get info on a weapon or list of weapons separated by commas
 #### weapon
 Weapon name or list of weapon names
@@ -21,7 +21,7 @@ er-build-planner link to calculate damage against
 - Type: `STRING`
 - Required: `FALSE`
 ## /weaponer bestinclass
-`/weaponer bestinclass [upgrade] [stats] [calc_against]`
+`/weaponer bestinclass [upgrade] [stats] [calc_against]`<br>
 Get the top 10 weapons of each class
 #### upgrade
 Upgrade level of the weapon. Use equivalent standard upgrade for special weapons

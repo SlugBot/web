@@ -2,7 +2,7 @@
 *Module: [[Nicknames]]*<br>
 Reserve a given character or string for specific member's or role's display names
 ## /exclusivechar add
-`/exclusivechar add <char> <member>`
+`/exclusivechar add <char> <member>`<br>
 Add or update an exclusive character for a member or role
 #### char
 Exclusive character for member or role
@@ -13,7 +13,7 @@ Member or role to apply exclusive character to
 - Type: `MENTIONABLE`
 - Required: `TRUE`
 ## /exclusivechar remove
-`/exclusivechar remove <char> [member]`
+`/exclusivechar remove <char> [member]`<br>
 remove an exclusive character for a member or role
 #### char
 Exclusive character
@@ -24,5 +24,5 @@ Member or role to remove exclusive character from
 - Type: `MENTIONABLE`
 - Required: `FALSE`
 ## /exclusivechar list
-`/exclusivechar list`
+`/exclusivechar list`<br>
 View all existing exclusive characters in this guild

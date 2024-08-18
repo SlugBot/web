@@ -2,14 +2,14 @@
 *Module: [[Ticket]]*<br>
 Create a Ticketer message, allowing users to submit tickets
 ## /ticketer create
-`/ticketer create <send_to_channel>`
+`/ticketer create <send_to_channel>`<br>
 Create a new Ticketer
 #### send_to_channel
 Channel to send submitted tickets to
 - Type: `CHANNEL`
 - Required: `TRUE`
 ## /ticketer attach
-`/ticketer attach <ticketer_id> <send_to_channel>`
+`/ticketer attach <ticketer_id> <send_to_channel>`<br>
 Attach another ticketer button onto an existing ticketer
 #### ticketer_id
 Discord message ID of Ticketer
@@ -20,14 +20,14 @@ Channel to send submitted tickets to
 - Type: `CHANNEL`
 - Required: `TRUE`
 ## /ticketer remove
-`/ticketer remove <ticketer_id>`
+`/ticketer remove <ticketer_id>`<br>
 Remove an existing ticketer
 #### ticketer_id
 ID of Ticketer
 - Type: `AUTOCMPLETE SELECTION`
 - Required: `TRUE`
 ## /ticketer move
-`/ticketer move <ticketer_id> <channel> [message_id]`
+`/ticketer move <ticketer_id> <channel> [message_id]`<br>
 Move ticketer to a different channel or message
 #### ticketer_id
 ID of Ticketer
@@ -42,7 +42,7 @@ Optional SlugBot message ID to replace with this ticketer
 - Type: `STRING`
 - Required: `FALSE`
 ## /ticketer update
-`/ticketer update <ticketer_id> [send_to_channel] [title] [description] [button] [button_colour] [colour] [is_anonymous] [is_private] [whitelist_role] [blacklist_role] [hide_extra_info] [hide_response_embed] [give_role] [do_feedback] [do_thread] [init_message] [content_message] [thread_title]`
+`/ticketer update <ticketer_id> [send_to_channel] [title] [description] [button] [button_colour] [colour] [is_anonymous] [is_private] [whitelist_role] [blacklist_role] [hide_extra_info] [hide_response_embed] [give_role] [do_feedback] [do_thread] [init_message] [content_message] [thread_title]`<br>
 Update properties of a Ticketer message
 #### ticketer_id
 ID of Ticketer
@@ -125,7 +125,7 @@ Title of accompanying thread if 'do_thread' set to true. Can include [[Flag Repl
 - Type: `STRING`
 - Required: `FALSE`
 ## /ticketer add_field
-`/ticketer add_field <ticketer_id> <question> [max_length] [is_required] [style]`
+`/ticketer add_field <ticketer_id> <question> [max_length] [is_required] [style]`<br>
 Add a question field to a Ticketer
 #### ticketer_id
 Discord message ID of Ticketer
@@ -150,7 +150,7 @@ Field style
   - `PARAGRAPH`
 - Required: `FALSE`
 ## /ticketer remove_field
-`/ticketer remove_field <ticketer_id> <question>`
+`/ticketer remove_field <ticketer_id> <question>`<br>
 Remove a question field from a Ticketer
 #### ticketer_id
 Discord message ID of Ticketer

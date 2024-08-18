@@ -2,7 +2,7 @@
 *Module: [[Soulsborne]]*<br>
 find the upper and lower soul level limits for players invading you or hosts you invade
 ## /range ds3
-`/range ds3 <mode> <soul_level> [upgrade_level]`
+`/range ds3 <mode> <soul_level> [upgrade_level]`<br>
 Summon/invasion ranges for Dark Souls 3
 #### mode
 From the perspective of the host or invader
@@ -19,7 +19,7 @@ Upgrade level of weapon
 - Type: `INTEGER`
 - Required: `FALSE`
 ## /range er
-`/range er <mode> <rune_level> [upgrade_level]`
+`/range er <mode> <rune_level> [upgrade_level]`<br>
 Summon/invasion ranges for Elden Ring
 #### mode
 From the perspective of the host or invader

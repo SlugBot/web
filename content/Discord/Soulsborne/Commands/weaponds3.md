@@ -2,7 +2,7 @@
 *Module: [[Soulsborne]]*<br>
 Get info on a given weapon, or get the top 10 weapons of each class
 ## /weaponds3 info
-`/weaponds3 info <weapon> [upgrade] [stats]`
+`/weaponds3 info <weapon> [upgrade] [stats]`<br>
 Get info on a weapon or list of weapons separated by commas
 #### weapon
 Weapon name or list of weapon names
@@ -28,7 +28,7 @@ str dex int faith luck levels. e.g. "10 18 9 30 7"
 - Type: `STRING`
 - Required: `FALSE`
 ## /weaponds3 bestinclass
-`/weaponds3 bestinclass [upgrade] [stats]`
+`/weaponds3 bestinclass [upgrade] [stats]`<br>
 Get the top 10 weapons of each class
 #### upgrade
 Upgrade level of the weapon. Use equivalent standard upgrade for special weapons

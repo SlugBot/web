@@ -2,7 +2,7 @@
 *Module: [[ActivityExp]]*<br>
 Give/remove a role to/from members once they reach a certain level
 ## /roleatlevel add
-`/roleatlevel add <role> <level_add> [level_remove] [do_notification] [is_weekly]`
+`/roleatlevel add <role> <level_add> [level_remove] [do_notification] [is_weekly]`<br>
 Create a new role-at-level
 #### role
 Role to be given
@@ -25,21 +25,21 @@ Should weekly activity be used instead?
 - Type: `BOOLEAN`
 - Required: `FALSE`
 ## /roleatlevel remove
-`/roleatlevel remove <role>`
+`/roleatlevel remove <role>`<br>
 Remove an existing role-at-level
 #### role
 Role to be removed
 - Type: `ROLE`
 - Required: `TRUE`
 ## /roleatlevel list
-`/roleatlevel list [is_weekly]`
+`/roleatlevel list [is_weekly]`<br>
 List all role-at-levels
 #### is_weekly
 Display weekly activity role-at-levels
 - Type: `BOOLEAN`
 - Required: `FALSE`
 ## /roleatlevel set_top_rank_role
-`/roleatlevel set_top_rank_role [top_rank_role] [weekly_top_rank_role]`
+`/roleatlevel set_top_rank_role [top_rank_role] [weekly_top_rank_role]`<br>
 Set role to be given to the member with the most activity EXP
 #### top_rank_role
 Role to be given to the member with the most activity EXP. Set to @everyone to reset
@@ -50,7 +50,7 @@ Role to be given to the member with the most weekly activity EXP. Set to @everyo
 - Type: `ROLE`
 - Required: `FALSE`
 ## /roleatlevel set_image
-`/roleatlevel set_image <image_url>`
+`/roleatlevel set_image <image_url>`<br>
 Set the image on the 'earned role' notification
 #### image_url
 Direct image link to a png/gif

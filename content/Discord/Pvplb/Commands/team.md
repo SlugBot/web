@@ -2,7 +2,7 @@
 *Module: [[Pvplb]]*<br>
 Create and manage a team for a PvP leaderboard
 ## /team create
-`/team create <leaderboard> <name> <members>`
+`/team create <leaderboard> <name> <members>`<br>
 Create a new team
 #### leaderboard
 Pick a leaderboard to create a team for
@@ -17,7 +17,7 @@ List of members to invite to team (@member)
 - Type: `STRING`
 - Required: `TRUE`
 ## /team update
-`/team update <leaderboard> <name> [new_name] [new_leader] [add_members] [remove_members]`
+`/team update <leaderboard> <name> [new_name] [new_leader] [add_members] [remove_members]`<br>
 Update
 #### leaderboard
 Leaderboard of team to update
@@ -44,7 +44,7 @@ List of members to remove from team (@member)
 - Type: `STRING`
 - Required: `FALSE`
 ## /team disband
-`/team disband <leaderboard> <name>`
+`/team disband <leaderboard> <name>`<br>
 Disband an existing team
 #### leaderboard
 Pick the leaderboard your team is for

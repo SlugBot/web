@@ -2,14 +2,14 @@
 *Module: [[Misc]]*<br>
 View a member's profile or edit your own.
 ## /profile view
-`/profile view [member]`
+`/profile view [member]`<br>
 View a member's profile
 #### member
 View a member's profile and rank
 - Type: `USER`
 - Required: `FALSE`
 ## /profile update
-`/profile update [color] [crown] [gift] [background]`
+`/profile update [color] [crown] [gift] [background]`<br>
 Update your profile
 #### color
 Set the text color of your profile. Must be a hex color code.

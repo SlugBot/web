@@ -2,7 +2,7 @@
 *Module: [[Pins]]*<br>
 Customise the settings for the Slugboard
 ## /slugboard create
-`/slugboard create <channel> <flag>`
+`/slugboard create <channel> <flag>`<br>
 Create a new Slugboard
 #### channel
 Channel to send slugboarded messages to
@@ -13,14 +13,14 @@ Members can react with this Emoji to flag a message for the Slugboard
 - Type: `STRING`
 - Required: `TRUE`
 ## /slugboard remove
-`/slugboard remove <slugboard>`
+`/slugboard remove <slugboard>`<br>
 Remove an existing Slugboard
 #### slugboard
 Slugboad to remove
 - Type: `AUTOCMPLETE SELECTION`
 - Required: `TRUE`
 ## /slugboard update
-`/slugboard update <slugboard> [flag] [response] [threshold] [delete_threshold] [unflag] [allow_unflag] [color]`
+`/slugboard update <slugboard> [flag] [response] [threshold] [delete_threshold] [unflag] [allow_unflag] [color]`<br>
 Update settings of an existing Slugboard
 #### slugboard
 Slugboad to update

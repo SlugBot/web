@@ -2,7 +2,7 @@
 *Module: [[Moderation]]*<br>
 Warn a member, remove a warning, or view warnings
 ## /warn add
-`/warn add <member> <warning> [context_link]`
+`/warn add <member> <warning> [context_link]`<br>
 Warn a member
 #### member
 Member to warn
@@ -17,7 +17,7 @@ Link to a message or image for extra context
 - Type: `STRING`
 - Required: `FALSE`
 ## /warn remove
-`/warn remove <member> <index>`
+`/warn remove <member> <index>`<br>
 Remove a warning
 #### member
 Member to remove warning from

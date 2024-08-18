@@ -2,7 +2,7 @@
 *Module: [[Pvplb]]*<br>
 Create and configure PvP leaderboard
 ## /ladder create leaderboard
-`/ladder create leaderboard <title> <channel>`
+`/ladder create leaderboard <title> <channel>`<br>
 Ranked PvP leaderboard
 #### title
 leaderboard title
@@ -13,7 +13,7 @@ Channel to display the leaderboard
 - Type: `CHANNEL`
 - Required: `TRUE`
 ## /ladder create swiss
-`/ladder create swiss <title> <participant_role> <channel>`
+`/ladder create swiss <title> <participant_role> <channel>`<br>
 Tournament manager using a [[Swiss Tournament Structure]]
 #### title
 leaderboard title
@@ -28,14 +28,14 @@ Channel to display the leaderboard
 - Type: `CHANNEL`
 - Required: `TRUE`
 ## /ladder remove
-`/ladder remove <ladder>`
+`/ladder remove <ladder>`<br>
 Delete an existing leaderboard
 #### ladder
 Name of leaderboard to be deleted
 - Type: `AUTOCMPLETE SELECTION`
 - Required: `TRUE`
 ## /ladder rename
-`/ladder rename <ladder> <new_ladder_name>`
+`/ladder rename <ladder> <new_ladder_name>`<br>
 Rename an existing ladder
 #### ladder
 Original name of ladder to be renamed
@@ -46,7 +46,7 @@ New name for ladder
 - Type: `STRING`
 - Required: `TRUE`
 ## /ladder reset
-`/ladder reset <ladder> [reset_points] [reset_matches_played] [reset_elo]`
+`/ladder reset <ladder> [reset_points] [reset_matches_played] [reset_elo]`<br>
 Reset all scores in ladder
 #### ladder
 Ladder name of ladder to be reset
@@ -65,7 +65,7 @@ Reset all participant's ELO
 - Type: `BOOLEAN`
 - Required: `FALSE`
 ## /ladder set
-`/ladder set <ladder> <player_or_team> <property> <value>`
+`/ladder set <ladder> <player_or_team> <property> <value>`<br>
 Set a user's points or wins in a ladder
 #### ladder
 Ladder name of ladder to set user's points/wins in
@@ -87,21 +87,21 @@ New value for user's points/wins in specified ladder
 - Type: `INTEGER`
 - Required: `TRUE`
 ## /ladder undo
-`/ladder undo <msg_id>`
+`/ladder undo <msg_id>`<br>
 Undo a completed match, reverting player states back to before the match
 #### msg_id
 Message ID of challenge message to identify match
 - Type: `STRING`
 - Required: `TRUE`
 ## /ladder view_settings
-`/ladder view_settings <ladder>`
+`/ladder view_settings <ladder>`<br>
 View the current parameter settings for a ladder
 #### ladder
 Ladder name of ladder to settings of
 - Type: `AUTOCMPLETE SELECTION`
 - Required: `TRUE`
 ## /ladder point_settings
-`/ladder point_settings <ladder> <param> <value>`
+`/ladder point_settings <ladder> <param> <value>`<br>
 Modify various paramters of the ladder
 #### ladder
 Ladder name of ladder to modify
@@ -116,7 +116,7 @@ New parameter value
 - Type: `NUMBER`
 - Required: `TRUE`
 ## /ladder ladder_settings
-`/ladder ladder_settings <ladder> <param> <value>`
+`/ladder ladder_settings <ladder> <param> <value>`<br>
 Modify various paramters of the ladder
 #### ladder
 Ladder name of ladder to modify
@@ -131,7 +131,7 @@ New parameter value
 - Type: `NUMBER`
 - Required: `TRUE`
 ## /ladder string_settings
-`/ladder string_settings <ladder> <param>`
+`/ladder string_settings <ladder> <param>`<br>
 Modify various strings displayed on the ladder. Can include [[Flag Replacers]]
 #### ladder
 Ladder name of ladder to modify
@@ -145,7 +145,7 @@ Parameter to modify
   - `featuredMatchString`
 - Required: `TRUE`
 ## /ladder pick_options set_phases
-`/ladder pick_options set_phases <ladder> <phases>`
+`/ladder pick_options set_phases <ladder> <phases>`<br>
 Pick/ban phases. Alternating between pick and ban, starting with ban
 #### ladder
 Ladder name of ladder to modify
@@ -156,7 +156,7 @@ list of phase rounds, starting with ban (e.g "2 3" for 2 ban rounds then 2 pick 
 - Type: `STRING`
 - Required: `TRUE`
 ## /ladder pick_options add
-`/ladder pick_options add <ladder> <pick_option> [pick_option_icon]`
+`/ladder pick_options add <ladder> <pick_option> [pick_option_icon]`<br>
 Add a pick/ban option
 #### ladder
 Ladder name of ladder to modify
@@ -171,7 +171,7 @@ Optional emoji icon for pick option
 - Type: `STRING`
 - Required: `FALSE`
 ## /ladder pick_options remove
-`/ladder pick_options remove <ladder> <pick_option>`
+`/ladder pick_options remove <ladder> <pick_option>`<br>
 Remove a pick/ban option
 #### ladder
 Ladder name of ladder to modify
@@ -182,14 +182,14 @@ Name of pick/ban option
 - Type: `AUTOCMPLETE SELECTION`
 - Required: `TRUE`
 ## /ladder pick_options list
-`/ladder pick_options list <ladder>`
+`/ladder pick_options list <ladder>`<br>
 list all current pick/ban options
 #### ladder
 Ladder name of ladder to view
 - Type: `AUTOCMPLETE SELECTION`
 - Required: `TRUE`
 ## /ladder player_override iwon
-`/ladder player_override iwon <player> <rounds_won> <rounds_lost>`
+`/ladder player_override iwon <player> <rounds_won> <rounds_lost>`<br>
 Run the /iwon command as a given player
 #### player
 Player to override
@@ -204,7 +204,7 @@ Number of rounds lost
 - Type: `INTEGER`
 - Required: `TRUE`
 ## /ladder player_override ilost
-`/ladder player_override ilost <player> <rounds_won> <rounds_lost>`
+`/ladder player_override ilost <player> <rounds_won> <rounds_lost>`<br>
 Run the /ilost command as a given player
 #### player
 Player to override
@@ -219,14 +219,14 @@ Number of rounds lost
 - Type: `INTEGER`
 - Required: `TRUE`
 ## /ladder player_override cancel
-`/ladder player_override cancel <player>`
+`/ladder player_override cancel <player>`<br>
 Run [/challenge cancel] command as a given player
 #### player
 Player to override
 - Type: `AUTOCMPLETE SELECTION`
 - Required: `TRUE`
 ## /ladder player_override force
-`/ladder player_override force <ladder> <player_or_team1> <player_or_team2> [rounds_won] [rounds_lost]`
+`/ladder player_override force <ladder> <player_or_team1> <player_or_team2> [rounds_won] [rounds_lost]`<br>
 Force create and complete a match between two players
 #### ladder
 Ladder name of ladder to force match in
@@ -249,7 +249,7 @@ Number of rounds lost by team1
 - Type: `INTEGER`
 - Required: `FALSE`
 ## /ladder roleatrank add
-`/ladder roleatrank add <ladder> <role> <rank_add> [rank_remove]`
+`/ladder roleatrank add <ladder> <role> <rank_add> [rank_remove]`<br>
 Add or update a role to be given/removed at rank
 #### ladder
 Ladder name of ladder to modify
@@ -268,7 +268,7 @@ Minimum rank needed to remove the role
 - Type: `INTEGER`
 - Required: `FALSE`
 ## /ladder roleatrank remove
-`/ladder roleatrank remove <ladder> <role>`
+`/ladder roleatrank remove <ladder> <role>`<br>
 Remove an existing role given at rank
 #### ladder
 Ladder name of ladder to modify
@@ -279,14 +279,14 @@ Role to be removed
 - Type: `ROLE`
 - Required: `TRUE`
 ## /ladder roleatrank list
-`/ladder roleatrank list <ladder>`
+`/ladder roleatrank list <ladder>`<br>
 List all roles given at leaderboard rank and their requirements
 #### ladder
 Ladder name of ladder to modify
 - Type: `AUTOCMPLETE SELECTION`
 - Required: `TRUE`
 ## /ladder info
-`/ladder info <ladder> [start_time] [end_time] [ignore_resets]`
+`/ladder info <ladder> [start_time] [end_time] [ignore_resets]`<br>
 Get activity info on a leaderboard
 #### ladder
 Ladder name of ladder to view info for

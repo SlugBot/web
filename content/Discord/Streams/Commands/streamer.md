@@ -2,25 +2,25 @@
 *Module: [[Streams]]*<br>
 Manage the server's twitch stream notification list
 ## /streamer add
-`/streamer add <streamer>`
+`/streamer add <streamer>`<br>
 Add a streamer to the streamer list
 #### streamer
 Twitch username of streamer to add
 - Type: `STRING`
 - Required: `TRUE`
 ## /streamer remove
-`/streamer remove <streamer>`
+`/streamer remove <streamer>`<br>
 Remove a streamer from the streamer list
 #### streamer
 Twitch username of streamer to remove
 - Type: `AUTOCMPLETE SELECTION`
 - Required: `TRUE`
 ## /streamer list
-`/streamer list`
+`/streamer list`<br>
 List all streamers currently in the streamer list
 
 ## /streamer set_role
-`/streamer set_role <role>`
+`/streamer set_role <role>`<br>
 Members with this role will be shown in the streams channel when they go live
 #### role
 Members with this role will be shown in the streams channel when they go live
