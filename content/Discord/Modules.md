@@ -11,6 +11,7 @@ SlugBot's commands and functionality are grouped into several modules. This allo
 - [[Discord/Nicknames/Nicknames|Nicknames]]
 - [[Discord/Pins/Pins|Pins]]
 - [[Discord/Pvplb/Pvplb|Pvplb]]
+- [[Discord/Giveaways/Giveaways|Giveaways]]
 - [[Discord/Reminders/Reminders|Reminders]]
 - [[Discord/Roles/Roles|Roles]]
 - [[Discord/ActivityExp/ActivityExp|ActivityExp]]

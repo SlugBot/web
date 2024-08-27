@@ -2,7 +2,7 @@
 *Module: [[Memberevents]]*<br>
 Create an event notification for others to participate in.
 ## /memberevent start
-`/memberevent start <game> <platform> [location] [event_type] [character] [level] [upgrade_level] [password] [instructions]`<br>
+`/memberevent start <game> <platform> [location] [event_type] [character] [level] [upgrade_level] [password] [instructions] [cross_server]`<br>
 Start a new member event.
 #### game
 The game the event will take place on.
@@ -44,6 +44,10 @@ Password for multiplayer.
 #### instructions
 Extra information to display in the Member Event notification.
 - Type: `STRING`
+- Required: `FALSE`
+#### cross_server
+Should the event be displayed in all servers you share with SlugBot?
+- Type: `BOOLEAN`
 - Required: `FALSE`
 ## /memberevent update
 `/memberevent update [game] [platform] [location] [event_type] [character] [level] [upgrade_level] [password] [instructions] [cross_server]`<br>
