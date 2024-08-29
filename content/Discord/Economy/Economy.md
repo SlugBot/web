@@ -15,6 +15,8 @@ You will also earn a small amount every few minutes while you are active in the 
 
 If you are feeling generous, you can give SC to others using the [[giveslugs|/giveslugs]] command.
 
+You can also try your luck in the [[slugcasino|Slug Casino]] and try to win big on one of the mini-games available there.
+
 
 ## Stats
 Your account's strengths and weaknesses are all dependant on your stats and where you specialise. Use the [[levelup|/levelup]] command to increase your stats at the cost of time and SC. Every level-up increases your POWER Lvl by 1. You can reallocate your stats once a week using the [[respecc|/respecc]] command.
@@ -145,7 +147,6 @@ To terminate an investment early, use the command [[invest#`/invest terminate`|/
 # Commands
 - [[activate]]
 - [[bet]]
-- [[blackjack]]
 - [[bypass]]
 - [[clean]]
 - [[crack]]
@@ -155,7 +156,6 @@ To terminate an investment early, use the command [[invest#`/invest terminate`|/
 - [[hijack]]
 - [[install]]
 - [[invest]]
-- [[knuckleslug]]
 - [[levelup]]
 - [[lockdown]]
 - [[plant]]
@@ -163,6 +163,7 @@ To terminate an investment early, use the command [[invest#`/invest terminate`|/
 - [[rootkit]]
 - [[scan]]
 - [[shop]]
+- [[slugcasino]]
 - [[slugs]]
 - [[steal]]
 - [[stocks]]
