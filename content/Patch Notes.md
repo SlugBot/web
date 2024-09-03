@@ -1,3 +1,26 @@
+
+## August 2024
+### New Additions
+- Added `hello_kitty_pink` profile element to shop stock.
+- Added `border_wisp` profile border to shop stock.
+### Updates
+- Updated Poise damage motion values to Elden Ring 1.13.
+- Added downward point scaling customisation to PvP Leaderboards.
+- [[challenge]] now detects more region role names.
+- Changed [[hijack]] process duration calculation.
+- [[memberevents]] now work with Elden Ring event types and locations.
+- [[Memberevents]] will now link to a VC channel if the host is in VC.
+- [[slugboard]] auto-complete selection now has a number prefix for search purposes.
+- Updated [[raffle]] to slash command.
+- Added `number_of_winners` option to [[raffle]]
+- Added `requiredRole` option to [[raffle]] so only members with the given role may enter.
+- [[raffle]]s will now end exactly on time instead of up to 5 minutes late.
+### Bug Fixes
+- Fixed bug causing [[tourney]] command to timeout too quickly.
+- Fixed bug causing [[memberevent]]s to fail when cross-region was set to `TRUE`
+- Fixed bug causing [[raffle]]s to fail to start if a required role was not given.
+
+***
 ## July 2024
 ### New Additions
 - Added [[jointwitch]] command allowing streamers to force slugbot back into their twitch chat.
