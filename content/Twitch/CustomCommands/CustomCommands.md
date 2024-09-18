@@ -1,5 +1,5 @@
 `UNDER CONSTRUCTION`
 # Commands
-- [[addcommand]]
-- [[commands]]
-- [[removecommand]]
+- [[addcommand|/addcommand]]
+- [[commands|/commands]]
+- [[removecommand|/removecommand]]

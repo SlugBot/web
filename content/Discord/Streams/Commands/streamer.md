@@ -26,3 +26,10 @@ Members with this role will be shown in the streams channel when they go live
 Members with this role will be shown in the streams channel when they go live
 - Type: `ROLE`
 - Required: `TRUE`
+## /streamer set_channel
+`/streamer set_channel <channel>`<br>
+Stream notifications will be sent to this channel
+#### channel
+Stream notifications will be sent to this channel.
+- Type: `CHANNEL`
+- Required: `TRUE`

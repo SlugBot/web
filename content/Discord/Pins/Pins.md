@@ -1,3 +1,3 @@
 `UNDER CONSTRUCTION`
 # Commands
-- [[slugboard]]
+- [[slugboard|/slugboard]]

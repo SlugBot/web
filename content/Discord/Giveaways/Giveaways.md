@@ -1,3 +1,3 @@
 `UNDER CONSTRUCTION`
 # Commands
-- [[raffle]]
+- [[raffle|/raffle]]

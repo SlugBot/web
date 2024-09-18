@@ -22,5 +22,5 @@ Role specifies the role that is assigned by that option. Make sure the role bein
 Removing role reacts functions the same way.
 
 # Commands
-- [[rolereact]]
-- [[temprole]]
+- [[rolereact|/rolereact]]
+- [[temprole|/temprole]]

@@ -1,6 +1,6 @@
 `UNDER CONSTRUCTION`
 # Commands
-- [[rank]]
-- [[roleatlevel]]
-- [[setexp]]
-- [[setlevel]]
+- [[rank|/rank]]
+- [[roleatlevel|/roleatlevel]]
+- [[setexp|/setexp]]
+- [[setlevel|/setlevel]]

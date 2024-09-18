@@ -1,5 +1,5 @@
 `UNDER CONSTRUCTION`
 # Commands
-- [[addquote]]
-- [[quote]]
-- [[removequote]]
+- [[addquote|/addquote]]
+- [[quote|/quote]]
+- [[removequote|/removequote]]

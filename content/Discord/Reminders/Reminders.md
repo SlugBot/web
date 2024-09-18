@@ -1,3 +1,3 @@
 `UNDER CONSTRUCTION`
 # Commands
-- [[reminder]]
+- [[reminder|/reminder]]

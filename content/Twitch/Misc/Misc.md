@@ -1,6 +1,6 @@
 `UNDER CONSTRUCTION`
 # Commands
-- [[activate]]
-- [[cooldown]]
-- [[deactivate]]
-- [[uptime]]
+- [[activate|/activate]]
+- [[cooldown|/cooldown]]
+- [[deactivate|/deactivate]]
+- [[uptime|/uptime]]

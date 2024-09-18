@@ -1,9 +1,9 @@
 `UNDER CONSTRUCTION`
 # Commands
-- [[challenge]]
-- [[elo]]
-- [[ilost]]
-- [[iwon]]
-- [[ladder]]
-- [[team]]
-- [[tourney]]
+- [[challenge|/challenge]]
+- [[elo|/elo]]
+- [[ilost|/ilost]]
+- [[iwon|/iwon]]
+- [[ladder|/ladder]]
+- [[team|/team]]
+- [[tourney|/tourney]]
