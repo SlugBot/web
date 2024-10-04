@@ -13,7 +13,7 @@ Channel to send submitted tickets to
 Attach another ticketer button onto an existing ticketer
 #### ticketer_id
 Discord message ID of Ticketer
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 #### send_to_channel
 Channel to send submitted tickets to
@@ -24,14 +24,14 @@ Channel to send submitted tickets to
 Remove an existing ticketer
 #### ticketer_id
 ID of Ticketer
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 ## /ticketer move
 `/ticketer move <ticketer_id> <channel> [message_id]`<br>
 Move ticketer to a different channel or message
 #### ticketer_id
 ID of Ticketer
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 #### channel
 Channel to move ticketer to
@@ -46,7 +46,7 @@ Optional SlugBot message ID to replace with this ticketer
 Update properties of a Ticketer message
 #### ticketer_id
 ID of Ticketer
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 #### send_to_channel
 Channel to send submitted tickets to
@@ -129,7 +129,7 @@ Title of accompanying thread if 'do_thread' set to true. Can include [[Flag Repl
 Add a question field to a Ticketer
 #### ticketer_id
 Discord message ID of Ticketer
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 #### question
 Field header
@@ -154,9 +154,9 @@ Field style
 Remove a question field from a Ticketer
 #### ticketer_id
 Discord message ID of Ticketer
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 #### question
 Question to remove
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`

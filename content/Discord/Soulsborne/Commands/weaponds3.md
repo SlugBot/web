@@ -6,7 +6,7 @@ Get info on a given weapon, or get the top 10 weapons of each class
 Get info on a weapon or list of weapons separated by commas
 #### weapon
 Weapon name or list of weapon names
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 #### upgrade
 Upgrade level of the weapon. Use equivalent standard upgrade for special weapons

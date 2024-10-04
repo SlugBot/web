@@ -6,7 +6,7 @@ Create and manage a team for a PvP leaderboard
 Create a new team
 #### leaderboard
 Pick a leaderboard to create a team for
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 #### name
 Team name
@@ -21,11 +21,11 @@ List of members to invite to team (@member)
 Update
 #### leaderboard
 Leaderboard of team to update
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 #### name
 Team name of team to update
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 #### new_name
 New team name
@@ -48,9 +48,9 @@ List of members to remove from team (@member)
 Disband an existing team
 #### leaderboard
 Pick the leaderboard your team is for
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 #### name
 Team name
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`

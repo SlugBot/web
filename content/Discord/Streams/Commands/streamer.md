@@ -13,7 +13,7 @@ Twitch username of streamer to add
 Remove a streamer from the streamer list
 #### streamer
 Twitch username of streamer to remove
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 ## /streamer list
 `/streamer list`<br>

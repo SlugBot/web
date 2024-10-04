@@ -15,19 +15,19 @@ The game the event will take place on.
 - Required: `TRUE`
 #### platform
 The platform the event will be on.
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 #### location
 Where the event will take place.
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `FALSE`
 #### event_type
 Type of event to host.
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `FALSE`
 #### character
 The name of build you will be using.
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `FALSE`
 #### level
 The soul level (or equivalent) of your character.
@@ -35,7 +35,7 @@ The soul level (or equivalent) of your character.
 - Required: `FALSE`
 #### upgrade_level
 The weapon upgrade level of your character.
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `FALSE`
 #### password
 Password for multiplayer.
@@ -63,19 +63,19 @@ The game the event will take place on.
 - Required: `FALSE`
 #### platform
 The platform the event will be on.
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `FALSE`
 #### location
 Where the event will take place.
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `FALSE`
 #### event_type
 Type of event to host.
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `FALSE`
 #### character
 The name of build you will be using.
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `FALSE`
 #### level
 The soul level (or equivalent) of your character.
@@ -83,7 +83,7 @@ The soul level (or equivalent) of your character.
 - Required: `FALSE`
 #### upgrade_level
 The weapon upgrade level of your character.
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `FALSE`
 #### password
 Password for multiplayer.

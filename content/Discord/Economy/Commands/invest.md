@@ -17,5 +17,5 @@ Amount of SC to invest
 Terminate an existing investment prematurely
 #### channel
 Channel to terminate investment in
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`

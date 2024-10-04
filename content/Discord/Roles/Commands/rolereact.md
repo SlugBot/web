@@ -13,7 +13,7 @@ Discord message ID of message to use for RoleReact
 Add a reaction role to a RoleReact
 #### rolereact_id
 Discord message ID of RoleReact
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 #### reaction
 Emoji to use
@@ -36,18 +36,18 @@ Optional tertiary role to use
 Remove a reaction role from a RoleReact
 #### rolereact_id
 Discord message ID of RoleReact
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 #### primary_role
 Primary role of RoleReact option
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 ## /rolereact move
 `/rolereact move <rolereact_id> <channel> [message_id]`<br>
 Move RoleReact to a different channel or message
 #### rolereact_id
 Discord message ID of RoleReact
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 #### channel
 Channel to move RoleReact to
@@ -62,7 +62,7 @@ Optional SlugBot message ID to replace with this RoleReact
 Update properties of a RoleReact
 #### rolereact_id
 Discord message ID of RoleReact
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 #### title
 Title to set for RoleReact

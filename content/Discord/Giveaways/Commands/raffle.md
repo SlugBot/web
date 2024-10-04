@@ -25,7 +25,7 @@ Role required to enter the raffle
 Update an existing raffle
 #### raffle_id
 Identifier of existing raffle
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 #### description
 New message to be shown with the raffle
@@ -48,12 +48,12 @@ New required role to enter the raffle. Will not apply retroactively
 End the raffle and draw a winner. Use the command again to draw a new winner
 #### raffle_id
 Identifier of existing raffle
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 ## /raffle abort
 `/raffle abort <raffle_id>`<br>
 End the raffle and DO NOT draw a winner
 #### raffle_id
 Identifier of existing raffle
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`

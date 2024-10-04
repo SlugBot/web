@@ -10,23 +10,23 @@ Create a new bet
 Close a bet and stop members placing bets
 #### bet
 Bet identifier
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 ## /bet open
 `/bet open <bet>`<br>
 Reopen a closed bet and allow members to bet again
 #### bet
 Bet identifier
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 ## /bet resolve
 `/bet resolve <bet> <outcome>`<br>
 Declare the outcome of a bet
 #### bet
 Bet identifier
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 #### outcome
 Final outcome of the bet
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`

@@ -1,13 +1,10 @@
-
 ## SlugBot Economy Guide
 Like some other bots, SlugBot has an Economy module, letting users earn and trade currency in the form of SlugCoin. However, SlugBot's economy allows users to 'hack' other members, steal from them or plant malware on their accounts. The aim of the game is to earn as much SlugCoin as you can while also protecting your account from other members.
 
 ### Your Account
 Your account holds all of your Slug Economy data, including your bank balance, stats, info on your processes and marks, along with info detected processes planted by others. Use the [[slugs|/slugs]] command to view your account menu. All accounts are protected by a **FIREWALL** that will prevent any tampering with your account. but that can be **BYPASS**ed given enough time.
-
 #### Your Balance
 Your SlugCoin balance is stored in two ways; **Current** and **Vault**. **Current** has infinite capacity but is more vulnerable to malware and theft. The **ENCRYPTION** stat dictates how safe your **Current** balance is. Your **Vault** is much more secure but has limited capacity determined by your **POWER Lvl**. Use the [[vault|/vault]] command to transfer SC from your current to your vault.
-
 #### Getting Started
 The easiest way to start earning is through Daily SlugCoin collection and passive SlugCoin earning. 
 Once per day, you can use the [[daily|/daily]] command to earn between 5000sc and 10,000sc.
@@ -20,28 +17,20 @@ You can also try your luck in the [[slugcasino|Slug Casino]] and try to win big 
 ### Stats
 Your account's strengths and weaknesses are all dependant on your stats and where you specialise. Use the [[levelup|/levelup]] command to increase your stats at the cost of time and SC. Every level-up increases your POWER Lvl by 1. You can reallocate your stats once a week using the [[respecc|/respecc]] command.
 Stat level also governs how many slots you have to install processes.
-
 #### Firewall
 Firewall is the first line of defense when it comes to protecting your account. In most cases, the Firewall must be BYPASSed before any process can be planted on an account.
-
 #### Bypasser
 To bypass an accounts Firewall, a BYPASS process must be completed. The time it takes to bypass a Firewall is dependant on the attacker's Bypasser level vs the target's Firewall level.
-
 #### Encryption
 Encryption keeps your Current balance secure. For a process to take SC directly out of your account, your encryption will have to be cracked first. A higher Encryption stat will also increase the duration you can put your account in [[lockdown|/lockdown]] for - protecting you from [[steal|/steal]] attempts.
-
 #### Cracker
 Cracking encryption takes time. The duration is governed by the attacker's Cracker level vs the target's Encryption level.
-
 #### Scanner
 Scanning the network for other user's processes is a major part of keeping your account secure and successfully attacking another user's account. Your Scanner level governs your scan durations along with various other detection based actions.
-
 #### Interceptor
 Your Interceptor level governs the duration and efficacy of processes that pertain to intercepting transactions between accounts. A higher Interceptor level will, for example, make SKIMMERs plant faster.
-
 #### Wire
 Any activity that involves transferring SC between accounts is governed by the Wire stat.
-
 #### Injector
 Processes can be modified at runtime via injecting - the chance of successive injections without failure is governed by the Injector level.
 
@@ -49,7 +38,6 @@ Processes can be modified at runtime via injecting - the chance of successive in
 One of the best ways to make SC is to steal, either directly or through the effects of malware processes. First you'll want to **BYPASS** your target's **FIREWALL** using the [[bypass|/bypass]] command. This will begin the **BYPASS** process which will take a certain amount of time determined by your BYPASSER level and their FIREWALL level.
 
 Once you've **BYPASS**ed a user's **FIREWALL** you'll have access to their account. Use [[slugs|/slugs]] command to open their account menu and view their info. You won't be able to take anything from their bank balance just yet - Their SC reserves are still protected by their **ENCRYPTION** which will need to be **CRACK**ed - a time consuming process ([[crack|/crack]]), but access to their account now lets you plant various processes on them using the [[plant|/plant]] command.
-
 #### SKIMMER
 [[plant#/plant skimmer|/plant skimmer]]
 This process, once planted on a user, will skim a fraction of all income the user receives and transfers the skimmed SC to the planter instead. As the process isn't directly taking SC from an account, but instead intercepting a transaction, **CRACK**ing their encryption is not needed.

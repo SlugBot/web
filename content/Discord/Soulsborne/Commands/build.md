@@ -38,14 +38,14 @@ Add a character portrait by providing a direct image link
 Remove a build from your build list
 #### name
 Name of build to remove
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 ## /build set
 `/build set <name>`<br>
 Set a current build
 #### name
 Name of build to set as current
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 ## /build list
 `/build list [member]`<br>

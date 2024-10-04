@@ -6,53 +6,53 @@ Begin the planting a process on a target
 Plant a SKIMMER process on a target
 #### target
 Target identifier
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 ## /plant leech
 `/plant leech <target>`<br>
 Plant a LEECH process on a target
 #### target
 Target identifier
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 ## /plant cloner
 `/plant cloner <target>`<br>
 Plant a CLONER process on a target
 #### target
 Target identifier
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 ## /plant hijacker
 `/plant hijacker <target>`<br>
 Plant a HIJACKER process on a target
 #### target
 Target identifier
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 ## /plant honeypot
 `/plant honeypot <target>`<br>
 Plant a HONEYPOT process on a target
 #### target
 Target identifier
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 ## /plant redirect
 `/plant redirect <target> <redirect_target>`<br>
 Plant a REDIRECT process on a target, redirecting processes to another target
 #### target
 Target identifier
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 #### redirect_target
 redirect_target identifier
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 ## /plant latch
 `/plant latch <target> <attach_process_id> [trigger_process_types] [trigger_target]`<br>
 Plant a LATCH process on a target
 #### target
 Target identifier
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 #### attach_process_id
 Process ID of process to attach LATCH
@@ -60,7 +60,7 @@ Process ID of process to attach LATCH
 - Required: `TRUE`
 #### trigger_process_types
 Limit the LATCH to only trigger on given process types
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `FALSE`
 #### trigger_target
 Limit the LATCH to only trigger by processes on a given target
@@ -71,7 +71,7 @@ Limit the LATCH to only trigger by processes on a given target
 Plant a TRACKER process on a target
 #### target
 Target identifier
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 ## /plant corruptor
 `/plant corruptor <target>`<br>
@@ -85,5 +85,5 @@ Target identifier
 Plant a ROOTKIT process on a target
 #### target
 Target identifier
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`

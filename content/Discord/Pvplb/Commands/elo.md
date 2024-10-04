@@ -8,5 +8,5 @@ View match history of this member
 - Required: `FALSE`
 #### team
 View match history of this team
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `FALSE`

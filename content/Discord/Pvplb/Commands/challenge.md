@@ -10,15 +10,15 @@ Abort your existing challenge
 Put out an open challenge anyone can accept
 #### leaderboard
 Pick a leaderboard to participate in
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 #### region
 Limit opponents to only ones in the given region
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `FALSE`
 #### platform
 Limit opponents to only ones on the given platforms
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `FALSE`
 #### rank_range
 Only those within this rank range can accept your challenge
@@ -37,28 +37,28 @@ Member to challenge
 - Required: `TRUE`
 #### leaderboard
 Pick a leaderboard to participate in
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 ## /challenge team
 `/challenge team <leaderboard> [your_team] [opponent_team] [region] [platform]`<br>
 Challenge a team or use a specific team, or both
 #### leaderboard
 Pick a leaderboard to participate in
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 #### your_team
 Team name of your team
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `FALSE`
 #### opponent_team
 Team name of opponent
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `FALSE`
 #### region
 Limit opponents to only ones in the given regions
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `FALSE`
 #### platform
 Limit opponents to only ones on the given platforms
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `FALSE`

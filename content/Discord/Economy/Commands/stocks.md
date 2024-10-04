@@ -6,7 +6,7 @@ Buy or sell stocks
 Buy stocks
 #### stock
 Stock to buy
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 #### amount
 Amount of shares to buy
@@ -25,7 +25,7 @@ Buy stock when above the given price
 Sell stocks
 #### stock
 Stock to sell
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 #### amount
 Amount of shares to sell

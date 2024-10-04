@@ -17,14 +17,14 @@ Members can react with this Emoji to flag a message for the Slugboard
 Remove an existing Slugboard
 #### slugboard
 Slugboad to remove
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 ## /slugboard update
 `/slugboard update <slugboard> [flag] [response] [threshold] [delete_threshold] [unflag] [allow_unflag] [color]`<br>
 Update settings of an existing Slugboard
 #### slugboard
 Slugboad to update
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 #### flag
 Members can react with this Emoji to flag a message for the Slugboard

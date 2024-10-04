@@ -3,6 +3,7 @@ Chatting in a server earns members Activity Exp, leveling them up and increasing
 Along with a fun incentive to keep members active, activity levels can also be used to provide roles to members using [[roleatlevel]] - useful for providing certain permissions to users after they have been active in the server for an amount of time.
 
 Admins can manually set a member's Exp or level using [[setexp]] and [[setlevel]] respectively.
+
 # Commands
 - [[rank|/rank]]
 - [[roleatlevel|/roleatlevel]]

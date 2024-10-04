@@ -10,7 +10,7 @@ Add or update a custom command or regex keyword match. Can include [[Flag Replac
 Remove a custom command or regex keyword match
 #### command
 Command word or regEx
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 ## /command list
 `/command list`<br>

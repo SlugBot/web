@@ -13,7 +13,7 @@ Category where tourney organisation channels will be created
 Host a new tourney
 #### leaderboard
 Pick a leaderboard to select participants from
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 #### name
 Title of the tourney
@@ -48,7 +48,7 @@ Role to be given to reserves who have accepted their invite
 Manually invite member to tournament
 #### name
 Title of the tourney
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 #### member
 Member to invite
@@ -63,11 +63,11 @@ Invite member as reserve?
 Manually revoke invite sent out to a member
 #### name
 Title of the tourney
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 #### member
 Member to revoke invite from
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 #### reason
 Reason for revoking invite. Will be to DMed to member
@@ -78,12 +78,12 @@ Reason for revoking invite. Will be to DMed to member
 Abort an existing tourney
 #### name
 Title of the tourney to abort
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 ## /tourney status
 `/tourney status <name>`<br>
 Get the current status of a tourney
 #### name
 Title of the tourney
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`

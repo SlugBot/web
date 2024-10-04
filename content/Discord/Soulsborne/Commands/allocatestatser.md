@@ -4,7 +4,7 @@ Find the optimal stat spread for a given Elden Ring weapon
 ## `/allocatestatser <weapon> <spend> [upgrade] [stats] [calc_against]`
 #### weapon
 Weapon to allocate stats for
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 #### spend
 How many stat levels allowed to allocate
@@ -12,7 +12,7 @@ How many stat levels allowed to allocate
 - Required: `TRUE`
 #### upgrade
 Upgrade level of the weapon
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `FALSE`
 #### stats
 Initial str dex int faith arc levels. e.g. "10 18 9 30 7"

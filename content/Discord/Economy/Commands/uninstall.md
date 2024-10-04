@@ -4,7 +4,7 @@ Uninstall a process type to free up process slots
 ## `/uninstall <process> [count]`
 #### process
 Process type to uninstall
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 #### count
 Number to uninstall

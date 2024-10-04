@@ -4,5 +4,5 @@ Start the CRACK process on another member
 ## `/crack <target>`
 #### target
 Target identifier
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`

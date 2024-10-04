@@ -4,7 +4,7 @@ Install a process type to increase the total number of that process you can use
 ## `/install <process> [count]`
 #### process
 Process type to install
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 #### count
 Number to install

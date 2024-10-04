@@ -28,29 +28,29 @@ Channel to display the leaderboard
 - Type: `CHANNEL`
 - Required: `TRUE`
 ## /ladder remove
-`/ladder remove <ladder>`<br>
+`/ladder remove <leaderboard>`<br>
 Delete an existing leaderboard
-#### ladder
+#### leaderboard
 Name of leaderboard to be deleted
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 ## /ladder rename
-`/ladder rename <ladder> <new_ladder_name>`<br>
-Rename an existing ladder
-#### ladder
-Original name of ladder to be renamed
-- Type: `AUTOCMPLETE SELECTION`
+`/ladder rename <leaderboard> <new_lb_name>`<br>
+Rename an existing leaderboard
+#### leaderboard
+Original name of leaderboard to be renamed
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
-#### new_ladder_name
-New name for ladder
+#### new_lb_name
+New name for leaderboard
 - Type: `STRING`
 - Required: `TRUE`
 ## /ladder reset
-`/ladder reset <ladder> [reset_points] [reset_matches_played] [reset_elo]`<br>
-Reset all scores in ladder
-#### ladder
-Ladder name of ladder to be reset
-- Type: `AUTOCMPLETE SELECTION`
+`/ladder reset <leaderboard> [reset_points] [reset_matches_played] [reset_elo]`<br>
+Reset all scores in leaderboard
+#### leaderboard
+title of leaderboard to be reset
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 #### reset_points
 Reset all participant's points
@@ -65,15 +65,15 @@ Reset all participant's ELO
 - Type: `BOOLEAN`
 - Required: `FALSE`
 ## /ladder set
-`/ladder set <ladder> <player_or_team> <property> <value>`<br>
-Set a user's points or wins in a ladder
-#### ladder
-Ladder name of ladder to set user's points/wins in
-- Type: `AUTOCMPLETE SELECTION`
+`/ladder set <leaderboard> <player_or_team> <property> <value>`<br>
+Set a user's points or wins in a leaderboard
+#### leaderboard
+title of leaderboard to set user's points/wins in
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 #### player_or_team
 user or team to set points/wins for
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 #### property
 either POINTS or WINS
@@ -83,7 +83,7 @@ either POINTS or WINS
   - `MATCHES PLAYED`
 - Required: `TRUE`
 #### value
-New value for user's points/wins in specified ladder
+New value for user's points/wins in specified leaderboard
 - Type: `INTEGER`
 - Required: `TRUE`
 ## /ladder undo
@@ -94,48 +94,48 @@ Message ID of challenge message to identify match
 - Type: `STRING`
 - Required: `TRUE`
 ## /ladder view_settings
-`/ladder view_settings <ladder>`<br>
-View the current parameter settings for a ladder
-#### ladder
-Ladder name of ladder to settings of
-- Type: `AUTOCMPLETE SELECTION`
+`/ladder view_settings <leaderboard>`<br>
+View the current parameter settings for a leaderboard
+#### leaderboard
+title of leaderboard to view settings of
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 ## /ladder point_settings
-`/ladder point_settings <ladder> <param> <value>`<br>
-Modify various paramters of the ladder
-#### ladder
-Ladder name of ladder to modify
-- Type: `AUTOCMPLETE SELECTION`
+`/ladder point_settings <leaderboard> <param> <value>`<br>
+Modify various paramters of the leaderboard
+#### leaderboard
+Title of leaderboard to modify
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 #### param
 Parameter to modify
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 #### value
 New parameter value
 - Type: `NUMBER`
 - Required: `TRUE`
-## /ladder ladder_settings
-`/ladder ladder_settings <ladder> <param> <value>`<br>
-Modify various paramters of the ladder
-#### ladder
-Ladder name of ladder to modify
-- Type: `AUTOCMPLETE SELECTION`
+## /ladder lb_settings
+`/ladder lb_settings <leaderboard> <param> <value>`<br>
+Modify various paramters of the leaderboard
+#### leaderboard
+Title of leaderboard to modify
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 #### param
 Parameter to modify
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 #### value
 New parameter value
 - Type: `NUMBER`
 - Required: `TRUE`
 ## /ladder string_settings
-`/ladder string_settings <ladder> <param>`<br>
-Modify various strings displayed on the ladder. Can include [[Flag Replacers]]
-#### ladder
-Ladder name of ladder to modify
-- Type: `AUTOCMPLETE SELECTION`
+`/ladder string_settings <leaderboard> <param>`<br>
+Modify various strings displayed on the leaderboard. Can include [[Flag Replacers]]
+#### leaderboard
+Title of leaderboard to modify
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 #### param
 Parameter to modify
@@ -145,22 +145,22 @@ Parameter to modify
   - `featuredMatchString`
 - Required: `TRUE`
 ## /ladder pick_options set_phases
-`/ladder pick_options set_phases <ladder> <phases>`<br>
+`/ladder pick_options set_phases <leaderboard> <phases>`<br>
 Pick/ban phases. Alternating between pick and ban, starting with ban
-#### ladder
-Ladder name of ladder to modify
-- Type: `AUTOCMPLETE SELECTION`
+#### leaderboard
+Title of leaderboard to modify
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 #### phases
 list of phase rounds, starting with ban (e.g "2 3" for 2 ban rounds then 2 pick rounds per team)
 - Type: `STRING`
 - Required: `TRUE`
 ## /ladder pick_options add
-`/ladder pick_options add <ladder> <pick_option> [pick_option_icon]`<br>
+`/ladder pick_options add <leaderboard> <pick_option> [pick_option_icon]`<br>
 Add a pick/ban option
-#### ladder
-Ladder name of ladder to modify
-- Type: `AUTOCMPLETE SELECTION`
+#### leaderboard
+Title of leaderboard to modify
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 #### pick_option
 Name of pick/ban option
@@ -171,29 +171,29 @@ Optional emoji icon for pick option
 - Type: `STRING`
 - Required: `FALSE`
 ## /ladder pick_options remove
-`/ladder pick_options remove <ladder> <pick_option>`<br>
+`/ladder pick_options remove <leaderboard> <pick_option>`<br>
 Remove a pick/ban option
-#### ladder
-Ladder name of ladder to modify
-- Type: `AUTOCMPLETE SELECTION`
+#### leaderboard
+Title of leaderboard to modify
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 #### pick_option
 Name of pick/ban option
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 ## /ladder pick_options list
-`/ladder pick_options list <ladder>`<br>
+`/ladder pick_options list <leaderboard>`<br>
 list all current pick/ban options
-#### ladder
-Ladder name of ladder to view
-- Type: `AUTOCMPLETE SELECTION`
+#### leaderboard
+Title of leaderboard to view
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 ## /ladder player_override iwon
 `/ladder player_override iwon <player> <rounds_won> <rounds_lost>`<br>
 Run the /iwon command as a given player
 #### player
 Player to override
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 #### rounds_won
 Number of rounds won
@@ -208,7 +208,7 @@ Number of rounds lost
 Run the /ilost command as a given player
 #### player
 Player to override
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 #### rounds_won
 Number of rounds won
@@ -223,22 +223,22 @@ Number of rounds lost
 Run [/challenge cancel] command as a given player
 #### player
 Player to override
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 ## /ladder player_override force
-`/ladder player_override force <ladder> <player_or_team1> <player_or_team2> [rounds_won] [rounds_lost]`<br>
+`/ladder player_override force <leaderboard> <player_or_team1> <player_or_team2> [rounds_won] [rounds_lost]`<br>
 Force create and complete a match between two players
-#### ladder
-Ladder name of ladder to force match in
-- Type: `AUTOCMPLETE SELECTION`
+#### leaderboard
+Title of leaderboard to force match in
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 #### player_or_team1
 Host player or team
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 #### player_or_team2
 opponent player or team
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 #### rounds_won
 Number of rounds won by team1
@@ -249,11 +249,11 @@ Number of rounds lost by team1
 - Type: `INTEGER`
 - Required: `FALSE`
 ## /ladder roleatrank add
-`/ladder roleatrank add <ladder> <role> <rank_add> [rank_remove]`<br>
+`/ladder roleatrank add <leaderboard> <role> <rank_add> [rank_remove]`<br>
 Add or update a role to be given/removed at rank
-#### ladder
-Ladder name of ladder to modify
-- Type: `AUTOCMPLETE SELECTION`
+#### leaderboard
+Title of leaderboard to modify
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 #### role
 Role to be given
@@ -268,29 +268,29 @@ Minimum rank needed to remove the role
 - Type: `INTEGER`
 - Required: `FALSE`
 ## /ladder roleatrank remove
-`/ladder roleatrank remove <ladder> <role>`<br>
+`/ladder roleatrank remove <leaderboard> <role>`<br>
 Remove an existing role given at rank
-#### ladder
-Ladder name of ladder to modify
-- Type: `AUTOCMPLETE SELECTION`
+#### leaderboard
+Title of leaderboard to modify
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 #### role
 Role to be removed
 - Type: `ROLE`
 - Required: `TRUE`
 ## /ladder roleatrank list
-`/ladder roleatrank list <ladder>`<br>
+`/ladder roleatrank list <leaderboard>`<br>
 List all roles given at leaderboard rank and their requirements
-#### ladder
-Ladder name of ladder to modify
-- Type: `AUTOCMPLETE SELECTION`
+#### leaderboard
+Title of leaderboard to modify
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 ## /ladder info
-`/ladder info <ladder> [start_time] [end_time] [ignore_resets]`<br>
+`/ladder info <leaderboard> [start_time] [end_time] [ignore_resets]`<br>
 Get activity info on a leaderboard
-#### ladder
-Ladder name of ladder to view info for
-- Type: `AUTOCMPLETE SELECTION`
+#### leaderboard
+Title of leaderboard to view info for
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 #### start_time
 Ignore matches before this time

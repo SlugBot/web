@@ -17,7 +17,7 @@ How long after a member getting a role should it be removed?
 Remove an existing temporary role
 #### temp_role
 Temporary role to remove
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 ## /temprole list
 `/temprole list`<br>

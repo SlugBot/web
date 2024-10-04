@@ -4,7 +4,7 @@ Find the optimal stat spread for a given weapon
 ## `/allocatestatsds3 <weapon> <spend> [upgrade] [stats]`
 #### weapon
 Weapon to allocate stats for
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 #### spend
 How many stat levels allowed to allocate

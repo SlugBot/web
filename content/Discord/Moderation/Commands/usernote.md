@@ -21,5 +21,5 @@ Member to add note to
 - Required: `TRUE`
 #### note
 Note to remove
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`

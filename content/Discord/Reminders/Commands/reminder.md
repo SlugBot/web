@@ -25,14 +25,14 @@ Attach a Ticketer or RoleReact component to the reminder by supplying its messag
 Update an existing reminder
 #### reminder
 Reminder to update
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 ## /reminder remove
 `/reminder remove <reminder>`<br>
 Remove an existing reminder
 #### reminder
 Reminder to remove
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 ## /reminder list
 `/reminder list`<br>

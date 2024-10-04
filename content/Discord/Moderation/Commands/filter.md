@@ -17,7 +17,7 @@ Should the filter account for repeating characters?
 Remove an existing word or regEx filter.
 #### filter
 word or regEx to filter.
-- Type: `AUTOCMPLETE SELECTION`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 ## /filter list
 `/filter list`<br>
