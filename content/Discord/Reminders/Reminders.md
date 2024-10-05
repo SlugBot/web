@@ -6,8 +6,8 @@ It may be desired to have a message always be shown at the very bottom of a chan
 
 Supplying valid [[Embed JSON]] as the reminder message with [[reminder#do_embed|do_embed]] set to `TRUE` will allow for custom Discord embeds.
 ## Attaching Components
-[[Ticketer]] and [[Rolereact]] components can be attached to reminders, displaying functional [[ticketer]] buttons or [[rolereact]] selections under the reminder. This can be useful for keeping [[ticketer]] sign-ups or role selections at the bottom of channels or appear regularly in active chats.
-Copy the message ID of the original [[ticketer]] or [[Rolereact]] message and supply it to a reminder as an [[reminder#attach_component|attach_component]].
+[[Ticket|Ticketer]] and [[Roles|Rolereact]] components can be attached to reminders, displaying functional [[ticketer]] buttons or [[rolereact]] selections under the reminder. This can be useful for keeping [[ticketer]] sign-ups or role selections at the bottom of channels or appear regularly in active chats.
+Copy the message ID of the original [[ticketer]] or [[rolereact]] message and supply it to a reminder as an [[reminder#attach_component|attach_component]].
 
 # Commands
 - [[reminder|/reminder]]
