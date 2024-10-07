@@ -1,4 +1,17 @@
+## September 2024
+### Updates
+- Member Event text inputted by members now goes through the server's filters.
+- Member Event `isCrossServer` parameter is now passed through for [[SlugBot/documentation/Discord/Setup/Flag Replacers#ARG|${arg: }]] 
+- Added channel setting to [[streamer]] command.
+- Updated ER weapon commands to Elden Ring patch 1.14 data.
+- Improved Economy transfer logging.
+### Bug Fixes
+- Fixed bug causing challenge bets not to pay out.
+- Fixed bug where duplicate bets could be displayed on challenges.
+- Fixed bug causing [[elo]] to fail to respond.
+- Fixed bug causing stock sell/buy orders to not send notification.
 
+***
 ## August 2024
 ### New Additions
 - Added `hello_kitty_pink` profile element to shop stock.
