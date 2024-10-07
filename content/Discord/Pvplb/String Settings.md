@@ -1,5 +1,6 @@
+Certain bodies of text displayed by the leaderboard system can be customised. [[Flag Replacers]] function in these fields.
 ### openChalPrefix
-String sent before an open challenge embed.
+String sent before an open challenge embed. if valid [[Embed JSON]] is provided, the embed will be displayed.
 #### default 
 `null`
 ### lbDescription
@@ -15,6 +16,6 @@ or
 after you've completed the match.
 ```
 ### featuredMatchString
-Message sent in featured match threads
+Message sent in featured match threads. Only used by [[Pvplb#Creating a Swiss Tournament|Swiss Tournaments]].
 #### default
 `null`

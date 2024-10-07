@@ -1,6 +1,6 @@
 Ticketers provide a method for users to submit forms. The form can be configured with up to 5 fields, and the submission will be sent to the specified channel.
 
-Use [[ticketer#/ticketer create|/ticketer create]] to create a ticketer component. This is a message in the channel the command was used in with a button. Every element of this message can be customised using [[ticketer#/ticketer update|/ticketer update]].
+Use [[ticketer#/ticketer create|/ticketer create]] to create a ticketer component. This is a message in the channel the command was used in with a button. Every element of this message can be customised using [[ticketer#/ticketer update|/ticketer update]]. Note: [[ticketer#init_message|init_message]] and [[ticketer#content_message|content_message]] will both be embedded if valid [[Embed JSON]] is provided, and [[Flag Replacers]] also function here.
 
 The form input fields can be customised with [[ticketer#/ticketer add_field|/ticketer add_field]] to add a field, and [[ticketer#/ticketer remove_field|/ticketer remove_field]] to remove a field.
 

@@ -1,25 +1,26 @@
+These settings are modified using [[ladder#/ladder lb_settings|/ladder lb_settings]] and control behaviours of the leaderboard. For settings that control point rewards, check out [[Point Settings]].
 ### team0SizeMin
-Minimum players on team 0
+Minimum players on team 0.
 
 **Default**: `1`
 ### team0SizeMax
-Maximum players per team 0
+Maximum players per team 0.
 
 **Default**: `1`
 ### team1SizeMin
-Minimum players on team 1
+Minimum players on team 1.
 
 **Default**: `1`
 ### team1SizeMax
-Maximum players on team 1
+Maximum players on team 1.
 
 **Default**: `1`
 ### maxReserves
-Maximum number of reserves in a comp team
+Maximum number of reserves in a comp team. This allows teams to be created using [[team]] larger than what has been specified in [[Leaderboard Settings#team0SizeMax|team0SizeMax]] or [[Leaderboard Settings#team0SizeMax|team1SizeMax]] while still limiting the number of players in a match.
 
 **Default**: `0`
 ### rankByPlayer
-Rank players individually or rank the team (1 = rank individually, 0 = rank team)
+Rank players individually or rank the team (1 = rank individually, 0 = rank team).
 
 **Default**: `1`
 ### challengeTimeout
@@ -39,7 +40,7 @@ When 1, compatible challenges will be automatically matched. (Set to 0 to disabl
 
 **Default**: `1`
 ### allowPlatformLimit
-Allow players to set platform limits in their challenges (Set to 0 to disable)
+Allow players to set platform limits in their challenges. (Set to 0 to disable)
 
 **Default**: `0`
 ### ladderReachUp
@@ -59,7 +60,7 @@ Number of rounds to consider for [[Point Settings#pointsPerRound|pointsPerRound]
 
 **Default**: `5`
 ### readOnly
-Disables the ability for users to put out challenges on this leaderboard (set to 1 for read-only)
+Disables the ability for users to put out challenges on this leaderboard (set to 1 for read-only). Useful for a leaderboard where an admin manages the pairings and [[ladder#/ladder player_override force|forces]] matches.
 
 **Default**: `0`
 

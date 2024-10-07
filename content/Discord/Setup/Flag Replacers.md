@@ -1,5 +1,5 @@
 # Flag Replacers
-Some SlugBot functions allow users to set strings to be used for responses such as custom welcome messages and command responses. These strings can be made more dynamic with the use of **flag replacers**.
+Some SlugBot functions allow users to set strings to be used for responses such as custom welcome messages and command responses. These strings can be made more dynamic with the use of **flag replacers**. Flag Replacers are sections of text that will be replaced with something else when the set string is displayed.
 
 ### NAME
 `${NAME}`

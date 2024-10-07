@@ -1,10 +1,10 @@
-
+These parameters control how many points are awarded to players after completing a match. For settings that control general behaviours of the leaderboard, check out [[Leaderboard Settings]].
 ### scalingRate
 The fraction of the difference of points between the winner and the loser awarded to the winner when the winner is lower rank.
 
 **Default**: `0.4`
 ### downwardScalingRate
-The fraction of the difference of points between the winner and the loser subtracted from the winner when the winner is higher rank.
+The fraction of the difference of points between the winner and the loser subtracted from the winner when the winner is higher rank. 
 
 **Default**: `0.4`
 ### maxPointScale
@@ -60,7 +60,7 @@ Fraction of decayed points regenerated on completing a match.
 
 **Default**: `0.5`
 ### startingPoints
-The number of points a player will start with
+The number of points a player will start with.
 
 **Default**: `0`
 ### eloBlend
@@ -68,6 +68,6 @@ Factor using player's relative ELO to modify point reward. (e.g. A player with l
 
 **Default**: `0`
 ### eloChangeFactor
-The maximum ELO loss/gain from a match
+The maximum ELO loss/gain from a match.
 
 **Default**: `32`
