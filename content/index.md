@@ -21,5 +21,5 @@ Once you've [invited SlugBot](https://discord.com/oauth2/authorize?client_id=344
 - [[Roles|Role Management]]
 - [[Logging]]
 - [[Moderation]]
-- [[Permissions]]
+- [[Setup|Permissions]]
 - [[Pvplb|PvP Leaderboard]]
