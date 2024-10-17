@@ -82,7 +82,7 @@ CORRUPTORs, when planted on a user, will corrupt their log viewer - making it di
 * Offensive Stat: **INJECTOR**
 * Defensive Stat: **SCANNER**
 #### COMP
-```!comp <target user> <stat>```
+[[compromise|/compromise]]
 Compromising a target's stats will temporarily lower their effectiveness. Compromising a target requires a correct password to be guessed - failing to do so may result in the attacker getting compromised.
 * Offensive Stat: **BYPASSER**
 * Defensive Stat: **ENCRYPTION**
@@ -130,6 +130,7 @@ To terminate an investment early, use the command [[invest#`/invest terminate`|/
 - [[bet|/bet]]
 - [[bypass|/bypass]]
 - [[clean|/clean]]
+- [[compromise|/compromise]]
 - [[crack|/crack]]
 - [[daily|/daily]]
 - [[downgrade|/downgrade]]

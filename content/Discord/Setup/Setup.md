@@ -19,6 +19,7 @@ Governs the permissions for earning [[ActivityExp|Activity Exp]].
 Governs which members and channels will have their events logged by [[Logging]].
 #### SlugboardFlag
 Governs which members and channels can have their messages [[slugboard|slugboarded]].
+
 # Commands
 - [[permissions|/permissions]]
 - [[welcomemessage|/welcomemessage]]
