@@ -1,3 +1,23 @@
+
+## October 2024
+### New Additions
+- Reminders now display the time they were created in [[reminder#/reminder list|/reminder list]].
+### Updates
+- Updated [[SlugBot/documentation/Discord/Setup/Commands/permissions|permissions]] to slash command.
+- Updated [[compromise]] to slash command.
+- Added `action user` to several log messages.
+- Added team lead indicator to member list in [[elo]] command.
+### Bug Fixes
+- Fixed bug causing [[elo]] command to become unresponsive when looking at team data.
+- Fixed incorrect motion values for Dryleaf Arts weapon in [[weaponer]] and [[allocatestatser]].
+- Fixed bug causing [[ladder]] pick_options subcommand to become unresponsive. 
+- Fixed bug calculating average opponent rank in [[ladder#/ladder info|/ladder info]].
+- Fixed [[ladder#/ladder roleatrank add|/ladder roleatrank]] failing to respond.
+- Fixed [[weaponer]] and [[allocatestatser]] not properly calculating damage for Rellana's Twin Blades.
+- Fixed [[slugboard]] not working with animated emoji.
+
+***
+
 ## September 2024
 ### Updates
 - Member Event text inputted by members now goes through the server's filters.
@@ -12,6 +32,7 @@
 - Fixed bug causing stock sell/buy orders to not send notification.
 
 ***
+
 ## August 2024
 ### New Additions
 - Added `hello_kitty_pink` profile element to shop stock.
@@ -34,6 +55,7 @@
 - Fixed bug causing [[raffle]]s to fail to start if a required role was not given.
 
 ***
+
 ## July 2024
 ### New Additions
 - Added [[jointwitch]] command allowing streamers to force slugbot back into their twitch chat.
