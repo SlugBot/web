@@ -1,3 +1,18 @@
+## November 2024
+
+### Updates
+- Improved reminders responsiveness when removing reminders.
+- Added `Buy all` and `Sell all` buttons to [[stocks#/stocks list|/stocks list]].
+- Improved deleted image logging.
+- Increased number of entries displayed in [[ladder#/ladder info|/ladder info]].
+- [[allocatestatser]] and [[weaponer]] now display defence values on hover for custom `calc_against` builds.
+### Bug Fixes
+- Fixed knuckleslug transactions not being classed as gambling in logs.
+- Users can no longer bid on their own processes in the [[shop]].
+- Fixed issue making it impossible to remove team members if the member had left the server.
+- Fixed bug causing the LB teams to be resolved incorrectly in some cases.
+
+***
 
 ## October 2024
 ### New Additions
