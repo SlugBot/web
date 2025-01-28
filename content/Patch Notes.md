@@ -1,5 +1,17 @@
-## November 2024
+## December 2024
+### Updates
+- Updated [[slugcasino#/slugcasino higherlower|/slugcasino higherlower]] payout multipliers.
+- Added `slugboardMsg` permission behaviour customisation.
+- Made [[usernote]] work with user ID.
+### Bug Fixes
+- Fixed user interface issue with custom command feedback.
+- Fixed issue allowing Slugboard delete threshold to be higher than 'slugboard' threshold.
+- Fixed event logs not logging ticketer custom content messages.
+- Fixed [[weaponer]] command failing to respond.
 
+***
+
+## November 2024
 ### Updates
 - Improved reminders responsiveness when removing reminders.
 - Added `Buy all` and `Sell all` buttons to [[stocks#/stocks list|/stocks list]].
