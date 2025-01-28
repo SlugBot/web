@@ -43,6 +43,11 @@ Once you've **BYPASS**ed a user's **FIREWALL** you'll have access to their accou
 This process, once planted on a user, will skim a fraction of all income the user receives and transfers the skimmed SC to the planter instead. As the process isn't directly taking SC from an account, but instead intercepting a transaction, **CRACK**ing their encryption is not needed.
 * Offensive Stat: **INTERCEPTOR**
 * Defensive Stat: **SCANNER**
+#### CASINO_BIN
+[[plant#/plant casino_bin|/plant casino_bin]]
+This process spoofs the Slug Casino for the target user, meaning any SC gambled get paid into or taken out of the process' vault instead of the Slug Casinos. The process owner can deposit and withdraw from their **CASINO_BIN** vaults using [[casinovault|/casinovault]].
+* Offensive Stat: **INTERCEPTOR**
+* Defensive Stat: **SCANNER**
 #### LEECH
 [[plant#/plant leech|/plant leech]]
 This malware will siphon an amount of SC out of a users current account and transfer it to the planter every hour. Requires that the user's **ENCRYPTION** has been **CRACK**ed.
@@ -129,6 +134,7 @@ To terminate an investment early, use the command [[invest#`/invest terminate`|/
 - [[activate|/activate]]
 - [[bet|/bet]]
 - [[bypass|/bypass]]
+- [[casinovault|/casinovault]]
 - [[clean|/clean]]
 - [[compromise|/compromise]]
 - [[crack|/crack]]

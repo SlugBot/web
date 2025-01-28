@@ -87,3 +87,10 @@ Plant a ROOTKIT process on a target
 Target identifier
 - Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
+## /plant casino_bin
+`/plant casino_bin <target>`<br>
+Plant a casino.bin process on a target
+#### target
+Target identifier
+- Type: `AUTOCOMPLETE SELECTION`
+- Required: `TRUE`
