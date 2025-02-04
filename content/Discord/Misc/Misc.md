@@ -1,6 +1,7 @@
 `UNDER CONSTRUCTION`
 # Commands
 - [[avatar|/avatar]]
+- [[getembeddata|/getembeddata]]
 - [[leaderboard|/leaderboard]]
 - [[names|/names]]
 - [[profile|/profile]]

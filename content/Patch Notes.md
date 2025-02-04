@@ -1,3 +1,25 @@
+
+## January 2025
+### New Additions
+- Added Totoro sticker to shop stock.
+- Added [[Economy#CASINO_BIN|CASINO_BIN]] process.
+- Added [[casinovault]] command to manage casino.bin vaults.
+- Added rare colour gradient `PROFILE_MOD`s.
+### Updates
+- Added a `Create a Challenge` button under PvP leaderboards.
+- Added `anonymous` leaderboard setting.
+- A thread will now be created for each member event.
+- Slugboarded messages will no longer display spoiler images.
+- Multiple transfers to the same user will merge into one.
+### Bug Fixes
+- Fixed member event `join` and `leave` buttons failing to respond.
+- Fixed mute log failing to send if context URL was not a valid URL.
+- Fixed [[slugcasino#/slugcasino knuckleslug|knuckleslug]] showing incorrect pay-out on draw.
+- Fixed [[exclusivechar]] fighting itself to apply multiple different exclusive chars.
+- Fixed display bug in [[compromise]] embeds.
+
+***
+
 ## December 2024
 ### Updates
 - Updated [[slugcasino#/slugcasino higherlower|/slugcasino higherlower]] payout multipliers.
