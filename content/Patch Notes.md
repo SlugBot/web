@@ -1,4 +1,56 @@
 
+## June 2025
+### New Additions
+- Added `snailbot` profile element to shop stock.
+### Updates
+- [[filter]] will now check emoji reactions.
+- Improved feedback for PvP [[slugcasino#/slugcasino blackjack|blackjack]] when one user does not have enough SC to play.
+- Improved shadows on floating profile elements on user profiles.
+- [[vc#/vc create|/vc create]] now has `allow_custom_names` parameter to allow/disallow custom VC names.
+### Bug Fixes
+- Fixed issue where [[Voicechannels]] logging threads would not be archived in logging channel.
+- Fixed issue where [[rank]] would sometimes fail to respond.
+
+***
+
+## May 2025
+
+### New Additions
+- Added ability to set a specific channel for [[roleatlevel]] earned role notifications to be sent.
+- Added `hello_kitty_face` profile element to shop stock.
+- Added `kuromi` profile element to shop stock.
+- Added `kuromi_low` profile element to shop stock.
+- Added `cinnamoroll` profile element to shop stock.
+### Updates
+- Improved [[ladder#/ladder set|/ladder set]] user identification.
+- Added ability to reset [[ticketer]] `init_message` and `content_message` strings by entering `reset`.
+- Increased [[Economy]] contract rewards.
+- Attached [[rolereact]] on a [[reminder]] will now default to select menu if it was in `reaction` display mode.
+### Bug Fixes
+- Fixed profile image file names sometimes being invalid.
+- Fixed bug causing [[ticketer]]s to sometimes submit twice.
+- Fixed bug causing [[Pvplb]] point decay to not function.
+- Fixed bug causing prestige border preview to not display.
+- Fixed bug causing [[eventlog]] to fail to respond.
+- Fixed [[ladder#/ladder undo|/ladder undo]] not correctly setting player's last match time (used for decay).
+- Fixed bug causing [[team]] hosts to be unable to disband own team.
+- Fixed bug causing [[tourney]] to send duplicate invites in some circumstances. 
+
+***
+
+## February 2025
+### New Additions
+- Added [[getembeddata]] command.
+### Updates
+- Increased [[hijack]] success chance.
+- Processes will now be moved to the `#lost-and-found` channel if the target and/or the attacker do not have access to the process channel.
+### Bug Fixes
+- Fixed bug where activating a process always shows `init via rootkit`.
+- Fixed bug causing [[SlugBot/documentation/Discord/Economy/Commands/activate|activate]] to fail to respond.
+- Fixed bug causing hijack process result notification to always show failure even if success.
+
+***
+
 ## January 2025
 ### New Additions
 - Added Totoro sticker to shop stock.
