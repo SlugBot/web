@@ -110,14 +110,11 @@ Injections are actions you can perform on existing processes. To run an injectio
 Injections have a chance to fail, resulting in a consequence. The injection success chance is displayed on the process message.
 
 If you don't have access to a process you wish to inject, you can use [[remoteview|/remoteview]] to view the process anywhere and use the injection buttons.
-#### FAST_TRACK
-Reduce the remaining plant duration on a process in progress.
-#### DELAY
-Increase the remaining plant duration on a process in progresss.
-#### SCAN
-Scan properties of the process.
-#### UNSCAN
-Hide a property of the process from anyone who may have scanned it.
+
+**FAST_TRACK** - Reduce the remaining plant duration on a process in progress.<br>
+**DELAY** - Increase the remaining plant duration on a process in progresss.<br>
+**SCAN** - Scan properties of the process.<br>
+**UNSCAN** - Hide a property of the process from anyone who may have scanned it.
 
 ### Installing and Upgrading
 You have control over what processes and how many of each process you want to be able to use by installing and uninstalling processes. Most processes can also be upgraded at the cost of SC and increased slot size. Your account has limited process slots (which can be increased by leveling up the governing stat) so managing your process configuration will require careful consideration.
