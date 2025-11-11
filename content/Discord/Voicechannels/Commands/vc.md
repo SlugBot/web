@@ -38,9 +38,13 @@ Set your VC to private, kicking all members that aren't whitelisted.
 Set your VC to public
 
 ## /vc create
-`/vc create <create_text_channel>`<br>
+`/vc create <create_text_channel> <allow_custom_names>`<br>
 Instatiate custom VCs
 #### create_text_channel
 If true, a text channel will be created for each temp VC.
+- Type: `BOOLEAN`
+- Required: `TRUE`
+#### allow_custom_names
+If true, the VC will be named after the host and the host can customise the name.
 - Type: `BOOLEAN`
 - Required: `TRUE`

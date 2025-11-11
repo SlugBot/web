@@ -1,11 +1,15 @@
 # `/ban`
 *Module: [[Moderation]]*<br>
 Ban a member
-## `/ban <member> [duration] [reason] [context_url] [delete_messages]`
+## `/ban [member] [user_id] [duration] [reason] [context_url] [delete_messages]`
 #### member
-Member to ban or user ID of user to preemptively ban
+Member to ban.
+- Type: `USER`
+- Required: `FALSE`
+#### user_id
+User ID of member to ban or user to preemptively ban.
 - Type: `STRING`
-- Required: `TRUE`
+- Required: `FALSE`
 #### duration
 Duration in english; e.g. "1 hour 20 mins"
 - Type: `STRING`

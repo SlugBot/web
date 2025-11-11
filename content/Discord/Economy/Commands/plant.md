@@ -78,7 +78,7 @@ Target identifier
 Plant a CORRUPTOR process on a target
 #### target
 Target identifier
-- Type: `STRING`
+- Type: `AUTOCOMPLETE SELECTION`
 - Required: `TRUE`
 ## /plant rootkit
 `/plant rootkit <target>`<br>

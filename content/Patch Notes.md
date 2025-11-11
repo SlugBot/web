@@ -1,4 +1,39 @@
+## October 2025
+### New Additions
+- [[remoteview]] command
+	- Allows the remote viewing of any process you have identified the ID of. 
+	- Injections can be attempted on the process via remote view.
+### Updates
+- [[bypass]] no longer requires a shared channel with the target.
+	- Bypasses can be initiated on any user you have some identified connection to (attacker or target of any scanned process).
+- [[steal]]s will now always stay in the channel they were initiated in and not be moved to `#lost-and-found`.
+- Process messages will now display how long it will take for the injection chance to regenerate back to 100%.
+- Processes planted through [[rootkit]]s will now be automatically fully scanned by the rootkit owner.
+### Bug Fixes
+- Memory leak patched.
+- Fixed scheduled `/say` messages sending multiple times.
 
+***
+## August 2025
+### Updates
+- Improved responsiveness of large lists of scanned economy processes. 
+- Improved feedback when [[challenge]] fails to create a challenge.
+- Optimised member fetching for [[Swiss Tournament Structure]].
+### Bug Fixes
+- Fixed [[rep]] command failing to respond when viewing own profile.
+
+***
+## July 2025
+### Updates
+- Improved [[ticketer]] searching.
+- Allowed `Create Challenge` buttons to be attached to [[reminder]]s.
+### Bug Fixes
+- Fixed [[invest]] graphs not displaying correctly.
+- Fixed long streamer lists not displaying.
+- Fixed players ending up with negative points in [[Pvplb]] leaderboards.
+- Fixed [[Pvplb]] bets not sorting correctly in challenge message.
+
+***
 ## June 2025
 ### New Additions
 - Added `snailbot` profile element to shop stock.

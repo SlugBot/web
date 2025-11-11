@@ -2,7 +2,7 @@
 *Module: [[ActivityExp]]*<br>
 Give/remove a role to/from members once they reach a certain level
 ## /roleatlevel add
-`/roleatlevel add <role> <level_add> [level_remove] [do_notification] [is_weekly]`<br>
+`/roleatlevel add <role> <level_add> [level_remove] [is_weekly] [do_notification] [notification_channel]`<br>
 Create a new role-at-level
 #### role
 Role to be given
@@ -16,13 +16,17 @@ Minimum level needed to receive the role
 Minimum level needed to remove the role
 - Type: `INTEGER`
 - Required: `FALSE`
+#### is_weekly
+Should weekly activity be used instead?
+- Type: `BOOLEAN`
+- Required: `FALSE`
 #### do_notification
 Should a message in chat be sent when a member earns a role?
 - Type: `BOOLEAN`
 - Required: `FALSE`
-#### is_weekly
-Should weekly activity be used instead?
-- Type: `BOOLEAN`
+#### notification_channel
+Channel the notification will be sent to. Defaults to channel of last message.
+- Type: `CHANNEL`
 - Required: `FALSE`
 ## /roleatlevel remove
 `/roleatlevel remove <role>`<br>
