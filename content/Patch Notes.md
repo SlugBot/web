@@ -1,3 +1,29 @@
+
+## December 2025
+
+### Bug Fixes
+- Fixed trace requirement causing economy tutorial target plant durations being too long.
+- Fixed `casino.bin` exploit.
+
+***
+## November 2025
+
+### Updates
+- Added injection regen time to process messages.
+- Reduced memory usage when building modded profiles.
+- Improved feedback when initiating an `ACTIVATE`.
+- Planting processes now require a Trace to the target or the plant duration will be increased.
+- Improved accuracy of injection chance display when using [[remoteview]] to view a process.
+### Bug Fixes
+- Fixed [[install]], [[uninstall]], [[upgrade]], [[downgrade]] interactions not being limited to command user. 
+- Fixed removed `CASINO_BIN`s not correctly initiating a transfer when the `CASINO_BIN` is removed.
+- Fixed permission inheritance not working correctly.
+- Fixed calculated injection chance regen not accounting for process suspension.
+- Fixed leaderboard rank still display when the `anonymous` leaderboard setting is enabled.
+- Fixed [[leaderboard]] command failing to respond when attempting to view an empty slugboard leaderboard.
+- Fixed incorrect `STEAL` complete notification sending.
+
+***
 ## October 2025
 ### New Additions
 - [[remoteview]] command
