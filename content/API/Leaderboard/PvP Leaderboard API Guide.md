@@ -81,14 +81,18 @@ Retrieves match info on a specific match.
     {
       "teamId": 0,
       "playerId": "2290978510728123123",
+      "initialRank": 1,
       "initialPoints": 29.61793872377991,
+      "initialElo": 1022.40341488487301,
       "pointsReceived": 0.4873014888196579,
       "eloReceived": 4.623613044190915
     },
     {
       "teamId": 1,
       "playerId": "460530474897567567",
+      "initialRank": 2,
       "initialPoints": 15.58222222222222,
+      "initialElo": 994.40341488487301,
       "pointsReceived": 0.2222222222222221,
       "eloReceived": -4.623613044190915
     }
