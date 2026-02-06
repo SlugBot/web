@@ -5,6 +5,8 @@ We only collect data necessary to provide moderation tools and economy features.
 To assist server staff in maintaining safety, we log:
   - **Moderation Actions:** Records of kicks, mutes, and bans.
   - **User History:** A summary of past infractions, accessible via the [[userinfo|/userinfo]] command by authorized moderators.
+### Event Logging
+Event logging set up by server admins using the [[Logging]] module does not store any data beyond which events should be logged and which channel they should be logged to. All event logs are forwarded to the specified channel and not stored.
 ### Economy Game Data
 To provide a persistent gaming experience across different servers, we store:
 - **Account Balances:** Your virtual currency and processes.
