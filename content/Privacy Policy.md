@@ -3,8 +3,8 @@ This Privacy Policy explains how SlugBot collects, uses, and protects your infor
 We only collect data necessary to provide moderation tools and economy features. This data is linked to your unique Discord User ID.
 ### Moderation Data
 To assist server staff in maintaining safety, we log:
-  - **Moderation Actions:** Records of kicks, mutes, and bans.
-  - **User History:** A summary of past infractions, accessible via the [[userinfo|/userinfo]] command by authorized moderators.
+  - **Moderation Actions:** Records of kicks, mutes, bans, joins, and leaves.
+  - **User History:** A summary of past infractions, accessible via the [[userinfo|/userinfo]] command by authorised moderators.
 ### Event Logging
 Event logging set up by server admins using the [[Logging]] module does not store any data beyond which events should be logged and which channel they should be logged to. All event logs are forwarded to the specified channel and not stored.
 ### Economy Game Data
@@ -43,6 +43,6 @@ We never sell your data. Data is only shared:
 - With Discord (as required for the Bot to function).
 - If legally required by law enforcement.
 ## Security
-We implement industry-standard measures to protect your data from unauthorized access.
+We implement industry-standard measures to protect your data from unauthorised access.
 ## Contact Information
 If you have questions about this policy or your data, please join our [Discord Server](https://discord.gg/QUSu9XG) or contact the developer at smugslugbot@gmail.com.
