@@ -2,7 +2,7 @@ Reminders are set messages that will be sent periodically in the specified chann
 ## Behaviour
 SlugBot will avoid sending a reminder if the previous one is still visible in the chat **unless [[reminder#always_send|always_send]] is set to true**, in which case a new reminder will always be sent at the scheduled time. The previous reminder is deleted regardless of if [[reminder#always_send|always_send]] is set to `TRUE` or not.
 
-It may be desired to have a message always be shown at the very bottom of a channel, sent after any other message. To achieve this, set the reminder time to less than 1 minute, and SlugBot will attempt to send the reminder after every new message in the channel. The previous reminder will be deleted so the channel will not fill up with reminder messages.
+It may be desired to have a message always be shown at the very bottom of a channel, sent after any other message. To achieve this, set the reminder time to less than 5 minutes, and SlugBot will attempt to send the reminder after every new message in the channel. The previous reminder will be deleted so the channel will not fill up with reminder messages.
 
 Supplying valid [[Embed JSON]] as the reminder message with [[reminder#do_embed|do_embed]] set to `TRUE` will allow for custom Discord embeds.
 ## Attaching Components
