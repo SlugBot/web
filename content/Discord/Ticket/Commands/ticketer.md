@@ -42,7 +42,7 @@ Optional SlugBot message ID to replace with this ticketer
 - Type: `STRING`
 - Required: `FALSE`
 ## /ticketer update
-`/ticketer update <ticketer_id> [send_to_channel] [title] [description] [button] [button_colour] [colour] [is_anonymous] [is_private] [whitelist_role] [blacklist_role] [hide_extra_info] [hide_response_embed] [give_role] [do_feedback] [do_thread] [init_message] [content_message] [thread_title]`<br>
+`/ticketer update <ticketer_id> [send_to_channel] [title] [description] [button] [button_colour] [colour] [is_anonymous] [is_private] [whitelist_role] [blacklist_role] [hide_extra_info] [hide_response_embed] [skip_user_inputs] [give_role] [do_feedback] [do_thread] [init_message] [content_message] [thread_title]`<br>
 Update properties of a Ticketer message
 #### ticketer_id
 ID of Ticketer
@@ -98,6 +98,10 @@ Hide info in the ticketer embed such as blacklist roles
 - Required: `FALSE`
 #### hide_response_embed
 Hide the default ticketer response embed (create your own with 'content_message')
+- Type: `BOOLEAN`
+- Required: `FALSE`
+#### skip_user_inputs
+Skips the user input modal and will send the ticket instantly when the ticket button is pressed
 - Type: `BOOLEAN`
 - Required: `FALSE`
 #### give_role
