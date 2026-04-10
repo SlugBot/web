@@ -1,4 +1,39 @@
+## April 2026
+### Updates
+- Added `skip_user_inputs` to [[ticketer]]
+### Bug Fixes
+- Fixed bug stopping the [[reminder]] cache from updating.
+- Fixed bug causing [[weaponer#/weaponer bestinclass|/weaponer bestinclass]] to fail to respond.
 
+***
+## March 2026
+### Updates
+- [[weaponer]] and [[allocatestatser]] now allows an NPC to be selected for defences to calculate against.
+
+***
+## February 2026
+### Updates
+- Added Nightreign iframe data to [[iframes|/iframes]]
+- Updated [[Privacy Policy]]
+- Rootkits now inherit the owner's traces.
+
+***
+## January 2026
+### New Additions
+- API for PvP Leaderboard data at https://api.slugbot.xyz/pvplb/
+- Subscribe to a webhook for leaderboard events using [[api|/api]].
+### Updates
+- Updated [[slugboard]] embeds.
+- SlugBot will now attempt to run `STEAL`s on valid targets.
+- `STEAL`s will only notify the defender if they have been recently active in the economy.
+- [[permissions]] whitelists and blacklists can now be customised on a per member basis.
+- [[filter#/filter mute_settings|/filter mute_settings]] Auto-mute settings can now be customised per filter word.
+### Bug Fixes
+- Fixed `kurumi_low` profile element not displaying preview in shop.
+- Fixed bug allowing SlugBot to ignore economy account lockdowns.
+- Fixed slightly incorrect display showing time until injection chance is at 100%.
+
+***
 ## December 2025
 
 ### Bug Fixes
