@@ -50,9 +50,12 @@ This flag will timeout the user who triggered the response for `<duration>` seco
 ### MUTE 
 `${MUTE: \<duration>}`
 This flag will mute the user who triggered the response for `<duration>` seconds if possible. This flag only applies for Discord functions. Slugbot must have the ability to timeout members. The flag is removed from the response.
+### MUTE 
+`${KICK}`
+This flag will kick the user who triggered the response if possible. This flag only applies for Discord functions. Slugbot must have the ability to kick members. The flag is removed from the response.
 ### BAN
 `${BAN: \<delete_messages_from_time>}`
-This flag will ban the user who triggered the response. This flag only applies for Discord functions. if `\<delete_messages_from_time>` number is given, messages from this user within the given time (in seconds) will be deleted. Slugbot must have the ability to apply roles. The flag is removed from the response.
+This flag will ban the user who triggered the response. This flag only applies for Discord functions. if `\<delete_messages_from_time>` number is given, messages from this user within the given time (in seconds) will be deleted. Slugbot must have the ability to ban members. The flag is removed from the response.
 ### DELETE
 `${DELETE}`
 This flag will delete the message that triggered the response with this flag in it. This flag only applies for Discord functions. Slugbot must have the ability to delete messages. The flag is removed from the response.
