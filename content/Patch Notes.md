@@ -1,6 +1,23 @@
+## June 2026
+### Updates
+- Added `${KICK}` replacer flag.
+- Added `${ban: <duration> | <delete_msgs_time>` } replacer flag.
+- Improved word [[filter]]ing.
+
+***
+## May 2026
+
+### Updates
+- Improved [[persistentrole]] handling.
+- automod timeouts will now get logged by [[eventlog]]
+### Bug Fixes
+- Fixed some events not logging when member was not cached.
+
+***
 ## April 2026
 ### Updates
 - Added `skip_user_inputs` to [[ticketer]]
+- Added Boss Defence Averages to ER weapon commands.
 ### Bug Fixes
 - Fixed bug stopping the [[reminder]] cache from updating.
 - Fixed bug causing [[weaponer#/weaponer bestinclass|/weaponer bestinclass]] to fail to respond.
